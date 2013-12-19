@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWRoute.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRoute</TokenIdentifier>
+			<Abstract type="html">PWRoute encapsulates all data related to a route between two points.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/name</TokenIdentifier>
+			<Abstract type="html">The name of the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/name</TokenIdentifier>
+			<Abstract type="html">The name of the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setStartAnnotationID:</TokenIdentifier>
+			<Abstract type="html">The origin annotation ID.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger startAnnotationID</Declaration>
+			
+			
+			<Anchor>//api/name/startAnnotationID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/startAnnotationID</TokenIdentifier>
+			<Abstract type="html">The origin annotation ID.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger startAnnotationID</Declaration>
+			
+			
+			<Anchor>//api/name/startAnnotationID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/startAnnotationID</TokenIdentifier>
+			<Abstract type="html">The origin annotation ID.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger startAnnotationID</Declaration>
+			
+			
+			<Anchor>//api/name/startAnnotationID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setEndAnnotationID:</TokenIdentifier>
+			<Abstract type="html">The destination annotation ID.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger endAnnotationID</Declaration>
+			
+			
+			<Anchor>//api/name/endAnnotationID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/endAnnotationID</TokenIdentifier>
+			<Abstract type="html">The destination annotation ID.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger endAnnotationID</Declaration>
+			
+			
+			<Anchor>//api/name/endAnnotationID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/endAnnotationID</TokenIdentifier>
+			<Abstract type="html">The destination annotation ID.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger endAnnotationID</Declaration>
+			
+			
+			<Anchor>//api/name/endAnnotationID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setIsAccessible:</TokenIdentifier>
+			<Abstract type="html">A boolean value that indicates whether or not the PWRoute object is accessible.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isAccessible</Declaration>
+			
+			
+			<Anchor>//api/name/isAccessible</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/isAccessible</TokenIdentifier>
+			<Abstract type="html">A boolean value that indicates whether or not the PWRoute object is accessible.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isAccessible</Declaration>
+			
+			
+			<Anchor>//api/name/isAccessible</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/isAccessible</TokenIdentifier>
+			<Abstract type="html">A boolean value that indicates whether or not the PWRoute object is accessible.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isAccessible</Declaration>
+			
+			
+			<Anchor>//api/name/isAccessible</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setSegments:</TokenIdentifier>
+			<Abstract type="html">The segments that make up the PWRoute.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *segments</Declaration>
+			
+			
+			<Anchor>//api/name/segments</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/segments</TokenIdentifier>
+			<Abstract type="html">The segments that make up the PWRoute.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *segments</Declaration>
+			
+			
+			<Anchor>//api/name/segments</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/segments</TokenIdentifier>
+			<Abstract type="html">The segments that make up the PWRoute.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *segments</Declaration>
+			
+			
+			<Anchor>//api/name/segments</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

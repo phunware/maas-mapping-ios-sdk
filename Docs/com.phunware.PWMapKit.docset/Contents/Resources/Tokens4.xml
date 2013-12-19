@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWMapKit.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMapKit</TokenIdentifier>
+			<Abstract type="html">The PWMapKit framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching and drawing routes, and more.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/getMapAnnotationsForBuildingID:completion:</TokenIdentifier>
+			<Abstract type="html">Fetch annotations for the specified building ID.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			
+			<Declaration>+ (void)getMapAnnotationsForBuildingID:(NSString *)buildingID completion:(void ( ^ ) ( NSArray *mapAnnotations , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>buildingID</Name>
+					<Abstract type="html">The building ID you want to fetch map annotations for.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block object to be executed when getMapAnnotationsForBuildingID:completion: completes. This block has no return value and takes two arguments:,
+- A PWRoute object that encapsulates the requested route. Pass this object to the PWMapView to draw it on the map.
+- An NSError object describing the error that occurred. If there was no error this object will be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getMapAnnotationsForBuildingID:completion:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/getRouteFromAnnotationID:toAnnotationID:completion:</TokenIdentifier>
+			<Abstract type="html">Get a route between two annotation IDs. If no route exists, an NSError object with be returned on completion.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			
+			<Declaration>+ (void)getRouteFromAnnotationID:(NSInteger)fromAnnotationID toAnnotationID:(NSInteger)toAnnotationID completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fromAnnotationID</Name>
+					<Abstract type="html">The origin annotation ID that you wish to route from.</Abstract>
+				</Parameter><Parameter>
+					<Name>toAnnotationID</Name>
+					<Abstract type="html">The destination annotation ID that you wish to route to.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block object to be executed when getRouteFromAnnotationID:toAnnotationID:completion: completes. This block has no return value and takes two arguments:,
+- A PWRoute object that encapsulates the requested route. Pass this object to the PWMapView to draw it on the map.
+- An NSError object describing the error that occurred. If there was no error this object will be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getRouteFromAnnotationID:toAnnotationID:completion:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/getRouteFromMapLocation:toAnnotationID:completion:</TokenIdentifier>
+			<Abstract type="html">Route from a specified map location to a desired point of interest.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			
+			<Declaration>+ (void)getRouteFromMapLocation:(PWMapLocation *)mapLocation toAnnotationID:(NSInteger)toAnnotationID completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapLocation</Name>
+					<Abstract type="html">The map location you wish to route from. This can be instantiated by the developer or you can fetch the current PWMapLocation of the user from the PWMapView.</Abstract>
+				</Parameter><Parameter>
+					<Name>toAnnotationID</Name>
+					<Abstract type="html">The destination annotation ID that you wish to route to.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block object to be executed when getRouteFromMapLocation:toAnnotationID:completion: completes. This block has no return value and takes two arguments:,
+- A PWRoute object that encapsulates the requested route. Pass this object to the PWMapView to draw it on the map.
+- An NSError object describing the error that occurred. If there was no error this object will be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getRouteFromMapLocation:toAnnotationID:completion:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/serviceName</TokenIdentifier>
+			<Abstract type="html">Returns &apos;PWMapKit&apos;.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)serviceName</Declaration>
+			
+			
+			<Anchor>//api/name/serviceName</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/clearCache</TokenIdentifier>
+			<Abstract type="html">Clears all mapping data caches. This method blocks the calling thread until the cache has been cleared.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			
+			<Declaration>+ (void)clearCache</Declaration>
+			
+			
+			<Anchor>//api/name/clearCache</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
