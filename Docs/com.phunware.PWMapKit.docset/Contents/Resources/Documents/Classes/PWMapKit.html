@@ -1,0 +1,572 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>PWMapKit Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 961)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">PWMapKit </a></h1>
+				<a id="developerHome" href="../index.html">Phunware, Inc.</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">PWMapKit Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/clearCache">&nbsp;&nbsp;&nbsp;&nbsp;+ clearCache</option>
+	
+	<option value="//api/name/getMapAnnotationsForBuildingID:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ getMapAnnotationsForBuildingID:completion:</option>
+	
+	<option value="//api/name/getRouteFromAnnotationID:toAnnotationID:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ getRouteFromAnnotationID:toAnnotationID:completion:</option>
+	
+	<option value="//api/name/getRouteFromMapLocation:toAnnotationID:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ getRouteFromMapLocation:toAnnotationID:completion:</option>
+	
+	<option value="//api/name/serviceName">&nbsp;&nbsp;&nbsp;&nbsp;+ serviceName</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Annotation Methods">Annotation Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Routing Methods">Routing Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Utility Methods">Utility Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearCache">clearCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMapAnnotationsForBuildingID:completion:">getMapAnnotationsForBuildingID:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRouteFromAnnotationID:toAnnotationID:completion:">getRouteFromAnnotationID:toAnnotationID:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRouteFromMapLocation:toAnnotationID:completion:">getRouteFromMapLocation:toAnnotationID:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serviceName">serviceName</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="PWMapKit Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">PWMapKit Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">PWMapKit.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>PWMapKit</code> framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching and drawing routes, and more.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Annotation Methods" name="task_Annotation Methods"></a>
+						<h3 class="subsubtitle task-title">Annotation Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getMapAnnotationsForBuildingID:completion:">+&nbsp;getMapAnnotationsForBuildingID:completion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Routing Methods" name="task_Routing Methods"></a>
+						<h3 class="subsubtitle task-title">Routing Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRouteFromAnnotationID:toAnnotationID:completion:">+&nbsp;getRouteFromAnnotationID:toAnnotationID:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRouteFromMapLocation:toAnnotationID:completion:">+&nbsp;getRouteFromMapLocation:toAnnotationID:completion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Utility Methods" name="task_Utility Methods"></a>
+						<h3 class="subsubtitle task-title">Utility Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serviceName">+&nbsp;serviceName</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearCache">+&nbsp;clearCache</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/clearCache" title="clearCache"></a>
+	<h3 class="subsubtitle method-title">clearCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clears all mapping data caches. This method blocks the calling thread until the cache has been cleared.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)clearCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapKit.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getMapAnnotationsForBuildingID:completion:" title="getMapAnnotationsForBuildingID:completion:"></a>
+	<h3 class="subsubtitle method-title">getMapAnnotationsForBuildingID:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetch annotations for the specified building ID.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getMapAnnotationsForBuildingID:(NSString *)<em>buildingID</em> completion:(void ( ^ ) ( NSArray *mapAnnotations , NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>buildingID</em></dt>
+			<dd><p>The building ID you want to fetch map annotations for.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>A block object to be executed when <code>getMapAnnotationsForBuildingID:completion:</code> completes. This block has no return value and takes two arguments:,
+- A <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object that encapsulates the requested route. Pass this object to the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> to draw it on the map.
+- An <code>NSError</code> object describing the error that occurred. If there was no error this object will be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapKit.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRouteFromAnnotationID:toAnnotationID:completion:" title="getRouteFromAnnotationID:toAnnotationID:completion:"></a>
+	<h3 class="subsubtitle method-title">getRouteFromAnnotationID:toAnnotationID:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a route between two annotation IDs. If no route exists, an <code>NSError</code> object with be returned on completion.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getRouteFromAnnotationID:(NSInteger)<em>fromAnnotationID</em> toAnnotationID:(NSInteger)<em>toAnnotationID</em> completion:(void ( ^ ) ( PWRoute *route , NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fromAnnotationID</em></dt>
+			<dd><p>The origin annotation ID that you wish to route from.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>toAnnotationID</em></dt>
+			<dd><p>The destination annotation ID that you wish to route to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>A block object to be executed when <code>getRouteFromAnnotationID:toAnnotationID:completion:</code> completes. This block has no return value and takes two arguments:,
+- A <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object that encapsulates the requested route. Pass this object to the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> to draw it on the map.
+- An <code>NSError</code> object describing the error that occurred. If there was no error this object will be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapKit.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRouteFromMapLocation:toAnnotationID:completion:" title="getRouteFromMapLocation:toAnnotationID:completion:"></a>
+	<h3 class="subsubtitle method-title">getRouteFromMapLocation:toAnnotationID:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Route from a specified map location to a desired point of interest.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getRouteFromMapLocation:(PWMapLocation *)<em>mapLocation</em> toAnnotationID:(NSInteger)<em>toAnnotationID</em> completion:(void ( ^ ) ( PWRoute *route , NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapLocation</em></dt>
+			<dd><p>The map location you wish to route from. This can be instantiated by the developer or you can fetch the current <a href="../Classes/PWMapLocation.html"><code>PWMapLocation</code></a> of the user from the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>toAnnotationID</em></dt>
+			<dd><p>The destination annotation ID that you wish to route to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>A block object to be executed when <code>getRouteFromMapLocation:toAnnotationID:completion:</code> completes. This block has no return value and takes two arguments:,
+- A <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object that encapsulates the requested route. Pass this object to the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> to draw it on the map.
+- An <code>NSError</code> object describing the error that occurred. If there was no error this object will be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapKit.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serviceName" title="serviceName"></a>
+	<h3 class="subsubtitle method-title">serviceName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns &lsquo;PWMapKit&rsquo;.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)serviceName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapKit.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-12-19)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
