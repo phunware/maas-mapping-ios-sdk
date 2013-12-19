@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWBuildingFloor.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingFloor</TokenIdentifier>
+			<Abstract type="html">The build floor object encapsulates all data related to that floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The floor ID denotes the ID for the floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/floorID</TokenIdentifier>
+			<Abstract type="html">The floor ID denotes the ID for the floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/floorID</TokenIdentifier>
+			<Abstract type="html">The floor ID denotes the ID for the floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setBuildingID:</TokenIdentifier>
+			<Abstract type="html">The building ID that the floor belongs to.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/buildingID</TokenIdentifier>
+			<Abstract type="html">The building ID that the floor belongs to.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/buildingID</TokenIdentifier>
+			<Abstract type="html">The building ID that the floor belongs to.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setFloorLevel:</TokenIdentifier>
+			<Abstract type="html">The physical floor level.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger floorLevel</Declaration>
+			
+			
+			<Anchor>//api/name/floorLevel</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/floorLevel</TokenIdentifier>
+			<Abstract type="html">The physical floor level.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger floorLevel</Declaration>
+			
+			
+			<Anchor>//api/name/floorLevel</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/floorLevel</TokenIdentifier>
+			<Abstract type="html">The physical floor level.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger floorLevel</Declaration>
+			
+			
+			<Anchor>//api/name/floorLevel</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setCoordinateSpace:</TokenIdentifier>
+			<Abstract type="html">The coordinates space for the building floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize coordinateSpace</Declaration>
+			
+			
+			<Anchor>//api/name/coordinateSpace</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/coordinateSpace</TokenIdentifier>
+			<Abstract type="html">The coordinates space for the building floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize coordinateSpace</Declaration>
+			
+			
+			<Anchor>//api/name/coordinateSpace</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/coordinateSpace</TokenIdentifier>
+			<Abstract type="html">The coordinates space for the building floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize coordinateSpace</Declaration>
+			
+			
+			<Anchor>//api/name/coordinateSpace</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the building floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the building floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the building floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
