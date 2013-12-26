@@ -84,10 +84,52 @@ The primary methods and objects in PWMapKit revolve around creating a map view, 
 	// To fetch annotations from MaaS you would call the following method
     __weak __typeof(&*self)weakSelf = self;
     
-    [PWMapKit getMapAnnotationsForBuildingID:@"BUILDING_ID" completion:^(NSArray *mapAnnotations, NSError *error) {
+   [PWMapKit getMapAnnotationsForBuildingID:@"BUILDING_ID" completion:^(NSArray *mapAnnotations, NSError *error) {
     	 // Add annotations to the map view
         [weakSelf.mapView addAnnotations:mapAnnotations];
     }];
+````
+
+### Location
+
+````objective-c
+	// To see if location tracking is enabled you can call the following method
+    if (!mapView.trackingEnabled)
+    {
+        // To toggle location tracking call the following method on your PWMapView object
+        [mapView toggleLocationTrackingWithCompletion:^(BOOL didSucceed, NSError *error) {
+            ...
+        }];
+    }
+````
+
+### Navigation
+
+````objective-c
+	// To fetch a route between two points of interest you would call the following method
+    __weak __typeof(&*self)weakSelf = self;
+    
+   [PWMapKit getRouteFromAnnotationID:123 toAnnotationID:456 completion:^(PWRoute *route, NSError *error) {
+        if (error == nil)
+        {
+            // Show the route on the map
+            [weakSelf.mapView loadRoute:route];
+        }
+    }];
+    
+    // If location is enabled you can route from the users current location
+    if (mapView.currentLocation != nil)
+    {
+        [PWMapKit getRouteFromMapLocation:mapView.currentLocation toAnnotationID:123 completion:^(PWRoute *route, NSError *error) {
+            if (error == nil)
+            {
+                [weakSelf.mapView loadRoute:route];
+            }
+        }];
+    }
+    
+    // Once you're done with the route you can remove it from the map
+    [mapView cancelRouting];
 ````
 
 Attribution
