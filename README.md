@@ -69,7 +69,7 @@ The primary methods and objects in PWMapKit revolve around creating a map view, 
 ### Creating A Map View
 
 ````objective-c
-	// You must instantiate a PWMapView with the following method. The Building ID and Venue ID can be found in the MaaS Portal. It's important to set the delegate if you want to be notified of map view events.
+	// You must instantiate a PWMapView with the following method. The Building ID and Venue ID can be found in the MaaS portal. It's important to set the delegate if you want to be notified of map view events.
     PWMapView *mapView = [[PWMapView alloc] initWithFrame:self.view.bounds buildingID:@"BUILDING_ID" venueID:@"VENUE_ID"];
     mapView.delegate = self;
     
