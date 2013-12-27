@@ -42,7 +42,7 @@
     CGFloat yCoord = 0.0;
     
     CGRect mapRect = CGRectMake(xCoord, yCoord, self.view.frame.size.width, self.view.frame.size.height/2);
-    PWMapView *mapView = [[PWMapView alloc] initWithFrame:mapRect buildingID:@"150" venueID:@"e2a53fd8-6dcc-48e1-8b33-71f12fc13966"];
+    PWMapView *mapView = [[PWMapView alloc] initWithFrame:mapRect buildingID:@"YOUR_BUILDING_ID" venueID:@"YOUR_VENUE_ID"];
     mapView.delegate = self;
     [self.view addSubview:mapView];
     _mapView = mapView;

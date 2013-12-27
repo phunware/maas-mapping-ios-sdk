@@ -18,10 +18,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
 #warning Update these values 
-    [MaaSCore setApplicationID:@"98"
-                     accessKey:@"386a54d2be73d160601b7cfe759387ba702e3623"
-                  signatureKey:@"b434ae3a0fa7a41d516e8b34d3021bce33f66cf1"
-                 encryptionKey:@"nada"];
+    [MaaSCore setApplicationID:@"YOUR_APPLICATION_ID"
+                     accessKey:@"YOUR_ACCESS_KEY"
+                  signatureKey:@"YOUR_SIGNATURE_KEY"
+                 encryptionKey:@"UNUSED"];
     
     
     RootViewController *rootViewController = [[RootViewController alloc] init];
