@@ -2,26 +2,24 @@
 //  PWMapFloor.h
 //  PWMapKit
 //
-//  Copyright (c) 2013 Phunware. All rights reserved.
+//  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@class PWBuildingFloorResource;
+@class PWBuildingFloorResource, PWBuildingFloorReference;
 
 /**
  The build floor object encapsulates all data related to that floor.
  */
-@interface PWBuildingFloor : NSObject <NSCoding, NSCopying>
+@interface PWBuildingFloor : NSObject <NSSecureCoding, NSCopying>
 
 /**
- The floor ID denotes the ID for the floor.
- @discussion The floor ID is used throughout the `PWMapKit`. It determines which annotations to display, among other things.
+ The floor identifier denotes the identifier for the floor.
+ @discussion The floor identifier is used throughout the `PWMapKit`. It determines which annotations to display, among other things.
  */
 @property (nonatomic, assign) NSUInteger floorID;
 
 /**
- The building ID that the floor belongs to.
+ The building identifier denotes the building that the floor belongs to.
  */
 @property (nonatomic, assign) NSUInteger buildingID;
 
@@ -31,13 +29,12 @@
 @property (nonatomic, assign) NSInteger floorLevel;
 
 /**
- The coordinates space for the building floor.
- @discussion For identical floors the coordinate space will likely be identical but there are many cases where they could be different.
+ The reference GPS points and angle for the building floor.
  */
-@property (nonatomic, assign) CGSize coordinateSpace;
+@property (nonatomic, strong) PWBuildingFloorReference *reference;
 
 /**
- The name of the building floor.
+ The name of the building's floor.
  */
 @property (nonatomic, strong) NSString *name;
 

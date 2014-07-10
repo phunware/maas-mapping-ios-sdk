@@ -2,40 +2,54 @@
 //  PWRoute.h
 //  PWMapKit
 //
-//  Copyright (c) 2013 Phunware. All rights reserved.
+//  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /**
- `PWRoute` encapsulates all data related to a route between two points.
+ The `PWRoute` class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes information you can display to the user in association with that route, such as the name of the route, its distance and the expected travel time.
+ 
+ You do not create instances of this class directly. Instead, you receive route objects when you request directions. For more information about requesting directions, see `PWDirections` Class Reference.
  */
 
 @interface PWRoute : NSObject
 
 /**
- The name of the route.
+ The name assigned to the route. (read-only)
+ @discussion You can display this string to the user from your app’s user interface so that the user can distinguish one route from another. The string itself describes the route using one of the route’s significant features.
  */
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 
 /**
- The origin annotation ID.
+ The route distance in meters. (read-only)
+ @discussion This property reflects the distance that the user covers while traversing the route's path. It is not a direct distance between the start and end points of the route.
  */
-@property (nonatomic, readonly) NSInteger startAnnotationID;
+@property (nonatomic, readonly) CLLocationDistance distance;
 
 /**
- The destination annotation ID.
+ The expected travel time in seconds. (read-only)
+ @discussion This expected travel time reflects the time it takes to traverse the route under ideal conditions. The actual amount of time may vary based on conditions.
  */
-@property (nonatomic, readonly) NSInteger endAnnotationID;
+@property (nonatomic, readonly) NSTimeInterval expectedTravelTime;
 
 /**
- A boolean value that indicates whether or not the `PWRoute` object is accessible.
+ The detailed route geometry. (read-only)
+ @discussion The polyline object in this property reflects the complete path of the route, including all of its steps. You can use the polyline object as an overlay in a map view.
  */
-@property (nonatomic, readonly) BOOL isAccessible;
+@property (nonatomic, readonly) MKPolyline *polyline;
+
 
 /**
- The segments that make up the `PWRoute`.
+ The array of steps that comprise the overall route. (read-only)
+ @discussion The array contains one or more `PWRouteStep` objects representing distinct portions of the route. Each step corresponds to a single floor seqeuence that must be followed along the route.
  */
-@property (nonatomic, readonly) NSArray *segments;
+@property (nonatomic, readonly) NSArray *steps;
+
+
+/**
+ A Boolean value that indicates whether or not the PWRoute object is accessible. (read-only)
+ */
+@property (nonatomic, readonly, getter=isAccessible) BOOL accessible;
 
 @end

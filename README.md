@@ -1,17 +1,17 @@
-MaaS Mapping SDK for iOS
+PWMapKit SDK for iOS
 ==================
 
-Version 1.0.0
+Version 2.0.2 (BETA)
 
-This is the iOS SDK for Phunware's Mapping MaaS module. Visit http://maas.phunware.com/ for more details and to sign up.
+PWMapKit is a comprehensive mapping and location SDK that allows easy integration with Phunware's indoor maps and Location Based Services (LBS). Visit http://maas.phunware.com/ for more details and to sign up.
 
 
 
 Requirements
 ------------
 
-- MaaS Core v1.2.0 or greater
-- iOS 5.0 or greater
+- MaaS Core v1.2.6 or greater
+- iOS 7.0 or greater
 - Xcode 4.4 or greater
 
 
@@ -21,7 +21,7 @@ Installation
 
 PWMapKit has a dependency on MaaSCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk
 
-It's recommended that you add the MaaS frameworks to the 'Vendor/Phunware' directory. Then add the MaaSCore.framework and PWMapKit.framework to your Xcode project.
+It's recommended that you add the MaaS frameworks to the Vendor/Phunware directory, then, add the MaaSCore.framework and PWMapKit.framework to your Xcode project.
 
 The following frameworks are required:
 ````
@@ -35,96 +35,98 @@ Scroll down for implementation details.
 Documentation
 ------------
 
-PWMapKit documentation is included in the Documents folder in the repository as both HTML and as a .docset. You can also find the latest documentation here: http://phunware.github.io/maas-mapping-ios-sdk/
+PWMapKit documentation is included in the the repository's Documents folder as both HTML and as a .docset. You can also find the latest documentation here: http://phunware.github.io/maas-mapping-ios-sdk/
 
-
-Overview
------------
-
-The PWMapKit framework object provides an embeddable indoor map interface. You can use this framework to display indoor maps, annotate the map with custom Points of Interest, route between points, and more.
-
-
-### Annotations
-
-Annotations, or Points of Interest, allow you display information on the map view. You can fetch annotations from MaaS using the appropriate calls or add your own local annotations. It's important to note that navigation will only work with the annotations fetched from MaaS.
-
-### Positioning
-
-PWMapKit includes a variety of methods for positioning the map view. You can center on a specific point, center and zoom, and more.
-
-### Location
-
-If the user is on site and has associated with the venue's Wi-Fi network at least once, they will be able to fetch their current location on the map. The location is displayed as blue dot on the map view.
-
-### Navigation
-
-PWMapKit supports a variety of navigation methods. You can route between two points (annotations) or route from your current location to a specified point if location is enabled.
 
 
 Integration
 -----------
 
-The primary methods and objects in PWMapKit revolve around creating a map view, displaying annotations, displaying the user's location and navigation.
+The primary methods and objects in PWMapKit revolve around creating a map view, displaying annotations, displaying a user's location and navigation.
 
-### Creating A Map View
+### Adding Indoor Maps to a Map View
 
 ````objective-c
-	// You must instantiate a PWMapView with the following method. The Building ID and Venue ID can be found in the MaaS portal. It's important to set the delegate if you want to be notified of map view events.
-    PWMapView *mapView = [[PWMapView alloc] initWithFrame:self.view.bounds buildingID:@"BUILDING_ID" venueID:@"VENUE_ID"];
+	// Replace all referencs of MKMapView with PWMapView
+    PWMapView *mapView = [[PWMapView alloc] initWithFrame:self.view.bounds];
     mapView.delegate = self;
     
     [self.view addSubview:mapView];
-````
-
-### Fetching Annotations
-
-````objective-c
-	// To fetch annotations from MaaS, you would call the following method:
-    __weak __typeof(&*self)weakSelf = self;
     
-   [PWMapKit getMapAnnotationsForBuildingID:@"BUILDING_ID" completion:^(NSArray *mapAnnotations, NSError *error) {
-    	 // To add annotations to the map view:
-        [weakSelf.mapView addAnnotations:mapAnnotations];
-    }];
-````
-
-### Location
-
-````objective-c
-	// To see if location tracking is enabled, you can call the following method:
-    if (!mapView.trackingEnabled)
-    {
-        // To toggle location tracking, call the following method on your PWMapView object:
-        [mapView toggleLocationTrackingWithCompletion:^(BOOL didSucceed, NSError *error) {
-            ...
-        }];
-    }
-````
-
-### Navigation
-
-````objective-c
-	// To fetch a route between two Points of Interest, you would call the following method:
-    __weak __typeof(&*self)weakSelf = self;
+    // Load a building
+    [mapView loadBuilding:BUILDING_ID];
     
-   [PWMapKit getRouteFromAnnotationID:123 toAnnotationID:456 completion:^(PWRoute *route, NSError *error) {
-        if (error == nil)
+    // That's it!
+````
+
+
+### Indoor Location
+
+PWMapKit implements an abstract indoor location manager protocol very similar to CLLocationManager, which can be implemented to provide indoor location. PWMSELocationManager implements this protocol to provide Wi-Fi based indoor location information.
+
+````objective-c
+	CLLocationCoordinate2D here;
+    PWMSELocationManager *locationManager = [[PWMSELocationManager alloc] initWithVenueGUID:@"VENUE GUID" location:here];
+    locationManager.delegate = self;
+    
+    [locationManager startUpdatingLocation];
+````
+
+
+### Routing
+
+The indoor routing APIs have been structured to mirror MKMapKit's routing methods. The three main routing classes are PWDirectionsRequest, PWDirections and PWDirectionsResponse. Please see the API documentation and examples below for additional detail.
+
+
+
+#### Routing Between Points of Interest
+
+````objective-c
+	// To fetch a route between two points of interest, you would call the following method:
+    id<PWAnnotation> start, end;
+    
+    PWDirectionsRequest *request = [[PWDirectionsRequest alloc] initWithSource:start
+                                                                   destination:end
+                                                                          type:PWDirectionsTypeAny];
+    
+    PWDirections *directions = [[PWDirections alloc] initWithRequest:request];
+    
+    __weak __typeof(self)weakSelf = self;
+    
+    [directions calculateDirectionsWithCompletionHandler:^(PWDirectionsResponse *response, NSError *error) {
+        if (!error)
         {
-            // To show the route on the map:
-            [weakSelf.mapView loadRoute:route];
+            [weakSelf.mapView plotRoute:response.routes.firstObject];
         }
     }];
     
-    // If location is enabled, you can route from the user's current location:
-    if (mapView.currentLocation != nil)
-    {
-        [PWMapKit getRouteFromMapLocation:mapView.currentLocation toAnnotationID:123 completion:^(PWRoute *route, NSError *error) {
-            if (error == nil)
-            {
-                [weakSelf.mapView loadRoute:route];
-            }
-        }];
-    }
+    // Once you're done with the route, you can remove it from the map:
+    [mapView cancelRouting];
+````
+
+
+
+#### Routing from a Location to a Point of Interest
+
+````objective-c
+	// To fetch a route between two points of interest, you would call the following method:
+    id<PWAnnotation> end;
+    id <PWLocation> location;
+    
+    PWDirectionsRequest *request = [[PWDirectionsRequest alloc] initWithLocation:location
+                                                                     destination:end
+                                                                            type:PWDirectionsTypeAny];
+    
+    PWDirections *directions = [[PWDirections alloc] initWithRequest:request];
+    
+    __weak __typeof(self)weakSelf = self;
+    
+    [directions calculateDirectionsWithCompletionHandler:^(PWDirectionsResponse *response, NSError *error) {
+        if (!error)
+        {
+            [weakSelf.mapView plotRoute:response.routes.firstObject];
+        }
+    }];
     
     // Once you're done with the route, you can remove it from the map:
     [mapView cancelRouting];
@@ -141,11 +143,11 @@ PWMapKit uses the following third-party components. All components are prefixed 
   <th style="text-align:center;">License</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/jessedc/JCTiledScrollView">JCTiledScrollView</a></td>
+    <td><a href="https://github.com/samvermette/SVPulsingAnnotationView">SVPulsingAnnotationView</a></td>
     <td>
-     A set of classes that wrap UIScrollView and CATiledLayer. It aims to simplify displaying large images and PDFs at multiple zoom scales.
+     A customizable MKUserLocationView replica for your iOS app.
     </td>
-    <td style="text-align:center;""><a href="https://github.com/jessedc/JCTiledScrollView/blob/master/LICENCE.txt">MIT</a>
+    <td style="text-align:center;""><a href="https://github.com/samvermette/SVPulsingAnnotationView/blob/master/LICENSE.txt">MIT</a>
     </td>
   </tr>
 </table>

@@ -2,31 +2,31 @@
 //  PWLocationManager.h
 //  PWMapKit
 //
-//  Copyright (c) 2013 Phunware. All rights reserved.
+//  Created by Illya Busigin on 2/7/14.
+//  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+#import <PWMapKit/PWLocationProtocol.h>
 
 @protocol PWLocationManagerDelegate;
 
-@interface PWLocationManager : NSObject
+@protocol PWLocationManager <NSObject>
 
-@property (nonatomic, weak) id<PWLocationManagerDelegate> delegate;
-
-+ (instancetype)defaultManager;
 + (BOOL)locationServicesEnabled;
-
+    
 - (void)startUpdatingLocation;
 - (void)stopUpdatingLocation;
+- (BOOL)updating;
 
+@property (nonatomic, weak) id<PWLocationManagerDelegate> delegate;
+    
 @end
-
 
 @protocol PWLocationManagerDelegate <NSObject>
 
-- (void)locationManager:(PWLocationManager *)manager didUpdateToLocation:(CGPoint)location floorID:(NSUInteger)floorID;
+@optional
+- (void)locationManager:(id<PWLocationManager>)manager didUpdateToLocation:(id<PWLocation>)location;
+- (void)locationManager:(id<PWLocationManager>)manager failedWithError:(NSError *)error;
+    
+@end
 
-- (void)locationManager:(PWLocationManager *)manager didFailWithError:(NSError *)error;
-
-@end 
