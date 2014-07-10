@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWBuildingFloor Class Reference</title>
+		<title>PWMKCacheManager Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWBuildingFloor Class Reference</h1>
+				<h1 class="hideInXcode">PWMKCacheManager Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -25,8 +25,6 @@
 				<li id="jumpto_button" role="navigation">
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
-	
-	<option value="overview">Overview</option>
 	
 	
 	
@@ -39,19 +37,29 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/buildingID">&nbsp;&nbsp;&nbsp;&nbsp;buildingID</option>
-	
-	<option value="//api/name/floorID">&nbsp;&nbsp;&nbsp;&nbsp;floorID</option>
-	
-	<option value="//api/name/floorLevel">&nbsp;&nbsp;&nbsp;&nbsp;floorLevel</option>
-	
-	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
-	
-	<option value="//api/name/reference">&nbsp;&nbsp;&nbsp;&nbsp;reference</option>
+	<option value="//api/name/timeToLive">&nbsp;&nbsp;&nbsp;&nbsp;timeToLive</option>
 	
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedManager">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedManager</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/cacheExitsForOperation:">&nbsp;&nbsp;&nbsp;&nbsp;- cacheExitsForOperation:</option>
+	
+	<option value="//api/name/cacheResponse:forOperation:">&nbsp;&nbsp;&nbsp;&nbsp;- cacheResponse:forOperation:</option>
+	
+	<option value="//api/name/cachedResponseForOperation:">&nbsp;&nbsp;&nbsp;&nbsp;- cachedResponseForOperation:</option>
+	
+	<option value="//api/name/cachedResponseForOperationIgnoringTTL:">&nbsp;&nbsp;&nbsp;&nbsp;- cachedResponseForOperationIgnoringTTL:</option>
+	
+	<option value="//api/name/clearCache">&nbsp;&nbsp;&nbsp;&nbsp;- clearCache</option>
 	
 	
 	
@@ -62,8 +70,6 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
-
 
 
 
@@ -77,28 +83,40 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buildingID">buildingID</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorID">floorID</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorLevel">floorLevel</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reference">reference</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeToLive">timeToLive</a></span></li>
 	
 </ul></li>
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedManager">sharedManager</a></span></li>
+	
+</ul></li>
 
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheExitsForOperation:">cacheExitsForOperation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheResponse:forOperation:">cacheResponse:forOperation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cachedResponseForOperation:">cachedResponseForOperation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cachedResponseForOperationIgnoringTTL:">cachedResponseForOperationIgnoringTTL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearCache">clearCache</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWBuildingFloor Class Reference" name="top"></a>
+				<a title="PWMKCacheManager Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -107,7 +125,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWBuildingFloor Class Reference</h1>
+						<h1 class="title title-header">PWMKCacheManager Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -117,24 +135,13 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSCopying<br />NSSecureCoding</td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWBuildingFloor.h</td>
+	<td class="specification-value">PWMKCacheManager.h</td>
 </tr>
 						</tbody></table></div>
 					
                     
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The build floor object encapsulates all data related to that floor.</p>
-					</div>
-					
-					
 					
 					
 					
@@ -149,33 +156,45 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/floorID">&nbsp;&nbsp;floorID</a></code>
+		<code><a href="#//api/name/timeToLive">&nbsp;&nbsp;timeToLive</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/buildingID">&nbsp;&nbsp;buildingID</a></code>
+		<code><a href="#//api/name/sharedManager">+&nbsp;sharedManager</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/floorLevel">&nbsp;&nbsp;floorLevel</a></code>
+		<code><a href="#//api/name/cacheResponse:forOperation:">&ndash;&nbsp;cacheResponse:forOperation:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/reference">&nbsp;&nbsp;reference</a></code>
+		<code><a href="#//api/name/cacheExitsForOperation:">&ndash;&nbsp;cacheExitsForOperation:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+		<code><a href="#//api/name/cachedResponseForOperation:">&ndash;&nbsp;cachedResponseForOperation:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cachedResponseForOperationIgnoringTTL:">&ndash;&nbsp;cachedResponseForOperationIgnoringTTL:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearCache">&ndash;&nbsp;clearCache</a></code>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -191,195 +210,99 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/buildingID" title="buildingID"></a>
-	<h3 class="subsubtitle method-title">buildingID</h3>
+	<a name="//api/name/timeToLive" title="timeToLive"></a>
+	<h3 class="subsubtitle method-title">timeToLive</h3>
 	
 	
-	
-	<div class="method-subsection brief-description">
-		<p>The building identifier denotes the building that the floor belongs to.</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSUInteger buildingID</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSTimeInterval timeToLive</code></div>
 
     
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingFloor.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/floorID" title="floorID"></a>
-	<h3 class="subsubtitle method-title">floorID</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The floor identifier denotes the identifier for the floor.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSUInteger floorID</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The floor identifier is used throughout the <a href="../Classes/PWMapKit.html"><code>PWMapKit</code></a>. It determines which annotations to display, among other things.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingFloor.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/floorLevel" title="floorLevel"></a>
-	<h3 class="subsubtitle method-title">floorLevel</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The physical floor level.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger floorLevel</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingFloor.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/name" title="name"></a>
-	<h3 class="subsubtitle method-title">name</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The name of the building&rsquo;s floor.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *name</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingFloor.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/reference" title="reference"></a>
-	<h3 class="subsubtitle method-title">reference</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The reference GPS points and angle for the building floor.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) PWBuildingFloorReference *reference</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingFloor.h</code><br />
-	</div>				
-	
-	
 </div>
 						
 					</div>
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedManager" title="sharedManager"></a>
+	<h3 class="subsubtitle method-title">sharedManager</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)sharedManager</code></div>
+
+    
+</div>
+						
+					</div>
 					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/cacheExitsForOperation:" title="cacheExitsForOperation:"></a>
+	<h3 class="subsubtitle method-title">cacheExitsForOperation:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)cacheExitsForOperation:(PWAFHTTPRequestOperation *)<em>operation</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cacheResponse:forOperation:" title="cacheResponse:forOperation:"></a>
+	<h3 class="subsubtitle method-title">cacheResponse:forOperation:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)cacheResponse:(id)<em>response</em> forOperation:(PWAFHTTPRequestOperation *)<em>operation</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cachedResponseForOperation:" title="cachedResponseForOperation:"></a>
+	<h3 class="subsubtitle method-title">cachedResponseForOperation:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (id)cachedResponseForOperation:(PWAFHTTPRequestOperation *)<em>operation</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cachedResponseForOperationIgnoringTTL:" title="cachedResponseForOperationIgnoringTTL:"></a>
+	<h3 class="subsubtitle method-title">cachedResponseForOperationIgnoringTTL:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (id)cachedResponseForOperationIgnoringTTL:(PWAFHTTPRequestOperation *)<em>operation</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearCache" title="clearCache"></a>
+	<h3 class="subsubtitle method-title">clearCache</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)clearCache</code></div>
+
+    
+</div>
+						
+					</div>
 					
 					
                     

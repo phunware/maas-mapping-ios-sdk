@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWRoute Class Reference</title>
+		<title>PWPDFDocument Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWRoute Class Reference</h1>
+				<h1 class="hideInXcode">PWPDFDocument Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,21 +39,28 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/accessible">&nbsp;&nbsp;&nbsp;&nbsp;accessible</option>
+	<option value="//api/name/documentLoaded">&nbsp;&nbsp;&nbsp;&nbsp;documentLoaded</option>
 	
-	<option value="//api/name/distance">&nbsp;&nbsp;&nbsp;&nbsp;distance</option>
+	<option value="//api/name/documentRef">&nbsp;&nbsp;&nbsp;&nbsp;documentRef</option>
 	
-	<option value="//api/name/expectedTravelTime">&nbsp;&nbsp;&nbsp;&nbsp;expectedTravelTime</option>
+	<option value="//api/name/documentSize">&nbsp;&nbsp;&nbsp;&nbsp;documentSize</option>
 	
-	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	<option value="//api/name/fileURL">&nbsp;&nbsp;&nbsp;&nbsp;fileURL</option>
 	
-	<option value="//api/name/polyline">&nbsp;&nbsp;&nbsp;&nbsp;polyline</option>
-	
-	<option value="//api/name/steps">&nbsp;&nbsp;&nbsp;&nbsp;steps</option>
+	<option value="//api/name/pages">&nbsp;&nbsp;&nbsp;&nbsp;pages</option>
 	
 	
 	
 	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/initWithFileURL:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFileURL:</option>
+	
+	<option value="//api/name/loadDocument">&nbsp;&nbsp;&nbsp;&nbsp;- loadDocument</option>
+	
+	<option value="//api/name/unloadDocument">&nbsp;&nbsp;&nbsp;&nbsp;- unloadDocument</option>
 	
 	
 	
@@ -79,17 +86,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/accessible">accessible</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentLoaded">documentLoaded</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/distance">distance</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentRef">documentRef</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expectedTravelTime">expectedTravelTime</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentSize">documentSize</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileURL">fileURL</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/polyline">polyline</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/steps">steps</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pages">pages</a></span></li>
 	
 </ul></li>
 
@@ -97,12 +102,22 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFileURL:">initWithFileURL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadDocument">loadDocument</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unloadDocument">unloadDocument</a></span></li>
+	
+</ul></li>
+
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWRoute Class Reference" name="top"></a>
+				<a title="PWPDFDocument Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -111,7 +126,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWRoute Class Reference</h1>
+						<h1 class="title title-header">PWPDFDocument Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -121,8 +136,11 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSCoding<br />NSCopying</td>
+</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWRoute.h</td>
+	<td class="specification-value">PWPDFDocument.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -132,9 +150,11 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWRoute</code> class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes information you can display to the user in association with that route, such as the <a href="#//api/name/name">name</a> of the route, its <a href="#//api/name/distance">distance</a> and the expected travel time.</p>
+						<p>A <code>PWPDFDocument</code> object represents a PDF file and defines methods for loading, unloading and viewing PDF data.</p>
 
-<p>You do not create instances of this class directly. Instead, you receive route objects when you request directions. For more information about requesting directions, see <a href="../Classes/PWDirections.html"><code>PWDirections</code></a> Class Reference.</p>
+<p>The other utility classes are either instantiated from methods in <code>PDFDocument</code> are <code>PWPWDFPage</code>.</p>
+
+<p>You initialize a PDFDocument object with with a URL to a PDF file. You can then ask for the page count, add or delete <a href="#//api/name/pages">pages</a>, perform a find or parse selected content into an NSString object.</p>
 					</div>
 					
 					
@@ -152,39 +172,51 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+		<code><a href="#//api/name/pages">&nbsp;&nbsp;pages</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/distance">&nbsp;&nbsp;distance</a></code>
+		<code><a href="#//api/name/documentLoaded">&nbsp;&nbsp;documentLoaded</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/expectedTravelTime">&nbsp;&nbsp;expectedTravelTime</a></code>
+		<code><a href="#//api/name/fileURL">&nbsp;&nbsp;fileURL</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/polyline">&nbsp;&nbsp;polyline</a></code>
+		<code><a href="#//api/name/documentSize">&nbsp;&nbsp;documentSize</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/steps">&nbsp;&nbsp;steps</a></code>
+		<code><a href="#//api/name/documentRef">&nbsp;&nbsp;documentRef</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/accessible">&nbsp;&nbsp;accessible</a></code>
+		<code><a href="#//api/name/initWithFileURL:">&ndash;&nbsp;initWithFileURL:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadDocument">&ndash;&nbsp;loadDocument</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unloadDocument">&ndash;&nbsp;unloadDocument</a></code>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -200,18 +232,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/accessible" title="accessible"></a>
-	<h3 class="subsubtitle method-title">accessible</h3>
+	<a name="//api/name/documentLoaded" title="documentLoaded"></a>
+	<h3 class="subsubtitle method-title">documentLoaded</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A Boolean value that indicates whether or not the PWRoute object is accessible. (read-only)</p>
+		<p>A Boolean value that states whether the document object has been loaded. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL documentLoaded</code></div>
 
     
 	
@@ -229,25 +261,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWRoute.h</code><br />
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/distance" title="distance"></a>
-	<h3 class="subsubtitle method-title">distance</h3>
+	<a name="//api/name/documentRef" title="documentRef"></a>
+	<h3 class="subsubtitle method-title">documentRef</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The route distance in meters. (read-only)</p>
+		<p>A reference to the <code>CGPDFDocumentRef</code> document object. This property may be <code>nil</code> if the document has not yet been loaded.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationDistance distance</code></div>
+	<div class="method-subsection method-declaration"><code>@property CGPDFDocumentRef documentRef</code></div>
 
     
 	
@@ -256,11 +288,6 @@
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This property reflects the distance that the user covers while traversing the route&rsquo;s path. It is not a direct distance between the start and end points of the route.</p>
-	</div>
 	
 	
 	
@@ -270,25 +297,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWRoute.h</code><br />
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/expectedTravelTime" title="expectedTravelTime"></a>
-	<h3 class="subsubtitle method-title">expectedTravelTime</h3>
+	<a name="//api/name/documentSize" title="documentSize"></a>
+	<h3 class="subsubtitle method-title">documentSize</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The expected travel time in seconds. (read-only)</p>
+		<p>Returns the current size of the document. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval expectedTravelTime</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGSize documentSize</code></div>
 
     
 	
@@ -297,11 +324,6 @@
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This expected travel time reflects the time it takes to traverse the route under ideal conditions. The actual amount of time may vary based on conditions.</p>
-	</div>
 	
 	
 	
@@ -311,25 +333,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWRoute.h</code><br />
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/name" title="name"></a>
-	<h3 class="subsubtitle method-title">name</h3>
+	<a name="//api/name/fileURL" title="fileURL"></a>
+	<h3 class="subsubtitle method-title">fileURL</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The name assigned to the route. (read-only)</p>
+		<p>The file URL with which the document was initialized. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *name</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *fileURL</code></div>
 
     
 	
@@ -338,11 +360,6 @@
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>You can display this string to the user from your app’s user interface so that the user can distinguish one route from another. The string itself describes the route using one of the route’s significant features.</p>
-	</div>
 	
 	
 	
@@ -352,25 +369,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWRoute.h</code><br />
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/polyline" title="polyline"></a>
-	<h3 class="subsubtitle method-title">polyline</h3>
+	<a name="//api/name/pages" title="pages"></a>
+	<h3 class="subsubtitle method-title">pages</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The detailed route geometry. (read-only)</p>
+		<p>The array of <a href="../Classes/PWPDFPage.html"><code>PWPDFPage</code></a> objects associated with this document.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MKPolyline *polyline</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *pages</code></div>
 
     
 	
@@ -379,11 +396,6 @@
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The polyline object in this property reflects the complete path of the route, including all of its <a href="#//api/name/steps">steps</a>. You can use the polyline object as an overlay in a map view.</p>
-	</div>
 	
 	
 	
@@ -393,48 +405,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWRoute.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/steps" title="steps"></a>
-	<h3 class="subsubtitle method-title">steps</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The array of steps that comprise the overall route. (read-only)</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *steps</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The array contains one or more <a href="../Classes/PWRouteStep.html"><code>PWRouteStep</code></a> objects representing distinct portions of the route. Each step corresponds to a single floor seqeuence that must be followed along the route.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWRoute.h</code><br />
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
 	</div>				
 	
 	
@@ -445,6 +416,135 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithFileURL:" title="initWithFileURL:"></a>
+	<h3 class="subsubtitle method-title">initWithFileURL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a document object initialized with its file-system location.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithFileURL:(NSString *)<em>fileURL</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fileURL</em></dt>
+			<dd><p>A file URL identifying the location of the document on disk. Passing in <code>nil</code> or an empty URL results in the throwing of an NSInvalidArgumentException.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A PDF document object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadDocument" title="loadDocument"></a>
+	<h3 class="subsubtitle method-title">loadDocument</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Loads the document object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loadDocument</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unloadDocument" title="unloadDocument"></a>
+	<h3 class="subsubtitle method-title">unloadDocument</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unloads the document object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)unloadDocument</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
                     

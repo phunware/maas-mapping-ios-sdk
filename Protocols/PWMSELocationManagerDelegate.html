@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWMapViewDelegate Protocol Reference</title>
+		<title>PWMSELocationManagerDelegate Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWMapViewDelegate Protocol Reference</h1>
+				<h1 class="hideInXcode">PWMSELocationManagerDelegate Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -43,11 +43,9 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/mapView:didChangeFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeFloor:</option>
+	<option value="//api/name/locationManager:didUpdateToLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- locationManager:didUpdateToLocation:</option>
 	
-	<option value="//api/name/mapView:didFailToLoadBuilding:error:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFailToLoadBuilding:error:</option>
-	
-	<option value="//api/name/mapView:didFinishLoadingBuilding:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFinishLoadingBuilding:</option>
+	<option value="//api/name/locationManager:failedWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- locationManager:failedWithError:</option>
 	
 	
 	
@@ -77,11 +75,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeFloor:">mapView:didChangeFloor:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationManager:didUpdateToLocation:">locationManager:didUpdateToLocation:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFailToLoadBuilding:error:">mapView:didFailToLoadBuilding:error:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFinishLoadingBuilding:">mapView:didFinishLoadingBuilding:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationManager:failedWithError:">locationManager:failedWithError:</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWMapViewDelegate Protocol Reference" name="top"></a>
+				<a title="PWMSELocationManagerDelegate Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,7 +95,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWMapViewDelegate Protocol Reference</h1>
+						<h1 class="title title-header">PWMSELocationManagerDelegate Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -107,10 +103,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">MKMapViewDelegate</td>
+	<td class="specification-value">PWLocationManagerDelegate</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWMapView.h</td>
+	<td class="specification-value">PWMSELocationManager.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -120,7 +116,9 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWMapViewDelegate</code> protocol defines a set of optional methods that you can use to receive building-related update messages. Because many map operations require the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete. <code>PWMapViewDelegate</code> inherits from <code>MKMapViewDelegate</code>.</p>
+						<p>The <code>PWMSELocationManagerDelegate</code> protocol defines the methods used to receive location updates from a <a href="../Classes/PWMSELocationManager.html"><code>PWMSELocationManager</code></a> object. This class conforms to the <code>PWLocationManagerDelegate</code> protocol.</p>
+
+<p>The methods of your delegate object are called from the main application thread.</p>
 					</div>
 					
 					
@@ -138,22 +136,16 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didChangeFloor:">&ndash;&nbsp;mapView:didChangeFloor:</a></code>
+		<code><a href="#//api/name/locationManager:didUpdateToLocation:">&ndash;&nbsp;locationManager:didUpdateToLocation:</a></code>
 	</span>
 	
-	
+	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didFinishLoadingBuilding:">&ndash;&nbsp;mapView:didFinishLoadingBuilding:</a></code>
+		<code><a href="#//api/name/locationManager:failedWithError:">&ndash;&nbsp;locationManager:failedWithError:</a></code>
 	</span>
 	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didFailToLoadBuilding:error:">&ndash;&nbsp;mapView:didFailToLoadBuilding:error:</a></code>
-	</span>
-	
-	
+	<span class="task-item-suffix">required method</span>
 </li>
 						</ul>
 						
@@ -172,18 +164,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/mapView:didChangeFloor:" title="mapView:didChangeFloor:"></a>
-	<h3 class="subsubtitle method-title">mapView:didChangeFloor:</h3>
+	<a name="//api/name/locationManager:didUpdateToLocation:" title="locationManager:didUpdateToLocation:"></a>
+	<h3 class="subsubtitle method-title">locationManager:didUpdateToLocation:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the specified map view successfully changed the building floor.</p>
+		<p>Tells the delegate that a new location update is available.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didChangeFloor:(PWBuildingFloor *)<em>currentFloor</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)locationManager:(id&lt;PWLocationManager&gt;)<em>manager</em> didUpdateToLocation:(PWLocation *)<em>location</em></code></div>
 
     
 	
@@ -191,13 +183,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>mapView</em></dt>
-			<dd><p>The map view that changed the floor.</p></dd>
+			<dt><em>manager</em></dt>
+			<dd><p>The location manager object that generated the update event.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>currentFloor</em></dt>
-			<dd><p>The current floor displayed on the map view.</p></dd>
+			<dt><em>location</em></dt>
+			<dd><p>A <a href="../Classes/PWLocation.html"><code>PWLocation</code></a> object with the updated location information.</p></dd>
 		</dl>
 		
 	</div>
@@ -210,7 +202,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is called when the floor data has finished loading and is ready to be displayed on the map.</p>
+		<p>Implementation of this method is optional but recommended.</p>
 	</div>
 	
 	
@@ -221,25 +213,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapView.h</code><br />
+		<code class="declared-in-ref">PWMSELocationManager.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/mapView:didFailToLoadBuilding:error:" title="mapView:didFailToLoadBuilding:error:"></a>
-	<h3 class="subsubtitle method-title">mapView:didFailToLoadBuilding:error:</h3>
+	<a name="//api/name/locationManager:failedWithError:" title="locationManager:failedWithError:"></a>
+	<h3 class="subsubtitle method-title">locationManager:failedWithError:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the specified view was unable to load the building data.</p>
+		<p>Tells the delegate that the location manager was unable to retrieve a location value.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didFailToLoadBuilding:(NSInteger)<em>buildingID</em> error:(NSError *)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)locationManager:(id&lt;PWLocationManager&gt;)<em>manager</em> failedWithError:(NSError *)<em>error</em></code></div>
 
     
 	
@@ -247,18 +239,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>mapView</em></dt>
-			<dd><p>The map view that started the load operation.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>buildingID</em></dt>
-			<dd><p>The building ID that the map view tried to load data for.</p></dd>
+			<dt><em>manager</em></dt>
+			<dd><p>The location manager object that was unable to retrieve the location.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>error</em></dt>
-			<dd><p>The reason that the map data could not be loaded.</p></dd>
+			<dd><p>The error object containing the reason the location could not be retrieved.</p></dd>
 		</dl>
 		
 	</div>
@@ -271,7 +258,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method might be called in situations where the device does not have access to the network or is unable to load the building data for some reason. On a successful load, building data and assets are cached for future use.</p>
+		<p>Implementation of this method is optional but recommended.</p>
+
+<p>The location manager calls this method when it encounters an error trying to get the location data. If an error is encountered, the location manager will keep attempting to update until <code>stopUpdatingLocation</code> is called.</p>
 	</div>
 	
 	
@@ -282,63 +271,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapView.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/mapView:didFinishLoadingBuilding:" title="mapView:didFinishLoadingBuilding:"></a>
-	<h3 class="subsubtitle method-title">mapView:didFinishLoadingBuilding:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the specified map view successfully loaded necessary building data.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didFinishLoadingBuilding:(PWBuilding *)<em>building</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>mapView</em></dt>
-			<dd><p>The map view that started the load operation.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>building</em></dt>
-			<dd><p>The building that was loaded.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is called when the building data has finished loading and is ready to be displayed on the map.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapView.h</code><br />
+		<code class="declared-in-ref">PWMSELocationManager.h</code><br />
 	</div>				
 	
 	

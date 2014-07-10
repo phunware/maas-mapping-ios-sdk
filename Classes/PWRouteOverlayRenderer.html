@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWMapViewDelegate Protocol Reference</title>
+		<title>PWRouteOverlayRenderer Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWMapViewDelegate Protocol Reference</h1>
+				<h1 class="hideInXcode">PWRouteOverlayRenderer Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,17 +37,18 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/polyline">&nbsp;&nbsp;&nbsp;&nbsp;polyline</option>
+	
+	
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/mapView:didChangeFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeFloor:</option>
-	
-	<option value="//api/name/mapView:didFailToLoadBuilding:error:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFailToLoadBuilding:error:</option>
-	
-	<option value="//api/name/mapView:didFinishLoadingBuilding:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFinishLoadingBuilding:</option>
+	<option value="//api/name/initWithRouteOverlay:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRouteOverlay:</option>
 	
 	
 	
@@ -71,17 +72,19 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/polyline">polyline</a></span></li>
+	
+</ul></li>
+
 
 
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeFloor:">mapView:didChangeFloor:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFailToLoadBuilding:error:">mapView:didFailToLoadBuilding:error:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFinishLoadingBuilding:">mapView:didFinishLoadingBuilding:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRouteOverlay:">initWithRouteOverlay:</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +93,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWMapViewDelegate Protocol Reference" name="top"></a>
+				<a title="PWRouteOverlayRenderer Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,18 +102,18 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWMapViewDelegate Protocol Reference</h1>
+						<h1 class="title title-header">PWRouteOverlayRenderer Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">MKMapViewDelegate</td>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">MKOverlayPathRenderer</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWMapView.h</td>
+	<td class="specification-value">PWRouteOverlayRenderer.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -120,7 +123,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWMapViewDelegate</code> protocol defines a set of optional methods that you can use to receive building-related update messages. Because many map operations require the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete. <code>PWMapViewDelegate</code> inherits from <code>MKMapViewDelegate</code>.</p>
+						<p>The PWRouteOverlayRenderer class defines the basic behavior for drawing a route-based overlay. The renderer draws the visual representation of <a href="../Classes/PWRouteStep.html"><code>PWRouteStep</code></a> object.</p>
 					</div>
 					
 					
@@ -138,19 +141,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didChangeFloor:">&ndash;&nbsp;mapView:didChangeFloor:</a></code>
+		<code><a href="#//api/name/polyline">&nbsp;&nbsp;polyline</a></code>
 	</span>
-	
+	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didFinishLoadingBuilding:">&ndash;&nbsp;mapView:didFinishLoadingBuilding:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didFailToLoadBuilding:error:">&ndash;&nbsp;mapView:didFailToLoadBuilding:error:</a></code>
+		<code><a href="#//api/name/initWithRouteOverlay:">&ndash;&nbsp;initWithRouteOverlay:</a></code>
 	</span>
 	
 	
@@ -163,6 +160,48 @@
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/polyline" title="polyline"></a>
+	<h3 class="subsubtitle method-title">polyline</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The polyline that the overlay renderer is currently drawing. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MKPolyline *polyline</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRouteOverlayRenderer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
 					
 					
 					
@@ -172,18 +211,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/mapView:didChangeFloor:" title="mapView:didChangeFloor:"></a>
-	<h3 class="subsubtitle method-title">mapView:didChangeFloor:</h3>
+	<a name="//api/name/initWithRouteOverlay:" title="initWithRouteOverlay:"></a>
+	<h3 class="subsubtitle method-title">initWithRouteOverlay:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the specified map view successfully changed the building floor.</p>
+		<p>Initializes and returns the route overlay renderer and associates it with the specified route overlay object.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didChangeFloor:(PWBuildingFloor *)<em>currentFloor</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)<em>overlay</em></code></div>
 
     
 	
@@ -191,27 +230,22 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>mapView</em></dt>
-			<dd><p>The map view that changed the floor.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>currentFloor</em></dt>
-			<dd><p>The current floor displayed on the map view.</p></dd>
+			<dt><em>overlay</em></dt>
+			<dd><p>The route overlay to initialize the renderer with. The route overlay contains several important pieces of information the route renderer needs to draw the route.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is called when the floor data has finished loading and is ready to be displayed on the map.</p>
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A basic route overlay renderer.</p>
 	</div>
+	
+	
+	
+	
 	
 	
 	
@@ -221,124 +255,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapView.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/mapView:didFailToLoadBuilding:error:" title="mapView:didFailToLoadBuilding:error:"></a>
-	<h3 class="subsubtitle method-title">mapView:didFailToLoadBuilding:error:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the specified view was unable to load the building data.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didFailToLoadBuilding:(NSInteger)<em>buildingID</em> error:(NSError *)<em>error</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>mapView</em></dt>
-			<dd><p>The map view that started the load operation.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>buildingID</em></dt>
-			<dd><p>The building ID that the map view tried to load data for.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>error</em></dt>
-			<dd><p>The reason that the map data could not be loaded.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method might be called in situations where the device does not have access to the network or is unable to load the building data for some reason. On a successful load, building data and assets are cached for future use.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapView.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/mapView:didFinishLoadingBuilding:" title="mapView:didFinishLoadingBuilding:"></a>
-	<h3 class="subsubtitle method-title">mapView:didFinishLoadingBuilding:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the specified map view successfully loaded necessary building data.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didFinishLoadingBuilding:(PWBuilding *)<em>building</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>mapView</em></dt>
-			<dd><p>The map view that started the load operation.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>building</em></dt>
-			<dd><p>The building that was loaded.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is called when the building data has finished loading and is ready to be displayed on the map.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapView.h</code><br />
+		<code class="declared-in-ref">PWRouteOverlayRenderer.h</code><br />
 	</div>				
 	
 	
