@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWMKCacheManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMKCacheManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/setTimeToLive:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSTimeInterval timeToLive</Declaration>
+			
+			
+			<Anchor>//api/name/timeToLive</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/timeToLive</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSTimeInterval timeToLive</Declaration>
+			
+			
+			<Anchor>//api/name/timeToLive</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMKCacheManager/timeToLive</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSTimeInterval timeToLive</Declaration>
+			
+			
+			<Anchor>//api/name/timeToLive</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMKCacheManager/sharedManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedManager</Declaration>
+			
+			
+			<Anchor>//api/name/sharedManager</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cacheResponse:forOperation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (void)cacheResponse:(id)response forOperation:(PWAFHTTPRequestOperation *)operation</Declaration>
+			
+			
+			<Anchor>//api/name/cacheResponse:forOperation:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cacheExitsForOperation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)cacheExitsForOperation:(PWAFHTTPRequestOperation *)operation</Declaration>
+			
+			
+			<Anchor>//api/name/cacheExitsForOperation:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cachedResponseForOperation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (id)cachedResponseForOperation:(PWAFHTTPRequestOperation *)operation</Declaration>
+			
+			
+			<Anchor>//api/name/cachedResponseForOperation:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cachedResponseForOperationIgnoringTTL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (id)cachedResponseForOperationIgnoringTTL:(PWAFHTTPRequestOperation *)operation</Declaration>
+			
+			
+			<Anchor>//api/name/cachedResponseForOperationIgnoringTTL:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/clearCache</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (void)clearCache</Declaration>
+			
+			
+			<Anchor>//api/name/clearCache</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

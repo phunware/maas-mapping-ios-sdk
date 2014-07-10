@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWMapLocation.html">
+	<File path="Classes/PWBuildingManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWMapLocation</TokenIdentifier>
-			<Abstract type="html">PWMapLocation encapsulates a location on an indoor map.</Abstract>
-			<DeclaredIn>PWMapLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingManager</TokenIdentifier>
+			<Abstract type="html">The PWBuildingManager object provides a simple interface for fetching building data and resources. All data and assets fetched by this object are cached on the device.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
@@ -13,74 +13,100 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapLocation/setLocation:</TokenIdentifier>
-			<Abstract type="html">The CGPoint location in the map coordinate space.</Abstract>
-			<DeclaredIn>PWMapLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWBuildingManager/sharedManager</TokenIdentifier>
+			<Abstract type="html">Returns the shared instance of the PWBuildingManager class.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint location</Declaration>
+			<Declaration>+ (instancetype)sharedManager</Declaration>
 			
-			
-			<Anchor>//api/name/location</Anchor>
+			<ReturnValue><Abstract type="html">The shared instance of the PWBuildingManager class.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedManager</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapLocation/location</TokenIdentifier>
-			<Abstract type="html">The CGPoint location in the map coordinate space.</Abstract>
-			<DeclaredIn>PWMapLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingWithBuildingID:completion:</TokenIdentifier>
+			<Abstract type="html">Initiates a fetch for the building object. If the building object is not cached locally, this will result in a network request.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint location</Declaration>
+			<Declaration>- (void)getBuildingWithBuildingID:(NSInteger)buildingID completion:(PWBuildingHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>buildingID</Name>
+					<Abstract type="html">The specified building identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block that takes the following parameters:
+
+- building: The requested building object.
+- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error that occurred.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/location</Anchor>
+			<Anchor>//api/name/getBuildingWithBuildingID:completion:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapLocation/location</TokenIdentifier>
-			<Abstract type="html">The CGPoint location in the map coordinate space.</Abstract>
-			<DeclaredIn>PWMapLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingAnnotationsWithBuildingID:completion:</TokenIdentifier>
+			<Abstract type="html">Initiates a fetch for the building annotations. If the building annotations are not cached locally, this will result in a network request.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint location</Declaration>
+			<Declaration>- (void)getBuildingAnnotationsWithBuildingID:(NSInteger)buildingID completion:(PWBuildingAnnotationsHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>buildingID</Name>
+					<Abstract type="html">The specified building identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block that takes the following parameters:
+
+- annotations: The building annotations.
+- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error that occurred.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/location</Anchor>
+			<Anchor>//api/name/getBuildingAnnotationsWithBuildingID:completion:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapLocation/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The floor ID for the PWMapLocation object.</Abstract>
-			<DeclaredIn>PWMapLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getResourcesForBuilding:completion:</TokenIdentifier>
+			<Abstract type="html">Initiates a fetch for the building resources. If the building resources are not cached locally, this will result in a network request.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger floorID</Declaration>
+			<Declaration>- (void)getResourcesForBuilding:(PWBuilding *)building completion:(PWBuildingResourcesHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>building</Name>
+					<Abstract type="html">The specified building object.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block that takes the following parameters:
+
+- resources: The building resources, as an array of PWMapDocument objects.
+- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error that occurred.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/getResourcesForBuilding:completion:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapLocation/floorID</TokenIdentifier>
-			<Abstract type="html">The floor ID for the PWMapLocation object.</Abstract>
-			<DeclaredIn>PWMapLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/clearCache</TokenIdentifier>
+			<Abstract type="html">Clears the device cache of all mapping data. This will clear all associated building objects, floor objects and floor assets from the device.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger floorID</Declaration>
+			<Declaration>- (void)clearCache</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>buildingID</Name>
+					<Abstract type="html">The specified building identifier.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/floorID</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapLocation/floorID</TokenIdentifier>
-			<Abstract type="html">The floor ID for the PWMapLocation object.</Abstract>
-			<DeclaredIn>PWMapLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger floorID</Declaration>
-			
-			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/clearCache</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

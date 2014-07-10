@@ -39,15 +39,9 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/annotationID">&nbsp;&nbsp;&nbsp;&nbsp;annotationID</option>
+	
 	<option value="//api/name/floorID">&nbsp;&nbsp;&nbsp;&nbsp;floorID</option>
-	
-	<option value="//api/name/isExit">&nbsp;&nbsp;&nbsp;&nbsp;isExit</option>
-	
-	<option value="//api/name/location">&nbsp;&nbsp;&nbsp;&nbsp;location</option>
-	
-	<option value="//api/name/maxZoomLevel">&nbsp;&nbsp;&nbsp;&nbsp;maxZoomLevel</option>
-	
-	<option value="//api/name/zoomLevel">&nbsp;&nbsp;&nbsp;&nbsp;zoomLevel</option>
 	
 	
 	
@@ -77,15 +71,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/annotationID">annotationID</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorID">floorID</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isExit">isExit</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/location">location</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxZoomLevel">maxZoomLevel</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zoomLevel">zoomLevel</a></span></li>
 	
 </ul></li>
 
@@ -115,7 +103,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSObject</td>
+	<td class="specification-value">MKAnnotation</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">PWAnnotation.h</td>
@@ -128,9 +116,9 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWAnnotation</code> protocol is used to provide annotation-related information to a map view. To use this protocol, you adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single map annotation and provides critical information, such as the annotation’s <a href="#//api/name/location">location</a> on the map. Annotation objects do not provide the visual representation of the annotation but typically coordinate (in conjunction with the map view’s delegate) the creation of an appropriate <a href="../Classes/PWAnnotationView.html"><code>PWAnnotationView</code></a> object to handle the display.</p>
+						<p>The <code>PWAnnotation</code> protocol is used to provide annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single map annotation and provides critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but typically coordinate (in conjunction with the map view’s delegate) the creation of an appropriate <code>PWAnnotationView</code> object to handle the display.</p>
 
-<p>An object that adopts this protocol must implement the <a href="#//api/name/location"><code>location</code></a>, <a href="#//api/name/floorID"><code>floorID</code></a>, <a href="#//api/name/zoomLevel"><code>zoomLevel</code></a>, and <a href="#//api/name/maxZoomLevel"><code>maxZoomLevel</code></a> properties. The <a href="#//api/name/isExit"><code>isExit</code></a> method of this protocol is optional.</p>
+<p>An object that adopts this protocol must implement the <a href="#//api/name/annotationID"><code>annotationID</code></a> and <a href="#//api/name/floorID"><code>floorID</code></a> properties.</p>
 					</div>
 					
 					
@@ -148,31 +136,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
+		<code><a href="#//api/name/annotationID">&nbsp;&nbsp;annotationID</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/floorID">&nbsp;&nbsp;floorID</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/zoomLevel">&nbsp;&nbsp;zoomLevel</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/maxZoomLevel">&nbsp;&nbsp;maxZoomLevel</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/isExit">&nbsp;&nbsp;isExit</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	<span class="task-item-suffix">required method</span>
@@ -190,13 +160,49 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/annotationID" title="annotationID"></a>
+	<h3 class="subsubtitle method-title">annotationID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If you are creating location annotations you should initialize this value to <code>kPWAnnotationIDUndefined</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSUInteger annotationID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWAnnotation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/floorID" title="floorID"></a>
 	<h3 class="subsubtitle method-title">floorID</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The floor ID for which this annotation applies.</p>
+		<p>The floor identifier for which this annotation applies.</p>
 	</div>		
 	
     
@@ -213,171 +219,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The floor ID determines whether or not to display the annotation for the current floor. If the floor ID of the current floor and the floor ID of the annotation match then the annotation will be dispalyed (if it&rsquo;s in the visible area).</p><div class="note"><p><strong>Note:</strong> This is a required property.</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAnnotation.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/isExit" title="isExit"></a>
-	<h3 class="subsubtitle method-title">isExit</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Specifies whether or not this annotation is an exit. This is used for routing purposes and can be ignored for custom annotations.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isExit</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This is NOT a required property.</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAnnotation.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/location" title="location"></a>
-	<h3 class="subsubtitle method-title">location</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The center point (specified as a building coordinate) of the annotation.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGPoint location</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This is a required property.</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAnnotation.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/maxZoomLevel" title="maxZoomLevel"></a>
-	<h3 class="subsubtitle method-title">maxZoomLevel</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The maximum zoom level for which this annotation will appear.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger maxZoomLevel</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>If the user zooms in past the <code>maximumZoomLevel</code> the annotation will no longer be visible.</p><div class="note"><p><strong>Note:</strong> This is a required property.</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAnnotation.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/zoomLevel" title="zoomLevel"></a>
-	<h3 class="subsubtitle method-title">zoomLevel</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The minimum zoom level for which this annotation will appear.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger zoomLevel</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>If the user zooms out before the <code>zoomLevel</code> the annotation will no longer be visible.</p><div class="note"><p><strong>Note:</strong> This is a required property.</p></div>
+		<p>The floor identifier determines whether or not to display the annotation for the current floor. If the floor identifier of the current floor and the floor identifier of the annotation match, then the annotation will be dispalyed (if it&rsquo;s in the visible area).</p>
 	</div>
 	
 	
@@ -413,7 +255,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-12-19)</span><br />
+						<p><span class="copyright">&copy; 2014 Phunware, Inc.. All rights reserved. (Last updated: 2014-07-02)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

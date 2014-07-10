@@ -41,13 +41,13 @@
 	
 	<option value="//api/name/buildingID">&nbsp;&nbsp;&nbsp;&nbsp;buildingID</option>
 	
-	<option value="//api/name/coordinateSpace">&nbsp;&nbsp;&nbsp;&nbsp;coordinateSpace</option>
-	
 	<option value="//api/name/floorID">&nbsp;&nbsp;&nbsp;&nbsp;floorID</option>
 	
 	<option value="//api/name/floorLevel">&nbsp;&nbsp;&nbsp;&nbsp;floorLevel</option>
 	
 	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	<option value="//api/name/reference">&nbsp;&nbsp;&nbsp;&nbsp;reference</option>
 	
 	
 	
@@ -79,13 +79,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buildingID">buildingID</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/coordinateSpace">coordinateSpace</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorID">floorID</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorLevel">floorLevel</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reference">reference</a></span></li>
 	
 </ul></li>
 
@@ -118,7 +118,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSCoding<br />NSCopying</td>
+	<td class="specification-value">NSCopying<br />NSSecureCoding</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">PWBuildingFloor.h</td>
@@ -167,7 +167,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/coordinateSpace">&nbsp;&nbsp;coordinateSpace</a></code>
+		<code><a href="#//api/name/reference">&nbsp;&nbsp;reference</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -197,7 +197,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The building ID that the floor belongs to.</p>
+		<p>The building identifier denotes the building that the floor belongs to.</p>
 	</div>		
 	
     
@@ -227,54 +227,13 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/coordinateSpace" title="coordinateSpace"></a>
-	<h3 class="subsubtitle method-title">coordinateSpace</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The coordinates space for the building floor.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGSize coordinateSpace</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>For identical floors the coordinate space will likely be identical but there are many cases where they could be different.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingFloor.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/floorID" title="floorID"></a>
 	<h3 class="subsubtitle method-title">floorID</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The floor ID denotes the ID for the floor.</p>
+		<p>The floor identifier denotes the identifier for the floor.</p>
 	</div>		
 	
     
@@ -291,7 +250,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The floor ID is used throughout the <a href="../Classes/PWMapKit.html"><code>PWMapKit</code></a>. It determines which annotations to display, among other things.</p>
+		<p>The floor identifier is used throughout the <a href="../Classes/PWMapKit.html"><code>PWMapKit</code></a>. It determines which annotations to display, among other things.</p>
 	</div>
 	
 	
@@ -351,12 +310,48 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The name of the building floor.</p>
+		<p>The name of the building&rsquo;s floor.</p>
 	</div>		
 	
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *name</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWBuildingFloor.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reference" title="reference"></a>
+	<h3 class="subsubtitle method-title">reference</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The reference GPS points and angle for the building floor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) PWBuildingFloorReference *reference</code></div>
 
     
 	
@@ -399,7 +394,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-12-19)</span><br />
+						<p><span class="copyright">&copy; 2014 Phunware, Inc.. All rights reserved. (Last updated: 2014-07-02)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

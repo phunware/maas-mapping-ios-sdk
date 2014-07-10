@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/PWLocationType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/PWLocationType</TokenIdentifier>
+			<Abstract type="html">PWLocationType is the type of location.</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+            
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWLocationTypeUnknown</TokenIdentifier>
+            <Abstract type="html">The location type is unknown.</Abstract>
+            <Declaration>PWLocationTypeUnknown</Declaration>
+            
+            <DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWLocationTypeIndoor</TokenIdentifier>
+            <Abstract type="html">The location type is indoors.</Abstract>
+            <Declaration>PWLocationTypeIndoor</Declaration>
+            
+            <DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWLocationTypeOutdoor</TokenIdentifier>
+            <Abstract type="html">The location type is outdoors.</Abstract>
+            <Declaration>PWLocationTypeOutdoor</Declaration>
+            
+            <DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+	</File>
+</Tokens>

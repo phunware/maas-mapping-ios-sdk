@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWMapKit.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMapKit</TokenIdentifier>
+			<Abstract type="html">The PWMapKit framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
+            
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/serviceName</TokenIdentifier>
+			<Abstract type="html">Returns PWMapKit.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)serviceName</Declaration>
+			
+			
+			<Anchor>//api/name/serviceName</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

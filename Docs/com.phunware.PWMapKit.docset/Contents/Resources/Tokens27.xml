@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/PWLocation.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/PWLocation</TokenIdentifier>
+			<Abstract type="html">The PWLocation is an abstract protocol that defines an indoor location. This protocol is primarily used for directions and for displaying the user&apos;s location on an indoor map.</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+            
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWLocation/setCoordinate:</TokenIdentifier>
+			<Abstract type="html">The geographical coordinate information. (read-only)</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWLocation/coordinate</TokenIdentifier>
+			<Abstract type="html">The geographical coordinate information. (read-only)</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWLocation/coordinate</TokenIdentifier>
+			<Abstract type="html">The geographical coordinate information. (read-only)</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWLocation/setHorizontalAccuracy:</TokenIdentifier>
+			<Abstract type="html">The radius of uncertainty for the location, in meters. (read-only)</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationAccuracy horizontalAccuracy</Declaration>
+			
+			
+			<Anchor>//api/name/horizontalAccuracy</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWLocation/horizontalAccuracy</TokenIdentifier>
+			<Abstract type="html">The radius of uncertainty for the location, in meters. (read-only)</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationAccuracy horizontalAccuracy</Declaration>
+			
+			
+			<Anchor>//api/name/horizontalAccuracy</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWLocation/horizontalAccuracy</TokenIdentifier>
+			<Abstract type="html">The radius of uncertainty for the location, in meters. (read-only)</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationAccuracy horizontalAccuracy</Declaration>
+			
+			
+			<Anchor>//api/name/horizontalAccuracy</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWLocation/setType:</TokenIdentifier>
+			<Abstract type="html">The location type. Typically indoors or outdoors. (read-only)</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWLocationType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWLocation/type</TokenIdentifier>
+			<Abstract type="html">The location type. Typically indoors or outdoors. (read-only)</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWLocationType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWLocation/type</TokenIdentifier>
+			<Abstract type="html">The location type. Typically indoors or outdoors. (read-only)</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWLocationType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWLocation/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The floor ID associated with the location.</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWLocation/floorID</TokenIdentifier>
+			<Abstract type="html">The floor ID associated with the location.</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWLocation/floorID</TokenIdentifier>
+			<Abstract type="html">The floor ID associated with the location.</Abstract>
+			<DeclaredIn>PWLocationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

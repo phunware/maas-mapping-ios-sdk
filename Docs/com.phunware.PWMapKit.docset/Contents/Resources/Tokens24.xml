@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/PWAnnotation.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/PWAnnotation</TokenIdentifier>
+			<Abstract type="html">The PWAnnotation protocol is used to provide annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single map annotation and provides critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but typically coordinate (in conjunction with the map view’s delegate) the creation of an appropriate PWAnnotationView object to handle the display.</Abstract>
+			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+            
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotation/setAnnotationID:</TokenIdentifier>
+			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If you are creating location annotations you should initialize this value to kPWAnnotationIDUndefined.</Abstract>
+			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger annotationID</Declaration>
+			
+			
+			<Anchor>//api/name/annotationID</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotation/annotationID</TokenIdentifier>
+			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If you are creating location annotations you should initialize this value to kPWAnnotationIDUndefined.</Abstract>
+			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger annotationID</Declaration>
+			
+			
+			<Anchor>//api/name/annotationID</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotation/annotationID</TokenIdentifier>
+			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If you are creating location annotations you should initialize this value to kPWAnnotationIDUndefined.</Abstract>
+			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger annotationID</Declaration>
+			
+			
+			<Anchor>//api/name/annotationID</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotation/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
+			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotation/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
+			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotation/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
+			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

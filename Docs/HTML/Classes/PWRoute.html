@@ -39,15 +39,17 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/endAnnotationID">&nbsp;&nbsp;&nbsp;&nbsp;endAnnotationID</option>
+	<option value="//api/name/accessible">&nbsp;&nbsp;&nbsp;&nbsp;accessible</option>
 	
-	<option value="//api/name/isAccessible">&nbsp;&nbsp;&nbsp;&nbsp;isAccessible</option>
+	<option value="//api/name/distance">&nbsp;&nbsp;&nbsp;&nbsp;distance</option>
+	
+	<option value="//api/name/expectedTravelTime">&nbsp;&nbsp;&nbsp;&nbsp;expectedTravelTime</option>
 	
 	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
 	
-	<option value="//api/name/segments">&nbsp;&nbsp;&nbsp;&nbsp;segments</option>
+	<option value="//api/name/polyline">&nbsp;&nbsp;&nbsp;&nbsp;polyline</option>
 	
-	<option value="//api/name/startAnnotationID">&nbsp;&nbsp;&nbsp;&nbsp;startAnnotationID</option>
+	<option value="//api/name/steps">&nbsp;&nbsp;&nbsp;&nbsp;steps</option>
 	
 	
 	
@@ -77,15 +79,17 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endAnnotationID">endAnnotationID</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/accessible">accessible</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAccessible">isAccessible</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/distance">distance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expectedTravelTime">expectedTravelTime</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/segments">segments</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/polyline">polyline</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startAnnotationID">startAnnotationID</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/steps">steps</a></span></li>
 	
 </ul></li>
 
@@ -128,7 +132,9 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>PWRoute</code> encapsulates all data related to a route between two points.</p>
+						<p>The <code>PWRoute</code> class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes information you can display to the user in association with that route, such as the <a href="#//api/name/name">name</a> of the route, its <a href="#//api/name/distance">distance</a> and the expected travel time.</p>
+
+<p>You do not create instances of this class directly. Instead, you receive route objects when you request directions. For more information about requesting directions, see <a href="../Classes/PWDirections.html"><code>PWDirections</code></a> Class Reference.</p>
 					</div>
 					
 					
@@ -152,25 +158,31 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startAnnotationID">&nbsp;&nbsp;startAnnotationID</a></code>
+		<code><a href="#//api/name/distance">&nbsp;&nbsp;distance</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/endAnnotationID">&nbsp;&nbsp;endAnnotationID</a></code>
+		<code><a href="#//api/name/expectedTravelTime">&nbsp;&nbsp;expectedTravelTime</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/isAccessible">&nbsp;&nbsp;isAccessible</a></code>
+		<code><a href="#//api/name/polyline">&nbsp;&nbsp;polyline</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/segments">&nbsp;&nbsp;segments</a></code>
+		<code><a href="#//api/name/steps">&nbsp;&nbsp;steps</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/accessible">&nbsp;&nbsp;accessible</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -188,18 +200,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/endAnnotationID" title="endAnnotationID"></a>
-	<h3 class="subsubtitle method-title">endAnnotationID</h3>
+	<a name="//api/name/accessible" title="accessible"></a>
+	<h3 class="subsubtitle method-title">accessible</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The destination annotation ID.</p>
+		<p>A Boolean value that indicates whether or not the PWRoute object is accessible. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger endAnnotationID</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</code></div>
 
     
 	
@@ -224,18 +236,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/isAccessible" title="isAccessible"></a>
-	<h3 class="subsubtitle method-title">isAccessible</h3>
+	<a name="//api/name/distance" title="distance"></a>
+	<h3 class="subsubtitle method-title">distance</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A boolean value that indicates whether or not the <code>PWRoute</code> object is accessible.</p>
+		<p>The route distance in meters. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isAccessible</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationDistance distance</code></div>
 
     
 	
@@ -244,6 +256,52 @@
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This property reflects the distance that the user covers while traversing the route&rsquo;s path. It is not a direct distance between the start and end points of the route.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRoute.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/expectedTravelTime" title="expectedTravelTime"></a>
+	<h3 class="subsubtitle method-title">expectedTravelTime</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The expected travel time in seconds. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval expectedTravelTime</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This expected travel time reflects the time it takes to traverse the route under ideal conditions. The actual amount of time may vary based on conditions.</p>
+	</div>
 	
 	
 	
@@ -266,12 +324,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The name of the route.</p>
+		<p>The name assigned to the route. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *name</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *name</code></div>
 
     
 	
@@ -280,6 +338,11 @@
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>You can display this string to the user from your app’s user interface so that the user can distinguish one route from another. The string itself describes the route using one of the route’s significant features.</p>
+	</div>
 	
 	
 	
@@ -296,18 +359,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/segments" title="segments"></a>
-	<h3 class="subsubtitle method-title">segments</h3>
+	<a name="//api/name/polyline" title="polyline"></a>
+	<h3 class="subsubtitle method-title">polyline</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The segments that make up the <code>PWRoute</code>.</p>
+		<p>The detailed route geometry. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *segments</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MKPolyline *polyline</code></div>
 
     
 	
@@ -316,6 +379,11 @@
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The polyline object in this property reflects the complete path of the route, including all of its <a href="#//api/name/steps">steps</a>. You can use the polyline object as an overlay in a map view.</p>
+	</div>
 	
 	
 	
@@ -332,18 +400,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startAnnotationID" title="startAnnotationID"></a>
-	<h3 class="subsubtitle method-title">startAnnotationID</h3>
+	<a name="//api/name/steps" title="steps"></a>
+	<h3 class="subsubtitle method-title">steps</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The origin annotation ID.</p>
+		<p>The array of steps that comprise the overall route. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger startAnnotationID</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *steps</code></div>
 
     
 	
@@ -352,6 +420,11 @@
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The array contains one or more <a href="../Classes/PWRouteStep.html"><code>PWRouteStep</code></a> objects representing distinct portions of the route. Each step corresponds to a single floor seqeuence that must be followed along the route.</p>
+	</div>
 	
 	
 	
@@ -386,7 +459,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-12-19)</span><br />
+						<p><span class="copyright">&copy; 2014 Phunware, Inc.. All rights reserved. (Last updated: 2014-07-02)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

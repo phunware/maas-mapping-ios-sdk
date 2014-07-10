@@ -18,93 +18,109 @@
 						<NodeRef refid="5"/>
 						<NodeRef refid="6"/>
 						<NodeRef refid="7"/>
-						
-					</Subnodes>
-				</Node>
-				
-				
-				<Node>
-					<Name>Categories</Name>
-					<Path>index.html</Path>
-					<Subnodes>
 						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						<NodeRef refid="14"/>
+						<NodeRef refid="15"/>
+						<NodeRef refid="16"/>
+						<NodeRef refid="17"/>
+						<NodeRef refid="18"/>
+						<NodeRef refid="19"/>
+						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
+						<NodeRef refid="22"/>
+						<NodeRef refid="23"/>
 						
 					</Subnodes>
 				</Node>
+				
 				
                 
 				<Node>
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="9"/>
-						<NodeRef refid="10"/>
+						<NodeRef refid="24"/>
+						<NodeRef refid="25"/>
+						<NodeRef refid="26"/>
+						<NodeRef refid="27"/>
+						<NodeRef refid="28"/>
+						<NodeRef refid="29"/>
 						
 					</Subnodes>
 				</Node>
 				
                 
+				<Node>
+					<Name>Constants</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="30"/>
+						<NodeRef refid="31"/>
+						<NodeRef refid="32"/>
+						
+					</Subnodes>
+				</Node>
+				
 			</Subnodes>
         </Node>
     </TOC>
 	<Library>
 		
 		<Node id="1" type="file" documentType="reference">
-            <Name>PWAnnotationView</Name>
-            <Path>Classes/PWAnnotationView.html</Path>
+            <Name>PWBuilding</Name>
+            <Path>Classes/PWBuilding.html</Path>
             
                 <Subnodes>
                 <Node type="section">
-                    <Path>Classes/PWAnnotationView.html</Path>
+                    <Path>Classes/PWBuilding.html</Path>
                     <Name>Overview</Name>
                     <Anchor>overview</Anchor>
                 </Node>
                 <Node type="section">
-                    <Path>Classes/PWAnnotationView.html</Path>
+                    <Path>Classes/PWBuilding.html</Path>
                     <Name>Tasks</Name>
                     <Anchor>tasks</Anchor>
                 </Node>
                 
                 <Node type="section">
-                    <Path>Classes/PWAnnotationView.html</Path>
+                    <Path>Classes/PWBuilding.html</Path>
                     <Name>Properties</Name>
                     <Anchor>properties</Anchor>
                 </Node>
                 
                 
-                
-                <Node type="section">
-                    <Path>Classes/PWAnnotationView.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
                 
             </Subnodes>
             
         </Node>
 		<Node id="2" type="file" documentType="reference">
-            <Name>PWBuildingData</Name>
-            <Path>Classes/PWBuildingData.html</Path>
+            <Name>PWBuildingAnnotationView</Name>
+            <Path>Classes/PWBuildingAnnotationView.html</Path>
             
                 <Subnodes>
                 <Node type="section">
-                    <Path>Classes/PWBuildingData.html</Path>
+                    <Path>Classes/PWBuildingAnnotationView.html</Path>
                     <Name>Overview</Name>
                     <Anchor>overview</Anchor>
                 </Node>
                 <Node type="section">
-                    <Path>Classes/PWBuildingData.html</Path>
+                    <Path>Classes/PWBuildingAnnotationView.html</Path>
                     <Name>Tasks</Name>
                     <Anchor>tasks</Anchor>
                 </Node>
                 
+                
+                
                 <Node type="section">
-                    <Path>Classes/PWBuildingData.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
+                    <Path>Classes/PWBuildingAnnotationView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
                 </Node>
-                
-                
                 
             </Subnodes>
             
@@ -137,6 +153,335 @@
             
         </Node>
 		<Node id="4" type="file" documentType="reference">
+            <Name>PWBuildingFloorReference</Name>
+            <Path>Classes/PWBuildingFloorReference.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWBuildingFloorReference.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWBuildingFloorReference.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWBuildingFloorReference.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="5" type="file" documentType="reference">
+            <Name>PWBuildingManager</Name>
+            <Path>Classes/PWBuildingManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWBuildingManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWBuildingManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWBuildingManager.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWBuildingManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
+            <Name>PWBuildingOverlay</Name>
+            <Path>Classes/PWBuildingOverlay.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWBuildingOverlay.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWBuildingOverlay.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWBuildingOverlay.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWBuildingOverlay.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="7" type="file" documentType="reference">
+            <Name>PWBuildingOverlayRenderer</Name>
+            <Path>Classes/PWBuildingOverlayRenderer.html</Path>
+            
+        </Node>
+		<Node id="8" type="file" documentType="reference">
+            <Name>PWDirections</Name>
+            <Path>Classes/PWDirections.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWDirections.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWDirections.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWDirections.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWDirections.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="9" type="file" documentType="reference">
+            <Name>PWDirectionsRequest</Name>
+            <Path>Classes/PWDirectionsRequest.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWDirectionsRequest.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWDirectionsRequest.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWDirectionsRequest.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWDirectionsRequest.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="10" type="file" documentType="reference">
+            <Name>PWDirectionsResponse</Name>
+            <Path>Classes/PWDirectionsResponse.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWDirectionsResponse.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWDirectionsResponse.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWDirectionsResponse.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="11" type="file" documentType="reference">
+            <Name>PWLocation</Name>
+            <Path>Classes/PWLocation.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWLocation.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWLocation.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWLocation.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="12" type="file" documentType="reference">
+            <Name>PWMKCacheManager</Name>
+            <Path>Classes/PWMKCacheManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWMKCacheManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWMKCacheManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWMKCacheManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWMKCacheManager.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWMKCacheManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="13" type="file" documentType="reference">
+            <Name>PWMSELocationManager</Name>
+            <Path>Classes/PWMSELocationManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWMSELocationManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWMSELocationManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWMSELocationManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWMSELocationManager.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWMSELocationManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="14" type="file" documentType="reference">
+            <Name>PWMapDocument</Name>
+            <Path>Classes/PWMapDocument.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWMapDocument.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWMapDocument.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWMapDocument.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWMapDocument.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="15" type="file" documentType="reference">
             <Name>PWMapKit</Name>
             <Path>Classes/PWMapKit.html</Path>
             
@@ -163,34 +508,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="5" type="file" documentType="reference">
-            <Name>PWMapLocation</Name>
-            <Path>Classes/PWMapLocation.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/PWMapLocation.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/PWMapLocation.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/PWMapLocation.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="6" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>PWMapView</Name>
             <Path>Classes/PWMapView.html</Path>
             
@@ -223,7 +541,73 @@
             </Subnodes>
             
         </Node>
-		<Node id="7" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
+            <Name>PWPDFDocument</Name>
+            <Path>Classes/PWPDFDocument.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWPDFDocument.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWPDFDocument.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWPDFDocument.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWPDFDocument.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="18" type="file" documentType="reference">
+            <Name>PWPDFPage</Name>
+            <Path>Classes/PWPDFPage.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWPDFPage.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWPDFPage.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWPDFPage.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWPDFPage.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="19" type="file" documentType="reference">
             <Name>PWRoute</Name>
             <Path>Classes/PWRoute.html</Path>
             
@@ -250,27 +634,125 @@
             </Subnodes>
             
         </Node>
-		
-		<Node id="8" type="file" documentType="reference">
-            <Name>UIImageView(PWAFNetworking)</Name>
-            <Path>Categories/UIImageView+PWAFNetworking.html</Path>
+		<Node id="20" type="file" documentType="reference">
+            <Name>PWRouteOverlay</Name>
+            <Path>Classes/PWRouteOverlay.html</Path>
             
                 <Subnodes>
                 <Node type="section">
-                    <Path>Categories/UIImageView+PWAFNetworking.html</Path>
+                    <Path>Classes/PWRouteOverlay.html</Path>
                     <Name>Overview</Name>
                     <Anchor>overview</Anchor>
                 </Node>
                 <Node type="section">
-                    <Path>Categories/UIImageView+PWAFNetworking.html</Path>
+                    <Path>Classes/PWRouteOverlay.html</Path>
                     <Name>Tasks</Name>
                     <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWRouteOverlay.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
                 </Node>
                 
                 
                 
                 <Node type="section">
-                    <Path>Categories/UIImageView+PWAFNetworking.html</Path>
+                    <Path>Classes/PWRouteOverlay.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="21" type="file" documentType="reference">
+            <Name>PWRouteOverlayRenderer</Name>
+            <Path>Classes/PWRouteOverlayRenderer.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWRouteOverlayRenderer.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWRouteOverlayRenderer.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWRouteOverlayRenderer.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWRouteOverlayRenderer.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="22" type="file" documentType="reference">
+            <Name>PWRouteStep</Name>
+            <Path>Classes/PWRouteStep.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWRouteStep.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWRouteStep.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWRouteStep.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="23" type="file" documentType="reference">
+            <Name>PWUserTrackingBarButtonItem</Name>
+            <Path>Classes/PWUserTrackingBarButtonItem.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWUserTrackingBarButtonItem.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWUserTrackingBarButtonItem.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWUserTrackingBarButtonItem.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/PWUserTrackingBarButtonItem.html</Path>
                     <Name>Instance Methods</Name>
                     <Anchor>instance_methods</Anchor>
                 </Node>
@@ -279,7 +761,8 @@
             
         </Node>
 		
-        <Node id="9" type="file" documentType="reference">
+		
+        <Node id="24" type="file" documentType="reference">
             <Name>PWAnnotation</Name>
             <Path>Protocols/PWAnnotation.html</Path>
             
@@ -306,7 +789,115 @@
             </Subnodes>
             
         </Node>
-		<Node id="10" type="file" documentType="reference">
+		<Node id="25" type="file" documentType="reference">
+            <Name>PWBuildingAnnotation</Name>
+            <Path>Protocols/PWBuildingAnnotation.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/PWBuildingAnnotation.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/PWBuildingAnnotation.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Protocols/PWBuildingAnnotation.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="26" type="file" documentType="reference">
+            <Name>PWBuildingOverlayDelegate</Name>
+            <Path>Protocols/PWBuildingOverlayDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/PWBuildingOverlayDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/PWBuildingOverlayDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/PWBuildingOverlayDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="27" type="file" documentType="reference">
+            <Name>PWLocation</Name>
+            <Path>Protocols/PWLocation.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/PWLocation.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/PWLocation.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Protocols/PWLocation.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="28" type="file" documentType="reference">
+            <Name>PWMSELocationManagerDelegate</Name>
+            <Path>Protocols/PWMSELocationManagerDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/PWMSELocationManagerDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/PWMSELocationManagerDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/PWMSELocationManagerDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="29" type="file" documentType="reference">
             <Name>PWMapViewDelegate</Name>
             <Path>Protocols/PWMapViewDelegate.html</Path>
             
@@ -334,6 +925,21 @@
             
         </Node>
 		
-        
+        <Node id="30" type="file" documentType="reference">
+            <Name>PWDirectionsType</Name>
+            <Path>Constants/PWDirectionsType.html</Path>
+            
+        </Node>
+		<Node id="31" type="file" documentType="reference">
+            <Name>PWIndoorUserTrackingMode</Name>
+            <Path>Constants/PWIndoorUserTrackingMode.html</Path>
+            
+        </Node>
+		<Node id="32" type="file" documentType="reference">
+            <Name>PWLocationType</Name>
+            <Path>Constants/PWLocationType.html</Path>
+            
+        </Node>
+		
 	</Library>
 </DocSetNodes>

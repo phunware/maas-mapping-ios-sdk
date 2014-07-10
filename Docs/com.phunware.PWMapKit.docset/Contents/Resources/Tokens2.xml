@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingData.html">
+	<File path="Classes/PWBuildingAnnotationView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingData</TokenIdentifier>
-			<Abstract type="html">The building data encompasses a variety of meta-data about the build.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingAnnotationView</TokenIdentifier>
+			<Abstract type="html">The PWAnnotationView class is responsible for presenting building annotations visually in a map view. Annotation views are loosely coupled to a corresponding building annotation object that corresponds to the PWBuildingAnnotation protocol. When an annotation’s coordinate point is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue that is maintained by the map view.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
             
 			
 			<NodeRef refid="2"/>
@@ -13,146 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingData/setBuildingID:</TokenIdentifier>
-			<Abstract type="html">The building ID.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/initWithAnnotation:reuseIdentifier:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a new annotation view.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
-			
-			
-			<Anchor>//api/name/buildingID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingData/buildingID</TokenIdentifier>
-			<Abstract type="html">The building ID.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
-			
-			
-			<Anchor>//api/name/buildingID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingData/buildingID</TokenIdentifier>
-			<Abstract type="html">The building ID.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
-			
-			
-			<Anchor>//api/name/buildingID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingData/setCampusID:</TokenIdentifier>
-			<Abstract type="html">The campus ID for the building.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger campusID</Declaration>
-			
-			
-			<Anchor>//api/name/campusID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingData/campusID</TokenIdentifier>
-			<Abstract type="html">The campus ID for the building.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger campusID</Declaration>
-			
-			
-			<Anchor>//api/name/campusID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingData/campusID</TokenIdentifier>
-			<Abstract type="html">The campus ID for the building.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger campusID</Declaration>
-			
-			
-			<Anchor>//api/name/campusID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingData/setBuildingMapName:</TokenIdentifier>
-			<Abstract type="html">The building map name.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *buildingMapName</Declaration>
-			
-			
-			<Anchor>//api/name/buildingMapName</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingData/buildingMapName</TokenIdentifier>
-			<Abstract type="html">The building map name.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *buildingMapName</Declaration>
-			
-			
-			<Anchor>//api/name/buildingMapName</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingData/buildingMapName</TokenIdentifier>
-			<Abstract type="html">The building map name.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *buildingMapName</Declaration>
-			
-			
-			<Anchor>//api/name/buildingMapName</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingData/setStreetAddress:</TokenIdentifier>
-			<Abstract type="html">The street address of the building.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *streetAddress</Declaration>
-			
-			
-			<Anchor>//api/name/streetAddress</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingData/streetAddress</TokenIdentifier>
-			<Abstract type="html">The street address of the building.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *streetAddress</Declaration>
-			
-			
-			<Anchor>//api/name/streetAddress</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingData/streetAddress</TokenIdentifier>
-			<Abstract type="html">The street address of the building.</Abstract>
-			<DeclaredIn>PWBuildingData.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *streetAddress</Declaration>
-			
-			
-			<Anchor>//api/name/streetAddress</Anchor>
+			<Declaration>- (instancetype)initWithAnnotation:(id&lt;PWBuildingAnnotation&gt;)annotation reuseIdentifier:(NSString *)reuseIdentifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>annotation</Name>
+					<Abstract type="html">The building annotation object to associate with the new view.</Abstract>
+				</Parameter><Parameter>
+					<Name>reuseIdentifier</Name>
+					<Abstract type="html">If you plan to reuse the annotation view for similar types of annotations, pass a string to identify it. Although you can pass nil if you do not intend to reuse the view, reusing annotation views is generally recommended.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The initialized building annotation view or nil if there was a problem initializing the object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAnnotation:reuseIdentifier:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

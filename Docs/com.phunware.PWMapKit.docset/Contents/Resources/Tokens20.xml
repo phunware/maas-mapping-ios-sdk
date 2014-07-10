@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWRouteOverlay.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteOverlay</TokenIdentifier>
+			<Abstract type="html">The PWRouteOverlay protocol defines a specific type of annotation that represents a route on a map.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setRoute:</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/route</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/route</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setCurrentStep:</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRouteStep *currentStep</Declaration>
+			
+			
+			<Anchor>//api/name/currentStep</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/currentStep</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRouteStep *currentStep</Declaration>
+			
+			
+			<Anchor>//api/name/currentStep</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/currentStep</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRouteStep *currentStep</Declaration>
+			
+			
+			<Anchor>//api/name/currentStep</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/initWithRoute:buildingOverlay:</TokenIdentifier>
+			<Abstract type="html">Initializes the overlay with the specified route and building overlay.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route buildingOverlay:(PWBuildingOverlay *)buildingOverlay</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">The route to display on the map.</Abstract>
+				</Parameter><Parameter>
+					<Name>buildingOverlay</Name>
+					<Abstract type="html">The building overlay associated with the current route overlay.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithRoute:buildingOverlay:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setCurrentStep:</TokenIdentifier>
+			<Abstract type="html">Changes the current route step to display on the overlay.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			
+			<Declaration>- (void)setCurrentStep:(PWRouteStep *)step</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>step</Name>
+					<Abstract type="html">The step to display on the route overlay. The step must belong to the current route and cannot be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCurrentStep:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

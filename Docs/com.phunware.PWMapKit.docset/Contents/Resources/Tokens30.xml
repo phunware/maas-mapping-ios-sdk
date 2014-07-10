@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/PWDirectionsType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/PWDirectionsType</TokenIdentifier>
+			<Abstract type="html">PWDirectionsType specify the type of directions to be used.</Abstract>
+			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+            
+			
+			<NodeRef refid="30"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWDirectionsTypeUnknown</TokenIdentifier>
+            <Abstract type="html">Directions type is unknown.</Abstract>
+            <Declaration>PWDirectionsTypeUnknown</Declaration>
+            
+            <DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWDirectionsTypeAccessible</TokenIdentifier>
+            <Abstract type="html">Directions type is accessible routes only.</Abstract>
+            <Declaration>PWDirectionsTypeAccessible</Declaration>
+            
+            <DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWDirectionsTypeAny</TokenIdentifier>
+            <Abstract type="html">Directions type is for both accessible and inaccessible routes.</Abstract>
+            <Declaration>PWDirectionsTypeAny</Declaration>
+            
+            <DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+	</File>
+</Tokens>

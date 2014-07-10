@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIImageView+PWAFNetworking.html">
+	<File path="Classes/PWDirections.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIImageView(PWAFNetworking)</TokenIdentifier>
-			<Abstract type="html">This category adds methods to the UIKit framework&apos;s UIImageView class. The methods in this category provide support for loading remote images asynchronously from a URL.</Abstract>
-			<DeclaredIn>UIImageView+PWAFNetworking.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWDirections</TokenIdentifier>
+			<Abstract type="html">A PWDirections object provides you with route-based directions data from Phunware servers. You can use instances of this class to get walking directions based on the data in a PWDirectionsRequest object that you provide. The directions object passes your request to the Phunware servers and returns the requested information to a block that you provide.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
             
 			
 			<NodeRef refid="8"/>
@@ -13,77 +13,84 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/pw_setImageWithURL:</TokenIdentifier>
-			<Abstract type="html">Creates and enqueues an image request operation, which asynchronously downloads the image from the specified URL, and sets it the request is finished. Any previous image request for the receiver will be cancelled. If the image is cached locally, the image is set immediately, otherwise the specified placeholder image will be set immediately, and then the remote image will be set once the request is finished.</Abstract>
-			<DeclaredIn>UIImageView+PWAFNetworking.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/setCalculating:</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether a request is currently in process. (read-only)</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
 			
-			<Declaration>- (void)pw_setImageWithURL:(NSURL *)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL used for the image request.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly, getter=isCalculating) BOOL calculating</Declaration>
 			
-			<Anchor>//api/name/pw_setImageWithURL:</Anchor>
+			
+			<Anchor>//api/name/calculating</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/pw_setImageWithURL:placeholderImage:</TokenIdentifier>
-			<Abstract type="html">Creates and enqueues an image request operation, which asynchronously downloads the image from the specified URL. Any previous image request for the receiver will be cancelled. If the image is cached locally, the image is set immediately, otherwise the specified placeholder image will be set immediately, and then the remote image will be set once the request is finished.</Abstract>
-			<DeclaredIn>UIImageView+PWAFNetworking.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/isCalculating</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether a request is currently in process. (read-only)</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
 			
-			<Declaration>- (void)pw_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL used for the image request.</Abstract>
-				</Parameter><Parameter>
-					<Name>placeholderImage</Name>
-					<Abstract type="html">The image to be set initially, until the image request finishes. If nil, the image view will not change its image until the image request finishes.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly, getter=isCalculating) BOOL calculating</Declaration>
 			
-			<Anchor>//api/name/pw_setImageWithURL:placeholderImage:</Anchor>
+			
+			<Anchor>//api/name/calculating</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/pw_setImageWithURLRequest:placeholderImage:success:failure:</TokenIdentifier>
-			<Abstract type="html">Creates and enqueues an image request operation, which asynchronously downloads the image with the specified URL request object. Any previous image request for the receiver will be cancelled. If the image is cached locally, the image is set immediately, otherwise the specified placeholder image will be set immediately, and then the remote image will be set once the request is finished.</Abstract>
-			<DeclaredIn>UIImageView+PWAFNetworking.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWDirections/calculating</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether a request is currently in process. (read-only)</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
 			
-			<Declaration>- (void)pw_setImageWithURLRequest:(NSURLRequest *)urlRequest placeholderImage:(UIImage *)placeholderImage success:(void ( ^ ) ( NSURLRequest *request , NSHTTPURLResponse *response , UIImage *image ))success failure:(void ( ^ ) ( NSURLRequest *request , NSHTTPURLResponse *response , NSError *error ))failure</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>urlRequest</Name>
-					<Abstract type="html">The URL request used for the image request.</Abstract>
-				</Parameter><Parameter>
-					<Name>placeholderImage</Name>
-					<Abstract type="html">The image to be set initially, until the image request finishes. If nil, the image view will not change its image until the image request finishes.</Abstract>
-				</Parameter><Parameter>
-					<Name>success</Name>
-					<Abstract type="html">A block to be executed when the image request operation finishes successfully, with a status code in the 2xx range, and with an acceptable content type (e.g. image/png). This block has no return value and takes three arguments: the request sent from the client, the response received from the server, and the image created from the response data of request. If the image was returned from cache, the request and response parameters will be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>failure</Name>
-					<Abstract type="html">A block object to be executed when the image request operation finishes unsuccessfully, or that finishes successfully. This block has no return value and takes three arguments: the request sent from the client, the response received from the server, and the error object describing the network or parsing error that occurred.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly, getter=isCalculating) BOOL calculating</Declaration>
 			
-			<Anchor>//api/name/pw_setImageWithURLRequest:placeholderImage:success:failure:</Anchor>
+			
+			<Anchor>//api/name/calculating</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/pw_cancelImageRequestOperation</TokenIdentifier>
-			<Abstract type="html">Cancels any executing image request operation for the receiver, if one exists.</Abstract>
-			<DeclaredIn>UIImageView+PWAFNetworking.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/initWithRequest:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a directions object using the specified request.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
 			
-			<Declaration>- (void)pw_cancelImageRequestOperation</Declaration>
+			<Declaration>- (instancetype)initWithRequest:(PWDirectionsRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">The request object containing the start and end points of the route. This parameter must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An initialized directions object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithRequest:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/calculateDirectionsWithCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Begins calculating the requested route information asynchronously.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>- (void)calculateDirectionsWithCompletionHandler:(PWDirectionsHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">The block to execute when the directions are ready or when an error occurs. This parameter cannot be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/calculateDirectionsWithCompletionHandler:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/cancel</TokenIdentifier>
+			<Abstract type="html">Cancels a pending request.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>- (void)cancel</Declaration>
 			
 			
-			<Anchor>//api/name/pw_cancelImageRequestOperation</Anchor>
+			<Anchor>//api/name/cancel</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		

@@ -14,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The floor ID denotes the ID for the floor.</Abstract>
+			<Abstract type="html">The floor identifier denotes the identifier for the floor.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) NSUInteger floorID</Declaration>
@@ -26,7 +26,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/floorID</TokenIdentifier>
-			<Abstract type="html">The floor ID denotes the ID for the floor.</Abstract>
+			<Abstract type="html">The floor identifier denotes the identifier for the floor.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) NSUInteger floorID</Declaration>
@@ -38,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/floorID</TokenIdentifier>
-			<Abstract type="html">The floor ID denotes the ID for the floor.</Abstract>
+			<Abstract type="html">The floor identifier denotes the identifier for the floor.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) NSUInteger floorID</Declaration>
@@ -50,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setBuildingID:</TokenIdentifier>
-			<Abstract type="html">The building ID that the floor belongs to.</Abstract>
+			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
@@ -62,7 +62,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/buildingID</TokenIdentifier>
-			<Abstract type="html">The building ID that the floor belongs to.</Abstract>
+			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
@@ -74,7 +74,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/buildingID</TokenIdentifier>
-			<Abstract type="html">The building ID that the floor belongs to.</Abstract>
+			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
@@ -121,44 +121,44 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setCoordinateSpace:</TokenIdentifier>
-			<Abstract type="html">The coordinates space for the building floor.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setReference:</TokenIdentifier>
+			<Abstract type="html">The reference GPS points and angle for the building floor.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize coordinateSpace</Declaration>
+			<Declaration>@property (nonatomic, strong) PWBuildingFloorReference *reference</Declaration>
 			
 			
-			<Anchor>//api/name/coordinateSpace</Anchor>
+			<Anchor>//api/name/reference</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/coordinateSpace</TokenIdentifier>
-			<Abstract type="html">The coordinates space for the building floor.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/reference</TokenIdentifier>
+			<Abstract type="html">The reference GPS points and angle for the building floor.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize coordinateSpace</Declaration>
+			<Declaration>@property (nonatomic, strong) PWBuildingFloorReference *reference</Declaration>
 			
 			
-			<Anchor>//api/name/coordinateSpace</Anchor>
+			<Anchor>//api/name/reference</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/coordinateSpace</TokenIdentifier>
-			<Abstract type="html">The coordinates space for the building floor.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/reference</TokenIdentifier>
+			<Abstract type="html">The reference GPS points and angle for the building floor.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize coordinateSpace</Declaration>
+			<Declaration>@property (nonatomic, strong) PWBuildingFloorReference *reference</Declaration>
 			
 			
-			<Anchor>//api/name/coordinateSpace</Anchor>
+			<Anchor>//api/name/reference</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setName:</TokenIdentifier>
-			<Abstract type="html">The name of the building floor.</Abstract>
+			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
@@ -170,7 +170,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the building floor.</Abstract>
+			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
@@ -182,7 +182,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the building floor.</Abstract>
+			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>

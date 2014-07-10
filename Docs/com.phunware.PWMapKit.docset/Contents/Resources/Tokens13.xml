@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWMSELocationManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMSELocationManager</TokenIdentifier>
+			<Abstract type="html">The PWMSELocationManager class defines the interface for configuring the delivery of Cisco Mobility Services Engine (MSE) location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events. This class conforms to the PWLocationManager protocol.</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMSELocationManager/setVenueGUID:</TokenIdentifier>
+			<Abstract type="html">The venue GUID associated with the location manager. (read-only)</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *venueGUID</Declaration>
+			
+			
+			<Anchor>//api/name/venueGUID</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMSELocationManager/venueGUID</TokenIdentifier>
+			<Abstract type="html">The venue GUID associated with the location manager. (read-only)</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *venueGUID</Declaration>
+			
+			
+			<Anchor>//api/name/venueGUID</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMSELocationManager/venueGUID</TokenIdentifier>
+			<Abstract type="html">The venue GUID associated with the location manager. (read-only)</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *venueGUID</Declaration>
+			
+			
+			<Anchor>//api/name/venueGUID</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMSELocationManager/setVenueLocation:</TokenIdentifier>
+			<Abstract type="html">The venue location associated with the location manager. (read-only)</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D venueLocation</Declaration>
+			
+			
+			<Anchor>//api/name/venueLocation</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMSELocationManager/venueLocation</TokenIdentifier>
+			<Abstract type="html">The venue location associated with the location manager. (read-only)</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D venueLocation</Declaration>
+			
+			
+			<Anchor>//api/name/venueLocation</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMSELocationManager/venueLocation</TokenIdentifier>
+			<Abstract type="html">The venue location associated with the location manager. (read-only)</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D venueLocation</Declaration>
+			
+			
+			<Anchor>//api/name/venueLocation</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMSELocationManager/initWithVenueGUID:location:</TokenIdentifier>
+			<Abstract type="html">Initializes the location manager with the specified venue GUID and the venue location.</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithVenueGUID:(NSString *)venueGUID location:(CLLocationCoordinate2D)venueLocation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>venueGUID</Name>
+					<Abstract type="html">The venue GUID is the specific venue identifier for a given indoor location.</Abstract>
+				</Parameter><Parameter>
+					<Name>venueLocation</Name>
+					<Abstract type="html">The location of the venue.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The location manager object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithVenueGUID:location:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMSELocationManager/locationServicesEnabled</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value indicating whether location services are enabled on the device.</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)locationServicesEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/locationServicesEnabled</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMSELocationManager/startUpdatingLocation</TokenIdentifier>
+			<Abstract type="html">Starts the generation of updates that report the user’s current location.</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>- (void)startUpdatingLocation</Declaration>
+			
+			
+			<Anchor>//api/name/startUpdatingLocation</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMSELocationManager/stopUpdatingLocation</TokenIdentifier>
+			<Abstract type="html">Stops the generation of location updates.</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>- (void)stopUpdatingLocation</Declaration>
+			
+			
+			<Anchor>//api/name/stopUpdatingLocation</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMSELocationManager/updating</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates whether the location manager is requesting updates to the user&apos;s location.</Abstract>
+			<DeclaredIn>PWMSELocationManager.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)updating</Declaration>
+			
+			
+			<Anchor>//api/name/updating</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
