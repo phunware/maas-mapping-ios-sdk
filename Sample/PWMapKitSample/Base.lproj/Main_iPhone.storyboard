@@ -105,7 +105,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5MW-0W-l30">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MW-0W-l30">
                                 <rect key="frame" x="0.0" y="18" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -115,7 +115,7 @@
                                                 <action selector="cancel" destination="XAe-Ld-enK" id="wBv-Y6-l3D"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Route" id="MzN-wP-5Mt">
+                                        <barButtonItem key="rightBarButtonItem" title="Route" style="done" id="MzN-wP-5Mt">
                                             <connections>
                                                 <segue destination="BBO-75-fht" kind="unwind" identifier="routeSegue" unwindAction="route:" id="HAI-7m-awL"/>
                                             </connections>

@@ -30,6 +30,8 @@
 @synthesize routeStartPoint;
 @synthesize routeEndPoint;
 
+#pragma mark - UIViewController
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -47,26 +49,27 @@
     _emptyImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    // Do any additional setup after loading the view.
-    _annotations = [_mapView.annotations sortedArrayWithOptions:NSSortStable
-                                                usingComparator:^(PWBuildingAnnotation *obj1,PWBuildingAnnotation *obj2){
-                                                    return [obj1.title compare:obj2.title];
-                                                }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    __weak __typeof(&*self)weakSelf = self;
+    
+    [[PWBuildingManager sharedManager] getBuildingAnnotationsWithBuildingID:self.mapView.buildingID completion:^(NSArray *annotations, NSError *error) {
+        weakSelf.annotations = [annotations sortedArrayWithOptions:NSSortStable
+                                                   usingComparator:^(PWBuildingAnnotation *obj1,PWBuildingAnnotation *obj2){
+                                                       return [obj1.title compare:obj2.title];
+                                                   }];
+        
+        [weakSelf.tableView reloadData];
+    }];
 }
 
 #pragma mark - Navigation
+
 - (IBAction)cancel
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITextFieldDelegate
+
 - (IBAction)textFieldDidChange: (UITextField *)textField
 {
     if (textField == _endPointTextField && _startPointTextField.text.length > 0) {
@@ -74,7 +77,7 @@
     } else {
         [self searchByPrefix:textField.text];
     }
-
+    
     [_tableView reloadData];
 }
 
@@ -100,7 +103,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString * cellIdentifier = @"Identifier_Route_TableCell";
+    NSString *cellIdentifier = @"Identifier_Route_TableCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
@@ -108,26 +111,26 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    PWBuildingAnnotation* annotaion = nil;
+    PWBuildingAnnotation *annotation = nil;
     if (([_startPointTextField isFirstResponder] && _startPointTextField.text.length > 0)
         || ([_endPointTextField isFirstResponder] && (_startPointTextField.text.length > 0 || _endPointTextField.text.length > 0))
         ) {
-        annotaion = _results[indexPath.row];
+        annotation = _results[indexPath.row];
     } else {
-        annotaion = _annotations[indexPath.row];
+        annotation = _annotations[indexPath.row];
     }
-
+    
     if (_imageCache == nil) {
         _imageCache = [[NSMutableDictionary alloc] init];
     }
     
-    NSString * url = annotaion.imageURL.absoluteString;
-
+    NSString *url = annotation.imageURL.absoluteString;
+    
     UIImage *image = [_imageCache objectForKey:url];
     if (image == nil) {
         cell.imageView.image = _emptyImage;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-            NSData *imageDataFromURL = [NSData dataWithContentsOfURL:annotaion.imageURL];
+            NSData *imageDataFromURL = [NSData dataWithContentsOfURL:annotation.imageURL];
             if (imageDataFromURL != nil) {
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -137,7 +140,7 @@
                         img = [self imageWithImage:img scaledToSize:CGSizeMake(30, 30)];
                         [_imageCache setObject:img forKey:url];
                         cell.imageView.image = img;
-                        [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                        [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
                     }
                 });
             }
@@ -146,7 +149,7 @@
         cell.imageView.image = image;
     }
     
-    cell.textLabel.text = annotaion.title;
+    cell.textLabel.text = annotation.title;
     if (_startPointTextField.text != nil && _startPointTextField.text.length > 0)
     {
         cell.detailTextLabel.text = [NSString stringWithFormat:@"from %@", _startPointTextField.text];
@@ -211,7 +214,7 @@
             // nothing to do
         }
     }
-
+    
     if (resultsPredicate) {
         _results = [_annotations filteredArrayUsingPredicate:resultsPredicate];
     } else {
