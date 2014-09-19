@@ -11,11 +11,6 @@
 #import <PWMapKit/PWSVPulsingAnnotationView.h>
 #import <PWMapKit/PWUserTrackingBarButtonItem.h>
 #import <PWMapKit/PWAnnotation.h>
-#import <PWMapKit/PWNavigationAnnotation.h>
-#import <PWMapKit/PWLocation.h>
-#import <PWMapKit/PWLocationProtocol.h>
-#import <PWMapKit/PWLocationManager.h>
-#import <PWMapKit/PWMSELocationManager.h>
 #import <PWMapKit/PWBuilding.h>
 #import <PWMapKit/PWBuildingAnnotation.h>
 #import <PWMapkit/PWBuildingAnnotationView.h>
@@ -31,6 +26,7 @@
 #import <PWMapKit/PWDirectionsResponse.h>
 #import <PWMapKit/PWRoute.h>
 #import <PWMapKit/PWRouteStep.h>
+#import <PWMapKit/PWAnnotationLabel.h>
 
 /**
  The `PWMapKit` framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.

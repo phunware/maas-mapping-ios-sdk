@@ -28,7 +28,7 @@
 @property (nonatomic, readonly) CLLocationDistance distance; // step distance in meters
 
 /**
- The building floor ID associated with this particular step object.
+ The identifier of the floor associated with this particular step object.
  @discussion Currently, there is one `PWRouteStep` object for each floor in a route object.
  */
 @property (nonatomic, readonly) NSUInteger floorID;

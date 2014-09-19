@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWMapDocument.html">
+	<File path="Classes/PWMapKit.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWMapDocument</TokenIdentifier>
-			<Abstract type="html">A PWMapDocument object manages floor data and its associated assets.</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMapKit</TokenIdentifier>
+			<Abstract type="html">The PWMapKit framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
@@ -13,86 +13,14 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/setResource:</TokenIdentifier>
-			<Abstract type="html">The building floor resource associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/serviceName</TokenIdentifier>
+			<Abstract type="html">Returns PWMapKit.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuildingFloorResource *resource</Declaration>
-			
-			
-			<Anchor>//api/name/resource</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/resource</TokenIdentifier>
-			<Abstract type="html">The building floor resource associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWBuildingFloorResource *resource</Declaration>
+			<Declaration>+ (NSString *)serviceName</Declaration>
 			
 			
-			<Anchor>//api/name/resource</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapDocument/resource</TokenIdentifier>
-			<Abstract type="html">The building floor resource associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWBuildingFloorResource *resource</Declaration>
-			
-			
-			<Anchor>//api/name/resource</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/setPdf:</TokenIdentifier>
-			<Abstract type="html">The PDF documented associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWPDFDocument *pdf</Declaration>
-			
-			
-			<Anchor>//api/name/pdf</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/pdf</TokenIdentifier>
-			<Abstract type="html">The PDF documented associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWPDFDocument *pdf</Declaration>
-			
-			
-			<Anchor>//api/name/pdf</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapDocument/pdf</TokenIdentifier>
-			<Abstract type="html">The PDF documented associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWPDFDocument *pdf</Declaration>
-			
-			
-			<Anchor>//api/name/pdf</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/fileURL</TokenIdentifier>
-			<Abstract type="html">The URL of the document file.</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)fileURL</Declaration>
-			
-			<ReturnValue><Abstract type="html">The URL of the document file.</Abstract></ReturnValue>
-			<Anchor>//api/name/fileURL</Anchor>
+			<Anchor>//api/name/serviceName</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

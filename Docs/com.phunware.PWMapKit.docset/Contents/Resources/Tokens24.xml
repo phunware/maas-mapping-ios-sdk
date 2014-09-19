@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWAnnotation.html">
+	<File path="Categories/PWBuildingAnnotation+.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWAnnotation</TokenIdentifier>
-			<Abstract type="html">The PWAnnotation protocol is used to provide annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single map annotation and provides critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but typically coordinate (in conjunction with the map view’s delegate) the creation of an appropriate PWAnnotationView object to handle the display.</Abstract>
-			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/PWBuildingAnnotation()</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -13,74 +13,326 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotation/setAnnotationID:</TokenIdentifier>
-			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If you are creating location annotations you should initialize this value to kPWAnnotationIDUndefined.</Abstract>
-			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/setTitle:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger annotationID</Declaration>
+			<Declaration>@property (nonatomic, copy) NSString *title</Declaration>
 			
 			
-			<Anchor>//api/name/annotationID</Anchor>
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotation/annotationID</TokenIdentifier>
-			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If you are creating location annotations you should initialize this value to kPWAnnotationIDUndefined.</Abstract>
-			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/title</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger annotationID</Declaration>
+			<Declaration>@property (nonatomic, copy) NSString *title</Declaration>
 			
 			
-			<Anchor>//api/name/annotationID</Anchor>
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotation/annotationID</TokenIdentifier>
-			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If you are creating location annotations you should initialize this value to kPWAnnotationIDUndefined.</Abstract>
-			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotation/title</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger annotationID</Declaration>
+			<Declaration>@property (nonatomic, copy) NSString *title</Declaration>
 			
 			
-			<Anchor>//api/name/annotationID</Anchor>
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotation/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
-			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/setSubtitle:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger floorID</Declaration>
+			<Declaration>@property (nonatomic, copy) NSString *subtitle</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/subtitle</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotation/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
-			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/subtitle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger floorID</Declaration>
+			<Declaration>@property (nonatomic, copy) NSString *subtitle</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/subtitle</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotation/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
-			<DeclaredIn>PWAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotation/subtitle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger floorID</Declaration>
+			<Declaration>@property (nonatomic, copy) NSString *subtitle</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/subtitle</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/setAnnotationDescription:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *annotationDescription</Declaration>
+			
+			
+			<Anchor>//api/name/annotationDescription</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/annotationDescription</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *annotationDescription</Declaration>
+			
+			
+			<Anchor>//api/name/annotationDescription</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotation/annotationDescription</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *annotationDescription</Declaration>
+			
+			
+			<Anchor>//api/name/annotationDescription</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/setCategory:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *category</Declaration>
+			
+			
+			<Anchor>//api/name/category</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/category</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *category</Declaration>
+			
+			
+			<Anchor>//api/name/category</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotation/category</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *category</Declaration>
+			
+			
+			<Anchor>//api/name/category</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/setType:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/type</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotation/type</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/setMetaData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/metaData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotation/metaData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/setZoomLevel:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger zoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/zoomLevel</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/zoomLevel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger zoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/zoomLevel</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotation/zoomLevel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger zoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/zoomLevel</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/setMaxZoomLevel:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger maxZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/maxZoomLevel</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/maxZoomLevel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger maxZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/maxZoomLevel</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotation/maxZoomLevel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger maxZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/maxZoomLevel</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/setCustomIconImageURLString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customIconImageURLString</Declaration>
+			
+			
+			<Anchor>//api/name/customIconImageURLString</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotation/customIconImageURLString</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customIconImageURLString</Declaration>
+			
+			
+			<Anchor>//api/name/customIconImageURLString</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotation/customIconImageURLString</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotation+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customIconImageURLString</Declaration>
+			
+			
+			<Anchor>//api/name/customIconImageURLString</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

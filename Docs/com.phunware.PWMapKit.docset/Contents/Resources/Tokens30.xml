@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWDirectionsType.html">
+	<File path="Constants/PWIndoorUserTrackingMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWDirectionsType</TokenIdentifier>
-			<Abstract type="html">PWDirectionsType specify the type of directions to be used.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PWIndoorUserTrackingMode</TokenIdentifier>
+			<Abstract type="html">PWIndoorUserTrackingMode is used to track the user&apos;s indoor location on the map.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
 			<NodeRef refid="30"/>
@@ -14,31 +14,41 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWDirectionsTypeUnknown</TokenIdentifier>
-            <Abstract type="html">Directions type is unknown.</Abstract>
-            <Declaration>PWDirectionsTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PWIndoorUserTrackingModeUnknown</TokenIdentifier>
+            <Abstract type="html">The map may not have an indoor tracking mode.</Abstract>
+            <Declaration>PWIndoorUserTrackingModeUnknown</Declaration>
             
-            <DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-            
-            <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWDirectionsTypeAccessible</TokenIdentifier>
-            <Abstract type="html">Directions type is accessible routes only.</Abstract>
-            <Declaration>PWDirectionsTypeAccessible</Declaration>
-            
-            <DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+            <DeclaredIn>PWMapView.h</DeclaredIn>
             
             <NodeRef refid="30"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWDirectionsTypeAny</TokenIdentifier>
-            <Abstract type="html">Directions type is for both accessible and inaccessible routes.</Abstract>
-            <Declaration>PWDirectionsTypeAny</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PWIndoorUserTrackingModeNone</TokenIdentifier>
+            <Abstract type="html">The map does not follow the user&apos;s indoor location.</Abstract>
+            <Declaration>PWIndoorUserTrackingModeNone</Declaration>
             
-            <DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWIndoorUserTrackingModeFollow</TokenIdentifier>
+            <Abstract type="html">The map follows the user&apos;s indoor location.</Abstract>
+            <Declaration>PWIndoorUserTrackingModeFollow</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWIndoorUserTrackingModeFollowWithHeading</TokenIdentifier>
+            <Abstract type="html">The map follows the user&apos;s location and heading.</Abstract>
+            <Declaration>PWIndoorUserTrackingModeFollowWithHeading</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
             
             <NodeRef refid="30"/>
         </Token>

@@ -1,31 +1,38 @@
 PWMapKit SDK for iOS
 ==================
 
-Version 2.0.3 (BETA)
+Version 2.1.1
 
-PWMapKit is a comprehensive mapping and location SDK that allows easy integration with Phunware's indoor maps and Location Based Services (LBS). Visit http://maas.phunware.com/ for more details and to sign up.
+PWMapKit is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and Location Based Services (LBS). Visit http://maas.phunware.com/ for more details and to sign up.
 
 
 
 Requirements
 ------------
 
-- MaaS Core v1.2.6 or greater
+- MaaS Core v1.2.8 or greater
 - iOS 7.0 or greater
-- Xcode 4.4 or greater
+- Xcode 6 or greater
 
 
 
 Installation
 ------------
 
-PWMapKit has a dependency on MaaSCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk
+PWMapKit has a dependency on MaaSCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk and PWLocation.framework, which is available here: https://github.com/phunware/maas-location-ios-sdk
 
 It's recommended that you add the MaaS frameworks to the Vendor/Phunware directory, then, add the MaaSCore.framework and PWMapKit.framework to your Xcode project.
 
 The following frameworks are required:
 ````
 MaaSCore.framework
+PWLocation.framework
+````
+
+Alternatively you can install PWMapKit using [CocoaPods](http://www.cocoapods.org):
+````
+// Add this to your Podfile
+pod PWMapKit
 ````
 
 Scroll down for implementation details.
@@ -36,6 +43,16 @@ Documentation
 ------------
 
 PWMapKit documentation is included in the the repository's Documents folder as both HTML and as a .docset. You can also find the latest documentation here: http://phunware.github.io/maas-mapping-ios-sdk/
+
+
+
+Sample Application
+------------
+
+PWMapKit comes with a sample application ready to use. However, you will need to update the application with your MaaS credentials and location provider information.
+
+1. Update your MaaS credentials and setup the building identifier in `PWMapKitSampleInfo.plist`.
+2. Update the localtion provider initializers in `PWViewController.m`
 
 
 

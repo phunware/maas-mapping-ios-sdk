@@ -86,7 +86,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The building floor ID associated with this particular step object.</Abstract>
+			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
 			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSUInteger floorID</Declaration>
@@ -98,7 +98,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/floorID</TokenIdentifier>
-			<Abstract type="html">The building floor ID associated with this particular step object.</Abstract>
+			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
 			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSUInteger floorID</Declaration>
@@ -110,7 +110,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/floorID</TokenIdentifier>
-			<Abstract type="html">The building floor ID associated with this particular step object.</Abstract>
+			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
 			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSUInteger floorID</Declaration>

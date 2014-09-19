@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingOverlay.html">
+	<File path="Classes/PWBuildingManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingOverlay</TokenIdentifier>
-			<Abstract type="html">The PWBuildingOverlay object defines a specific type of annotation that represents a building on a map.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingManager</TokenIdentifier>
+			<Abstract type="html">The PWBuildingManager object provides a simple interface for fetching building data and resources. All data and assets fetched by this object are cached on the device.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,248 +13,95 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setBuilding:</TokenIdentifier>
-			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWBuildingManager/sharedManager</TokenIdentifier>
+			<Abstract type="html">Returns the shared instance of the PWBuildingManager class.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			<Declaration>+ (instancetype)sharedManager</Declaration>
 			
-			
-			<Anchor>//api/name/building</Anchor>
+			<ReturnValue><Abstract type="html">The shared instance of the PWBuildingManager class.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedManager</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/building</TokenIdentifier>
-			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingWithBuildingID:completion:</TokenIdentifier>
+			<Abstract type="html">Initiates a fetch for the building object. If the building object is not cached locally, this will result in a network request.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
-			
-			
-			<Anchor>//api/name/building</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/building</TokenIdentifier>
-			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
-			
-			
-			<Anchor>//api/name/building</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setCurrentDocument:</TokenIdentifier>
-			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWMapDocument *currentDocument</Declaration>
-			
-			
-			<Anchor>//api/name/currentDocument</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/currentDocument</TokenIdentifier>
-			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWMapDocument *currentDocument</Declaration>
-			
-			
-			<Anchor>//api/name/currentDocument</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/currentDocument</TokenIdentifier>
-			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWMapDocument *currentDocument</Declaration>
-			
-			
-			<Anchor>//api/name/currentDocument</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setResources:</TokenIdentifier>
-			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *resources</Declaration>
-			
-			
-			<Anchor>//api/name/resources</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/resources</TokenIdentifier>
-			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *resources</Declaration>
-			
-			
-			<Anchor>//api/name/resources</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/resources</TokenIdentifier>
-			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *resources</Declaration>
-			
-			
-			<Anchor>//api/name/resources</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setLoaded:</TokenIdentifier>
-			<Abstract type="html">A Boolean flag indicating whether or not the building overlay has loaded.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, getter=isLoaded) BOOL loaded</Declaration>
-			
-			
-			<Anchor>//api/name/loaded</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/isLoaded</TokenIdentifier>
-			<Abstract type="html">A Boolean flag indicating whether or not the building overlay has loaded.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, getter=isLoaded) BOOL loaded</Declaration>
-			
-			
-			<Anchor>//api/name/loaded</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/loaded</TokenIdentifier>
-			<Abstract type="html">A Boolean flag indicating whether or not the building overlay has loaded.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, getter=isLoaded) BOOL loaded</Declaration>
-			
-			
-			<Anchor>//api/name/loaded</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the MKMapViewDelegate protocol.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the MKMapViewDelegate protocol.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the MKMapViewDelegate protocol.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/initWithBuilding:</TokenIdentifier>
-			<Abstract type="html">Initializes the overlay with the specified building. This method will automatically fetch and cache all required resources. The delegate will receive either a success or failure callback.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
+			<Declaration>- (void)getBuildingWithBuildingID:(NSInteger)buildingID completion:(PWBuildingHandler)completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The building object to use when displaying building data on the map.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/initWithBuilding:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/initWithBuilding:resources:</TokenIdentifier>
-			<Abstract type="html">Initializes the overlay with the specified building and resources. This initializer does not make any network calls.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building resources:(NSArray *)resources</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The building object to use when displaying building data on the map.</Abstract>
+					<Name>buildingID</Name>
+					<Abstract type="html">The specified building identifier.</Abstract>
 				</Parameter><Parameter>
-					<Name>resources</Name>
-					<Abstract type="html">The map document resources associated with this overlay. The map document resources must be associated with the building object.</Abstract>
+					<Name>completion</Name>
+					<Abstract type="html">A block that takes the following parameters:
+
+- building: The requested building object.
+- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithBuilding:resources:</Anchor>
+			<Anchor>//api/name/getBuildingWithBuildingID:completion:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/currentFloor</TokenIdentifier>
-			<Abstract type="html">Returns the floor currently being displayed. This array may be nil while the overlay is loading. Only attempt to access this property after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingAnnotationsWithBuildingID:completion:</TokenIdentifier>
+			<Abstract type="html">Initiates a fetch for the building annotations. If the building annotations are not cached locally, this will result in a network request.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
 			
-			<Declaration>- (PWBuildingFloor *)currentFloor</Declaration>
-			
-			
-			<Anchor>//api/name/currentFloor</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setCurrentFloor:</TokenIdentifier>
-			<Abstract type="html">Change the floor currently being displayed to another PWBuildingFloor object. Passing the same floor will have no effect.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>- (void)setCurrentFloor:(PWBuildingFloor *)floor</Declaration>
+			<Declaration>- (void)getBuildingAnnotationsWithBuildingID:(NSInteger)buildingID completion:(PWBuildingAnnotationsHandler)completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>floor</Name>
-					<Abstract type="html">The PWBuildingFloor object you would like to set as the current floor.</Abstract>
+					<Name>buildingID</Name>
+					<Abstract type="html">The building identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block that takes the following parameters:
+
+- annotations: The building annotations.
+- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCurrentFloor:</Anchor>
+			<Anchor>//api/name/getBuildingAnnotationsWithBuildingID:completion:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getResourcesForBuilding:completion:</TokenIdentifier>
+			<Abstract type="html">Initiates a fetch for the building resources. If the building resources are not cached locally, this will result in a network request.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			
+			<Declaration>- (void)getResourcesForBuilding:(PWBuilding *)building completion:(PWBuildingResourcesHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>building</Name>
+					<Abstract type="html">The specified building object.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block that takes the following parameters:
+
+- resources: The building resources as an array of PWMapDocument objects.
+- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getResourcesForBuilding:completion:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/clearCache</TokenIdentifier>
+			<Abstract type="html">Clears the device cache of all mapping data. This will clear all associated building objects, floor objects and floor assets from the device.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			
+			<Declaration>- (void)clearCache</Declaration>
+			
+			
+			<Anchor>//api/name/clearCache</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

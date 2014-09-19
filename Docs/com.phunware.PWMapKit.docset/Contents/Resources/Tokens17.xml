@@ -194,7 +194,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/initWithFileURL:</TokenIdentifier>
-			<Abstract type="html">Returns a document object initialized with its file-system location.</Abstract>
+			<Abstract type="html">Returns a document object initialized with its file system location.</Abstract>
 			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)initWithFileURL:(NSString *)fileURL</Declaration>

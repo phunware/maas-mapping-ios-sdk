@@ -1,16 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingOverlayRenderer.html">
+	<File path="Classes/PWBuildingOverlay.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingOverlayRenderer</TokenIdentifier>
-			<Abstract type="html">The PWBuildingOverlayRenderer class defines the basic behavior associated with all building-based overlays. An overlay renderer draws the visual representation of PWBuilding object. This class defines the drawing infrastructure used by the map view.</Abstract>
-			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingOverlay</TokenIdentifier>
+			<Abstract type="html">The PWBuildingOverlay object defines a specific type of annotation that represents a building on a map.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setBuilding:</TokenIdentifier>
+			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/building</TokenIdentifier>
+			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/building</TokenIdentifier>
+			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setCurrentDocument:</TokenIdentifier>
+			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWMapDocument *currentDocument</Declaration>
+			
+			
+			<Anchor>//api/name/currentDocument</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/currentDocument</TokenIdentifier>
+			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWMapDocument *currentDocument</Declaration>
+			
+			
+			<Anchor>//api/name/currentDocument</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/currentDocument</TokenIdentifier>
+			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWMapDocument *currentDocument</Declaration>
+			
+			
+			<Anchor>//api/name/currentDocument</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setResources:</TokenIdentifier>
+			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *resources</Declaration>
+			
+			
+			<Anchor>//api/name/resources</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/resources</TokenIdentifier>
+			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *resources</Declaration>
+			
+			
+			<Anchor>//api/name/resources</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/resources</TokenIdentifier>
+			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *resources</Declaration>
+			
+			
+			<Anchor>//api/name/resources</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setLoaded:</TokenIdentifier>
+			<Abstract type="html">A Boolean flag indicating whether the building overlay has loaded.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isLoaded) BOOL loaded</Declaration>
+			
+			
+			<Anchor>//api/name/loaded</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/isLoaded</TokenIdentifier>
+			<Abstract type="html">A Boolean flag indicating whether the building overlay has loaded.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isLoaded) BOOL loaded</Declaration>
+			
+			
+			<Anchor>//api/name/loaded</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/loaded</TokenIdentifier>
+			<Abstract type="html">A Boolean flag indicating whether the building overlay has loaded.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isLoaded) BOOL loaded</Declaration>
+			
+			
+			<Anchor>//api/name/loaded</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the MKMapViewDelegate protocol.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the MKMapViewDelegate protocol.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the MKMapViewDelegate protocol.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/initWithBuilding:</TokenIdentifier>
+			<Abstract type="html">Initializes the overlay with the specified building. This method will automatically fetch and cache all required resources. The delegate will receive either a success or failure callback.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>building</Name>
+					<Abstract type="html">The building object to use when displaying building data on the map.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithBuilding:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/initWithBuilding:resources:</TokenIdentifier>
+			<Abstract type="html">Initializes the overlay with the specified building and resources. This initializer does not make any network calls.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building resources:(NSArray *)resources</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>building</Name>
+					<Abstract type="html">The building object to use when displaying building data on the map.</Abstract>
+				</Parameter><Parameter>
+					<Name>resources</Name>
+					<Abstract type="html">The map document resources associated with this overlay. The map document resources must be associated with the building object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithBuilding:resources:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/currentFloor</TokenIdentifier>
+			<Abstract type="html">Returns the floor currently being displayed. This array may be nil while the overlay is loading. Only attempt to access this property after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>- (PWBuildingFloor *)currentFloor</Declaration>
+			
+			
+			<Anchor>//api/name/currentFloor</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setCurrentFloor:</TokenIdentifier>
+			<Abstract type="html">Change the floor currently being displayed to another PWBuildingFloor object. Passing the same floor will have no effect.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>- (void)setCurrentFloor:(PWBuildingFloor *)floor</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>floor</Name>
+					<Abstract type="html">The PWBuildingFloor object to set as the current floor.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCurrentFloor:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
 		
         
 	</File>

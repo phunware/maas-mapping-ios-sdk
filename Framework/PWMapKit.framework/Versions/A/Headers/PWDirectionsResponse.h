@@ -10,7 +10,7 @@
 @class PWDirectionsRequest;
 
 /**
- The `PWDirectionsResponse` class provides a container for route information returned by the Phunware servers. You do not create instances of this class directly. Instead, you would initiate a request for directions between two points by calling the calculateDirectionsWithCompletionHandler: method of a PWDirections object. You will receive an instance of this class as the result.
+ The `PWDirectionsResponse` class provides a container for route information returned by the Phunware servers. You do not create instances of this class directly. Instead, you can initiate a request for directions between two points by calling the calculateDirectionsWithCompletionHandler: method of a PWDirections object. You will receive an instance of this class as the result.
 */
 @interface PWDirectionsResponse : NSObject
 

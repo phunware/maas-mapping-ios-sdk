@@ -37,6 +37,13 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/imageView">&nbsp;&nbsp;&nbsp;&nbsp;imageView</option>
+	
+	<option value="//api/name/label">&nbsp;&nbsp;&nbsp;&nbsp;label</option>
+	
+	
 	
 	
 	
@@ -61,11 +68,21 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Extension Methods">Extension Methods</a></span></li>
+	
 </ul></li>
 
 
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageView">imageView</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/label">label</a></span></li>
+	
+</ul></li>
 
 
 
@@ -112,7 +129,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWAnnotationView</code> class is responsible for presenting building annotations visually in a map view. Annotation views are loosely coupled to a corresponding building annotation object that corresponds to the <a href="../Protocols/PWBuildingAnnotation.html"><code>PWBuildingAnnotation</code></a> protocol. When an annotation’s coordinate point is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue that is maintained by the map view.</p>
+						<p>The <code>PWAnnotationView</code> class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled to a corresponding building annotation object that corresponds to the <a href="../Protocols/PWBuildingAnnotation.html"><code>PWBuildingAnnotation</code></a> protocol. When an annotation’s coordinate point is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.</p>
 					</div>
 					
 					
@@ -125,14 +142,34 @@
 						
 						
 						
-						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/label">&nbsp;&nbsp;label</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/initWithAnnotation:reuseIdentifier:">&ndash;&nbsp;initWithAnnotation:reuseIdentifier:</a></code>
 	</span>
 	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h3 class="subsubtitle task-title">Extension Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/imageView">&nbsp;&nbsp;imageView</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -142,6 +179,64 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/imageView" title="imageView"></a>
+	<h3 class="subsubtitle method-title">imageView</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) UIImageView *imageView</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/label" title="label"></a>
+	<h3 class="subsubtitle method-title">label</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The annotation label associated with the view. The annotation label stroke color and stroke width can be customized.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) PWAnnotationLabel *label</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The annotation label is automatically displayed or hidden based on whether or not it occludes other annotation view images or labels.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWBuildingAnnotationView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -186,7 +281,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The initialized building annotation view or nil if there was a problem initializing the object.</p>
+		<p>The initialized building annotation view or <code>nil</code> if there was a problem initializing the object.</p>
 	</div>
 	
 	
@@ -222,7 +317,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Phunware, Inc.. All rights reserved. (Last updated: 2014-07-02)</span><br />
+						<p><span class="copyright">&copy; 2014 Phunware, Inc.. All rights reserved. (Last updated: 2014-09-11)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

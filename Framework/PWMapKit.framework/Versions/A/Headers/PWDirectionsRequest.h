@@ -6,7 +6,7 @@
 //
 
 /**
- `PWDirectionsType` specify the type of directions to be used.
+ `PWDirectionsType` specifies the type of directions to be used.
  */
 typedef NS_ENUM(NSInteger, PWDirectionsType) {
     /** Directions type is unknown. */

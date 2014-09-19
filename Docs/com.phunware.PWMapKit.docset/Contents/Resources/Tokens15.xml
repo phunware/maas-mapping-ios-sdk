@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWMapKit.html">
+	<File path="Classes/PWMapView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWMapKit</TokenIdentifier>
-			<Abstract type="html">The PWMapKit framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.</Abstract>
-			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMapView</TokenIdentifier>
+			<Abstract type="html">A PWMapView object provides an embeddable map interface. It is similar to the one provided by the maps application but is specifically tailored for indoor maps. PWMapView subclasses MKMapView to provide a convenient interface that downloads, stores and displays indoor maps and associated points of interest. Usage of this class is optional but recommended for basic indoor map implementations. For more control, please refer to PWBuildingManager, PWBuildingOverlay and PWRouteOverlay,  which PWMapView is built upon.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,14 +13,475 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/serviceName</TokenIdentifier>
-			<Abstract type="html">Returns PWMapKit.</Abstract>
-			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setBuildingID:</TokenIdentifier>
+			<Abstract type="html">The identifier of the building associated with the current map. If no building is associated with the PWMapView, the building ID value will be NSNotFound.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)serviceName</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger buildingID</Declaration>
 			
 			
-			<Anchor>//api/name/serviceName</Anchor>
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/buildingID</TokenIdentifier>
+			<Abstract type="html">The identifier of the building associated with the current map. If no building is associated with the PWMapView, the building ID value will be NSNotFound.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/buildingID</TokenIdentifier>
+			<Abstract type="html">The identifier of the building associated with the current map. If no building is associated with the PWMapView, the building ID value will be NSNotFound.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setBuilding:</TokenIdentifier>
+			<Abstract type="html">The PWBuilding object associated with the current map. If no building is associated with the PWMapView, the building will be nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/building</TokenIdentifier>
+			<Abstract type="html">The PWBuilding object associated with the current map. If no building is associated with the PWMapView, the building will be nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/building</TokenIdentifier>
+			<Abstract type="html">The PWBuilding object associated with the current map. If no building is associated with the PWMapView, the building will be nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCurrentFloor:</TokenIdentifier>
+			<Abstract type="html">Returns the current PWBuildingFloor object. This property may be nil if no floor is displayed.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuildingFloor *currentFloor</Declaration>
+			
+			
+			<Anchor>//api/name/currentFloor</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentFloor</TokenIdentifier>
+			<Abstract type="html">Returns the current PWBuildingFloor object. This property may be nil if no floor is displayed.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuildingFloor *currentFloor</Declaration>
+			
+			
+			<Anchor>//api/name/currentFloor</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/currentFloor</TokenIdentifier>
+			<Abstract type="html">Returns the current PWBuildingFloor object. This property may be nil if no floor is displayed.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuildingFloor *currentFloor</Declaration>
+			
+			
+			<Anchor>//api/name/currentFloor</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCurrentRoute:</TokenIdentifier>
+			<Abstract type="html">Returns the current PWRoute object plotted on the map. This property will be nil if no route is displayed.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRoute *currentRoute</Declaration>
+			
+			
+			<Anchor>//api/name/currentRoute</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentRoute</TokenIdentifier>
+			<Abstract type="html">Returns the current PWRoute object plotted on the map. This property will be nil if no route is displayed.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRoute *currentRoute</Declaration>
+			
+			
+			<Anchor>//api/name/currentRoute</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/currentRoute</TokenIdentifier>
+			<Abstract type="html">Returns the current PWRoute object plotted on the map. This property will be nil if no route is displayed.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRoute *currentRoute</Declaration>
+			
+			
+			<Anchor>//api/name/currentRoute</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setShouldReturnBuildingAnnotations:</TokenIdentifier>
+			<Abstract type="html">This property controls whether the PWBuildingAnnotation objects for the current building will be passed through to the mapView:viewForAnnotation delegate method. Otherwise, building annotations will be assigned an appropriate PWBuildingAnnotationView internally.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL shouldReturnBuildingAnnotations</Declaration>
+			
+			
+			<Anchor>//api/name/shouldReturnBuildingAnnotations</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/shouldReturnBuildingAnnotations</TokenIdentifier>
+			<Abstract type="html">This property controls whether the PWBuildingAnnotation objects for the current building will be passed through to the mapView:viewForAnnotation delegate method. Otherwise, building annotations will be assigned an appropriate PWBuildingAnnotationView internally.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL shouldReturnBuildingAnnotations</Declaration>
+			
+			
+			<Anchor>//api/name/shouldReturnBuildingAnnotations</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/shouldReturnBuildingAnnotations</TokenIdentifier>
+			<Abstract type="html">This property controls whether the PWBuildingAnnotation objects for the current building will be passed through to the mapView:viewForAnnotation delegate method. Otherwise, building annotations will be assigned an appropriate PWBuildingAnnotationView internally.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL shouldReturnBuildingAnnotations</Declaration>
+			
+			
+			<Anchor>//api/name/shouldReturnBuildingAnnotations</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/initWithFrame:buildingID:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a newly allocated map view object with the specified frame rectangle and building identifier.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithFrame:(CGRect)frame buildingID:(NSInteger)buildingID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">The frame rectangle for the view, measured in points. The origin of the frame is relative to the superview in which you plan to add it. This method uses the frame rectangle to set the center and bounds properties accordingly.</Abstract>
+				</Parameter><Parameter>
+					<Name>buildingID</Name>
+					<Abstract type="html">The identifier for the building to load into the PWMapView.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new PWMapView object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithFrame:buildingID:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/loadBuilding:</TokenIdentifier>
+			<Abstract type="html">Allows you change the building displayed in the map view to the specified building identifier.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)loadBuilding:(NSInteger)buildingID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>buildingID</Name>
+					<Abstract type="html">The identifier for the building you would like to load into the PWMapView.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/loadBuilding:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCurrentFloor:</TokenIdentifier>
+			<Abstract type="html">Change the currently displayed floor to another PWBuildingFloor object. Passing the same floor will have no effect. When the floor change is complete, the delegate will receive a mapView:didChangeFloor: callback.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setCurrentFloor:(PWBuildingFloor *)floor</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>floor</Name>
+					<Abstract type="html">The PWBuildingFloor object you would like to set as the current floor.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCurrentFloor:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setShowsIndoorUserLocation:</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the map should try to display the user’s indoor location. In order to display the user&apos;s indoor location you must have registered a PWLocationManager object with the map view. This method will have no affect if registerLocationManagerForIndoorLocationUpdates: is not called first.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL showsIndoorUserLocation</Declaration>
+			
+			
+			<Anchor>//api/name/showsIndoorUserLocation</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/showsIndoorUserLocation</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the map should try to display the user’s indoor location. In order to display the user&apos;s indoor location you must have registered a PWLocationManager object with the map view. This method will have no affect if registerLocationManagerForIndoorLocationUpdates: is not called first.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL showsIndoorUserLocation</Declaration>
+			
+			
+			<Anchor>//api/name/showsIndoorUserLocation</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/showsIndoorUserLocation</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the map should try to display the user’s indoor location. In order to display the user&apos;s indoor location you must have registered a PWLocationManager object with the map view. This method will have no affect if registerLocationManagerForIndoorLocationUpdates: is not called first.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL showsIndoorUserLocation</Declaration>
+			
+			
+			<Anchor>//api/name/showsIndoorUserLocation</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setIndoorUserLocationVisible:</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the device’s current indoor location is visible in the map view. (read-only)</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isIndoorUserLocationVisible) BOOL indoorUserLocationVisible</Declaration>
+			
+			
+			<Anchor>//api/name/indoorUserLocationVisible</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/isIndoorUserLocationVisible</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the device’s current indoor location is visible in the map view. (read-only)</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isIndoorUserLocationVisible) BOOL indoorUserLocationVisible</Declaration>
+			
+			
+			<Anchor>//api/name/indoorUserLocationVisible</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/indoorUserLocationVisible</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether the device’s current indoor location is visible in the map view. (read-only)</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isIndoorUserLocationVisible) BOOL indoorUserLocationVisible</Declaration>
+			
+			
+			<Anchor>//api/name/indoorUserLocationVisible</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setIndoorUserLocation:</TokenIdentifier>
+			<Abstract type="html">The object representing the user’s current indoor location. (read-only)</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWIndoorLocation *indoorUserLocation</Declaration>
+			
+			
+			<Anchor>//api/name/indoorUserLocation</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/indoorUserLocation</TokenIdentifier>
+			<Abstract type="html">The object representing the user’s current indoor location. (read-only)</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWIndoorLocation *indoorUserLocation</Declaration>
+			
+			
+			<Anchor>//api/name/indoorUserLocation</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/indoorUserLocation</TokenIdentifier>
+			<Abstract type="html">The object representing the user’s current indoor location. (read-only)</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWIndoorLocation *indoorUserLocation</Declaration>
+			
+			
+			<Anchor>//api/name/indoorUserLocation</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setIndoorUserTrackingMode:</TokenIdentifier>
+			<Abstract type="html">The mode used to track the user&apos;s indoor location.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) PWIndoorUserTrackingMode indoorUserTrackingMode</Declaration>
+			
+			
+			<Anchor>//api/name/indoorUserTrackingMode</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/indoorUserTrackingMode</TokenIdentifier>
+			<Abstract type="html">The mode used to track the user&apos;s indoor location.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) PWIndoorUserTrackingMode indoorUserTrackingMode</Declaration>
+			
+			
+			<Anchor>//api/name/indoorUserTrackingMode</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/indoorUserTrackingMode</TokenIdentifier>
+			<Abstract type="html">The mode used to track the user&apos;s indoor location.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) PWIndoorUserTrackingMode indoorUserTrackingMode</Declaration>
+			
+			
+			<Anchor>//api/name/indoorUserTrackingMode</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setIndoorUserTrackingMode:animated:</TokenIdentifier>
+			<Abstract type="html">Sets the mode used to track the user&apos;s indoor location with optional animation. This method will have no affect if registerLocationManagerForIndoorLocationUpdates: is not called first.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setIndoorUserTrackingMode:(PWIndoorUserTrackingMode)mode animated:(BOOL)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">The mode used to track the user&apos;s location. Possible values are described in PWIndoorUserTrackingMode.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">If YES, the new mode is animated; otherwise, it is not. This parameter affects only tracking mode changes. Changes to the user&apos;s indoor location or heading are always animated.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setIndoorUserTrackingMode:animated:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/registerLocationManagerForIndoorLocationUpdates:</TokenIdentifier>
+			<Abstract type="html">Register an indoor location manager provider with the map view. This location provider is used when modifying the indoorUserTrackingMode or when showsIndoorUserLocation is set to YES.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)registerLocationManagerForIndoorLocationUpdates:(id&lt;PWLocationManager&gt;)locationManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locationManager</Name>
+					<Abstract type="html">The location manager to register with the map view. The location manager must conform to the PWLocationManager protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/registerLocationManagerForIndoorLocationUpdates:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/plotRoute:</TokenIdentifier>
+			<Abstract type="html">Load a PWRoute object into the the map view. This method will plot a basic route line on the map view. The route object must not be nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)plotRoute:(PWRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">The PWRoute object you wish to display on the map view. By default, the first PWRouteStep is plotted.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/plotRoute:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setRouteStep:</TokenIdentifier>
+			<Abstract type="html">Display the specified PWRouteStep on the map. This will change the current floor to the required floor for the PWRouteStep.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setRouteStep:(PWRouteStep *)step</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>step</Name>
+					<Abstract type="html">The PWRouteStep to display.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRouteStep:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentStep</TokenIdentifier>
+			<Abstract type="html">Returns the current PWRouteStep. If no route is displayed, this method will return nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (PWRouteStep *)currentStep</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current PWRouteStep. Can be nil if no PWRoute is loaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/currentStep</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/cancelRouting</TokenIdentifier>
+			<Abstract type="html">Cancel the route being displayed in the map view. This method will remove the route from the map view and set the PWRoute and PWRouteStep properties to nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelRouting</Declaration>
+			
+			
+			<Anchor>//api/name/cancelRouting</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

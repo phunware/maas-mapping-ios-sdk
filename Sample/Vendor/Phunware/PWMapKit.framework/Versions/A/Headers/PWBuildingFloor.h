@@ -8,12 +8,12 @@
 @class PWBuildingFloorResource, PWBuildingFloorReference;
 
 /**
- The build floor object encapsulates all data related to that floor.
+ The build floor object encapsulates all data related to a floor.
  */
 @interface PWBuildingFloor : NSObject <NSSecureCoding, NSCopying>
 
 /**
- The floor identifier denotes the identifier for the floor.
+ The floor identifier.
  @discussion The floor identifier is used throughout the `PWMapKit`. It determines which annotations to display, among other things.
  */
 @property (nonatomic, assign) NSUInteger floorID;

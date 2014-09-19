@@ -35,7 +35,7 @@
 @property (nonatomic, readonly) NSArray *resources;
 
 /**
- A Boolean flag indicating whether or not the building overlay has loaded.
+ A Boolean flag indicating whether the building overlay has loaded.
  */
 @property (nonatomic, assign, getter = isLoaded) BOOL loaded;
 
@@ -70,7 +70,7 @@
 
 /**
  Change the floor currently being displayed to another PWBuildingFloor object. Passing the same floor will have no effect.
- @param floor The PWBuildingFloor object you would like to set as the current floor.
+ @param floor The `PWBuildingFloor` object to set as the current floor.
  */
 - (void)setCurrentFloor:(PWBuildingFloor *)floor;
 
@@ -92,9 +92,9 @@
 @optional
 
 /**
- Tells the delegate that the specified overlay successfully changed the building floor.
+ Tells the delegate that the specified overlay successfully changed the floor.
  @param overlay The building overlay object.
- @param floor The current building floor object.
+ @param floor The current floor object.
  */
 - (void)buildingOverlay:(PWBuildingOverlay *)overlay didChangeFloor:(PWBuildingFloor *)floor;
 

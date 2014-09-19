@@ -1,98 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWDirections.html">
+	<File path="Classes/PWBuildingOverlayRenderer.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWDirections</TokenIdentifier>
-			<Abstract type="html">A PWDirections object provides you with route-based directions data from Phunware servers. You can use instances of this class to get walking directions based on the data in a PWDirectionsRequest object that you provide. The directions object passes your request to the Phunware servers and returns the requested information to a block that you provide.</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingOverlayRenderer</TokenIdentifier>
+			<Abstract type="html">The PWBuildingOverlayRenderer class defines the basic behavior associated with all building-based overlays. An overlay renderer draws the visual representation of PWBuilding object. This class defines the drawing infrastructure used by the map view.</Abstract>
+			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
             
 			
 			<NodeRef refid="8"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/setCalculating:</TokenIdentifier>
-			<Abstract type="html">A Boolean value indicating whether a request is currently in process. (read-only)</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isCalculating) BOOL calculating</Declaration>
-			
-			
-			<Anchor>//api/name/calculating</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/isCalculating</TokenIdentifier>
-			<Abstract type="html">A Boolean value indicating whether a request is currently in process. (read-only)</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isCalculating) BOOL calculating</Declaration>
-			
-			
-			<Anchor>//api/name/calculating</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirections/calculating</TokenIdentifier>
-			<Abstract type="html">A Boolean value indicating whether a request is currently in process. (read-only)</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isCalculating) BOOL calculating</Declaration>
-			
-			
-			<Anchor>//api/name/calculating</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/initWithRequest:</TokenIdentifier>
-			<Abstract type="html">Initializes and returns a directions object using the specified request.</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithRequest:(PWDirectionsRequest *)request</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>request</Name>
-					<Abstract type="html">The request object containing the start and end points of the route. This parameter must not be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An initialized directions object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithRequest:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/calculateDirectionsWithCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">Begins calculating the requested route information asynchronously.</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>- (void)calculateDirectionsWithCompletionHandler:(PWDirectionsHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">The block to execute when the directions are ready or when an error occurs. This parameter cannot be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/calculateDirectionsWithCompletionHandler:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/cancel</TokenIdentifier>
-			<Abstract type="html">Cancels a pending request.</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>- (void)cancel</Declaration>
-			
-			
-			<Anchor>//api/name/cancel</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
 		
         
 	</File>

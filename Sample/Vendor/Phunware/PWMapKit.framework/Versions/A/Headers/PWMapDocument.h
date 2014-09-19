@@ -19,12 +19,12 @@
 @interface PWMapDocument : NSObject <NSCoding, NSCopying>
 
 /**
- The building floor resource associated with the map document. (read-only)
+ The floor resource associated with the map document. (read-only)
  */
 @property (nonatomic, readonly) PWBuildingFloorResource *resource;
 
 /**
- The PDF documented associated with the map document. (read-only)
+ The PDF document associated with the map document. (read-only)
  */
 @property (nonatomic, readonly) PWPDFDocument *pdf;
 

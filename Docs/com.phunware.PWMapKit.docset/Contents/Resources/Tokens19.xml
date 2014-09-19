@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWRoute</TokenIdentifier>
-			<Abstract type="html">The PWRoute class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes information you can display to the user in association with that route, such as the name of the route, its distance and the expected travel time.</Abstract>
+			<Abstract type="html">The PWRoute class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes route information you can display to the user, such as the name of the route, its distance and the expected travel time.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
             
 			
@@ -14,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setName:</TokenIdentifier>
-			<Abstract type="html">The name assigned to the route. (read-only)</Abstract>
+			<Abstract type="html">The name assigned to the route. The string can describe the route using one of the route’s significant features. (read-only)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
@@ -26,7 +26,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/name</TokenIdentifier>
-			<Abstract type="html">The name assigned to the route. (read-only)</Abstract>
+			<Abstract type="html">The name assigned to the route. The string can describe the route using one of the route’s significant features. (read-only)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
@@ -38,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/name</TokenIdentifier>
-			<Abstract type="html">The name assigned to the route. (read-only)</Abstract>
+			<Abstract type="html">The name assigned to the route. The string can describe the route using one of the route’s significant features. (read-only)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
@@ -194,7 +194,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setAccessible:</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether or not the PWRoute object is accessible. (read-only)</Abstract>
+			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
@@ -206,7 +206,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/isAccessible</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether or not the PWRoute object is accessible. (read-only)</Abstract>
+			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
@@ -218,13 +218,25 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/accessible</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether or not the PWRoute object is accessible. (read-only)</Abstract>
+			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
 			
 			
 			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/stepsForFloorID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)stepsForFloorID:(NSUInteger)floorID</Declaration>
+			
+			
+			<Anchor>//api/name/stepsForFloorID:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

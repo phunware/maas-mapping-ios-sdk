@@ -29,7 +29,7 @@
 @property (nonatomic, assign) NSUInteger buildingID;
 
 /**
- The campus ID for the building. (read-only)
+ The campus identifier for the building. (read-only)
  */
 @property (nonatomic, assign) NSInteger campusID;
 
