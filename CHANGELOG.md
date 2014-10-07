@@ -1,6 +1,10 @@
 #PWMapKit Changelog
 
-##v2.1.1 (Froday, September 18th, 2014)
+##v2.1.2 (Tuesday, October 7th, 2014)
+ * Fixed issue where building annotation callout view displaying would cause strange behavior on iOS 8
+ * Small bug fixes and optimiziations
+
+##v2.1.1 (Friday, September 18th, 2014)
  * General availability for native mapping SDK. See README.md for integration details.
 
 ##v2.1.1 BETA (Friday, August 15th, 2014)
