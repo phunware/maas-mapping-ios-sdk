@@ -1,6 +1,6 @@
 #PWMapKit Changelog
 
-##v2.2.0 (Friday, October 24th, 2014)
+##v2.2.0 BETA (Monday, October 27th, 2014)
 * `PWAnnotation` (protocol) renamed to `PWAnnotationProtocol`
 * Added `PWAnnotationType`
 * `PWBuilding`
