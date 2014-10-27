@@ -1,5 +1,35 @@
 #PWMapKit Changelog
 
+##v2.2.0 (Friday, October 24th, 2014)
+* `PWAnnotation` (protocol) renamed to `PWAnnotationProtocol`
+* Added `PWAnnotationType`
+* `PWBuilding`
+* No longer conforms to NSCopying
+* No longer conforms to NSSecureCoding
+* Atomicized and write-protected properties
+* Formalized building and campus identifier types
+* `PWBuildingAnnotation` (protocool) renamed to `PWBuildingAnnotationProtocol`
+* `PWBuildingFloor`
+* Atomicized and write-protected properties
+* Formalized building and campus identifier types
+* `PWBuildingFloorReference`
+* No longer conforms to NSCopying
+* No longer conforms to NSSecureCoding
+* Atomicized and write-protected properties
+* `PWBuildingFloorResource`
+* No longer conforms to NSCopying
+* No longer conforms to NSSecureCoding
+* Atomicized and write-protected properties
+* `PWBuildingManager`
+* Added method for fetching annotation types: `-(void)getBuildingAnnotationTypesWithCompletion:(PWBuildingAnnotationTypesHandler)completion`
+* `PWBuildingOverlay`
+* Atomicized properties
+* `PWMapView`
+* Added `-(void)willAppear` and `-(void)didAppear`. These properties should be used in conjunction with `UIViewController` methods.
+* `PWMapViewDelegate` (protocol) renamed to `PWMapViewDelegateProtocol`
+* `PWRouteStep`
+* Added `annotations` property
+
 ##v2.1.2 (Tuesday, October 7th, 2014)
  * Fixed issue where building annotation callout view displaying would cause strange behavior on iOS 8
  * Small bug fixes and optimiziations

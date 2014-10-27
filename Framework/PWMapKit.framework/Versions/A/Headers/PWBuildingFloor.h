@@ -5,37 +5,40 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-@class PWBuildingFloorResource, PWBuildingFloorReference;
+#import "PWIdentifierTypes.h"
+
+@class PWBuildingFloorReference;
 
 /**
  The build floor object encapsulates all data related to a floor.
  */
-@interface PWBuildingFloor : NSObject <NSSecureCoding, NSCopying>
+@interface PWBuildingFloor : NSObject
+
+/**
+ The name of the building's floor.
+ */
+@property (copy, readonly) NSString *name;
+
+/**
+ The building identifier denotes the building that the floor belongs to.
+ */
+@property (readonly) PWBuildingFloorIdentifier buildingID;
 
 /**
  The floor identifier.
  @discussion The floor identifier is used throughout the `PWMapKit`. It determines which annotations to display, among other things.
  */
-@property (nonatomic, assign) NSUInteger floorID;
+@property (readonly) PWBuildingFloorIdentifier floorID;
 
-/**
- The building identifier denotes the building that the floor belongs to.
- */
-@property (nonatomic, assign) NSUInteger buildingID;
 
 /**
  The physical floor level.
  */
-@property (nonatomic, assign) NSInteger floorLevel;
+@property (readonly) PWBuildingFloorLevel floorLevel;
 
 /**
  The reference GPS points and angle for the building floor.
  */
-@property (nonatomic, strong) PWBuildingFloorReference *reference;
-
-/**
- The name of the building's floor.
- */
-@property (nonatomic, strong) NSString *name;
+@property (readonly) PWBuildingFloorReference *reference;
 
 @end

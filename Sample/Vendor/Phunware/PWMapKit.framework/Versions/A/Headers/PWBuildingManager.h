@@ -8,6 +8,7 @@
 typedef void (^PWBuildingHandler)(PWBuilding *building, NSError *error);
 typedef void (^PWBuildingAnnotationsHandler)(NSArray *annotations, NSError *error);
 typedef void (^PWBuildingResourcesHandler)(NSArray *resources, NSError *error);
+typedef void (^PWBuildingAnnotationTypesHandler)(NSArray *types, NSError *error);
 
 /**
  The `PWBuildingManager` object provides a simple interface for fetching building data and resources. All data and assets fetched by this object are cached on the device.
@@ -53,6 +54,14 @@ typedef void (^PWBuildingResourcesHandler)(NSArray *resources, NSError *error);
  @discussion This building identifier is provided by Phunware and can be found in the Location area of the MaaS portal.
  */
 - (void)getResourcesForBuilding:(PWBuilding *)building completion:(PWBuildingResourcesHandler)completion;
+
+/**
+ Initiates a fetch for the anotation typs. If the annotation types are not cached locally, this will result in a network request.
+ 
+ - *types*: The annotation types as an array of `PWAnnotationType` objects.
+ - *error*: If the annotation type fetch completed successfully, this parameter is `nil`; otherwise, this parameter holds an error object that describes the error.
+ */
+- (void)getBuildingAnnotationTypesWithCompletion:(PWBuildingAnnotationTypesHandler)completion;
 
 /**
  Clears the device cache of all mapping data. This will clear all associated building objects, floor objects and floor assets from the device.

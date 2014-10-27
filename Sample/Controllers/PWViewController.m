@@ -17,7 +17,7 @@
 static NSString *kMapBuildings = @"kMapBuildings";
 static NSString *urlAsString = @"http://lbs-dev.s3.amazonaws.com/locationSample.json";
 
-@interface PWViewController () <PWMapViewDelegate, UIActionSheetDelegate, UIGestureRecognizerDelegate, UIPopoverControllerDelegate, PWLocationManagerDelegate>
+@interface PWViewController () <PWMapViewDelegateProtocol, UIActionSheetDelegate, UIGestureRecognizerDelegate, UIPopoverControllerDelegate, PWLocationManagerDelegate>
 
 @property (nonatomic, strong) NSDictionary *buildings;
 

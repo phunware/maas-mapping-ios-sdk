@@ -8,21 +8,10 @@
 #import <MapKit/MapKit.h>
 #import <PWLocation/PWLocation.h>
 
-/**
- `PWIndoorUserTrackingMode` is used to track the user's indoor location on the map.
- */
-typedef NS_ENUM(NSInteger, PWIndoorUserTrackingMode) {
-    /** The map may not have an indoor tracking mode. */
-    PWIndoorUserTrackingModeUnknown = -1,
-    /** The map does not follow the user's indoor location. */
-	PWIndoorUserTrackingModeNone = 0,
-    /** The map follows the user's indoor location. */
-	PWIndoorUserTrackingModeFollow,
-    /** The map follows the user's location and heading. */
-	PWIndoorUserTrackingModeFollowWithHeading,
-};
+#import <PWMapKit/PWAnnotationProtocol.h>
+#import <PWMapKit/PWAnnotationProtocol.h>
+#import <PWMapKit/PWMapViewDelegateProtocol.h>
 
-@protocol PWAnnotation;
 @class PWBuildingOverlay, PWBuilding, PWBuildingFloor, PWRoute, PWRouteStep, PWLocation;
 
 /**
@@ -30,6 +19,11 @@ typedef NS_ENUM(NSInteger, PWIndoorUserTrackingMode) {
  */
 
 @interface PWMapView : MKMapView <UIGestureRecognizerDelegate>
+
+/**
+ The delegate for the map.  The `PWMapViewDelegateProtocol` inherits from `MKMapViewDelegate`.
+ */
+@property (nonatomic, weak) id <PWMapViewDelegateProtocol> delegate;
 
 ///-------------------------------
 /// @name Accessing Map Properties
@@ -112,7 +106,7 @@ typedef NS_ENUM(NSInteger, PWIndoorUserTrackingMode) {
  
  If the user’s indoor location cannot be determined, this property contains the value `NO`.
  */
-@property (nonatomic, readonly, getter=isIndoorUserLocationVisible) BOOL indoorUserLocationVisible;
+@property (nonatomic, readonly, getter = isIndoorUserLocationVisible) BOOL indoorUserLocationVisible;
 
 /**
  The object representing the user’s current indoor location. (read-only)
@@ -125,7 +119,7 @@ typedef NS_ENUM(NSInteger, PWIndoorUserTrackingMode) {
  
  Setting the tracking mode to PWIndoorUserTrackingModeFollow or PWIndoorUserTrackingModeFollowWithHeading causes the map view to center the map on that location and begin tracking the user’s location. If the map is zoomed out, the map view automatically zooms in on the user’s location, effectively changing the current visible region.
  */
-@property (nonatomic, assign) PWIndoorUserTrackingMode indoorUserTrackingMode;
+@property (nonatomic) PWIndoorUserTrackingMode indoorUserTrackingMode;
 
 /**
  Sets the mode used to track the user's indoor location with optional animation. This method will have no affect if `registerLocationManagerForIndoorLocationUpdates:` is not called first.
@@ -140,6 +134,19 @@ typedef NS_ENUM(NSInteger, PWIndoorUserTrackingMode) {
  @param locationManager The location manager to register with the map view. The location manager must conform to the `PWLocationManager` protocol.
  */
 - (void)registerLocationManagerForIndoorLocationUpdates:(id<PWLocationManager>)locationManager;
+
+/**
+ Notify a PWMapView instance that it is appearing on screen in a view controller.
+ @discussion This method should be called by all view controllers that display a PWMapView instance.  It allows the map view to initiate processes related to location tracking and may be used for future enhancements.  The call should be made during the view controller's `-viewWillAppear:` implementation.
+ */
+- (void)willAppear;
+
+/**
+ Notify a PWMapView instance that it no longer appears on screen in a view controller.
+ @discussion This method should be called by all view controllers that display a PWMapView instance.  It allows the map view to throttle down processes related to location tracking and may be used for future enhancements.  The call should be made during the view controller's `-viewDidDisappear:` implementation.
+ */
+- (void)didDisappear;
+
 
 ///-------------------------
 /// @name Displaying a Route
@@ -170,103 +177,3 @@ typedef NS_ENUM(NSInteger, PWIndoorUserTrackingMode) {
 
 @end
 
-
-/**
- The `PWMapViewDelegate` protocol defines a set of optional methods that you can use to receive building-related update messages. Because many map operations require the `PWMapView` class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete. `PWMapViewDelegate` inherits from `MKMapViewDelegate`.
- */
-@protocol PWMapViewDelegate <MKMapViewDelegate>
-
-@optional
-
-///---------------------------
-/// @name Loading the Map Data
-///---------------------------
-
-/**
- Tells the delegate that the specified map view successfully changed the building floor.
- @param mapView The map view that changed the floor.
- @param currentFloor The current floor displayed on the map view.
- @discussion This method is called when the floor data has finished loading and is ready to be displayed on the map.
- */
-- (void)mapView:(PWMapView *)mapView didChangeFloor:(PWBuildingFloor *)currentFloor;
-
-/**
- Tells the delegate that the specified map view successfully loaded necessary building data.
- @param mapView The map view that started the load operation.
- @param building The building that was loaded.
- @discussion This method is called when the building data has finished loading and is ready to be displayed on the map.
- */
-- (void)mapView:(PWMapView *)mapView didFinishLoadingBuilding:(PWBuilding *)building;
-
-/**
- Tells the delegate that the specified view was unable to load the building data.
- @param mapView The map view that started the load operation.
- @param buildingID The identifier for the building that the map view tried to load data for.
- @param error The reason that the map data could not be loaded.
- @discussion This method might be called in situations where the device does not have access to the network or is unable to load the building data. On a successful load, building data and assets are cached for future use.
- */
-- (void)mapView:(PWMapView *)mapView didFailToLoadBuilding:(NSInteger)buildingID error:(NSError *)error;
-
-
-///---------------------------------
-/// @name Tracking the User Location
-///---------------------------------
-
-/**
- Tells the delegate that the map view will start tracking the user’s indoor location.
- @param mapView The map view tracking the user’s location.
- @discussion This method is called when the value of the showsIndoorUserLocation property changes to `YES`.
- */
-- (void)mapViewWillStartLocatingIndoorUser:(PWMapView *)mapView;
-
-/**
- Tells the delegate that the map view stopped tracking the user’s indoor location.
- @param mapView The map view that stopped tracking the user’s indoor location.
- @discussion This method is called when the value of the showsIndoorUserLocation property changes to `NO`.
- */
-- (void)mapViewDidStopLocatingIndoorUser:(PWMapView *)mapView;
-
-/**
- Tells the delegate that the indoor location of the user was updated.
- @param mapView The map view tracking the user’s location.
- @param userLocation The location object representing the user’s latest location. This property may be `nil`.
- @discussion While the showsIndoorUserLocation property is set to `YES`, this method is called whenever a new location update is received by the map view.
- */
-- (void)mapView:(PWMapView *)mapView didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation;
-
-/**
- Tells the delegate that an attempt to locate the user’s position failed.
- @param mapView The map view tracking the user’s indoor location.
- @param error An error object containing the reason why location tracking failed.
- */
-
-- (void)mapView:(PWMapView *)mapView didFailToLocateIndoorUserWithError:(NSError *)error;
-
-/**
- Tells the delegate that the location of the user was updated.
- @param mapView The map view whose user tracking mode changed.
- @param mode The mode used to track the user’s location.
- @param animated If `YES`, mode change is animated; otherwise, it is not. This parameter affects only tracking mode changes.
- */
-- (void)mapView:(PWMapView *)mapView didChangeIndoorUserTrackingMode:(PWIndoorUserTrackingMode)mode animated:(BOOL)animated;
-
-
-///-----------------------
-/// @name Routing Behavior
-///-----------------------
-
-/**
- Tells the delegate that the user's location has been snapped to a route.
- @param mapView The map view snapping locations to a route.
- @discussion This method notifies the map view delegate that the map view has begun snapping user locations to a route.
- */
-- (void)mapViewStartedSnappingLocationToRoute:(PWMapView *)mapView;
-
-/**
- Tells the delegate that the user's location was not snapped to a route.
- @param mapView The map view no longer snapping locations to a route.
- @discussion This method notifies the map view delegate that the map view has ceased snapping user locations to a route.
- */
-- (void)mapViewStoppedSnappingLocationToRoute:(PWMapView *)mapView;
-
-@end

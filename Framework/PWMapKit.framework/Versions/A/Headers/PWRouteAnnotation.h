@@ -5,14 +5,14 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <PWMapKit/PWAnnotation.h>
+#import <PWMapKit/PWAnnotationProtocol.h>
 
-@interface PWRouteAnnotation : NSObject <PWAnnotation>
+@interface PWRouteAnnotation : NSObject <PWAnnotationProtocol>
 
-@property (nonatomic, readonly) BOOL isExit;
-@property (nonatomic, readonly) BOOL isAccessible;
-@property (nonatomic, readonly) NSString *portalID;
+@property (readonly, getter=isExit) BOOL exit;
+@property (readonly, getter=isAccessible) BOOL accessible;
+@property (copy, readonly) NSString *portalID;
 
-@property (nonatomic, readonly) NSInteger type;
+@property (readonly) PWBuildingAnnotationType type;
 
 @end

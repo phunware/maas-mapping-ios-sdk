@@ -6,8 +6,8 @@
 //
 
 #import <MapKit/MapKit.h>
+#import "PWBuildingAnnotationProtocol.h"
 
-@protocol PWBuildingAnnotation;
 @class PWAnnotationLabel;
 
 /**
@@ -29,6 +29,6 @@
  @param reuseIdentifier If you plan to reuse the annotation view for similar types of annotations, pass a string to identify it. Although you can pass `nil` if you do not intend to reuse the view, reusing annotation views is generally recommended.
  @return The initialized building annotation view or `nil` if there was a problem initializing the object.
  */
-- (instancetype)initWithAnnotation:(id <PWBuildingAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier;
+- (instancetype)initWithAnnotation:(id <PWBuildingAnnotationProtocol>)annotation reuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

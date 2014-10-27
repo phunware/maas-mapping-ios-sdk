@@ -33,9 +33,10 @@
  */
 @property (nonatomic, readonly) NSUInteger floorID;
 
-/**
- The index of the current step.
- */
+/** The index of the current step. */
 @property (nonatomic, readonly) NSUInteger index;
+
+/** An array of `PWRouteAnnotation` objects associated with the route step. */
+@property (nonatomic, readonly) NSArray *annotations;
 
 @end
