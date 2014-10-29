@@ -8,9 +8,7 @@
 #import <MapKit/MapKit.h>
 #import <PWLocation/PWLocation.h>
 
-#import <PWMapKit/PWAnnotationProtocol.h>
-#import <PWMapKit/PWAnnotationProtocol.h>
-#import <PWMapKit/PWMapViewDelegateProtocol.h>
+#import "PWMapViewDelegateProtocol.h"
 
 @class PWBuildingOverlay, PWBuilding, PWBuildingFloor, PWRoute, PWRouteStep, PWLocation;
 

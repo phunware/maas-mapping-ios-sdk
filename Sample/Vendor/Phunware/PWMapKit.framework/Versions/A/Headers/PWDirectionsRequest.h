@@ -7,6 +7,8 @@
 
 #import <PWLocation/PWLocationProtocol.h>
 
+#import "PWAnnotationProtocol.h"
+
 /**
  `PWDirectionsType` specifies the type of directions to be used.
  */

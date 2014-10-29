@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <PWMapKit/PWAnnotationProtocol.h>
+#import "PWAnnotationProtocol.h"
 
 @interface PWRouteAnnotation : NSObject <PWAnnotationProtocol>
 

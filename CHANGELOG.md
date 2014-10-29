@@ -1,5 +1,10 @@
 #PWMapKit Changelog
 
+##v2.2.0 BETA 2 (Wednesday, October 29th, 2014)
+* Fixed issue where `imageURL` property on a PWBuildingAnnotation would sometimes return `nil`
+* Fixed issue where POI icon image would not display on first load under certain memory constrained conditions
+* Updated sample app to resolve to some routing centering issues
+
 ##v2.2.0 BETA (Monday, October 27th, 2014)
 * `PWAnnotation` (protocol) renamed to `PWAnnotationProtocol`
 * Added `PWAnnotationType`
