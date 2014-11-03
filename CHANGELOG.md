@@ -1,5 +1,8 @@
 #PWMapKit Changelog
 
+##v2.2.0 (Friday, October 31st, 2014)
+* Promoting BETA 2 to GA candidate
+
 ##v2.2.0 BETA 2 (Wednesday, October 29th, 2014)
 * Fixed issue where `imageURL` property on a PWBuildingAnnotation would sometimes return `nil`
 * Fixed issue where POI icon image would not display on first load under certain memory constrained conditions
