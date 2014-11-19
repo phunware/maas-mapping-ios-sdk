@@ -21,11 +21,6 @@ typedef void (^PWDirectionsHandler)(PWDirectionsResponse *response, NSError *err
 @interface PWDirections : NSObject
 
 /**
- A Boolean value indicating whether a request is currently in process. (read-only)
- */
-@property (nonatomic, readonly, getter = isCalculating) BOOL calculating;
-
-/**
  Initializes and returns a directions object using the specified request.
  @param request The request object containing the start and end points of the route. This parameter must not be `nil`.
  @return An initialized directions object.
@@ -37,14 +32,8 @@ typedef void (^PWDirectionsHandler)(PWDirectionsResponse *response, NSError *err
  @param completion The block to execute when the directions are ready or when an error occurs. This parameter cannot be `nil`.
  @discussion This method initiates the request for directions and calls your completion handler block with the results. Your completion handler is executed on your app’s main thread. The implementation of your handler should check for errors and then incorporate the response data as appropriate.
  
- If you call this method while a previous request is in process, this method calls your completion handler with an error. You can determine if a request is in process by checking the value of the calculating property. You can also cancel a request as needed.
+ If you call this method while a previous request is in progress, this method calls your completion handler with an error. You can determine if a request is in process by checking the value of the calculating property. You can also cancel a request as needed.
  */
 - (void)calculateDirectionsWithCompletionHandler:(PWDirectionsHandler)completion;
-
-/**
- Cancels a pending request.
- @discussion After canceling a request, calling the calculateDirectionsWithCompletionHandler: method again will restart the request process.
- */
-- (void)cancel;
 
 @end

@@ -5,7 +5,11 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <CoreLocation/CLLocation.h>
+
+#import "PWIdentifierTypes.h"
+
+@class MKPolyline;
 
 /**
  A `PWRouteStep` object represents one part of an overall route. Each step in a route corresponds to a single instruction that would need to be followed by the user.
@@ -19,24 +23,24 @@
  The detailed step geometry. (read-only)
  @discussion The polyline object in this property contains the geometry for this step. You can use the polyline object as an overlay in a map view.
  */
-@property (nonatomic, readonly) MKPolyline *polyline;
+@property (readonly) MKPolyline *polyline;
 
 /**
  The step distance in meters. (read-only)
  @discussion This property reflects the distance that the user covers while traversing the path of the step. It is not a direct distance between the start and end points of the step.
  */
-@property (nonatomic, readonly) CLLocationDistance distance; // step distance in meters
+@property (readonly) CLLocationDistance distance;
 
 /**
  The identifier of the floor associated with this particular step object.
  @discussion Currently, there is one `PWRouteStep` object for each floor in a route object.
  */
-@property (nonatomic, readonly) NSUInteger floorID;
+@property (readonly) PWBuildingFloorIdentifier floorID;
 
 /** The index of the current step. */
-@property (nonatomic, readonly) NSUInteger index;
+@property (readonly) NSUInteger index;
 
 /** An array of `PWRouteAnnotation` objects associated with the route step. */
-@property (nonatomic, readonly) NSArray *annotations;
+@property (readonly) NSArray *annotations;
 
 @end

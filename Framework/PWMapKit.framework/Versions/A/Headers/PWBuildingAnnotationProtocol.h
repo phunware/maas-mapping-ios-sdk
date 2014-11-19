@@ -14,6 +14,7 @@
  */
 
 extern PWBuildingFloorIdentifier const PWBuildingFloorIdentifierDefault;
+extern PWBuildingFloorIdentifier const PWBuildingFloorIdentifierUnknown;
 
 @protocol PWBuildingAnnotationProtocol <PWAnnotationProtocol>
 

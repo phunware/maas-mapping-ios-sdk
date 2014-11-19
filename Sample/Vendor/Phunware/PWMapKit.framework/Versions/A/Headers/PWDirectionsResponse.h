@@ -5,8 +5,6 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @class PWDirectionsRequest;
 
 /**
@@ -17,7 +15,7 @@
 /**
  The original directions request object. (read-only)
  */
-@property (nonatomic, readonly) PWDirectionsRequest *request;
+@property (readonly) PWDirectionsRequest *request;
 
 /**
  An array of route objects representing the directions between the start and end points. (read-only)
@@ -25,6 +23,6 @@
  
  Each route object contains geometry information that you can use to display that route in your app’s map view.
  */
-@property (nonatomic, readonly) NSArray *routes;
+@property (readonly) NSArray *routes;
 
 @end

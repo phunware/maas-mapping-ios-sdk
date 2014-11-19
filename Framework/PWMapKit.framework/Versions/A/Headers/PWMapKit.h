@@ -47,4 +47,7 @@
  */
 + (NSString *)serviceName;
 
++ (BOOL)shouldUseZoomWorkaround;
++ (void)setShouldUseZoomWorkaround:(BOOL)useZoom;
+
 @end

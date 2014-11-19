@@ -1,5 +1,15 @@
 #PWMapKit Changelog
 
+##v2.3.0 BETA (Wednesday, November 19th, 2014)
+* Added iOS 8 mapping zoom level workaround. To enable the workaround, call `[PWMapKit setShouldUseZoomWorkaround:YES];`. This workaround is **temporary** and will be removed/internalized as soon as Apple fixes their zoom level issues.
+* Consolidated all cached mapping data into one cache directory under Library/Caches
+* Fixed bug where annotations on the map wouldn't call `mapView:didSelectAnnotationView:`.
+* Fixed issue where the annotation labels would overlap when changing floors.
+* Fixed issue where `PWRouteStep` objects would sometimes incorrectly have their floorID set to 0.
+* Fixed an issue with offline routing where trying to find neighboring point would sometimes cause an exception if that point did not have any connecting segments
+* Mapping data TTL cache bumped to 24h. It was previously incorrectly set to 1.75 hours.
+* Cleaned up public interfaces, removing extraneous and non-functional methods
+
 ##v2.2.0 (Friday, October 31st, 2014)
 * Promoting BETA 2 to GA candidate
 

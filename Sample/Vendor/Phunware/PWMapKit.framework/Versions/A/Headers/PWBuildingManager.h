@@ -5,6 +5,8 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+@class PWBuilding;
+
 typedef void (^PWBuildingHandler)(PWBuilding *building, NSError *error);
 typedef void (^PWBuildingAnnotationsHandler)(NSArray *annotations, NSError *error);
 typedef void (^PWBuildingResourcesHandler)(NSArray *resources, NSError *error);
