@@ -1,5 +1,5 @@
 //
-//  PWIdentifierTypes.h
+//  PWMappingTypes.h
 //  PWMapKit
 //
 //  Copyright (c) 2014 Phunware. All rights reserved.
@@ -15,3 +15,6 @@ typedef NSUInteger PWBuildingFloorResourceIdentifier;
 
 typedef NSUInteger PWAnnotationIdentifier;
 typedef NSUInteger PWBuildingAnnotationType;
+
+typedef NSInteger PWMapZoomLevel;
+extern const PWMapZoomLevel PWMapZoomLevelShowAtAllLevels;

@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import "PWIdentifierTypes.h"
+#import "PWMappingTypes.h"
 
 @interface PWBuildingFloorResource : NSObject
 

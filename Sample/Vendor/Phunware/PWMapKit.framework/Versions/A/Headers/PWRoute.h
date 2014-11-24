@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import "PWIdentifierTypes.h"
+#import "PWMappingTypes.h"
 
 /**
  The `PWRoute` class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes route information you can display to the user, such as the name of the route, its distance and the expected travel time.

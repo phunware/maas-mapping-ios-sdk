@@ -6,7 +6,7 @@
 //
 
 #import <MapKit/MKAnnotation.h>
-#import "PWIdentifierTypes.h"
+#import "PWMappingTypes.h"
 
 @class PWMapView;
 

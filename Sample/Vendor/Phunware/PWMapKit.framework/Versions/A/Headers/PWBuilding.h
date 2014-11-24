@@ -11,7 +11,7 @@
 
 #import <CoreLocation/CLLocation.h>
 
-#import "PWIdentifierTypes.h"
+#import "PWMappingTypes.h"
 
 /**
  The building object encompasses a wide variety of information associated with the building. Information includes but is not limited to floor data, floor resource data, street address and location.

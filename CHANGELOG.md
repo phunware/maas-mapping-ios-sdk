@@ -1,5 +1,12 @@
 #PWMapKit Changelog
 
+##v2.3.0 BETA 2 (Monday, November 24th, 2014)
+* Fixed issue where camera would not properly center on the blue dot while zoom workaround was enabled
+* The `PWMapView` now only loads annotations for the current floor. Previous behavior was to load all building annotations and show/hide as necessary. mapView.annotations will now only return annotations for the current floor. If you would like to fetch all building annotations please use the `PWBuildingManager` class.
+* Fixed issue where routing annotation titles would sometimes be `nil`.
+* You can now switch to `PWIndoorUserTrackingModeFollowWithHeading` while in routing mode. Note that the default indoor user tracking mode is still `PWIndoorUserTrackingModeFollow`.
+* Fixed an issue where annotation labels wouldn't appear when switching floors.
+
 ##v2.3.0 BETA (Wednesday, November 19th, 2014)
 * Added iOS 8 mapping zoom level workaround. To enable the workaround, call `[PWMapKit setShouldUseZoomWorkaround:YES];`. This workaround is **temporary** and will be removed/internalized as soon as Apple fixes their zoom level issues.
 * Consolidated all cached mapping data into one cache directory under Library/Caches

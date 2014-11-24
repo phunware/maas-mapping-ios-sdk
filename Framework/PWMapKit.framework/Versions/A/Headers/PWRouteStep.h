@@ -7,7 +7,7 @@
 
 #import <CoreLocation/CLLocation.h>
 
-#import "PWIdentifierTypes.h"
+#import "PWMappingTypes.h"
 
 @class MKPolyline;
 
