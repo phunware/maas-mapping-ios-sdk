@@ -20,12 +20,6 @@
  The venue GUID associated with the location manager. (read-only)
  */
 @property (nonatomic, readonly) NSString *venueGUID;
-
-/**
- The venue location associated with the location manager. (read-only)
- */
-@property (nonatomic, readonly) CLLocationCoordinate2D venueLocation;
-
 /**
  The latest indoor location received from the Phunware location service.
  */
@@ -39,7 +33,8 @@
  @return The location manager object.
  */
 
-- (instancetype)initWithVenueGUID:(NSString *)venueGUID location:(CLLocationCoordinate2D)venueLocation;
+- (instancetype)initWithVenueGUID:(NSString *)venueGUID location:(CLLocationCoordinate2D)venueLocation __attribute__((deprecated));
+- (instancetype)initWithVenueGUID:(NSString *)venueGUID NS_DESIGNATED_INITIALIZER;
 
 - (BOOL)locationServicesAvailable;
 - (void)startUpdatingLocation;

@@ -9,6 +9,7 @@
 #import <PWLocation/PWLocation.h>
 
 #import "PWMapViewDelegateProtocol.h"
+#import "PWMappingTypes.h"
 
 @class PWBuildingOverlay, PWBuilding, PWBuildingFloor, PWRoute, PWRouteStep, PWLocation;
 
@@ -30,7 +31,7 @@
 /**
  The identifier of the building associated with the current map. If no building is associated with the `PWMapView`, the building ID value will be `NSNotFound`.
 */
-@property (nonatomic, readonly) NSInteger buildingID;
+@property (nonatomic, readonly) PWBuildingIdentifier buildingID;
 
 /**
  The `PWBuilding` object associated with the current map. If no building is associated with the `PWMapView`, the building will be `nil`.
@@ -71,7 +72,7 @@
   @discussion Proper use of this method will kick off by fetching the building data, points of interest and assets. This data will then be cached and displayed in the `PWMapView`. Upon successful completion, the delegate will receive a `mapView:didFinishLoadingBuilding:` callback. If the building identifier is invalid or something went wrong, the delegate will receive a `mapView:didFailToLoadBuilding:error:` callback.
  @param buildingID The identifier for the building you would like to load into the `PWMapView`.
  */
-- (void)loadBuilding:(NSInteger)buildingID;
+- (void)loadBuildingWithIdentifier:(PWBuildingIdentifier)buildingID;
 
 /**
  Change the currently displayed floor to another `PWBuildingFloor` object. Passing the same floor will have no effect. When the floor change is complete, the delegate will receive a `mapView:didChangeFloor:` callback.

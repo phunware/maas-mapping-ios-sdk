@@ -1,5 +1,10 @@
 #PWMapKit Changelog
 
+##v2.3.0 BETA 3 (Tuesday, December 2nd, 2014)
+* Fixed issue where building annotation views would disappear from the map (introduced in earlier betas).
+* You no longer need to manage the annotation image at the application level. `PWBuildingAnnotationView` now manages caching and loading of the annotation image internally. 
+* Building floors are now ordered in ascending order, based on the `floorLevel` value.
+
 ##v2.3.0 BETA 2 (Monday, November 24th, 2014)
 * Fixed issue where camera would not properly center on the blue dot while zoom workaround was enabled
 * The `PWMapView` now only loads annotations for the current floor. Previous behavior was to load all building annotations and show/hide as necessary. mapView.annotations will now only return annotations for the current floor. If you would like to fetch all building annotations please use the `PWBuildingManager` class.
