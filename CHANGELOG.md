@@ -1,5 +1,10 @@
 #PWMapKit Changelog
 
+##v2.3.0 BETA 5 (Thursday, December 4th, 2014)
+* Fixed pagination issue when fetching route points
+* Exposing `buildingAnnotations` property on PWMapView. This propert contains all `PWBuildingAnnotation` objects associated with the map view
+* Added method, `showBuildingAnnotation:animated:` that focuses the map view to the provided annotation with optional animation. NOTE: This method will not work for object copies of POIs obtained from the building manager or elsewhere.  In order to find an annotation by identifier, name, or other property, simply search the `buildingAnnotations` property.  This method will automatically change floors on the map if necessary.  It will also zoom in to the maximum zoom level.
+
 ##v2.3.0 BETA 4 (Wednesday, December 3rd, 2014)
 * Fixed an issue where calling `showAnnotations:animated:` would cause a crash
 * Fixed an issue where the annotations would not appear at the appropriate zoom level

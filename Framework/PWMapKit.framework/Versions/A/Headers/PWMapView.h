@@ -11,7 +11,13 @@
 #import "PWMapViewDelegateProtocol.h"
 #import "PWMappingTypes.h"
 
-@class PWBuildingOverlay, PWBuilding, PWBuildingFloor, PWRoute, PWRouteStep, PWLocation;
+@class PWBuildingOverlay;
+@class PWBuilding;
+@class PWBuildingFloor;
+@class PWRoute;
+@class PWRouteStep;
+@class PWLocation;
+@class PWBuildingAnnotation;
 
 /**
  A `PWMapView` object provides an embeddable map interface. It is similar to the one provided by the maps application but is specifically tailored for indoor maps. `PWMapView` subclasses `MKMapView` to provide a convenient interface that downloads, stores and displays indoor maps and associated points of interest. Usage of this class is optional but recommended for basic indoor map implementations. For more control, please refer to `PWBuildingManager`, `PWBuildingOverlay` and `PWRouteOverlay`,  which `PWMapView` is built upon.
@@ -44,7 +50,7 @@
 @property (nonatomic, readonly) PWBuildingFloor *currentFloor;
 
 /**
- Returns the current `PWRoute` object plotted on the map. This property will be `nil` if no route is displayed.
+ The current `PWRoute` object plotted on the map. This property will be `nil` if no route is displayed.
  */
 @property (nonatomic, readonly) PWRoute *currentRoute;
 
@@ -53,6 +59,20 @@
  @discussion The default value is `NO`. If you set this property to `YES`, you will have to control the building annotation visbility state.
  */
 @property (nonatomic, readwrite) BOOL shouldReturnBuildingAnnotations;
+
+/**
+ All POI annotations for the current building.  Includes POIs for all floors and zoom levels.
+ @discussion This array is immutable and changes only when the current building is changed.  This value is never `nil`.
+ */
+@property (readonly) NSArray *buildingAnnotations;
+
+/**
+ Focuses the map view to the provided annotation with optional animation.
+ @param annotation An existing annotation found in the map's `buildingAnnotations` property.  Attempting to use another annotation will be ignored.
+ @param animated Boolean flag to indicate whether or not the change in the view should be animated.
+ @discussion This method will not work for object copies of POIs obtained from the building manager or elsewhere.  In order to find an annotation by identifier, name, or other property, simply search the `buildingAnnotations` property.  This method will automatically change floors on the map if necessary.  It will also zoom in to the maximum zoom level.
+ */
+- (void)showBuildingAnnotation:(PWBuildingAnnotation*)annotation animated:(BOOL)animated;
 
 ///-------------------------------------
 /// @name Initializing a Map View Object
