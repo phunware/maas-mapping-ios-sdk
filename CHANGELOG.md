@@ -1,5 +1,12 @@
 #PWMapKit Changelog
 
+##v2.3.0 BETA 4 (Wednesday, December 3rd, 2014)
+* Fixed an issue where calling `showAnnotations:animated:` would cause a crash
+* Fixed an issue where the annotations would not appear at the appropriate zoom level
+* PWMapView now honors the maxZoomLevel parameter for PWBuilding annotations objects
+* Fixed an issue with the `PWUserTrackingBarButtonItem` where it wouldn't allow you to switch tracking modes while in routing mode
+* Exposing PWMapView+ZoomWorkaround.h which has a method to convert to and from zoom workaround coordinate system
+
 ##v2.3.0 BETA 3 (Tuesday, December 2nd, 2014)
 * Fixed issue where building annotation views would disappear from the map (introduced in earlier betas).
 * You no longer need to manage the annotation image at the application level. `PWBuildingAnnotationView` now manages caching and loading of the annotation image internally. 
