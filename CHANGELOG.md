@@ -1,8 +1,10 @@
 #PWMapKit Changelog
 
-##v2.3.0 BETA 6 (Thursday, December 15th, 2014)
+##v2.3.0 BETA 6 (Tuesday, December 16th, 2014)
 * Adding KVO notifications to indoorUserTrackingMode
 * Floor change no longer breaks the current indoor user tracking mode. See Wiki for additional details on user tracking behavior.
+* Fixed bug where points of interest would be hidden after zooming in.
+* Updated sample code to re-center map on route.
 
 ##v2.3.0 BETA 5 (Thursday, December 4th, 2014)
 * Fixed pagination issue when fetching route points
@@ -18,7 +20,7 @@
 
 ##v2.3.0 BETA 3 (Tuesday, December 2nd, 2014)
 * Fixed issue where building annotation views would disappear from the map (introduced in earlier betas).
-* You no longer need to manage the annotation image at the application level. `PWBuildingAnnotationView` now manages caching and loading of the annotation image internally. 
+* You no longer need to manage the annotation image at the application level. `PWBuildingAnnotationView` now manages caching and loading of the annotation image internally.
 * Building floors are now ordered in ascending order, based on the `floorLevel` value.
 
 ##v2.3.0 BETA 2 (Monday, November 24th, 2014)
@@ -89,7 +91,7 @@
  * Added support for Phunware zoom levels. See POI details in MaaS portal to configure.
 
 ##v2.1.0 BETA (Friday, August 1st, 2014)
- * Removed location providers from PWMapKit and added to PWLocation SDK. 
+ * Removed location providers from PWMapKit and added to PWLocation SDK.
  * PWMapKit now has a dependency on PWLocation
  * Several bug fixes related to map positioning
 
