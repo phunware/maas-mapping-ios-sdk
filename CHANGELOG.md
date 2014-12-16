@@ -1,5 +1,9 @@
 #PWMapKit Changelog
 
+##v2.3.0 BETA 6 (Thursday, December 15th, 2014)
+* Adding KVO notifications to indoorUserTrackingMode
+* Floor change no longer breaks the current indoor user tracking mode. See Wiki for additional details on user tracking behavior.
+
 ##v2.3.0 BETA 5 (Thursday, December 4th, 2014)
 * Fixed pagination issue when fetching route points
 * Exposing `buildingAnnotations` property on PWMapView. This propert contains all `PWBuildingAnnotation` objects associated with the map view
