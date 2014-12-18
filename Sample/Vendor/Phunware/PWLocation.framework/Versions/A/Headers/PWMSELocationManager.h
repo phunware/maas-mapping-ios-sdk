@@ -20,26 +20,21 @@
  The venue GUID associated with the location manager. (read-only)
  */
 @property (nonatomic, readonly) NSString *venueGUID;
-
 /**
- The venue location associated with the location manager. (read-only)
- */
-@property (nonatomic, readonly) CLLocationCoordinate2D venueLocation;
-
-/**
- The latest indoor locatin got from Phunware location service.
+ The latest indoor location received from the Phunware location service.
  */
 @property (nonatomic, readonly) PWIndoorLocation *location;
 
 /**
- Initializes the location manager with the specified venue GUID and the venue location.
+ Initializes the location manager with the specified venue GUID and venue location.
  @param venueGUID - The venue GUID is the specific venue identifier for a given indoor location.
  @param venueLocation - The location of the venue.
- @discussion The venue GUID will come from Phunware and is available in the `PWBuilding` object. If the device is not within 5 kilometers of the venue location, then location updates will fail.
+ @discussion The venue GUID will come from Phunware and is available in the `PWBuilding` object. If the device is not within 5 kilometers of the venue location, location updates will fail.
  @return The location manager object.
  */
 
-- (instancetype)initWithVenueGUID:(NSString *)venueGUID location:(CLLocationCoordinate2D)venueLocation;
+- (instancetype)initWithVenueGUID:(NSString *)venueGUID location:(CLLocationCoordinate2D)venueLocation __attribute__((deprecated));
+- (instancetype)initWithVenueGUID:(NSString *)venueGUID NS_DESIGNATED_INITIALIZER;
 
 - (BOOL)locationServicesAvailable;
 - (void)startUpdatingLocation;

@@ -1,4 +1,4 @@
- //
+//
 //  PWLocation.h
 //  PWLocation
 //
@@ -15,7 +15,7 @@
 #import <PWLocation/PWMockLocationManager.h>
 
 /**
- PWLocation is a location based SDK.
+ PWLocation is a location provider SDK. This SDK encompasses a variety of indoor location providers and can be used in conjunction with PWMapKit to delivery and display indoor location location updates.
  */
 
 @interface PWLocation : NSObject

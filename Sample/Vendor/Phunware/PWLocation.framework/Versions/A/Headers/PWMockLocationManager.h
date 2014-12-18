@@ -16,9 +16,9 @@
 @protocol PWMockLocationManagerDelegate;
 
 /**
- The `PWMockLocationManager` class allows you to implement a mock provider for testing and validation. This is extremely useful for location testing when you are not able to be on location at a venue which was a proper location provider.
+ The `PWMockLocationManager` class allows you to implement a mock location provider for testing and validation. This is extremely useful for location testing outside of a venue with a proper location provider.
 
- It's important to note that the `floorIDMapping` property does not need to be specified for the `PWMockLocationManager`. The location floor IDs in the JSON should be equivalent to the building floor IDs.
+ It's important to note that the `floorIDMapping` property does not need to be specified for the `PWMockLocationManager`. The location floor IDs in the JSON must be equivalent to the building floor IDs.
  
  This class conforms to the `PWLocationManager` protocol.
  */
@@ -33,6 +33,7 @@
 
 /**
  Initializes a mock location manager with the specified `PWMockLocationManagerConfiguration`.
+ @param configuration The `PWMockLocationManagerConfiguration` object to initialize the manager with.
  @return Returns a `PWMockLocationManager` object.
  */
 - (instancetype)initWithMockLocationManagerWithConfiguration:(PWMockLocationManagerConfiguration *)configuration;

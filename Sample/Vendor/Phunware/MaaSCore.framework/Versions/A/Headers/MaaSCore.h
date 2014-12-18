@@ -91,4 +91,9 @@ typedef NS_ENUM(NSInteger, MaaSLogLevel)
  */
 + (NSString *)serviceName;
 
+/**
+ Returns if API encription enabled
+ */
++ (BOOL)encryptionEnabled;
+
 @end

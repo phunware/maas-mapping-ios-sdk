@@ -11,26 +11,26 @@
 @class PWBuildingFloorResource;
 
 /**
- A `PWMapDocument` object manages floor data and its associated assets.
+ A `PWMapDocument` object manages building floor data and its associated assets.
  
  A map document is initialized by `PWBuildingManager`. Initializing this object is not recommended.
  */
 
-@interface PWMapDocument : NSObject <NSCoding, NSCopying>
+@interface PWMapDocument : NSObject
 
 /**
  The building floor resource associated with the map document. (read-only)
  */
-@property (nonatomic, readonly) PWBuildingFloorResource *resource;
+@property (readonly) PWBuildingFloorResource *resource;
 
 /**
- The PDF documented associated with the map document. (read-only)
+ The PDF document associated with the map document. (read-only)
  */
-@property (nonatomic, readonly) PWPDFDocument *pdf;
+@property (readonly) PWPDFDocument *pdf;
 
 /**
- @return The URL of the document file.
+ The URL of the document's local file.
  */
-- (NSString *)fileURL;
+@property (readonly) NSURL *fileURL;
 
 @end

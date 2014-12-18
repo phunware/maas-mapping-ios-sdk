@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- The `PWMockLocationManagerConfiguration` class is used for parsing mock location data from JSON that can be used by the mock location manager. This object also has several configuration options d
+ The `PWMockLocationManagerConfiguration` class is used for parsing mock location data from JSON that can be used by the mock location manager. This object also has several configuration options.
  
  This class conforms to the `PWLocationManager` protocol.
  */
@@ -49,12 +49,12 @@
 @property (readonly) NSString *configurationDescription;
 
 /**
- An array of `PWMockLocationStep` objects
+ An array of `PWMockLocationStep` objects.
  */
 @property (readonly) NSArray *locations;
 
 /**
- The default location update interval
+ The default location update interval.
  */
 @property (readonly) NSTimeInterval defaultUpdateInterval;
 
@@ -64,7 +64,8 @@
 @property (readonly) BOOL repeats;
 
 /**
- This method unpacks a configuration from a dictionary
+ This method unpacks a configuration from a dictionary.
+ @param dictionary The dictionary that containers the configuration information.
  */
 + (instancetype)unpack:(NSDictionary *)dictionary;
 

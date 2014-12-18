@@ -10,10 +10,13 @@
 #import <PWMapKit/PWMapView.h>
 #import <PWMapKit/PWSVPulsingAnnotationView.h>
 #import <PWMapKit/PWUserTrackingBarButtonItem.h>
-#import <PWMapKit/PWAnnotation.h>
+#import <PWMapKit/PWIndoorUserTracking.h>
+#import <PWMapKit/PWAnnotationProtocol.h>
+#import <PWMapKit/PWAnnotationType.h>
 #import <PWMapKit/PWBuilding.h>
+#import <PWMapKit/PWBuildingAnnotationProtocol.h>
+#import <PWMapKit/PWBuildingAnnotationView.h>
 #import <PWMapKit/PWBuildingAnnotation.h>
-#import <PWMapkit/PWBuildingAnnotationView.h>
 #import <PWMapKit/PWBuildingManager.h>
 #import <PWMapKit/PWBuildingFloor.h>
 #import <PWMapKit/PWBuildingFloorResource.h>
@@ -26,6 +29,8 @@
 #import <PWMapKit/PWDirectionsResponse.h>
 #import <PWMapKit/PWRoute.h>
 #import <PWMapKit/PWRouteStep.h>
+#import <PWMapKit/PWRouteAnnotation.h>
+#import <PWMapKit/PWAnnotationLabel.h>
 
 /**
  The `PWMapKit` framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.
@@ -41,5 +46,8 @@
  Returns PWMapKit.
  */
 + (NSString *)serviceName;
+
++ (BOOL)shouldUseZoomWorkaround;
++ (void)setShouldUseZoomWorkaround:(BOOL)useZoom;
 
 @end

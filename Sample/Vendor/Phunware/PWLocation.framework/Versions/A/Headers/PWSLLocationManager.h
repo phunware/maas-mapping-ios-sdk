@@ -19,24 +19,24 @@
 @interface PWSLLocationManager : NSObject <PWLocationManager>
 
 /**
- The latest indoor location got from BLE location service.
+ The last indoor location received.
  */
 @property (nonatomic, readonly) PWIndoorLocation *location;
 
 /**
- The floorIDMapping is the mapping of BLE floorID and Phunware floorID.
+ The floor ID mapping dictionary used to define the mapping between the location provider floor ID and the Phunware floor ID. The dictionary format must adhere to the following format: `@{CUSTOMER_FLOORID : PHUNWARE_FLOOR_ID}`.
  */
 
 @property (nonatomic, strong) NSDictionary *floorIDMapping;
 
 /**
-The mapID obtain from Phunware for the BLE location manager. (read-only)
+The map identifier obtained from Phunware. (read-only)
  */
 
 @property (nonatomic, readonly) NSString *mapID;
 
 /**
- The customerID obtain from Phunware for the BLE location manager. (read-only)
+ The customer identifier obtained from Phunware (read-only)
  */
 
 @property (nonatomic, readonly) NSString *customerID;
@@ -46,11 +46,20 @@ The mapID obtain from Phunware for the BLE location manager. (read-only)
  @param mapID - Obtained from Phunware.
  @param customerID - Obtained from Phunware.
  @param venueLocation - The location of the venue.
- @discussion If the device is not within 5 kilometers of the venue location, then location updates will fail.
+ @discussion If the device is not within 5 kilometers of the venue location, location updates will fail.
  @return The location manager object.
  */
+- (instancetype)initWithMapIdentifier:(NSString *)mapID customerIdentifier:(NSString *)customerID location:(CLLocationCoordinate2D)venueLocation __attribute__((deprecated));
 
-- (instancetype)initWithMapIdentifier:(NSString *)mapID customerIdentifier:(NSString *)customerID location:(CLLocationCoordinate2D)venueLocation;
+
+/**
+ Initializes the location manager with the specified venue GUID..
+ @param mapID - Obtained from Phunware.
+ @param customerID - Obtained from Phunware.
+ @discussion If the device is not within 5 kilometers of the venue location, location updates will fail.
+ @return The location manager object.
+ */
+- (instancetype)initWithMapIdentifier:(NSString *)mapID customerIdentifier:(NSString *)customerID NS_DESIGNATED_INITIALIZER;
 
 - (BOOL)locationServicesAvailable;
 - (void)startUpdatingLocation;

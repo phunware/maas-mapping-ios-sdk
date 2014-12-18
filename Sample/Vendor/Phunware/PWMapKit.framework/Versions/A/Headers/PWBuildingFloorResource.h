@@ -1,28 +1,24 @@
 //
-//  PWFloorResource.h
+//  PWBuildingFloorResource.h
 //  PWMapKit
 //
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "PWMappingTypes.h"
 
-@interface PWBuildingFloorResource : NSObject <NSCoding, NSCopying>
+@interface PWBuildingFloorResource : NSObject
 
-@property (nonatomic, assign) NSUInteger resourceID;
-@property (nonatomic, assign) NSUInteger floorID;
+@property (readonly) PWBuildingFloorResourceIdentifier resourceID;
+@property (readonly) PWBuildingFloorIdentifier floorID;
 
-@property (nonatomic, strong) NSString *PDFURL;
-@property (nonatomic, strong) NSString *SVGURL;
+@property (readonly) NSString *PDFURL;
+@property (readonly) NSString *SVGURL;
 
-@property (nonatomic, assign) CGFloat zoomLevel;
+@property (readonly) CGFloat zoomLevel;
 
-@property (nonatomic, strong) NSDate *creationDate;
-@property (nonatomic, strong) NSDate *lastUpdated;
-
-+ (instancetype)unpack:(NSDictionary *)dictionary;
-- (NSDictionary *)dictionary;
-
-- (NSString *)resourceKey;
+@property (readonly) NSDate *creationDate;
+@property (readonly) NSDate *lastUpdated;
+@property (readonly) NSString *resourceKey;
 
 @end
