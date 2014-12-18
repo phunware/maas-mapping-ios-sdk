@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWMapKit.html">
+	<File path="Classes/PWFetchAnnotationAssetsOperation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWMapKit</TokenIdentifier>
-			<Abstract type="html">The PWMapKit framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.</Abstract>
-			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWFetchAnnotationAssetsOperation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchAnnotationAssetsOperation.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
@@ -13,14 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/serviceName</TokenIdentifier>
-			<Abstract type="html">Returns PWMapKit.</Abstract>
-			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchAnnotationAssetsOperation/setAssetURLs:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchAnnotationAssetsOperation.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)serviceName</Declaration>
+			<Declaration>@property (readonly) NSArray *assetURLs</Declaration>
 			
 			
-			<Anchor>//api/name/serviceName</Anchor>
+			<Anchor>//api/name/assetURLs</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchAnnotationAssetsOperation/assetURLs</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchAnnotationAssetsOperation.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *assetURLs</Declaration>
+			
+			
+			<Anchor>//api/name/assetURLs</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFetchAnnotationAssetsOperation/assetURLs</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchAnnotationAssetsOperation.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *assetURLs</Declaration>
+			
+			
+			<Anchor>//api/name/assetURLs</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchAnnotationAssetsOperation/initWithAnnotationAssetURLs:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchAnnotationAssetsOperation.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithAnnotationAssetURLs:(NSArray *)assetURLs</Declaration>
+			
+			
+			<Anchor>//api/name/initWithAnnotationAssetURLs:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

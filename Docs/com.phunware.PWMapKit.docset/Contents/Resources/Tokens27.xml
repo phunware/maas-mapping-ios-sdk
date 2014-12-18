@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWBuildingOverlayDelegate.html">
+	<File path="Classes/PWMapOperation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWBuildingOverlayDelegate</TokenIdentifier>
-			<Abstract type="html">The PWMapViewDelegate protocol defines a set of optional methods that you can use to receive building-related update messages. Because many map operations require the PWMapView class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMapOperation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
@@ -13,65 +13,206 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingOverlayDelegate/buildingOverlay:didChangeFloor:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified overlay successfully changed the floor.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/setCancelled:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
 			
-			<Declaration>- (void)buildingOverlay:(PWBuildingOverlay *)overlay didChangeFloor:(PWBuildingFloor *)floor</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>overlay</Name>
-					<Abstract type="html">The building overlay object.</Abstract>
-				</Parameter><Parameter>
-					<Name>floor</Name>
-					<Abstract type="html">The current floor object.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (getter=isCancelled) BOOL cancelled</Declaration>
 			
-			<Anchor>//api/name/buildingOverlay:didChangeFloor:</Anchor>
+			
+			<Anchor>//api/name/cancelled</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingOverlayDelegate/buildingOverlay:didFinishLoadingBuilding:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified overlay successfully loaded necessary building data.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/isCancelled</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
 			
-			<Declaration>- (void)buildingOverlay:(PWBuildingOverlay *)overlay didFinishLoadingBuilding:(PWBuilding *)building</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>overlay</Name>
-					<Abstract type="html">The building overlay object.</Abstract>
-				</Parameter><Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The building object that the overlay loaded.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (getter=isCancelled) BOOL cancelled</Declaration>
 			
-			<Anchor>//api/name/buildingOverlay:didFinishLoadingBuilding:</Anchor>
+			
+			<Anchor>//api/name/cancelled</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingOverlayDelegate/buildingOverlay:didFailToLoadBuilding:error:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified overlay was unable to load the building data.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapOperation/cancelled</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
 			
-			<Declaration>- (void)buildingOverlay:(PWBuildingOverlay *)overlay didFailToLoadBuilding:(PWBuilding *)building error:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>overlay</Name>
-					<Abstract type="html">The building overlay object.</Abstract>
-				</Parameter><Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The building object that the overlay tried to load.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">Why the building data could not be loaded.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (getter=isCancelled) BOOL cancelled</Declaration>
 			
-			<Anchor>//api/name/buildingOverlay:didFailToLoadBuilding:error:</Anchor>
+			
+			<Anchor>//api/name/cancelled</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/setExecuting:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isExecuting) BOOL executing</Declaration>
+			
+			
+			<Anchor>//api/name/executing</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/isExecuting</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isExecuting) BOOL executing</Declaration>
+			
+			
+			<Anchor>//api/name/executing</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapOperation/executing</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isExecuting) BOOL executing</Declaration>
+			
+			
+			<Anchor>//api/name/executing</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/setFinished:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isFinished) BOOL finished</Declaration>
+			
+			
+			<Anchor>//api/name/finished</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/isFinished</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isFinished) BOOL finished</Declaration>
+			
+			
+			<Anchor>//api/name/finished</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapOperation/finished</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isFinished) BOOL finished</Declaration>
+			
+			
+			<Anchor>//api/name/finished</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/setConcurrent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isConcurrent) BOOL concurrent</Declaration>
+			
+			
+			<Anchor>//api/name/concurrent</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/isConcurrent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isConcurrent) BOOL concurrent</Declaration>
+			
+			
+			<Anchor>//api/name/concurrent</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapOperation/concurrent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isConcurrent) BOOL concurrent</Declaration>
+			
+			
+			<Anchor>//api/name/concurrent</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/setAsynchronous:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isAsynchronous) BOOL asynchronous</Declaration>
+			
+			
+			<Anchor>//api/name/asynchronous</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/isAsynchronous</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isAsynchronous) BOOL asynchronous</Declaration>
+			
+			
+			<Anchor>//api/name/asynchronous</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapOperation/asynchronous</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isAsynchronous) BOOL asynchronous</Declaration>
+			
+			
+			<Anchor>//api/name/asynchronous</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapOperation/cleanUp</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>- (void)cleanUp</Declaration>
+			
+			
+			<Anchor>//api/name/cleanUp</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMapOperation/sharedClient</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapOperation.h</DeclaredIn>
+			
+			<Declaration>+ (PWAFHTTPClient *)sharedClient</Declaration>
+			
+			
+			<Anchor>//api/name/sharedClient</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		

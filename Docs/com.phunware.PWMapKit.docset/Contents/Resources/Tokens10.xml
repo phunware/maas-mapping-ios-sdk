@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWDirectionsRequest.html">
+	<File path="Classes/PWBuildingOverlayRenderer.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWDirectionsRequest</TokenIdentifier>
-			<Abstract type="html">The PWDirectionsRequest class is used by apps that work with indoor directions. To request directions, create a new instance of this class and configure it with the new start and end points you need. Then create a PWDirections object and use the methods of that class to initiate the request and process the results.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingOverlayRenderer</TokenIdentifier>
+			<Abstract type="html">The PWBuildingOverlayRenderer class defines the basic behavior associated with all building-based overlays. An overlay renderer draws the visual representation of PWBuilding object. This class defines the drawing infrastructure used by the map view.</Abstract>
+			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -13,192 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/setSource:</TokenIdentifier>
-			<Abstract type="html">Returns the starting point for routing directions. This value will be nil if this request is initialized with initWithLocation:destination:type:. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlayRenderer/setMapView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) id&lt;PWAnnotation&gt; source</Declaration>
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/source</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/source</TokenIdentifier>
-			<Abstract type="html">Returns the starting point for routing directions. This value will be nil if this request is initialized with initWithLocation:destination:type:. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlayRenderer/mapView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) id&lt;PWAnnotation&gt; source</Declaration>
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/source</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsRequest/source</TokenIdentifier>
-			<Abstract type="html">Returns the starting point for routing directions. This value will be nil if this request is initialized with initWithLocation:destination:type:. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlayRenderer/mapView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) id&lt;PWAnnotation&gt; source</Declaration>
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/source</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/setDestination:</TokenIdentifier>
-			<Abstract type="html">Returns the end point for routing directions. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlayRenderer/adjustScaleFactorIfNeeded:zoomScale:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingOverlayRenderer+ZoomWorkaround.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) id&lt;PWAnnotation&gt; destination</Declaration>
-			
-			
-			<Anchor>//api/name/destination</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/destination</TokenIdentifier>
-			<Abstract type="html">Returns the end point for routing directions. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) id&lt;PWAnnotation&gt; destination</Declaration>
+			<Declaration>- (double)adjustScaleFactorIfNeeded:(double)scaleFactor zoomScale:(MKZoomScale)zoomScale</Declaration>
 			
 			
-			<Anchor>//api/name/destination</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsRequest/destination</TokenIdentifier>
-			<Abstract type="html">Returns the end point for routing directions. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) id&lt;PWAnnotation&gt; destination</Declaration>
-			
-			
-			<Anchor>//api/name/destination</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/setLocation:</TokenIdentifier>
-			<Abstract type="html">The source location object. This value will be nil if this request is initialized with initWithSource:destination:type:. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) id&lt;PWLocation&gt; location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/location</TokenIdentifier>
-			<Abstract type="html">The source location object. This value will be nil if this request is initialized with initWithSource:destination:type:. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) id&lt;PWLocation&gt; location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsRequest/location</TokenIdentifier>
-			<Abstract type="html">The source location object. This value will be nil if this request is initialized with initWithSource:destination:type:. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) id&lt;PWLocation&gt; location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/setType:</TokenIdentifier>
-			<Abstract type="html">The type of directions this request applies to.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWDirectionsType type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/type</TokenIdentifier>
-			<Abstract type="html">The type of directions this request applies to.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWDirectionsType type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsRequest/type</TokenIdentifier>
-			<Abstract type="html">The type of directions this request applies to.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWDirectionsType type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/initWithSource:destination:type:</TokenIdentifier>
-			<Abstract type="html">Initializes and returns a PWDirectionsRequest object with a source and destination annotation.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithSource:(id&lt;PWAnnotation&gt;)source destination:(id&lt;PWAnnotation&gt;)destination type:(PWDirectionsType)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>source</Name>
-					<Abstract type="html">The source annotation. This object must conform to the PWAnnotation protocol and cannot be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>destination</Name>
-					<Abstract type="html">The destination annotation. This object must conform to the PWAnnotation protocol and cannot be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The type of directions for this request.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An initialized directions request object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSource:destination:type:</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/initWithLocation:destination:type:</TokenIdentifier>
-			<Abstract type="html">Initializes and returns a PWDirectionsRequest object with a source location and a destination annotation.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithLocation:(id&lt;PWLocation&gt;)location destination:(id&lt;PWAnnotation&gt;)destination type:(PWDirectionsType)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">The source location. This object must conform to the PWLocation protocol and cannot be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>destination</Name>
-					<Abstract type="html">The destination annotation. This object must conform to the PWAnnotation protocol and cannot be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The type of directions for this request.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An initialized directions request object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithLocation:destination:type:</Anchor>
+			<Anchor>//api/name/adjustScaleFactorIfNeeded:zoomScale:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

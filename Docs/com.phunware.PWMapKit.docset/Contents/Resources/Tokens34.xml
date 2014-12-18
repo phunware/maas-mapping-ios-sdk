@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWPaginationValuesBuilder.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWPaginationValuesBuilder</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPaginationValuesBuilder.h</DeclaredIn>
+            
+			
+			<NodeRef refid="34"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWPaginationValuesBuilder/buildPaginationValuesWithValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPaginationValuesBuilder.h</DeclaredIn>
+			
+			<Declaration>+ (PWPaginationValues)buildPaginationValuesWithValues:(NSDictionary *)values</Declaration>
+			
+			
+			<Anchor>//api/name/buildPaginationValuesWithValues:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

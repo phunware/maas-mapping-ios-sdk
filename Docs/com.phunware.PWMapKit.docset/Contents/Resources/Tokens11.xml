@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWDirectionsResponse.html">
+	<File path="Classes/PWDirections.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWDirectionsResponse</TokenIdentifier>
-			<Abstract type="html">The PWDirectionsResponse class provides a container for route information returned by the Phunware servers. You do not create instances of this class directly. Instead, you can initiate a request for directions between two points by calling the calculateDirectionsWithCompletionHandler: method of a PWDirections object. You will receive an instance of this class as the result.</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWDirections</TokenIdentifier>
+			<Abstract type="html">A PWDirections object provides you with route-based directions data from Phunware servers. You can use instances of this class to get walking directions based on the data in a PWDirectionsRequest object that you provide. The directions object passes your request to the Phunware servers and returns the requested information to a block that you provide.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
             
 			
 			<NodeRef refid="11"/>
@@ -13,11 +13,45 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/setRequest:</TokenIdentifier>
-			<Abstract type="html">The original directions request object. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/initWithRequest:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a directions object using the specified request.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWDirectionsRequest *request</Declaration>
+			<Declaration>- (instancetype)initWithRequest:(PWDirectionsRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">The request object containing the start and end points of the route. This parameter must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An initialized directions object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithRequest:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/calculateDirectionsWithCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Begins calculating the requested route information asynchronously.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>- (void)calculateDirectionsWithCompletionHandler:(PWDirectionsHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">The block to execute when the directions are ready or when an error occurs. This parameter cannot be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/calculateDirectionsWithCompletionHandler:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/setRequest:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWDirections+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWDirectionsRequest *request</Declaration>
 			
 			
 			<Anchor>//api/name/request</Anchor>
@@ -25,23 +59,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/request</TokenIdentifier>
-			<Abstract type="html">The original directions request object. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/request</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWDirections+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWDirectionsRequest *request</Declaration>
-			
-			
-			<Anchor>//api/name/request</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsResponse/request</TokenIdentifier>
-			<Abstract type="html">The original directions request object. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWDirectionsRequest *request</Declaration>
+			<Declaration>@property PWDirectionsRequest *request</Declaration>
 			
 			
 			<Anchor>//api/name/request</Anchor>
@@ -49,38 +71,14 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/setRoutes:</TokenIdentifier>
-			<Abstract type="html">An array of route objects representing the directions between the start and end points. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWDirections/request</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWDirections+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *routes</Declaration>
-			
-			
-			<Anchor>//api/name/routes</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/routes</TokenIdentifier>
-			<Abstract type="html">An array of route objects representing the directions between the start and end points. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *routes</Declaration>
+			<Declaration>@property PWDirectionsRequest *request</Declaration>
 			
 			
-			<Anchor>//api/name/routes</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsResponse/routes</TokenIdentifier>
-			<Abstract type="html">An array of route objects representing the directions between the start and end points. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *routes</Declaration>
-			
-			
-			<Anchor>//api/name/routes</Anchor>
+			<Anchor>//api/name/request</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

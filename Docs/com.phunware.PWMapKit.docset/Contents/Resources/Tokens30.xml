@@ -1,57 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWIndoorUserTrackingMode.html">
+	<File path="Classes/PWNaivePositionEstimator.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWIndoorUserTrackingMode</TokenIdentifier>
-			<Abstract type="html">PWIndoorUserTrackingMode is used to track the user&apos;s indoor location on the map.</Abstract>
-			<DeclaredIn>PWMapView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWNaivePositionEstimator</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWNaivePositionEstimator.h</DeclaredIn>
             
 			
 			<NodeRef refid="30"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWIndoorUserTrackingModeUnknown</TokenIdentifier>
-            <Abstract type="html">The map may not have an indoor tracking mode.</Abstract>
-            <Declaration>PWIndoorUserTrackingModeUnknown</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWNaivePositionEstimator/estimatedPosition</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWNaivePositionEstimator.h</DeclaredIn>
+			
+			<Declaration>- (MKMapPoint)estimatedPosition</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedPosition</Anchor>
             <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWIndoorUserTrackingModeNone</TokenIdentifier>
-            <Abstract type="html">The map does not follow the user&apos;s indoor location.</Abstract>
-            <Declaration>PWIndoorUserTrackingModeNone</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWNaivePositionEstimator/updatePosition:timestamp:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWNaivePositionEstimator.h</DeclaredIn>
+			
+			<Declaration>- (void)updatePosition:(MKMapPoint)position timestamp:(NSTimeInterval)timestamp</Declaration>
+			
+			
+			<Anchor>//api/name/updatePosition:timestamp:</Anchor>
             <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWIndoorUserTrackingModeFollow</TokenIdentifier>
-            <Abstract type="html">The map follows the user&apos;s indoor location.</Abstract>
-            <Declaration>PWIndoorUserTrackingModeFollow</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWNaivePositionEstimator/setAlphaMotion:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWNaivePositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property MapMotion alphaMotion</Declaration>
+			
+			
+			<Anchor>//api/name/alphaMotion</Anchor>
             <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWIndoorUserTrackingModeFollowWithHeading</TokenIdentifier>
-            <Abstract type="html">The map follows the user&apos;s location and heading.</Abstract>
-            <Declaration>PWIndoorUserTrackingModeFollowWithHeading</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWNaivePositionEstimator/alphaMotion</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWNaivePositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property MapMotion alphaMotion</Declaration>
+			
+			
+			<Anchor>//api/name/alphaMotion</Anchor>
             <NodeRef refid="30"/>
-        </Token>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWNaivePositionEstimator/alphaMotion</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWNaivePositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property MapMotion alphaMotion</Declaration>
+			
+			
+			<Anchor>//api/name/alphaMotion</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWNaivePositionEstimator/setBetaMotion:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWNaivePositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property MapMotion betaMotion</Declaration>
+			
+			
+			<Anchor>//api/name/betaMotion</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWNaivePositionEstimator/betaMotion</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWNaivePositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property MapMotion betaMotion</Declaration>
+			
+			
+			<Anchor>//api/name/betaMotion</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWNaivePositionEstimator/betaMotion</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWNaivePositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property MapMotion betaMotion</Declaration>
+			
+			
+			<Anchor>//api/name/betaMotion</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

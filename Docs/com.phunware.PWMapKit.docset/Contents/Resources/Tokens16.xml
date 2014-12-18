@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWOcclusionManager.html">
+	<File path="Classes/PWFetchBuildingOperation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWOcclusionManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/PWFetchBuildingOperation</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>PWOcclusionManager.h</DeclaredIn>
+			<DeclaredIn>PWFetchBuildingOperation.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
@@ -13,26 +13,86 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWOcclusionManager/initWithMapView:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingOperation/setBuildingIdentifier:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>PWOcclusionManager.h</DeclaredIn>
+			<DeclaredIn>PWFetchBuildingOperation.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithMapView:(PWMapView *)mapView</Declaration>
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingIdentifier</Declaration>
 			
 			
-			<Anchor>//api/name/initWithMapView:</Anchor>
+			<Anchor>//api/name/buildingIdentifier</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWOcclusionManager/update</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingOperation/buildingIdentifier</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>PWOcclusionManager.h</DeclaredIn>
+			<DeclaredIn>PWFetchBuildingOperation.h</DeclaredIn>
 			
-			<Declaration>- (void)update</Declaration>
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingIdentifier</Declaration>
 			
 			
-			<Anchor>//api/name/update</Anchor>
+			<Anchor>//api/name/buildingIdentifier</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFetchBuildingOperation/buildingIdentifier</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingOperation.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/buildingIdentifier</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingOperation/setFetchBuildingCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingOperation.h</DeclaredIn>
+			
+			<Declaration>@property (copy) void ( ^ ) ( PWBuilding *building , NSError *error ) fetchBuildingCompletionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/fetchBuildingCompletionBlock</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingOperation/fetchBuildingCompletionBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingOperation.h</DeclaredIn>
+			
+			<Declaration>@property (copy) void ( ^ ) ( PWBuilding *building , NSError *error ) fetchBuildingCompletionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/fetchBuildingCompletionBlock</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFetchBuildingOperation/fetchBuildingCompletionBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingOperation.h</DeclaredIn>
+			
+			<Declaration>@property (copy) void ( ^ ) ( PWBuilding *building , NSError *error ) fetchBuildingCompletionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/fetchBuildingCompletionBlock</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingOperation/initWithBuildingID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingOperation.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithBuildingID:(PWBuildingIdentifier)buildingIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/initWithBuildingID:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		

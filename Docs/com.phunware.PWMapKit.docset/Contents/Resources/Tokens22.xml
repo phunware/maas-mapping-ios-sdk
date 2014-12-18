@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteStep.html">
+	<File path="Classes/PWLocationAverager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteStep</TokenIdentifier>
-			<Abstract type="html">A PWRouteStep object represents one part of an overall route. Each step in a route corresponds to a single instruction that would need to be followed by the user.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWLocationAverager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
@@ -13,146 +13,182 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setPolyline:</TokenIdentifier>
-			<Abstract type="html">The detailed step geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/setLocationCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
+			<Declaration>@property NSUInteger locationCount</Declaration>
 			
 			
-			<Anchor>//api/name/polyline</Anchor>
+			<Anchor>//api/name/locationCount</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/polyline</TokenIdentifier>
-			<Abstract type="html">The detailed step geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/locationCount</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
+			<Declaration>@property NSUInteger locationCount</Declaration>
 			
 			
-			<Anchor>//api/name/polyline</Anchor>
+			<Anchor>//api/name/locationCount</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/polyline</TokenIdentifier>
-			<Abstract type="html">The detailed step geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWLocationAverager/locationCount</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
+			<Declaration>@property NSUInteger locationCount</Declaration>
 			
 			
-			<Anchor>//api/name/polyline</Anchor>
+			<Anchor>//api/name/locationCount</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setDistance:</TokenIdentifier>
-			<Abstract type="html">The step distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/setMaximumAge:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property NSTimeInterval maximumAge</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/maximumAge</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/distance</TokenIdentifier>
-			<Abstract type="html">The step distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/maximumAge</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property NSTimeInterval maximumAge</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/maximumAge</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/distance</TokenIdentifier>
-			<Abstract type="html">The step distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWLocationAverager/maximumAge</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property NSTimeInterval maximumAge</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/maximumAge</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/setAverageLocation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger floorID</Declaration>
+			<Declaration>@property (readonly) PWIndoorLocation *averageLocation</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/averageLocation</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/floorID</TokenIdentifier>
-			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/averageLocation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger floorID</Declaration>
+			<Declaration>@property (readonly) PWIndoorLocation *averageLocation</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/averageLocation</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/floorID</TokenIdentifier>
-			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWLocationAverager/averageLocation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger floorID</Declaration>
+			<Declaration>@property (readonly) PWIndoorLocation *averageLocation</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/averageLocation</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setIndex:</TokenIdentifier>
-			<Abstract type="html">The index of the current step.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/initWithLocationCount:maximumAge:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger index</Declaration>
+			<Declaration>- (instancetype)initWithLocationCount:(NSUInteger)locationCount maximumAge:(NSTimeInterval)maximumAge</Declaration>
 			
 			
-			<Anchor>//api/name/index</Anchor>
+			<Anchor>//api/name/initWithLocationCount:maximumAge:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/index</TokenIdentifier>
-			<Abstract type="html">The index of the current step.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/addLocation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger index</Declaration>
+			<Declaration>- (void)addLocation:(PWIndoorLocation *)location</Declaration>
 			
 			
-			<Anchor>//api/name/index</Anchor>
+			<Anchor>//api/name/addLocation:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/index</TokenIdentifier>
-			<Abstract type="html">The index of the current step.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/clearLocations</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger index</Declaration>
+			<Declaration>- (void)clearLocations</Declaration>
 			
 			
-			<Anchor>//api/name/index</Anchor>
+			<Anchor>//api/name/clearLocations</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/setLocations:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSMutableArray *locations</Declaration>
+			
+			
+			<Anchor>//api/name/locations</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWLocationAverager/locations</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSMutableArray *locations</Declaration>
+			
+			
+			<Anchor>//api/name/locations</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWLocationAverager/locations</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWLocationAverager+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSMutableArray *locations</Declaration>
+			
+			
+			<Anchor>//api/name/locations</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingFloorReference.html">
+	<File path="Classes/PWBuildingBuilder.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingFloorReference</TokenIdentifier>
-			<Abstract type="html">The floor reference object contains reference information about the floor&apos;s location in the map coordinate space.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingBuilder</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingBuilder.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
@@ -13,182 +13,62 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setTopLeft:</TokenIdentifier>
-			<Abstract type="html">The top left lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWBuildingBuilder/buildBuildingWithValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingBuilder.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>+ (PWBuilding *)buildBuildingWithValues:(NSDictionary *)values</Declaration>
 			
 			
-			<Anchor>//api/name/topLeft</Anchor>
+			<Anchor>//api/name/buildBuildingWithValues:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/topLeft</TokenIdentifier>
-			<Abstract type="html">The top left lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWBuildingBuilder/buildFloorWithValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingBuilder.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>+ (PWBuildingFloor *)buildFloorWithValues:(NSDictionary *)values</Declaration>
 			
 			
-			<Anchor>//api/name/topLeft</Anchor>
+			<Anchor>//api/name/buildFloorWithValues:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/topLeft</TokenIdentifier>
-			<Abstract type="html">The top left lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWBuildingBuilder/buildFloorResourceWithValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingBuilder.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>+ (PWBuildingFloorResource *)buildFloorResourceWithValues:(NSDictionary *)values</Declaration>
 			
 			
-			<Anchor>//api/name/topLeft</Anchor>
+			<Anchor>//api/name/buildFloorResourceWithValues:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setTopRight:</TokenIdentifier>
-			<Abstract type="html">  The top right lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWBuildingBuilder/buildFloorReferenceWithValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingBuilder.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topRight</Declaration>
+			<Declaration>+ (PWBuildingFloorReference *)buildFloorReferenceWithValues:(NSDictionary *)values</Declaration>
 			
 			
-			<Anchor>//api/name/topRight</Anchor>
+			<Anchor>//api/name/buildFloorReferenceWithValues:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/topRight</TokenIdentifier>
-			<Abstract type="html">  The top right lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWBuildingBuilder/buildAnnotationWithValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingBuilder.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topRight</Declaration>
-			
-			
-			<Anchor>//api/name/topRight</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/topRight</TokenIdentifier>
-			<Abstract type="html">  The top right lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topRight</Declaration>
+			<Declaration>+ (PWBuildingAnnotation *)buildAnnotationWithValues:(NSDictionary *)values</Declaration>
 			
 			
-			<Anchor>//api/name/topRight</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setBottomLeft:</TokenIdentifier>
-			<Abstract type="html">  The bottom left lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomLeft</Declaration>
-			
-			
-			<Anchor>//api/name/bottomLeft</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/bottomLeft</TokenIdentifier>
-			<Abstract type="html">  The bottom left lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomLeft</Declaration>
-			
-			
-			<Anchor>//api/name/bottomLeft</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/bottomLeft</TokenIdentifier>
-			<Abstract type="html">  The bottom left lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomLeft</Declaration>
-			
-			
-			<Anchor>//api/name/bottomLeft</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setBottomRight:</TokenIdentifier>
-			<Abstract type="html">  The bottom right lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomRight</Declaration>
-			
-			
-			<Anchor>//api/name/bottomRight</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/bottomRight</TokenIdentifier>
-			<Abstract type="html">  The bottom right lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomRight</Declaration>
-			
-			
-			<Anchor>//api/name/bottomRight</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/bottomRight</TokenIdentifier>
-			<Abstract type="html">  The bottom right lat/long coordinate of the building.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomRight</Declaration>
-			
-			
-			<Anchor>//api/name/bottomRight</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setAngle:</TokenIdentifier>
-			<Abstract type="html">  The angle of the building in the lat/long coordinate space.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGFloat angle</Declaration>
-			
-			
-			<Anchor>//api/name/angle</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/angle</TokenIdentifier>
-			<Abstract type="html">  The angle of the building in the lat/long coordinate space.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGFloat angle</Declaration>
-			
-			
-			<Anchor>//api/name/angle</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/angle</TokenIdentifier>
-			<Abstract type="html">  The angle of the building in the lat/long coordinate space.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGFloat angle</Declaration>
-			
-			
-			<Anchor>//api/name/angle</Anchor>
+			<Anchor>//api/name/buildAnnotationWithValues:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

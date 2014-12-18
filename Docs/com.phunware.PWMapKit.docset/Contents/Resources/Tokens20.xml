@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteOverlay.html">
+	<File path="Classes/PWFetchRoutePointsOperation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteOverlay</TokenIdentifier>
-			<Abstract type="html">The PWRouteOverlay protocol defines a specific type of annotation that represents a route on a map.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWFetchRoutePointsOperation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchRoutePointsOperation.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,111 +13,86 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setRoute:</TokenIdentifier>
-			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchRoutePointsOperation/setBuildingIdentifier:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchRoutePointsOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingIdentifier</Declaration>
 			
 			
-			<Anchor>//api/name/route</Anchor>
+			<Anchor>//api/name/buildingIdentifier</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/route</TokenIdentifier>
-			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchRoutePointsOperation/buildingIdentifier</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchRoutePointsOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingIdentifier</Declaration>
 			
 			
-			<Anchor>//api/name/route</Anchor>
+			<Anchor>//api/name/buildingIdentifier</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/route</TokenIdentifier>
-			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFetchRoutePointsOperation/buildingIdentifier</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchRoutePointsOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingIdentifier</Declaration>
 			
 			
-			<Anchor>//api/name/route</Anchor>
+			<Anchor>//api/name/buildingIdentifier</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setCurrentStep:</TokenIdentifier>
-			<Abstract type="html">The current route step displayed on the overlay.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchRoutePointsOperation/setFetchRoutePointsCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchRoutePointsOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRouteStep *currentStep</Declaration>
+			<Declaration>@property (copy) void ( ^ ) ( NSArray *routePoints , NSError *error ) fetchRoutePointsCompletionBlock</Declaration>
 			
 			
-			<Anchor>//api/name/currentStep</Anchor>
+			<Anchor>//api/name/fetchRoutePointsCompletionBlock</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/currentStep</TokenIdentifier>
-			<Abstract type="html">The current route step displayed on the overlay.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchRoutePointsOperation/fetchRoutePointsCompletionBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchRoutePointsOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRouteStep *currentStep</Declaration>
+			<Declaration>@property (copy) void ( ^ ) ( NSArray *routePoints , NSError *error ) fetchRoutePointsCompletionBlock</Declaration>
 			
 			
-			<Anchor>//api/name/currentStep</Anchor>
+			<Anchor>//api/name/fetchRoutePointsCompletionBlock</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/currentStep</TokenIdentifier>
-			<Abstract type="html">The current route step displayed on the overlay.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFetchRoutePointsOperation/fetchRoutePointsCompletionBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchRoutePointsOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRouteStep *currentStep</Declaration>
+			<Declaration>@property (copy) void ( ^ ) ( NSArray *routePoints , NSError *error ) fetchRoutePointsCompletionBlock</Declaration>
 			
 			
-			<Anchor>//api/name/currentStep</Anchor>
+			<Anchor>//api/name/fetchRoutePointsCompletionBlock</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/initWithRoute:buildingOverlay:</TokenIdentifier>
-			<Abstract type="html">Initializes the overlay with the specified route and building overlay.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchRoutePointsOperation/initWithBuildingID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchRoutePointsOperation.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route buildingOverlay:(PWBuildingOverlay *)buildingOverlay</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>route</Name>
-					<Abstract type="html">The route to display on the map.</Abstract>
-				</Parameter><Parameter>
-					<Name>buildingOverlay</Name>
-					<Abstract type="html">The building overlay associated with the current route overlay.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (instancetype)initWithBuildingID:(PWBuildingIdentifier)buildingIdentifier</Declaration>
 			
-			<Anchor>//api/name/initWithRoute:buildingOverlay:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setCurrentStep:</TokenIdentifier>
-			<Abstract type="html">Changes the current route step to display on the overlay.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>- (void)setCurrentStep:(PWRouteStep *)step</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>step</Name>
-					<Abstract type="html">The step to display on the route overlay. The step must belong to the current route and cannot be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCurrentStep:</Anchor>
+			<Anchor>//api/name/initWithBuildingID:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

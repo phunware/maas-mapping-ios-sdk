@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/PWBuildingFloorResource+.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/PWBuildingFloorResource()</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+            
+			
+			<NodeRef refid="45"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/setResourceID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorResourceIdentifier resourceID</Declaration>
+			
+			
+			<Anchor>//api/name/resourceID</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/resourceID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorResourceIdentifier resourceID</Declaration>
+			
+			
+			<Anchor>//api/name/resourceID</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorResource/resourceID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorResourceIdentifier resourceID</Declaration>
+			
+			
+			<Anchor>//api/name/resourceID</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/setFloorID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/floorID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorResource/floorID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/setPDFURL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSString *PDFURL</Declaration>
+			
+			
+			<Anchor>//api/name/PDFURL</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/PDFURL</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSString *PDFURL</Declaration>
+			
+			
+			<Anchor>//api/name/PDFURL</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorResource/PDFURL</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSString *PDFURL</Declaration>
+			
+			
+			<Anchor>//api/name/PDFURL</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/setSVGURL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSString *SVGURL</Declaration>
+			
+			
+			<Anchor>//api/name/SVGURL</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/SVGURL</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSString *SVGURL</Declaration>
+			
+			
+			<Anchor>//api/name/SVGURL</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorResource/SVGURL</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSString *SVGURL</Declaration>
+			
+			
+			<Anchor>//api/name/SVGURL</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/setZoomLevel:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat zoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/zoomLevel</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/zoomLevel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat zoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/zoomLevel</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorResource/zoomLevel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property CGFloat zoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/zoomLevel</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/setCreationDate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *creationDate</Declaration>
+			
+			
+			<Anchor>//api/name/creationDate</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/creationDate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *creationDate</Declaration>
+			
+			
+			<Anchor>//api/name/creationDate</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorResource/creationDate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *creationDate</Declaration>
+			
+			
+			<Anchor>//api/name/creationDate</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/setLastUpdated:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *lastUpdated</Declaration>
+			
+			
+			<Anchor>//api/name/lastUpdated</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/lastUpdated</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *lastUpdated</Declaration>
+			
+			
+			<Anchor>//api/name/lastUpdated</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorResource/lastUpdated</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *lastUpdated</Declaration>
+			
+			
+			<Anchor>//api/name/lastUpdated</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/setResourceKey:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSString *resourceKey</Declaration>
+			
+			
+			<Anchor>//api/name/resourceKey</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorResource/resourceKey</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSString *resourceKey</Declaration>
+			
+			
+			<Anchor>//api/name/resourceKey</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorResource/resourceKey</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloorResource+Private.h</DeclaredIn>
+			
+			<Declaration>@property NSString *resourceKey</Declaration>
+			
+			
+			<Anchor>//api/name/resourceKey</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

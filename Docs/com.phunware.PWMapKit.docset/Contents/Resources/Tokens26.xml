@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWBuildingAnnotation.html">
+	<File path="Classes/PWMapKit.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWBuildingAnnotation</TokenIdentifier>
-			<Abstract type="html">The PWAnnotation protocol is used to provide building annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single building annotation and provides critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but coordinate the creation of an appropriate MKAnnotationView object to handle the display in conjunction with the PWMapView delegate.</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMapKit</TokenIdentifier>
+			<Abstract type="html">The PWMapKit framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -13,182 +13,14 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/setAnnotationDescription:</TokenIdentifier>
-			<Abstract type="html">A description of the building annotation. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/serviceName</TokenIdentifier>
+			<Abstract type="html">Returns PWMapKit.</Abstract>
+			<DeclaredIn>PWMapKit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *annotationDescription</Declaration>
-			
-			
-			<Anchor>//api/name/annotationDescription</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/annotationDescription</TokenIdentifier>
-			<Abstract type="html">A description of the building annotation. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *annotationDescription</Declaration>
+			<Declaration>+ (NSString *)serviceName</Declaration>
 			
 			
-			<Anchor>//api/name/annotationDescription</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotation/annotationDescription</TokenIdentifier>
-			<Abstract type="html">A description of the building annotation. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *annotationDescription</Declaration>
-			
-			
-			<Anchor>//api/name/annotationDescription</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/setCategory:</TokenIdentifier>
-			<Abstract type="html">The category associated with the building annotation. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *category</Declaration>
-			
-			
-			<Anchor>//api/name/category</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/category</TokenIdentifier>
-			<Abstract type="html">The category associated with the building annotation. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *category</Declaration>
-			
-			
-			<Anchor>//api/name/category</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotation/category</TokenIdentifier>
-			<Abstract type="html">The category associated with the building annotation. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *category</Declaration>
-			
-			
-			<Anchor>//api/name/category</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/setType:</TokenIdentifier>
-			<Abstract type="html">The building annotation type. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSInteger type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/type</TokenIdentifier>
-			<Abstract type="html">The building annotation type. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSInteger type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotation/type</TokenIdentifier>
-			<Abstract type="html">The building annotation type. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSInteger type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/setImageURL:</TokenIdentifier>
-			<Abstract type="html">The image URL associated with the building annotation. This is derived from the type. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSURL *imageURL</Declaration>
-			
-			
-			<Anchor>//api/name/imageURL</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/imageURL</TokenIdentifier>
-			<Abstract type="html">The image URL associated with the building annotation. This is derived from the type. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSURL *imageURL</Declaration>
-			
-			
-			<Anchor>//api/name/imageURL</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotation/imageURL</TokenIdentifier>
-			<Abstract type="html">The image URL associated with the building annotation. This is derived from the type. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSURL *imageURL</Declaration>
-			
-			
-			<Anchor>//api/name/imageURL</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/setMetaData:</TokenIdentifier>
-			<Abstract type="html">Metadata associated with the building annotation. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
-			
-			
-			<Anchor>//api/name/metaData</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotation/metaData</TokenIdentifier>
-			<Abstract type="html">Metadata associated with the building annotation. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
-			
-			
-			<Anchor>//api/name/metaData</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotation/metaData</TokenIdentifier>
-			<Abstract type="html">Metadata associated with the building annotation. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
-			
-			
-			<Anchor>//api/name/metaData</Anchor>
+			<Anchor>//api/name/serviceName</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

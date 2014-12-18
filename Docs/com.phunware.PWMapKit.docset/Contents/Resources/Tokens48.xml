@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/PWRouteSegment+.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/PWRouteSegment()</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+            
+			
+			<NodeRef refid="48"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/setFloorID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/floorID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteSegment/floorID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/setStartPointID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWAnnotationIdentifier startPointID</Declaration>
+			
+			
+			<Anchor>//api/name/startPointID</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/startPointID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWAnnotationIdentifier startPointID</Declaration>
+			
+			
+			<Anchor>//api/name/startPointID</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteSegment/startPointID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWAnnotationIdentifier startPointID</Declaration>
+			
+			
+			<Anchor>//api/name/startPointID</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/setEndPointID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWAnnotationIdentifier endPointID</Declaration>
+			
+			
+			<Anchor>//api/name/endPointID</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/endPointID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWAnnotationIdentifier endPointID</Declaration>
+			
+			
+			<Anchor>//api/name/endPointID</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteSegment/endPointID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteSegment+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWAnnotationIdentifier endPointID</Declaration>
+			
+			
+			<Anchor>//api/name/endPointID</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

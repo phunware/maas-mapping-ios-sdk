@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWRouteBuilder.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteBuilder</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteBuilder.h</DeclaredIn>
+            
+			
+			<NodeRef refid="37"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteBuilder/buildAnnotationWithValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteBuilder.h</DeclaredIn>
+			
+			<Declaration>+ (PWRouteAnnotation *)buildAnnotationWithValues:(NSDictionary *)values</Declaration>
+			
+			
+			<Anchor>//api/name/buildAnnotationWithValues:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteBuilder/buildStepWithAnnotationValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteBuilder.h</DeclaredIn>
+			
+			<Declaration>+ (PWRouteStep *)buildStepWithAnnotationValues:(NSArray *)values</Declaration>
+			
+			
+			<Anchor>//api/name/buildStepWithAnnotationValues:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteBuilder/buildStepsWithStepValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteBuilder.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)buildStepsWithStepValues:(NSArray *)values</Declaration>
+			
+			
+			<Anchor>//api/name/buildStepsWithStepValues:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteBuilder/buildStepsWithAnnotations:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteBuilder.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)buildStepsWithAnnotations:(NSArray *)annotations</Declaration>
+			
+			
+			<Anchor>//api/name/buildStepsWithAnnotations:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteBuilder/buildRouteWithValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteBuilder.h</DeclaredIn>
+			
+			<Declaration>+ (PWRoute *)buildRouteWithValues:(NSDictionary *)values</Declaration>
+			
+			
+			<Anchor>//api/name/buildRouteWithValues:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteBuilder/buildRouteWithAnnotations:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteBuilder.h</DeclaredIn>
+			
+			<Declaration>+ (PWRoute *)buildRouteWithAnnotations:(NSArray *)annotations</Declaration>
+			
+			
+			<Anchor>//api/name/buildRouteWithAnnotations:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteBuilder/buildSegmentWithValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteBuilder+Private.h</DeclaredIn>
+			
+			<Declaration>+ (PWRouteSegment *)buildSegmentWithValues:(NSDictionary *)values</Declaration>
+			
+			
+			<Anchor>//api/name/buildSegmentWithValues:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

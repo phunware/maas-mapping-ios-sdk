@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWOcclusionManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWOcclusionManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWOcclusionManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="31"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWOcclusionManager/initWithMapView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWOcclusionManager.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithMapView:(PWMapView *)mapView</Declaration>
+			
+			
+			<Anchor>//api/name/initWithMapView:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWOcclusionManager/updateForTimeInterval:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWOcclusionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)updateForTimeInterval:(NSTimeInterval)interval</Declaration>
+			
+			
+			<Anchor>//api/name/updateForTimeInterval:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWOcclusionManager/update</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWOcclusionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)update</Declaration>
+			
+			
+			<Anchor>//api/name/update</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWOcclusionManager/calculateZoomLevel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWOcclusionManager+Private.h</DeclaredIn>
+			
+			<Declaration>- (void)calculateZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/calculateZoomLevel</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
