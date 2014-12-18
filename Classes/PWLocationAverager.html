@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWDirectionsResponse Class Reference</title>
+		<title>PWLocationAverager Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWDirectionsResponse Class Reference</h1>
+				<h1 class="hideInXcode">PWLocationAverager Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -25,8 +25,6 @@
 				<li id="jumpto_button" role="navigation">
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
-	
-	<option value="overview">Overview</option>
 	
 	
 	
@@ -39,9 +37,13 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/request">&nbsp;&nbsp;&nbsp;&nbsp;request</option>
+	<option value="//api/name/averageLocation">&nbsp;&nbsp;&nbsp;&nbsp;averageLocation</option>
 	
-	<option value="//api/name/routes">&nbsp;&nbsp;&nbsp;&nbsp;routes</option>
+	<option value="//api/name/locationCount">&nbsp;&nbsp;&nbsp;&nbsp;locationCount</option>
+	
+	<option value="//api/name/locations">&nbsp;&nbsp;&nbsp;&nbsp;locations</option>
+	
+	<option value="//api/name/maximumAge">&nbsp;&nbsp;&nbsp;&nbsp;maximumAge</option>
 	
 	
 	
@@ -50,7 +52,11 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithRequest:routes:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRequest:routes:</option>
+	<option value="//api/name/addLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- addLocation:</option>
+	
+	<option value="//api/name/clearLocations">&nbsp;&nbsp;&nbsp;&nbsp;- clearLocations</option>
+	
+	<option value="//api/name/initWithLocationCount:maximumAge:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithLocationCount:maximumAge:</option>
 	
 	
 	
@@ -61,8 +67,6 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
-
 
 
 
@@ -78,9 +82,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/request">request</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/averageLocation">averageLocation</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/routes">routes</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationCount">locationCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locations">locations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maximumAge">maximumAge</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +98,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRequest:routes:">initWithRequest:routes:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addLocation:">addLocation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearLocations">clearLocations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithLocationCount:maximumAge:">initWithLocationCount:maximumAge:</a></span></li>
 	
 </ul></li>
 
@@ -99,7 +111,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWDirectionsResponse Class Reference" name="top"></a>
+				<a title="PWLocationAverager Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -108,7 +120,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWDirectionsResponse Class Reference</h1>
+						<h1 class="title title-header">PWLocationAverager Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -119,20 +131,12 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWDirectionsResponse.h</td>
+	<td class="specification-value">PWLocationAverager.h</td>
 </tr>
 						</tbody></table></div>
 					
                     
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWDirectionsResponse</code> class provides a container for route information returned by the Phunware servers. You do not create instances of this class directly. Instead, you can initiate a <a href="#//api/name/request">request</a> for directions between two points by calling the calculateDirectionsWithCompletionHandler: method of a <a href="../Classes/PWDirections.html">PWDirections</a> object. You will receive an instance of this class as the result.</p>
-					</div>
-					
-					
 					
 					
 					
@@ -147,15 +151,39 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/request">&nbsp;&nbsp;request</a></code>
+		<code><a href="#//api/name/locationCount">&nbsp;&nbsp;locationCount</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/routes">&nbsp;&nbsp;routes</a></code>
+		<code><a href="#//api/name/maximumAge">&nbsp;&nbsp;maximumAge</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/averageLocation">&nbsp;&nbsp;averageLocation</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithLocationCount:maximumAge:">&ndash;&nbsp;initWithLocationCount:maximumAge:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addLocation:">&ndash;&nbsp;addLocation:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearLocations">&ndash;&nbsp;clearLocations</a></code>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -167,9 +195,9 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithRequest:routes:">&ndash;&nbsp;initWithRequest:routes:</a></code>
+		<code><a href="#//api/name/locations">&nbsp;&nbsp;locations</a></code>
 	</span>
-	
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -185,82 +213,47 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/request" title="request"></a>
-	<h3 class="subsubtitle method-title">request</h3>
+	<a name="//api/name/averageLocation" title="averageLocation"></a>
+	<h3 class="subsubtitle method-title">averageLocation</h3>
 	
 	
-	
-	<div class="method-subsection brief-description">
-		<p>The original directions request object. (read-only)</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>@property (readonly) PWDirectionsRequest *request</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) PWIndoorLocation *averageLocation</code></div>
 
     
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWDirectionsResponse.h</code><br />
-	</div>				
-	
-	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/routes" title="routes"></a>
-	<h3 class="subsubtitle method-title">routes</h3>
+	<a name="//api/name/locationCount" title="locationCount"></a>
+	<h3 class="subsubtitle method-title">locationCount</h3>
 	
 	
-	
-	<div class="method-subsection brief-description">
-		<p>An array of route objects representing the directions between the start and end points. (read-only)</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *routes</code></div>
+	<div class="method-subsection method-declaration"><code>@property NSUInteger locationCount</code></div>
 
     
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locations" title="locations"></a>
+	<h3 class="subsubtitle method-title">locations</h3>
 	
 	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The array contains one or more <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> objects, each of which represents a possible set of directions for the user to follow. If you did not <a href="#//api/name/request">request</a> alternate routes in the original directions <a href="#//api/name/request">request</a>, this array contains at most one object.</p>
 
-<p>Each route object contains geometry information that you can use to display that route in your app’s map view.</p>
-	</div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSMutableArray *locations</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/maximumAge" title="maximumAge"></a>
+	<h3 class="subsubtitle method-title">maximumAge</h3>
 	
 	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWDirectionsResponse.h</code><br />
-	</div>				
-	
-	
+
+	<div class="method-subsection method-declaration"><code>@property NSTimeInterval maximumAge</code></div>
+
+    
 </div>
 						
 					</div>
@@ -274,12 +267,34 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithRequest:routes:" title="initWithRequest:routes:"></a>
-	<h3 class="subsubtitle method-title">initWithRequest:routes:</h3>
+	<a name="//api/name/addLocation:" title="addLocation:"></a>
+	<h3 class="subsubtitle method-title">addLocation:</h3>
 	
 	
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithRequest:(PWDirectionsRequest *)<em>request</em> routes:(NSArray *)<em>routes</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)addLocation:(PWIndoorLocation *)<em>location</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearLocations" title="clearLocations"></a>
+	<h3 class="subsubtitle method-title">clearLocations</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)clearLocations</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithLocationCount:maximumAge:" title="initWithLocationCount:maximumAge:"></a>
+	<h3 class="subsubtitle method-title">initWithLocationCount:maximumAge:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithLocationCount:(NSUInteger)<em>locationCount</em> maximumAge:(NSTimeInterval)<em>maximumAge</em></code></div>
 
     
 </div>

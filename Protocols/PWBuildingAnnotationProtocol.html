@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWMapDocument Class Reference</title>
+		<title>PWBuildingAnnotationProtocol Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWMapDocument Class Reference</h1>
+				<h1 class="hideInXcode">PWBuildingAnnotationProtocol Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,11 +39,17 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/fileURL">&nbsp;&nbsp;&nbsp;&nbsp;fileURL</option>
+	<option value="//api/name/accessible">&nbsp;&nbsp;&nbsp;&nbsp;accessible</option>
 	
-	<option value="//api/name/pdf">&nbsp;&nbsp;&nbsp;&nbsp;pdf</option>
+	<option value="//api/name/annotationDescription">&nbsp;&nbsp;&nbsp;&nbsp;annotationDescription</option>
 	
-	<option value="//api/name/resource">&nbsp;&nbsp;&nbsp;&nbsp;resource</option>
+	<option value="//api/name/category">&nbsp;&nbsp;&nbsp;&nbsp;category</option>
+	
+	<option value="//api/name/imageURL">&nbsp;&nbsp;&nbsp;&nbsp;imageURL</option>
+	
+	<option value="//api/name/metaData">&nbsp;&nbsp;&nbsp;&nbsp;metaData</option>
+	
+	<option value="//api/name/type">&nbsp;&nbsp;&nbsp;&nbsp;type</option>
 	
 	
 	
@@ -73,11 +79,17 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileURL">fileURL</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/accessible">accessible</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pdf">pdf</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/annotationDescription">annotationDescription</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resource">resource</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/category">category</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageURL">imageURL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/metaData">metaData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/type">type</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +102,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWMapDocument Class Reference" name="top"></a>
+				<a title="PWBuildingAnnotationProtocol Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,18 +111,18 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWMapDocument Class Reference</h1>
+						<h1 class="title title-header">PWBuildingAnnotationProtocol Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/PWAnnotationProtocol.html">PWAnnotationProtocol</a></td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWMapDocument.h</td>
+	<td class="specification-value">PWBuildingAnnotationProtocol.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -120,9 +132,9 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A <code>PWMapDocument</code> object manages building floor data and its associated assets.</p>
+						<p>This protocol is used to provide building annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single building annotation and provides critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but coordinate the creation of an appropriate <code>MKAnnotationView</code> object to handle the display in conjunction with the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> delegate.</p>
 
-<p>A map document is initialized by <a href="../Classes/PWBuildingManager.html"><code>PWBuildingManager</code></a>. Initializing this object is not recommended.</p>
+<p>This protocol inherits from <a href="../Protocols/PWAnnotationProtocol.html"><code>PWAnnotationProtocol</code></a>. Data for this annotation is provided by Phunware.</p><p>Annotations conforming to this protocol should NEVER be added to the map view using <code>-addAnnotation(s):</code>.  Instead, Phunware internally manages building annotations so that they show/hide automatically at the appropriate zoom and floor levels.</p>
 					</div>
 					
 					
@@ -140,22 +152,40 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/resource">&nbsp;&nbsp;resource</a></code>
+		<code><a href="#//api/name/annotationDescription">&nbsp;&nbsp;annotationDescription</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
-	
+	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/pdf">&nbsp;&nbsp;pdf</a></code>
+		<code><a href="#//api/name/category">&nbsp;&nbsp;category</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
-	
+	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/fileURL">&nbsp;&nbsp;fileURL</a></code>
+		<code><a href="#//api/name/type">&nbsp;&nbsp;type</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
-	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/imageURL">&nbsp;&nbsp;imageURL</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/metaData">&nbsp;&nbsp;metaData</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/accessible">&nbsp;&nbsp;accessible</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
 </li>
 						</ul>
 						
@@ -170,18 +200,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/fileURL" title="fileURL"></a>
-	<h3 class="subsubtitle method-title">fileURL</h3>
+	<a name="//api/name/accessible" title="accessible"></a>
+	<h3 class="subsubtitle method-title">accessible</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The URL of the document&rsquo;s local file.</p>
+		<p>A flag indicating whether or not the points represented by the annotation is accessible. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (readonly) NSURL *fileURL</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly, getter=isAccessible) BOOL accessible</code></div>
 
     
 	
@@ -199,25 +229,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapDocument.h</code><br />
+		<code class="declared-in-ref">PWBuildingAnnotationProtocol.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/pdf" title="pdf"></a>
-	<h3 class="subsubtitle method-title">pdf</h3>
+	<a name="//api/name/annotationDescription" title="annotationDescription"></a>
+	<h3 class="subsubtitle method-title">annotationDescription</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The PDF document associated with the map document. (read-only)</p>
+		<p>A description of the building annotation. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (readonly) PWPDFDocument *pdf</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSString *annotationDescription</code></div>
 
     
 	
@@ -235,25 +265,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapDocument.h</code><br />
+		<code class="declared-in-ref">PWBuildingAnnotationProtocol.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/resource" title="resource"></a>
-	<h3 class="subsubtitle method-title">resource</h3>
+	<a name="//api/name/category" title="category"></a>
+	<h3 class="subsubtitle method-title">category</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The building floor resource associated with the map document. (read-only)</p>
+		<p>The category associated with the building annotation. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (readonly) PWBuildingFloorResource *resource</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSString *category</code></div>
 
     
 	
@@ -271,7 +301,115 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapDocument.h</code><br />
+		<code class="declared-in-ref">PWBuildingAnnotationProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/imageURL" title="imageURL"></a>
+	<h3 class="subsubtitle method-title">imageURL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The image URL associated with the building annotation. This is derived from the <a href="#//api/name/type">type</a>. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSURL *imageURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWBuildingAnnotationProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/metaData" title="metaData"></a>
+	<h3 class="subsubtitle method-title">metaData</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Metadata associated with the building annotation. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSDictionary *metaData</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWBuildingAnnotationProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/type" title="type"></a>
+	<h3 class="subsubtitle method-title">type</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The building annotation type. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) PWBuildingAnnotationType type</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWBuildingAnnotationProtocol.h</code><br />
 	</div>				
 	
 	

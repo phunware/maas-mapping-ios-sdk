@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWBuildingOverlayDelegate Protocol Reference</title>
+		<title>PWRouteCacheManager Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWBuildingOverlayDelegate Protocol Reference</h1>
+				<h1 class="hideInXcode">PWRouteCacheManager Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -25,8 +25,6 @@
 				<li id="jumpto_button" role="navigation">
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
-	
-	<option value="overview">Overview</option>
 	
 	
 	
@@ -39,15 +37,19 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/cachePoints:segments:">&nbsp;&nbsp;&nbsp;&nbsp;+ cachePoints:segments:</option>
+	
+	<option value="//api/name/distanceFromPlace:toPlace:">&nbsp;&nbsp;&nbsp;&nbsp;+ distanceFromPlace:toPlace:</option>
+	
+	<option value="//api/name/getPointsDictionaryByDirectionType:">&nbsp;&nbsp;&nbsp;&nbsp;+ getPointsDictionaryByDirectionType:</option>
+	
+	<option value="//api/name/getSegmentsDictionary">&nbsp;&nbsp;&nbsp;&nbsp;+ getSegmentsDictionary</option>
+	
+	<option value="//api/name/isPending">&nbsp;&nbsp;&nbsp;&nbsp;+ isPending</option>
 	
 	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/buildingOverlay:didChangeFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- buildingOverlay:didChangeFloor:</option>
-	
-	<option value="//api/name/buildingOverlay:didFailToLoadBuilding:error:">&nbsp;&nbsp;&nbsp;&nbsp;- buildingOverlay:didFailToLoadBuilding:error:</option>
-	
-	<option value="//api/name/buildingOverlay:didFinishLoadingBuilding:">&nbsp;&nbsp;&nbsp;&nbsp;- buildingOverlay:didFinishLoadingBuilding:</option>
 	
 	
 	
@@ -58,8 +60,6 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
-
 
 
 
@@ -73,24 +73,28 @@
 
 
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buildingOverlay:didChangeFloor:">buildingOverlay:didChangeFloor:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cachePoints:segments:">cachePoints:segments:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buildingOverlay:didFailToLoadBuilding:error:">buildingOverlay:didFailToLoadBuilding:error:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/distanceFromPlace:toPlace:">distanceFromPlace:toPlace:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buildingOverlay:didFinishLoadingBuilding:">buildingOverlay:didFinishLoadingBuilding:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPointsDictionaryByDirectionType:">getPointsDictionaryByDirectionType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSegmentsDictionary">getSegmentsDictionary</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isPending">isPending</a></span></li>
 	
 </ul></li>
+
+
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWBuildingOverlayDelegate Protocol Reference" name="top"></a>
+				<a title="PWRouteCacheManager Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,33 +103,23 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWBuildingOverlayDelegate Protocol Reference</h1>
+						<h1 class="title title-header">PWRouteCacheManager Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Conforms to</td>
+	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWBuildingOverlay.h</td>
+	<td class="specification-value">PWRouteCacheManager.h</td>
 </tr>
 						</tbody></table></div>
 					
                     
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWMapViewDelegate</code> protocol defines a set of optional methods that you can use to receive building-related update messages. Because many map operations require the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete.</p>
-
-<p>Before releasing a <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> object for which you have set a delegate, remember to set that object’s delegate property to <code>nil</code>.</p>
-					</div>
-					
-					
 					
 					
 					
@@ -140,19 +134,31 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/buildingOverlay:didChangeFloor:">&ndash;&nbsp;buildingOverlay:didChangeFloor:</a></code>
+		<code><a href="#//api/name/cachePoints:segments:">+&nbsp;cachePoints:segments:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/buildingOverlay:didFinishLoadingBuilding:">&ndash;&nbsp;buildingOverlay:didFinishLoadingBuilding:</a></code>
+		<code><a href="#//api/name/distanceFromPlace:toPlace:">+&nbsp;distanceFromPlace:toPlace:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/buildingOverlay:didFailToLoadBuilding:error:">&ndash;&nbsp;buildingOverlay:didFailToLoadBuilding:error:</a></code>
+		<code><a href="#//api/name/isPending">+&nbsp;isPending</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getPointsDictionaryByDirectionType:">+&nbsp;getPointsDictionaryByDirectionType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSegmentsDictionary">+&nbsp;getSegmentsDictionary</a></code>
 	</span>
 	
 	
@@ -167,25 +173,23 @@
 					
 					
 					
-					
-					
 					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/buildingOverlay:didChangeFloor:" title="buildingOverlay:didChangeFloor:"></a>
-	<h3 class="subsubtitle method-title">buildingOverlay:didChangeFloor:</h3>
+	<a name="//api/name/cachePoints:segments:" title="cachePoints:segments:"></a>
+	<h3 class="subsubtitle method-title">cachePoints:segments:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the specified overlay successfully changed the floor.</p>
+		<p>Convenience method to cache all points which includes POI, waypoint, ect, and segments as well as the distance for each segments.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)buildingOverlay:(PWBuildingOverlay *)<em>overlay</em> didChangeFloor:(PWBuildingFloor *)<em>floor</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)cachePoints:(NSArray *)<em>mapPoints</em> segments:(NSArray *)<em>segments</em></code></div>
 
     
 	
@@ -193,13 +197,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>overlay</em></dt>
-			<dd><p>The building overlay object.</p></dd>
+			<dt><em>mapPoints</em></dt>
+			<dd><p>A list of PWBuildingAnnotation</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>floor</em></dt>
-			<dd><p>The current floor object.</p></dd>
+			<dt><em>segments</em></dt>
+			<dd><p>A list of PWSegment</p></dd>
 		</dl>
 		
 	</div>
@@ -218,25 +222,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
+		<code class="declared-in-ref">PWRouteCacheManager.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/buildingOverlay:didFailToLoadBuilding:error:" title="buildingOverlay:didFailToLoadBuilding:error:"></a>
-	<h3 class="subsubtitle method-title">buildingOverlay:didFailToLoadBuilding:error:</h3>
+	<a name="//api/name/distanceFromPlace:toPlace:" title="distanceFromPlace:toPlace:"></a>
+	<h3 class="subsubtitle method-title">distanceFromPlace:toPlace:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the specified overlay was unable to load the building data.</p>
+		<p>Convenience method to calculate the distance between to location of CLLocationCoordinate2D.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)buildingOverlay:(PWBuildingOverlay *)<em>overlay</em> didFailToLoadBuilding:(PWBuilding *)<em>building</em> error:(NSError *)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (CLLocationDistance)distanceFromPlace:(CLLocationCoordinate2D)<em>from</em> toPlace:(CLLocationCoordinate2D)<em>to</em></code></div>
 
     
 	
@@ -244,18 +248,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>overlay</em></dt>
-			<dd><p>The building overlay object.</p></dd>
+			<dt><em>from</em></dt>
+			<dd><p>A location of start</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>building</em></dt>
-			<dd><p>The building object that the overlay tried to load.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>error</em></dt>
-			<dd><p>Why the building data could not be loaded.</p></dd>
+			<dt><em>to</em></dt>
+			<dd><p>A location of destination</p></dd>
 		</dl>
 		
 	</div>
@@ -274,25 +273,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
+		<code class="declared-in-ref">PWRouteCacheManager.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/buildingOverlay:didFinishLoadingBuilding:" title="buildingOverlay:didFinishLoadingBuilding:"></a>
-	<h3 class="subsubtitle method-title">buildingOverlay:didFinishLoadingBuilding:</h3>
+	<a name="//api/name/getPointsDictionaryByDirectionType:" title="getPointsDictionaryByDirectionType:"></a>
+	<h3 class="subsubtitle method-title">getPointsDictionaryByDirectionType:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the specified overlay successfully loaded necessary building data.</p>
+		<p>Return all cached points with a dictionary, the key is the point ID, the value is the point of PWBuildingAnnotation</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)buildingOverlay:(PWBuildingOverlay *)<em>overlay</em> didFinishLoadingBuilding:(PWBuilding *)<em>building</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)getPointsDictionaryByDirectionType:(PWDirectionsType)<em>directionsType</em></code></div>
 
     
 	
@@ -300,13 +299,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>overlay</em></dt>
-			<dd><p>The building overlay object.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>building</em></dt>
-			<dd><p>The building object that the overlay loaded.</p></dd>
+			<dt><em>check</em></dt>
+			<dd><p>if it returns accissible points only</p></dd>
 		</dl>
 		
 	</div>
@@ -325,13 +319,87 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
+		<code class="declared-in-ref">PWRouteCacheManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSegmentsDictionary" title="getSegmentsDictionary"></a>
+	<h3 class="subsubtitle method-title">getSegmentsDictionary</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return all the segments with a dictionary, the key is the point ID, the value is a dictionary which contains all the neighbore points and distance between them.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)getSegmentsDictionary</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRouteCacheManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isPending" title="isPending"></a>
+	<h3 class="subsubtitle method-title">isPending</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check if it&rsquo;s done with the cache all the data</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isPending</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRouteCacheManager.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
+					
+					
 					
 					
                     
