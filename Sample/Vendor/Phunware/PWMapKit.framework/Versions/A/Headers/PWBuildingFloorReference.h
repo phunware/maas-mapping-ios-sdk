@@ -5,37 +5,37 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <CoreLocation/CLLocation.h>
+#import <CoreLocation/CoreLocation.h>
 
 /**
  The floor reference object contains reference information about the floor's location in the map coordinate space.
  */
 
-@interface PWBuildingFloorReference: NSObject
+@interface PWBuildingFloorReference : NSObject <NSCopying, NSSecureCoding>
 
 /**
- The top left lat/long coordinate of the building. (read-only)
+ The top left lat/long coordinate of the building.
  */
-@property (readonly) CLLocationCoordinate2D topLeft;
+@property (nonatomic, assign) CLLocationCoordinate2D topLeft;
 
 /**
-  The top right lat/long coordinate of the building. (read-only)
+  The top right lat/long coordinate of the building.
  */
-@property (readonly) CLLocationCoordinate2D topRight;
+@property (nonatomic, assign) CLLocationCoordinate2D topRight;
 
 /**
-  The bottom left lat/long coordinate of the building. (read-only)
+  The bottom left lat/long coordinate of the building.
  */
-@property (readonly) CLLocationCoordinate2D bottomLeft;
+@property (nonatomic, assign) CLLocationCoordinate2D bottomLeft;
 
 /**
-  The bottom right lat/long coordinate of the building. (read-only)
+  The bottom right lat/long coordinate of the building.
  */
-@property (readonly) CLLocationCoordinate2D bottomRight;
+@property (nonatomic, assign) CLLocationCoordinate2D bottomRight;
 
 /**
-  The angle of the building in the lat/long coordinate space. (read-only)
+  The angle of the building in the lat/long coordinate space.
  */
-@property (readonly) CGFloat angle;
+@property (nonatomic, assign) CGFloat angle;
 
 @end

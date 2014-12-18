@@ -14,12 +14,6 @@
 @interface PWSVPulsingAnnotationView : MKAnnotationView
 
 /**
- Controls whether or not the heading arrow is displayed.
- @discussion The default is `NO`.
- */
-@property (nonatomic, assign) BOOL showHeadingArrow;
-
-/**
  The annotation color. 
  @discussion The default is the same as Apple's `MKUserLocationView`.
  */
@@ -60,12 +54,5 @@
  @discussion The default is 1 second.
  */
 @property (nonatomic, readwrite) NSTimeInterval delayBetweenPulseCycles; // default is 1s
-
-
-/**
- The uncertaintly halo radius in meters.
- @discussion The default is 0.
- */
-@property (nonatomic, readwrite) CLLocationDirection uncertaintyHaloRadius;
 
 @end

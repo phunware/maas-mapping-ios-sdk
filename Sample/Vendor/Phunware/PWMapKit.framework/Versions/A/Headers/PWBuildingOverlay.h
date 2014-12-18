@@ -6,54 +6,12 @@
 //
 
 #import <MapKit/MapKit.h>
-#import "PWBuildingOverlay.h"
 
 @class PWBuilding;
 @class PWBuildingFloor;
 @class PWMapDocument;
-@class PWBuildingOverlay;
 
-/**
- The `PWMapViewDelegate` protocol defines a set of optional methods that you can use to receive building-related update messages. Because many map operations require the `PWMapView` class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete.
- 
- Before releasing a `PWMapView` object for which you have set a delegate, remember to set that object’s delegate property to `nil`.
- */
-
-@protocol PWBuildingOverlayDelegate <NSObject>
-
-///----------------------------
-/// @name Loading Building Data
-///----------------------------
-
-@optional
-
-/**
- Tells the delegate that the specified overlay successfully changed the floor.
- @param overlay The building overlay object.
- @param floor The current floor object.
- */
-- (void)buildingOverlay:(PWBuildingOverlay *)overlay didChangeFloor:(PWBuildingFloor *)floor;
-
-/**
- Tells the delegate that the specified overlay successfully loaded necessary building data.
- @param overlay The building overlay object.
- @param building The building object that the overlay loaded.
- */
-- (void)buildingOverlay:(PWBuildingOverlay *)overlay didFinishLoadingBuilding:(PWBuilding *)building;
-
-/**
- Tells the delegate that the specified overlay was unable to load the building data.
- @param overlay The building overlay object.
- @param building The building object that the overlay tried to load.
- @param error Why the building data could not be loaded.
- */
-- (void)buildingOverlay:(PWBuildingOverlay *)overlay didFailToLoadBuilding:(PWBuilding *)building error:(NSError *)error;
-
-@end
-
-extern NSString * const PWBuildingOverlayDidFinishLoadingNotification;
-extern NSString * const PWBuildingOverlayDidFailToLoadNotification;
-
+@protocol PWBuildingOverlayDelegate;
 
 /**
  The `PWBuildingOverlay` object defines a specific type of annotation that represents a building on a map.
@@ -64,27 +22,22 @@ extern NSString * const PWBuildingOverlayDidFailToLoadNotification;
 /**
  The building object associated with the overlay. (read-only)
  */
-@property (readonly) PWBuilding *building;
+@property (nonatomic, readonly) PWBuilding *building;
 
 /**
  The map document object associated with the overlay. (read-only)
  */
-@property (readonly) PWMapDocument *currentDocument;
-
-/**
- The floor currently being display.  The value may be nil while the building overlay is loading.  Changing the floor to the same floor will have no effect.  Attempt to access this property only after receiving the `buildingOverlay:didFinishLoadingBuilding:` delegate callback.
- */
-@property PWBuildingFloor *currentFloor;
+@property (nonatomic, readonly) PWMapDocument *currentDocument;
 
 /**
  The array of map document resources associated with the overlay. (read-only)
  */
-@property (readonly) NSArray *resources;
+@property (nonatomic, readonly) NSArray *resources;
 
 /**
- A Boolean flag indicating whether the building overlay has loaded.
+ A Boolean flag indicating whether or not the building overlay has loaded.
  */
-@property (getter = isLoaded) BOOL loaded;
+@property (nonatomic, assign, getter = isLoaded) BOOL loaded;
 
 ///-----------------------------
 /// @name Accessing the Delegate
@@ -110,5 +63,57 @@ extern NSString * const PWBuildingOverlayDidFailToLoadNotification;
  */
 - (instancetype)initWithBuilding:(PWBuilding *)building resources:(NSArray *)resources;
 
+/**
+ Returns the floor currently being displayed. This array may be `nil` while the overlay is loading. Only attempt to access this property after receiving the `buildingOverlay:didFinishLoadingBuilding:` delegate callback.
+ */
+- (PWBuildingFloor *)currentFloor;
+
+/**
+ Change the floor currently being displayed to another PWBuildingFloor object. Passing the same floor will have no effect.
+ @param floor The PWBuildingFloor object you would like to set as the current floor.
+ */
+- (void)setCurrentFloor:(PWBuildingFloor *)floor;
 
 @end
+
+
+/**
+ The `PWMapViewDelegate` protocol defines a set of optional methods that you can use to receive building-related update messages. Because many map operations require the `PWMapView` class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete.
+ 
+ Before releasing a `PWMapView` object for which you have set a delegate, remember to set that object’s delegate property to `nil`.
+ */
+
+@protocol PWBuildingOverlayDelegate <NSObject>
+
+///----------------------------
+/// @name Loading Building Data
+///----------------------------
+
+@optional
+
+/**
+ Tells the delegate that the specified overlay successfully changed the building floor.
+ @param overlay The building overlay object.
+ @param floor The current building floor object.
+ */
+- (void)buildingOverlay:(PWBuildingOverlay *)overlay didChangeFloor:(PWBuildingFloor *)floor;
+
+/**
+ Tells the delegate that the specified overlay successfully loaded necessary building data.
+ @param overlay The building overlay object.
+ @param building The building object that the overlay loaded.
+ */
+- (void)buildingOverlay:(PWBuildingOverlay *)overlay didFinishLoadingBuilding:(PWBuilding *)building;
+
+/**
+ Tells the delegate that the specified overlay was unable to load the building data.
+ @param overlay The building overlay object.
+ @param building The building object that the overlay tried to load.
+ @param error Why the building data could not be loaded.
+ */
+- (void)buildingOverlay:(PWBuildingOverlay *)overlay didFailToLoadBuilding:(PWBuilding *)building error:(NSError *)error;
+
+@end
+
+extern NSString * const PWBuildingOverlayDidFinishLoadingNotification;
+extern NSString * const PWBuildingOverlayDidFailToLoadNotification;

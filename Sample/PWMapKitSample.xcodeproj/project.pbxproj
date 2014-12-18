@@ -13,6 +13,7 @@
 		B0361DD61976C31400D0A4D2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0361DD51976C31400D0A4D2 /* libsqlite3.dylib */; };
 		B0361DD81976C33100D0A4D2 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0361DD71976C33100D0A4D2 /* libxml2.2.dylib */; };
 		B0361EF8197724A800D0A4D2 /* MaaSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0361EF5197724A800D0A4D2 /* MaaSCore.framework */; };
+		B0361EF9197724A800D0A4D2 /* PWLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0361EF6197724A800D0A4D2 /* PWLocation.framework */; };
 		B0361EFA197724A800D0A4D2 /* PWMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0361EF7197724A800D0A4D2 /* PWMapKit.framework */; };
 		B0361F341977277600D0A4D2 /* PWRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0361F251977277600D0A4D2 /* PWRouteViewController.m */; };
 		B0361F351977277600D0A4D2 /* PWViewController+Routing.m in Sources */ = {isa = PBXBuildFile; fileRef = B0361F271977277600D0A4D2 /* PWViewController+Routing.m */; };
@@ -54,7 +55,6 @@
 		B0B0845C19817A9C00E92A5C /* lbs_ios_navigation_swap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B0844A19817A9C00E92A5C /* lbs_ios_navigation_swap@2x.png */; };
 		B0B0845D19817A9C00E92A5C /* wheelchair-symbol-original-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B0844B19817A9C00E92A5C /* wheelchair-symbol-original-selected.png */; };
 		B0B0845E19817A9C00E92A5C /* wheelchair-symbol-original.png in Resources */ = {isa = PBXBuildFile; fileRef = B0B0844C19817A9C00E92A5C /* wheelchair-symbol-original.png */; };
-		B0CACFD819CC7E12009D1169 /* PWLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CACFD719CC7E12009D1169 /* PWLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +64,7 @@
 		B0361DD51976C31400D0A4D2 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B0361DD71976C33100D0A4D2 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		B0361EF5197724A800D0A4D2 /* MaaSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MaaSCore.framework; sourceTree = "<group>"; };
+		B0361EF6197724A800D0A4D2 /* PWLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PWLocation.framework; sourceTree = "<group>"; };
 		B0361EF7197724A800D0A4D2 /* PWMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PWMapKit.framework; sourceTree = "<group>"; };
 		B0361F241977277600D0A4D2 /* PWRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWRouteViewController.h; sourceTree = "<group>"; };
 		B0361F251977277600D0A4D2 /* PWRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWRouteViewController.m; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		B0B0844A19817A9C00E92A5C /* lbs_ios_navigation_swap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lbs_ios_navigation_swap@2x.png"; sourceTree = "<group>"; };
 		B0B0844B19817A9C00E92A5C /* wheelchair-symbol-original-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wheelchair-symbol-original-selected.png"; sourceTree = "<group>"; };
 		B0B0844C19817A9C00E92A5C /* wheelchair-symbol-original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wheelchair-symbol-original.png"; sourceTree = "<group>"; };
-		B0CACFD719CC7E12009D1169 /* PWLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PWLocation.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,10 +136,10 @@
 				B043AC6318EDB8AC00421154 /* CoreLocation.framework in Frameworks */,
 				B043AC6118EDB86B00421154 /* CoreTelephony.framework in Frameworks */,
 				B043AC5F18EDB80100421154 /* Accelerate.framework in Frameworks */,
-				B0CACFD819CC7E12009D1169 /* PWLocation.framework in Frameworks */,
 				B043AC5D18EDB7FD00421154 /* MobileCoreServices.framework in Frameworks */,
 				B043AC5B18EDB7F900421154 /* SystemConfiguration.framework in Frameworks */,
 				B043AC5918EDB7F400421154 /* CFNetwork.framework in Frameworks */,
+				B0361EF9197724A800D0A4D2 /* PWLocation.framework in Frameworks */,
 				B043AC5718EDB7EE00421154 /* Security.framework in Frameworks */,
 				B043AC1218EDAE9500421154 /* CoreGraphics.framework in Frameworks */,
 				B043AC1418EDAE9500421154 /* UIKit.framework in Frameworks */,
@@ -161,8 +161,8 @@
 		B0361EF4197724A800D0A4D2 /* Phunware */ = {
 			isa = PBXGroup;
 			children = (
-				B0CACFD719CC7E12009D1169 /* PWLocation.framework */,
 				B0361EF5197724A800D0A4D2 /* MaaSCore.framework */,
+				B0361EF6197724A800D0A4D2 /* PWLocation.framework */,
 				B0361EF7197724A800D0A4D2 /* PWMapKit.framework */,
 			);
 			path = Phunware;

@@ -5,17 +5,19 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @class PWDirectionsRequest;
 
 /**
- The `PWDirectionsResponse` class provides a container for route information returned by the Phunware servers. You do not create instances of this class directly. Instead, you can initiate a request for directions between two points by calling the calculateDirectionsWithCompletionHandler: method of a PWDirections object. You will receive an instance of this class as the result.
+ The `PWDirectionsResponse` class provides a container for route information returned by the Phunware servers. You do not create instances of this class directly. Instead, you would initiate a request for directions between two points by calling the calculateDirectionsWithCompletionHandler: method of a PWDirections object. You will receive an instance of this class as the result.
 */
 @interface PWDirectionsResponse : NSObject
 
 /**
  The original directions request object. (read-only)
  */
-@property (readonly) PWDirectionsRequest *request;
+@property (nonatomic, readonly) PWDirectionsRequest *request;
 
 /**
  An array of route objects representing the directions between the start and end points. (read-only)
@@ -23,6 +25,6 @@
  
  Each route object contains geometry information that you can use to display that route in your app’s map view.
  */
-@property (readonly) NSArray *routes;
+@property (nonatomic, readonly) NSArray *routes;
 
 @end

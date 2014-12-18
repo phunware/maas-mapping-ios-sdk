@@ -2,6 +2,7 @@
 //  PWLocationManager.h
 //  PWMapKit
 //
+//  Created by Illya Busigin on 2/7/14.
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
@@ -14,7 +15,7 @@
 static const CLLocationDistance kMinimumVenueProximity = 5000;
 
 /**
- `PWLocationManagerError` specifies the location manager's failed error codes.
+ `PWLocationManagerError` specifies the location failed error codes.
  */
 typedef NS_ENUM(NSUInteger, PWLocationManagerError) {
     /** A bad location request error. */
@@ -38,7 +39,7 @@ typedef NS_ENUM(NSUInteger, PWLocationManagerError) {
 @protocol PWLocationManager <NSObject>
 
 /**
- The floor ID mapping dictionary used to define the mapping between the location provider floor ID and the Phunware floor ID. The dictionary format must adhere to the following format: `@{CUSTOMER_FLOORID : PHUNWARE_FLOOR_ID}`.
+ The floor ID mapping dictionary that is used to define the mapping between the location provider floor ID and the Phunware floor ID. The dictionary format should look like: `@{CUSTOMER_FLOORID : PHUNWARE_FLOOR_ID}`.
  */
 @property (nonatomic, strong) NSDictionary *floorIDMapping;
 

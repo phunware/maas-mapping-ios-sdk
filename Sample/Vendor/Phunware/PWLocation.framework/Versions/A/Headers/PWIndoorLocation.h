@@ -24,29 +24,26 @@
  Initializes and returns a location object with the specified latitude and longitude.
  @param latitude The latitude of the coordinate point.
  @param longitude The longitude of the coordinate point.
- @param timestamp The time at which the location was reported.
- @return A location object initialized with the specified coordinate point and timestamp.
+ @return A location object initialized with the specified coordinate point.
  @discussion  When using this method, the other properties of the object are initialized to appropriate values. In particular, the horizontalAccuracy property is set to -1, the floorID is set to `kPWUnknownFloorID` and the type is set to `PWLocationTypeUnknown`.
  */
-- (instancetype)initWithLatitude:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude timestamp:(NSDate*)timestamp;
+- (instancetype)initWithLatitude:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude;
 
 /**
  Initializes and returns a location object with the specified coordinate information.
  @param coordinate A coordinate structure containing the latitude and longitude values.
  @param floorID The floor ID associated with the location object. If the floor ID is unknown or unspecified, initialize with `kPWUnknownFloorID`.
- @param timestamp The time at which the location was reported.
  @return A location object initialized with the specified information.
  */
-- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate floorID:(NSUInteger)floorID timestamp:(NSDate*)timestamp;
+- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate floorID:(NSUInteger)floorID;
 
 /**
  Initializes and returns a location object with the specified coordinate information.
  @param coordinate A coordinate structure containing the latitude and longitude values.
  @param floorID The floor ID associated with the location object. If the floor ID is unknown or unspecified, initialize with `kPWUnknownFloorID`.
  @param hAccuracy The accuracy of the coordinate value. Specifying a negative number indicates that the horizontal accuracy value is invalid.
- @param timestamp The time at which the location was reported.
  @return A location object initialized with the specified information.
  */
-- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate floorID:(NSUInteger)floorID horizontalAccuracy:(CLLocationAccuracy)hAccuracy timestamp:(NSDate*)timestamp;
+- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate floorID:(NSUInteger)floorID horizontalAccuracy:(CLLocationAccuracy)hAccuracy;
 
 @end
