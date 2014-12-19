@@ -2,6 +2,7 @@
 //  PWRouteViewController.m
 //  PWMapKitSample
 //
+//  Created by Jay on 5/22/14.
 //  Copyright (c) 2014 Phunware, Inc. All rights reserved.
 //
 
@@ -18,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *accessibilityButton;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
-@property (strong, nonatomic) NSArray *annotations;
 @property (strong, nonatomic) NSArray *results;
 
 @property (strong, nonatomic) NSMutableDictionary *imageCache;
@@ -57,7 +57,7 @@
     
     [[PWBuildingManager sharedManager] getBuildingAnnotationsWithBuildingID:self.mapView.buildingID completion:^(NSArray *annotations, NSError *error) {
         weakSelf.annotations = [annotations sortedArrayWithOptions:NSSortStable
-                                                   usingComparator:^(PWBuildingAnnotation *obj1,PWBuildingAnnotation *obj2){
+                                                   usingComparator:^(id<PWBuildingAnnotationProtocol> obj1,id<PWBuildingAnnotationProtocol> obj2){
                                                        return [obj1.title compare:obj2.title];
                                                    }];
         
@@ -137,7 +137,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    PWBuildingAnnotation *annotation = nil;
+    id<PWBuildingAnnotationProtocol> annotation = nil;
     if (([_startPointTextField isFirstResponder] && _startPointTextField.text.length > 0)
         || ([_endPointTextField isFirstResponder] && (_startPointTextField.text.length > 0 || _endPointTextField.text.length > 0))
         ) {
@@ -166,7 +166,6 @@
                         img = [self imageWithImage:img scaledToSize:CGSizeMake(30, 30)];
                         [_imageCache setObject:img forKey:url];
                         cell.imageView.image = img;
-                        [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
                     }
                 });
             }
@@ -190,30 +189,30 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    PWBuildingAnnotation* annotaion = nil;
+    id<PWBuildingAnnotationProtocol> annotation = nil;
     if (([_startPointTextField isFirstResponder] && _startPointTextField.text.length > 0)
         || ([_endPointTextField isFirstResponder] && (_startPointTextField.text.length > 0 || _endPointTextField.text.length > 0))
         ) {
-        annotaion = _results[indexPath.row];
+        annotation = _results[indexPath.row];
     } else {
-        annotaion = _annotations[indexPath.row];
+        annotation = _annotations[indexPath.row];
     }
     
     if ([_startPointTextField isFirstResponder]) {
         _startPointTextField.text = cell.textLabel.text;
-        routeStartPoint = annotaion;
+        routeStartPoint = annotation;
         [_endPointTextField becomeFirstResponder];
     } else if ([_endPointTextField isFirstResponder]) {
         _endPointTextField.text = cell.textLabel.text;
-        routeEndPoint = annotaion;
+        routeEndPoint = annotation;
     } else {
         if ([_startPointTextField.text isEqualToString:@""]) {
             _startPointTextField.text = cell.textLabel.text;
-            routeStartPoint = annotaion;
+            routeStartPoint = annotation;
             [_endPointTextField becomeFirstResponder];
         } else if ([_endPointTextField.text isEqualToString:@""]) {
             _endPointTextField.text = cell.textLabel.text;
-            routeEndPoint = annotaion;
+            routeEndPoint = annotation;
         }
     }
     

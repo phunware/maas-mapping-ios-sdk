@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRoute.html">
+	<File path="Classes/PWFetchFloorSegmentsOperation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRoute</TokenIdentifier>
-			<Abstract type="html">The PWRoute class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes route information you can display to the user, such as the name of the route, its distance and the expected travel time.</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWFetchFloorSegmentsOperation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchFloorSegmentsOperation.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,230 +13,86 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setName:</TokenIdentifier>
-			<Abstract type="html">The name assigned to the route. The string can describe the route using one of the route’s significant features. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/name</TokenIdentifier>
-			<Abstract type="html">The name assigned to the route. The string can describe the route using one of the route’s significant features. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/name</TokenIdentifier>
-			<Abstract type="html">The name assigned to the route. The string can describe the route using one of the route’s significant features. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setDistance:</TokenIdentifier>
-			<Abstract type="html">The route distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
-			
-			
-			<Anchor>//api/name/distance</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/distance</TokenIdentifier>
-			<Abstract type="html">The route distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
-			
-			
-			<Anchor>//api/name/distance</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/distance</TokenIdentifier>
-			<Abstract type="html">The route distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
-			
-			
-			<Anchor>//api/name/distance</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setExpectedTravelTime:</TokenIdentifier>
-			<Abstract type="html">The expected travel time in seconds. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval expectedTravelTime</Declaration>
-			
-			
-			<Anchor>//api/name/expectedTravelTime</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/expectedTravelTime</TokenIdentifier>
-			<Abstract type="html">The expected travel time in seconds. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval expectedTravelTime</Declaration>
-			
-			
-			<Anchor>//api/name/expectedTravelTime</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/expectedTravelTime</TokenIdentifier>
-			<Abstract type="html">The expected travel time in seconds. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval expectedTravelTime</Declaration>
-			
-			
-			<Anchor>//api/name/expectedTravelTime</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setPolyline:</TokenIdentifier>
-			<Abstract type="html">The detailed route geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
-			
-			
-			<Anchor>//api/name/polyline</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/polyline</TokenIdentifier>
-			<Abstract type="html">The detailed route geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
-			
-			
-			<Anchor>//api/name/polyline</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/polyline</TokenIdentifier>
-			<Abstract type="html">The detailed route geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
-			
-			
-			<Anchor>//api/name/polyline</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setSteps:</TokenIdentifier>
-			<Abstract type="html">The array of steps that comprise the overall route. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *steps</Declaration>
-			
-			
-			<Anchor>//api/name/steps</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/steps</TokenIdentifier>
-			<Abstract type="html">The array of steps that comprise the overall route. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *steps</Declaration>
-			
-			
-			<Anchor>//api/name/steps</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/steps</TokenIdentifier>
-			<Abstract type="html">The array of steps that comprise the overall route. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *steps</Declaration>
-			
-			
-			<Anchor>//api/name/steps</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setAccessible:</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
-			
-			
-			<Anchor>//api/name/accessible</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/isAccessible</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
-			
-			
-			<Anchor>//api/name/accessible</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/accessible</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
-			
-			
-			<Anchor>//api/name/accessible</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/stepsForFloorID:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchFloorSegmentsOperation/setFloorIdentifier:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<DeclaredIn>PWFetchFloorSegmentsOperation.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)stepsForFloorID:(NSUInteger)floorID</Declaration>
+			<Declaration>@property (readonly) NSInteger floorIdentifier</Declaration>
 			
 			
-			<Anchor>//api/name/stepsForFloorID:</Anchor>
+			<Anchor>//api/name/floorIdentifier</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchFloorSegmentsOperation/floorIdentifier</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchFloorSegmentsOperation.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger floorIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/floorIdentifier</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFetchFloorSegmentsOperation/floorIdentifier</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchFloorSegmentsOperation.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger floorIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/floorIdentifier</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchFloorSegmentsOperation/setFetchFloorSegmentsCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchFloorSegmentsOperation.h</DeclaredIn>
+			
+			<Declaration>@property (copy) void ( ^ ) ( NSArray *floorSegments , NSError *error ) fetchFloorSegmentsCompletionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/fetchFloorSegmentsCompletionBlock</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchFloorSegmentsOperation/fetchFloorSegmentsCompletionBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchFloorSegmentsOperation.h</DeclaredIn>
+			
+			<Declaration>@property (copy) void ( ^ ) ( NSArray *floorSegments , NSError *error ) fetchFloorSegmentsCompletionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/fetchFloorSegmentsCompletionBlock</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFetchFloorSegmentsOperation/fetchFloorSegmentsCompletionBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchFloorSegmentsOperation.h</DeclaredIn>
+			
+			<Declaration>@property (copy) void ( ^ ) ( NSArray *floorSegments , NSError *error ) fetchFloorSegmentsCompletionBlock</Declaration>
+			
+			
+			<Anchor>//api/name/fetchFloorSegmentsCompletionBlock</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchFloorSegmentsOperation/initWithFloorID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchFloorSegmentsOperation.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithFloorID:(NSInteger)floorIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/initWithFloorID:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/PWMapKitAPI+.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/PWMapKitAPI()</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapKitAPI+Private.h</DeclaredIn>
+            
+			
+			<NodeRef refid="46"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapKitAPI/setBuildingDataCache:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapKitAPI+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) PWTMCache *buildingDataCache</Declaration>
+			
+			
+			<Anchor>//api/name/buildingDataCache</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapKitAPI/buildingDataCache</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapKitAPI+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) PWTMCache *buildingDataCache</Declaration>
+			
+			
+			<Anchor>//api/name/buildingDataCache</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapKitAPI/buildingDataCache</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapKitAPI+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) PWTMCache *buildingDataCache</Declaration>
+			
+			
+			<Anchor>//api/name/buildingDataCache</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapKitAPI/setProcessingQueue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapKitAPI+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) dispatch_queue_t processingQueue</Declaration>
+			
+			
+			<Anchor>//api/name/processingQueue</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapKitAPI/processingQueue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapKitAPI+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) dispatch_queue_t processingQueue</Declaration>
+			
+			
+			<Anchor>//api/name/processingQueue</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapKitAPI/processingQueue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapKitAPI+Private.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) dispatch_queue_t processingQueue</Declaration>
+			
+			
+			<Anchor>//api/name/processingQueue</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapKitAPI/_instance</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapKitAPI+Private.h</DeclaredIn>
+			
+			<Declaration>+ (PWMapKitAPI *)_instance</Declaration>
+			
+			
+			<Anchor>//api/name/_instance</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapKitAPI/removeAllCachedFilesAndDirectories</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapKitAPI+Private.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)removeAllCachedFilesAndDirectories</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllCachedFilesAndDirectories</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingManager.html">
+	<File path="Classes/PWBuildingFloor.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingManager</TokenIdentifier>
-			<Abstract type="html">The PWBuildingManager object provides a simple interface for fetching building data and resources. All data and assets fetched by this object are cached on the device.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingFloor</TokenIdentifier>
+			<Abstract type="html">The build floor object encapsulates all data related to a floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,95 +13,218 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/PWBuildingManager/sharedManager</TokenIdentifier>
-			<Abstract type="html">Returns the shared instance of the PWBuildingManager class.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)sharedManager</Declaration>
+			<Declaration>@property (copy, readonly) NSString *name</Declaration>
 			
-			<ReturnValue><Abstract type="html">The shared instance of the PWBuildingManager class.</Abstract></ReturnValue>
-			<Anchor>//api/name/sharedManager</Anchor>
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingWithBuildingID:completion:</TokenIdentifier>
-			<Abstract type="html">Initiates a fetch for the building object. If the building object is not cached locally, this will result in a network request.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
 			
-			<Declaration>- (void)getBuildingWithBuildingID:(NSInteger)buildingID completion:(PWBuildingHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>buildingID</Name>
-					<Abstract type="html">The specified building identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">A block that takes the following parameters:
-
-- building: The requested building object.
-- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, readonly) NSString *name</Declaration>
 			
-			<Anchor>//api/name/getBuildingWithBuildingID:completion:</Anchor>
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingAnnotationsWithBuildingID:completion:</TokenIdentifier>
-			<Abstract type="html">Initiates a fetch for the building annotations. If the building annotations are not cached locally, this will result in a network request.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
 			
-			<Declaration>- (void)getBuildingAnnotationsWithBuildingID:(NSInteger)buildingID completion:(PWBuildingAnnotationsHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>buildingID</Name>
-					<Abstract type="html">The building identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">A block that takes the following parameters:
-
-- annotations: The building annotations.
-- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, readonly) NSString *name</Declaration>
 			
-			<Anchor>//api/name/getBuildingAnnotationsWithBuildingID:completion:</Anchor>
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getResourcesForBuilding:completion:</TokenIdentifier>
-			<Abstract type="html">Initiates a fetch for the building resources. If the building resources are not cached locally, this will result in a network request.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setBuildingID:</TokenIdentifier>
+			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
 			
-			<Declaration>- (void)getResourcesForBuilding:(PWBuilding *)building completion:(PWBuildingResourcesHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The specified building object.</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">A block that takes the following parameters:
-
-- resources: The building resources as an array of PWMapDocument objects.
-- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) PWBuildingFloorIdentifier buildingID</Declaration>
 			
-			<Anchor>//api/name/getResourcesForBuilding:completion:</Anchor>
+			
+			<Anchor>//api/name/buildingID</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/clearCache</TokenIdentifier>
-			<Abstract type="html">Clears the device cache of all mapping data. This will clear all associated building objects, floor objects and floor assets from the device.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/buildingID</TokenIdentifier>
+			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
 			
-			<Declaration>- (void)clearCache</Declaration>
+			<Declaration>@property (readonly) PWBuildingFloorIdentifier buildingID</Declaration>
 			
 			
-			<Anchor>//api/name/clearCache</Anchor>
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/buildingID</TokenIdentifier>
+			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorIdentifier buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The floor identifier.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setFloorLevel:</TokenIdentifier>
+			<Abstract type="html">The physical floor level.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorLevel floorLevel</Declaration>
+			
+			
+			<Anchor>//api/name/floorLevel</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/floorLevel</TokenIdentifier>
+			<Abstract type="html">The physical floor level.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorLevel floorLevel</Declaration>
+			
+			
+			<Anchor>//api/name/floorLevel</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/floorLevel</TokenIdentifier>
+			<Abstract type="html">The physical floor level.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorLevel floorLevel</Declaration>
+			
+			
+			<Anchor>//api/name/floorLevel</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setReference:</TokenIdentifier>
+			<Abstract type="html">The reference GPS points and angle for the building floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorReference *reference</Declaration>
+			
+			
+			<Anchor>//api/name/reference</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/reference</TokenIdentifier>
+			<Abstract type="html">The reference GPS points and angle for the building floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorReference *reference</Declaration>
+			
+			
+			<Anchor>//api/name/reference</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/reference</TokenIdentifier>
+			<Abstract type="html">The reference GPS points and angle for the building floor.</Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorReference *reference</Declaration>
+			
+			
+			<Anchor>//api/name/reference</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setResource:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorResource *resource</Declaration>
+			
+			
+			<Anchor>//api/name/resource</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/resource</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorResource *resource</Declaration>
+			
+			
+			<Anchor>//api/name/resource</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/resource</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingFloor+Private.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloorResource *resource</Declaration>
+			
+			
+			<Anchor>//api/name/resource</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

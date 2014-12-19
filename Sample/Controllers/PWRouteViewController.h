@@ -2,6 +2,7 @@
 //  PWRouteViewController.h
 //  PWMapKitSample
 //
+//  Created by Jay on 5/22/14.
 //  Copyright (c) 2014 Phunware, Inc. All rights reserved.
 //
 
@@ -14,8 +15,10 @@
 @property (nonatomic, weak) PWMapView *mapView;
 
 // out
-@property (nonatomic, strong) PWBuildingAnnotation *routeStartPoint;
-@property (nonatomic, strong) PWBuildingAnnotation *routeEndPoint;
+@property (nonatomic, strong) id<PWBuildingAnnotationProtocol> routeStartPoint;
+@property (nonatomic, strong) id<PWBuildingAnnotationProtocol> routeEndPoint;
 @property BOOL shouldUseAccessibleRoutes;
+
+@property (strong, nonatomic) NSArray *annotations;
 
 @end

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWRouteManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="39"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManager/setBuildingID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManager/buildingID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManager/buildingID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManager/routeFromPoint:toPoint:directionsType:</TokenIdentifier>
+			<Abstract type="html">Calculate the shortest path between to points</Abstract>
+			<DeclaredIn>PWRouteManager.h</DeclaredIn>
+			
+			<Declaration>- (PWRoute *)routeFromPoint:(NSInteger)startPointID toPoint:(NSInteger)endPointID directionsType:(PWDirectionsType)directionsType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPointID</Name>
+					<Abstract type="html">the start point ID of route</Abstract>
+				</Parameter><Parameter>
+					<Name>endPointID</Name>
+					<Abstract type="html">the end point ID of route</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/routeFromPoint:toPoint:directionsType:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

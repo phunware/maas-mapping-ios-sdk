@@ -8,15 +8,13 @@
 #import "PWMapOptionsView.h"
 #import "PWViewController.h"
 
-#import <PWMapKit/PWMapKit.h>
 #import <PWLocation/PWLocation.h>
+#import <PWMapKit/PWMapKit.h>
 
 
 @interface PWMapOptionsView () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
 @property (nonatomic, weak) PWViewController *viewController;
-//@property (nonatomic, weak) PWMapView *mapView;
-//@property (nonatomic, weak) id<PWLocationManager> locationManager;
 @property (nonatomic, strong) UIView *overlayView;
 
 @end
@@ -228,7 +226,7 @@
                 break;
                 
             case 1:
-                cell.textLabel.text = @"Print Map";
+                cell.textLabel.text = @"Drop Pin";
                 break;
                 
             default:
@@ -318,11 +316,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0 && indexPath.section == 2) {
-        UIAlertView *confirmClearCache = [[UIAlertView alloc] initWithTitle:@""
+        UIAlertView *confirmClearCache = [[UIAlertView alloc] initWithTitle:@"Clear Cache"
                                                                     message:@"Are you sure you want to clear cache?"
                                                                    delegate:self
-                                                          cancelButtonTitle:@"NO"
-                                                          otherButtonTitles:@"YES",
+                                                          cancelButtonTitle:@"Cancel"
+                                                          otherButtonTitles:@"OK",
                                           nil];
         [confirmClearCache show];
     }

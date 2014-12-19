@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWPDFPage.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWPDFPage</TokenIdentifier>
+			<Abstract type="html">PWPDFPage represents data used to render PDF document pages.</Abstract>
+			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+            
+			
+			<NodeRef refid="33"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/setDocumentRef:</TokenIdentifier>
+			<Abstract type="html">The CGPDFDocumentRef opaque reference pointer. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGPDFDocumentRef *documentRef</Declaration>
+			
+			
+			<Anchor>//api/name/documentRef</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/documentRef</TokenIdentifier>
+			<Abstract type="html">The CGPDFDocumentRef opaque reference pointer. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGPDFDocumentRef *documentRef</Declaration>
+			
+			
+			<Anchor>//api/name/documentRef</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPDFPage/documentRef</TokenIdentifier>
+			<Abstract type="html">The CGPDFDocumentRef opaque reference pointer. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGPDFDocumentRef *documentRef</Declaration>
+			
+			
+			<Anchor>//api/name/documentRef</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/setPageRef:</TokenIdentifier>
+			<Abstract type="html">The CGPDFPageRef opaque reference. This value may be NULL if the document page has not yet been loaded. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGPDFPageRef pageRef</Declaration>
+			
+			
+			<Anchor>//api/name/pageRef</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/pageRef</TokenIdentifier>
+			<Abstract type="html">The CGPDFPageRef opaque reference. This value may be NULL if the document page has not yet been loaded. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGPDFPageRef pageRef</Declaration>
+			
+			
+			<Anchor>//api/name/pageRef</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPDFPage/pageRef</TokenIdentifier>
+			<Abstract type="html">The CGPDFPageRef opaque reference. This value may be NULL if the document page has not yet been loaded. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGPDFPageRef pageRef</Declaration>
+			
+			
+			<Anchor>//api/name/pageRef</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/setPageNumber:</TokenIdentifier>
+			<Abstract type="html">Returns the page number of the PDF document page. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSUInteger pageNumber</Declaration>
+			
+			
+			<Anchor>//api/name/pageNumber</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/pageNumber</TokenIdentifier>
+			<Abstract type="html">Returns the page number of the PDF document page. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSUInteger pageNumber</Declaration>
+			
+			
+			<Anchor>//api/name/pageNumber</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPDFPage/pageNumber</TokenIdentifier>
+			<Abstract type="html">Returns the page number of the PDF document page. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSUInteger pageNumber</Declaration>
+			
+			
+			<Anchor>//api/name/pageNumber</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/setLoaded:</TokenIdentifier>
+			<Abstract type="html">Indicates whether the page object has been loaded. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, getter=isLoaded) BOOL loaded</Declaration>
+			
+			
+			<Anchor>//api/name/loaded</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/isLoaded</TokenIdentifier>
+			<Abstract type="html">Indicates whether the page object has been loaded. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, getter=isLoaded) BOOL loaded</Declaration>
+			
+			
+			<Anchor>//api/name/loaded</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPDFPage/loaded</TokenIdentifier>
+			<Abstract type="html">Indicates whether the page object has been loaded. (read-only)</Abstract>
+			<DeclaredIn>PWPDFPage+Private.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, getter=isLoaded) BOOL loaded</Declaration>
+			
+			
+			<Anchor>//api/name/loaded</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/initWithPDFDocumentRef:pageNumber:</TokenIdentifier>
+			<Abstract type="html">Initializes a PDF page object.</Abstract>
+			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithPDFDocumentRef:(CGPDFDocumentRef *)documentRef pageNumber:(NSUInteger)pageNumber</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>document</Name>
+					<Abstract type="html">A pointer to a CGPDFDocumentRef document page opaque reference from which this object is loaded.</Abstract>
+				</Parameter><Parameter>
+					<Name>page</Name>
+					<Abstract type="html">The page number for the PDF page.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A PDF page object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPDFDocumentRef:pageNumber:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/load</TokenIdentifier>
+			<Abstract type="html">Loads the document page into memory.</Abstract>
+			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			
+			<Declaration>- (void)load</Declaration>
+			
+			
+			<Anchor>//api/name/load</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/unload</TokenIdentifier>
+			<Abstract type="html">Unloads the document page from memory.</Abstract>
+			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			
+			<Declaration>- (void)unload</Declaration>
+			
+			
+			<Anchor>//api/name/unload</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

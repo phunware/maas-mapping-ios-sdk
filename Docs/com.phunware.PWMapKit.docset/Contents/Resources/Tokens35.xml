@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWPositionEstimator.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWPositionEstimator</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator.h</DeclaredIn>
+            
+			
+			<NodeRef refid="35"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPositionEstimator/estimatedPosition</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator.h</DeclaredIn>
+			
+			<Declaration>- (MKMapPoint)estimatedPosition</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedPosition</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPositionEstimator/updateLocation:timestamp:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator.h</DeclaredIn>
+			
+			<Declaration>- (void)updateLocation:(MKMapPoint)location timestamp:(NSTimeInterval)timestamp</Declaration>
+			
+			
+			<Anchor>//api/name/updateLocation:timestamp:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPositionEstimator/startEstimating</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator.h</DeclaredIn>
+			
+			<Declaration>- (void)startEstimating</Declaration>
+			
+			
+			<Anchor>//api/name/startEstimating</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPositionEstimator/stopEstimating</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator.h</DeclaredIn>
+			
+			<Declaration>- (void)stopEstimating</Declaration>
+			
+			
+			<Anchor>//api/name/stopEstimating</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPositionEstimator/setMotionManager:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) CMMotionManager *motionManager</Declaration>
+			
+			
+			<Anchor>//api/name/motionManager</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPositionEstimator/motionManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) CMMotionManager *motionManager</Declaration>
+			
+			
+			<Anchor>//api/name/motionManager</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPositionEstimator/motionManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) CMMotionManager *motionManager</Declaration>
+			
+			
+			<Anchor>//api/name/motionManager</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPositionEstimator/setDeviceMotionQueue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSOperationQueue *deviceMotionQueue</Declaration>
+			
+			
+			<Anchor>//api/name/deviceMotionQueue</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPositionEstimator/deviceMotionQueue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSOperationQueue *deviceMotionQueue</Declaration>
+			
+			
+			<Anchor>//api/name/deviceMotionQueue</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPositionEstimator/deviceMotionQueue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWPositionEstimator+Private.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSOperationQueue *deviceMotionQueue</Declaration>
+			
+			
+			<Anchor>//api/name/deviceMotionQueue</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

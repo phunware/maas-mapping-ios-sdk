@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingFloor.html">
+	<File path="Classes/PWBuildingAnnotationView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingFloor</TokenIdentifier>
-			<Abstract type="html">The build floor object encapsulates all data related to a floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingAnnotationView</TokenIdentifier>
+			<Abstract type="html">The PWAnnotationView class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled to a corresponding building annotation object that conforms to the PWBuildingAnnotation protocol. When an annotation’s coordinate is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
             
 			
 			<NodeRef refid="4"/>
@@ -13,182 +13,110 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The floor identifier.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/setLabel:</TokenIdentifier>
+			<Abstract type="html">The annotation label associated with the view. The annotation label stroke color and stroke width can be customized.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger floorID</Declaration>
+			<Declaration>@property (nonatomic, weak) PWAnnotationLabel *label</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/label</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/label</TokenIdentifier>
+			<Abstract type="html">The annotation label associated with the view. The annotation label stroke color and stroke width can be customized.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger floorID</Declaration>
+			<Declaration>@property (nonatomic, weak) PWAnnotationLabel *label</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/label</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotationView/label</TokenIdentifier>
+			<Abstract type="html">The annotation label associated with the view. The annotation label stroke color and stroke width can be customized.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger floorID</Declaration>
+			<Declaration>@property (nonatomic, weak) PWAnnotationLabel *label</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/label</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setBuildingID:</TokenIdentifier>
-			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/setImageView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotationView+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
+			<Declaration>@property (nonatomic, weak) UIImageView *imageView</Declaration>
 			
 			
-			<Anchor>//api/name/buildingID</Anchor>
+			<Anchor>//api/name/imageView</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/buildingID</TokenIdentifier>
-			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/imageView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotationView+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
+			<Declaration>@property (nonatomic, weak) UIImageView *imageView</Declaration>
 			
 			
-			<Anchor>//api/name/buildingID</Anchor>
+			<Anchor>//api/name/imageView</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/buildingID</TokenIdentifier>
-			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotationView/imageView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotationView+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
+			<Declaration>@property (nonatomic, weak) UIImageView *imageView</Declaration>
 			
 			
-			<Anchor>//api/name/buildingID</Anchor>
+			<Anchor>//api/name/imageView</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setFloorLevel:</TokenIdentifier>
-			<Abstract type="html">The physical floor level.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/setContainerView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotationView+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger floorLevel</Declaration>
+			<Declaration>@property (nonatomic, weak) UIView *containerView</Declaration>
 			
 			
-			<Anchor>//api/name/floorLevel</Anchor>
+			<Anchor>//api/name/containerView</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/floorLevel</TokenIdentifier>
-			<Abstract type="html">The physical floor level.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/containerView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotationView+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger floorLevel</Declaration>
+			<Declaration>@property (nonatomic, weak) UIView *containerView</Declaration>
 			
 			
-			<Anchor>//api/name/floorLevel</Anchor>
+			<Anchor>//api/name/containerView</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/floorLevel</TokenIdentifier>
-			<Abstract type="html">The physical floor level.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotationView/containerView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWBuildingAnnotationView+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger floorLevel</Declaration>
-			
-			
-			<Anchor>//api/name/floorLevel</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setReference:</TokenIdentifier>
-			<Abstract type="html">The reference GPS points and angle for the building floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) PWBuildingFloorReference *reference</Declaration>
+			<Declaration>@property (nonatomic, weak) UIView *containerView</Declaration>
 			
 			
-			<Anchor>//api/name/reference</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/reference</TokenIdentifier>
-			<Abstract type="html">The reference GPS points and angle for the building floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) PWBuildingFloorReference *reference</Declaration>
-			
-			
-			<Anchor>//api/name/reference</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/reference</TokenIdentifier>
-			<Abstract type="html">The reference GPS points and angle for the building floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) PWBuildingFloorReference *reference</Declaration>
-			
-			
-			<Anchor>//api/name/reference</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setName:</TokenIdentifier>
-			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/containerView</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		

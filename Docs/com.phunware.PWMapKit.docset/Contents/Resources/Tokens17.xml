@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWPDFDocument.html">
+	<File path="Classes/PWFetchBuildingResourcesOperation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWPDFDocument</TokenIdentifier>
-			<Abstract type="html">A PWPDFDocument object represents a PDF file and defines methods for loading, unloading and viewing PDF data.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWFetchBuildingResourcesOperation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingResourcesOperation.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,223 +13,86 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setPages:</TokenIdentifier>
-			<Abstract type="html">The array of PWPDFPage objects associated with this document.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingResourcesOperation/setBuilding:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingResourcesOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *pages</Declaration>
+			<Declaration>@property (readonly) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/pages</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/pages</TokenIdentifier>
-			<Abstract type="html">The array of PWPDFPage objects associated with this document.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingResourcesOperation/building</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingResourcesOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *pages</Declaration>
+			<Declaration>@property (readonly) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/pages</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/pages</TokenIdentifier>
-			<Abstract type="html">The array of PWPDFPage objects associated with this document.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFetchBuildingResourcesOperation/building</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingResourcesOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *pages</Declaration>
+			<Declaration>@property (readonly) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/pages</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setDocumentLoaded:</TokenIdentifier>
-			<Abstract type="html">A Boolean value that states whether the document object has been loaded. (read-only)</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingResourcesOperation/setFetchBuildingResourcesCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingResourcesOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL documentLoaded</Declaration>
+			<Declaration>@property (copy) void ( ^ ) ( NSArray *resources , NSError *error ) fetchBuildingResourcesCompletionBlock</Declaration>
 			
 			
-			<Anchor>//api/name/documentLoaded</Anchor>
+			<Anchor>//api/name/fetchBuildingResourcesCompletionBlock</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/documentLoaded</TokenIdentifier>
-			<Abstract type="html">A Boolean value that states whether the document object has been loaded. (read-only)</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingResourcesOperation/fetchBuildingResourcesCompletionBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingResourcesOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL documentLoaded</Declaration>
+			<Declaration>@property (copy) void ( ^ ) ( NSArray *resources , NSError *error ) fetchBuildingResourcesCompletionBlock</Declaration>
 			
 			
-			<Anchor>//api/name/documentLoaded</Anchor>
+			<Anchor>//api/name/fetchBuildingResourcesCompletionBlock</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/documentLoaded</TokenIdentifier>
-			<Abstract type="html">A Boolean value that states whether the document object has been loaded. (read-only)</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFetchBuildingResourcesOperation/fetchBuildingResourcesCompletionBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingResourcesOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL documentLoaded</Declaration>
+			<Declaration>@property (copy) void ( ^ ) ( NSArray *resources , NSError *error ) fetchBuildingResourcesCompletionBlock</Declaration>
 			
 			
-			<Anchor>//api/name/documentLoaded</Anchor>
+			<Anchor>//api/name/fetchBuildingResourcesCompletionBlock</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setFileURL:</TokenIdentifier>
-			<Abstract type="html">The file URL with which the document was initialized. (read-only)</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFetchBuildingResourcesOperation/initWithBuilding:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWFetchBuildingResourcesOperation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *fileURL</Declaration>
-			
-			
-			<Anchor>//api/name/fileURL</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/fileURL</TokenIdentifier>
-			<Abstract type="html">The file URL with which the document was initialized. (read-only)</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *fileURL</Declaration>
+			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
 			
 			
-			<Anchor>//api/name/fileURL</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/fileURL</TokenIdentifier>
-			<Abstract type="html">The file URL with which the document was initialized. (read-only)</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *fileURL</Declaration>
-			
-			
-			<Anchor>//api/name/fileURL</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setDocumentSize:</TokenIdentifier>
-			<Abstract type="html">Returns the current size of the document. (read-only)</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGSize documentSize</Declaration>
-			
-			
-			<Anchor>//api/name/documentSize</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/documentSize</TokenIdentifier>
-			<Abstract type="html">Returns the current size of the document. (read-only)</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGSize documentSize</Declaration>
-			
-			
-			<Anchor>//api/name/documentSize</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/documentSize</TokenIdentifier>
-			<Abstract type="html">Returns the current size of the document. (read-only)</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGSize documentSize</Declaration>
-			
-			
-			<Anchor>//api/name/documentSize</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setDocumentRef:</TokenIdentifier>
-			<Abstract type="html">A reference to the CGPDFDocumentRef document object. This property may be nil if the document has not yet been loaded.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>@property CGPDFDocumentRef documentRef</Declaration>
-			
-			
-			<Anchor>//api/name/documentRef</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/documentRef</TokenIdentifier>
-			<Abstract type="html">A reference to the CGPDFDocumentRef document object. This property may be nil if the document has not yet been loaded.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>@property CGPDFDocumentRef documentRef</Declaration>
-			
-			
-			<Anchor>//api/name/documentRef</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/documentRef</TokenIdentifier>
-			<Abstract type="html">A reference to the CGPDFDocumentRef document object. This property may be nil if the document has not yet been loaded.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>@property CGPDFDocumentRef documentRef</Declaration>
-			
-			
-			<Anchor>//api/name/documentRef</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/initWithFileURL:</TokenIdentifier>
-			<Abstract type="html">Returns a document object initialized with its file system location.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithFileURL:(NSString *)fileURL</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>fileURL</Name>
-					<Abstract type="html">A file URL identifying the location of the document on disk. Passing in nil or an empty URL results in the throwing of an NSInvalidArgumentException.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A PDF document object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithFileURL:</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/loadDocument</TokenIdentifier>
-			<Abstract type="html">Loads the document object.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>- (void)loadDocument</Declaration>
-			
-			
-			<Anchor>//api/name/loadDocument</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/unloadDocument</TokenIdentifier>
-			<Abstract type="html">Unloads the document object.</Abstract>
-			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
-			
-			<Declaration>- (void)unloadDocument</Declaration>
-			
-			
-			<Anchor>//api/name/unloadDocument</Anchor>
+			<Anchor>//api/name/initWithBuilding:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

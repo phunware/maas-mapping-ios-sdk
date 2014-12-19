@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/PWAnnotationProtocol.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/PWAnnotationProtocol</TokenIdentifier>
+			<Abstract type="html">This protocol is used to provide annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single map annotation and provides critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but typically coordinate the creation of an appropriate PWAnnotationView object to handle the display in conjunction with the PWMapView delegate.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+            
+			
+			<NodeRef refid="49"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/setAnnotationID:</TokenIdentifier>
+			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If creating location annotations, initialize this value to kPWAnnotationIDUndefined.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWAnnotationIdentifier annotationID</Declaration>
+			
+			
+			<Anchor>//api/name/annotationID</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/annotationID</TokenIdentifier>
+			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If creating location annotations, initialize this value to kPWAnnotationIDUndefined.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWAnnotationIdentifier annotationID</Declaration>
+			
+			
+			<Anchor>//api/name/annotationID</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotationProtocol/annotationID</TokenIdentifier>
+			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If creating location annotations, initialize this value to kPWAnnotationIDUndefined.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWAnnotationIdentifier annotationID</Declaration>
+			
+			
+			<Anchor>//api/name/annotationID</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotationProtocol/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/setMapView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			
+			
+			<Anchor>//api/name/mapView</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/mapView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			
+			
+			<Anchor>//api/name/mapView</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotationProtocol/mapView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			
+			
+			<Anchor>//api/name/mapView</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

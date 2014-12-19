@@ -39,6 +39,8 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/fileURL">&nbsp;&nbsp;&nbsp;&nbsp;fileURL</option>
+	
 	<option value="//api/name/pdf">&nbsp;&nbsp;&nbsp;&nbsp;pdf</option>
 	
 	<option value="//api/name/resource">&nbsp;&nbsp;&nbsp;&nbsp;resource</option>
@@ -46,11 +48,6 @@
 	
 	
 	
-	
-	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/fileURL">&nbsp;&nbsp;&nbsp;&nbsp;- fileURL</option>
 	
 	
 	
@@ -76,6 +73,8 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileURL">fileURL</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pdf">pdf</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resource">resource</a></span></li>
@@ -85,12 +84,6 @@
 
 
 
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileURL">fileURL</a></span></li>
-	
-</ul></li>
 
 
 			</ul>
@@ -116,9 +109,6 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSCoding<br />NSCopying</td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">PWMapDocument.h</td>
 </tr>
@@ -130,7 +120,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A <code>PWMapDocument</code> object manages floor data and its associated assets.</p>
+						<p>A <code>PWMapDocument</code> object manages building floor data and its associated assets.</p>
 
 <p>A map document is initialized by <a href="../Classes/PWBuildingManager.html"><code>PWBuildingManager</code></a>. Initializing this object is not recommended.</p>
 					</div>
@@ -162,9 +152,9 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/fileURL">&ndash;&nbsp;fileURL</a></code>
+		<code><a href="#//api/name/fileURL">&nbsp;&nbsp;fileURL</a></code>
 	</span>
-	
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -180,6 +170,42 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/fileURL" title="fileURL"></a>
+	<h3 class="subsubtitle method-title">fileURL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The URL of the document&rsquo;s local file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSURL *fileURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapDocument.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/pdf" title="pdf"></a>
 	<h3 class="subsubtitle method-title">pdf</h3>
 	
@@ -191,7 +217,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWPDFDocument *pdf</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) PWPDFDocument *pdf</code></div>
 
     
 	
@@ -222,12 +248,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The floor resource associated with the map document. (read-only)</p>
+		<p>The building floor resource associated with the map document. (read-only)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWBuildingFloorResource *resource</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) PWBuildingFloorResource *resource</code></div>
 
     
 	
@@ -256,53 +282,6 @@
 					
 					
 					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/fileURL" title="fileURL"></a>
-	<h3 class="subsubtitle method-title">fileURL</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The URL of the document file.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSString *)fileURL</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The URL of the document file.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWMapDocument.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
 					
 					
                     
@@ -317,7 +296,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Phunware, Inc.. All rights reserved. (Last updated: 2014-09-11)</span><br />
+						<p><span class="copyright">&copy; 2014 Phunware, Inc.. All rights reserved. (Last updated: 2014-12-18)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

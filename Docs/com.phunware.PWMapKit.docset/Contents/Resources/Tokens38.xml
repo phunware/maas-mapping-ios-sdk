@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWRouteCacheManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteCacheManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteCacheManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="38"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteCacheManager/cachePoints:segments:</TokenIdentifier>
+			<Abstract type="html">Convenience method to cache all points which includes POI, waypoint, ect, and segments as well as the distance for each segments.</Abstract>
+			<DeclaredIn>PWRouteCacheManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)cachePoints:(NSArray *)mapPoints segments:(NSArray *)segments</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapPoints</Name>
+					<Abstract type="html">A list of PWBuildingAnnotation</Abstract>
+				</Parameter><Parameter>
+					<Name>segments</Name>
+					<Abstract type="html">A list of PWSegment</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cachePoints:segments:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteCacheManager/distanceFromPlace:toPlace:</TokenIdentifier>
+			<Abstract type="html">Convenience method to calculate the distance between to location of CLLocationCoordinate2D.</Abstract>
+			<DeclaredIn>PWRouteCacheManager.h</DeclaredIn>
+			
+			<Declaration>+ (CLLocationDistance)distanceFromPlace:(CLLocationCoordinate2D)from toPlace:(CLLocationCoordinate2D)to</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>from</Name>
+					<Abstract type="html">A location of start</Abstract>
+				</Parameter><Parameter>
+					<Name>to</Name>
+					<Abstract type="html">A location of destination</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/distanceFromPlace:toPlace:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteCacheManager/isPending</TokenIdentifier>
+			<Abstract type="html">Check if it&apos;s done with the cache all the data</Abstract>
+			<DeclaredIn>PWRouteCacheManager.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)isPending</Declaration>
+			
+			
+			<Anchor>//api/name/isPending</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteCacheManager/getPointsDictionaryByDirectionType:</TokenIdentifier>
+			<Abstract type="html">Return all cached points with a dictionary, the key is the point ID, the value is the point of PWBuildingAnnotation</Abstract>
+			<DeclaredIn>PWRouteCacheManager.h</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)getPointsDictionaryByDirectionType:(PWDirectionsType)directionsType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>check</Name>
+					<Abstract type="html">if it returns accissible points only</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getPointsDictionaryByDirectionType:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRouteCacheManager/getSegmentsDictionary</TokenIdentifier>
+			<Abstract type="html">Return all the segments with a dictionary, the key is the point ID, the value is a dictionary which contains all the neighbore points and distance between them.</Abstract>
+			<DeclaredIn>PWRouteCacheManager.h</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)getSegmentsDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/getSegmentsDictionary</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

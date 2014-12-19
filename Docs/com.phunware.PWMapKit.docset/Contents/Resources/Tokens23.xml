@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWUserTrackingBarButtonItem.html">
+	<File path="Classes/PWMKCacheManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWUserTrackingBarButtonItem</TokenIdentifier>
-			<Abstract type="html">A PWUserTrackingBarButtonItem object is a specialized bar button item that allows the user to toggle through the indoor user tracking modes. For example, when the user taps the button, the map view toggles between tracking the user with and without heading. The button also reflects the current user tracking mode if set elsewhere. This bar button item is associated with a single indoor map view.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMKCacheManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
@@ -13,91 +13,146 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/setMapView:</TokenIdentifier>
-			<Abstract type="html">The map view associated with this bar button item.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/setTimeToLive:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) PWMapView *mapView</Declaration>
+			<Declaration>@property (nonatomic, assign) NSTimeInterval timeToLive</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/timeToLive</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/mapView</TokenIdentifier>
-			<Abstract type="html">The map view associated with this bar button item.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/timeToLive</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) PWMapView *mapView</Declaration>
+			<Declaration>@property (nonatomic, assign) NSTimeInterval timeToLive</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/timeToLive</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWUserTrackingBarButtonItem/mapView</TokenIdentifier>
-			<Abstract type="html">The map view associated with this bar button item.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMKCacheManager/timeToLive</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) PWMapView *mapView</Declaration>
+			<Declaration>@property (nonatomic, assign) NSTimeInterval timeToLive</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/timeToLive</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/setTintColor:</TokenIdentifier>
-			<Abstract type="html">The tint color of the map bar button items.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/PWMKCacheManager/sharedManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIColor *tintColor</Declaration>
+			<Declaration>+ (instancetype)sharedManager</Declaration>
 			
 			
-			<Anchor>//api/name/tintColor</Anchor>
+			<Anchor>//api/name/sharedManager</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/tintColor</TokenIdentifier>
-			<Abstract type="html">The tint color of the map bar button items.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cacheImage:forURL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIColor *tintColor</Declaration>
+			<Declaration>- (void)cacheImage:(UIImage *)image forURL:(NSURL *)url</Declaration>
 			
 			
-			<Anchor>//api/name/tintColor</Anchor>
+			<Anchor>//api/name/cacheImage:forURL:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWUserTrackingBarButtonItem/tintColor</TokenIdentifier>
-			<Abstract type="html">The tint color of the map bar button items.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cachedImageForURL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIColor *tintColor</Declaration>
+			<Declaration>- (UIImage *)cachedImageForURL:(NSURL *)url</Declaration>
 			
 			
-			<Anchor>//api/name/tintColor</Anchor>
+			<Anchor>//api/name/cachedImageForURL:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/initWithMapView:</TokenIdentifier>
-			<Abstract type="html">Initializes a newly created bar button item with the specified indoor map view.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cachedImageForURLIgnoringTTL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithMapView:(PWMapView *)mapView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The indoor map view used by this bar button item.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The initialized bar button item.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithMapView:</Anchor>
+			<Declaration>- (UIImage *)cachedImageForURLIgnoringTTL:(NSURL *)url</Declaration>
+			
+			
+			<Anchor>//api/name/cachedImageForURLIgnoringTTL:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cacheResponse:forOperation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (void)cacheResponse:(id)response forOperation:(PWAFHTTPRequestOperation *)operation</Declaration>
+			
+			
+			<Anchor>//api/name/cacheResponse:forOperation:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cacheExitsForOperation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)cacheExitsForOperation:(PWAFHTTPRequestOperation *)operation</Declaration>
+			
+			
+			<Anchor>//api/name/cacheExitsForOperation:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cachedResponseForOperation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (id)cachedResponseForOperation:(PWAFHTTPRequestOperation *)operation</Declaration>
+			
+			
+			<Anchor>//api/name/cachedResponseForOperation:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/cachedResponseForOperationIgnoringTTL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (id)cachedResponseForOperationIgnoringTTL:(PWAFHTTPRequestOperation *)operation</Declaration>
+			
+			
+			<Anchor>//api/name/cachedResponseForOperationIgnoringTTL:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMKCacheManager/clearCache</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMKCacheManager.h</DeclaredIn>
+			
+			<Declaration>- (void)clearCache</Declaration>
+			
+			
+			<Anchor>//api/name/clearCache</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		

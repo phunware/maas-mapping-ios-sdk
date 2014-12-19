@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWMapDocument.html">
+	<File path="Classes/PWDirectionsResponse.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWMapDocument</TokenIdentifier>
-			<Abstract type="html">A PWMapDocument object manages floor data and its associated assets.</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWDirectionsResponse</TokenIdentifier>
+			<Abstract type="html">The PWDirectionsResponse class provides a container for route information returned by the Phunware servers. You do not create instances of this class directly. Instead, you can initiate a request for directions between two points by calling the calculateDirectionsWithCompletionHandler: method of a PWDirections object. You will receive an instance of this class as the result.</Abstract>
+			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -13,86 +13,86 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/setResource:</TokenIdentifier>
-			<Abstract type="html">The floor resource associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/setRequest:</TokenIdentifier>
+			<Abstract type="html">The original directions request object. (read-only)</Abstract>
+			<DeclaredIn>PWDirectionsResponse+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuildingFloorResource *resource</Declaration>
+			<Declaration>@property (readonly) PWDirectionsRequest *request</Declaration>
 			
 			
-			<Anchor>//api/name/resource</Anchor>
+			<Anchor>//api/name/request</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/resource</TokenIdentifier>
-			<Abstract type="html">The floor resource associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/request</TokenIdentifier>
+			<Abstract type="html">The original directions request object. (read-only)</Abstract>
+			<DeclaredIn>PWDirectionsResponse+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuildingFloorResource *resource</Declaration>
+			<Declaration>@property (readonly) PWDirectionsRequest *request</Declaration>
 			
 			
-			<Anchor>//api/name/resource</Anchor>
+			<Anchor>//api/name/request</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapDocument/resource</TokenIdentifier>
-			<Abstract type="html">The floor resource associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsResponse/request</TokenIdentifier>
+			<Abstract type="html">The original directions request object. (read-only)</Abstract>
+			<DeclaredIn>PWDirectionsResponse+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuildingFloorResource *resource</Declaration>
+			<Declaration>@property (readonly) PWDirectionsRequest *request</Declaration>
 			
 			
-			<Anchor>//api/name/resource</Anchor>
+			<Anchor>//api/name/request</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/setPdf:</TokenIdentifier>
-			<Abstract type="html">The PDF document associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/setRoutes:</TokenIdentifier>
+			<Abstract type="html">An array of route objects representing the directions between the start and end points. (read-only)</Abstract>
+			<DeclaredIn>PWDirectionsResponse+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPDFDocument *pdf</Declaration>
+			<Declaration>@property (readonly) NSArray *routes</Declaration>
 			
 			
-			<Anchor>//api/name/pdf</Anchor>
+			<Anchor>//api/name/routes</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/pdf</TokenIdentifier>
-			<Abstract type="html">The PDF document associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/routes</TokenIdentifier>
+			<Abstract type="html">An array of route objects representing the directions between the start and end points. (read-only)</Abstract>
+			<DeclaredIn>PWDirectionsResponse+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPDFDocument *pdf</Declaration>
+			<Declaration>@property (readonly) NSArray *routes</Declaration>
 			
 			
-			<Anchor>//api/name/pdf</Anchor>
+			<Anchor>//api/name/routes</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapDocument/pdf</TokenIdentifier>
-			<Abstract type="html">The PDF document associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsResponse/routes</TokenIdentifier>
+			<Abstract type="html">An array of route objects representing the directions between the start and end points. (read-only)</Abstract>
+			<DeclaredIn>PWDirectionsResponse+Private.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPDFDocument *pdf</Declaration>
+			<Declaration>@property (readonly) NSArray *routes</Declaration>
 			
 			
-			<Anchor>//api/name/pdf</Anchor>
+			<Anchor>//api/name/routes</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/fileURL</TokenIdentifier>
-			<Abstract type="html">The URL of the document file.</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/initWithRequest:routes:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWDirectionsResponse+Private.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)fileURL</Declaration>
+			<Declaration>- (instancetype)initWithRequest:(PWDirectionsRequest *)request routes:(NSArray *)routes</Declaration>
 			
-			<ReturnValue><Abstract type="html">The URL of the document file.</Abstract></ReturnValue>
-			<Anchor>//api/name/fileURL</Anchor>
+			
+			<Anchor>//api/name/initWithRequest:routes:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

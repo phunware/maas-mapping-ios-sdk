@@ -7,9 +7,8 @@
 
 #import <UIKit/UIKit.h>
 #import <PWMapKit/PWMapKit.h>
-#import <PWLocation/PWLocation.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import <PWLocation/PWLocation.h>
 
 typedef NS_ENUM(NSInteger, PWLocationManagerType) {
     PWLocationManagerTypeMSE = 0,

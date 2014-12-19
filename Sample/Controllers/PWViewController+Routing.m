@@ -6,6 +6,7 @@
 //
 
 #import "PWViewController+Routing.h"
+#import <PWMapKit/PWMapView+ZoomWorkaround.h>
 
 @implementation PWViewController (Routing)
 
@@ -44,6 +45,8 @@
         [self.mapView setRouteStep:nextStep];
     
         [self updateRoutingNavBarState];
+        [self setCameraToPolyline];
+        
     } else {
         NSLog(@"No more next step, already last step.");
     }
@@ -61,6 +64,7 @@
         [self.mapView setRouteStep:previousStep];
         
         [self updateRoutingNavBarState];
+        [self setCameraToPolyline];
     }
 }
 
@@ -76,6 +80,24 @@
     self.navigationItem.title = self.currentBuildingName;
 }
 
+#pragma mark - 
+
+- (void)setCameraToPolyline
+{
+    PWRouteStep *currentStep = self.mapView.currentStep;
+    CLLocationCoordinate2D coordinate = [(PWBuildingAnnotation*)currentStep.annotations.firstObject coordinate];
+    
+    if (self.mapView.isUsingZoomWorkaround) {
+        coordinate = [self.mapView forcedZoomWorkaroundCoordinateFromCoordinate:coordinate];
+    }
+    
+    MKMapCamera *camera = [MKMapCamera
+                           cameraLookingAtCenterCoordinate:coordinate
+                           fromEyeCoordinate:coordinate
+                           eyeAltitude:-500];
+    [self.mapView setCamera:camera animated:YES];
+}
+
 - (void)updateRoutingNavBarState
 {
     UIBarButtonItem *nextButton = self.navigationItem.rightBarButtonItems[0];
@@ -85,7 +107,7 @@
     nextButton.enabled = [self.mapView.currentRoute.steps indexOfObject:self.mapView.currentStep] + 1 < self.mapView.currentRoute.steps.count;
     
     NSInteger currentStepIndex = [self.mapView.currentRoute.steps indexOfObject:self.mapView.currentStep];
-    self.navigationItem.title = [NSString stringWithFormat:@"Step %i of %lu", currentStepIndex + 1, (unsigned long)self.mapView.currentRoute.steps.count];
+    self.navigationItem.title = [NSString stringWithFormat:@"Step %ld of %lu", (long)(currentStepIndex + 1), (unsigned long)self.mapView.currentRoute.steps.count];
 }
 
 @end
