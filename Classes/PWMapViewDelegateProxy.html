@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWDirectionsResponse Class Reference</title>
+		<title>PWMapViewDelegateProxy Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWDirectionsResponse Class Reference</h1>
+				<h1 class="hideInXcode">PWMapViewDelegateProxy Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -25,8 +25,6 @@
 				<li id="jumpto_button" role="navigation">
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
-	
-	<option value="overview">Overview</option>
 	
 	
 	
@@ -39,18 +37,23 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/request">&nbsp;&nbsp;&nbsp;&nbsp;request</option>
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
 	
-	<option value="//api/name/routes">&nbsp;&nbsp;&nbsp;&nbsp;routes</option>
+	<option value="//api/name/mapView">&nbsp;&nbsp;&nbsp;&nbsp;mapView</option>
 	
 	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/delegateWithMapView:">&nbsp;&nbsp;&nbsp;&nbsp;+ delegateWithMapView:</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithRequest:routes:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRequest:routes:</option>
+	<option value="//api/name/respondsToSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- respondsToSelector:</option>
 	
 	
 	
@@ -61,14 +64,10 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
-
 
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Extension Methods">Extension Methods</a></span></li>
 	
 </ul></li>
 
@@ -78,19 +77,25 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/request">request</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/routes">routes</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView">mapView</a></span></li>
 	
 </ul></li>
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegateWithMapView:">delegateWithMapView:</a></span></li>
+	
+</ul></li>
+
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRequest:routes:">initWithRequest:routes:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/respondsToSelector:">respondsToSelector:</a></span></li>
 	
 </ul></li>
 
@@ -99,7 +104,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWDirectionsResponse Class Reference" name="top"></a>
+				<a title="PWMapViewDelegateProxy Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -108,7 +113,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWDirectionsResponse Class Reference</h1>
+						<h1 class="title title-header">PWMapViewDelegateProxy Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -116,23 +121,18 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<td class="specification-value">NSProxy</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">MKMapViewDelegate</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWDirectionsResponse.h</td>
+	<td class="specification-value">PWMapViewDelegateProxy.h</td>
 </tr>
 						</tbody></table></div>
 					
                     
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWDirectionsResponse</code> class provides a container for route information returned by the Phunware servers. You do not create instances of this class directly. Instead, you can initiate a <a href="#//api/name/request">request</a> for directions between two points by calling the calculateDirectionsWithCompletionHandler: method of a <a href="../Classes/PWDirections.html">PWDirections</a> object. You will receive an instance of this class as the result.</p>
-					</div>
-					
-					
 					
 					
 					
@@ -142,32 +142,30 @@
 						
 						
 						
-						<h3 class="subsubtitle task-title">Other Methods</h3>
+						
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/request">&nbsp;&nbsp;request</a></code>
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/routes">&nbsp;&nbsp;routes</a></code>
+		<code><a href="#//api/name/mapView">&nbsp;&nbsp;mapView</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
-</li>
-						</ul>
-						
-						
-						<a title="Extension Methods" name="task_Extension Methods"></a>
-						<h3 class="subsubtitle task-title">Extension Methods</h3>
-
-						<ul class="task-list">
-							<li>
+</li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithRequest:routes:">&ndash;&nbsp;initWithRequest:routes:</a></code>
+		<code><a href="#//api/name/delegateWithMapView:">+&nbsp;delegateWithMapView:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/respondsToSelector:">&ndash;&nbsp;respondsToSelector:</a></code>
 	</span>
 	
 	
@@ -185,87 +183,47 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/request" title="request"></a>
-	<h3 class="subsubtitle method-title">request</h3>
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
 	
 	
-	
-	<div class="method-subsection brief-description">
-		<p>The original directions request object. (read-only)</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>@property (readonly) PWDirectionsRequest *request</code></div>
+	<div class="method-subsection method-declaration"><code>@property (weak) id&lt;MKMapViewDelegate&gt; delegate</code></div>
 
     
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWDirectionsResponse.h</code><br />
-	</div>				
-	
-	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/routes" title="routes"></a>
-	<h3 class="subsubtitle method-title">routes</h3>
+	<a name="//api/name/mapView" title="mapView"></a>
+	<h3 class="subsubtitle method-title">mapView</h3>
 	
 	
-	
-	<div class="method-subsection brief-description">
-		<p>An array of route objects representing the directions between the start and end points. (read-only)</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *routes</code></div>
+	<div class="method-subsection method-declaration"><code>@property (weak) PWMapView *mapView</code></div>
 
     
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The array contains one or more <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> objects, each of which represents a possible set of directions for the user to follow. If you did not <a href="#//api/name/request">request</a> alternate routes in the original directions <a href="#//api/name/request">request</a>, this array contains at most one object.</p>
-
-<p>Each route object contains geometry information that you can use to display that route in your app’s map view.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWDirectionsResponse.h</code><br />
-	</div>				
-	
-	
 </div>
 						
 					</div>
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/delegateWithMapView:" title="delegateWithMapView:"></a>
+	<h3 class="subsubtitle method-title">delegateWithMapView:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)delegateWithMapView:(PWMapView *)<em>mapView</em></code></div>
+
+    
+</div>
+						
+					</div>
 					
 					
 					
@@ -274,12 +232,12 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithRequest:routes:" title="initWithRequest:routes:"></a>
-	<h3 class="subsubtitle method-title">initWithRequest:routes:</h3>
+	<a name="//api/name/respondsToSelector:" title="respondsToSelector:"></a>
+	<h3 class="subsubtitle method-title">respondsToSelector:</h3>
 	
 	
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithRequest:(PWDirectionsRequest *)<em>request</em> routes:(NSArray *)<em>routes</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (BOOL)respondsToSelector:(SEL)<em>selector</em></code></div>
 
     
 </div>
