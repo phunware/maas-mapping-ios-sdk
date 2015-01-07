@@ -1,5 +1,12 @@
 #PWMapKit Changelog
 
+##v2.3.0 BETA 7 (Tuesday, December 16th, 2014)
+* Fixed potential crash issue when downloading route segments.
+* Removed `+ (BOOL)shouldUseZoomWorkaround;` from `PWMapKit.h` since zoom workaround is now explicit
+* Removed `+ (void)setShouldUseZoomWorkaround:(BOOL)useZoom;` from `PWMapKit.h` since zoom workaround is now explicit
+* Added method, `- (void)toggleZoomWorkaround;` to `PWMapView+ZoomWorkaround.h`. This allow you to explicitly toggle the zoom workaround on/off.
+* NOTE: The zoom workaround now zooms the map 4x normal size.
+
 ##v2.3.0 BETA 6 (Tuesday, December 16th, 2014)
 * Adding KVO notifications to indoorUserTrackingMode
 * Floor change no longer breaks the current indoor user tracking mode. See Wiki for additional details on user tracking behavior.
