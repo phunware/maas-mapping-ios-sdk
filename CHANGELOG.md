@@ -1,6 +1,6 @@
 #PWMapKit Changelog
 
-##v2.3.0 BETA 7 (Tuesday, December 16th, 2014)
+##v2.3.0 BETA 7 (Wednesday, January 7th, 2014)
 * Fixed potential crash issue when downloading route segments.
 * Removed `+ (BOOL)shouldUseZoomWorkaround;` from `PWMapKit.h` since zoom workaround is now explicit
 * Removed `+ (void)setShouldUseZoomWorkaround:(BOOL)useZoom;` from `PWMapKit.h` since zoom workaround is now explicit
