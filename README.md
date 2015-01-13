@@ -1,7 +1,7 @@
 PWMapKit SDK for iOS
 ==================
 
-Version 2.3.0 BETA (Use PWMapKit v2.2.0 for production)
+Version 2.3.0 BETA (use PWMapKit v2.2.0 for production)
 
 PWMapKit is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -19,9 +19,9 @@ Requirements
 Installation
 ------------
 
-PWMapKit has a dependency on MaaSCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk and PWLocation.framework, which is available here: https://github.com/phunware/maas-location-ios-sdk
+PWMapKit has a dependency on MaaSCore.framework (available here: https://github.com/phunware/maas-core-ios-sdk) and PWLocation.framework (available here: https://github.com/phunware/maas-location-ios-sdk).
 
-It's recommended that you add the MaaS frameworks to the Vendor/Phunware directory, then, add the MaaSCore.framework and PWMapKit.framework to your Xcode project.
+It's recommended that you add the MaaS frameworks to the Vendor/Phunware directory, then add the MaaSCore.framework and PWMapKit.framework to your Xcode project.
 
 The following frameworks are required:
 ````
@@ -29,7 +29,7 @@ MaaSCore.framework
 PWLocation.framework
 ````
 
-Alternatively you can install PWMapKit using [CocoaPods](http://www.cocoapods.org):
+Alternatively, you can install PWMapKit using [CocoaPods](http://www.cocoapods.org):
 ````
 // Add this to your Podfile
 pod PWMapKit
@@ -49,10 +49,10 @@ PWMapKit documentation is included in the the repository's Documents folder as b
 Sample Application
 ------------
 
-PWMapKit comes with a sample application ready to use. However, you will need to update the application with your MaaS credentials and location provider information.
+PWMapKit comes with a ready-to-use sample application. However, you will need to update the application with your MaaS credentials and location provider information.
 
-1. Update your MaaS credentials and setup the building identifier in `PWMapKitSampleInfo.plist`.
-2. Update the localtion provider initializers in `PWViewController.m`
+1. Update your MaaS credentials and set up the building identifier in `PWMapKitSampleInfo.plist`.
+2. Update the localtion provider initializers in `PWViewController.m`.
 
 
 
@@ -64,13 +64,13 @@ The primary methods and objects in PWMapKit revolve around creating a map view, 
 ### Adding Indoor Maps to a Map View
 
 ````objective-c
-	// Replace all referencs of MKMapView with PWMapView
+	// Replace all references of MKMapView with PWMapView.
     PWMapView *mapView = [[PWMapView alloc] initWithFrame:self.view.bounds];
     mapView.delegate = self;
     
     [self.view addSubview:mapView];
     
-    // Load a building
+    // Load a building.
     [mapView loadBuilding:BUILDING_ID];
     
     // That's it!
@@ -79,7 +79,7 @@ The primary methods and objects in PWMapKit revolve around creating a map view, 
 
 ### Indoor Location
 
-PWMapKit implements an abstract indoor location manager protocol very similar to CLLocationManager, which can be implemented to provide indoor location. PWMSELocationManager implements this protocol to provide Wi-Fi based indoor location information.
+PWMapKit implements an abstract indoor location manager protocol very similar to CLLocationManager, which can be implemented to provide indoor location. PWMSELocationManager implements this protocol to provide Wi-Fi-based indoor location information.
 
 ````objective-c
 	CLLocationCoordinate2D here;
@@ -99,7 +99,7 @@ The indoor routing APIs have been structured to mirror MKMapKit's routing method
 #### Routing Between Points of Interest
 
 ````objective-c
-	// To fetch a route between two points of interest, you would call the following method:
+	// To fetch a route between two points of interest, call the following method:
     id<PWAnnotation> start, end;
     
     PWDirectionsRequest *request = [[PWDirectionsRequest alloc] initWithSource:start
@@ -126,7 +126,7 @@ The indoor routing APIs have been structured to mirror MKMapKit's routing method
 #### Routing from a Location to a Point of Interest
 
 ````objective-c
-	// To fetch a route between two points of interest, you would call the following method:
+	// To fetch a route between two points of interest, call the following method:
     id<PWAnnotation> end;
     id <PWLocation> location;
     
