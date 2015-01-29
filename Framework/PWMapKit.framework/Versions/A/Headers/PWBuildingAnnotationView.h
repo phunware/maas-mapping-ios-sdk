@@ -8,7 +8,7 @@
 @class PWAnnotationLabel;
 
 /**
- The `PWAnnotationView` class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled to a corresponding building annotation object that conforms to the `PWBuildingAnnotation` protocol. When an annotation’s coordinate is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.
+ The `PWAnnotationView` class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled with a corresponding building annotation object that conforms to the `PWBuildingAnnotation` protocol. When an annotation’s coordinate is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.
  */
 
 @interface PWBuildingAnnotationView : MKAnnotationView

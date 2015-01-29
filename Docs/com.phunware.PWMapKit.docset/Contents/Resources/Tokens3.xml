@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingAnnotationView</TokenIdentifier>
-			<Abstract type="html">The PWAnnotationView class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled to a corresponding building annotation object that corresponds to the PWBuildingAnnotation protocol. When an annotation’s coordinate point is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.</Abstract>
+			<Abstract type="html">The PWAnnotationView class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled with a corresponding building annotation object that conforms to the PWBuildingAnnotation protocol. When an annotation’s coordinate is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.</Abstract>
 			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
             
 			
@@ -45,62 +45,6 @@
 			
 			
 			<Anchor>//api/name/label</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/initWithAnnotation:reuseIdentifier:</TokenIdentifier>
-			<Abstract type="html">Initializes and returns a new annotation view.</Abstract>
-			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithAnnotation:(id&lt;PWBuildingAnnotation&gt;)annotation reuseIdentifier:(NSString *)reuseIdentifier</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>annotation</Name>
-					<Abstract type="html">The building annotation object to associate with the new view.</Abstract>
-				</Parameter><Parameter>
-					<Name>reuseIdentifier</Name>
-					<Abstract type="html">If you plan to reuse the annotation view for similar types of annotations, pass a string to identify it. Although you can pass nil if you do not intend to reuse the view, reusing annotation views is generally recommended.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The initialized building annotation view or nil if there was a problem initializing the object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAnnotation:reuseIdentifier:</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/setImageView:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PWBuildingAnnotationView+Private.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) UIImageView *imageView</Declaration>
-			
-			
-			<Anchor>//api/name/imageView</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/imageView</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PWBuildingAnnotationView+Private.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) UIImageView *imageView</Declaration>
-			
-			
-			<Anchor>//api/name/imageView</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotationView/imageView</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PWBuildingAnnotationView+Private.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) UIImageView *imageView</Declaration>
-			
-			
-			<Anchor>//api/name/imageView</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		

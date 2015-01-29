@@ -13,119 +13,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setFloors:</TokenIdentifier>
-			<Abstract type="html">The PWBuildingFloor objects associated with the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *floors</Declaration>
-			
-			
-			<Anchor>//api/name/floors</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/floors</TokenIdentifier>
-			<Abstract type="html">The PWBuildingFloor objects associated with the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *floors</Declaration>
-			
-			
-			<Anchor>//api/name/floors</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/floors</TokenIdentifier>
-			<Abstract type="html">The PWBuildingFloor objects associated with the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *floors</Declaration>
-			
-			
-			<Anchor>//api/name/floors</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setBuildingID:</TokenIdentifier>
-			<Abstract type="html">The building identifier. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
-			
-			
-			<Anchor>//api/name/buildingID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/buildingID</TokenIdentifier>
-			<Abstract type="html">The building identifier. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
-			
-			
-			<Anchor>//api/name/buildingID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/buildingID</TokenIdentifier>
-			<Abstract type="html">The building identifier. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSUInteger buildingID</Declaration>
-			
-			
-			<Anchor>//api/name/buildingID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setCampusID:</TokenIdentifier>
-			<Abstract type="html">The campus identifier for the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger campusID</Declaration>
-			
-			
-			<Anchor>//api/name/campusID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/campusID</TokenIdentifier>
-			<Abstract type="html">The campus identifier for the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger campusID</Declaration>
-			
-			
-			<Anchor>//api/name/campusID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/campusID</TokenIdentifier>
-			<Abstract type="html">The campus identifier for the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger campusID</Declaration>
-			
-			
-			<Anchor>//api/name/campusID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setVenueGUID:</TokenIdentifier>
 			<Abstract type="html">The venue GUID as specified by the mapping service. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *venueGUID</Declaration>
+			<Declaration>@property (copy, readonly) NSString *venueGUID</Declaration>
 			
 			
 			<Anchor>//api/name/venueGUID</Anchor>
@@ -137,7 +29,7 @@
 			<Abstract type="html">The venue GUID as specified by the mapping service. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *venueGUID</Declaration>
+			<Declaration>@property (copy, readonly) NSString *venueGUID</Declaration>
 			
 			
 			<Anchor>//api/name/venueGUID</Anchor>
@@ -149,10 +41,82 @@
 			<Abstract type="html">The venue GUID as specified by the mapping service. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *venueGUID</Declaration>
+			<Declaration>@property (copy, readonly) NSString *venueGUID</Declaration>
 			
 			
 			<Anchor>//api/name/venueGUID</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setCampusID:</TokenIdentifier>
+			<Abstract type="html">The campus identifier for the building. (read-only)</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWCampusIdentifier campusID</Declaration>
+			
+			
+			<Anchor>//api/name/campusID</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/campusID</TokenIdentifier>
+			<Abstract type="html">The campus identifier for the building. (read-only)</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWCampusIdentifier campusID</Declaration>
+			
+			
+			<Anchor>//api/name/campusID</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/campusID</TokenIdentifier>
+			<Abstract type="html">The campus identifier for the building. (read-only)</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWCampusIdentifier campusID</Declaration>
+			
+			
+			<Anchor>//api/name/campusID</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setBuildingID:</TokenIdentifier>
+			<Abstract type="html">The building identifier. (read-only)</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/buildingID</TokenIdentifier>
+			<Abstract type="html">The building identifier. (read-only)</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/buildingID</TokenIdentifier>
+			<Abstract type="html">The building identifier. (read-only)</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
@@ -161,7 +125,7 @@
 			<Abstract type="html">The building name. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			<Declaration>@property (copy, readonly) NSString *name</Declaration>
 			
 			
 			<Anchor>//api/name/name</Anchor>
@@ -173,7 +137,7 @@
 			<Abstract type="html">The building name. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			<Declaration>@property (copy, readonly) NSString *name</Declaration>
 			
 			
 			<Anchor>//api/name/name</Anchor>
@@ -185,7 +149,7 @@
 			<Abstract type="html">The building name. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			<Declaration>@property (copy, readonly) NSString *name</Declaration>
 			
 			
 			<Anchor>//api/name/name</Anchor>
@@ -197,7 +161,7 @@
 			<Abstract type="html">The street address of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *streetAddress</Declaration>
+			<Declaration>@property (copy, readonly) NSString *streetAddress</Declaration>
 			
 			
 			<Anchor>//api/name/streetAddress</Anchor>
@@ -209,7 +173,7 @@
 			<Abstract type="html">The street address of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *streetAddress</Declaration>
+			<Declaration>@property (copy, readonly) NSString *streetAddress</Declaration>
 			
 			
 			<Anchor>//api/name/streetAddress</Anchor>
@@ -221,7 +185,7 @@
 			<Abstract type="html">The street address of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *streetAddress</Declaration>
+			<Declaration>@property (copy, readonly) NSString *streetAddress</Declaration>
 			
 			
 			<Anchor>//api/name/streetAddress</Anchor>
@@ -230,10 +194,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setLocation:</TokenIdentifier>
-			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is usually the center of the building.</Abstract>
+			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is usually the center of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D location</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D location</Declaration>
 			
 			
 			<Anchor>//api/name/location</Anchor>
@@ -242,10 +206,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/location</TokenIdentifier>
-			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is usually the center of the building.</Abstract>
+			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is usually the center of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D location</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D location</Declaration>
 			
 			
 			<Anchor>//api/name/location</Anchor>
@@ -254,13 +218,49 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/location</TokenIdentifier>
-			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is usually the center of the building.</Abstract>
+			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is usually the center of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D location</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D location</Declaration>
 			
 			
 			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setFloors:</TokenIdentifier>
+			<Abstract type="html">The PWBuildingFloor objects associated with the building. (read-only)</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *floors</Declaration>
+			
+			
+			<Anchor>//api/name/floors</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/floors</TokenIdentifier>
+			<Abstract type="html">The PWBuildingFloor objects associated with the building. (read-only)</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *floors</Declaration>
+			
+			
+			<Anchor>//api/name/floors</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/floors</TokenIdentifier>
+			<Abstract type="html">The PWBuildingFloor objects associated with the building. (read-only)</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *floors</Declaration>
+			
+			
+			<Anchor>//api/name/floors</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

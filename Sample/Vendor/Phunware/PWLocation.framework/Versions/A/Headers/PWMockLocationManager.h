@@ -30,13 +30,14 @@
  */
 @property (nonatomic, readonly) PWIndoorLocation *location;
 
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  Initializes a mock location manager with the specified `PWMockLocationManagerConfiguration`.
  @param configuration The `PWMockLocationManagerConfiguration` object to initialize the manager with.
  @return Returns a `PWMockLocationManager` object.
  */
-- (instancetype)initWithMockLocationManagerWithConfiguration:(PWMockLocationManagerConfiguration *)configuration;
+- (instancetype)initWithMockLocationManagerWithConfiguration:(PWMockLocationManagerConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
 
 @end
 

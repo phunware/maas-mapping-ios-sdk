@@ -10,7 +10,7 @@
 @class PWBuildingFloorReference;
 
 /**
- The build floor object encapsulates all data related to a floor.
+ The building floor object encapsulates all data related to a floor.
  */
 @interface PWBuildingFloor : NSObject
 
@@ -37,7 +37,7 @@
 @property (readonly) PWBuildingFloorLevel floorLevel;
 
 /**
- The reference GPS points and angle for the building floor.
+ The reference GPS points and angle for the building's floor.
  */
 @property (readonly) PWBuildingFloorReference *reference;
 

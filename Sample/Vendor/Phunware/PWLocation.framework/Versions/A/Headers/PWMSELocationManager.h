@@ -20,10 +20,18 @@
  The venue GUID associated with the location manager. (read-only)
  */
 @property (nonatomic, readonly) NSString *venueGUID;
+
+/**
+ The floor ID mapping dictionary used to define the mapping between the location provider floor ID and the Phunware floor ID. The dictionary format must adhere to the following format: `@{CUSTOMER_FLOORID : PHUNWARE_FLOOR_ID}`.
+ */
+@property (nonatomic, strong) NSDictionary *floorIDMapping;
+
 /**
  The latest indoor location received from the Phunware location service.
  */
 @property (nonatomic, readonly) PWIndoorLocation *location;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  Initializes the location manager with the specified venue GUID and venue location.
@@ -32,7 +40,6 @@
  @discussion The venue GUID will come from Phunware and is available in the `PWBuilding` object. If the device is not within 5 kilometers of the venue location, location updates will fail.
  @return The location manager object.
  */
-
 - (instancetype)initWithVenueGUID:(NSString *)venueGUID location:(CLLocationCoordinate2D)venueLocation __attribute__((deprecated));
 - (instancetype)initWithVenueGUID:(NSString *)venueGUID NS_DESIGNATED_INITIALIZER;
 

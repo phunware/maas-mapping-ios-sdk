@@ -14,10 +14,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setTopLeft:</TokenIdentifier>
-			<Abstract type="html">The top left lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">The top left lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D topLeft</Declaration>
 			
 			
 			<Anchor>//api/name/topLeft</Anchor>
@@ -26,10 +26,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/topLeft</TokenIdentifier>
-			<Abstract type="html">The top left lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">The top left lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D topLeft</Declaration>
 			
 			
 			<Anchor>//api/name/topLeft</Anchor>
@@ -38,10 +38,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/topLeft</TokenIdentifier>
-			<Abstract type="html">The top left lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">The top left lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D topLeft</Declaration>
 			
 			
 			<Anchor>//api/name/topLeft</Anchor>
@@ -50,10 +50,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setTopRight:</TokenIdentifier>
-			<Abstract type="html">  The top right lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">  The top right lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topRight</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D topRight</Declaration>
 			
 			
 			<Anchor>//api/name/topRight</Anchor>
@@ -62,10 +62,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/topRight</TokenIdentifier>
-			<Abstract type="html">  The top right lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">  The top right lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topRight</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D topRight</Declaration>
 			
 			
 			<Anchor>//api/name/topRight</Anchor>
@@ -74,10 +74,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/topRight</TokenIdentifier>
-			<Abstract type="html">  The top right lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">  The top right lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D topRight</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D topRight</Declaration>
 			
 			
 			<Anchor>//api/name/topRight</Anchor>
@@ -86,10 +86,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setBottomLeft:</TokenIdentifier>
-			<Abstract type="html">  The bottom left lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">  The bottom left lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomLeft</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D bottomLeft</Declaration>
 			
 			
 			<Anchor>//api/name/bottomLeft</Anchor>
@@ -98,10 +98,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/bottomLeft</TokenIdentifier>
-			<Abstract type="html">  The bottom left lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">  The bottom left lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomLeft</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D bottomLeft</Declaration>
 			
 			
 			<Anchor>//api/name/bottomLeft</Anchor>
@@ -110,10 +110,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/bottomLeft</TokenIdentifier>
-			<Abstract type="html">  The bottom left lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">  The bottom left lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomLeft</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D bottomLeft</Declaration>
 			
 			
 			<Anchor>//api/name/bottomLeft</Anchor>
@@ -122,10 +122,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setBottomRight:</TokenIdentifier>
-			<Abstract type="html">  The bottom right lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">  The bottom right lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D bottomRight</Declaration>
 			
 			
 			<Anchor>//api/name/bottomRight</Anchor>
@@ -134,10 +134,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/bottomRight</TokenIdentifier>
-			<Abstract type="html">  The bottom right lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">  The bottom right lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D bottomRight</Declaration>
 			
 			
 			<Anchor>//api/name/bottomRight</Anchor>
@@ -146,10 +146,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/bottomRight</TokenIdentifier>
-			<Abstract type="html">  The bottom right lat/long coordinate of the building.</Abstract>
+			<Abstract type="html">  The bottom right lat/long coordinate of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D bottomRight</Declaration>
 			
 			
 			<Anchor>//api/name/bottomRight</Anchor>
@@ -158,10 +158,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setAngle:</TokenIdentifier>
-			<Abstract type="html">  The angle of the building in the lat/long coordinate space.</Abstract>
+			<Abstract type="html">  The angle of the building in the lat/long coordinate space. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGFloat angle</Declaration>
+			<Declaration>@property (readonly) CGFloat angle</Declaration>
 			
 			
 			<Anchor>//api/name/angle</Anchor>
@@ -170,10 +170,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/angle</TokenIdentifier>
-			<Abstract type="html">  The angle of the building in the lat/long coordinate space.</Abstract>
+			<Abstract type="html">  The angle of the building in the lat/long coordinate space. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGFloat angle</Declaration>
+			<Declaration>@property (readonly) CGFloat angle</Declaration>
 			
 			
 			<Anchor>//api/name/angle</Anchor>
@@ -182,10 +182,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/angle</TokenIdentifier>
-			<Abstract type="html">  The angle of the building in the lat/long coordinate space.</Abstract>
+			<Abstract type="html">  The angle of the building in the lat/long coordinate space. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGFloat angle</Declaration>
+			<Declaration>@property (readonly) CGFloat angle</Declaration>
 			
 			
 			<Anchor>//api/name/angle</Anchor>

@@ -13,8 +13,11 @@
  `PWDirectionsType` specifies the type of directions to be used.
  */
 typedef NS_ENUM(NSUInteger, PWDirectionsType) {
+    /** The directions type is unknown. */
     PWDirectionsTypeUnknown = NSNotFound,
+    /** The directions type is for accessible routes only. */
     PWDirectionsTypeAccessible = 0,
+    /** The directions type is for both accessible and inaccessible routes. */
     PWDirectionsTypeAny
 };
 

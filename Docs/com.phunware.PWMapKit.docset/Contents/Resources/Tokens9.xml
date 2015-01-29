@@ -13,42 +13,6 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/setCalculating:</TokenIdentifier>
-			<Abstract type="html">A Boolean value indicating whether a request is currently in process. (read-only)</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isCalculating) BOOL calculating</Declaration>
-			
-			
-			<Anchor>//api/name/calculating</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/isCalculating</TokenIdentifier>
-			<Abstract type="html">A Boolean value indicating whether a request is currently in process. (read-only)</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isCalculating) BOOL calculating</Declaration>
-			
-			
-			<Anchor>//api/name/calculating</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirections/calculating</TokenIdentifier>
-			<Abstract type="html">A Boolean value indicating whether a request is currently in process. (read-only)</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isCalculating) BOOL calculating</Declaration>
-			
-			
-			<Anchor>//api/name/calculating</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/initWithRequest:</TokenIdentifier>
 			<Abstract type="html">Initializes and returns a directions object using the specified request.</Abstract>
 			<DeclaredIn>PWDirections.h</DeclaredIn>
@@ -79,18 +43,6 @@
 			</Parameters>
 			
 			<Anchor>//api/name/calculateDirectionsWithCompletionHandler:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/cancel</TokenIdentifier>
-			<Abstract type="html">Cancels a pending request.</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>- (void)cancel</Declaration>
-			
-			
-			<Anchor>//api/name/cancel</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

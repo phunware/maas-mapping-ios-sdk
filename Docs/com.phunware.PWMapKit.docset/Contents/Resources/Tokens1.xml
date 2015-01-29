@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWAnnotationLabel</TokenIdentifier>
-			<Abstract type="html">The PWAnnotationLabel is a UILabel subclass that allows stroke color and stroke width customizations.</Abstract>
+			<Abstract type="html">The PWAnnotationLabel is a UILabel subclass used with annotation views that allows stroke color and width customizations.</Abstract>
 			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
             
 			
@@ -17,7 +17,7 @@
 			<Abstract type="html">The stroke color of the text outline.</Abstract>
 			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIColor *strokeColor</Declaration>
+			<Declaration>@property (nonatomic) UIColor *strokeColor</Declaration>
 			
 			
 			<Anchor>//api/name/strokeColor</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">The stroke color of the text outline.</Abstract>
 			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIColor *strokeColor</Declaration>
+			<Declaration>@property (nonatomic) UIColor *strokeColor</Declaration>
 			
 			
 			<Anchor>//api/name/strokeColor</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">The stroke color of the text outline.</Abstract>
 			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIColor *strokeColor</Declaration>
+			<Declaration>@property (nonatomic) UIColor *strokeColor</Declaration>
 			
 			
 			<Anchor>//api/name/strokeColor</Anchor>
@@ -53,7 +53,7 @@
 			<Abstract type="html">The stroke width of the text outline.</Abstract>
 			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGFloat strokeWidth</Declaration>
+			<Declaration>@property (nonatomic) CGFloat strokeWidth</Declaration>
 			
 			
 			<Anchor>//api/name/strokeWidth</Anchor>
@@ -65,7 +65,7 @@
 			<Abstract type="html">The stroke width of the text outline.</Abstract>
 			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGFloat strokeWidth</Declaration>
+			<Declaration>@property (nonatomic) CGFloat strokeWidth</Declaration>
 			
 			
 			<Anchor>//api/name/strokeWidth</Anchor>
@@ -77,7 +77,7 @@
 			<Abstract type="html">The stroke width of the text outline.</Abstract>
 			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGFloat strokeWidth</Declaration>
+			<Declaration>@property (nonatomic) CGFloat strokeWidth</Declaration>
 			
 			
 			<Anchor>//api/name/strokeWidth</Anchor>

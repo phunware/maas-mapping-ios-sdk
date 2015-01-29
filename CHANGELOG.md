@@ -1,51 +1,24 @@
 #PWMapKit Changelog
 
-##v2.3.0 BETA 7 (Wednesday, January 7th, 2014)
-* Fixed potential crash issue when downloading route segments.
-* Removed `+ (BOOL)shouldUseZoomWorkaround;` from `PWMapKit.h` since zoom workaround is now explicit
-* Removed `+ (void)setShouldUseZoomWorkaround:(BOOL)useZoom;` from `PWMapKit.h` since zoom workaround is now explicit
-* Added method, `- (void)toggleZoomWorkaround;` to `PWMapView+ZoomWorkaround.h`. This allow you to explicitly toggle the zoom workaround on/off.
-* NOTE: The zoom workaround now zooms the map 4x normal size.
-
-##v2.3.0 BETA 6 (Tuesday, December 16th, 2014)
-* Adding KVO notifications to indoorUserTrackingMode
-* Floor change no longer breaks the current indoor user tracking mode. See Wiki for additional details on user tracking behavior.
-* Fixed bug where points of interest would be hidden after zooming in.
-* Updated sample code to re-center map on route.
-
-##v2.3.0 BETA 5 (Thursday, December 4th, 2014)
-* Fixed pagination issue when fetching route points
-* Exposing `buildingAnnotations` property on PWMapView. This propert contains all `PWBuildingAnnotation` objects associated with the map view
-* Added method, `showBuildingAnnotation:animated:` that focuses the map view to the provided annotation with optional animation. NOTE: This method will not work for object copies of POIs obtained from the building manager or elsewhere.  In order to find an annotation by identifier, name, or other property, simply search the `buildingAnnotations` property.  This method will automatically change floors on the map if necessary.  It will also zoom in to the maximum zoom level.
-
-##v2.3.0 BETA 4 (Wednesday, December 3rd, 2014)
-* Fixed an issue where calling `showAnnotations:animated:` would cause a crash
-* Fixed an issue where the annotations would not appear at the appropriate zoom level
-* PWMapView now honors the maxZoomLevel parameter for PWBuilding annotations objects
-* Fixed an issue with the `PWUserTrackingBarButtonItem` where it wouldn't allow you to switch tracking modes while in routing mode
-* Exposing PWMapView+ZoomWorkaround.h which has a method to convert to and from zoom workaround coordinate system
-
-##v2.3.0 BETA 3 (Tuesday, December 2nd, 2014)
-* Fixed issue where building annotation views would disappear from the map (introduced in earlier betas).
+##v2.3.0 (Thursday, January 29th, 2014)
+* Added new "blue dot smoothing" functionality to provide a better user location tracking experience.
+* Added `blueDotSmoothingEnabled` boolean property to `PWMapView` for turning blue dot smoothing on and off.
+* Added `routeSnappingTolerance` enumeration property to `PWMapView` for turning off route snapping or setting a different tolerance.
+* Added a **temporary** iOS 8 mapping zoom level workaround that will be removed as soon as Apple fixes their zoom level inadequacies.  Using the zoom level is explicit (not based on user-specified zoom scale) and is changed using the `-toggleZoomWorkaround` method.  The property `isUsingZoomWorkaround` indicates the current state of use of this workaround.  When in use, the workaround draws building assets at 4x their usual size and points of interest are repositioned accordingly.
+* Added KVO notifications to the `PWMapView` property `indoorUserTrackingMode`.
+* Added a `buildingAnnotations` property on `PWMapView` that contains all points of interest for the current building.
+* Added `showBuildingAnnotation:animated:` method that focuses the map view to the provided annotation with optional animation. NOTE: This method will not work for object copies of POIs obtained from the building manager or elsewhere.  In order to find an annotation by identifier, name, or other property, simply search the `buildingAnnotations` property.  This method will automatically change floors on the map if necessary.  It will also zoom in to the maximum zoom level.
+* `PWMapView` now honors the `maxZoomLevel` parameter for `PWBuildingAnnotation` objects
 * You no longer need to manage the annotation image at the application level. `PWBuildingAnnotationView` now manages caching and loading of the annotation image internally.
-* Building floors are now ordered in ascending order, based on the `floorLevel` value.
-
-##v2.3.0 BETA 2 (Monday, November 24th, 2014)
-* Fixed issue where camera would not properly center on the blue dot while zoom workaround was enabled
-* The `PWMapView` now only loads annotations for the current floor. Previous behavior was to load all building annotations and show/hide as necessary. mapView.annotations will now only return annotations for the current floor. If you would like to fetch all building annotations please use the `PWBuildingManager` class.
-* Fixed issue where routing annotation titles would sometimes be `nil`.
+* Building floors are now ordered in ascending order based on the `floorLevel` value.
+* The `PWMapView` now only loads annotations for the current floor. The previous behavior was to load all building annotations and show/hide as necessary. `mapView.annotations` will now only return annotations for the current floor. If you would like to use all building annotations please use the `buildingAnnotations` property.
 * You can now switch to `PWIndoorUserTrackingModeFollowWithHeading` while in routing mode. Note that the default indoor user tracking mode is still `PWIndoorUserTrackingModeFollow`.
-* Fixed an issue where annotation labels wouldn't appear when switching floors.
-
-##v2.3.0 BETA (Wednesday, November 19th, 2014)
-* Added iOS 8 mapping zoom level workaround. To enable the workaround, call `[PWMapKit setShouldUseZoomWorkaround:YES];`. This workaround is **temporary** and will be removed/internalized as soon as Apple fixes their zoom level issues.
-* Consolidated all cached mapping data into one cache directory under Library/Caches
-* Fixed bug where annotations on the map wouldn't call `mapView:didSelectAnnotationView:`.
-* Fixed issue where the annotation labels would overlap when changing floors.
-* Fixed issue where `PWRouteStep` objects would sometimes incorrectly have their floorID set to 0.
-* Fixed an issue with offline routing where trying to find neighboring point would sometimes cause an exception if that point did not have any connecting segments
-* Mapping data TTL cache bumped to 24h. It was previously incorrectly set to 1.75 hours.
-* Cleaned up public interfaces, removing extraneous and non-functional methods
+* Consolidated all cached mapping data into one cache directory under `Library/Caches`.
+* Mapping data cache expiration bumped to 24 hours. It was previously incorrectly set to 1.75 hours.
+* Cleaned up public interfaces, removing extraneous and non-functional methods.
+* Floor change no longer breaks the current indoor user tracking mode. See Wiki for additional details on user tracking behavior.
+* Many bug fixes and performance enhancements
+* Small updates to sample code
 
 ##v2.2.0 (Friday, October 31st, 2014)
 * Promoting BETA 2 to GA candidate

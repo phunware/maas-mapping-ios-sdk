@@ -10,6 +10,7 @@
 
 #import "PWMapViewDelegateProtocol.h"
 #import "PWMappingTypes.h"
+#import "PWRouteSnappingTolerance.h"
 
 @class PWBuildingOverlay;
 @class PWBuilding;
@@ -20,7 +21,7 @@
 @class PWBuildingAnnotation;
 
 /**
- A `PWMapView` object provides an embeddable map interface. It is similar to the one provided by the maps application but is specifically tailored for indoor maps. `PWMapView` subclasses `MKMapView` to provide a convenient interface that downloads, stores and displays indoor maps and associated points of interest. Usage of this class is optional but recommended for basic indoor map implementations. For more control, please refer to `PWBuildingManager`, `PWBuildingOverlay` and `PWRouteOverlay`,  which `PWMapView` is built upon.
+ A `PWMapView` object provides an embeddable map interface. It is similar to the one provided by the maps application but is specifically tailored to indoor maps. `PWMapView` subclasses `MKMapView` to provide a convenient interface that downloads, stores and displays indoor maps and associated points of interest. Usage of this class is optional but recommended for basic indoor map implementations. For more control, please refer to `PWBuildingManager`, `PWBuildingOverlay` and `PWRouteOverlay`,  which `PWMapView` is built upon.
  */
 
 @interface PWMapView : MKMapView <UIGestureRecognizerDelegate>
@@ -55,8 +56,8 @@
 @property (nonatomic, readonly) PWRoute *currentRoute;
 
 /**
- This property controls whether the `PWBuildingAnnotation` objects for the current building will be passed through to the `mapView:viewForAnnotation` delegate method. Otherwise, building annotations will be assigned an appropriate `PWBuildingAnnotationView` internally.
- @discussion The default value is `NO`. If you set this property to `YES`, you will have to control the building annotation visbility state.
+ This property determines whether the `PWBuildingAnnotation` objects for the current building will be passed through to the `mapView:viewForAnnotation` delegate method. If NO, building annotations will be assigned an appropriate `PWBuildingAnnotationView` internally.
+ @discussion The default value is `NO`. If you set this property to `YES`, you will have to control the building annotation visbility.
  */
 @property (nonatomic, readwrite) BOOL shouldReturnBuildingAnnotations;
 
@@ -70,7 +71,7 @@
  Focuses the map view to the provided annotation with optional animation.
  @param annotation An existing annotation found in the map's `buildingAnnotations` property.  Attempting to use another annotation will be ignored.
  @param animated Boolean flag to indicate whether or not the change in the view should be animated.
- @discussion This method will not work for object copies of POIs obtained from the building manager or elsewhere.  In order to find an annotation by identifier, name, or other property, simply search the `buildingAnnotations` property.  This method will automatically change floors on the map if necessary.  It will also zoom in to the maximum zoom level.
+ @discussion This method will not work for object copies of POIs obtained from the building manager or elsewhere.  In order to find an annotation by identifier, name or other property, simply search the `buildingAnnotations` property.  This method will automatically change floors on the map if necessary.  It will also zoom in to the maximum zoom level.
  */
 - (void)showBuildingAnnotation:(PWBuildingAnnotation*)annotation animated:(BOOL)animated;
 
@@ -80,7 +81,7 @@
 
 /**
  Initializes and returns a newly allocated map view object with the specified frame rectangle and building identifier.
- @discussion Proper use of this initialization method will kick off by fetching building data, points of interest and assets. This data will then be cached and displayed in the `PWMapView`. Upon successful completion, the delegate will receive a `mapView:didFinishLoadingBuilding:` callback. If the building identifier is invalid or something went wrong, the delegate will receive a `mapView:didFailToLoadBuilding:error:` callback.
+ @discussion Proper use of this initialization method will kick off by fetching building data, points of interest and assets. This data will then be cached and displayed in the `PWMapView`. Upon successful completion, the delegate will receive a `mapView:didFinishLoadingBuilding:` callback. If the building identifier is invalid or if something went wrong, the delegate will receive a `mapView:didFailToLoadBuilding:error:` callback.
  @param frame The frame rectangle for the view, measured in points. The origin of the frame is relative to the superview in which you plan to add it. This method uses the frame rectangle to set the center and bounds properties accordingly.
  @param buildingID The identifier for the building to load into the `PWMapView`.
  @return A new `PWMapView` object.
@@ -105,11 +106,11 @@
 ///-------------------------------------------
 
 /**
- A Boolean value indicating whether the map should try to display the user’s indoor location. In order to display the user's indoor location you must have registered a `PWLocationManager` object with the map view. This method will have no affect if `registerLocationManagerForIndoorLocationUpdates:` is not called first.
+ A Boolean value indicating whether the map should try to display the user’s indoor location. In order to display the user's indoor location, you must have registered a `PWLocationManager` object with the map view. This method will have no affect if `registerLocationManagerForIndoorLocationUpdates:` is not called first.
  
  @discussion This property only indicates whether the map view should try to display the user's indoor position, not whether the user’s indoor position is actually visible on the map. Setting this property to YES causes the map view to use the specified `PWLocationManager` object to find the current indoor location and to try displaying it on the map. As long as this property is YES, the map view continues to track the user’s indoor location and update it periodically. The default value of this property is NO.
  
- Showing the user’s indoor location does not guarantee that the location is visible on the map. The user might have scrolled the map to a different point, causing the current location to be offscreen. To determine whether the user’s current location is currently displayed on the map, use the `userIndoorLocationVisible` property.
+ Showing the user’s indoor location does not guarantee that the location is visible on the map. The user might have scrolled the map to a different point, causing the current location to be offscreen. To determine whether the user’s location is currently displayed on the map, use the `userIndoorLocationVisible` property.
  */
 
 @property (nonatomic) BOOL showsIndoorUserLocation;
@@ -149,19 +150,36 @@
 - (void)setIndoorUserTrackingMode:(PWIndoorUserTrackingMode)mode animated:(BOOL)animated;
 
 /**
+ Determines whether or not blue dot smoothing is used to provide a better visual experience when displaying the user's location.
+ @discussion   The normal behavior for a blue dot based on information supplied by location providers is "jumpy", as location updates are received several times per second at most.  This feature "conditions" the user's reported location by first using a rolling average of the reported locations, then interpolating between average locations.  This feature is turned on by default.
+ */
+@property BOOL blueDotSmoothingEnabled;
+
+/**
+ Determines the route snapping behavior of the user's displayed location.
+ @discussion This value is only used while in routing mode and is used to configured the route snapping feature. The possible values of this property are as follows:
+
+  - PWRouteSnappingOff: no route snapping will be performed at all
+  - PWRouteSnappingToleranceNormal: the user's location will be "snapped" to the nearest point on the route if the route is within the horizontal accuracy of the location being used (this is the default value)
+  - PWRouteSnappingToleranceMedium: the user's location will be "snapped" to the nearest point on the route if the route is within 1.5 times the horizontal accuracy of the location being used
+  - PWRouteSnappingToleranceHigh: the user's location will be "snapped" to the nearest point on the route if the route is within twice (2.0x) the horizontal accuracy of the location being used
+ */
+@property PWRouteSnappingTolerance routeSnappingTolerance;
+
+/**
  Register an indoor location manager provider with the map view. This location provider is used when modifying the `indoorUserTrackingMode` or when `showsIndoorUserLocation` is set to `YES`.
  @param locationManager The location manager to register with the map view. The location manager must conform to the `PWLocationManager` protocol.
  */
 - (void)registerLocationManagerForIndoorLocationUpdates:(id<PWLocationManager>)locationManager;
 
 /**
- Notify a PWMapView instance that it is appearing on screen in a view controller.
+ Notify a PWMapView instance that it is appearing onscreen in a view controller.
  @discussion This method should be called by all view controllers that display a PWMapView instance.  It allows the map view to initiate processes related to location tracking and may be used for future enhancements.  The call should be made during the view controller's `-viewWillAppear:` implementation.
  */
 - (void)willAppear;
 
 /**
- Notify a PWMapView instance that it no longer appears on screen in a view controller.
+ Notifies a PWMapView instance that it no longer appears onscreen in a view controller.
  @discussion This method should be called by all view controllers that display a PWMapView instance.  It allows the map view to throttle down processes related to location tracking and may be used for future enhancements.  The call should be made during the view controller's `-viewDidDisappear:` implementation.
  */
 - (void)didDisappear;
@@ -190,7 +208,7 @@
 - (PWRouteStep *)currentStep;
 
 /**
- Cancel the route being displayed in the map view. This method will remove the route from the map view and set the `PWRoute` and `PWRouteStep` properties to `nil`.
+ Cancel the route displayed in the map view. This method will remove the route from the map view and set the `PWRoute` and `PWRouteStep` properties to `nil`.
  */
 - (void)cancelRouting;
 

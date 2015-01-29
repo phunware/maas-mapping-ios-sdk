@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWPDFPage.html">
+	<File path="Classes/PWRouteOverlay.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWPDFPage</TokenIdentifier>
-			<Abstract type="html">PWPDFPage, a subclass of NSObject, defines methods used to render PDF pages.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteOverlay</TokenIdentifier>
+			<Abstract type="html">The PWRouteOverlay class defines a specific type of overlay that represents a route on a map.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,190 +13,94 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/setDocumentRef:</TokenIdentifier>
-			<Abstract type="html">A reference to the CGPDFDocumentRef document object.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setRoute:</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property CGPDFDocumentRef *documentRef</Declaration>
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/documentRef</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/documentRef</TokenIdentifier>
-			<Abstract type="html">A reference to the CGPDFDocumentRef document object.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/route</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property CGPDFDocumentRef *documentRef</Declaration>
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/documentRef</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPDFPage/documentRef</TokenIdentifier>
-			<Abstract type="html">A reference to the CGPDFDocumentRef document object.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/route</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property CGPDFDocumentRef *documentRef</Declaration>
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/documentRef</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/setPageRef:</TokenIdentifier>
-			<Abstract type="html">A reference to the CGPDFPageRef document page object. This value may be nil if the document page has not yet been loaded.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setCurrentStep:</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay.  When changing this value, the step must belong to the current route and cannot be nil.  Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property CGPDFPageRef pageRef</Declaration>
+			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
 			
 			
-			<Anchor>//api/name/pageRef</Anchor>
+			<Anchor>//api/name/currentStep</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/pageRef</TokenIdentifier>
-			<Abstract type="html">A reference to the CGPDFPageRef document page object. This value may be nil if the document page has not yet been loaded.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/currentStep</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay.  When changing this value, the step must belong to the current route and cannot be nil.  Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property CGPDFPageRef pageRef</Declaration>
+			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
 			
 			
-			<Anchor>//api/name/pageRef</Anchor>
+			<Anchor>//api/name/currentStep</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPDFPage/pageRef</TokenIdentifier>
-			<Abstract type="html">A reference to the CGPDFPageRef document page object. This value may be nil if the document page has not yet been loaded.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/currentStep</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay.  When changing this value, the step must belong to the current route and cannot be nil.  Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property CGPDFPageRef pageRef</Declaration>
+			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
 			
 			
-			<Anchor>//api/name/pageRef</Anchor>
+			<Anchor>//api/name/currentStep</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/setPageNumber:</TokenIdentifier>
-			<Abstract type="html">Returns the page number of the PDF document page. (read-only)</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/initWithRoute:buildingOverlay:</TokenIdentifier>
+			<Abstract type="html">Initializes the overlay with the specified route and building overlay.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger pageNumber</Declaration>
-			
-			
-			<Anchor>//api/name/pageNumber</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/pageNumber</TokenIdentifier>
-			<Abstract type="html">Returns the page number of the PDF document page. (read-only)</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUInteger pageNumber</Declaration>
-			
-			
-			<Anchor>//api/name/pageNumber</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPDFPage/pageNumber</TokenIdentifier>
-			<Abstract type="html">Returns the page number of the PDF document page. (read-only)</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUInteger pageNumber</Declaration>
-			
-			
-			<Anchor>//api/name/pageNumber</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/setPageLoaded:</TokenIdentifier>
-			<Abstract type="html">Indicates whether the page object has been loaded. (read-only)</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL pageLoaded</Declaration>
-			
-			
-			<Anchor>//api/name/pageLoaded</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/pageLoaded</TokenIdentifier>
-			<Abstract type="html">Indicates whether the page object has been loaded. (read-only)</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL pageLoaded</Declaration>
-			
-			
-			<Anchor>//api/name/pageLoaded</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPDFPage/pageLoaded</TokenIdentifier>
-			<Abstract type="html">Indicates whether the page object has been loaded. (read-only)</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL pageLoaded</Declaration>
-			
-			
-			<Anchor>//api/name/pageLoaded</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/initWithPDFPageRef:page:</TokenIdentifier>
-			<Abstract type="html">Initializes the PDF object.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithPDFPageRef:(CGPDFDocumentRef *)document page:(NSUInteger)page</Declaration>
+			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route buildingOverlay:(PWBuildingOverlay *)buildingOverlay</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>document</Name>
-					<Abstract type="html">The CGPDFPageRef document page object that this object is loaded from.</Abstract>
+					<Name>route</Name>
+					<Abstract type="html">The route to display on the map.</Abstract>
 				</Parameter><Parameter>
-					<Name>page</Name>
-					<Abstract type="html">The page number for the PDF page.</Abstract>
+					<Name>buildingOverlay</Name>
+					<Abstract type="html">The building overlay associated with the current route overlay.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A PDF page object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithPDFPageRef:page:</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/loadPage</TokenIdentifier>
-			<Abstract type="html">Loads the document page.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
 			
-			<Declaration>- (void)loadPage</Declaration>
-			
-			
-			<Anchor>//api/name/loadPage</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPDFPage/unloadPage</TokenIdentifier>
-			<Abstract type="html">Unloads the document page.</Abstract>
-			<DeclaredIn>PWPDFPage.h</DeclaredIn>
-			
-			<Declaration>- (void)unloadPage</Declaration>
-			
-			
-			<Anchor>//api/name/unloadPage</Anchor>
+			<Anchor>//api/name/initWithRoute:buildingOverlay:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

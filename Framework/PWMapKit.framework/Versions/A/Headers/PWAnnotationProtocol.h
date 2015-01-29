@@ -31,6 +31,10 @@ extern PWAnnotationIdentifier const PWAnnotationIdentifierUndefined;
  */
 @property (nonatomic) PWBuildingFloorIdentifier floorID;
 
+/**
+ The map view associated with the annotation.
+ @discussion This property is used as part of the zoom-workaround solution.
+ */
 @property (weak) PWMapView *mapView;
 
 @end

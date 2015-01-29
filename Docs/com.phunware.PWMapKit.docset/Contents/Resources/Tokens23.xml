@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWUserTrackingBarButtonItem.html">
+	<File path="Protocols/PWAnnotationProtocol.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWUserTrackingBarButtonItem</TokenIdentifier>
-			<Abstract type="html">A PWUserTrackingBarButtonItem object is a specialized bar button item that allows the user to toggle through the indoor user tracking modes. For example, when the user taps the button, the map view toggles between tracking the user with and without heading. The button also reflects the current user tracking mode if set elsewhere. This bar button item is associated with a single indoor map view.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWAnnotationProtocol</TokenIdentifier>
+			<Abstract type="html">This protocol is used to provide annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single map annotation and provides critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but typically coordinate the creation of an appropriate PWAnnotationView object to handle the display in conjunction with the PWMapView delegate.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
@@ -13,11 +13,83 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/setMapView:</TokenIdentifier>
-			<Abstract type="html">The map view associated with this bar button item.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/setAnnotationID:</TokenIdentifier>
+			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If creating location annotations, initialize this value to kPWAnnotationIDUndefined.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) PWMapView *mapView</Declaration>
+			<Declaration>@property (nonatomic) PWAnnotationIdentifier annotationID</Declaration>
+			
+			
+			<Anchor>//api/name/annotationID</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/annotationID</TokenIdentifier>
+			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If creating location annotations, initialize this value to kPWAnnotationIDUndefined.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWAnnotationIdentifier annotationID</Declaration>
+			
+			
+			<Anchor>//api/name/annotationID</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotationProtocol/annotationID</TokenIdentifier>
+			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If creating location annotations, initialize this value to kPWAnnotationIDUndefined.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWAnnotationIdentifier annotationID</Declaration>
+			
+			
+			<Anchor>//api/name/annotationID</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotationProtocol/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/setMapView:</TokenIdentifier>
+			<Abstract type="html">The map view associated with the annotation.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
 			
 			
 			<Anchor>//api/name/mapView</Anchor>
@@ -25,23 +97,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/mapView</TokenIdentifier>
-			<Abstract type="html">The map view associated with this bar button item.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/mapView</TokenIdentifier>
+			<Abstract type="html">The map view associated with the annotation.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) PWMapView *mapView</Declaration>
-			
-			
-			<Anchor>//api/name/mapView</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWUserTrackingBarButtonItem/mapView</TokenIdentifier>
-			<Abstract type="html">The map view associated with this bar button item.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) PWMapView *mapView</Declaration>
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
 			
 			
 			<Anchor>//api/name/mapView</Anchor>
@@ -49,55 +109,14 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/setTintColor:</TokenIdentifier>
-			<Abstract type="html">The tint color of the map bar button items.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotationProtocol/mapView</TokenIdentifier>
+			<Abstract type="html">The map view associated with the annotation.</Abstract>
+			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIColor *tintColor</Declaration>
-			
-			
-			<Anchor>//api/name/tintColor</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/tintColor</TokenIdentifier>
-			<Abstract type="html">The tint color of the map bar button items.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) UIColor *tintColor</Declaration>
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/tintColor</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWUserTrackingBarButtonItem/tintColor</TokenIdentifier>
-			<Abstract type="html">The tint color of the map bar button items.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) UIColor *tintColor</Declaration>
-			
-			
-			<Anchor>//api/name/tintColor</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/initWithMapView:</TokenIdentifier>
-			<Abstract type="html">Initializes a newly created bar button item with the specified indoor map view.</Abstract>
-			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithMapView:(PWMapView *)mapView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The indoor map view used by this bar button item.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The initialized bar button item.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithMapView:</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		

@@ -29,7 +29,7 @@
 /**
  Tells the delegate that the specified map view successfully changed the building floor.
  @param mapView The map view that changed the floor.
- @param currentFloor The current floor displayed on the map view.
+ @param currentFloor The current floor displayed in the map view.
  @discussion This method is called when the floor data has finished loading and is ready to be displayed on the map.
  */
 - (void)mapView:(PWMapView *)mapView didChangeFloor:(PWBuildingFloor *)currentFloor;
@@ -88,9 +88,9 @@
 
 /**
  Tells the delegate that the location of the user was updated.
- @param mapView The map view whose user tracking mode changed.
+ @param mapView The map view with the altered user tracking mode.
  @param mode The mode used to track the user’s location.
- @param animated If `YES`, mode change is animated; otherwise, it is not. This parameter affects only tracking mode changes.
+ @param animated If `YES`, the mode change is animated; otherwise, it is not. This parameter affects only tracking mode changes.
  */
 - (void)mapView:(PWMapView *)mapView didChangeIndoorUserTrackingMode:(PWIndoorUserTrackingMode)mode animated:(BOOL)animated;
 

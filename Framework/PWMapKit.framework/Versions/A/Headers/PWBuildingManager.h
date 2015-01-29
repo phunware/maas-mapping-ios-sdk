@@ -59,7 +59,8 @@ typedef void (^PWBuildingAnnotationTypesHandler)(NSArray *types, NSError *error)
 
 /**
  Initiates a fetch for the anotation typs. If the annotation types are not cached locally, this will result in a network request.
- 
+@param completion A block that takes the following parameters:
+
  - *types*: The annotation types as an array of `PWAnnotationType` objects.
  - *error*: If the annotation type fetch completed successfully, this parameter is `nil`; otherwise, this parameter holds an error object that describes the error.
  */

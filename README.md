@@ -1,7 +1,7 @@
 PWMapKit SDK for iOS
 ==================
 
-Version 2.3.0 BETA (Use PWMapKit v2.2.0 for production)
+Version 2.3.0
 
 PWMapKit is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and Location Based Services (LBS). Visit http://maas.phunware.com/ for more details and to sign up.
 

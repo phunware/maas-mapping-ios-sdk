@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteStep.html">
+	<File path="Classes/PWUserTrackingBarButtonItem.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteStep</TokenIdentifier>
-			<Abstract type="html">A PWRouteStep object represents one part of an overall route. Each step in a route corresponds to a single instruction that would need to be followed by the user.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWUserTrackingBarButtonItem</TokenIdentifier>
+			<Abstract type="html">A PWUserTrackingBarButtonItem object is a specialized bar button item that allows the user to toggle through the indoor user tracking modes. For example, when the user taps the button, the map view toggles between tracking the user with and without heading. The button also reflects the current user tracking mode if set elsewhere. This bar button item is associated with a single indoor map view.</Abstract>
+			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
@@ -13,146 +13,91 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setPolyline:</TokenIdentifier>
-			<Abstract type="html">The detailed step geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/setMapView:</TokenIdentifier>
+			<Abstract type="html">The map view associated with this bar button item.</Abstract>
+			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
+			<Declaration>@property (nonatomic, strong) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/polyline</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/polyline</TokenIdentifier>
-			<Abstract type="html">The detailed step geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/mapView</TokenIdentifier>
+			<Abstract type="html">The map view associated with this bar button item.</Abstract>
+			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
+			<Declaration>@property (nonatomic, strong) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/polyline</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/polyline</TokenIdentifier>
-			<Abstract type="html">The detailed step geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWUserTrackingBarButtonItem/mapView</TokenIdentifier>
+			<Abstract type="html">The map view associated with this bar button item.</Abstract>
+			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
+			<Declaration>@property (nonatomic, strong) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/polyline</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setDistance:</TokenIdentifier>
-			<Abstract type="html">The step distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/setTintColor:</TokenIdentifier>
+			<Abstract type="html">The tint color of the map bar button items.</Abstract>
+			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property (nonatomic, strong) UIColor *tintColor</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/tintColor</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/distance</TokenIdentifier>
-			<Abstract type="html">The step distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/tintColor</TokenIdentifier>
+			<Abstract type="html">The tint color of the map bar button items.</Abstract>
+			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property (nonatomic, strong) UIColor *tintColor</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/tintColor</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/distance</TokenIdentifier>
-			<Abstract type="html">The step distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWUserTrackingBarButtonItem/tintColor</TokenIdentifier>
+			<Abstract type="html">The tint color of the map bar button items.</Abstract>
+			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property (nonatomic, strong) UIColor *tintColor</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/tintColor</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWUserTrackingBarButtonItem/initWithMapView:</TokenIdentifier>
+			<Abstract type="html">Initializes a newly created bar button item with the specified indoor map view.</Abstract>
+			<DeclaredIn>PWUserTrackingBarButtonItem.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger floorID</Declaration>
-			
-			
-			<Anchor>//api/name/floorID</Anchor>
-            <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/floorID</TokenIdentifier>
-			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUInteger floorID</Declaration>
-			
-			
-			<Anchor>//api/name/floorID</Anchor>
-            <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/floorID</TokenIdentifier>
-			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUInteger floorID</Declaration>
-			
-			
-			<Anchor>//api/name/floorID</Anchor>
-            <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setIndex:</TokenIdentifier>
-			<Abstract type="html">The index of the current step.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUInteger index</Declaration>
-			
-			
-			<Anchor>//api/name/index</Anchor>
-            <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/index</TokenIdentifier>
-			<Abstract type="html">The index of the current step.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUInteger index</Declaration>
-			
-			
-			<Anchor>//api/name/index</Anchor>
-            <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/index</TokenIdentifier>
-			<Abstract type="html">The index of the current step.</Abstract>
-			<DeclaredIn>PWRouteStep.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUInteger index</Declaration>
-			
-			
-			<Anchor>//api/name/index</Anchor>
+			<Declaration>- (instancetype)initWithMapView:(PWMapView *)mapView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The indoor map view used by this bar button item.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The initialized bar button item.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithMapView:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

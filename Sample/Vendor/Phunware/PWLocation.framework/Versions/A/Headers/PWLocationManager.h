@@ -17,6 +17,8 @@ static const CLLocationDistance kMinimumVenueProximity = 5000;
  `PWLocationManagerError` specifies the location manager's failed error codes.
  */
 typedef NS_ENUM(NSUInteger, PWLocationManagerError) {
+    /** The error is unknown. */
+    PWLocationManagerErrorUnknown= -1,
     /** A bad location request error. */
     PWLocationManagerErrorBadRequest = 400,
     /** Not authorized to fetch location information. */

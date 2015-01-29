@@ -41,6 +41,8 @@ The map identifier obtained from Phunware. (read-only)
 
 @property (nonatomic, readonly) NSString *customerID;
 
+- (instancetype)init NS_UNAVAILABLE;
+
 /**
  Initializes the location manager with the specified venue GUID and the venue location.
  @param mapID - Obtained from Phunware.

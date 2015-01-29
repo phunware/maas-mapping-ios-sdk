@@ -10,7 +10,7 @@
 /**
  A `PWPDFDocument` object represents a PDF file and defines methods for loading, unloading and viewing PDF data.
  
- The other utility classes are either instantiated from methods in `PDFDocument` are `PWPWDFPage`.
+ The other utility classes are either instantiated from methods in `PDFDocument` or `PWPWDFPage`.
  
  Initialize a PDFDocument object with a URL to a PDF file. Then, ask for the page count, add or delete pages, perform a find or parse selected content into an NSString object.
  */

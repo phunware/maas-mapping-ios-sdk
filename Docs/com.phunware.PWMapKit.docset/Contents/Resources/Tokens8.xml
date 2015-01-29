@@ -4,13 +4,49 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingOverlayRenderer</TokenIdentifier>
-			<Abstract type="html">The PWBuildingOverlayRenderer class defines the basic behavior associated with all building-based overlays. An overlay renderer draws the visual representation of PWBuilding object. This class defines the drawing infrastructure used by the map view.</Abstract>
+			<Abstract type="html">The PWBuildingOverlayRenderer class defines the basic behavior associated with all building-based overlays. An overlay renderer draws the visual representation of a PWBuilding object. This class defines the drawing infrastructure used by the map view.</Abstract>
 			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
             
 			
 			<NodeRef refid="8"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlayRenderer/setMapView:</TokenIdentifier>
+			<Abstract type="html">In order to use the temporary zoom workaround feature, a building overlay renderer needs to have a weak link to the map view using the renderer.</Abstract>
+			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
+			
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			
+			
+			<Anchor>//api/name/mapView</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlayRenderer/mapView</TokenIdentifier>
+			<Abstract type="html">In order to use the temporary zoom workaround feature, a building overlay renderer needs to have a weak link to the map view using the renderer.</Abstract>
+			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
+			
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			
+			
+			<Anchor>//api/name/mapView</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlayRenderer/mapView</TokenIdentifier>
+			<Abstract type="html">In order to use the temporary zoom workaround feature, a building overlay renderer needs to have a weak link to the map view using the renderer.</Abstract>
+			<DeclaredIn>PWBuildingOverlayRenderer.h</DeclaredIn>
+			
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			
+			
+			<Anchor>//api/name/mapView</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
 		
         
 	</File>

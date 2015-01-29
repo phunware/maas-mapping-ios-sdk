@@ -94,6 +94,26 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingAnnotationTypesWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Initiates a fetch for the anotation typs. If the annotation types are not cached locally, this will result in a network request.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			
+			<Declaration>- (void)getBuildingAnnotationTypesWithCompletion:(PWBuildingAnnotationTypesHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block that takes the following parameters:
+
+- types: The annotation types as an array of PWAnnotationType objects.
+- error: If the annotation type fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getBuildingAnnotationTypesWithCompletion:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/clearCache</TokenIdentifier>
 			<Abstract type="html">Clears the device cache of all mapping data. This will clear all associated building objects, floor objects and floor assets from the device.</Abstract>
 			<DeclaredIn>PWBuildingManager.h</DeclaredIn>

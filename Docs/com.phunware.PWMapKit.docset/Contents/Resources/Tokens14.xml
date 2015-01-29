@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWMapKit.html">
+	<File path="Classes/PWPDFDocument.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWMapKit</TokenIdentifier>
-			<Abstract type="html">The PWMapKit framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.</Abstract>
-			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWPDFDocument</TokenIdentifier>
+			<Abstract type="html">A PWPDFDocument object represents a PDF file and defines methods for loading, unloading and viewing PDF data.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
@@ -13,14 +13,223 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/PWMapKit/serviceName</TokenIdentifier>
-			<Abstract type="html">Returns PWMapKit.</Abstract>
-			<DeclaredIn>PWMapKit.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setPages:</TokenIdentifier>
+			<Abstract type="html">The array of PWPDFPage objects associated with this document.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)serviceName</Declaration>
+			<Declaration>@property (readonly) NSArray *pages</Declaration>
 			
 			
-			<Anchor>//api/name/serviceName</Anchor>
+			<Anchor>//api/name/pages</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/pages</TokenIdentifier>
+			<Abstract type="html">The array of PWPDFPage objects associated with this document.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *pages</Declaration>
+			
+			
+			<Anchor>//api/name/pages</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/pages</TokenIdentifier>
+			<Abstract type="html">The array of PWPDFPage objects associated with this document.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *pages</Declaration>
+			
+			
+			<Anchor>//api/name/pages</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setLoaded:</TokenIdentifier>
+			<Abstract type="html">A Boolean value that states whether the document object has been loaded. (read-only)</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, getter=isLoaded) BOOL loaded</Declaration>
+			
+			
+			<Anchor>//api/name/loaded</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/isLoaded</TokenIdentifier>
+			<Abstract type="html">A Boolean value that states whether the document object has been loaded. (read-only)</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, getter=isLoaded) BOOL loaded</Declaration>
+			
+			
+			<Anchor>//api/name/loaded</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/loaded</TokenIdentifier>
+			<Abstract type="html">A Boolean value that states whether the document object has been loaded. (read-only)</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, getter=isLoaded) BOOL loaded</Declaration>
+			
+			
+			<Anchor>//api/name/loaded</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setFileURL:</TokenIdentifier>
+			<Abstract type="html">The file URL with which the document was initialized. (read-only)</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSURL *fileURL</Declaration>
+			
+			
+			<Anchor>//api/name/fileURL</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/fileURL</TokenIdentifier>
+			<Abstract type="html">The file URL with which the document was initialized. (read-only)</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSURL *fileURL</Declaration>
+			
+			
+			<Anchor>//api/name/fileURL</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/fileURL</TokenIdentifier>
+			<Abstract type="html">The file URL with which the document was initialized. (read-only)</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSURL *fileURL</Declaration>
+			
+			
+			<Anchor>//api/name/fileURL</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setSize:</TokenIdentifier>
+			<Abstract type="html">Returns the current size of the document. (read-only)</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGSize size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/size</TokenIdentifier>
+			<Abstract type="html">Returns the current size of the document. (read-only)</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGSize size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/size</TokenIdentifier>
+			<Abstract type="html">Returns the current size of the document. (read-only)</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGSize size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/setDocumentRef:</TokenIdentifier>
+			<Abstract type="html">A reference to the CGPDFDocumentRef document object. This property may be nil if the document has not yet been loaded.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGPDFDocumentRef documentRef</Declaration>
+			
+			
+			<Anchor>//api/name/documentRef</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/documentRef</TokenIdentifier>
+			<Abstract type="html">A reference to the CGPDFDocumentRef document object. This property may be nil if the document has not yet been loaded.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGPDFDocumentRef documentRef</Declaration>
+			
+			
+			<Anchor>//api/name/documentRef</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPDFDocument/documentRef</TokenIdentifier>
+			<Abstract type="html">A reference to the CGPDFDocumentRef document object. This property may be nil if the document has not yet been loaded.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CGPDFDocumentRef documentRef</Declaration>
+			
+			
+			<Anchor>//api/name/documentRef</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/initWithFileURL:</TokenIdentifier>
+			<Abstract type="html">Returns a document object initialized with its file system location.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithFileURL:(NSURL *)fileURL</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fileURL</Name>
+					<Abstract type="html">A file URL identifying the location of the document on disk. Passing in nil or an empty URL results in the throwing of an NSInvalidArgumentException.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A PhunwarePDF document object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithFileURL:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/load</TokenIdentifier>
+			<Abstract type="html">Loads the document object.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>- (void)load</Declaration>
+			
+			
+			<Anchor>//api/name/load</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPDFDocument/unload</TokenIdentifier>
+			<Abstract type="html">Unloads the document object.</Abstract>
+			<DeclaredIn>PWPDFDocument.h</DeclaredIn>
+			
+			<Declaration>- (void)unload</Declaration>
+			
+			
+			<Anchor>//api/name/unload</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

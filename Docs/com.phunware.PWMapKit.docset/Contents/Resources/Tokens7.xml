@@ -17,7 +17,7 @@
 			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			<Declaration>@property (readonly) PWBuilding *building</Declaration>
 			
 			
 			<Anchor>//api/name/building</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			<Declaration>@property (readonly) PWBuilding *building</Declaration>
 			
 			
 			<Anchor>//api/name/building</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			<Declaration>@property (readonly) PWBuilding *building</Declaration>
 			
 			
 			<Anchor>//api/name/building</Anchor>
@@ -53,7 +53,7 @@
 			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWMapDocument *currentDocument</Declaration>
+			<Declaration>@property (readonly) PWMapDocument *currentDocument</Declaration>
 			
 			
 			<Anchor>//api/name/currentDocument</Anchor>
@@ -65,7 +65,7 @@
 			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWMapDocument *currentDocument</Declaration>
+			<Declaration>@property (readonly) PWMapDocument *currentDocument</Declaration>
 			
 			
 			<Anchor>//api/name/currentDocument</Anchor>
@@ -77,10 +77,46 @@
 			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWMapDocument *currentDocument</Declaration>
+			<Declaration>@property (readonly) PWMapDocument *currentDocument</Declaration>
 			
 			
 			<Anchor>//api/name/currentDocument</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setCurrentFloor:</TokenIdentifier>
+			<Abstract type="html">The floor currently being display.  The value may be nil while the building overlay is loading.  Changing the floor to the same floor will have no effect.  Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloor *currentFloor</Declaration>
+			
+			
+			<Anchor>//api/name/currentFloor</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/currentFloor</TokenIdentifier>
+			<Abstract type="html">The floor currently being display.  The value may be nil while the building overlay is loading.  Changing the floor to the same floor will have no effect.  Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloor *currentFloor</Declaration>
+			
+			
+			<Anchor>//api/name/currentFloor</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/currentFloor</TokenIdentifier>
+			<Abstract type="html">The floor currently being display.  The value may be nil while the building overlay is loading.  Changing the floor to the same floor will have no effect.  Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
+			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			
+			<Declaration>@property PWBuildingFloor *currentFloor</Declaration>
+			
+			
+			<Anchor>//api/name/currentFloor</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
@@ -89,7 +125,7 @@
 			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *resources</Declaration>
+			<Declaration>@property (readonly) NSArray *resources</Declaration>
 			
 			
 			<Anchor>//api/name/resources</Anchor>
@@ -101,7 +137,7 @@
 			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *resources</Declaration>
+			<Declaration>@property (readonly) NSArray *resources</Declaration>
 			
 			
 			<Anchor>//api/name/resources</Anchor>
@@ -113,7 +149,7 @@
 			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *resources</Declaration>
+			<Declaration>@property (readonly) NSArray *resources</Declaration>
 			
 			
 			<Anchor>//api/name/resources</Anchor>
@@ -125,7 +161,7 @@
 			<Abstract type="html">A Boolean flag indicating whether the building overlay has loaded.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, getter=isLoaded) BOOL loaded</Declaration>
+			<Declaration>@property (getter=isLoaded) BOOL loaded</Declaration>
 			
 			
 			<Anchor>//api/name/loaded</Anchor>
@@ -137,7 +173,7 @@
 			<Abstract type="html">A Boolean flag indicating whether the building overlay has loaded.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, getter=isLoaded) BOOL loaded</Declaration>
+			<Declaration>@property (getter=isLoaded) BOOL loaded</Declaration>
 			
 			
 			<Anchor>//api/name/loaded</Anchor>
@@ -149,7 +185,7 @@
 			<Abstract type="html">A Boolean flag indicating whether the building overlay has loaded.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, getter=isLoaded) BOOL loaded</Declaration>
+			<Declaration>@property (getter=isLoaded) BOOL loaded</Declaration>
 			
 			
 			<Anchor>//api/name/loaded</Anchor>
@@ -226,35 +262,6 @@
 			</Parameters>
 			
 			<Anchor>//api/name/initWithBuilding:resources:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/currentFloor</TokenIdentifier>
-			<Abstract type="html">Returns the floor currently being displayed. This array may be nil while the overlay is loading. Only attempt to access this property after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>- (PWBuildingFloor *)currentFloor</Declaration>
-			
-			
-			<Anchor>//api/name/currentFloor</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setCurrentFloor:</TokenIdentifier>
-			<Abstract type="html">Change the floor currently being displayed to another PWBuildingFloor object. Passing the same floor will have no effect.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
-			
-			<Declaration>- (void)setCurrentFloor:(PWBuildingFloor *)floor</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>floor</Name>
-					<Abstract type="html">The PWBuildingFloor object to set as the current floor.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCurrentFloor:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

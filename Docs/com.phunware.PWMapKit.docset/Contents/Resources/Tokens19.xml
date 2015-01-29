@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRoute.html">
+	<File path="Classes/PWRouteOverlayRenderer.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRoute</TokenIdentifier>
-			<Abstract type="html">The PWRoute class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes route information you can display to the user, such as the name of the route, its distance and the expected travel time.</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteOverlayRenderer</TokenIdentifier>
+			<Abstract type="html">The PWRouteOverlayRenderer class defines the basic behavior for drawing a route-based overlay. The renderer draws the visual representation of a PWRouteStep object.</Abstract>
+			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,117 +13,45 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setName:</TokenIdentifier>
-			<Abstract type="html">The name assigned to the route. The string can describe the route using one of the route’s significant features. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/setMapView:</TokenIdentifier>
+			<Abstract type="html">The PWMapView associated with this object.</Abstract>
+			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/name</TokenIdentifier>
-			<Abstract type="html">The name assigned to the route. The string can describe the route using one of the route’s significant features. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/mapView</TokenIdentifier>
+			<Abstract type="html">The PWMapView associated with this object.</Abstract>
+			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/name</TokenIdentifier>
-			<Abstract type="html">The name assigned to the route. The string can describe the route using one of the route’s significant features. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlayRenderer/mapView</TokenIdentifier>
+			<Abstract type="html">The PWMapView associated with this object.</Abstract>
+			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
+			<Declaration>@property (weak) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setDistance:</TokenIdentifier>
-			<Abstract type="html">The route distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
-			
-			
-			<Anchor>//api/name/distance</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/distance</TokenIdentifier>
-			<Abstract type="html">The route distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
-			
-			
-			<Anchor>//api/name/distance</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/distance</TokenIdentifier>
-			<Abstract type="html">The route distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
-			
-			
-			<Anchor>//api/name/distance</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setExpectedTravelTime:</TokenIdentifier>
-			<Abstract type="html">The expected travel time in seconds. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval expectedTravelTime</Declaration>
-			
-			
-			<Anchor>//api/name/expectedTravelTime</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/expectedTravelTime</TokenIdentifier>
-			<Abstract type="html">The expected travel time in seconds. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval expectedTravelTime</Declaration>
-			
-			
-			<Anchor>//api/name/expectedTravelTime</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/expectedTravelTime</TokenIdentifier>
-			<Abstract type="html">The expected travel time in seconds. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval expectedTravelTime</Declaration>
-			
-			
-			<Anchor>//api/name/expectedTravelTime</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setPolyline:</TokenIdentifier>
-			<Abstract type="html">The detailed route geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/setPolyline:</TokenIdentifier>
+			<Abstract type="html">The polyline that the overlay renderer is currently drawing. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
 			
@@ -133,9 +61,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/polyline</TokenIdentifier>
-			<Abstract type="html">The detailed route geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/polyline</TokenIdentifier>
+			<Abstract type="html">The polyline that the overlay renderer is currently drawing. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
 			
@@ -145,9 +73,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/polyline</TokenIdentifier>
-			<Abstract type="html">The detailed route geometry. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlayRenderer/polyline</TokenIdentifier>
+			<Abstract type="html">The polyline that the overlay renderer is currently drawing. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
 			
@@ -157,86 +85,19 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setSteps:</TokenIdentifier>
-			<Abstract type="html">The array of steps that comprise the overall route. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/initWithRouteOverlay:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns the route overlay renderer and associates it with the specified route overlay object.</Abstract>
+			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *steps</Declaration>
-			
-			
-			<Anchor>//api/name/steps</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/steps</TokenIdentifier>
-			<Abstract type="html">The array of steps that comprise the overall route. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *steps</Declaration>
-			
-			
-			<Anchor>//api/name/steps</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/steps</TokenIdentifier>
-			<Abstract type="html">The array of steps that comprise the overall route. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *steps</Declaration>
-			
-			
-			<Anchor>//api/name/steps</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setAccessible:</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
-			
-			
-			<Anchor>//api/name/accessible</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/isAccessible</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
-			
-			
-			<Anchor>//api/name/accessible</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/accessible</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
-			
-			
-			<Anchor>//api/name/accessible</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/stepsForFloorID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)stepsForFloorID:(NSUInteger)floorID</Declaration>
-			
-			
-			<Anchor>//api/name/stepsForFloorID:</Anchor>
+			<Declaration>- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)overlay</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>overlay</Name>
+					<Abstract type="html">The route overlay to initialize the renderer with. The route overlay contains several important pieces of information the route renderer needs to draw the route.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A basic route overlay renderer.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithRouteOverlay:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
