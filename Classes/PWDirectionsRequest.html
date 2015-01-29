@@ -139,7 +139,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWDirectionsRequest</code> class is used by apps that work with indoor directions. To request directions, create a new instance of this class and configure it with the new start and end points you need. Then create a <a href="../Classes/PWDirections.html"><code>PWDirections</code></a> object and use the methods of that class to initiate the request and process the results.</p>
+						<p>The <code>PWDirectionsRequest</code> class is used by apps that work with indoor directions. To request directions, create a new instance of this class and configure it with the start and end points you need. Then create a <a href="../Classes/PWDirections.html"><code>PWDirections</code></a> object and use the methods of that class to initiate the request and process the results.</p>
 					</div>
 					
 					
@@ -216,7 +216,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) id&lt;PWAnnotation&gt; destination</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) id&lt;PWAnnotationProtocol&gt; destination</code></div>
 
     
 	
@@ -252,7 +252,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) id&lt;PWLocation&gt; location</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) id&lt;PWLocation&gt; location</code></div>
 
     
 	
@@ -288,7 +288,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) id&lt;PWAnnotation&gt; source</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) id&lt;PWAnnotationProtocol&gt; source</code></div>
 
     
 	
@@ -324,7 +324,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWDirectionsType type</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) PWDirectionsType type</code></div>
 
     
 	
@@ -370,7 +370,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithLocation:(id&lt;PWLocation&gt;)<em>location</em> destination:(id&lt;PWAnnotation&gt;)<em>destination</em> type:(PWDirectionsType)<em>type</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithLocation:(id&lt;PWLocation&gt;)<em>location</em> destination:(id&lt;PWAnnotationProtocol&gt;)<em>destination</em> type:(PWDirectionsType)<em>type</em></code></div>
 
     
 	
@@ -384,7 +384,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>destination</em></dt>
-			<dd><p>The <a href="#//api/name/destination">destination</a> annotation. This object must conform to the <a href="../Protocols/PWAnnotation.html"><code>PWAnnotation</code></a> protocol and cannot be <code>nil</code>.</p></dd>
+			<dd><p>The <a href="#//api/name/destination">destination</a> annotation. This object must conform to <a href="../Protocols/PWAnnotationProtocol.html"><code>PWAnnotationProtocol</code></a> and cannot be <code>nil</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -431,7 +431,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithSource:(id&lt;PWAnnotation&gt;)<em>source</em> destination:(id&lt;PWAnnotation&gt;)<em>destination</em> type:(PWDirectionsType)<em>type</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithSource:(id&lt;PWAnnotationProtocol&gt;)<em>source</em> destination:(id&lt;PWAnnotationProtocol&gt;)<em>destination</em> type:(PWDirectionsType)<em>type</em></code></div>
 
     
 	
@@ -440,12 +440,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>source</em></dt>
-			<dd><p>The <a href="#//api/name/source">source</a> annotation. This object must conform to the <a href="../Protocols/PWAnnotation.html"><code>PWAnnotation</code></a> protocol and cannot be <code>nil</code>.</p></dd>
+			<dd><p>The <a href="#//api/name/source">source</a> annotation. This object must conform to <a href="../Protocols/PWAnnotationProtocol.html"><code>PWAnnotationProtocol</code></a> and cannot be <code>nil</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>destination</em></dt>
-			<dd><p>The <a href="#//api/name/destination">destination</a> annotation. This object must conform to the <a href="../Protocols/PWAnnotation.html"><code>PWAnnotation</code></a> protocol and cannot be <code>nil</code>.</p></dd>
+			<dd><p>The <a href="#//api/name/destination">destination</a> annotation. This object must conform to <a href="../Protocols/PWAnnotationProtocol.html"><code>PWAnnotationProtocol</code></a> protocol and cannot be <code>nil</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -459,7 +459,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An initialized directions request object.</p>
+		<p>The initialized directions request object.</p>
 	</div>
 	
 	
@@ -495,7 +495,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Phunware, Inc.. All rights reserved. (Last updated: 2014-09-11)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-01-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

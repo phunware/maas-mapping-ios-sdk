@@ -39,15 +39,15 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/documentLoaded">&nbsp;&nbsp;&nbsp;&nbsp;documentLoaded</option>
-	
 	<option value="//api/name/documentRef">&nbsp;&nbsp;&nbsp;&nbsp;documentRef</option>
-	
-	<option value="//api/name/documentSize">&nbsp;&nbsp;&nbsp;&nbsp;documentSize</option>
 	
 	<option value="//api/name/fileURL">&nbsp;&nbsp;&nbsp;&nbsp;fileURL</option>
 	
+	<option value="//api/name/loaded">&nbsp;&nbsp;&nbsp;&nbsp;loaded</option>
+	
 	<option value="//api/name/pages">&nbsp;&nbsp;&nbsp;&nbsp;pages</option>
+	
+	<option value="//api/name/size">&nbsp;&nbsp;&nbsp;&nbsp;size</option>
 	
 	
 	
@@ -58,9 +58,9 @@
 	
 	<option value="//api/name/initWithFileURL:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFileURL:</option>
 	
-	<option value="//api/name/loadDocument">&nbsp;&nbsp;&nbsp;&nbsp;- loadDocument</option>
+	<option value="//api/name/load">&nbsp;&nbsp;&nbsp;&nbsp;- load</option>
 	
-	<option value="//api/name/unloadDocument">&nbsp;&nbsp;&nbsp;&nbsp;- unloadDocument</option>
+	<option value="//api/name/unload">&nbsp;&nbsp;&nbsp;&nbsp;- unload</option>
 	
 	
 	
@@ -86,15 +86,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentLoaded">documentLoaded</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentRef">documentRef</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentSize">documentSize</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileURL">fileURL</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loaded">loaded</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pages">pages</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/size">size</a></span></li>
 	
 </ul></li>
 
@@ -106,9 +106,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFileURL:">initWithFileURL:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadDocument">loadDocument</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/load">load</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unloadDocument">unloadDocument</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unload">unload</a></span></li>
 	
 </ul></li>
 
@@ -136,9 +136,6 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSCoding<br />NSCopying</td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">PWPDFDocument.h</td>
 </tr>
@@ -152,7 +149,7 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>A <code>PWPDFDocument</code> object represents a PDF file and defines methods for loading, unloading and viewing PDF data.</p>
 
-<p>The other utility classes are either instantiated from methods in <code>PDFDocument</code> are <code>PWPWDFPage</code>.</p>
+<p>The other utility classes are either instantiated from methods in <code>PDFDocument</code> or <code>PWPWDFPage</code>.</p>
 
 <p>Initialize a PDFDocument object with a URL to a PDF file. Then, ask for the page count, add or delete <a href="#//api/name/pages">pages</a>, perform a find or parse selected content into an NSString object.</p>
 					</div>
@@ -178,7 +175,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/documentLoaded">&nbsp;&nbsp;documentLoaded</a></code>
+		<code><a href="#//api/name/loaded">&nbsp;&nbsp;loaded</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -190,7 +187,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/documentSize">&nbsp;&nbsp;documentSize</a></code>
+		<code><a href="#//api/name/size">&nbsp;&nbsp;size</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -208,13 +205,13 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/loadDocument">&ndash;&nbsp;loadDocument</a></code>
+		<code><a href="#//api/name/load">&ndash;&nbsp;load</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/unloadDocument">&ndash;&nbsp;unloadDocument</a></code>
+		<code><a href="#//api/name/unload">&ndash;&nbsp;unload</a></code>
 	</span>
 	
 	
@@ -232,90 +229,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/documentLoaded" title="documentLoaded"></a>
-	<h3 class="subsubtitle method-title">documentLoaded</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>A Boolean value that states whether the document object has been loaded. (read-only)</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL documentLoaded</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWPDFDocument.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/documentRef" title="documentRef"></a>
 	<h3 class="subsubtitle method-title">documentRef</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A reference to the <code>CGPDFDocumentRef</code> document object. This property may be <code>nil</code> if the document has not yet been loaded.</p>
+		<p>A reference to the <code>CGPDFDocumentRef</code> document object. This property may be <code>nil</code> if the document has not yet been <a href="#//api/name/loaded">loaded</a>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property CGPDFDocumentRef documentRef</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWPDFDocument.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/documentSize" title="documentSize"></a>
-	<h3 class="subsubtitle method-title">documentSize</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the current size of the document. (read-only)</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGSize documentSize</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) CGPDFDocumentRef documentRef</code></div>
 
     
 	
@@ -351,7 +276,43 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *fileURL</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSURL *fileURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loaded" title="loaded"></a>
+	<h3 class="subsubtitle method-title">loaded</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A Boolean value that states whether the document object has been loaded. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, getter=isLoaded) BOOL loaded</code></div>
 
     
 	
@@ -387,7 +348,43 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *pages</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *pages</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWPDFDocument.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/size" title="size"></a>
+	<h3 class="subsubtitle method-title">size</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current size of the document. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) CGSize size</code></div>
 
     
 	
@@ -433,7 +430,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithFileURL:(NSString *)<em>fileURL</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithFileURL:(NSURL *)<em>fileURL</em></code></div>
 
     
 	
@@ -451,7 +448,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A PDF document object.</p>
+		<p>A PhunwarePDF document object.</p>
 	</div>
 	
 	
@@ -473,8 +470,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/loadDocument" title="loadDocument"></a>
-	<h3 class="subsubtitle method-title">loadDocument</h3>
+	<a name="//api/name/load" title="load"></a>
+	<h3 class="subsubtitle method-title">load</h3>
 	
 	
 	
@@ -484,7 +481,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)loadDocument</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)load</code></div>
 
     
 	
@@ -509,8 +506,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/unloadDocument" title="unloadDocument"></a>
-	<h3 class="subsubtitle method-title">unloadDocument</h3>
+	<a name="//api/name/unload" title="unload"></a>
+	<h3 class="subsubtitle method-title">unload</h3>
 	
 	
 	
@@ -520,7 +517,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)unloadDocument</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)unload</code></div>
 
     
 	
@@ -559,7 +556,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Phunware, Inc.. All rights reserved. (Last updated: 2014-09-11)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-01-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
