@@ -17,8 +17,6 @@ static NSString *kMaaSCoreSignatureKey = @"kMaaSCoreSignatureKey";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [PWMapKit setShouldUseZoomWorkaround:YES];
-    
     NSString *applicationID = [[NSBundle mainBundle] objectForInfoDictionaryKey:kMaaSCoreApplicationID];
     NSString *accessKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:kMaaSCoreAccessKey];
     NSString *signatureKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:kMaaSCoreSignatureKey];

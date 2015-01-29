@@ -43,7 +43,7 @@ static NSString *urlAsString = @"http://lbs-dev.s3.amazonaws.com/locationSample.
     NSInteger firstBuildingID = [[self.buildings.allValues firstObject] integerValue];
     
     // Load the specified building
-    [self.mapView loadBuilding:firstBuildingID];
+    [self.mapView loadBuildingWithIdentifier:firstBuildingID];
     self.mapView.mapType = MKMapTypeStandard;
     
     NSString *buildingName = [self.buildings.allKeys firstObject];
@@ -103,8 +103,7 @@ static NSString *urlAsString = @"http://lbs-dev.s3.amazonaws.com/locationSample.
     switch (locationManagerType) {
         case PWLocationManagerTypeMSE:
         {
-            locationManager = [[PWMSELocationManager alloc] initWithVenueGUID:@"YOUR_VENUE_GUID"
-                                                                     location:CLLocationCoordinate2DMake(30.360200, -97.742555)];
+            locationManager = [[PWMSELocationManager alloc] initWithVenueGUID:@"YOUR_VENUE_GUID"];
             // Register location manager for PWMapView
             [self.mapView registerLocationManagerForIndoorLocationUpdates:locationManager];
             self.locationManager = locationManager;
@@ -115,8 +114,7 @@ static NSString *urlAsString = @"http://lbs-dev.s3.amazonaws.com/locationSample.
         case PWLocationManagerTypeBLE:
         {
             locationManager = [[PWSLLocationManager alloc] initWithMapIdentifier:@"YOUR_MAP_ID"
-                                                              customerIdentifier:@"YOUR_CUSTOMER_ID"
-                                                                        location:CLLocationCoordinate2DMake(30.360200, -97.742555)];
+                                                              customerIdentifier:@"YOUR_CUSTOMER_ID"];
             // Register location manager for PWMapView
             [self.mapView registerLocationManagerForIndoorLocationUpdates:locationManager];
             self.locationManager = locationManager;
@@ -274,7 +272,7 @@ static NSString *urlAsString = @"http://lbs-dev.s3.amazonaws.com/locationSample.
     {
         if (buttonIndex < self.buildings.allValues.count) {
             NSInteger buildingID = [self.buildings.allValues[buttonIndex] integerValue];
-            [self.mapView loadBuilding:buildingID];
+            [self.mapView loadBuildingWithIdentifier:buildingID];
             
             NSString *buildingName = self.buildings.allKeys[buttonIndex];
             self.navigationItem.title = buildingName;
