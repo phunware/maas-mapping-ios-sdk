@@ -1,6 +1,10 @@
 #PWMapKit Changelog
 
-##v2.3.0 (Thursday, January 29th, 2014)
+##v2.3.1 (Monday, March 2nd, 2015)
+* Fixed bug where when routing across multiple floors with a valid indoor location the build asset would get 'stuck' while the blue dot continued to move.
+* Updated `PWRouteOverlayRenderer` initializer to accept a building overlay as part of initialization: `- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)overlay buildingOverlay:(PWBuildingOverlay *)buildingOverlay`
+
+##v2.3.0 (Thursday, January 29th, 2015)
 * Added new "blue dot smoothing" functionality to provide a better user location tracking experience.
 * Added `blueDotSmoothingEnabled` boolean property to `PWMapView` for turning blue dot smoothing on and off.
 * Added `routeSnappingTolerance` enumeration property to `PWMapView` for turning off route snapping or setting a different tolerance.

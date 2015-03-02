@@ -8,6 +8,7 @@
 #import <MapKit/MapKit.h>
 
 @class PWRouteOverlay;
+@class PWBuildingOverlay;
 @class PWMapView;
 
 /**
@@ -29,6 +30,6 @@
  @param overlay The route overlay to initialize the renderer with. The route overlay contains several important pieces of information the route renderer needs to draw the route.
  @return A basic route overlay renderer.
  */
-- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)overlay;
+- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)overlay buildingOverlay:(PWBuildingOverlay *)buildingOverlay;
 
 @end
