@@ -1,47 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWDirectionsType.html">
+	<File path="Protocols/PWDirectionsWaypointProtocol.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWDirectionsType</TokenIdentifier>
-			<Abstract type="html">PWDirectionsType specifies the type of directions to be used.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWDirectionsWaypointProtocol</TokenIdentifier>
+			<Abstract type="html">PWDirectionsWaypointProtocol represents a start, intermediate or end point in a directions request.</Abstract>
+			<DeclaredIn>PWDirectionsWaypointProtocol.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWDirectionsTypeUnknown</TokenIdentifier>
-            <Abstract type="html">The directions type is unknown.</Abstract>
-            <Declaration>PWDirectionsTypeUnknown</Declaration>
-            
-            <DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWDirectionsWaypointProtocol/setCoordinate:</TokenIdentifier>
+			<Abstract type="html">The geographic location of the waypoint.</Abstract>
+			<DeclaredIn>PWDirectionsWaypointProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
             <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWDirectionsTypeAccessible</TokenIdentifier>
-            <Abstract type="html">The directions type is for accessible routes only.</Abstract>
-            <Declaration>PWDirectionsTypeAccessible</Declaration>
-            
-            <DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWDirectionsWaypointProtocol/coordinate</TokenIdentifier>
+			<Abstract type="html">The geographic location of the waypoint.</Abstract>
+			<DeclaredIn>PWDirectionsWaypointProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
             <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWDirectionsTypeAny</TokenIdentifier>
-            <Abstract type="html">The directions type is for both accessible and inaccessible routes.</Abstract>
-            <Declaration>PWDirectionsTypeAny</Declaration>
-            
-            <DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWDirectionsWaypointProtocol/coordinate</TokenIdentifier>
+			<Abstract type="html">The geographic location of the waypoint.</Abstract>
+			<DeclaredIn>PWDirectionsWaypointProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
             <NodeRef refid="27"/>
-        </Token>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWDirectionsWaypointProtocol/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The identifier associated with the floor of the waypoint.</Abstract>
+			<DeclaredIn>PWDirectionsWaypointProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWDirectionsWaypointProtocol/floorID</TokenIdentifier>
+			<Abstract type="html">The identifier associated with the floor of the waypoint.</Abstract>
+			<DeclaredIn>PWDirectionsWaypointProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWDirectionsWaypointProtocol/floorID</TokenIdentifier>
+			<Abstract type="html">The identifier associated with the floor of the waypoint.</Abstract>
+			<DeclaredIn>PWDirectionsWaypointProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

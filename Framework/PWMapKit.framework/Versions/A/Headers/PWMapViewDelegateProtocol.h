@@ -2,7 +2,7 @@
 //  PWMapViewDelegateProtocol.h
 //  PWMapKit
 //
-//  Copyright (c) 2014 Phunware. All rights reserved.
+//  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
 #import "PWIndoorUserTracking.h"
@@ -16,7 +16,7 @@
 
 
 /**
- The `PWMapViewDelegate` protocol defines a set of optional methods that you can use to receive building-related update messages. Because many map operations require the `PWMapView` class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete. `PWMapViewDelegate` inherits from `MKMapViewDelegate`.
+ The `PWMapViewDelegate` protocol defines a set of optional methods that you can use to receive building-related update messages. Since many map operations require the `PWMapView` class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete. `PWMapViewDelegate` inherits from `MKMapViewDelegate`.
  */
 @protocol PWMapViewDelegateProtocol <MKMapViewDelegate>
 
@@ -53,20 +53,20 @@
 
 
 ///---------------------------------
-/// @name Tracking the User Location
+/// @name Tracking the User's Location
 ///---------------------------------
 
 /**
  Tells the delegate that the map view will start tracking the user’s indoor location.
  @param mapView The map view tracking the user’s location.
- @discussion This method is called when the value of the showsIndoorUserLocation property changes to `YES`.
+ @discussion This method is called when the value of the `showsIndoorUserLocation` property changes to `YES`.
  */
 - (void)mapViewWillStartLocatingIndoorUser:(PWMapView *)mapView;
 
 /**
  Tells the delegate that the map view stopped tracking the user’s indoor location.
  @param mapView The map view that stopped tracking the user’s indoor location.
- @discussion This method is called when the value of the showsIndoorUserLocation property changes to `NO`.
+ @discussion This method is called when the value of the `showsIndoorUserLocation` property changes to `NO`.
  */
 - (void)mapViewDidStopLocatingIndoorUser:(PWMapView *)mapView;
 
@@ -87,12 +87,11 @@
 - (void)mapView:(PWMapView *)mapView didFailToLocateIndoorUserWithError:(NSError *)error;
 
 /**
- Tells the delegate that the location of the user was updated.
+ Tells the delegate that the user's location was updated.
  @param mapView The map view with the altered user tracking mode.
  @param mode The mode used to track the user’s location.
- @param animated If `YES`, the mode change is animated; otherwise, it is not. This parameter affects only tracking mode changes.
  */
-- (void)mapView:(PWMapView *)mapView didChangeIndoorUserTrackingMode:(PWIndoorUserTrackingMode)mode animated:(BOOL)animated;
+- (void)mapView:(PWMapView *)mapView didChangeIndoorUserTrackingMode:(PWIndoorUserTrackingMode)mode;
 
 
 ///-----------------------
@@ -112,5 +111,26 @@
  @discussion This method notifies the map view delegate that the map view has ceased snapping user locations to a route.
  */
 - (void)mapViewStoppedSnappingLocationToRoute:(PWMapView *)mapView;
+
+
+///-----------------------
+/// @name Tracking Heading
+///-----------------------
+
+/**
+ Asks the delegate whether the heading calibration display should be shown.
+ @param mapView The map view asking whether or not to display the heading calibration.
+ @return A Boolean value indicating whether or not the heading calibration should be displayed.
+ @discussion The heading calibration will not be displayed by default.
+ */
+- (BOOL)mapViewShouldDisplayHeadingCalibration:(PWMapView *)mapView;
+
+/**
+ Tells the delegate that the user's heading has changed.
+ @param mapView The map view reporting the change in user heading.
+ @param heading The new heading value being reported.
+ */
+- (void)mapView:(PWMapView *)mapView didUpdateHeading:(CLHeading*)heading;
+
 
 @end

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteOverlayRenderer.html">
+	<File path="Classes/PWRouteOverlay.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteOverlayRenderer</TokenIdentifier>
-			<Abstract type="html">The PWRouteOverlayRenderer class defines the basic behavior for drawing a route-based overlay. The renderer draws the visual representation of a PWRouteStep object.</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteOverlay</TokenIdentifier>
+			<Abstract type="html">The PWRouteOverlay class defines a specific type of overlay that represents a route on a map.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,91 +13,94 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/setMapView:</TokenIdentifier>
-			<Abstract type="html">The PWMapView associated with this object.</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setRoute:</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/mapView</TokenIdentifier>
-			<Abstract type="html">The PWMapView associated with this object.</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/route</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlayRenderer/mapView</TokenIdentifier>
-			<Abstract type="html">The PWMapView associated with this object.</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/route</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/setPolyline:</TokenIdentifier>
-			<Abstract type="html">The polyline that the overlay renderer is currently drawing. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setCurrentStep:</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay. When changing this value, the step must belong to the current route and cannot be nil. Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
+			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
 			
 			
-			<Anchor>//api/name/polyline</Anchor>
+			<Anchor>//api/name/currentStep</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/polyline</TokenIdentifier>
-			<Abstract type="html">The polyline that the overlay renderer is currently drawing. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/currentStep</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay. When changing this value, the step must belong to the current route and cannot be nil. Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
+			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
 			
 			
-			<Anchor>//api/name/polyline</Anchor>
+			<Anchor>//api/name/currentStep</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlayRenderer/polyline</TokenIdentifier>
-			<Abstract type="html">The polyline that the overlay renderer is currently drawing. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/currentStep</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay. When changing this value, the step must belong to the current route and cannot be nil. Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
+			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
 			
 			
-			<Anchor>//api/name/polyline</Anchor>
+			<Anchor>//api/name/currentStep</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/initWithRouteOverlay:</TokenIdentifier>
-			<Abstract type="html">Initializes and returns the route overlay renderer and associates it with the specified route overlay object.</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/initWithRoute:buildingOverlay:</TokenIdentifier>
+			<Abstract type="html">Initializes the overlay with the specified route and building overlay.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)overlay</Declaration>
+			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route buildingOverlay:(PWBuildingOverlay *)buildingOverlay</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>overlay</Name>
-					<Abstract type="html">The route overlay to initialize the renderer with. The route overlay contains several important pieces of information the route renderer needs to draw the route.</Abstract>
+					<Name>route</Name>
+					<Abstract type="html">The route to display on the map.</Abstract>
+				</Parameter><Parameter>
+					<Name>buildingOverlay</Name>
+					<Abstract type="html">The building overlay associated with the current route overlay.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A basic route overlay renderer.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithRouteOverlay:</Anchor>
+			
+			<Anchor>//api/name/initWithRoute:buildingOverlay:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

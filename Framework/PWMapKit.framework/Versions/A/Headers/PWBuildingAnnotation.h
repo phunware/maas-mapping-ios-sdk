@@ -6,11 +6,12 @@
 //
 
 #import "PWBuildingAnnotationProtocol.h"
+#import "PWDirectionsWaypointProtocol.h"
 
 /**
  The building annotation object is a convenience class that implements the `PWBuildingAnnotation` protocol. This class it primarily for internal use and not exposed in the SDK.
  */
 
-@interface PWBuildingAnnotation : NSObject <PWBuildingAnnotationProtocol>
+@interface PWBuildingAnnotation : NSObject <PWBuildingAnnotationProtocol, PWDirectionsWaypointProtocol>
 
 @end

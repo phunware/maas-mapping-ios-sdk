@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWBuilding</TokenIdentifier>
-			<Abstract type="html">The building object encompasses a wide variety of information associated with the building. Information includes but is not limited to floor data, floor resource data, street address and location.</Abstract>
+			<Abstract type="html">The building object encompasses a wide variety of information associated with the building. Information includes but is not limited to: floor data, floor resource data, street address and location.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
             
 			
@@ -194,7 +194,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setLocation:</TokenIdentifier>
-			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is usually the center of the building. (read-only)</Abstract>
+			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is typically the center of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
 			<Declaration>@property (readonly) CLLocationCoordinate2D location</Declaration>
@@ -206,7 +206,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/location</TokenIdentifier>
-			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is usually the center of the building. (read-only)</Abstract>
+			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is typically the center of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
 			<Declaration>@property (readonly) CLLocationCoordinate2D location</Declaration>
@@ -218,7 +218,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/location</TokenIdentifier>
-			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is usually the center of the building. (read-only)</Abstract>
+			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is typically the center of the building. (read-only)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
 			<Declaration>@property (readonly) CLLocationCoordinate2D location</Declaration>
@@ -261,6 +261,23 @@
 			
 			
 			<Anchor>//api/name/floors</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/floorForIdentifier:</TokenIdentifier>
+			<Abstract type="html">Finds a PWBuildingFloor object in the building that matches the provided floor identifier.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>- (PWBuildingFloor *)floorForIdentifier:(PWBuildingFloorIdentifier)identifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>floorID</Name>
+					<Abstract type="html">The building floor identifier to use for the search.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The building&apos;s floor that matches the provided identifier, if one is found. If no matches are found, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/floorForIdentifier:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

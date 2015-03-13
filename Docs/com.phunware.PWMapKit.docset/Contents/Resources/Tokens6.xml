@@ -25,6 +25,31 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/loadBuildingWithIdentifier:completion:</TokenIdentifier>
+			<Abstract type="html">Attempts to load a building with the specified building identifier. This method will seek to load the build, annotations and resources.</Abstract>
+			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			
+			<Declaration>- (void)loadBuildingWithIdentifier:(NSInteger)buildingID completion:(PWLoadBuildingHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>buildingID</Name>
+					<Abstract type="html">The specified building identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block that takes the following parameters:
+
+- building: The requested building object.
+- annotations: The building annotations.
+- resources: The building resources as an array of PWMapDocument objects.
+- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/loadBuildingWithIdentifier:completion:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingWithBuildingID:completion:</TokenIdentifier>
 			<Abstract type="html">Initiates a fetch for the building object. If the building object is not cached locally, this will result in a network request.</Abstract>
 			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
@@ -95,7 +120,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingAnnotationTypesWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Initiates a fetch for the anotation typs. If the annotation types are not cached locally, this will result in a network request.</Abstract>
+			<Abstract type="html">Initiates a fetch for the anotation types. If the annotation types are not cached locally, this will result in a network request.</Abstract>
 			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
 			
 			<Declaration>- (void)getBuildingAnnotationTypesWithCompletion:(PWBuildingAnnotationTypesHandler)completion</Declaration>

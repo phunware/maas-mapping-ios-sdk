@@ -33,6 +33,7 @@
 						<NodeRef refid="20"/>
 						<NodeRef refid="21"/>
 						<NodeRef refid="22"/>
+						<NodeRef refid="23"/>
 						
 					</Subnodes>
 				</Node>
@@ -43,10 +44,11 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="23"/>
 						<NodeRef refid="24"/>
 						<NodeRef refid="25"/>
 						<NodeRef refid="26"/>
+						<NodeRef refid="27"/>
+						<NodeRef refid="28"/>
 						
 					</Subnodes>
 				</Node>
@@ -56,7 +58,7 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="27"/>
+						<NodeRef refid="29"/>
 						
 					</Subnodes>
 				</Node>
@@ -116,6 +118,12 @@
                 </Node>
                 
                 
+                
+                <Node type="section">
+                    <Path>Classes/PWBuilding.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
                 
             </Subnodes>
             
@@ -310,6 +318,12 @@
                     <Anchor>tasks</Anchor>
                 </Node>
                 
+                <Node type="section">
+                    <Path>Classes/PWDirections.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
                 
                 
                 <Node type="section">
@@ -322,6 +336,33 @@
             
         </Node>
 		<Node id="10" type="file" documentType="reference">
+            <Name>PWDirectionsOptions</Name>
+            <Path>Classes/PWDirectionsOptions.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/PWDirectionsOptions.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/PWDirectionsOptions.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/PWDirectionsOptions.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="11" type="file" documentType="reference">
             <Name>PWDirectionsRequest</Name>
             <Path>Classes/PWDirectionsRequest.html</Path>
             
@@ -344,6 +385,12 @@
                 </Node>
                 
                 
+                <Node type="section">
+                    <Path>Classes/PWDirectionsRequest.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
                 
                 <Node type="section">
                     <Path>Classes/PWDirectionsRequest.html</Path>
@@ -354,7 +401,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="11" type="file" documentType="reference">
+		<Node id="12" type="file" documentType="reference">
             <Name>PWDirectionsResponse</Name>
             <Path>Classes/PWDirectionsResponse.html</Path>
             
@@ -381,7 +428,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>PWMapDocument</Name>
             <Path>Classes/PWMapDocument.html</Path>
             
@@ -408,7 +455,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>PWMapView</Name>
             <Path>Classes/PWMapView.html</Path>
             
@@ -441,7 +488,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>PWPDFDocument</Name>
             <Path>Classes/PWPDFDocument.html</Path>
             
@@ -474,7 +521,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>PWPDFPage</Name>
             <Path>Classes/PWPDFPage.html</Path>
             
@@ -507,7 +554,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>PWRoute</Name>
             <Path>Classes/PWRoute.html</Path>
             
@@ -534,7 +581,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>PWRouteAnnotation</Name>
             <Path>Classes/PWRouteAnnotation.html</Path>
             
@@ -561,7 +608,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>PWRouteOverlay</Name>
             <Path>Classes/PWRouteOverlay.html</Path>
             
@@ -594,7 +641,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>PWRouteOverlayRenderer</Name>
             <Path>Classes/PWRouteOverlayRenderer.html</Path>
             
@@ -627,7 +674,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>PWRouteSegment</Name>
             <Path>Classes/PWRouteSegment.html</Path>
             
@@ -654,7 +701,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="22" type="file" documentType="reference">
             <Name>PWRouteStep</Name>
             <Path>Classes/PWRouteStep.html</Path>
             
@@ -681,7 +728,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>PWUserTrackingBarButtonItem</Name>
             <Path>Classes/PWUserTrackingBarButtonItem.html</Path>
             
@@ -716,7 +763,7 @@
         </Node>
 		
 		
-        <Node id="23" type="file" documentType="reference">
+        <Node id="24" type="file" documentType="reference">
             <Name>PWAnnotationProtocol</Name>
             <Path>Protocols/PWAnnotationProtocol.html</Path>
             
@@ -743,7 +790,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="24" type="file" documentType="reference">
+		<Node id="25" type="file" documentType="reference">
             <Name>PWBuildingAnnotationProtocol</Name>
             <Path>Protocols/PWBuildingAnnotationProtocol.html</Path>
             
@@ -770,18 +817,18 @@
             </Subnodes>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
-            <Name>PWBuildingOverlayDelegate</Name>
-            <Path>Protocols/PWBuildingOverlayDelegate.html</Path>
+		<Node id="26" type="file" documentType="reference">
+            <Name>PWBuildingOverlayDelegateProtocol</Name>
+            <Path>Protocols/PWBuildingOverlayDelegateProtocol.html</Path>
             
                 <Subnodes>
                 <Node type="section">
-                    <Path>Protocols/PWBuildingOverlayDelegate.html</Path>
+                    <Path>Protocols/PWBuildingOverlayDelegateProtocol.html</Path>
                     <Name>Overview</Name>
                     <Anchor>overview</Anchor>
                 </Node>
                 <Node type="section">
-                    <Path>Protocols/PWBuildingOverlayDelegate.html</Path>
+                    <Path>Protocols/PWBuildingOverlayDelegateProtocol.html</Path>
                     <Name>Tasks</Name>
                     <Anchor>tasks</Anchor>
                 </Node>
@@ -789,7 +836,7 @@
                 
                 
                 <Node type="section">
-                    <Path>Protocols/PWBuildingOverlayDelegate.html</Path>
+                    <Path>Protocols/PWBuildingOverlayDelegateProtocol.html</Path>
                     <Name>Instance Methods</Name>
                     <Anchor>instance_methods</Anchor>
                 </Node>
@@ -797,7 +844,34 @@
             </Subnodes>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
+            <Name>PWDirectionsWaypointProtocol</Name>
+            <Path>Protocols/PWDirectionsWaypointProtocol.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/PWDirectionsWaypointProtocol.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/PWDirectionsWaypointProtocol.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Protocols/PWDirectionsWaypointProtocol.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="28" type="file" documentType="reference">
             <Name>PWMapViewDelegateProtocol</Name>
             <Path>Protocols/PWMapViewDelegateProtocol.html</Path>
             
@@ -825,7 +899,7 @@
             
         </Node>
 		
-        <Node id="27" type="file" documentType="reference">
+        <Node id="29" type="file" documentType="reference">
             <Name>PWDirectionsType</Name>
             <Path>Constants/PWDirectionsType.html</Path>
             

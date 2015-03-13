@@ -2,7 +2,7 @@
 //  PWPDFDocument.h
 //  PWMapKit
 //
-//  Copyright (c) 2014 Phunware. All rights reserved.
+//  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -44,8 +44,8 @@
 
 /**
  Returns a document object initialized with its file system location.
- @param fileURL A file URL identifying the location of the document on disk. Passing in `nil` or an empty URL results in the throwing of an NSInvalidArgumentException.
- @return A PhunwarePDF document object.
+ @param fileURL A URL file identifying the location of the document on the disk. Passing `nil` or an empty URL will throw `NSInvalidArgumentException`.
+ @return A Phunware PDF document object.
  */
 - (instancetype)initWithFileURL:(NSURL *)fileURL;
 

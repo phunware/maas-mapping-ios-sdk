@@ -15,6 +15,7 @@ typedef NSUInteger PWBuildingFloorResourceIdentifier;
 
 typedef NSUInteger PWAnnotationIdentifier;
 typedef NSUInteger PWBuildingAnnotationType;
+extern const PWBuildingAnnotationType PWBuildingAnnotationTypeUnknown;
 
 typedef NSInteger PWMapZoomLevel;
 extern const PWMapZoomLevel PWMapZoomLevelShowAtAllLevels;

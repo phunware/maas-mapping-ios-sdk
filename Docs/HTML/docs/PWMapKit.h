@@ -7,30 +7,32 @@
 
 #import <Foundation/Foundation.h>
 
-#import <PWMapKit/PWMapView.h>
-#import <PWMapKit/PWSVPulsingAnnotationView.h>
-#import <PWMapKit/PWUserTrackingBarButtonItem.h>
-#import <PWMapKit/PWIndoorUserTracking.h>
-#import <PWMapKit/PWAnnotationProtocol.h>
-#import <PWMapKit/PWAnnotationType.h>
-#import <PWMapKit/PWBuilding.h>
-#import <PWMapKit/PWBuildingAnnotationProtocol.h>
-#import <PWMapKit/PWBuildingAnnotationView.h>
-#import <PWMapKit/PWBuildingAnnotation.h>
-#import <PWMapKit/PWBuildingManager.h>
-#import <PWMapKit/PWBuildingFloor.h>
-#import <PWMapKit/PWBuildingFloorResource.h>
-#import <PWMapKit/PWBuildingFloorReference.h>
-#import <PWMapKit/PWBuildingOverlay.h>
-#import <PWMapKit/PWBuildingOverlayRenderer.h>
-#import <PWMapKit/PWMapDocument.h>
-#import <PWMapKit/PWDirections.h>
-#import <PWMapKit/PWDirectionsRequest.h>
-#import <PWMapKit/PWDirectionsResponse.h>
-#import <PWMapKit/PWRoute.h>
-#import <PWMapKit/PWRouteStep.h>
-#import <PWMapKit/PWRouteAnnotation.h>
-#import <PWMapKit/PWAnnotationLabel.h>
+#import "PWMapView.h"
+#import "PWMapView+ZoomWorkaround.h"
+#import "PWSVPulsingAnnotationView.h"
+#import "PWUserTrackingBarButtonItem.h"
+#import "PWIndoorUserTracking.h"
+#import "PWAnnotationProtocol.h"
+#import "PWAnnotationType.h"
+#import "PWBuilding.h"
+#import "PWBuildingAnnotationProtocol.h"
+#import "PWBuildingAnnotationView.h"
+#import "PWBuildingAnnotation.h"
+#import "PWBuildingManager.h"
+#import "PWBuildingFloor.h"
+#import "PWBuildingFloorResource.h"
+#import "PWBuildingFloorReference.h"
+#import "PWBuildingOverlay.h"
+#import "PWBuildingOverlayRenderer.h"
+#import "PWMapDocument.h"
+#import "PWDirections.h"
+#import "PWDirectionsRequest.h"
+#import "PWDirectionsResponse.h"
+#import "PWRoute.h"
+#import "PWRouteStep.h"
+#import "PWRouteAnnotation.h"
+#import "PWAnnotationLabel.h"
+#import "PWIndoorUserLocation.h"
 
 /**
  The `PWMapKit` framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.

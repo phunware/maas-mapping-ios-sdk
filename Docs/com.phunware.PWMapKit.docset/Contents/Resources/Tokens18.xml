@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteOverlay.html">
+	<File path="Classes/PWRouteAnnotation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteOverlay</TokenIdentifier>
-			<Abstract type="html">The PWRouteOverlay class defines a specific type of overlay that represents a route on a map.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteAnnotation</TokenIdentifier>
+			<Abstract type="html">This object is returned in the annotations property of a PWRoute object. Never instantiate this annotation directly.</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,94 +13,146 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setRoute:</TokenIdentifier>
-			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/setExit:</TokenIdentifier>
+			<Abstract type="html">Indicates whether this point on the route is considered a building entry or exit. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWRoute *route</Declaration>
+			<Declaration>@property (readonly, getter=isExit) BOOL exit</Declaration>
 			
 			
-			<Anchor>//api/name/route</Anchor>
+			<Anchor>//api/name/exit</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/route</TokenIdentifier>
-			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/isExit</TokenIdentifier>
+			<Abstract type="html">Indicates whether this point on the route is considered a building entry or exit. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWRoute *route</Declaration>
+			<Declaration>@property (readonly, getter=isExit) BOOL exit</Declaration>
 			
 			
-			<Anchor>//api/name/route</Anchor>
+			<Anchor>//api/name/exit</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/route</TokenIdentifier>
-			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteAnnotation/exit</TokenIdentifier>
+			<Abstract type="html">Indicates whether this point on the route is considered a building entry or exit. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWRoute *route</Declaration>
+			<Declaration>@property (readonly, getter=isExit) BOOL exit</Declaration>
 			
 			
-			<Anchor>//api/name/route</Anchor>
+			<Anchor>//api/name/exit</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setCurrentStep:</TokenIdentifier>
-			<Abstract type="html">The current route step displayed on the overlay.  When changing this value, the step must belong to the current route and cannot be nil.  Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/setAccessible:</TokenIdentifier>
+			<Abstract type="html">Indicates whether this point on the route represents an accessible location. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
+			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
 			
 			
-			<Anchor>//api/name/currentStep</Anchor>
+			<Anchor>//api/name/accessible</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/currentStep</TokenIdentifier>
-			<Abstract type="html">The current route step displayed on the overlay.  When changing this value, the step must belong to the current route and cannot be nil.  Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/isAccessible</TokenIdentifier>
+			<Abstract type="html">Indicates whether this point on the route represents an accessible location. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
+			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
 			
 			
-			<Anchor>//api/name/currentStep</Anchor>
+			<Anchor>//api/name/accessible</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/currentStep</TokenIdentifier>
-			<Abstract type="html">The current route step displayed on the overlay.  When changing this value, the step must belong to the current route and cannot be nil.  Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteAnnotation/accessible</TokenIdentifier>
+			<Abstract type="html">Indicates whether this point on the route represents an accessible location. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
+			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
 			
 			
-			<Anchor>//api/name/currentStep</Anchor>
+			<Anchor>//api/name/accessible</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/initWithRoute:buildingOverlay:</TokenIdentifier>
-			<Abstract type="html">Initializes the overlay with the specified route and building overlay.</Abstract>
-			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/setPortalID:</TokenIdentifier>
+			<Abstract type="html">For multi-level building elements like elevators and stairs, this value provides a common identifier for associating the route annotations on each floor. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route buildingOverlay:(PWBuildingOverlay *)buildingOverlay</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>route</Name>
-					<Abstract type="html">The route to display on the map.</Abstract>
-				</Parameter><Parameter>
-					<Name>buildingOverlay</Name>
-					<Abstract type="html">The building overlay associated with the current route overlay.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, readonly) NSString *portalID</Declaration>
 			
-			<Anchor>//api/name/initWithRoute:buildingOverlay:</Anchor>
+			
+			<Anchor>//api/name/portalID</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/portalID</TokenIdentifier>
+			<Abstract type="html">For multi-level building elements like elevators and stairs, this value provides a common identifier for associating the route annotations on each floor. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (copy, readonly) NSString *portalID</Declaration>
+			
+			
+			<Anchor>//api/name/portalID</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteAnnotation/portalID</TokenIdentifier>
+			<Abstract type="html">For multi-level building elements like elevators and stairs, this value provides a common identifier for associating the route annotations on each floor. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (copy, readonly) NSString *portalID</Declaration>
+			
+			
+			<Anchor>//api/name/portalID</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/setType:</TokenIdentifier>
+			<Abstract type="html">The building annotation type. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingAnnotationType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/type</TokenIdentifier>
+			<Abstract type="html">The building annotation type. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingAnnotationType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteAnnotation/type</TokenIdentifier>
+			<Abstract type="html">The building annotation type. (read-only)</Abstract>
+			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingAnnotationType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

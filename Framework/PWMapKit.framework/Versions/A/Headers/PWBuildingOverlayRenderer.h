@@ -2,7 +2,7 @@
 //  PWBuildingOverlayRenderer.h
 //  PWMapKit
 //
-//  Copyright (c) 2014 Phunware. All rights reserved.
+//  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
 @class PWMapView;

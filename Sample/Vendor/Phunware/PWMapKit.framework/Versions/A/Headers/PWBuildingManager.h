@@ -2,11 +2,12 @@
 //  PWBuildingManager.h
 //  PWMapKit
 //
-//  Copyright (c) 2014 Phunware. All rights reserved.
+//  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
 @class PWBuilding;
 
+typedef void (^PWLoadBuildingHandler)(PWBuilding *building, NSArray *annotations, NSArray *resources, NSError *error);
 typedef void (^PWBuildingHandler)(PWBuilding *building, NSError *error);
 typedef void (^PWBuildingAnnotationsHandler)(NSArray *annotations, NSError *error);
 typedef void (^PWBuildingResourcesHandler)(NSArray *resources, NSError *error);
@@ -23,6 +24,19 @@ typedef void (^PWBuildingAnnotationTypesHandler)(NSArray *types, NSError *error)
  @return The shared instance of the `PWBuildingManager` class.
  */
 + (instancetype)sharedManager;
+
+/**
+ Attempts to load a building with the specified building identifier. This method will seek to load the build, annotations and resources.
+ @param buildingID The specified building identifier.
+ @param completion A block that takes the following parameters:
+ 
+ - *building*: The requested building object.
+ - *annotations*: The building annotations.
+ - *resources*: The building resources as an array of `PWMapDocument` objects.
+ - *error*: If the building fetch completed successfully, this parameter is `nil`; otherwise, this parameter holds an error object that describes the error.
+ @discussion This building identifier is provided by Phunware and can be found in the Location area of the MaaS portal.
+ */
+- (void)loadBuildingWithIdentifier:(NSInteger)buildingID completion:(PWLoadBuildingHandler)completion;
 
 /**
  Initiates a fetch for the building object. If the building object is not cached locally, this will result in a network request.
@@ -58,7 +72,7 @@ typedef void (^PWBuildingAnnotationTypesHandler)(NSArray *types, NSError *error)
 - (void)getResourcesForBuilding:(PWBuilding *)building completion:(PWBuildingResourcesHandler)completion;
 
 /**
- Initiates a fetch for the anotation typs. If the annotation types are not cached locally, this will result in a network request.
+ Initiates a fetch for the anotation types. If the annotation types are not cached locally, this will result in a network request.
 @param completion A block that takes the following parameters:
 
  - *types*: The annotation types as an array of `PWAnnotationType` objects.

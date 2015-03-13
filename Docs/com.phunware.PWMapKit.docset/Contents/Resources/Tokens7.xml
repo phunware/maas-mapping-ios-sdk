@@ -86,7 +86,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setCurrentFloor:</TokenIdentifier>
-			<Abstract type="html">The floor currently being display.  The value may be nil while the building overlay is loading.  Changing the floor to the same floor will have no effect.  Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
+			<Abstract type="html">The floor currently being displayed. This value may be &apos;nil&apos; while the building overlay is loading. Changing the floor to the same floor will have no effect. Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
 			<Declaration>@property PWBuildingFloor *currentFloor</Declaration>
@@ -98,7 +98,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/currentFloor</TokenIdentifier>
-			<Abstract type="html">The floor currently being display.  The value may be nil while the building overlay is loading.  Changing the floor to the same floor will have no effect.  Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
+			<Abstract type="html">The floor currently being displayed. This value may be &apos;nil&apos; while the building overlay is loading. Changing the floor to the same floor will have no effect. Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
 			<Declaration>@property PWBuildingFloor *currentFloor</Declaration>
@@ -110,7 +110,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/currentFloor</TokenIdentifier>
-			<Abstract type="html">The floor currently being display.  The value may be nil while the building overlay is loading.  Changing the floor to the same floor will have no effect.  Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
+			<Abstract type="html">The floor currently being displayed. This value may be &apos;nil&apos; while the building overlay is loading. Changing the floor to the same floor will have no effect. Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
 			<Declaration>@property PWBuildingFloor *currentFloor</Declaration>
@@ -194,10 +194,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the MKMapViewDelegate protocol.</Abstract>
+			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the PWBuildingOverlayDelegateProtocol protocol.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegateProtocol&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -206,10 +206,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the MKMapViewDelegate protocol.</Abstract>
+			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the PWBuildingOverlayDelegateProtocol protocol.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegateProtocol&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -218,10 +218,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the MKMapViewDelegate protocol.</Abstract>
+			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the PWBuildingOverlayDelegateProtocol protocol.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegateProtocol&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -230,7 +230,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/initWithBuilding:</TokenIdentifier>
-			<Abstract type="html">Initializes the overlay with the specified building. This method will automatically fetch and cache all required resources. The delegate will receive either a success or failure callback.</Abstract>
+			<Abstract type="html">Initializes the overlay with the specified building. This method will automatically fetch and cache all required resources. The delegate will receive a success or failure callback.</Abstract>
 			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>

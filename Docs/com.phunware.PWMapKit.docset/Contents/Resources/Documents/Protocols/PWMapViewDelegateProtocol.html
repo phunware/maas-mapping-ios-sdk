@@ -45,7 +45,7 @@
 	
 	<option value="//api/name/mapView:didChangeFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeFloor:</option>
 	
-	<option value="//api/name/mapView:didChangeIndoorUserTrackingMode:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeIndoorUserTrackingMode:animated:</option>
+	<option value="//api/name/mapView:didChangeIndoorUserTrackingMode:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeIndoorUserTrackingMode:</option>
 	
 	<option value="//api/name/mapView:didFailToLoadBuilding:error:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFailToLoadBuilding:error:</option>
 	
@@ -53,9 +53,13 @@
 	
 	<option value="//api/name/mapView:didFinishLoadingBuilding:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFinishLoadingBuilding:</option>
 	
+	<option value="//api/name/mapView:didUpdateHeading:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didUpdateHeading:</option>
+	
 	<option value="//api/name/mapView:didUpdateIndoorUserLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didUpdateIndoorUserLocation:</option>
 	
 	<option value="//api/name/mapViewDidStopLocatingIndoorUser:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewDidStopLocatingIndoorUser:</option>
+	
+	<option value="//api/name/mapViewShouldDisplayHeadingCalibration:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewShouldDisplayHeadingCalibration:</option>
 	
 	<option value="//api/name/mapViewStartedSnappingLocationToRoute:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewStartedSnappingLocationToRoute:</option>
 	
@@ -81,9 +85,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Loading the Map Data">Loading the Map Data</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Tracking the User Location">Tracking the User Location</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Tracking the User&apos;s Location">Tracking the User&apos;s Location</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Routing Behavior">Routing Behavior</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Tracking Heading">Tracking Heading</a></span></li>
 	
 </ul></li>
 
@@ -99,7 +105,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeFloor:">mapView:didChangeFloor:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeIndoorUserTrackingMode:animated:">mapView:didChangeIndoorUserTrackingMode:animated:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeIndoorUserTrackingMode:">mapView:didChangeIndoorUserTrackingMode:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFailToLoadBuilding:error:">mapView:didFailToLoadBuilding:error:</a></span></li>
 	
@@ -107,9 +113,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFinishLoadingBuilding:">mapView:didFinishLoadingBuilding:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didUpdateHeading:">mapView:didUpdateHeading:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didUpdateIndoorUserLocation:">mapView:didUpdateIndoorUserLocation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewDidStopLocatingIndoorUser:">mapViewDidStopLocatingIndoorUser:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewShouldDisplayHeadingCalibration:">mapViewShouldDisplayHeadingCalibration:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewStartedSnappingLocationToRoute:">mapViewStartedSnappingLocationToRoute:</a></span></li>
 	
@@ -154,7 +164,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWMapViewDelegate</code> protocol defines a set of optional methods that you can use to receive building-related update messages. Because many map operations require the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete. <code>PWMapViewDelegate</code> inherits from <code>MKMapViewDelegate</code>.</p>
+						<p>The <code>PWMapViewDelegate</code> protocol defines a set of optional methods that you can use to receive building-related update messages. Since many map operations require the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete. <code>PWMapViewDelegate</code> inherits from <code>MKMapViewDelegate</code>.</p>
 					</div>
 					
 					
@@ -192,8 +202,8 @@
 						</ul>
 						
 						
-						<a title="Tracking the User Location" name="task_Tracking the User Location"></a>
-						<h3 class="subsubtitle task-title">Tracking the User Location</h3>
+						<a title="Tracking the User&apos;s Location" name="task_Tracking the User&apos;s Location"></a>
+						<h3 class="subsubtitle task-title">Tracking the User&apos;s Location</h3>
 
 						<ul class="task-list">
 							<li>
@@ -222,7 +232,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapView:didChangeIndoorUserTrackingMode:animated:">&ndash;&nbsp;mapView:didChangeIndoorUserTrackingMode:animated:</a></code>
+		<code><a href="#//api/name/mapView:didChangeIndoorUserTrackingMode:">&ndash;&nbsp;mapView:didChangeIndoorUserTrackingMode:</a></code>
 	</span>
 	
 	
@@ -243,6 +253,26 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/mapViewStoppedSnappingLocationToRoute:">&ndash;&nbsp;mapViewStoppedSnappingLocationToRoute:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Tracking Heading" name="task_Tracking Heading"></a>
+						<h3 class="subsubtitle task-title">Tracking Heading</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapViewShouldDisplayHeadingCalibration:">&ndash;&nbsp;mapViewShouldDisplayHeadingCalibration:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:didUpdateHeading:">&ndash;&nbsp;mapView:didUpdateHeading:</a></code>
 	</span>
 	
 	
@@ -320,18 +350,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/mapView:didChangeIndoorUserTrackingMode:animated:" title="mapView:didChangeIndoorUserTrackingMode:animated:"></a>
-	<h3 class="subsubtitle method-title">mapView:didChangeIndoorUserTrackingMode:animated:</h3>
+	<a name="//api/name/mapView:didChangeIndoorUserTrackingMode:" title="mapView:didChangeIndoorUserTrackingMode:"></a>
+	<h3 class="subsubtitle method-title">mapView:didChangeIndoorUserTrackingMode:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Tells the delegate that the location of the user was updated.</p>
+		<p>Tells the delegate that the user&rsquo;s location was updated.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didChangeIndoorUserTrackingMode:(PWIndoorUserTrackingMode)<em>mode</em> animated:(BOOL)<em>animated</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didChangeIndoorUserTrackingMode:(PWIndoorUserTrackingMode)<em>mode</em></code></div>
 
     
 	
@@ -346,11 +376,6 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>mode</em></dt>
 			<dd><p>The mode used to track the user’s location.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>animated</em></dt>
-			<dd><p>If <code>YES</code>, the mode change is animated; otherwise, it is not. This parameter affects only tracking mode changes.</p></dd>
 		</dl>
 		
 	</div>
@@ -544,6 +569,57 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/mapView:didUpdateHeading:" title="mapView:didUpdateHeading:"></a>
+	<h3 class="subsubtitle method-title">mapView:didUpdateHeading:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the user&rsquo;s heading has changed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didUpdateHeading:(CLHeading *)<em>heading</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view reporting the change in user heading.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>heading</em></dt>
+			<dd><p>The new heading value being reported.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapViewDelegateProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/mapView:didUpdateIndoorUserLocation:" title="mapView:didUpdateIndoorUserLocation:"></a>
 	<h3 class="subsubtitle method-title">mapView:didUpdateIndoorUserLocation:</h3>
 	
@@ -633,7 +709,63 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is called when the value of the showsIndoorUserLocation property changes to <code>NO</code>.</p>
+		<p>This method is called when the value of the <code>showsIndoorUserLocation</code> property changes to <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapViewDelegateProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapViewShouldDisplayHeadingCalibration:" title="mapViewShouldDisplayHeadingCalibration:"></a>
+	<h3 class="subsubtitle method-title">mapViewShouldDisplayHeadingCalibration:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Asks the delegate whether the heading calibration display should be shown.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)mapViewShouldDisplayHeadingCalibration:(PWMapView *)<em>mapView</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view asking whether or not to display the heading calibration.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A Boolean value indicating whether or not the heading calibration should be displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The heading calibration will not be displayed by default.</p>
 	</div>
 	
 	
@@ -786,7 +918,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is called when the value of the showsIndoorUserLocation property changes to <code>YES</code>.</p>
+		<p>This method is called when the value of the <code>showsIndoorUserLocation</code> property changes to <code>YES</code>.</p>
 	</div>
 	
 	
@@ -818,7 +950,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-01-29)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-03-13)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

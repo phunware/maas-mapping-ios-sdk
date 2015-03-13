@@ -4,13 +4,162 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWDirections</TokenIdentifier>
-			<Abstract type="html">A PWDirections object provides you with route-based directions data from Phunware servers. You can use instances of this class to get walking directions based on the data in a PWDirectionsRequest object that you provide. The directions object passes your request to the Phunware servers and returns the requested information to a block that you provide.</Abstract>
+			<Abstract type="html">A PWDirections object provides you with the ability to calculate routes using data from Phunware servers. You can use instances of this class to get walking directions based on the waypoints and options provided. The directions object performs synchronously or asynchronously, depending on whether a completion block is provided.</Abstract>
 			<DeclaredIn>PWDirections.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/setWaypoints:</TokenIdentifier>
+			<Abstract type="html">The start and end points of the requested directions.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *waypoints</Declaration>
+			
+			
+			<Anchor>//api/name/waypoints</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/waypoints</TokenIdentifier>
+			<Abstract type="html">The start and end points of the requested directions.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *waypoints</Declaration>
+			
+			
+			<Anchor>//api/name/waypoints</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWDirections/waypoints</TokenIdentifier>
+			<Abstract type="html">The start and end points of the requested directions.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *waypoints</Declaration>
+			
+			
+			<Anchor>//api/name/waypoints</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/setOptions:</TokenIdentifier>
+			<Abstract type="html">This property holds the routing request options (such as accessibility requirements).</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWDirectionsOptions *options</Declaration>
+			
+			
+			<Anchor>//api/name/options</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/options</TokenIdentifier>
+			<Abstract type="html">This property holds the routing request options (such as accessibility requirements).</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWDirectionsOptions *options</Declaration>
+			
+			
+			<Anchor>//api/name/options</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWDirections/options</TokenIdentifier>
+			<Abstract type="html">This property holds the routing request options (such as accessibility requirements).</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWDirectionsOptions *options</Declaration>
+			
+			
+			<Anchor>//api/name/options</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/setRoute:</TokenIdentifier>
+			<Abstract type="html">Once the route is found and directions are calculated, the route is stored in this property. The initial value is nil.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/route</TokenIdentifier>
+			<Abstract type="html">Once the route is found and directions are calculated, the route is stored in this property. The initial value is nil.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWDirections/route</TokenIdentifier>
+			<Abstract type="html">Once the route is found and directions are calculated, the route is stored in this property. The initial value is nil.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/initWithWaypoints:options:</TokenIdentifier>
+			<Abstract type="html">Initializes a directions object with the provided waypoints and routing options.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithWaypoints:(NSArray *)waypoints options:(PWDirectionsOptions *)options</Declaration>
+			
+			
+			<Anchor>//api/name/initWithWaypoints:options:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/calculateDirections</TokenIdentifier>
+			<Abstract type="html">Calculates the requested route information synchronously.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>- (void)calculateDirections</Declaration>
+			
+			
+			<Anchor>//api/name/calculateDirections</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/calculateDirectionsWithCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Begins calculating the requested route information asynchronously.</Abstract>
+			<DeclaredIn>PWDirections.h</DeclaredIn>
+			
+			<Declaration>- (void)calculateDirectionsWithCompletionHandler:(PWDirectionsHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">The block to execute when directions are ready or when an error occurs. This parameter cannot be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/calculateDirectionsWithCompletionHandler:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/initWithRequest:</TokenIdentifier>
@@ -26,23 +175,6 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">An initialized directions object.</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithRequest:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirections/calculateDirectionsWithCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">Begins calculating the requested route information asynchronously.</Abstract>
-			<DeclaredIn>PWDirections.h</DeclaredIn>
-			
-			<Declaration>- (void)calculateDirectionsWithCompletionHandler:(PWDirectionsHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">The block to execute when the directions are ready or when an error occurs. This parameter cannot be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/calculateDirectionsWithCompletionHandler:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

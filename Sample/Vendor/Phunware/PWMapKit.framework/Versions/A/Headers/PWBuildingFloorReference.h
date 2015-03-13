@@ -2,7 +2,7 @@
 //  PWBuildingFloorReference.h
 //  PWMapKit
 //
-//  Copyright (c) 2014 Phunware. All rights reserved.
+//  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
 #import <CoreLocation/CLLocation.h>
@@ -14,22 +14,22 @@
 @interface PWBuildingFloorReference: NSObject
 
 /**
- The top left lat/long coordinate of the building. (read-only)
+ The top-left lat/long coordinate of the building. (read-only)
  */
 @property (readonly) CLLocationCoordinate2D topLeft;
 
 /**
-  The top right lat/long coordinate of the building. (read-only)
+  The top-right lat/long coordinate of the building. (read-only)
  */
 @property (readonly) CLLocationCoordinate2D topRight;
 
 /**
-  The bottom left lat/long coordinate of the building. (read-only)
+  The bottom-left lat/long coordinate of the building. (read-only)
  */
 @property (readonly) CLLocationCoordinate2D bottomLeft;
 
 /**
-  The bottom right lat/long coordinate of the building. (read-only)
+  The bottom-right lat/long coordinate of the building. (read-only)
  */
 @property (readonly) CLLocationCoordinate2D bottomRight;
 

@@ -49,6 +49,8 @@
 	
 	<option value="//api/name/metaData">&nbsp;&nbsp;&nbsp;&nbsp;metaData</option>
 	
+	<option value="//api/name/occlusionEnabled">&nbsp;&nbsp;&nbsp;&nbsp;occlusionEnabled</option>
+	
 	<option value="//api/name/type">&nbsp;&nbsp;&nbsp;&nbsp;type</option>
 	
 	
@@ -88,6 +90,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageURL">imageURL</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/metaData">metaData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/occlusionEnabled">occlusionEnabled</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/type">type</a></span></li>
 	
@@ -132,9 +136,9 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This protocol is used to provide building annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single building annotation and provides critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but coordinate the creation of an appropriate <code>MKAnnotationView</code> object to handle the display in conjunction with the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> delegate.</p>
+						<p>This protocol is used to provide building annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object will then serve as the source of information about a single building annotation and provide critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but coordinate the creation of an appropriate <code>MKAnnotationView</code> object to handle the display in conjunction with the <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> delegate.</p>
 
-<p>This protocol inherits from <a href="../Protocols/PWAnnotationProtocol.html"><code>PWAnnotationProtocol</code></a>. Data for this annotation is provided by Phunware.</p><p>Annotations conforming to this protocol should NEVER be added to the map view using <code>-addAnnotation(s):</code>.  Instead, Phunware internally manages building annotations so that they show/hide automatically at the appropriate zoom and floor levels.</p>
+<p>This protocol inherits from <a href="../Protocols/PWAnnotationProtocol.html"><code>PWAnnotationProtocol</code></a>. Data for this annotation is provided by Phunware.</p><p>Never add annotations conforming to this protocol to the map view using <code>-addAnnotation(s):</code>. Phunware internally manages building annotations so that they show and hide automatically at the appropriate zoom and floor levels.</p>
 					</div>
 					
 					
@@ -186,6 +190,12 @@
 	</span>
 	<span class="task-item-suffix">property</span>
 	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/occlusionEnabled">&nbsp;&nbsp;occlusionEnabled</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
 </li>
 						</ul>
 						
@@ -206,7 +216,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A flag indicating whether or not the points represented by the annotation is accessible. (read-only)</p>
+		<p>A flag indicating whether the points represented by the annotation are accessible. (read-only)</p>
 	</div>		
 	
     
@@ -380,6 +390,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/occlusionEnabled" title="occlusionEnabled"></a>
+	<h3 class="subsubtitle method-title">occlusionEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A flag that indicates whether this annotation enabled occlusion. Defaults to <code>YES</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (getter=isOcclusionEnabled) BOOL occlusionEnabled</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>When <code>occlusionEnabled</code> is <code>NO</code>, the annotation label will always be shown.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWBuildingAnnotationProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/type" title="type"></a>
 	<h3 class="subsubtitle method-title">type</h3>
 	
@@ -434,7 +485,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-01-29)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-03-13)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

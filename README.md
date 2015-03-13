@@ -1,7 +1,7 @@
 PWMapKit SDK for iOS
 ==================
 
-Version 2.3.1
+Version 2.4.0
 
 This is Phunware's iOS SDK for the Mapping module. Visit http://maas.phunware.com/ for more details and to sign up.
 

@@ -2,7 +2,7 @@
 //  PWRouteOverlay.h
 //  PWMapKit
 //
-//  Copyright (c) 2014 Phunware. All rights reserved.
+//  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
 @class PWBuildingOverlay;
@@ -20,7 +20,7 @@
 @property (readonly) PWRoute *route;
 
 /**
- The current route step displayed on the overlay.  When changing this value, the step must belong to the current route and cannot be `nil`.  Setting the step will change the building overlay's floor as necessary.
+ The current route step displayed on the overlay. When changing this value, the step must belong to the current route and cannot be `nil`. Setting the step will change the building overlay's floor as necessary.
  */
 @property (nonatomic) PWRouteStep *currentStep;
 
@@ -28,7 +28,7 @@
  Initializes the overlay with the specified route and building overlay. 
  @param route The route to display on the map.
  @param buildingOverlay The building overlay associated with the current route overlay.
- @discussion The route overlay is linked directly to the building overlay it's associated with. This allows the route overlay to switch the building floor when the route step changes.
+ @discussion The route overlay is linked directly to the building overlay it's associated with. This allows the route overlay to switch the building's floor when the route step changes.
  */
 - (instancetype)initWithRoute:(PWRoute *)route buildingOverlay:(PWBuildingOverlay *)buildingOverlay;
 
