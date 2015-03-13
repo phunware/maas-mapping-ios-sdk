@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWAnnotationLabel Class Reference</title>
+		<title>PWDirectionsWaypointProtocol Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWAnnotationLabel Class Reference</h1>
+				<h1 class="hideInXcode">PWDirectionsWaypointProtocol Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,9 +39,9 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/strokeColor">&nbsp;&nbsp;&nbsp;&nbsp;strokeColor</option>
+	<option value="//api/name/coordinate">&nbsp;&nbsp;&nbsp;&nbsp;coordinate</option>
 	
-	<option value="//api/name/strokeWidth">&nbsp;&nbsp;&nbsp;&nbsp;strokeWidth</option>
+	<option value="//api/name/floorID">&nbsp;&nbsp;&nbsp;&nbsp;floorID</option>
 	
 	
 	
@@ -71,9 +71,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/strokeColor">strokeColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/coordinate">coordinate</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/strokeWidth">strokeWidth</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorID">floorID</a></span></li>
 	
 </ul></li>
 
@@ -86,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWAnnotationLabel Class Reference" name="top"></a>
+				<a title="PWDirectionsWaypointProtocol Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -95,18 +95,18 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWAnnotationLabel Class Reference</h1>
+						<h1 class="title title-header">PWDirectionsWaypointProtocol Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">UILabel</td>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWAnnotationLabel.h</td>
+	<td class="specification-value">PWDirectionsWaypointProtocol.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -116,7 +116,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWAnnotationLabel</code> is a <code>UILabel</code> subclass used with annotation views that allows stroke color and width customizations.</p>
+						<p><code>PWDirectionsWaypointProtocol</code> represents a start, intermediate or end point in a directions request.</p>
 					</div>
 					
 					
@@ -134,16 +134,16 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/strokeColor">&nbsp;&nbsp;strokeColor</a></code>
+		<code><a href="#//api/name/coordinate">&nbsp;&nbsp;coordinate</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
-	
+	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/strokeWidth">&nbsp;&nbsp;strokeWidth</a></code>
+		<code><a href="#//api/name/floorID">&nbsp;&nbsp;floorID</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
-	
+	<span class="task-item-suffix">required method</span>
 </li>
 						</ul>
 						
@@ -158,18 +158,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/strokeColor" title="strokeColor"></a>
-	<h3 class="subsubtitle method-title">strokeColor</h3>
+	<a name="//api/name/coordinate" title="coordinate"></a>
+	<h3 class="subsubtitle method-title">coordinate</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The stroke color of the text outline.</p>
+		<p>The geographic location of the waypoint.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic) UIColor *strokeColor</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationCoordinate2D coordinate</code></div>
 
     
 	
@@ -187,25 +187,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAnnotationLabel.h</code><br />
+		<code class="declared-in-ref">PWDirectionsWaypointProtocol.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/strokeWidth" title="strokeWidth"></a>
-	<h3 class="subsubtitle method-title">strokeWidth</h3>
+	<a name="//api/name/floorID" title="floorID"></a>
+	<h3 class="subsubtitle method-title">floorID</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The stroke width of the text outline.</p>
+		<p>The identifier associated with the floor of the waypoint.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic) CGFloat strokeWidth</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWBuildingFloorIdentifier floorID</code></div>
 
     
 	
@@ -223,7 +223,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAnnotationLabel.h</code><br />
+		<code class="declared-in-ref">PWDirectionsWaypointProtocol.h</code><br />
 	</div>				
 	
 	
