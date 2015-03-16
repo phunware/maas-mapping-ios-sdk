@@ -1,172 +1,92 @@
 PWMapKit SDK for iOS
-==================
+====================
 
-Version 2.4.0
+> Version 2.4.0
 
-This is Phunware's iOS SDK for the Mapping module. Visit http://maas.phunware.com/ for more details and to sign up.
-
-PWMapKit is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services.
+**PWMapKit** is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services.  Visit http://maas.phunware.com/ for more details and to sign up.
 
 
+## Requirements
 
-Requirements
-------------
-
-- MaaS Core v1.3.0 or greater
+- MaaSCore v1.3.0 or greater
 - iOS 7.0 or greater
 - Xcode 6 or greater
 
 
+## Installation
 
-Installation
-------------
+`PWMapKit` has a dependency on the [`MaaSCore`](https://github.com/phunware/maas-core-ios-sdk) and [`PWLocation`](https://github.com/phunware/maas-location-ios-sdk) frameworks.
 
-PWMapKit has a dependency on MaaSCore.framework (available here: https://github.com/phunware/maas-core-ios-sdk) and PWLocation.framework (available here: https://github.com/phunware/maas-location-ios-sdk).
+Phunware recommends using [CocoaPods](http://www.cocoapods.org) to integrate the framework.  Simply add `pod 'PWMapKit'` to your podfile.
 
-It's recommended that you add the MaaS frameworks to the Vendor/Phunware directory, then add the MaaSCore.framework and PWMapKit.framework to your Xcode project.
+Alternatively, all of the following frameworks can be added to the Vendor/Phunware directory of your project:
 
-The following frameworks are required:
-````
-MaaSCore.framework
-PWLocation.framework
-````
-
-Alternatively, you can install PWMapKit using [CocoaPods](http://www.cocoapods.org):
-````
-// Add this to your Podfile
-pod PWMapKit
-````
-
-Scroll down for implementation details.
+- PWMapKit.framework
+- MaaSCore.framework
+- PWLocation.framework
 
 
+## Documentation
 
-Documentation
-------------
-
-PWMapKit documentation is included in the the repository's Documents folder as both HTML and as a .docset. You can also find the latest documentation here: http://phunware.github.io/maas-mapping-ios-sdk/
+Framework documentation is included in the the repository's `Documents` folder in both HTML and Docset formats. You can also find the [latest documentation online](http://phunware.github.io/maas-mapping-ios-sdk/).
 
 
+## Sample Application
 
-Sample Application
-------------
-
-PWMapKit comes with a ready-to-use sample application. However, you will need to update the application with your MaaS credentials and location provider information.
+The framework comes with a ready-to-use sample application. In order to use this application you will need to update the configuration with your MaaS credentials and location provider information.
 
 1. Update your MaaS credentials and set up the building identifier in `PWMapKitSampleInfo.plist`.
-2. Update the localtion provider initializers in `PWViewController.m`.
+1. Update the location provider initializers in `PWViewController.m`.
 
 
+## Usage
 
-Integration
------------
+The primary use of the components of PWMapKit revolve around creating a map view, displaying points of interest, showing the user's location and indoor routing.
 
-The primary methods and objects in PWMapKit revolve around creating a map view, displaying annotations, displaying a user's location and navigation.
 
 ### Adding Indoor Maps to a Map View
 
-````objective-c
-	// Replace all references of MKMapView with PWMapView.
-    PWMapView *mapView = [[PWMapView alloc] initWithFrame:self.view.bounds];
-    mapView.delegate = self;
-    
-    [self.view addSubview:mapView];
-    
-    // Load a building.
-    [mapView loadBuilding:BUILDING_ID];
-    
-    // That's it!
-````
+```objc
+PWMapView *map = [[PWMapView alloc] initWithFrame:<#frame#>
+                                       buildingID:<#buildingID#>];
+map.delegate = self;
+[self.view addSubview:map];
+
+...
+
+// Load a different building.
+[mapView loadBuilding:<#buildingID#>];
+```
 
 
 ### Indoor Location
 
-PWMapKit implements an abstract indoor location manager protocol very similar to CLLocationManager, which can be implemented to provide indoor location. PWMSELocationManager implements this protocol to provide Wi-Fi-based indoor location information.
+The associated PWLocation framework implements an abstract indoor location manager protocol very similar to `CLLocationManager` which can be used to provide indoor location monitoring. PWSLLocationManager implements this protocol to provide BLE-based indoor location information using SenionLab beacons.
 
-````objective-c
-	CLLocationCoordinate2D here;
-    PWMSELocationManager *locationManager = [[PWMSELocationManager alloc] initWithVenueGUID:@"VENUE GUID" location:here];
-    locationManager.delegate = self;
-    
-    [locationManager startUpdatingLocation];
-````
+```objc
+PWSLLocationManager *locationManager =
+[[PWSLLocationManager alloc] initWithMapIdentifier:<#map-UUID#>
+                                customerIdentifier:<#customer-UUID#>];
+[locationManager setFloorIDMapping:<#mapping#>];
+[map registerIndoorLocationManager:locationManager];
+map.showsIndoorUserLocation = YES;
+```
 
 
 ### Routing
 
-The indoor routing APIs have been structured to mirror MKMapKit's routing methods. The three main routing classes are PWDirectionsRequest, PWDirections and PWDirectionsResponse. Please see the API documentation and examples below for additional detail.
+The indoor routing APIs have redesigned for simplicity
 
 
+#### Routing Between Points of Interest and Indoor Locations
 
-#### Routing Between Points of Interest
-
-````objective-c
-	// To fetch a route between two points of interest, call the following method:
-    id<PWAnnotation> start, end;
-    
-    PWDirectionsRequest *request = [[PWDirectionsRequest alloc] initWithSource:start
-                                                                   destination:end
-                                                                          type:PWDirectionsTypeAny];
-    
-    PWDirections *directions = [[PWDirections alloc] initWithRequest:request];
-    
-    __weak __typeof(self)weakSelf = self;
-    
-    [directions calculateDirectionsWithCompletionHandler:^(PWDirectionsResponse *response, NSError *error) {
-        if (!error)
-        {
-            [weakSelf.mapView plotRoute:response.routes.firstObject];
-        }
-    }];
-    
-    // Once you're done with the route, you can remove it from the map:
-    [mapView cancelRouting];
-````
+See [this article](https://github.com/phunware/maas-mapping-ios-sdk/wiki/Calculating-Directions) for how to perform indoor routing with the PWMapKit SDK.
 
 
+## Attribution
 
-#### Routing from a Location to a Point of Interest
+PWMapKit uses the following third-party components. All components are prefixed with `PW` to avoid namespace collisions should your application also use an included component.
 
-````objective-c
-	// To fetch a route between two points of interest, call the following method:
-    id<PWAnnotation> end;
-    id <PWLocation> location;
-    
-    PWDirectionsRequest *request = [[PWDirectionsRequest alloc] initWithLocation:location
-                                                                     destination:end
-                                                                            type:PWDirectionsTypeAny];
-    
-    PWDirections *directions = [[PWDirections alloc] initWithRequest:request];
-    
-    __weak __typeof(self)weakSelf = self;
-    
-    [directions calculateDirectionsWithCompletionHandler:^(PWDirectionsResponse *response, NSError *error) {
-        if (!error)
-        {
-            [weakSelf.mapView plotRoute:response.routes.firstObject];
-        }
-    }];
-    
-    // Once you're done with the route, you can remove it from the map:
-    [mapView cancelRouting];
-````
-
-Attribution
------------
-PWMapKit uses the following third-party components. All components are prefixed so you don't have to worry about namespace collisions.
-
-<table>
-  <tr>
-  <th style="text-align:center;">Component</th>
-  <th style="text-align:center;">Description</th>
-  <th style="text-align:center;">License</th>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/samvermette/SVPulsingAnnotationView">SVPulsingAnnotationView</a></td>
-    <td>
-     A customizable MKUserLocationView replica for your iOS app.
-    </td>
-    <td style="text-align:center;""><a href="https://github.com/samvermette/SVPulsingAnnotationView/blob/master/LICENSE.txt">MIT</a>
-    </td>
-  </tr>
-</table>
+| Component | Description | License |
+|:---------:|:-----------:|:-------:|
+|[SVPulsingAnnotationView](https://github.com/samvermette/SVPulsingAnnotationView)|A customizable MKUserLocationView replica for your iOS app.|[MIT](https://github.com/samvermette/SVPulsingAnnotationView/blob/master/LICENSE.txt)|
