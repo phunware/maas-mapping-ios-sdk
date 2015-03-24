@@ -80,7 +80,7 @@ The indoor routing APIs have redesigned for simplicity
 
 #### Routing Between Points of Interest and Indoor Locations
 
-See [this article](https://github.com/phunware/maas-mapping-ios-sdk/wiki/Calculating-Directions) for how to perform indoor routing with the PWMapKit SDK.
+See [this article](https://developer.phunware.com/display/DD/Calculating+Directions) for how to perform indoor routing with the PWMapKit SDK.
 
 
 ## Attribution
