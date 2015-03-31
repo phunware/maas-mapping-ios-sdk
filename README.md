@@ -75,7 +75,7 @@ map.showsIndoorUserLocation = YES;
 
 ### Routing
 
-The indoor routing APIs have redesigned for simplicity
+The indoor routing APIs have been redesigned for simplicity.
 
 
 #### Routing Between Points of Interest and Indoor Locations
