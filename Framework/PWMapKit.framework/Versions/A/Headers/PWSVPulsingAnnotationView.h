@@ -63,9 +63,9 @@
 
 
 /**
- The uncertaintly halo radius in meters.
+ The uncertaintly halo radius in points.
  @discussion The default is 0.
  */
-@property (nonatomic, readwrite) CLLocationDirection uncertaintyHaloRadius;
+@property (nonatomic, readwrite) CGFloat uncertaintyHaloRadius;
 
 @end
