@@ -1,7 +1,7 @@
 PWMapKit SDK for iOS
 ====================
 
-> Version 2.4.0
+> Version 2.4.1
 
 **PWMapKit** is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services.  Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -31,12 +31,13 @@ Alternatively, all of the following frameworks can be added to the Vendor/Phunwa
 Framework documentation is included in the the repository's `Documents` folder in both HTML and Docset formats. You can also find the [latest documentation online](http://phunware.github.io/maas-mapping-ios-sdk/).
 
 
-## Sample Application
+## Sample Applications
 
-The framework comes with a ready-to-use sample application. In order to use this application you will need to update the configuration with your MaaS credentials and location provider information.
+The framework comes with a ready-to-use sample applications. In order to use this application you will need to update the configuration with your MaaS credentials and location provider information.
 
-1. Update your MaaS credentials and set up the building identifier in `PWMapKitSampleInfo.plist`.
-1. Update the location provider initializers in `PWViewController.m`.
+1. Navigate ot the sample application directory and run `pod install` from the command line.
+2. Update your MaaS credentials and set up the building identifier in `PWMapKitSampleInfo.plist`.
+3. Update the location provider initializers in `PWViewController.m`.
 
 
 ## Usage

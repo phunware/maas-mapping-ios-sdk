@@ -1,0 +1,42 @@
+<!-- http://lbs-dev.s3.amazonaws.com/locationSample.json -->
+{
+    "updateInterval" : 2.0,
+    "locations": [
+                  {
+                  "latitude": 30.360012,
+                  "longitude": -97.74255,
+                  "horizontalAccuracy": 5.152377,
+                  "floorID": 2
+                  },
+                  {
+                  "latitude": 30.360022,
+                  "longitude": -97.742455,
+                  "horizontalAccuracy": 5.152377,
+                  "floorID": 2
+                  },
+                  {
+                  "latitude": 30.359833,
+                  "longitude": -97.742355,
+                  "horizontalAccuracy": 5.152377,
+                  "floorID": 2
+                  },
+                  {
+                  "latitude": 30.359741,
+                  "longitude": -97.742256,
+                  "horizontalAccuracy": 5.152377,
+                  "floorID": 2
+                  },
+                  {
+                  "latitude": 30.359722,
+                  "longitude": -97.74216,
+                  "horizontalAccuracy": 5.152377,
+                  "floorID": 2
+                  },
+                  {
+                  "latitude": 30.359722,
+                  "longitude": -97.74206,
+                  "horizontalAccuracy": 5.152377,
+                  "floorID": 2
+                  }
+                  ]
+}

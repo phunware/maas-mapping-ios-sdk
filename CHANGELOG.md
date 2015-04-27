@@ -1,5 +1,14 @@
 #PWMapKit Changelog
 
+##v2.4.1 (Monday, April 27th, 2015)
+
+* Fixed issue where `didFailToLoadBuilding:` was not being called while in airplane mode on initial launch with no cached data.
+* Fixed a memory issue where route steps and segments were not being released when destroying a `PWMapView` instance.
+* Fixed issue where `PWMapView` delegate method `mapView:didChangeIndoorUserTrackingMode:` would not be called in certain instance.
+* Fixed regression which made `PWBuildingAnnotationView` hard to tap.
+* Added horizontal accuracy bubble to indoor blue dot view.
+* Added discreet sample apps for Pin Drop, Zoom Workaround, POI Management
+
 ##v2.4.0 (Friday, March 13th, 2015)
 
 * Added the ability to enable and disable annotation zoom levels. See the `annotationZoomLevelsEnabled` property on `PWMapView` for more information.
