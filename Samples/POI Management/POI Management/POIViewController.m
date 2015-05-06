@@ -54,8 +54,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)reloadAnnotations:(id)sender {
-    [self.tableView reloadData];
+- (void)pointOfInterestVisibilityToggled:(UISwitch *)visibilitySwitch {
+    CGPoint buttonPosition = [visibilitySwitch convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+    PWBuildingAnnotation *buildingAnnotation = self.buildingAnnotations[indexPath.row];
+    
+    if (!visibilitySwitch.on) {
+        [self.mapView hideBuildingAnnotationWithIdentifier:buildingAnnotation.annotationID];
+    } else {
+        [self.mapView stopHidingBuildingAnnotationWithIdentifier:buildingAnnotation.annotationID];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -74,11 +82,21 @@
     PWAnnotationType *type = [self.annotationTypes objectForKey:@(buildingAnnotation.type)];
     
     cell.annotationTitleLabel.text = buildingAnnotation.title;
-
+    [cell.visibilitySwitch removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+    [cell.visibilitySwitch addTarget:self action:@selector(pointOfInterestVisibilityToggled:) forControlEvents:UIControlEventValueChanged];
+    
     if (type) {
         cell.annotationTypeLabel.text = type.typeDescription;
     }
     
+    BOOL visibile = NO;
+    for (PWBuildingAnnotation *mapBuildingAnnotation in self.mapView.annotations) {
+        if (buildingAnnotation.annotationID == mapBuildingAnnotation.annotationID) {
+            visibile = YES;
+        }
+    }
+    
+    cell.visibilitySwitch.on = visibile;
     [cell.annotationImageView setImageWithURL:buildingAnnotation.imageURL placeholderImage:nil];
     
     return cell;
@@ -89,5 +107,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+     
+
 
 @end

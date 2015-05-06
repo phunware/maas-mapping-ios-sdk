@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PWMapKit/PWMapKit.h>
+
 
 @interface POIViewController : UITableViewController
+
+@property (weak) PWMapView *mapView;
 
 @end

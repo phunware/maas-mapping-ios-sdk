@@ -13,5 +13,6 @@
 @property (weak, readonly) UIImageView *annotationImageView;
 @property (weak, readonly) UILabel *annotationTitleLabel;
 @property (weak, readonly) UILabel *annotationTypeLabel;
+@property (weak, readonly) UISwitch *visibilitySwitch;
 
 @end

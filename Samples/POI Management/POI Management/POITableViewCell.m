@@ -13,6 +13,7 @@
 @property (weak) UIImageView *annotationImageView;
 @property (weak) UILabel *annotationTitleLabel;
 @property (weak) UILabel *annotationTypeLabel;
+@property (weak) UISwitch *visibilitySwitch;
 
 @end
 
@@ -51,15 +52,21 @@
     [self.contentView addSubview:annotationTypeLabel];
     self.annotationTypeLabel = annotationTypeLabel;
     
+    UISwitch *visibiltySwitch = [UISwitch new];
+    visibiltySwitch.onTintColor = self.tintColor;
+    
+    self.accessoryView = visibiltySwitch;
+    self.visibilitySwitch = visibiltySwitch;
+    
     // Setup constraints
-    NSDictionary *bindings = NSDictionaryOfVariableBindings(annotationImageView, annotationTitleLabel, annotationTypeLabel);
+    NSDictionary *bindings = NSDictionaryOfVariableBindings(annotationImageView, annotationTitleLabel, annotationTypeLabel, visibiltySwitch);
     
     NSArray *constraints = @[
                              @"V:|-0-[annotationImageView(44)]",
                              @"H:|-0-[annotationImageView(44)]",
                              @"V:|-3-[annotationTitleLabel]-0-[annotationTypeLabel]-3-|",
                              @"H:|[annotationImageView]-5-[annotationTitleLabel]|",
-                             @"H:|[annotationImageView]-5-[annotationTypeLabel]|"
+                             @"H:|[annotationImageView]-5-[annotationTypeLabel]|",
                              ];
     
     for (NSString *constraint in constraints) {

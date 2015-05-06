@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "POIViewController.h"
 
 @interface MapViewController () <PWMapViewDelegateProtocol>
 
@@ -16,20 +17,21 @@
 
 #pragma mark - UIViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self.mapView willAppear];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.mapView.delegate = self;
     
     // Load the building
-    NSInteger buildingIdentifier = NSNotFound; // Replace with with your building identifier
+#warning Replace with with your building identifier!
+    NSInteger buildingIdentifier = NSNotFound;
     [self.mapView loadBuildingWithIdentifier:buildingIdentifier];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.mapView willAppear];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -56,6 +58,17 @@
 
 - (void)mapView:(PWMapView *)mapView didFailToLoadBuilding:(NSInteger)buildingID error:(NSError *)error {
     NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
+}
+
+#pragma mark - Storyboard
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (sender == self.navigationItem.rightBarButtonItem) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        POIViewController *pointOfInterestViewController = (POIViewController *)navigationController.topViewController;
+        
+        pointOfInterestViewController.mapView = self.mapView;
+    }
 }
 
 @end
