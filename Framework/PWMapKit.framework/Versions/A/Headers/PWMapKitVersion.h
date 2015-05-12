@@ -8,6 +8,6 @@
 #ifndef PWMapKit_PWMapKitVersion_h
 #define PWMapKit_PWMapKitVersion_h
 
-#define       PWMapKit_VERSION  @"2.4.0"
+#define       PWMapKit_VERSION  @"2.4.1"
 
 #endif
