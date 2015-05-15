@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWBuildingOverlayDelegateProtocol.html">
+	<File path="Protocols/PWAccessibilityProtocol.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWBuildingOverlayDelegateProtocol</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWAccessibilityProtocol</TokenIdentifier>
+			<Abstract type="html">The PWAccessibilityProtocol defines a protocol to indicating whether or not an object is accessible or not. This is used primarily for objects that conform to PWAttotationProtocol.</Abstract>
+			<DeclaredIn>PWAccessibilityProtocol.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -13,65 +13,38 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingOverlayDelegateProtocol/buildingOverlay:didChangeFloor:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified overlay successfully changed the floor.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAccessibilityProtocol/setAccessible:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point represented by the conforming object are accessible. (read-only)</Abstract>
+			<DeclaredIn>PWAccessibilityProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)buildingOverlay:(PWBuildingOverlay *)overlay didChangeFloor:(PWBuildingFloor *)floor</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>overlay</Name>
-					<Abstract type="html">The building overlay object.</Abstract>
-				</Parameter><Parameter>
-					<Name>floor</Name>
-					<Abstract type="html">The current floor object.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
 			
-			<Anchor>//api/name/buildingOverlay:didChangeFloor:</Anchor>
+			
+			<Anchor>//api/name/accessible</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingOverlayDelegateProtocol/buildingOverlay:didFinishLoadingBuilding:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified overlay successfully loaded necessary building data.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWAccessibilityProtocol/isAccessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point represented by the conforming object are accessible. (read-only)</Abstract>
+			<DeclaredIn>PWAccessibilityProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)buildingOverlay:(PWBuildingOverlay *)overlay didFinishLoadingBuilding:(PWBuilding *)building</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>overlay</Name>
-					<Abstract type="html">The building overlay object.</Abstract>
-				</Parameter><Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The building object that the overlay loaded.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
 			
-			<Anchor>//api/name/buildingOverlay:didFinishLoadingBuilding:</Anchor>
+			
+			<Anchor>//api/name/accessible</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingOverlayDelegateProtocol/buildingOverlay:didFailToLoadBuilding:error:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified overlay was unable to load the building data.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWAccessibilityProtocol/accessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point represented by the conforming object are accessible. (read-only)</Abstract>
+			<DeclaredIn>PWAccessibilityProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)buildingOverlay:(PWBuildingOverlay *)overlay didFailToLoadBuilding:(PWBuilding *)building error:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>overlay</Name>
-					<Abstract type="html">The building overlay object.</Abstract>
-				</Parameter><Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The building object that the overlay tried to load.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">Why the building data could not be loaded.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
 			
-			<Anchor>//api/name/buildingOverlay:didFailToLoadBuilding:error:</Anchor>
+			
+			<Anchor>//api/name/accessible</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

@@ -53,7 +53,7 @@
 			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier buildingID</Declaration>
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
 			
 			
 			<Anchor>//api/name/buildingID</Anchor>
@@ -65,7 +65,7 @@
 			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier buildingID</Declaration>
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
 			
 			
 			<Anchor>//api/name/buildingID</Anchor>
@@ -77,7 +77,7 @@
 			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
 			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier buildingID</Declaration>
+			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
 			
 			
 			<Anchor>//api/name/buildingID</Anchor>

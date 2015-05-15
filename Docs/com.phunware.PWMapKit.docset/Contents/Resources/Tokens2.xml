@@ -272,7 +272,7 @@
 			<Declaration>- (PWBuildingFloor *)floorForIdentifier:(PWBuildingFloorIdentifier)identifier</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>floorID</Name>
+					<Name>identifier</Name>
 					<Abstract type="html">The building floor identifier to use for the search.</Abstract>
 				</Parameter>
 			</Parameters>

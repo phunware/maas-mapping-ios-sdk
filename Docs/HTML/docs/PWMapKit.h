@@ -26,13 +26,18 @@
 #import "PWBuildingOverlayRenderer.h"
 #import "PWMapDocument.h"
 #import "PWDirections.h"
+#import "PWDirectionsOptions.h"
 #import "PWDirectionsRequest.h"
 #import "PWDirectionsResponse.h"
 #import "PWRoute.h"
 #import "PWRouteStep.h"
-#import "PWRouteAnnotation.h"
 #import "PWAnnotationLabel.h"
 #import "PWIndoorUserLocation.h"
+#import "PWAccessibilityProtocol.h"
+#import "PWRouteManeuver.h"
+#import "PWRouteManeuverDirection.h"
+#import "PWRouteManeuverOverlay.h"
+#import "PWRouteManeuverOverlayRenderer.h"
 
 /**
  The `PWMapKit` framework provides an interface for embedding indoor maps directly into your own windows and views. This framework also provides support for annotating the map, finding your location, fetching routes, drawing routes and more.

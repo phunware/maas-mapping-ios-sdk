@@ -6,6 +6,7 @@
 //
 
 #import "PWAnnotationProtocol.h"
+#import "PWAccessibilityProtocol.h"
 
 extern PWBuildingFloorIdentifier const PWBuildingFloorIdentifierUnknown;
 
@@ -18,7 +19,7 @@ extern PWBuildingFloorIdentifier const PWBuildingFloorIdentifierUnknown;
  */
 
 
-@protocol PWBuildingAnnotationProtocol <PWAnnotationProtocol>
+@protocol PWBuildingAnnotationProtocol <PWAnnotationProtocol, PWAccessibilityProtocol>
 
 /**
  A description of the building annotation. (read-only)
@@ -46,7 +47,7 @@ extern PWBuildingFloorIdentifier const PWBuildingFloorIdentifierUnknown;
 @property (readonly) NSDictionary *metaData;
 
 /**
- A flag indicating whether the points represented by the annotation are accessible. (read-only)
+ A flag indicating whether the point represented by the annotation is accessible. (read-only)
  */
 @property (readonly, getter=isAccessible) BOOL accessible;
 

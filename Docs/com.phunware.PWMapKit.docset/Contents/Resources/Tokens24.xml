@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWAnnotationProtocol.html">
+	<File path="Classes/PWRouteStep.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWAnnotationProtocol</TokenIdentifier>
-			<Abstract type="html">This protocol is used to provide annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object will then serve as the source of information about a single map annotation and provide critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but typically coordinate the creation of an appropriate PWAnnotationView object to handle the display in conjunction with the PWMapView delegate.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteStep</TokenIdentifier>
+			<Abstract type="html">A PWRouteStep object represents one part of an overall route. Each step in a route corresponds to a single instruction that the user needs to follow.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -13,47 +13,83 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/setAnnotationID:</TokenIdentifier>
-			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If creating location annotations, initialize this value to PWAnnotationIdentifierUndefined.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setPolyline:</TokenIdentifier>
+			<Abstract type="html">The detailed step geometry. (read-only)</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWAnnotationIdentifier annotationID</Declaration>
+			<Declaration>@property (readonly) MKPolyline *polyline</Declaration>
 			
 			
-			<Anchor>//api/name/annotationID</Anchor>
+			<Anchor>//api/name/polyline</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/annotationID</TokenIdentifier>
-			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If creating location annotations, initialize this value to PWAnnotationIdentifierUndefined.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/polyline</TokenIdentifier>
+			<Abstract type="html">The detailed step geometry. (read-only)</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWAnnotationIdentifier annotationID</Declaration>
+			<Declaration>@property (readonly) MKPolyline *polyline</Declaration>
 			
 			
-			<Anchor>//api/name/annotationID</Anchor>
+			<Anchor>//api/name/polyline</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotationProtocol/annotationID</TokenIdentifier>
-			<Abstract type="html">The annotation identifier as specified by the mapping service. These annotation identifiers are used for uniquely identifing annotations and for routing. If creating location annotations, initialize this value to PWAnnotationIdentifierUndefined.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/polyline</TokenIdentifier>
+			<Abstract type="html">The detailed step geometry. (read-only)</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWAnnotationIdentifier annotationID</Declaration>
+			<Declaration>@property (readonly) MKPolyline *polyline</Declaration>
 			
 			
-			<Anchor>//api/name/annotationID</Anchor>
+			<Anchor>//api/name/polyline</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setDistance:</TokenIdentifier>
+			<Abstract type="html">The step distance in meters. (read-only)</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWBuildingFloorIdentifier floorID</Declaration>
+			<Declaration>@property (readonly) CLLocationDistance distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/distance</TokenIdentifier>
+			<Abstract type="html">The step distance in meters. (read-only)</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationDistance distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/distance</TokenIdentifier>
+			<Abstract type="html">The step distance in meters. (read-only)</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationDistance distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
 			
 			
 			<Anchor>//api/name/floorID</Anchor>
@@ -61,23 +97,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/floorID</TokenIdentifier>
+			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWBuildingFloorIdentifier floorID</Declaration>
-			
-			
-			<Anchor>//api/name/floorID</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotationProtocol/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier for which this annotation applies.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWBuildingFloorIdentifier floorID</Declaration>
+			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
 			
 			
 			<Anchor>//api/name/floorID</Anchor>
@@ -85,38 +109,122 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/setMapView:</TokenIdentifier>
-			<Abstract type="html">The map view associated with the annotation.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/floorID</TokenIdentifier>
+			<Abstract type="html">The identifier of the floor associated with this particular step object.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
-			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/floorID</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWAnnotationProtocol/mapView</TokenIdentifier>
-			<Abstract type="html">The map view associated with the annotation.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setIndex:</TokenIdentifier>
+			<Abstract type="html">The index of the current step.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
-			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			<Declaration>@property (readonly) NSUInteger index</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/index</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/PWAnnotationProtocol/mapView</TokenIdentifier>
-			<Abstract type="html">The map view associated with the annotation.</Abstract>
-			<DeclaredIn>PWAnnotationProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/index</TokenIdentifier>
+			<Abstract type="html">The index of the current step.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
 			
-			<Declaration>@property (weak) PWMapView *mapView</Declaration>
+			<Declaration>@property (readonly) NSUInteger index</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/index</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/index</TokenIdentifier>
+			<Abstract type="html">The index of the current step.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSUInteger index</Declaration>
+			
+			
+			<Anchor>//api/name/index</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/set__deprecated:</TokenIdentifier>
+			<Abstract type="html">An array of objects that conform to PWDirectionsWaypointProtocol which are associated with the route step.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *__deprecated</Declaration>
+			
+			
+			<Anchor>//api/name/__deprecated</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/__deprecated</TokenIdentifier>
+			<Abstract type="html">An array of objects that conform to PWDirectionsWaypointProtocol which are associated with the route step.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *__deprecated</Declaration>
+			
+			
+			<Anchor>//api/name/__deprecated</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/__deprecated</TokenIdentifier>
+			<Abstract type="html">An array of objects that conform to PWDirectionsWaypointProtocol which are associated with the route step.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *__deprecated</Declaration>
+			
+			
+			<Anchor>//api/name/__deprecated</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/setPoints:</TokenIdentifier>
+			<Abstract type="html">An array of objects that conform to PWDirectionsWaypointProtocol which are associated with the route step.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStep/points</TokenIdentifier>
+			<Abstract type="html">An array of objects that conform to PWDirectionsWaypointProtocol which are associated with the route step.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStep/points</TokenIdentifier>
+			<Abstract type="html">An array of objects that conform to PWDirectionsWaypointProtocol which are associated with the route step.</Abstract>
+			<DeclaredIn>PWRouteStep.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

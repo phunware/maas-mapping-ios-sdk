@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWMapViewDelegateProtocol.html">
+	<File path="Protocols/PWBuildingAnnotationProtocol.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWMapViewDelegateProtocol</TokenIdentifier>
-			<Abstract type="html">The PWMapViewDelegate protocol defines a set of optional methods that you can use to receive building-related update messages. Since many map operations require the PWMapView class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete. PWMapViewDelegate inherits from MKMapViewDelegate.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWBuildingAnnotationProtocol</TokenIdentifier>
+			<Abstract type="html">This protocol is used to provide building annotation-related information to a map view. To use this protocol, adopt it in any custom objects that store or represent annotation data. Each object will then serve as the source of information about a single building annotation and provide critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but coordinate the creation of an appropriate MKAnnotationView object to handle the display in conjunction with the PWMapView delegate.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
             
 			
 			<NodeRef refid="28"/>
@@ -13,230 +13,254 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapView:didChangeFloor:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified map view successfully changed the building floor.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/setAnnotationDescription:</TokenIdentifier>
+			<Abstract type="html">A description of the building annotation. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapView:(PWMapView *)mapView didChangeFloor:(PWBuildingFloor *)currentFloor</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view that changed the floor.</Abstract>
-				</Parameter><Parameter>
-					<Name>currentFloor</Name>
-					<Abstract type="html">The current floor displayed in the map view.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) NSString *annotationDescription</Declaration>
 			
-			<Anchor>//api/name/mapView:didChangeFloor:</Anchor>
+			
+			<Anchor>//api/name/annotationDescription</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapView:didFinishLoadingBuilding:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified map view successfully loaded necessary building data.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/annotationDescription</TokenIdentifier>
+			<Abstract type="html">A description of the building annotation. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapView:(PWMapView *)mapView didFinishLoadingBuilding:(PWBuilding *)building</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view that started the load operation.</Abstract>
-				</Parameter><Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The building that was loaded.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) NSString *annotationDescription</Declaration>
 			
-			<Anchor>//api/name/mapView:didFinishLoadingBuilding:</Anchor>
+			
+			<Anchor>//api/name/annotationDescription</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapView:didFailToLoadBuilding:error:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified view was unable to load the building data.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotationProtocol/annotationDescription</TokenIdentifier>
+			<Abstract type="html">A description of the building annotation. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapView:(PWMapView *)mapView didFailToLoadBuilding:(NSInteger)buildingID error:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view that started the load operation.</Abstract>
-				</Parameter><Parameter>
-					<Name>buildingID</Name>
-					<Abstract type="html">The identifier for the building that the map view tried to load data for.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The reason that the map data could not be loaded.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) NSString *annotationDescription</Declaration>
 			
-			<Anchor>//api/name/mapView:didFailToLoadBuilding:error:</Anchor>
+			
+			<Anchor>//api/name/annotationDescription</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapViewWillStartLocatingIndoorUser:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the map view will start tracking the user’s indoor location.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/setCategory:</TokenIdentifier>
+			<Abstract type="html">The category associated with the building annotation. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapViewWillStartLocatingIndoorUser:(PWMapView *)mapView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view tracking the user’s location.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) NSString *category</Declaration>
 			
-			<Anchor>//api/name/mapViewWillStartLocatingIndoorUser:</Anchor>
+			
+			<Anchor>//api/name/category</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapViewDidStopLocatingIndoorUser:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the map view stopped tracking the user’s indoor location.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/category</TokenIdentifier>
+			<Abstract type="html">The category associated with the building annotation. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapViewDidStopLocatingIndoorUser:(PWMapView *)mapView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view that stopped tracking the user’s indoor location.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) NSString *category</Declaration>
 			
-			<Anchor>//api/name/mapViewDidStopLocatingIndoorUser:</Anchor>
+			
+			<Anchor>//api/name/category</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapView:didUpdateIndoorUserLocation:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the indoor location of the user was updated.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotationProtocol/category</TokenIdentifier>
+			<Abstract type="html">The category associated with the building annotation. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapView:(PWMapView *)mapView didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view tracking the user’s location.</Abstract>
-				</Parameter><Parameter>
-					<Name>userLocation</Name>
-					<Abstract type="html">The location object representing the user’s latest location. This property may be nil.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) NSString *category</Declaration>
 			
-			<Anchor>//api/name/mapView:didUpdateIndoorUserLocation:</Anchor>
+			
+			<Anchor>//api/name/category</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapView:didFailToLocateIndoorUserWithError:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that an attempt to locate the user’s position failed.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/setType:</TokenIdentifier>
+			<Abstract type="html">The building annotation type. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapView:(PWMapView *)mapView didFailToLocateIndoorUserWithError:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view tracking the user’s indoor location.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">An error object containing the reason why location tracking failed.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) PWBuildingAnnotationType type</Declaration>
 			
-			<Anchor>//api/name/mapView:didFailToLocateIndoorUserWithError:</Anchor>
+			
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapView:didChangeIndoorUserTrackingMode:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the user&apos;s location was updated.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/type</TokenIdentifier>
+			<Abstract type="html">The building annotation type. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapView:(PWMapView *)mapView didChangeIndoorUserTrackingMode:(PWIndoorUserTrackingMode)mode</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view with the altered user tracking mode.</Abstract>
-				</Parameter><Parameter>
-					<Name>mode</Name>
-					<Abstract type="html">The mode used to track the user’s location.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) PWBuildingAnnotationType type</Declaration>
 			
-			<Anchor>//api/name/mapView:didChangeIndoorUserTrackingMode:</Anchor>
+			
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapViewStartedSnappingLocationToRoute:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the user&apos;s location has been snapped to a route.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotationProtocol/type</TokenIdentifier>
+			<Abstract type="html">The building annotation type. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapViewStartedSnappingLocationToRoute:(PWMapView *)mapView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view snapping locations to a route.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) PWBuildingAnnotationType type</Declaration>
 			
-			<Anchor>//api/name/mapViewStartedSnappingLocationToRoute:</Anchor>
+			
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapViewStoppedSnappingLocationToRoute:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the user&apos;s location was not snapped to a route.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/setImageURL:</TokenIdentifier>
+			<Abstract type="html">The image URL associated with the building annotation. This is derived from the type. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapViewStoppedSnappingLocationToRoute:(PWMapView *)mapView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view no longer snapping locations to a route.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) NSURL *imageURL</Declaration>
 			
-			<Anchor>//api/name/mapViewStoppedSnappingLocationToRoute:</Anchor>
+			
+			<Anchor>//api/name/imageURL</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapViewShouldDisplayHeadingCalibration:</TokenIdentifier>
-			<Abstract type="html">Asks the delegate whether the heading calibration display should be shown.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/imageURL</TokenIdentifier>
+			<Abstract type="html">The image URL associated with the building annotation. This is derived from the type. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)mapViewShouldDisplayHeadingCalibration:(PWMapView *)mapView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view asking whether or not to display the heading calibration.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A Boolean value indicating whether or not the heading calibration should be displayed.</Abstract></ReturnValue>
-			<Anchor>//api/name/mapViewShouldDisplayHeadingCalibration:</Anchor>
+			<Declaration>@property (readonly) NSURL *imageURL</Declaration>
+			
+			
+			<Anchor>//api/name/imageURL</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapView:didUpdateHeading:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the user&apos;s heading has changed.</Abstract>
-			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotationProtocol/imageURL</TokenIdentifier>
+			<Abstract type="html">The image URL associated with the building annotation. This is derived from the type. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
 			
-			<Declaration>- (void)mapView:(PWMapView *)mapView didUpdateHeading:(CLHeading *)heading</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view reporting the change in user heading.</Abstract>
-				</Parameter><Parameter>
-					<Name>heading</Name>
-					<Abstract type="html">The new heading value being reported.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readonly) NSURL *imageURL</Declaration>
 			
-			<Anchor>//api/name/mapView:didUpdateHeading:</Anchor>
+			
+			<Anchor>//api/name/imageURL</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/setMetaData:</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the building annotation. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the building annotation. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotationProtocol/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the building annotation. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/setAccessible:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point represented by the annotation is accessible. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/isAccessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point represented by the annotation is accessible. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotationProtocol/accessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point represented by the annotation is accessible. (read-only)</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/setOcclusionEnabled:</TokenIdentifier>
+			<Abstract type="html">A flag that indicates whether this annotation enabled occlusion. Defaults to YES.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isOcclusionEnabled) BOOL occlusionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/occlusionEnabled</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingAnnotationProtocol/isOcclusionEnabled</TokenIdentifier>
+			<Abstract type="html">A flag that indicates whether this annotation enabled occlusion. Defaults to YES.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isOcclusionEnabled) BOOL occlusionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/occlusionEnabled</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWBuildingAnnotationProtocol/occlusionEnabled</TokenIdentifier>
+			<Abstract type="html">A flag that indicates whether this annotation enabled occlusion. Defaults to YES.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationProtocol.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isOcclusionEnabled) BOOL occlusionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/occlusionEnabled</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		

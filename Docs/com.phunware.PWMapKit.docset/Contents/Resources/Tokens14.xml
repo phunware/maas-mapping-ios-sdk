@@ -791,6 +791,35 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setRouteManeuver:</TokenIdentifier>
+			<Abstract type="html">Display the specified PWRouteManeuver on the map. If needed, this will change the current floor to the required floor for the maneuver.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setRouteManeuver:(PWRouteManeuver *)maneuver</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>maneuver</Name>
+					<Abstract type="html">The PWRouteManeuver to display.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRouteManeuver:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentManeuver</TokenIdentifier>
+			<Abstract type="html">Returns the current PWRouteManeuver being displayed. If no route is displayed, this method will return nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (PWRouteManeuver *)currentManeuver</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current PWRouteManeuver. Can be nil if no PWRoute is loaded or if turn-by-turn routing is not being used.</Abstract></ReturnValue>
+			<Anchor>//api/name/currentManeuver</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/cancelRouting</TokenIdentifier>
 			<Abstract type="html">Cancel the route displayed in the map view. This method will remove the route from the map view and set the PWRoute and PWRouteStep properties to nil.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>

@@ -26,7 +26,7 @@ typedef void (^PWBuildingAnnotationTypesHandler)(NSArray *types, NSError *error)
 + (instancetype)sharedManager;
 
 /**
- Attempts to load a building with the specified building identifier. This method will seek to load the build, annotations and resources.
+ Attempts to load a building with the specified building identifier. This method will seek to load the building annotations and resources.
  @param buildingID The specified building identifier.
  @param completion A block that takes the following parameters:
  

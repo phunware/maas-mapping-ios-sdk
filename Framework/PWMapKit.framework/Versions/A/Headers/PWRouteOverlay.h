@@ -8,6 +8,7 @@
 @class PWBuildingOverlay;
 @class PWRoute;
 @class PWRouteStep;
+@class PWRouteManeuver;
 
 /**
  The `PWRouteOverlay` class defines a specific type of overlay that represents a route on a map.
@@ -23,6 +24,11 @@
  The current route step displayed on the overlay. When changing this value, the step must belong to the current route and cannot be `nil`. Setting the step will change the building overlay's floor as necessary.
  */
 @property (nonatomic) PWRouteStep *currentStep;
+
+/**
+ The current route maneuver displayed on the overlay. When changing this value, the maneuver must belong to the current route. Setting the maneuver will change the place the arrow is displayed along the route.
+ */
+@property (nonatomic) PWRouteManeuver *currentManeuver;
 
 /**
  Initializes the overlay with the specified route and building overlay. 

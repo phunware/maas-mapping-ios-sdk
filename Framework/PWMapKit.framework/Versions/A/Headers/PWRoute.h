@@ -28,6 +28,11 @@
 @property (readonly) NSArray *steps;
 
 /**
+ The array of maneuvers that a user is expected to perform in the traversal of this route.
+ */
+@property (readonly) NSArray /* PWRouteManeuver */ *maneuvers;
+
+/**
  A Boolean value that indicates whether the PWRoute object is accessible. (read-only)
  */
 @property (readonly, getter=isAccessible) BOOL accessible;

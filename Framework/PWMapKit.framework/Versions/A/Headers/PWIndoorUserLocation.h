@@ -9,8 +9,9 @@
 #import <PWLocation/PWLocation.h>
 
 #import "PWAnnotationProtocol.h"
+#import "PWDirectionsWaypointProtocol.h"
 
-@interface PWIndoorUserLocation : PWIndoorLocation <PWAnnotationProtocol>
+@interface PWIndoorUserLocation : PWIndoorLocation <PWAnnotationProtocol,PWDirectionsWaypointProtocol>
 
 @property CLLocationAccuracy horizontalAccuracy;
 @property NSDate *timestamp;

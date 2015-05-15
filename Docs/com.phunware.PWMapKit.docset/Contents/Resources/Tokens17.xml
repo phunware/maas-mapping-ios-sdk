@@ -85,6 +85,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setManeuvers:</TokenIdentifier>
+			<Abstract type="html">The array of maneuvers that a user is expected to perform in the traversal of this route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *maneuvers</Declaration>
+			
+			
+			<Anchor>//api/name/maneuvers</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/maneuvers</TokenIdentifier>
+			<Abstract type="html">The array of maneuvers that a user is expected to perform in the traversal of this route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *maneuvers</Declaration>
+			
+			
+			<Anchor>//api/name/maneuvers</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/maneuvers</TokenIdentifier>
+			<Abstract type="html">The array of maneuvers that a user is expected to perform in the traversal of this route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSArray *maneuvers</Declaration>
+			
+			
+			<Anchor>//api/name/maneuvers</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setAccessible:</TokenIdentifier>
 			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>

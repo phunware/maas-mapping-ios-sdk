@@ -22,7 +22,7 @@
 /**
  The building identifier denotes the building that the floor belongs to.
  */
-@property (readonly) PWBuildingFloorIdentifier buildingID;
+@property (readonly) PWBuildingIdentifier buildingID;
 
 /**
  The floor identifier.

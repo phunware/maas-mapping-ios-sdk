@@ -13,6 +13,8 @@
 @class PWIndoorLocation;
 @class PWBuildingFloor;
 @class PWBuilding;
+@class PWRouteStep;
+@class PWRouteManeuver;
 
 
 /**
@@ -94,9 +96,9 @@
 - (void)mapView:(PWMapView *)mapView didChangeIndoorUserTrackingMode:(PWIndoorUserTrackingMode)mode;
 
 
-///-----------------------
-/// @name Routing Behavior
-///-----------------------
+///--------------
+/// @name Routing
+///--------------
 
 /**
  Tells the delegate that the user's location has been snapped to a route.
@@ -111,6 +113,21 @@
  @discussion This method notifies the map view delegate that the map view has ceased snapping user locations to a route.
  */
 - (void)mapViewStoppedSnappingLocationToRoute:(PWMapView *)mapView;
+
+/**
+ Tells the delegate that the route step being displayed has changed.
+ @param mapView The map view reporting the step change.
+ @param step The new route step being displayed on the map.
+ */
+- (void)mapView:(PWMapView*)mapView didChangeRouteStep:(PWRouteStep*)step;
+
+/**
+ Tells the delegate that the route step being displayed has changed.
+ @param mapView The map view reporting the step change.
+ @param maneuver The new route maneuver being displayed on the map, or nil if it has been cleared.
+ */
+- (void)mapView:(PWMapView*)mapView didChangeRouteManeuver:(PWRouteManeuver*)maneuver;
+
 
 
 ///-----------------------

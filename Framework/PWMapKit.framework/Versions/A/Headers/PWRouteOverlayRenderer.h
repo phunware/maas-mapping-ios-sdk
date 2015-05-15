@@ -5,21 +5,14 @@
 //  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
-#import <MapKit/MapKit.h>
-
 @class PWRouteOverlay;
 @class PWBuildingOverlay;
-@class PWMapView;
 
 /**
  The PWRouteOverlayRenderer class defines the basic behavior for drawing a route-based overlay. The renderer draws the visual representation of a `PWRouteStep` object.
  */
 @interface PWRouteOverlayRenderer : MKOverlayPathRenderer
 
-/**
- The `PWMapView` associated with this object.
- */
-@property (weak) PWMapView *mapView;
 /**
  The polyline that the overlay renderer is currently drawing. (read-only)
  */

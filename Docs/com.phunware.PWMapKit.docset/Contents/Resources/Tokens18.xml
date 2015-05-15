@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteAnnotation.html">
+	<File path="Classes/PWRouteManeuver.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteAnnotation</TokenIdentifier>
-			<Abstract type="html">This object is returned in the annotations property of a PWRoute object. Never instantiate this annotation directly.</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteManeuver</TokenIdentifier>
+			<Abstract type="html">A PWRouteManeuver object represents one maneuver on a PWRouteStep. Each maneuver in a route step corresponds to a single instruction that would need to be followed by the user. For example, a maneuver might involve following a single path until a turn is required.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,146 +13,326 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/setExit:</TokenIdentifier>
-			<Abstract type="html">Indicates whether this point on the route is considered a building entry or exit. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/setIndex:</TokenIdentifier>
+			<Abstract type="html">  Index to represent this maneuver&apos;s relative position in the containing route step.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, getter=isExit) BOOL exit</Declaration>
+			<Declaration>@property (readonly) NSUInteger index</Declaration>
 			
 			
-			<Anchor>//api/name/exit</Anchor>
+			<Anchor>//api/name/index</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/isExit</TokenIdentifier>
-			<Abstract type="html">Indicates whether this point on the route is considered a building entry or exit. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/index</TokenIdentifier>
+			<Abstract type="html">  Index to represent this maneuver&apos;s relative position in the containing route step.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, getter=isExit) BOOL exit</Declaration>
+			<Declaration>@property (readonly) NSUInteger index</Declaration>
 			
 			
-			<Anchor>//api/name/exit</Anchor>
+			<Anchor>//api/name/index</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteAnnotation/exit</TokenIdentifier>
-			<Abstract type="html">Indicates whether this point on the route is considered a building entry or exit. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuver/index</TokenIdentifier>
+			<Abstract type="html">  Index to represent this maneuver&apos;s relative position in the containing route step.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, getter=isExit) BOOL exit</Declaration>
+			<Declaration>@property (readonly) NSUInteger index</Declaration>
 			
 			
-			<Anchor>//api/name/exit</Anchor>
+			<Anchor>//api/name/index</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/setAccessible:</TokenIdentifier>
-			<Abstract type="html">Indicates whether this point on the route represents an accessible location. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/setPoints:</TokenIdentifier>
+			<Abstract type="html">  Sequence of points represented by this maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
+			<Declaration>@property (readonly, copy) NSArray *points</Declaration>
 			
 			
-			<Anchor>//api/name/accessible</Anchor>
+			<Anchor>//api/name/points</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/isAccessible</TokenIdentifier>
-			<Abstract type="html">Indicates whether this point on the route represents an accessible location. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/points</TokenIdentifier>
+			<Abstract type="html">  Sequence of points represented by this maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
+			<Declaration>@property (readonly, copy) NSArray *points</Declaration>
 			
 			
-			<Anchor>//api/name/accessible</Anchor>
+			<Anchor>//api/name/points</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteAnnotation/accessible</TokenIdentifier>
-			<Abstract type="html">Indicates whether this point on the route represents an accessible location. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuver/points</TokenIdentifier>
+			<Abstract type="html">  Sequence of points represented by this maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
+			<Declaration>@property (readonly, copy) NSArray *points</Declaration>
 			
 			
-			<Anchor>//api/name/accessible</Anchor>
+			<Anchor>//api/name/points</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/setPortalID:</TokenIdentifier>
-			<Abstract type="html">For multi-level building elements like elevators and stairs, this value provides a common identifier for associating the route annotations on each floor. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/setDirection:</TokenIdentifier>
+			<Abstract type="html">  Direction of this maneuver relative to the next maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (copy, readonly) NSString *portalID</Declaration>
+			<Declaration>@property (readonly) PWRouteManeuverDirection direction</Declaration>
 			
 			
-			<Anchor>//api/name/portalID</Anchor>
+			<Anchor>//api/name/direction</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/portalID</TokenIdentifier>
-			<Abstract type="html">For multi-level building elements like elevators and stairs, this value provides a common identifier for associating the route annotations on each floor. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/direction</TokenIdentifier>
+			<Abstract type="html">  Direction of this maneuver relative to the next maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (copy, readonly) NSString *portalID</Declaration>
+			<Declaration>@property (readonly) PWRouteManeuverDirection direction</Declaration>
 			
 			
-			<Anchor>//api/name/portalID</Anchor>
+			<Anchor>//api/name/direction</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteAnnotation/portalID</TokenIdentifier>
-			<Abstract type="html">For multi-level building elements like elevators and stairs, this value provides a common identifier for associating the route annotations on each floor. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuver/direction</TokenIdentifier>
+			<Abstract type="html">  Direction of this maneuver relative to the next maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (copy, readonly) NSString *portalID</Declaration>
+			<Declaration>@property (readonly) PWRouteManeuverDirection direction</Declaration>
 			
 			
-			<Anchor>//api/name/portalID</Anchor>
+			<Anchor>//api/name/direction</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/setType:</TokenIdentifier>
-			<Abstract type="html">The building annotation type. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/setDistance:</TokenIdentifier>
+			<Abstract type="html">  The total distance in meters between the first and last points in the maneuver along the connecting segments.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingAnnotationType type</Declaration>
+			<Declaration>@property (readonly) CLLocationDistance distance</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/distance</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteAnnotation/type</TokenIdentifier>
-			<Abstract type="html">The building annotation type. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/distance</TokenIdentifier>
+			<Abstract type="html">  The total distance in meters between the first and last points in the maneuver along the connecting segments.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingAnnotationType type</Declaration>
+			<Declaration>@property (readonly) CLLocationDistance distance</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/distance</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteAnnotation/type</TokenIdentifier>
-			<Abstract type="html">The building annotation type. (read-only)</Abstract>
-			<DeclaredIn>PWRouteAnnotation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuver/distance</TokenIdentifier>
+			<Abstract type="html">  The total distance in meters between the first and last points in the maneuver along the connecting segments.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingAnnotationType type</Declaration>
+			<Declaration>@property (readonly) CLLocationDistance distance</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/setIsPortalManeuver:</TokenIdentifier>
+			<Abstract type="html">  Indicates whether this maneuver is a portal maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) BOOL isPortalManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/isPortalManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/isPortalManeuver</TokenIdentifier>
+			<Abstract type="html">  Indicates whether this maneuver is a portal maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) BOOL isPortalManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/isPortalManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuver/isPortalManeuver</TokenIdentifier>
+			<Abstract type="html">  Indicates whether this maneuver is a portal maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) BOOL isPortalManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/isPortalManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/setIsTurnManeuver:</TokenIdentifier>
+			<Abstract type="html">Indicates whether this maneuver is a left- or right-turn maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) BOOL isTurnManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/isTurnManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/isTurnManeuver</TokenIdentifier>
+			<Abstract type="html">Indicates whether this maneuver is a left- or right-turn maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) BOOL isTurnManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/isTurnManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuver/isTurnManeuver</TokenIdentifier>
+			<Abstract type="html">Indicates whether this maneuver is a left- or right-turn maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) BOOL isTurnManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/isTurnManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/setPolyline:</TokenIdentifier>
+			<Abstract type="html">  Polyline representing the sequence of points to be drawn for this maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) MKPolyline *polyline</Declaration>
+			
+			
+			<Anchor>//api/name/polyline</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/polyline</TokenIdentifier>
+			<Abstract type="html">  Polyline representing the sequence of points to be drawn for this maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) MKPolyline *polyline</Declaration>
+			
+			
+			<Anchor>//api/name/polyline</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuver/polyline</TokenIdentifier>
+			<Abstract type="html">  Polyline representing the sequence of points to be drawn for this maneuver.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) MKPolyline *polyline</Declaration>
+			
+			
+			<Anchor>//api/name/polyline</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/setNextManeuver:</TokenIdentifier>
+			<Abstract type="html">  Route maneuver representing the next maneuver in the associated route.  This value is always &apos;nil&apos; for the last maneuver in a route.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWRouteManeuver *nextManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/nextManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/nextManeuver</TokenIdentifier>
+			<Abstract type="html">  Route maneuver representing the next maneuver in the associated route.  This value is always &apos;nil&apos; for the last maneuver in a route.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWRouteManeuver *nextManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/nextManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuver/nextManeuver</TokenIdentifier>
+			<Abstract type="html">  Route maneuver representing the next maneuver in the associated route.  This value is always &apos;nil&apos; for the last maneuver in a route.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWRouteManeuver *nextManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/nextManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/setPreviousManeuver:</TokenIdentifier>
+			<Abstract type="html">  Route maneuver representing the previous maneuver in the associated route.  This value is always &apos;nil&apos; for the first maneuver in a route.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWRouteManeuver *previousManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/previousManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuver/previousManeuver</TokenIdentifier>
+			<Abstract type="html">  Route maneuver representing the previous maneuver in the associated route.  This value is always &apos;nil&apos; for the first maneuver in a route.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWRouteManeuver *previousManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/previousManeuver</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuver/previousManeuver</TokenIdentifier>
+			<Abstract type="html">  Route maneuver representing the previous maneuver in the associated route.  This value is always &apos;nil&apos; for the first maneuver in a route.</Abstract>
+			<DeclaredIn>PWRouteManeuver.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PWRouteManeuver *previousManeuver</Declaration>
+			
+			
+			<Anchor>//api/name/previousManeuver</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

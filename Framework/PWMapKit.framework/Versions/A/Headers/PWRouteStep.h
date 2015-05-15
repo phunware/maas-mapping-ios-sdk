@@ -40,7 +40,9 @@
 /** The index of the current step. */
 @property (readonly) NSUInteger index;
 
-/** An array of `PWRouteAnnotation` objects associated with the route step. */
-@property (readonly) NSArray *annotations;
+@property (readonly) NSArray *annotations __deprecated;
+
+/** An array of objects that conform to `PWDirectionsWaypointProtocol` which are associated with the route step. */
+@property (readonly) NSArray /* PWDirectionsWaypointProtocol */ *points;
 
 @end

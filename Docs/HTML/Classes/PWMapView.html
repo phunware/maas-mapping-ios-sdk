@@ -76,6 +76,8 @@
 	
 	<option value="//api/name/cancelRouting">&nbsp;&nbsp;&nbsp;&nbsp;- cancelRouting</option>
 	
+	<option value="//api/name/currentManeuver">&nbsp;&nbsp;&nbsp;&nbsp;- currentManeuver</option>
+	
 	<option value="//api/name/currentStep">&nbsp;&nbsp;&nbsp;&nbsp;- currentStep</option>
 	
 	<option value="//api/name/didDisappear">&nbsp;&nbsp;&nbsp;&nbsp;- didDisappear</option>
@@ -95,6 +97,8 @@
 	<option value="//api/name/registerLocationManagerForIndoorLocationUpdates:">&nbsp;&nbsp;&nbsp;&nbsp;- registerLocationManagerForIndoorLocationUpdates:</option>
 	
 	<option value="//api/name/setIndoorUserTrackingMode:animated:">&nbsp;&nbsp;&nbsp;&nbsp;- setIndoorUserTrackingMode:animated:</option>
+	
+	<option value="//api/name/setRouteManeuver:">&nbsp;&nbsp;&nbsp;&nbsp;- setRouteManeuver:</option>
 	
 	<option value="//api/name/setRouteStep:">&nbsp;&nbsp;&nbsp;&nbsp;- setRouteStep:</option>
 	
@@ -180,6 +184,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelRouting">cancelRouting</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentManeuver">currentManeuver</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentStep">currentStep</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didDisappear">didDisappear</a></span></li>
@@ -199,6 +205,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerLocationManagerForIndoorLocationUpdates:">registerLocationManagerForIndoorLocationUpdates:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setIndoorUserTrackingMode:animated:">setIndoorUserTrackingMode:animated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRouteManeuver:">setRouteManeuver:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRouteStep:">setRouteStep:</a></span></li>
 	
@@ -485,6 +493,18 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/currentStep">&ndash;&nbsp;currentStep</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRouteManeuver:">&ndash;&nbsp;setRouteManeuver:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentManeuver">&ndash;&nbsp;currentManeuver</a></code>
 	</span>
 	
 	
@@ -1123,6 +1143,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/currentManeuver" title="currentManeuver"></a>
+	<h3 class="subsubtitle method-title">currentManeuver</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current <a href="../Classes/PWRouteManeuver.html"><code>PWRouteManeuver</code></a> being displayed. If no route is displayed, this method will return <code>nil</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (PWRouteManeuver *)currentManeuver</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current <a href="../Classes/PWRouteManeuver.html"><code>PWRouteManeuver</code></a>. Can be <code>nil</code> if no <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> is loaded or if turn-by-turn routing is not being used.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/currentStep" title="currentStep"></a>
 	<h3 class="subsubtitle method-title">currentStep</h3>
 	
@@ -1618,6 +1679,52 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/setRouteManeuver:" title="setRouteManeuver:"></a>
+	<h3 class="subsubtitle method-title">setRouteManeuver:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Display the specified <a href="../Classes/PWRouteManeuver.html"><code>PWRouteManeuver</code></a> on the map. If needed, this will change the current floor to the required floor for the maneuver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRouteManeuver:(PWRouteManeuver *)<em>maneuver</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>maneuver</em></dt>
+			<dd><p>The <a href="../Classes/PWRouteManeuver.html"><code>PWRouteManeuver</code></a> to display.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/setRouteStep:" title="setRouteStep:"></a>
 	<h3 class="subsubtitle method-title">setRouteStep:</h3>
 	
@@ -1945,7 +2052,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-03-13)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-05-15)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteSegment.html">
+	<File path="Classes/PWRouteOverlay.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteSegment</TokenIdentifier>
-			<Abstract type="html">The indoor map object encompasses a wide variety of route segments. Each segment contain segment ID, start point and end point.</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteOverlay</TokenIdentifier>
+			<Abstract type="html">The PWRouteOverlay class defines a specific type of overlay that represents a route on a map.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
             
 			
 			<NodeRef refid="21"/>
@@ -13,110 +13,130 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The floor identifier. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setRoute:</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/route</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteSegment/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/route</TokenIdentifier>
+			<Abstract type="html">The route object associated with the overlay. (read-only)</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			<Declaration>@property (readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/setStartPointID:</TokenIdentifier>
-			<Abstract type="html">The starting point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setCurrentStep:</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay. When changing this value, the step must belong to the current route and cannot be nil. Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWAnnotationIdentifier startPointID</Declaration>
+			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
 			
 			
-			<Anchor>//api/name/startPointID</Anchor>
+			<Anchor>//api/name/currentStep</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/startPointID</TokenIdentifier>
-			<Abstract type="html">The starting point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/currentStep</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay. When changing this value, the step must belong to the current route and cannot be nil. Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWAnnotationIdentifier startPointID</Declaration>
+			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
 			
 			
-			<Anchor>//api/name/startPointID</Anchor>
+			<Anchor>//api/name/currentStep</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteSegment/startPointID</TokenIdentifier>
-			<Abstract type="html">The starting point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/currentStep</TokenIdentifier>
+			<Abstract type="html">The current route step displayed on the overlay. When changing this value, the step must belong to the current route and cannot be nil. Setting the step will change the building overlay&apos;s floor as necessary.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWAnnotationIdentifier startPointID</Declaration>
+			<Declaration>@property (nonatomic) PWRouteStep *currentStep</Declaration>
 			
 			
-			<Anchor>//api/name/startPointID</Anchor>
+			<Anchor>//api/name/currentStep</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/setEndPointID:</TokenIdentifier>
-			<Abstract type="html">The end point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/setCurrentManeuver:</TokenIdentifier>
+			<Abstract type="html">The current route maneuver displayed on the overlay. When changing this value, the maneuver must belong to the current route. Setting the maneuver will change the place the arrow is displayed along the route.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWAnnotationIdentifier endPointID</Declaration>
+			<Declaration>@property (nonatomic) PWRouteManeuver *currentManeuver</Declaration>
 			
 			
-			<Anchor>//api/name/endPointID</Anchor>
+			<Anchor>//api/name/currentManeuver</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/endPointID</TokenIdentifier>
-			<Abstract type="html">The end point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/currentManeuver</TokenIdentifier>
+			<Abstract type="html">The current route maneuver displayed on the overlay. When changing this value, the maneuver must belong to the current route. Setting the maneuver will change the place the arrow is displayed along the route.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWAnnotationIdentifier endPointID</Declaration>
+			<Declaration>@property (nonatomic) PWRouteManeuver *currentManeuver</Declaration>
 			
 			
-			<Anchor>//api/name/endPointID</Anchor>
+			<Anchor>//api/name/currentManeuver</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteSegment/endPointID</TokenIdentifier>
-			<Abstract type="html">The end point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlay/currentManeuver</TokenIdentifier>
+			<Abstract type="html">The current route maneuver displayed on the overlay. When changing this value, the maneuver must belong to the current route. Setting the maneuver will change the place the arrow is displayed along the route.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWAnnotationIdentifier endPointID</Declaration>
+			<Declaration>@property (nonatomic) PWRouteManeuver *currentManeuver</Declaration>
 			
 			
-			<Anchor>//api/name/endPointID</Anchor>
+			<Anchor>//api/name/currentManeuver</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlay/initWithRoute:buildingOverlay:</TokenIdentifier>
+			<Abstract type="html">Initializes the overlay with the specified route and building overlay.</Abstract>
+			<DeclaredIn>PWRouteOverlay.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route buildingOverlay:(PWBuildingOverlay *)buildingOverlay</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">The route to display on the map.</Abstract>
+				</Parameter><Parameter>
+					<Name>buildingOverlay</Name>
+					<Abstract type="html">The building overlay associated with the current route overlay.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithRoute:buildingOverlay:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		

@@ -18,6 +18,7 @@
 @class PWBuildingFloor;
 @class PWRoute;
 @class PWRouteStep;
+@class PWRouteManeuver;
 @class PWLocation;
 @class PWBuildingAnnotation;
 
@@ -259,6 +260,18 @@
  @return The current `PWRouteStep`. Can be `nil` if no `PWRoute` is loaded.
  */
 - (PWRouteStep *)currentStep;
+
+/**
+ Display the specified `PWRouteManeuver` on the map. If needed, this will change the current floor to the required floor for the maneuver.
+ @param maneuver The `PWRouteManeuver` to display.
+ */
+- (void)setRouteManeuver:(PWRouteManeuver*)maneuver;
+
+/**
+ Returns the current `PWRouteManeuver` being displayed. If no route is displayed, this method will return `nil`.
+ @return The current `PWRouteManeuver`. Can be `nil` if no `PWRoute` is loaded or if turn-by-turn routing is not being used.
+ */
+- (PWRouteManeuver*)currentManeuver;
 
 /**
  Cancel the route displayed in the map view. This method will remove the route from the map view and set the `PWRoute` and `PWRouteStep` properties to `nil`.
