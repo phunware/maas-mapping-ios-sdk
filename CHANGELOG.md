@@ -1,5 +1,25 @@
 #PWMapKit Changelog
 
+##v2.5.0 - BETA 1 (Friday, May 15th, 2015)
+
+* Added support for turn-by-turn directions. Turn-by-turn manuevers can be accessed by accessing the `maneuvers` property on a `PWRoute` object. You can plot a route manuever on a `PWMapView` intance by calling `setRouteManeuver:` with a valid `PWRouteManeuver` object. All previous route behavior is still present and unaffected. 
+
+  **NOTE**: You will need to plot a route maneuever in order to enter turn-by-turn mode.
+
+* Route maneuvers switch automatically when location upates are available and the indoor user tracking mode is set to `PWIndoorUserTrackingModeFollow` or `PWIndoorUserTrackingModeFollowWithHeading`. You can manually set route maneuvers if desired but that will set the indoor user tracking mode to `PWIndoorUserTrackingModeNone`.
+
+* Added new class, `PWRouteManeuever`. A route maneuver encapsulates information related to given maneuver such as turn direction, distance and other information.
+
+* Route steps are now automatically selected by the SDK in response to user initiated floor changes or location updates. A new callback has been created when a route step changes.
+
+* Added `PWMapView` delegate callback `mapView:didChangeRouteStep:`. This method is called whenever the `PWRouteStep` being displayed by the map view changes.
+
+* Added `PWMapView` delegate callback `mapView:didChangeRouteManeuver:`. This method is called whenever the `PWRouteManeuver` being displayed by the map changes.
+
+* Routing and maneuver overlays now use the `mapView.tintColor` property when rendering their overlays.
+
+* When registering a `PWGPSLocationManager` with the map view the location will now show on all floors regardless of whether or not there is a valid `floorIDMapping` match.
+
 ##v2.4.1 (Monday, April 27th, 2015)
 
 * Fixed issue where `didFailToLoadBuilding:` was not being called while in airplane mode on initial launch with no cached data.
