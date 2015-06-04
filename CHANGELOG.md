@@ -1,8 +1,8 @@
 #PWMapKit Changelog
 
-##v2.5.0 - BETA 1 (Friday, May 15th, 2015)
+##v2.5.0 (Thursday, June 4th, 2015)
 
-* Added support for turn-by-turn directions. Turn-by-turn manuevers can be accessed by accessing the `maneuvers` property on a `PWRoute` object. You can plot a route manuever on a `PWMapView` intance by calling `setRouteManeuver:` with a valid `PWRouteManeuver` object. All previous route behavior is still present and unaffected. 
+* Added support for turn-by-turn directions. Turn-by-turn manuevers can be accessed by accessing the `maneuvers` property on a `PWRoute` object. You can plot a route manuever on a `PWMapView` intance by calling `setRouteManeuver:` with a valid `PWRouteManeuver` object. All previous route behavior is still present and unaffected. Please see the turn-by-turn sample as an example of how to implement turn-by-turn.
 
   **NOTE**: You will need to plot a route maneuever in order to enter turn-by-turn mode.
 
@@ -19,6 +19,10 @@
 * Routing and maneuver overlays now use the `mapView.tintColor` property when rendering their overlays.
 
 * When registering a `PWGPSLocationManager` with the map view the location will now show on all floors regardless of whether or not there is a valid `floorIDMapping` match.
+
+##v2.5.0 - BETA 1 (Friday, May 15th, 2015)
+
+* Beta release of turn-by-turn features
 
 ##v2.4.1 (Monday, April 27th, 2015)
 

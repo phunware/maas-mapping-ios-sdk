@@ -41,8 +41,10 @@ typedef void (^PWDirectionsHandler)(PWDirectionsResponse *response, NSError *err
 
 /**
  Initializes a directions object with the provided waypoints and routing options.
+ @param waypoints The waypoints associated with a route. Currently only supports 2 waypoints, the start and end point on a desired route.
+ @param options The options associated with the directions. This parameter cannot be `nil`.
  */
-- (instancetype)initWithWaypoints:(NSArray*)waypoints options:(PWDirectionsOptions*)options;
+- (instancetype)initWithWaypoints:(NSArray *)waypoints options:(PWDirectionsOptions *)options;
 
 
 /**

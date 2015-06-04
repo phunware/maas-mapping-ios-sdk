@@ -40,6 +40,10 @@
 /** The index of the current step. */
 @property (readonly) NSUInteger index;
 
+/**
+ An array of objects that conform to `PWDirectionsWaypointProtocol` which are associated with the route step.
+ @discussion This property is current deprecated in favor of the `points property.
+ */
 @property (readonly) NSArray *annotations __deprecated;
 
 /** An array of objects that conform to `PWDirectionsWaypointProtocol` which are associated with the route step. */

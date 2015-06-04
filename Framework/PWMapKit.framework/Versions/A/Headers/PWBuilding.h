@@ -58,9 +58,9 @@
 
 /**
  Finds a `PWBuildingFloor` object in the building that matches the provided floor identifier.
- @param floorID The building floor identifier to use for the search.
+ @param identifier The building floor identifier to use for the search.
  @return The building's floor that matches the provided identifier, if one is found. If no matches are found, `nil` is returned.
  */
-- (PWBuildingFloor*)floorForIdentifier:(PWBuildingFloorIdentifier)identifier;
+- (PWBuildingFloor *)floorForIdentifier:(PWBuildingFloorIdentifier)identifier;
 
 @end

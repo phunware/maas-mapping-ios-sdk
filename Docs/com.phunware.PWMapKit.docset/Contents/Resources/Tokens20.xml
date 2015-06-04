@@ -12,6 +12,26 @@
 		</Token>
 		
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuverOverlayRenderer/initWithOverlay:andMapView:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns the route overlay renderer and associates it with the specified route overlay object.</Abstract>
+			<DeclaredIn>PWRouteManeuverOverlayRenderer.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithOverlay:(id&lt;MKOverlay&gt;)overlay andMapView:(PWMapView *)mapView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>overlay</Name>
+					<Abstract type="html">The route maneuver overlay to initialize the renderer with. The route overlay contains several important pieces of information the route maneuver renderer needs to draw the route.</Abstract>
+				</Parameter><Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The mapView to initiatize the renderer with. The mapView is needed for the renderer to know the current zoom workaround state.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A basic route manuever overlay renderer.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithOverlay:andMapView:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

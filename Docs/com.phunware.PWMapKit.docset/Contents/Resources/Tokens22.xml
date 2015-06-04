@@ -49,11 +49,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/initWithRouteOverlay:buildingOverlay:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/initWithRouteOverlay:buildingOverlay:mapView:</TokenIdentifier>
 			<Abstract type="html">Initializes and returns the route overlay renderer and associates it with the specified route overlay object.</Abstract>
 			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)overlay buildingOverlay:(PWBuildingOverlay *)buildingOverlay</Declaration>
+			<Declaration>- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)overlay buildingOverlay:(PWBuildingOverlay *)buildingOverlay mapView:(PWMapView *)mapView</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>overlay</Name>
@@ -61,10 +61,13 @@
 				</Parameter><Parameter>
 					<Name>buildingOverlay</Name>
 					<Abstract type="html">The building overlay to initiatize the renderer with. The route overlay communicates with the building overlay to switch floors if necessary.</Abstract>
+				</Parameter><Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The mapView to initiatize the renderer with. The mapView is needed for the renderer to know the current zoom workaround state.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">A basic route overlay renderer.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithRouteOverlay:buildingOverlay:</Anchor>
+			<Anchor>//api/name/initWithRouteOverlay:buildingOverlay:mapView:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

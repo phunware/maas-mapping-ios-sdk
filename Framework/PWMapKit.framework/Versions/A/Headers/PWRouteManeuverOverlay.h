@@ -8,6 +8,10 @@
 
 @class PWRouteManeuver;
 
+/**
+ The `PWRouteManeuverOverlay` defines the basic properties for all route maneuvers. This class should not be subclassed and can be used as is. Instances of this class must have a reference to a valid `PWRouteManeuver` object.
+ */
+
 @interface PWRouteManeuverOverlay : NSObject <MKOverlay>
 
 /**

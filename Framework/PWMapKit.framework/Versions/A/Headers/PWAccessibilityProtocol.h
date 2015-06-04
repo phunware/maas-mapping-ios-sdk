@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ The `PWAccessibilityProtocol` defines a protocol to indicating whether or not an object is accessible or not. This is used primarily for objects that conform to `PWAttotationProtocol`.
+ */
+
 @protocol PWAccessibilityProtocol <NSObject>
 
 /**

@@ -15,7 +15,9 @@
  `PWDirectionsType` specifies the type of directions to use.
  */
 typedef NS_ENUM(NSUInteger, PWDirectionsType) {
+    /** Both accessible and in-accessible routes are acceptable. */
     PWDirectionsTypeAny,
+    /** Only accessible routes are acceptable. */
     PWDirectionsTypeAccessible
 };
 

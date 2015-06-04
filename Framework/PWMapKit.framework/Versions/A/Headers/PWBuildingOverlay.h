@@ -72,6 +72,9 @@ extern NSString * const PWBuildingOverlayDidFailToLoadNotification;
 
 @end
 
+/**
+ The `PWBuildingOverlayDelegateProtocol` protocol defines a set of optional methods that you can use to receive building-related update messages. Since many overlay operations require the `PWBuildingOverlay` class to load data asynchronously, the overlay calls these methods to notify your application when specific operations complete.
+ */
 
 @protocol PWBuildingOverlayDelegateProtocol <NSObject>
 

@@ -13,11 +13,17 @@
   Enumerated type representing relative directions for turn-by-turn routing maneuvers.
  */
 typedef NS_ENUM(NSUInteger, PWRouteManeuverDirection) {
+    /** Indicates a straight maneuver */
     PWRouteManeuverDirectionStraight,
+    /** Indicates a left-turn maneuver */
     PWRouteManeuverDirectionLeft,
+    /** Indicates a right maneuver */
     PWRouteManeuverDirectionRight,
+    /** Indicates a a bear left maneuver */
     PWRouteManeuverDirectionBearLeft,
+    /** Indicates a bear left maneuver */
     PWRouteManeuverDirectionBearRight,
+    /** Indicates a floor change maneuver */
     PWRouteManeuverDirectionFloorChange
 };
 

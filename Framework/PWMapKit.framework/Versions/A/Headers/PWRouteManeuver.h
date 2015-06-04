@@ -8,6 +8,12 @@
 
 #import "PWRouteManeuverDirection.h"
 
+/**
+ A `PWRouteManeuver` object represents one maneuver on a `PWRouteStep`. Each maneuver in a route step corresponds to a single instruction that would need to be followed by the user. For example, a maneuver might involve following a single path until a turn is required.
+ 
+ You do not create instances of this class directly. Instead, you receive route steps as part of an overall `PWRoute` object when you request directions via `PWDirections`. For more information about requesting directions, see `PWDirections` class reference.
+ */
+
 @interface PWRouteManeuver : NSObject
 
 /**
