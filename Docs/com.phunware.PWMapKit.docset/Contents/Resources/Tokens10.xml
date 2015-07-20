@@ -48,6 +48,42 @@
             <NodeRef refid="10"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsOptions/setExcludedPointIdentifiers:</TokenIdentifier>
+			<Abstract type="html">An array of excluded point identifiers that you do not want to be used when calculating directions.</Abstract>
+			<DeclaredIn>PWDirectionsOptions.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSArray *excludedPointIdentifiers</Declaration>
+			
+			
+			<Anchor>//api/name/excludedPointIdentifiers</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsOptions/excludedPointIdentifiers</TokenIdentifier>
+			<Abstract type="html">An array of excluded point identifiers that you do not want to be used when calculating directions.</Abstract>
+			<DeclaredIn>PWDirectionsOptions.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSArray *excludedPointIdentifiers</Declaration>
+			
+			
+			<Anchor>//api/name/excludedPointIdentifiers</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsOptions/excludedPointIdentifiers</TokenIdentifier>
+			<Abstract type="html">An array of excluded point identifiers that you do not want to be used when calculating directions.</Abstract>
+			<DeclaredIn>PWDirectionsOptions.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSArray *excludedPointIdentifiers</Declaration>
+			
+			
+			<Anchor>//api/name/excludedPointIdentifiers</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

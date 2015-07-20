@@ -264,8 +264,15 @@
 /**
  Display the specified `PWRouteManeuver` on the map. If needed, this will change the current floor to the required floor for the maneuver.
  @param maneuver The `PWRouteManeuver` to display.
+ @discussion This method will not reposition the map to display the maneuver
  */
-- (void)setRouteManeuver:(PWRouteManeuver*)maneuver;
+- (void)setRouteManeuver:(PWRouteManeuver *)maneuver;
+
+/**
+ Display the specified `PWRouteManeuver` on the map and animates to its position. If needed, this will change the current floor to the required floor for the maneuver.
+ @param maneuver The `PWRouteManeuver` to display.
+ */
+- (void)setRouteManeuver:(PWRouteManeuver *)maneuver animated:(BOOL)animated;
 
 /**
  Returns the current `PWRouteManeuver` being displayed. If no route is displayed, this method will return `nil`.

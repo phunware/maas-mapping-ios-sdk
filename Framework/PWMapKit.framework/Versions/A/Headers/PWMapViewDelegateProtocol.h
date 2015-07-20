@@ -128,7 +128,13 @@
  */
 - (void)mapView:(PWMapView*)mapView didChangeRouteManeuver:(PWRouteManeuver*)maneuver;
 
-
+/**
+ Asks the delegate whether the automatic maneuver change should be animated.
+ @param mapView The map view asking whether or not to animate automatic maneuver changes.
+ @return A Boolean value indicating whether or not to animate automatic maneuver changes.
+ @discussion The automatic maneuver changes will be animated by default.
+ */
+- (BOOL)mapViewShouldAnimateAutomaticRouteManeuverChange:(PWMapView *)mapView;
 
 ///-----------------------
 /// @name Tracking Heading

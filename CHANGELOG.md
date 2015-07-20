@@ -1,5 +1,23 @@
 #PWMapKit Changelog
 
+##v2.5.1 (Thursday, July 20th, 2015)
+
+* Added ability for developer to control whether or not the maneuver change is animated. See `- (BOOL)mapViewShouldAnimateAutomaticRouteManeuverChange:(PWMapView *)mapView` delegate method.
+
+* Added new method to PWMapView, `-(void)setRouteManever:(PWRouteManever *)maneuver animated:(BOOL)animated` that allows you to control whether or no the maneuver is animated when switching. 
+
+  **NOTE**: The old method, `-(void)setRouteManever:(PWRouteManever *)maneuver` no longer animates the maneuver change.
+
+* Added property to `PWDirectionsOptions` called `excludedPointIdentifiers`. Specify an array of point identifiers that you would like to exclude from routing. Please see `PWDirectionsOptions` header for more information.
+
+* Fixed an issue where automatic maneuver switching would not work with the GPS location provider if the floor identifier was unknown. Now switches the to closest maneuver on a given floor.
+
+* Fixed an issue where toggling the zoom workaround on/off would no longer preserve the center position.
+
+* Instrumented SDK with mapping & navigation analytics. Analytics are disabled by default. See `PWMapKitAnalytics` for more information and to enable.
+
+* Updating zoom workaround to with iOS 8.4 and all subsequent iOS 8 versions. Note that the zoom workaround will not work on iOS 9 since iOS 9 resolves the issue.
+
 ##v2.5.0 (Thursday, June 4th, 2015)
 
 * Added support for turn-by-turn directions. Turn-by-turn manuevers can be accessed by accessing the `maneuvers` property on a `PWRoute` object. You can plot a route manuever on a `PWMapView` intance by calling `setRouteManeuver:` with a valid `PWRouteManeuver` object. All previous route behavior is still present and unaffected. Please see the turn-by-turn sample as an example of how to implement turn-by-turn.

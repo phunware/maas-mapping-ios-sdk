@@ -18,4 +18,10 @@
  */
 @property BOOL requireAccessibleRoutes;
 
+/**
+ An array of excluded point identifiers that you do not want to be used when calculating directions.
+ @discussion The array contents must only be `NSNumber` values.
+ */
+@property (nonatomic) NSArray *excludedPointIdentifiers;
+
 @end

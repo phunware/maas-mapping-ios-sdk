@@ -244,6 +244,23 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapViewShouldAnimateAutomaticRouteManeuverChange:</TokenIdentifier>
+			<Abstract type="html">Asks the delegate whether the automatic maneuver change should be animated.</Abstract>
+			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)mapViewShouldAnimateAutomaticRouteManeuverChange:(PWMapView *)mapView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The map view asking whether or not to animate automatic maneuver changes.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A Boolean value indicating whether or not to animate automatic maneuver changes.</Abstract></ReturnValue>
+			<Anchor>//api/name/mapViewShouldAnimateAutomaticRouteManeuverChange:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapViewShouldDisplayHeadingCalibration:</TokenIdentifier>
 			<Abstract type="html">Asks the delegate whether the heading calibration display should be shown.</Abstract>
 			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
