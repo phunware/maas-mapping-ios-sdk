@@ -39,8 +39,6 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/mapView">&nbsp;&nbsp;&nbsp;&nbsp;mapView</option>
-	
 	<option value="//api/name/polyline">&nbsp;&nbsp;&nbsp;&nbsp;polyline</option>
 	
 	
@@ -50,7 +48,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithRouteOverlay:buildingOverlay:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRouteOverlay:buildingOverlay:</option>
+	<option value="//api/name/initWithRouteOverlay:buildingOverlay:mapView:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRouteOverlay:buildingOverlay:mapView:</option>
 	
 	
 	
@@ -76,8 +74,6 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView">mapView</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/polyline">polyline</a></span></li>
 	
 </ul></li>
@@ -88,7 +84,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRouteOverlay:buildingOverlay:">initWithRouteOverlay:buildingOverlay:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRouteOverlay:buildingOverlay:mapView:">initWithRouteOverlay:buildingOverlay:mapView:</a></span></li>
 	
 </ul></li>
 
@@ -145,19 +141,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapView">&nbsp;&nbsp;mapView</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/polyline">&nbsp;&nbsp;polyline</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithRouteOverlay:buildingOverlay:">&ndash;&nbsp;initWithRouteOverlay:buildingOverlay:</a></code>
+		<code><a href="#//api/name/initWithRouteOverlay:buildingOverlay:mapView:">&ndash;&nbsp;initWithRouteOverlay:buildingOverlay:mapView:</a></code>
 	</span>
 	
 	
@@ -173,42 +163,6 @@
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/mapView" title="mapView"></a>
-	<h3 class="subsubtitle method-title">mapView</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The <a href="../Classes/PWMapView.html"><code>PWMapView</code></a> associated with this object.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (weak) PWMapView *mapView</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWRouteOverlayRenderer.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/polyline" title="polyline"></a>
@@ -257,8 +211,8 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithRouteOverlay:buildingOverlay:" title="initWithRouteOverlay:buildingOverlay:"></a>
-	<h3 class="subsubtitle method-title">initWithRouteOverlay:buildingOverlay:</h3>
+	<a name="//api/name/initWithRouteOverlay:buildingOverlay:mapView:" title="initWithRouteOverlay:buildingOverlay:mapView:"></a>
+	<h3 class="subsubtitle method-title">initWithRouteOverlay:buildingOverlay:mapView:</h3>
 	
 	
 	
@@ -268,7 +222,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)<em>overlay</em> buildingOverlay:(PWBuildingOverlay *)<em>buildingOverlay</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)<em>overlay</em> buildingOverlay:(PWBuildingOverlay *)<em>buildingOverlay</em> mapView:(PWMapView *)<em>mapView</em></code></div>
 
     
 	
@@ -278,6 +232,16 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>overlay</em></dt>
 			<dd><p>The route overlay to initialize the renderer with. The route overlay contains several important pieces of information the route renderer needs to draw the route.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>buildingOverlay</em></dt>
+			<dd><p>The building overlay to initiatize the renderer with. The route overlay communicates with the building overlay to switch floors if necessary.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The mapView to initiatize the renderer with. The mapView is needed for the renderer to know the current zoom workaround state.</p></dd>
 		</dl>
 		
 	</div>
@@ -322,7 +286,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-03-13)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-07-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

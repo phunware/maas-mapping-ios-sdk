@@ -47,6 +47,10 @@
 	
 	<option value="//api/name/mapView:didChangeIndoorUserTrackingMode:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeIndoorUserTrackingMode:</option>
 	
+	<option value="//api/name/mapView:didChangeRouteManeuver:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeRouteManeuver:</option>
+	
+	<option value="//api/name/mapView:didChangeRouteStep:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeRouteStep:</option>
+	
 	<option value="//api/name/mapView:didFailToLoadBuilding:error:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFailToLoadBuilding:error:</option>
 	
 	<option value="//api/name/mapView:didFailToLocateIndoorUserWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFailToLocateIndoorUserWithError:</option>
@@ -58,6 +62,8 @@
 	<option value="//api/name/mapView:didUpdateIndoorUserLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didUpdateIndoorUserLocation:</option>
 	
 	<option value="//api/name/mapViewDidStopLocatingIndoorUser:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewDidStopLocatingIndoorUser:</option>
+	
+	<option value="//api/name/mapViewShouldAnimateAutomaticRouteManeuverChange:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewShouldAnimateAutomaticRouteManeuverChange:</option>
 	
 	<option value="//api/name/mapViewShouldDisplayHeadingCalibration:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewShouldDisplayHeadingCalibration:</option>
 	
@@ -87,7 +93,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Tracking the User&apos;s Location">Tracking the User&apos;s Location</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Routing Behavior">Routing Behavior</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Routing">Routing</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Tracking Heading">Tracking Heading</a></span></li>
 	
@@ -107,6 +113,10 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeIndoorUserTrackingMode:">mapView:didChangeIndoorUserTrackingMode:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeRouteManeuver:">mapView:didChangeRouteManeuver:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeRouteStep:">mapView:didChangeRouteStep:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFailToLoadBuilding:error:">mapView:didFailToLoadBuilding:error:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFailToLocateIndoorUserWithError:">mapView:didFailToLocateIndoorUserWithError:</a></span></li>
@@ -118,6 +128,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didUpdateIndoorUserLocation:">mapView:didUpdateIndoorUserLocation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewDidStopLocatingIndoorUser:">mapViewDidStopLocatingIndoorUser:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewShouldAnimateAutomaticRouteManeuverChange:">mapViewShouldAnimateAutomaticRouteManeuverChange:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewShouldDisplayHeadingCalibration:">mapViewShouldDisplayHeadingCalibration:</a></span></li>
 	
@@ -240,8 +252,8 @@
 						</ul>
 						
 						
-						<a title="Routing Behavior" name="task_Routing Behavior"></a>
-						<h3 class="subsubtitle task-title">Routing Behavior</h3>
+						<a title="Routing" name="task_Routing"></a>
+						<h3 class="subsubtitle task-title">Routing</h3>
 
 						<ul class="task-list">
 							<li>
@@ -253,6 +265,24 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/mapViewStoppedSnappingLocationToRoute:">&ndash;&nbsp;mapViewStoppedSnappingLocationToRoute:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:didChangeRouteStep:">&ndash;&nbsp;mapView:didChangeRouteStep:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:didChangeRouteManeuver:">&ndash;&nbsp;mapView:didChangeRouteManeuver:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapViewShouldAnimateAutomaticRouteManeuverChange:">&ndash;&nbsp;mapViewShouldAnimateAutomaticRouteManeuverChange:</a></code>
 	</span>
 	
 	
@@ -376,6 +406,108 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>mode</em></dt>
 			<dd><p>The mode used to track the user’s location.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapViewDelegateProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapView:didChangeRouteManeuver:" title="mapView:didChangeRouteManeuver:"></a>
+	<h3 class="subsubtitle method-title">mapView:didChangeRouteManeuver:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the route step being displayed has changed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didChangeRouteManeuver:(PWRouteManeuver *)<em>maneuver</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view reporting the step change.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>maneuver</em></dt>
+			<dd><p>The new route maneuver being displayed on the map, or nil if it has been cleared.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapViewDelegateProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapView:didChangeRouteStep:" title="mapView:didChangeRouteStep:"></a>
+	<h3 class="subsubtitle method-title">mapView:didChangeRouteStep:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the route step being displayed has changed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didChangeRouteStep:(PWRouteStep *)<em>step</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view reporting the step change.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>step</em></dt>
+			<dd><p>The new route step being displayed on the map.</p></dd>
 		</dl>
 		
 	</div>
@@ -727,6 +859,62 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/mapViewShouldAnimateAutomaticRouteManeuverChange:" title="mapViewShouldAnimateAutomaticRouteManeuverChange:"></a>
+	<h3 class="subsubtitle method-title">mapViewShouldAnimateAutomaticRouteManeuverChange:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Asks the delegate whether the automatic maneuver change should be animated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)mapViewShouldAnimateAutomaticRouteManeuverChange:(PWMapView *)<em>mapView</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view asking whether or not to animate automatic maneuver changes.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A Boolean value indicating whether or not to animate automatic maneuver changes.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The automatic maneuver changes will be animated by default.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapViewDelegateProtocol.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/mapViewShouldDisplayHeadingCalibration:" title="mapViewShouldDisplayHeadingCalibration:"></a>
 	<h3 class="subsubtitle method-title">mapViewShouldDisplayHeadingCalibration:</h3>
 	
@@ -950,7 +1138,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-03-13)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-07-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

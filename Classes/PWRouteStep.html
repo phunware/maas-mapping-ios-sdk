@@ -39,13 +39,15 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/annotations">&nbsp;&nbsp;&nbsp;&nbsp;annotations</option>
+	<option value="//api/name/__deprecated">&nbsp;&nbsp;&nbsp;&nbsp;__deprecated</option>
 	
 	<option value="//api/name/distance">&nbsp;&nbsp;&nbsp;&nbsp;distance</option>
 	
 	<option value="//api/name/floorID">&nbsp;&nbsp;&nbsp;&nbsp;floorID</option>
 	
 	<option value="//api/name/index">&nbsp;&nbsp;&nbsp;&nbsp;index</option>
+	
+	<option value="//api/name/points">&nbsp;&nbsp;&nbsp;&nbsp;points</option>
 	
 	<option value="//api/name/polyline">&nbsp;&nbsp;&nbsp;&nbsp;polyline</option>
 	
@@ -77,13 +79,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/annotations">annotations</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/__deprecated">__deprecated</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/distance">distance</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorID">floorID</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/index">index</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/points">points</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/polyline">polyline</a></span></li>
 	
@@ -172,7 +176,13 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/annotations">&nbsp;&nbsp;annotations</a></code>
+		<code><a href="#//api/name/__deprecated">&nbsp;&nbsp;__deprecated</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/points">&nbsp;&nbsp;points</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -190,18 +200,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/annotations" title="annotations"></a>
-	<h3 class="subsubtitle method-title">annotations</h3>
+	<a name="//api/name/__deprecated" title="__deprecated"></a>
+	<h3 class="subsubtitle method-title">__deprecated</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An array of <a href="../Classes/PWRouteAnnotation.html"><code>PWRouteAnnotation</code></a> objects associated with the route step.</p>
+		<p>An array of objects that conform to <a href="../Protocols/PWDirectionsWaypointProtocol.html"><code>PWDirectionsWaypointProtocol</code></a> which are associated with the route step.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *annotations</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *__deprecated</code></div>
 
     
 	
@@ -210,6 +220,11 @@
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This property is current deprecated in favor of the `<a href="#//api/name/points">points</a> property.</p>
+	</div>
 	
 	
 	
@@ -249,7 +264,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This property reflects the distance the user traverses on the path of the step. It is not a direct distance between the start and end points of the step.</p>
+		<p>This property reflects the distance the user traverses on the path of the step. It is not a direct distance between the start and end <a href="#//api/name/points">points</a> of the step.</p>
 	</div>
 	
 	
@@ -344,6 +359,42 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/points" title="points"></a>
+	<h3 class="subsubtitle method-title">points</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An array of objects that conform to <a href="../Protocols/PWDirectionsWaypointProtocol.html"><code>PWDirectionsWaypointProtocol</code></a> which are associated with the route step.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *points</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRouteStep.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/polyline" title="polyline"></a>
 	<h3 class="subsubtitle method-title">polyline</h3>
 	
@@ -403,7 +454,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-03-13)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-07-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
