@@ -271,6 +271,7 @@
 /**
  Display the specified `PWRouteManeuver` on the map and animates to its position. If needed, this will change the current floor to the required floor for the maneuver.
  @param maneuver The `PWRouteManeuver` to display.
+ @param animated Specify `YES` if you want the map view to animate the transition to the new maneuver.
  */
 - (void)setRouteManeuver:(PWRouteManeuver *)maneuver animated:(BOOL)animated;
 
