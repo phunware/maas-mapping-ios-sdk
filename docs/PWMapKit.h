@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "PWMapKitVersion.h"
 #import "PWMapView.h"
 #import "PWMapView+ZoomWorkaround.h"
 #import "PWSVPulsingAnnotationView.h"
