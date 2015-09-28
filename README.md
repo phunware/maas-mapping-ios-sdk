@@ -1,28 +1,28 @@
 PWMapKit SDK for iOS
 ====================
 
-> Version 2.5.0
+> Version 2.6.0
 
 **PWMapKit** is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services.  Visit http://maas.phunware.com/ for more details and to sign up.
 
 
 ## Requirements
 
-- MaaSCore v1.3.0 or greater
+- PWCore v2.0.0 or greater
 - iOS 7.0 or greater
 - Xcode 6 or greater
 
 
 ## Installation
 
-`PWMapKit` has a dependency on the [`MaaSCore`](https://github.com/phunware/maas-core-ios-sdk) and [`PWLocation`](https://github.com/phunware/maas-location-ios-sdk) frameworks.
+`PWMapKit` has a dependency on the [`PWCore`](https://github.com/phunware/maas-core-ios-sdk) and [`PWLocation`](https://github.com/phunware/maas-location-ios-sdk) frameworks.
 
 Phunware recommends using [CocoaPods](http://www.cocoapods.org) to integrate the framework.  Simply add `pod 'PWMapKit'` to your podfile.
 
 Alternatively, all of the following frameworks can be added to the Vendor/Phunware directory of your project:
 
 - PWMapKit.framework
-- MaaSCore.framework
+- PWCore.framework
 - PWLocation.framework
 
 

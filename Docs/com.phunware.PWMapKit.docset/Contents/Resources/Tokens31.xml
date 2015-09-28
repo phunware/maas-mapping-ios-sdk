@@ -130,6 +130,29 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapView:locationManager:didUpdateIndoorUserLocation:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the indoor location of the user was updated.</Abstract>
+			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView locationManager:(id&lt;PWLocationManager&gt;)locationManager didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The map view tracking the user’s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>locationManager</Name>
+					<Abstract type="html">The location manager providing location updates.</Abstract>
+				</Parameter><Parameter>
+					<Name>userLocation</Name>
+					<Abstract type="html">The location object representing the user’s latest location. This property may be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:locationManager:didUpdateIndoorUserLocation:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegateProtocol/mapView:didFailToLocateIndoorUserWithError:</TokenIdentifier>
 			<Abstract type="html">Tells the delegate that an attempt to locate the user’s position failed.</Abstract>
 			<DeclaredIn>PWMapViewDelegateProtocol.h</DeclaredIn>

@@ -1,5 +1,13 @@
 #PWMapKit Changelog
 
+##v2.6.0 (Wednesday, September 30th, 2015)
+
+* Updated framework to leverage PWCore v2.0.0
+
+* Updated internal networking interfaces to use HTTPS endpoints
+
+* Fixed a race condition that would occur when trying to load building assets
+
 ##v2.5.1 (Thursday, July 20th, 2015)
 
 * Added ability for developer to control whether or not the maneuver change is animated. See `- (BOOL)mapViewShouldAnimateAutomaticRouteManeuverChange:(PWMapView *)mapView` delegate method.
