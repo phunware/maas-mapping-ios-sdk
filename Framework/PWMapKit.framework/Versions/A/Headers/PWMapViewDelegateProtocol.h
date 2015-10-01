@@ -81,6 +81,13 @@
  */
 - (void)mapView:(PWMapView *)mapView didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation __deprecated;
 
+/**
+ Tells the delegate that the indoor location of the user was updated.
+ @param mapView The map view tracking the user’s location.
+ @param locationManager The location manager providing location updates.
+ @param userLocation The location object representing the user’s latest location. This property may be `nil`.
+ @discussion While the showsIndoorUserLocation property is set to `YES`, this method is called whenever a new location update is received by the map view.
+ */
 - (void)mapView:(PWMapView *)mapView locationManager:(id<PWLocationManager>)locationManager didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation;
 
 /**
