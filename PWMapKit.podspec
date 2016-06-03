@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Framework/PWMapKit.framework/Versions/A/Headers/*.h'
   s.ios.vendored_frameworks = 'Framework/PWMapKit.framework'
   s.ios.dependency 'PWCore'
-  s.ios.dependency 'PWLocation', "~> 1.2.5"
+  s.ios.dependency 'PWLocation', "1.2.5"
 
   s.xcconfig      = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/PWMapKit/**"'}
   s.ios.frameworks = 'Security', 'CoreGraphics', 'QuartzCore', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreLocation', 'MapKit'
