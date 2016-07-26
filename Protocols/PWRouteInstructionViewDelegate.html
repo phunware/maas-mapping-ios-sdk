@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWDirectionsOptions Class Reference</title>
+		<title>PWRouteInstructionViewDelegate Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 961)" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWDirectionsOptions Class Reference</h1>
+				<h1 class="hideInXcode">PWRouteInstructionViewDelegate Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,15 +37,13 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/excludedPointIdentifiers">&nbsp;&nbsp;&nbsp;&nbsp;excludedPointIdentifiers</option>
-	
-	<option value="//api/name/requireAccessibleRoutes">&nbsp;&nbsp;&nbsp;&nbsp;requireAccessibleRoutes</option>
 	
 	
 	
 	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/route:didChangeRouteInstruction:">&nbsp;&nbsp;&nbsp;&nbsp;- route:didChangeRouteInstruction:</option>
 	
 	
 	
@@ -69,24 +67,22 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/excludedPointIdentifiers">excludedPointIdentifiers</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requireAccessibleRoutes">requireAccessibleRoutes</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/route:didChangeRouteInstruction:">route:didChangeRouteInstruction:</a></span></li>
 	
 </ul></li>
-
-
-
-
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWDirectionsOptions Class Reference" name="top"></a>
+				<a title="PWRouteInstructionViewDelegate Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -95,21 +91,18 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWDirectionsOptions Class Reference</h1>
+						<h1 class="title title-header">PWRouteInstructionViewDelegate Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
+	<td class="specification-title">Conforms to</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSCopying</td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWDirectionsOptions.h</td>
+	<td class="specification-value">PWRouteInstructionsView.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -119,7 +112,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class represents the various routing options available when requesting directions.</p>
+						<p>PWRouteInstructionViewDelegate protocol definition.</p>
 					</div>
 					
 					
@@ -137,15 +130,9 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requireAccessibleRoutes">&nbsp;&nbsp;requireAccessibleRoutes</a></code>
+		<code><a href="#//api/name/route:didChangeRouteInstruction:">&ndash;&nbsp;route:didChangeRouteInstruction:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/excludedPointIdentifiers">&nbsp;&nbsp;excludedPointIdentifiers</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -156,36 +143,50 @@
 					
 					
 					
+					
+					
+					
+					
 					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/excludedPointIdentifiers" title="excludedPointIdentifiers"></a>
-	<h3 class="subsubtitle method-title">excludedPointIdentifiers</h3>
+	<a name="//api/name/route:didChangeRouteInstruction:" title="route:didChangeRouteInstruction:"></a>
+	<h3 class="subsubtitle method-title">route:didChangeRouteInstruction:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An array of excluded point identifiers that you do not want to be used when calculating directions.</p>
+		<p>This delegate is called when the route instruction has changed in the <a href="../Classes/PWRouteInstructionsView.html">PWRouteInstructionsView</a> instance.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic) NSArray *excludedPointIdentifiers</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)route:(PWRoute *)<em>route</em> didChangeRouteInstruction:(PWRouteInstruction *)<em>instruction</em></code></div>
 
     
 	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The array contents must only be <code>NSNumber</code> values.</p>
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>route</em></dt>
+			<dd><p>A reference to the current <a href="../Classes/PWRoute.html">PWRoute</a> object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instruction</em></dt>
+			<dd><p>A <a href="../Classes/PWRouteInstruction.html">PWRouteInstruction</a> reference to the new instruction that has changed in the view.</p></dd>
+		</dl>
+		
 	</div>
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -195,48 +196,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWDirectionsOptions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requireAccessibleRoutes" title="requireAccessibleRoutes"></a>
-	<h3 class="subsubtitle method-title">requireAccessibleRoutes</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Flag indicating whether the requested directions must include only accessible points.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property BOOL requireAccessibleRoutes</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The default value for this option is <code>false</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWDirectionsOptions.h</code><br />
+		<code class="declared-in-ref">PWRouteInstructionsView.h</code><br />
 	</div>				
 	
 	
@@ -245,12 +205,11 @@
 					</div>
 					
 					
-					
-					
-					
-					
                     
                     
+                    
+                    
+
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -261,9 +220,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-09-28)</span><br />
+						<p><span class="copyright">&copy; 2016 Phunware, Inc.. All rights reserved. (Last updated: 2016-07-25)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
 				</div>

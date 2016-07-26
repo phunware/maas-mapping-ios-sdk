@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWBuildingAnnotationView Class Reference</title>
+		<title>PWBuildingViewControllerDelegate Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 961)" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWBuildingAnnotationView Class Reference</h1>
+				<h1 class="hideInXcode">PWBuildingViewControllerDelegate Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,13 +37,15 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/label">&nbsp;&nbsp;&nbsp;&nbsp;label</option>
 	
 	
 	
 	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/didDismissBuildingViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- didDismissBuildingViewController:</option>
+	
+	<option value="//api/name/didSelectPointOfInterest:">&nbsp;&nbsp;&nbsp;&nbsp;- didSelectPointOfInterest:</option>
 	
 	
 	
@@ -67,22 +69,24 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/label">label</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didDismissBuildingViewController:">didDismissBuildingViewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didSelectPointOfInterest:">didSelectPointOfInterest:</a></span></li>
 	
 </ul></li>
-
-
-
-
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWBuildingAnnotationView Class Reference" name="top"></a>
+				<a title="PWBuildingViewControllerDelegate Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -91,18 +95,18 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWBuildingAnnotationView Class Reference</h1>
+						<h1 class="title title-header">PWBuildingViewControllerDelegate Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">MKAnnotationView</td>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWBuildingAnnotationView.h</td>
+	<td class="specification-value">PWBuildingViewController.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,7 +116,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWAnnotationView</code> class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled with a corresponding building annotation object that conforms to the <code>PWBuildingAnnotation</code> protocol. When an annotation’s coordinate is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.</p>
+						<p>PWBuildingViewControllerDelegate protocol definition.</p>
 					</div>
 					
 					
@@ -130,9 +134,15 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/label">&nbsp;&nbsp;label</a></code>
+		<code><a href="#//api/name/didSelectPointOfInterest:">&ndash;&nbsp;didSelectPointOfInterest:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didDismissBuildingViewController:">&ndash;&nbsp;didDismissBuildingViewController:</a></code>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -143,36 +153,45 @@
 					
 					
 					
+					
+					
+					
+					
 					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/label" title="label"></a>
-	<h3 class="subsubtitle method-title">label</h3>
+	<a name="//api/name/didDismissBuildingViewController:" title="didDismissBuildingViewController:"></a>
+	<h3 class="subsubtitle method-title">didDismissBuildingViewController:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The annotation label associated with the view. The annotation label stroke color and stroke width can be customized.</p>
+		<p>Informs the receiver that the user dismissed the view controller, and returns the point of interest last selected (if any).</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) PWAnnotationLabel *label</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)didDismissBuildingViewController:(PWPointOfInterest *)<em>poi</em></code></div>
 
     
 	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The annotation label is automatically displayed or hidden based on whether or not it occludes other annotation view images or labels.</p>
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>poi</em></dt>
+			<dd><p>the last selected point of interest.</p></dd>
+		</dl>
+		
 	</div>
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -182,7 +201,53 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingAnnotationView.h</code><br />
+		<code class="declared-in-ref">PWBuildingViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didSelectPointOfInterest:" title="didSelectPointOfInterest:"></a>
+	<h3 class="subsubtitle method-title">didSelectPointOfInterest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Informs the receiver that the user selected a point of interest.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)didSelectPointOfInterest:(PWPointOfInterest *)<em>poi</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>poi</em></dt>
+			<dd><p>The selected point of interest.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWBuildingViewController.h</code><br />
 	</div>				
 	
 	
@@ -191,12 +256,11 @@
 					</div>
 					
 					
-					
-					
-					
-					
                     
                     
+                    
+                    
+
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -207,9 +271,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-09-28)</span><br />
+						<p><span class="copyright">&copy; 2016 Phunware, Inc.. All rights reserved. (Last updated: 2016-07-25)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
 				</div>
