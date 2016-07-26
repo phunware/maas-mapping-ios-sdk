@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWDirectionsType Constants Reference</title>
+		<title>PWRouteInstructionDirection Constants Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 961)" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWDirectionsType Constants Reference</h1>
+				<h1 class="hideInXcode">PWRouteInstructionDirection Constants Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -45,7 +45,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWDirectionsType Constants Reference" name="top"></a>
+				<a title="PWRouteInstructionDirection Constants Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -54,7 +54,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWDirectionsType Constants Reference</h1>
+						<h1 class="title title-header">PWRouteInstructionDirection Constants Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -62,7 +62,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWDirectionsRequest.h</td>
+	<td class="specification-value">PWRouteInstruction.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -74,11 +74,11 @@
 					
                     
                     
-                    <h3 class="subsubtitle method-title">PWDirectionsType</h3>
+                    <h3 class="subsubtitle method-title">PWRouteInstructionDirection</h3>
                     
 					
 					<div class="section section-overview">
-                        <p><a href="PWDirectionsType.html"><code>PWDirectionsType</code></a> specifies the type of directions to use.</p>
+                        <p>Defines the different type of custom locations.</p>
 					</div>
 					
 					
@@ -86,11 +86,27 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSUInteger, PWDirectionsType ) {<br/>
+                        <code>typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection ) {<br/>
                             
-                            &nbsp;&nbsp; <a href="">PWDirectionsTypeAny</a>,<br/>
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionStraight</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">PWDirectionsTypeAccessible</a>,<br/>
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionLeft</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionRight</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionBearLeft</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionBearRight</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionFloorChange</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionElevatorUp</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionElevatorDown</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionStairsUp</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">PWRouteInstructionDirectionStairsDown</a>,<br/>
                             
                             };</code>
                     
@@ -100,36 +116,172 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="PWDirectionsTypeAny"></a><code>PWDirectionsTypeAny</code></dt>
+                            <dt><a name="" title="PWRouteInstructionDirectionStraight"></a><code>PWRouteInstructionDirectionStraight</code></dt>
 <dd>
 
 
-<p>Both accessible and in-accessible routes are acceptable.</p>
+<p>Route instruction direction straight.</p>
 
-    
 
-    
+
+
 
     
 	<p>
-		Declared In <code class="declared-in-ref">PWDirectionsRequest.h</code>.
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="PWDirectionsTypeAccessible"></a><code>PWDirectionsTypeAccessible</code></dt>
+                            <dt><a name="" title="PWRouteInstructionDirectionLeft"></a><code>PWRouteInstructionDirectionLeft</code></dt>
 <dd>
 
 
-<p>Only accessible routes are acceptable.</p>
+<p>Route instruction direction left.</p>
 
-    
 
-    
+
+
 
     
 	<p>
-		Declared In <code class="declared-in-ref">PWDirectionsRequest.h</code>.
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="PWRouteInstructionDirectionRight"></a><code>PWRouteInstructionDirectionRight</code></dt>
+<dd>
+
+
+<p>Route instruction direction right.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="PWRouteInstructionDirectionBearLeft"></a><code>PWRouteInstructionDirectionBearLeft</code></dt>
+<dd>
+
+
+<p>Route instruction direction bear left.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="PWRouteInstructionDirectionBearRight"></a><code>PWRouteInstructionDirectionBearRight</code></dt>
+<dd>
+
+
+<p>Route instruction direction bear right.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="PWRouteInstructionDirectionFloorChange"></a><code>PWRouteInstructionDirectionFloorChange</code></dt>
+<dd>
+
+
+<p>Route instruction direction floor change.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="PWRouteInstructionDirectionElevatorUp"></a><code>PWRouteInstructionDirectionElevatorUp</code></dt>
+<dd>
+
+
+<p>Route instruction direction elevetor up.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="PWRouteInstructionDirectionElevatorDown"></a><code>PWRouteInstructionDirectionElevatorDown</code></dt>
+<dd>
+
+
+<p>Route instruction direction elevator down.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="PWRouteInstructionDirectionStairsUp"></a><code>PWRouteInstructionDirectionStairsUp</code></dt>
+<dd>
+
+
+<p>Route instruction direction stairs up.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="PWRouteInstructionDirectionStairsDown"></a><code>PWRouteInstructionDirectionStairsDown</code></dt>
+<dd>
+
+
+<p>Route instruction direction stairs down.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">PWRouteInstruction.h</code>.
 	</p>
 	
 </dd>
@@ -146,11 +298,14 @@
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle">Declared In</h4>
-                        <code class="declared-in-ref">PWDirectionsRequest.h</code><br />
+                        <code class="declared-in-ref">PWRouteInstruction.h</code><br />
                     </div>				
                     
                     
                     
+                    
+                    
+
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -161,9 +316,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-09-28)</span><br />
+						<p><span class="copyright">&copy; 2016 Phunware, Inc.. All rights reserved. (Last updated: 2016-07-25)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
 				</div>

@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWBuildingOverlay Class Reference</title>
+		<title>PWRouteViewController Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 961)" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWBuildingOverlay Class Reference</h1>
+				<h1 class="hideInXcode">PWRouteViewController Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,17 +39,11 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/building">&nbsp;&nbsp;&nbsp;&nbsp;building</option>
-	
-	<option value="//api/name/currentDocument">&nbsp;&nbsp;&nbsp;&nbsp;currentDocument</option>
-	
-	<option value="//api/name/currentFloor">&nbsp;&nbsp;&nbsp;&nbsp;currentFloor</option>
+	<option value="//api/name/customLocation">&nbsp;&nbsp;&nbsp;&nbsp;customLocation</option>
 	
 	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
 	
-	<option value="//api/name/loaded">&nbsp;&nbsp;&nbsp;&nbsp;loaded</option>
-	
-	<option value="//api/name/resources">&nbsp;&nbsp;&nbsp;&nbsp;resources</option>
+	<option value="//api/name/userLocation">&nbsp;&nbsp;&nbsp;&nbsp;userLocation</option>
 	
 	
 	
@@ -60,7 +54,7 @@
 	
 	<option value="//api/name/initWithBuilding:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithBuilding:</option>
 	
-	<option value="//api/name/initWithBuilding:resources:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithBuilding:resources:</option>
+	<option value="//api/name/initWithBuilding:withAccessibility:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithBuilding:withAccessibility:</option>
 	
 	
 	
@@ -78,7 +72,9 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing the Delegate">Accessing the Delegate</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Instance Methods">Instance Methods</a></span></li>
 	
 </ul></li>
 
@@ -88,17 +84,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/building">building</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentDocument">currentDocument</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentFloor">currentFloor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customLocation">customLocation</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loaded">loaded</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resources">resources</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userLocation">userLocation</a></span></li>
 	
 </ul></li>
 
@@ -110,7 +100,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithBuilding:">initWithBuilding:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithBuilding:resources:">initWithBuilding:resources:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithBuilding:withAccessibility:">initWithBuilding:withAccessibility:</a></span></li>
 	
 </ul></li>
 
@@ -119,7 +109,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWBuildingOverlay Class Reference" name="top"></a>
+				<a title="PWRouteViewController Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -128,7 +118,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWBuildingOverlay Class Reference</h1>
+						<h1 class="title title-header">PWRouteViewController Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -136,13 +126,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
-</tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">MKOverlay</td>
+	<td class="specification-value">UIViewController</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWBuildingOverlay.h</td>
+	<td class="specification-value">PWRouteViewController.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -152,7 +139,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWBuildingOverlay</code> object defines a specific type of annotation that represents a <a href="#//api/name/building">building</a> on a map.</p>
+						<p>A view controller that let&rsquo;s the user browse and search a <a href="../Classes/PWBuilding.html">PWBuilding</a> structure to navigate from a start point of interest to an end point of interest.</p>
 					</div>
 					
 					
@@ -164,46 +151,8 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						<h3 class="subsubtitle task-title">Other Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/building">&nbsp;&nbsp;building</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/currentDocument">&nbsp;&nbsp;currentDocument</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/currentFloor">&nbsp;&nbsp;currentFloor</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/resources">&nbsp;&nbsp;resources</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/loaded">&nbsp;&nbsp;loaded</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li>
-						</ul>
-						
-						
-						<a title="Accessing the Delegate" name="task_Accessing the Delegate"></a>
-						<h3 class="subsubtitle task-title">Accessing the Delegate</h3>
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
 
 						<ul class="task-list">
 							<li>
@@ -214,13 +163,33 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/customLocation">&nbsp;&nbsp;customLocation</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userLocation">&nbsp;&nbsp;userLocation</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Instance Methods" name="task_Instance Methods"></a>
+						<h3 class="subsubtitle task-title">Instance Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
 		<code><a href="#//api/name/initWithBuilding:">&ndash;&nbsp;initWithBuilding:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithBuilding:resources:">&ndash;&nbsp;initWithBuilding:resources:</a></code>
+		<code><a href="#//api/name/initWithBuilding:withAccessibility:">&ndash;&nbsp;initWithBuilding:withAccessibility:</a></code>
 	</span>
 	
 	
@@ -238,18 +207,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/building" title="building"></a>
-	<h3 class="subsubtitle method-title">building</h3>
+	<a name="//api/name/customLocation" title="customLocation"></a>
+	<h3 class="subsubtitle method-title">customLocation</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The building object associated with the overlay. (read-only)</p>
+		<p>A reference to a current custom location.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (readonly) PWBuilding *building</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) PWCustomLocation *customLocation</code></div>
 
     
 	
@@ -267,79 +236,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/currentDocument" title="currentDocument"></a>
-	<h3 class="subsubtitle method-title">currentDocument</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The map document object associated with the overlay. (read-only)</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (readonly) PWMapDocument *currentDocument</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/currentFloor" title="currentFloor"></a>
-	<h3 class="subsubtitle method-title">currentFloor</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The floor currently being displayed. This value may be &lsquo;nil&rsquo; while the <a href="#//api/name/building">building</a> overlay is loading. Changing the floor to the same floor will have no effect. Attempt to access this property only after receiving the <code>buildingOverlay:didFinishLoadingBuilding:</code> <a href="#//api/name/delegate">delegate</a> callback.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property PWBuildingFloor *currentFloor</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
+		<code class="declared-in-ref">PWRouteViewController.h</code><br />
 	</div>				
 	
 	
@@ -352,12 +249,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The receiver&rsquo;s delegate. The delegate must conform to the <a href="../Protocols/PWBuildingOverlayDelegateProtocol.html"><code>PWBuildingOverlayDelegateProtocol</code></a> protocol.</p>
+		<p>The receiver’s delegate.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegateProtocol&gt; delegate</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</code></div>
 
     
 	
@@ -375,25 +272,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
+		<code class="declared-in-ref">PWRouteViewController.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/loaded" title="loaded"></a>
-	<h3 class="subsubtitle method-title">loaded</h3>
+	<a name="//api/name/userLocation" title="userLocation"></a>
+	<h3 class="subsubtitle method-title">userLocation</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A Boolean flag indicating whether the <a href="#//api/name/building">building</a> overlay has loaded.</p>
+		<p>A reference to the user&rsquo;s current location.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (getter=isLoaded) BOOL loaded</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) PWCustomLocation *userLocation</code></div>
 
     
 	
@@ -411,43 +308,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/resources" title="resources"></a>
-	<h3 class="subsubtitle method-title">resources</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The array of map document resources associated with the overlay. (read-only)</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *resources</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
+		<code class="declared-in-ref">PWRouteViewController.h</code><br />
 	</div>				
 	
 	
@@ -470,7 +331,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializes the overlay with the specified <a href="#//api/name/building">building</a>. This method will automatically fetch and cache all required <a href="#//api/name/resources">resources</a>. The <a href="#//api/name/delegate">delegate</a> will receive a success or failure callback.</p>
+		<p>Inits a PWRouteViewController instance for a given building structure.</p>
 	</div>		
 	
     
@@ -484,21 +345,21 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>building</em></dt>
-			<dd><p>The <a href="#//api/name/building">building</a> object to use when displaying <a href="#//api/name/building">building</a> data on the map.</p></dd>
+			<dd><p>A <a href="../Classes/PWBuilding.html">PWBuilding</a> object.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Map assets are cached to disk, which enables the map view to display <a href="#//api/name/building">building</a> information even while offline. For clearing a <a href="#//api/name/building">building</a> data cache, refer to <a href="../Classes/PWBuildingManager.html"><code>PWBuildingManager</code></a> for more information.</p>
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns a PWRouteViewController instance.</p>
 	</div>
+	
+	
+	
+	
 	
 	
 	
@@ -508,25 +369,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
+		<code class="declared-in-ref">PWRouteViewController.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithBuilding:resources:" title="initWithBuilding:resources:"></a>
-	<h3 class="subsubtitle method-title">initWithBuilding:resources:</h3>
+	<a name="//api/name/initWithBuilding:withAccessibility:" title="initWithBuilding:withAccessibility:"></a>
+	<h3 class="subsubtitle method-title">initWithBuilding:withAccessibility:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializes the overlay with the specified <a href="#//api/name/building">building</a> and <a href="#//api/name/resources">resources</a>. This initializer does not make any network calls.</p>
+		<p>Inits a PWRouteViewController instance for a given building structure considering accessibility.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithBuilding:(PWBuilding *)<em>building</em> resources:(NSArray *)<em>resources</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithBuilding:(PWBuilding *)<em>building</em> withAccessibility:(BOOL)<em>accessible</em></code></div>
 
     
 	
@@ -535,26 +396,26 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>building</em></dt>
-			<dd><p>The <a href="#//api/name/building">building</a> object to use when displaying <a href="#//api/name/building">building</a> data on the map.</p></dd>
+			<dd><p>A <a href="../Classes/PWBuilding.html">PWBuilding</a> object.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>resources</em></dt>
-			<dd><p>The map document <a href="#//api/name/resources">resources</a> associated with this overlay. The map document <a href="#//api/name/resources">resources</a> must be associated with the <a href="#//api/name/building">building</a> object.</p></dd>
+			<dt><em>accessible</em></dt>
+			<dd><p>A BOOL value to tell de init to considere accessibility or not.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Map assets are cached to disk, which enables the map view to display <a href="#//api/name/building">building</a> information even while offline. For clearing a <a href="#//api/name/building">building</a> data cache, refer to <a href="../Classes/PWBuildingManager.html"><code>PWBuildingManager</code></a> for more information.</p>
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns a PWRouteViewController instance.</p>
 	</div>
+	
+	
+	
+	
 	
 	
 	
@@ -564,7 +425,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingOverlay.h</code><br />
+		<code class="declared-in-ref">PWRouteViewController.h</code><br />
 	</div>				
 	
 	
@@ -575,6 +436,9 @@
 					
                     
                     
+                    
+                    
+
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -585,9 +449,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-09-28)</span><br />
+						<p><span class="copyright">&copy; 2016 Phunware, Inc.. All rights reserved. (Last updated: 2016-07-25)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
 				</div>
