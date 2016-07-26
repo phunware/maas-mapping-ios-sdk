@@ -10,9 +10,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/phunware/maas-mapping-ios-sdk.git", :tag => "v3.0.0" }
   s.license      = { :type => 'Copyright', :text => 'Copyright 2015 by Phunware Inc. All rights reserved.' }
 
-  s.public_header_files = 'Framework/PWMapKit.framework/Versions/A/Headers/*.h'
   s.ios.vendored_frameworks = 'Framework/PWMapKit.framework'
-  s.ios.dependency 'PWLocation'
+  s.ios.dependency 'PWLocation', '~> 3.0.0'
 
   s.xcconfig      = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/PWMapKit/**"'}
   s.ios.frameworks = 'Security', 'CoreGraphics', 'QuartzCore', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreLocation', 'MapKit'
