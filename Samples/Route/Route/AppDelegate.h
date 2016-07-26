@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  Route
 //
-//  Created by Xiangwei Wang on 7/26/16.
+//  Created on 7/26/16.
 //  Copyright © 2016 Phunware Inc. All rights reserved.
 //
 
