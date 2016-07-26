@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWDirectionsResponse.html">
+	<File path="Classes/PWRouteInstructionsView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWDirectionsResponse</TokenIdentifier>
-			<Abstract type="html">The PWDirectionsResponse class provides a container for route information returned by the Phunware servers. Do not create instances of this class directly. Instead, initiate a request for directions between two points by calling the calculateDirectionsWithCompletionHandler: method of a PWDirections object. An instance of this class will be received as the result.</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstructionsView</TokenIdentifier>
+			<Abstract type="html">The PWRouteInstructionsView class allows to display a calculated PWRoute instructions on the map view.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
             
 			
 			<NodeRef refid="12"/>
@@ -13,77 +13,107 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/setRequest:</TokenIdentifier>
-			<Abstract type="html">The original directions request object. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWDirectionsRequest *request</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/request</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/request</TokenIdentifier>
-			<Abstract type="html">The original directions request object. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWDirectionsRequest *request</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/request</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsResponse/request</TokenIdentifier>
-			<Abstract type="html">The original directions request object. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstructionsView/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWDirectionsRequest *request</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/request</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/setRoutes:</TokenIdentifier>
-			<Abstract type="html">An array of route objects representing the directions between the start and end points. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/setRoute:</TokenIdentifier>
+			<Abstract type="html">A reference to the route object of the PWRouteInstructionsView instance.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *routes</Declaration>
+			<Declaration>@property (nonatomic) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/routes</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsResponse/routes</TokenIdentifier>
-			<Abstract type="html">An array of route objects representing the directions between the start and end points. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/route</TokenIdentifier>
+			<Abstract type="html">A reference to the route object of the PWRouteInstructionsView instance.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *routes</Declaration>
+			<Declaration>@property (nonatomic) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/routes</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsResponse/routes</TokenIdentifier>
-			<Abstract type="html">An array of route objects representing the directions between the start and end points. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsResponse.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstructionsView/route</TokenIdentifier>
+			<Abstract type="html">A reference to the route object of the PWRouteInstructionsView instance.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *routes</Declaration>
+			<Declaration>@property (nonatomic) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/routes</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/initWithRoute:</TokenIdentifier>
+			<Abstract type="html">Creates a PWRouteInstructionsView instance for the given route.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">A PWRoute reference.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWRouteInstructionsView instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithRoute:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/invalidateLayout</TokenIdentifier>
+			<Abstract type="html">Invalidates PWRouteInstructionsView layout.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
+			
+			<Declaration>- (void)invalidateLayout</Declaration>
+			
+			
+			<Anchor>//api/name/invalidateLayout</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

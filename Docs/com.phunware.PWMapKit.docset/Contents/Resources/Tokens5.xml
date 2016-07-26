@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingFloorReference.html">
+	<File path="Classes/PWMapView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingFloorReference</TokenIdentifier>
-			<Abstract type="html">The floor reference object contains reference information about the floor&apos;s location in the map coordinate space.</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMapView</TokenIdentifier>
+			<Abstract type="html">The PWMapClass displays a building structure in an MKMapKit environment.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
@@ -13,185 +13,648 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setTopLeft:</TokenIdentifier>
-			<Abstract type="html">The top-left lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWMapViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/topLeft</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/topLeft</TokenIdentifier>
-			<Abstract type="html">The top-left lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWMapViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/topLeft</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/topLeft</TokenIdentifier>
-			<Abstract type="html">The top-left lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWMapViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/topLeft</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setTopRight:</TokenIdentifier>
-			<Abstract type="html">  The top-right lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setMapViewLocationType:</TokenIdentifier>
+			<Abstract type="html">The location provider currently used by the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D topRight</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWMapViewLocationType mapViewLocationType</Declaration>
 			
 			
-			<Anchor>//api/name/topRight</Anchor>
+			<Anchor>//api/name/mapViewLocationType</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/topRight</TokenIdentifier>
-			<Abstract type="html">  The top-right lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/mapViewLocationType</TokenIdentifier>
+			<Abstract type="html">The location provider currently used by the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D topRight</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWMapViewLocationType mapViewLocationType</Declaration>
 			
 			
-			<Anchor>//api/name/topRight</Anchor>
+			<Anchor>//api/name/mapViewLocationType</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/topRight</TokenIdentifier>
-			<Abstract type="html">  The top-right lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/mapViewLocationType</TokenIdentifier>
+			<Abstract type="html">The location provider currently used by the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D topRight</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWMapViewLocationType mapViewLocationType</Declaration>
 			
 			
-			<Anchor>//api/name/topRight</Anchor>
+			<Anchor>//api/name/mapViewLocationType</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setBottomLeft:</TokenIdentifier>
-			<Abstract type="html">  The bottom-left lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setBuilding:</TokenIdentifier>
+			<Abstract type="html">The building currently loaded into the Map View.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D bottomLeft</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/bottomLeft</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/bottomLeft</TokenIdentifier>
-			<Abstract type="html">  The bottom-left lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/building</TokenIdentifier>
+			<Abstract type="html">The building currently loaded into the Map View.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D bottomLeft</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/bottomLeft</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/bottomLeft</TokenIdentifier>
-			<Abstract type="html">  The bottom-left lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/building</TokenIdentifier>
+			<Abstract type="html">The building currently loaded into the Map View.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D bottomLeft</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/bottomLeft</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setBottomRight:</TokenIdentifier>
-			<Abstract type="html">  The bottom-right lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCurrentFloor:</TokenIdentifier>
+			<Abstract type="html">The floor currently displayed within the building.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>@property (nonatomic) PWFloor *currentFloor</Declaration>
 			
 			
-			<Anchor>//api/name/bottomRight</Anchor>
+			<Anchor>//api/name/currentFloor</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/bottomRight</TokenIdentifier>
-			<Abstract type="html">  The bottom-right lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentFloor</TokenIdentifier>
+			<Abstract type="html">The floor currently displayed within the building.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>@property (nonatomic) PWFloor *currentFloor</Declaration>
 			
 			
-			<Anchor>//api/name/bottomRight</Anchor>
+			<Anchor>//api/name/currentFloor</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/bottomRight</TokenIdentifier>
-			<Abstract type="html">  The bottom-right lat/long coordinate of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/currentFloor</TokenIdentifier>
+			<Abstract type="html">The floor currently displayed within the building.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>@property (nonatomic) PWFloor *currentFloor</Declaration>
 			
 			
-			<Anchor>//api/name/bottomRight</Anchor>
+			<Anchor>//api/name/currentFloor</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/setAngle:</TokenIdentifier>
-			<Abstract type="html">  The angle of the building in the lat/long coordinate space. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setUserTrackingBarButtonItem:</TokenIdentifier>
+			<Abstract type="html">A property to access the map view user tracking bar button.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CGFloat angle</Declaration>
+			<Declaration>@property (nonatomic) UIBarButtonItem *userTrackingBarButtonItem</Declaration>
 			
 			
-			<Anchor>//api/name/angle</Anchor>
+			<Anchor>//api/name/userTrackingBarButtonItem</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloorReference/angle</TokenIdentifier>
-			<Abstract type="html">  The angle of the building in the lat/long coordinate space. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/userTrackingBarButtonItem</TokenIdentifier>
+			<Abstract type="html">A property to access the map view user tracking bar button.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CGFloat angle</Declaration>
+			<Declaration>@property (nonatomic) UIBarButtonItem *userTrackingBarButtonItem</Declaration>
 			
 			
-			<Anchor>//api/name/angle</Anchor>
+			<Anchor>//api/name/userTrackingBarButtonItem</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloorReference/angle</TokenIdentifier>
-			<Abstract type="html">  The angle of the building in the lat/long coordinate space. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingFloorReference.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/userTrackingBarButtonItem</TokenIdentifier>
+			<Abstract type="html">A property to access the map view user tracking bar button.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CGFloat angle</Declaration>
+			<Declaration>@property (nonatomic) UIBarButtonItem *userTrackingBarButtonItem</Declaration>
 			
 			
-			<Anchor>//api/name/angle</Anchor>
+			<Anchor>//api/name/userTrackingBarButtonItem</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCustomLocation:</TokenIdentifier>
+			<Abstract type="html">A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a Dropped Pin).</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
+			
+			
+			<Anchor>//api/name/customLocation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/customLocation</TokenIdentifier>
+			<Abstract type="html">A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a Dropped Pin).</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
+			
+			
+			<Anchor>//api/name/customLocation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/customLocation</TokenIdentifier>
+			<Abstract type="html">A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a Dropped Pin).</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
+			
+			
+			<Anchor>//api/name/customLocation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setUserLocation:</TokenIdentifier>
+			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) PWCustomLocation *userLocation</Declaration>
+			
+			
+			<Anchor>//api/name/userLocation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/userLocation</TokenIdentifier>
+			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) PWCustomLocation *userLocation</Declaration>
+			
+			
+			<Anchor>//api/name/userLocation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/userLocation</TokenIdentifier>
+			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) PWCustomLocation *userLocation</Declaration>
+			
+			
+			<Anchor>//api/name/userLocation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCurrentLocationProviderType:</TokenIdentifier>
+			<Abstract type="html">The current type of location provider for the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWMapViewLocationType currentLocationProviderType</Declaration>
+			
+			
+			<Anchor>//api/name/currentLocationProviderType</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentLocationProviderType</TokenIdentifier>
+			<Abstract type="html">The current type of location provider for the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWMapViewLocationType currentLocationProviderType</Declaration>
+			
+			
+			<Anchor>//api/name/currentLocationProviderType</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/currentLocationProviderType</TokenIdentifier>
+			<Abstract type="html">The current type of location provider for the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWMapViewLocationType currentLocationProviderType</Declaration>
+			
+			
+			<Anchor>//api/name/currentLocationProviderType</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setMapType:</TokenIdentifier>
+			<Abstract type="html">The type of data displayed by the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) MKMapType mapType</Declaration>
+			
+			
+			<Anchor>//api/name/mapType</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/mapType</TokenIdentifier>
+			<Abstract type="html">The type of data displayed by the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) MKMapType mapType</Declaration>
+			
+			
+			<Anchor>//api/name/mapType</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/mapType</TokenIdentifier>
+			<Abstract type="html">The type of data displayed by the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) MKMapType mapType</Declaration>
+			
+			
+			<Anchor>//api/name/mapType</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCenterCoordinate:</TokenIdentifier>
+			<Abstract type="html">The latitude and longitude of the center of the map view&apos;s display.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D centerCoordinate</Declaration>
+			
+			
+			<Anchor>//api/name/centerCoordinate</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/centerCoordinate</TokenIdentifier>
+			<Abstract type="html">The latitude and longitude of the center of the map view&apos;s display.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D centerCoordinate</Declaration>
+			
+			
+			<Anchor>//api/name/centerCoordinate</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/centerCoordinate</TokenIdentifier>
+			<Abstract type="html">The latitude and longitude of the center of the map view&apos;s display.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D centerCoordinate</Declaration>
+			
+			
+			<Anchor>//api/name/centerCoordinate</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setRouteSnappingTolerance:</TokenIdentifier>
+			<Abstract type="html">The route snapping tolerance value.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRouteSnapTolerance routeSnappingTolerance</Declaration>
+			
+			
+			<Anchor>//api/name/routeSnappingTolerance</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/routeSnappingTolerance</TokenIdentifier>
+			<Abstract type="html">The route snapping tolerance value.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRouteSnapTolerance routeSnappingTolerance</Declaration>
+			
+			
+			<Anchor>//api/name/routeSnappingTolerance</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/routeSnappingTolerance</TokenIdentifier>
+			<Abstract type="html">The route snapping tolerance value.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRouteSnapTolerance routeSnappingTolerance</Declaration>
+			
+			
+			<Anchor>//api/name/routeSnappingTolerance</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCurrentRoute:</TokenIdentifier>
+			<Abstract type="html">The map view&apos;s current route if any.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRoute *currentRoute</Declaration>
+			
+			
+			<Anchor>//api/name/currentRoute</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentRoute</TokenIdentifier>
+			<Abstract type="html">The map view&apos;s current route if any.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRoute *currentRoute</Declaration>
+			
+			
+			<Anchor>//api/name/currentRoute</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/currentRoute</TokenIdentifier>
+			<Abstract type="html">The map view&apos;s current route if any.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRoute *currentRoute</Declaration>
+			
+			
+			<Anchor>//api/name/currentRoute</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCurrentRouteInstruction:</TokenIdentifier>
+			<Abstract type="html">The map view&apos;s current route instruction if any.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRouteInstruction *currentRouteInstruction</Declaration>
+			
+			
+			<Anchor>//api/name/currentRouteInstruction</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentRouteInstruction</TokenIdentifier>
+			<Abstract type="html">The map view&apos;s current route instruction if any.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRouteInstruction *currentRouteInstruction</Declaration>
+			
+			
+			<Anchor>//api/name/currentRouteInstruction</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/currentRouteInstruction</TokenIdentifier>
+			<Abstract type="html">The map view&apos;s current route instruction if any.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRouteInstruction *currentRouteInstruction</Declaration>
+			
+			
+			<Anchor>//api/name/currentRouteInstruction</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setMapViewLocationType:configuration:</TokenIdentifier>
+			<Abstract type="html">Sets the location provider to be used by the map.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setMapViewLocationType:(PWMapViewLocationType)mapViewLocationType configuration:(NSDictionary *)configuration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapViewLocationType</Name>
+					<Abstract type="html">The location provider to use. See PWMapViewLocationType for a list of supported location providers.</Abstract>
+				</Parameter><Parameter>
+					<Name>configuration</Name>
+					<Abstract type="html">NSDictionary of configuration key/values. Each Location Type defines its own expected values.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setMapViewLocationType:configuration:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setBuilding:</TokenIdentifier>
+			<Abstract type="html">Sets the building object to be used by the map.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setBuilding:(PWBuilding *)building</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>building</Name>
+					<Abstract type="html">The valid building object to display.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setBuilding:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setFloor:</TokenIdentifier>
+			<Abstract type="html">Sets the current floor of the building that should be displayed on the map.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setFloor:(PWFloor *)floor</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>floor</Name>
+					<Abstract type="html">The floor object to display</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setFloor:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/navigateToCustomLocation:</TokenIdentifier>
+			<Abstract type="html">Repositions the map&apos;s view to a custom location.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)navigateToCustomLocation:(PWCustomLocation *)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">A custom location reference where the map should navigate to.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/navigateToCustomLocation:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/navigateToPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">Repositions the map&apos;s view to an specific point of interest.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)navigateToPointOfInterest:(PWPointOfInterest *)poi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>poi</Name>
+					<Abstract type="html">A point of interest reference where the map should navigate to.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/navigateToPointOfInterest:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/showPointsOfInterest:</TokenIdentifier>
+			<Abstract type="html">Displays the array of Points of Interest, causing the map view to zoom in/out to contain all of the points of interest.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)showPointsOfInterest:(NSArray *)pois</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pois</Name>
+					<Abstract type="html">An array of PWPointOfInterest objects that should be displayed on the map.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showPointsOfInterest:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/navigateWithRoute:</TokenIdentifier>
+			<Abstract type="html">Repositions the map view to display the given route.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)navigateWithRoute:(PWRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">The route object that will be used to navigate within the map.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/navigateWithRoute:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setRouteManeuver:</TokenIdentifier>
+			<Abstract type="html">Sets and dislays the current navitation instruction/steps during a navigation.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setRouteManeuver:(PWRouteInstruction *)instruction</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>instruction</Name>
+					<Abstract type="html">A route instruction object for the route.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRouteManeuver:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/cancelRouting</TokenIdentifier>
+			<Abstract type="html">Stops the current routing task.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelRouting</Declaration>
+			
+			
+			<Anchor>//api/name/cancelRouting</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCenterCoordinate:zoomLevel:animated:</TokenIdentifier>
+			<Abstract type="html">Positions the map to the supplied center coordinate with the given zoom level and optional animation.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setCenterCoordinate:(CLLocationCoordinate2D)centerCoordinate zoomLevel:(NSUInteger)zoomLevel animated:(BOOL)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>centerCoordinate</Name>
+					<Abstract type="html">A CLLocationCoordinate2D object representing the latitude an longitude the map should zoom to.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoomLevel</Name>
+					<Abstract type="html">A NSUInteger value representing zoom level the map should zoom to.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">A BOOL property to determine whether the change of map&apos;s center should be animated or not.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCenterCoordinate:zoomLevel:animated:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

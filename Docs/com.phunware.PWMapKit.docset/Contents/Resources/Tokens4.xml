@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingFloor.html">
+	<File path="Classes/PWFloor.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingFloor</TokenIdentifier>
-			<Abstract type="html">The building floor object encapsulates all data related to a floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWFloor</TokenIdentifier>
+			<Abstract type="html">A PWFloor represents a building&apos;s floor structure defined within MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
             
 			
 			<NodeRef refid="4"/>
@@ -13,11 +13,47 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setName:</TokenIdentifier>
-			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setBuilding:</TokenIdentifier>
+			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (copy, readonly) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/building</TokenIdentifier>
+			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/building</TokenIdentifier>
+			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
 			<Anchor>//api/name/name</Anchor>
@@ -25,23 +61,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the building&apos;s floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
-			
-			<Declaration>@property (copy, readonly) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
 			<Anchor>//api/name/name</Anchor>
@@ -49,149 +73,216 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setBuildingID:</TokenIdentifier>
-			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/buildingID</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/buildingID</TokenIdentifier>
-			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setLevel:</TokenIdentifier>
+			<Abstract type="html">The floor&apos;s level number.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
 			
 			
-			<Anchor>//api/name/buildingID</Anchor>
+			<Anchor>//api/name/level</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/buildingID</TokenIdentifier>
-			<Abstract type="html">The building identifier denotes the building that the floor belongs to.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/level</TokenIdentifier>
+			<Abstract type="html">The floor&apos;s level number.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
 			
 			
-			<Anchor>//api/name/buildingID</Anchor>
+			<Anchor>//api/name/level</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The floor identifier.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/level</TokenIdentifier>
+			<Abstract type="html">The floor&apos;s level number.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/level</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setPointsOfInterest:</TokenIdentifier>
+			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/pointsOfInterest</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterest</TokenIdentifier>
+			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/pointsOfInterest</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setFloorLevel:</TokenIdentifier>
-			<Abstract type="html">The physical floor level.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/pointsOfInterest</TokenIdentifier>
+			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorLevel floorLevel</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
 			
 			
-			<Anchor>//api/name/floorLevel</Anchor>
+			<Anchor>//api/name/pointsOfInterest</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/floorLevel</TokenIdentifier>
-			<Abstract type="html">The physical floor level.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setTopLeft:</TokenIdentifier>
+			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorLevel floorLevel</Declaration>
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
 			
 			
-			<Anchor>//api/name/floorLevel</Anchor>
+			<Anchor>//api/name/topLeft</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/floorLevel</TokenIdentifier>
-			<Abstract type="html">The physical floor level.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/topLeft</TokenIdentifier>
+			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorLevel floorLevel</Declaration>
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
 			
 			
-			<Anchor>//api/name/floorLevel</Anchor>
+			<Anchor>//api/name/topLeft</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/setReference:</TokenIdentifier>
-			<Abstract type="html">The reference GPS points and angle for the building&apos;s floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/topLeft</TokenIdentifier>
+			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorReference *reference</Declaration>
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
 			
 			
-			<Anchor>//api/name/reference</Anchor>
+			<Anchor>//api/name/topLeft</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingFloor/reference</TokenIdentifier>
-			<Abstract type="html">The reference GPS points and angle for the building&apos;s floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setBottomRight:</TokenIdentifier>
+			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorReference *reference</Declaration>
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
 			
 			
-			<Anchor>//api/name/reference</Anchor>
+			<Anchor>//api/name/bottomRight</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingFloor/reference</TokenIdentifier>
-			<Abstract type="html">The reference GPS points and angle for the building&apos;s floor.</Abstract>
-			<DeclaredIn>PWBuildingFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/bottomRight</TokenIdentifier>
+			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorReference *reference</Declaration>
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
 			
 			
-			<Anchor>//api/name/reference</Anchor>
+			<Anchor>//api/name/bottomRight</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/bottomRight</TokenIdentifier>
+			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			
+			
+			<Anchor>//api/name/bottomRight</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/containsCoordinate:</TokenIdentifier>
+			<Abstract type="html">Determines if a given coordinate is contained within the floor&apos;s bounding latitude and longitude.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)containsCoordinate:(CLLocationCoordinate2D)coordinate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>coordinate</Name>
+					<Abstract type="html">A CLLocationCoordinate2D object containing latitude and longitude.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a BOOL value saying if the floor contains the given coordinate.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsCoordinate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterestOfType:</TokenIdentifier>
+			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">A PWPointOfInterestType.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterestType objects for the given type.</Abstract></ReturnValue>
+			<Anchor>//api/name/pointsOfInterestOfType:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterestOfType:containing:</TokenIdentifier>
+			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type and who&apos;s name contains the supplied text.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">A PWPointOfInterestType.</Abstract>
+				</Parameter><Parameter>
+					<Name>containingText</Name>
+					<Abstract type="html">A NSString substring of text to search for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterestType objects for the given type and who&apos;s name contains the supplied text.</Abstract></ReturnValue>
+			<Anchor>//api/name/pointsOfInterestOfType:containing:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

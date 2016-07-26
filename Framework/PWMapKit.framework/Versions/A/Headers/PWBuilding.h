@@ -2,65 +2,115 @@
 //  PWBuilding.h
 //  PWMapKit
 //
-//  Copyright (c) 2015 Phunware. All rights reserved.
+//  Created by Steven Spry on 5/12/16.
+//  Copyright © 2016 Phunware. All rights reserved.
 //
 
-/**
- A building's data includes a variety of metadata about the building.
- */
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-#import <CoreLocation/CLLocation.h>
+#import "PWFloor.h"
 
-#import "PWMappingTypes.h"
-
-@class PWBuildingFloor;
+@class  PWPointOfInterest;
+@class  PWCustomLocation;
 
 /**
- The building object encompasses a wide variety of information associated with the building. Information includes but is not limited to: floor data, floor resource data, street address and location.
+ *  A PWBuilding represents the building structure defined within MaaS Portal.
  */
-
 @interface PWBuilding : NSObject
 
-/**
- The venue GUID as specified by the mapping service. (read-only)
+/**---------------------------------------------------------------------------------------
+ * @name Properties
+ *  ---------------------------------------------------------------------------------------
  */
-@property (copy, readonly) NSString *venueGUID;
 
 /**
- The campus identifier for the building. (read-only)
+ *  The identifier for the building structure that corresponds to the MaaS Portal.
  */
-@property (readonly) PWCampusIdentifier campusID;
+@property (nonatomic, readonly) NSInteger identifier;
 
 /**
- The building identifier. (read-only)
+ *  The name of the building as defined in MaaS Portal.
  */
-@property (readonly) PWBuildingIdentifier buildingID;
+@property (nonatomic, copy, readonly) NSString *name;
 
 /**
- The building name. (read-only)
+ *  An array of PWFloor objects that are contained in the building.
  */
-@property (copy, readonly) NSString *name;
+@property (nonatomic, readonly) NSMutableArray *floors;
 
 /**
- The street address of the building. (read-only)
+ *  An array of PWPointOfInterestType objects that are used in MaaS Portal.
  */
-@property (copy, readonly) NSString *streetAddress;
+@property (nonatomic, readonly) NSMutableArray *pointOfInterestTypes;
 
 /**
- The location of the building in the lat/long coordinate space. This location is typically the center of the building. (read-only)
+ *  The center point latitude and longitude of the building.
  */
-@property (readonly) CLLocationCoordinate2D location;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
+
+/**---------------------------------------------------------------------------------------
+ * @name Class Methods
+ *  ---------------------------------------------------------------------------------------
+ */
 
 /**
- The `PWBuildingFloor` objects associated with the building. (read-only)
+ *  Instantiates a new building structure using the MaaS Portal identifier. The completion handler is called when the building structure is fully loaded, including any network access.
+ *
+ *  @param identifier The identifier used in MaaS Portal for the building.
+ *  @param caching    YES/NO. Determines if the SDK will use prior cache information to instantiate the building structure. Default YES.
+ *  @param completion Completion handler that is called once building load is complete.
  */
-@property (readonly) NSArray *floors;
++ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL) caching completion:(void(^)(PWBuilding *building, NSError *error))completion;
+
+/**---------------------------------------------------------------------------------------
+ * @name Instance Methods
+ *  ---------------------------------------------------------------------------------------
+ */
 
 /**
- Finds a `PWBuildingFloor` object in the building that matches the provided floor identifier.
- @param identifier The building floor identifier to use for the search.
- @return The building's floor that matches the provided identifier, if one is found. If no matches are found, `nil` is returned.
+ *  Returns a PWBuilding instance for the given buildingId.
+ *
+ *  @param buildingId The identifier used in MaaS Portal for the building.
+ *
+ *  @return Returns a PWBuilding instance for the given buildingId.
  */
-- (PWBuildingFloor *)floorForIdentifier:(PWBuildingFloorIdentifier)identifier;
+- (instancetype) initWithBuildingId:(NSInteger)buildingId;
+
+/**
+ *  Allows the SDK developer to "override" point of interest types with an alternate title and image.
+ *
+ *  @param identifier Point of Interest Identifier defined in MaaS Portal.
+ *  @param title      The title to be used.
+ *  @param image      The image to be used.
+ */
+- (void) registerPointOfInterestType:(NSInteger) identifier title:(NSString *) title image:(UIImage *) image;
+
+/**
+ *  Returns a PWPointOfInterest instance that has the given identifier.
+ *
+ *  @param identifier The MaaS portal identifier of the point of interest.
+ *
+ *  @return Returns a PWPointOfInterest instance that has the given identifier.
+ */
+- (PWPointOfInterest *) pointOfInterestById:(NSInteger) identifier;
+
+/**
+ *  Determines if the coordinate is contained within the latitude and longitude bounds of the building.
+ *
+ *  @param coordinate A CLLocationCoordinate2D reference.
+ *
+ *  @return Returns a BOOL value YES/NO.
+ */
+- (BOOL) containsCoordinate:(CLLocationCoordinate2D) coordinate;
+
+/**
+ *  Finds the closest point of interest to the custom location.
+ *
+ *  @param location A PWCustomLocation reference.
+ *
+ *  @return Returns a PWPointOfInterest object.
+ */
+- (PWPointOfInterest *) pointOfInterestClosestToLocation:(PWCustomLocation *)location;
 
 @end

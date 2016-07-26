@@ -1,23 +1,26 @@
 PWMapKit SDK for iOS
 ====================
 
-> Version 2.6.0
+> Version 3.0.0
 
 **PWMapKit** is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services.  Visit http://maas.phunware.com/ for more details and to sign up.
 
 
 ## Requirements
 
-- PWCore v2.0.0 or greater
+- PWLocation v3.0.0 or greater (Automatically include when pod install PWMapKit)
+- PWCore v3.0.0 or greater (Automatically include when pod install PWMapKit)
 - iOS 7.0 or greater
 - Xcode 6 or greater
 
 
 ## Installation
 
-`PWMapKit` has a dependency on the [`PWCore`](https://github.com/phunware/maas-core-ios-sdk) and [`PWLocation`](https://github.com/phunware/maas-location-ios-sdk) frameworks.
+Phunware recommends using [CocoaPods](http://www.cocoapods.org) to integrate the framework. Simply add
+ 
+`pod 'PWMapKit'` 
 
-Phunware recommends using [CocoaPods](http://www.cocoapods.org) to integrate the framework.  Simply add `pod 'PWMapKit'` to your podfile.
+to your podfile, then the dependencies of `PWCore` and `PWLocation` are automatically added.
 
 Alternatively, all of the following frameworks can be added to the Vendor/Phunware directory of your project:
 
@@ -31,57 +34,137 @@ Alternatively, all of the following frameworks can be added to the Vendor/Phunwa
 Framework documentation is included in the the repository's `Documents` folder in both HTML and Docset formats. You can also find the [latest documentation online](http://phunware.github.io/maas-mapping-ios-sdk/).
 
 
-## Sample Applications
-
-The framework comes with a ready-to-use sample applications. In order to use this application you will need to update the configuration with your MaaS credentials and location provider information.
-
-1. Navigate ot the sample application directory and run `pod install` from the command line.
-2. Update your MaaS credentials and set up the building identifier in `PWMapKitSampleInfo.plist`.
-3. Update the location provider initializers in `PWViewController.m`.
-
-
 ## Usage
 
 The primary use of the components of PWMapKit revolve around creating a map view, displaying points of interest, showing the user's location and indoor routing.
 
 
-### Adding Indoor Maps to a Map View
+### Adding Map View
 
 ```objc
-PWMapView *map = [[PWMapView alloc] initWithFrame:<#frame#>
-                                       buildingID:<#buildingID#>];
+// Load a building.
+[PWBuilding buildingWithIdentifier:<#buildingID#> usingCache:<#cached#> completion:^(PWBuilding *building, NSError *error) {
+	// Get the buliding object here
+	<#building#>					
+}];
+                    
+...
+
+// Show the building on the map
+PWMapView *map = [[PWMapView alloc] initWithFrame:<#frame#>];
 map.delegate = self;
 [self.view addSubview:map];
 
-...
-
-// Load a different building.
-[mapView loadBuilding:<#buildingID#>];
+[mapView setBuilding:<#building#>];
 ```
 
 
-### Indoor Location
-
-The associated PWLocation framework implements an abstract indoor location manager protocol very similar to `CLLocationManager` which can be used to provide indoor location monitoring. PWSLLocationManager implements this protocol to provide BLE-based indoor location information using SenionLab beacons.
+### Set Indoor Location Manager
 
 ```objc
-PWSLLocationManager *locationManager =
-[[PWSLLocationManager alloc] initWithMapIdentifier:<#map-UUID#>
-                                customerIdentifier:<#customer-UUID#>];
-[locationManager setFloorIDMapping:<#mapping#>];
-[map registerIndoorLocationManager:locationManager];
-map.showsIndoorUserLocation = YES;
+[mapView setMapViewLocationType:<#locationType#> configuration:<#configuration#>];
 ```
-
 
 ### Routing
 
-The indoor routing APIs have been redesigned for simplicity.
+```
+PWRoute initRouteFrom:<#startPoint#> to:<#endPoint#> accessibility:<#accessibility#> completion:^(PWRoute *route, NSError *error) {
+	// Plot the route on the map
+	[mapView navigateWithRoute:route];            
+}];
+```
+
+## Usage With Light Weight UI
+
+The SDK provides a couple of UI view controllers, make it easier to integrate. You can directly add them to your app or extend to customization.
 
 
-#### Routing Between Points of Interest and Indoor Locations
+### PWMapViewController.h
+Displaying a map for specified building.
 
-See [this article](https://developer.phunware.com/display/DD/Calculating+Directions) for how to perform indoor routing with the PWMapKit SDK.
+```
+// UI view controller initialization
+PWMapViewController *mapViewController = [[PWMapViewController alloc] initWithBuilding:<#building#>];
+
+// Present
+UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
+[self presentViewController: navigationController animated:YES completion:^{
+	// Set center of map 
+	[mapViewController setCenterCoordinate:building.coordinate zoomLevel:19 animated:NO];
+	// Set indoor location manager                                   
+	[mapViewController.mapView setMapViewLocationType:<#locationType#> configuration:<#configuration#>];
+}];
+```
+
+### PWBuildingViewController.h
+Build POI selecting UI, and use the delegation to handle the POI that user selected.
+
+```
+// UI view controller initialization
+PWBuildingViewController *buildingViewController = [[PWBuildingViewController alloc] initWithBuilding:<#building#>];
+
+// Set the delegate the handle the route result.
+routeViewController.delegate = <#PWBuildingViewControllerDelegate#>;
+
+// Present
+UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:buildingViewController];
+[self presentViewController: navigationController animated:YES completion:^{
+}];
+```
+
+
+### PWRouteViewController.h
+Build route POIs selection UI, and use the delegation to handle start/end POIs that user want to start a navigation.
+
+```
+// UI view controller initialization
+PWRouteViewController *routeViewController = [[PWRouteViewController alloc] initWithBuilding:<#building#>];
+
+// Set the delegate the handle the route result.
+routeViewController.delegate = <#PWRouteInstructionViewDelegate#>;
+
+// Present
+UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:routeViewController];
+[self presentViewController:navigationController animated:YES completion:^{
+}];
+```
+
+### PWRouteInstructionsViewController.h
+Build route instrucation list UI, and use the delegation to handle the instruction that user selected.
+
+```
+// UI view controller initialization
+PWRouteInstructionsViewController *routeInstructionsViewController = [[PWRouteInstructionsViewController alloc] initWithRoute:<#route#>];
+
+// Set the delegate the handle the route result.
+routeViewController.delegate = <#PWRouteInstructionsViewControllerDelegate#>;
+
+// Present
+UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:routeInstructionsViewController];
+[self presentViewController:navigationController animated:YES completion:^{
+}];
+```
+
+
+## Sample Application
+
+1. Go to the `Samples/LoadMap` directory with `Terminal` in this project, then run `pod install`.
+2. The `LoadMap.xcworkspace` should be gernated if the previous step is done successfully, then open it in Xcode.
+3. Open the `AppDelegate.m` file in Xcode and put the right value for the constants below:
+
+````
+#define kAppID @"<App Identifier>"
+#define kAccessKey @"<Access Key>"
+#define kSignatureKey @"<Signature Key>"
+#define kEncryptionKey @"<Encrytion Key>"
+````
+Optional, open `ViewController.m` to replace the `buildingID` of `20234` and put the right value for the constants below:
+
+````
+#define kBLECustomerIdentifier @"<Senion Customer Identifier>"
+#define kBLEMapIdentifier @"<Senion Map Identifier>"
+...
+````
 
 
 ## Attribution

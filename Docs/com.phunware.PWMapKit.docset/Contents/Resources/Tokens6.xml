@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingManager.html">
+	<File path="Classes/PWMapViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingManager</TokenIdentifier>
-			<Abstract type="html">The PWBuildingManager object provides a simple interface for fetching building data and resources. All data and assets fetched by this object are cached on the device.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMapViewController</TokenIdentifier>
+			<Abstract type="html">The PWMapViewController class provides a &quot;canned&quot; full featured view controller for displaying and navigating a building.  It is intended to simply and minimize the effort to incorporate mapping functionality, in as few steps as possible. SDK users wishing to further customize mapping capabilities should use MPMapView.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,143 +13,133 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/PWBuildingManager/sharedManager</TokenIdentifier>
-			<Abstract type="html">Returns the shared instance of the PWBuildingManager class.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/setMapView:</TokenIdentifier>
+			<Abstract type="html">Reference to embedded Map View.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)sharedManager</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWMapView *mapView</Declaration>
 			
-			<ReturnValue><Abstract type="html">The shared instance of the PWBuildingManager class.</Abstract></ReturnValue>
-			<Anchor>//api/name/sharedManager</Anchor>
+			
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/loadBuildingWithIdentifier:completion:</TokenIdentifier>
-			<Abstract type="html">Attempts to load a building with the specified building identifier. This method will seek to load the building annotations and resources.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/mapView</TokenIdentifier>
+			<Abstract type="html">Reference to embedded Map View.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)loadBuildingWithIdentifier:(NSInteger)buildingID completion:(PWLoadBuildingHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>buildingID</Name>
-					<Abstract type="html">The specified building identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">A block that takes the following parameters:
-
-- building: The requested building object.
-- annotations: The building annotations.
-- resources: The building resources as an array of PWMapDocument objects.
-- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) PWMapView *mapView</Declaration>
 			
-			<Anchor>//api/name/loadBuildingWithIdentifier:completion:</Anchor>
+			
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingWithBuildingID:completion:</TokenIdentifier>
-			<Abstract type="html">Initiates a fetch for the building object. If the building object is not cached locally, this will result in a network request.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapViewController/mapView</TokenIdentifier>
+			<Abstract type="html">Reference to embedded Map View.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)getBuildingWithBuildingID:(NSInteger)buildingID completion:(PWBuildingHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>buildingID</Name>
-					<Abstract type="html">The specified building identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">A block that takes the following parameters:
-
-- building: The requested building object.
-- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) PWMapView *mapView</Declaration>
 			
-			<Anchor>//api/name/getBuildingWithBuildingID:completion:</Anchor>
+			
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingAnnotationsWithBuildingID:completion:</TokenIdentifier>
-			<Abstract type="html">Initiates a fetch for the building annotations. If the building annotations are not cached locally, this will result in a network request.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/initWithBuilding:</TokenIdentifier>
+			<Abstract type="html">Initiatives a new Map View Controller with a PWBuilding Object</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)getBuildingAnnotationsWithBuildingID:(NSInteger)buildingID completion:(PWBuildingAnnotationsHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>buildingID</Name>
-					<Abstract type="html">The building identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">A block that takes the following parameters:
-
-- annotations: The building annotations.
-- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getBuildingAnnotationsWithBuildingID:completion:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getResourcesForBuilding:completion:</TokenIdentifier>
-			<Abstract type="html">Initiates a fetch for the building resources. If the building resources are not cached locally, this will result in a network request.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
-			
-			<Declaration>- (void)getResourcesForBuilding:(PWBuilding *)building completion:(PWBuildingResourcesHandler)completion</Declaration>
+			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>building</Name>
-					<Abstract type="html">The specified building object.</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">A block that takes the following parameters:
-
-- resources: The building resources as an array of PWMapDocument objects.
-- error: If the building fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
+					<Abstract type="html">A PWBuilding instance representing a building structure.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/getResourcesForBuilding:completion:</Anchor>
+			<ReturnValue><Abstract type="html">Returns a PWMapViewController object for the given building.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithBuilding:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/getBuildingAnnotationTypesWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Initiates a fetch for the anotation types. If the annotation types are not cached locally, this will result in a network request.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/navigateToPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">Positions the map to the supplied point of interest. The current floor with be changed as appropriate, and the POI&apos;s annotation will be popped-up.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)getBuildingAnnotationTypesWithCompletion:(PWBuildingAnnotationTypesHandler)completion</Declaration>
+			<Declaration>- (void)navigateToPointOfInterest:(PWPointOfInterest *)poi</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">A block that takes the following parameters:
-
-- types: The annotation types as an array of PWAnnotationType objects.
-- error: If the annotation type fetch completed successfully, this parameter is nil; otherwise, this parameter holds an error object that describes the error.</Abstract>
+					<Name>poi</Name>
+					<Abstract type="html">A PWPointOfInterest object representing any point of interest inside the building where the map should navigate to.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/getBuildingAnnotationTypesWithCompletion:</Anchor>
+			<Anchor>//api/name/navigateToPointOfInterest:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingManager/clearCache</TokenIdentifier>
-			<Abstract type="html">Clears the device cache of all mapping data. This will clear all associated building objects, floor objects and floor assets from the device.</Abstract>
-			<DeclaredIn>PWBuildingManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/navigateWithRoute:</TokenIdentifier>
+			<Abstract type="html">Starts a navigation on the building with a previously initialised PWRoute object. Displays navigation instructions on the PWMapViewController&apos;s map.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)clearCache</Declaration>
+			<Declaration>- (void)navigateWithRoute:(PWRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">A PWRoute object representing a route to navigate on the building.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/clearCache</Anchor>
+			<Anchor>//api/name/navigateWithRoute:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/setRouteManeuver:</TokenIdentifier>
+			<Abstract type="html">Sets and dislays the current navitation instruction/steps during a navigation.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRouteManeuver:(PWRouteInstruction *)instruction</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>instruction</Name>
+					<Abstract type="html">A route instruction object for the route.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRouteManeuver:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/setCenterCoordinate:zoomLevel:animated:</TokenIdentifier>
+			<Abstract type="html">Positions the map to the supplied center coordinate with the given zoom level and optional animation.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)setCenterCoordinate:(CLLocationCoordinate2D)centerCoordinate zoomLevel:(NSUInteger)zoomLevel animated:(BOOL)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>centerCoordinate</Name>
+					<Abstract type="html">A CLLocationCoordinate2D object representing the latitude an longitude the map should zoom to.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoomLevel</Name>
+					<Abstract type="html">A NSUInteger value representing zoom level the map should zoom to.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">A BOOL property to determine whether the change of map&apos;s center should be animated or not.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCenterCoordinate:zoomLevel:animated:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

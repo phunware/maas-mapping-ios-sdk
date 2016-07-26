@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteManeuverOverlay.html">
+	<File path="Protocols/PWRouteViewControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteManeuverOverlay</TokenIdentifier>
-			<Abstract type="html">The PWRouteManeuverOverlay defines the basic properties for all route maneuvers. This class should not be subclassed and can be used as is. Instances of this class must have a reference to a valid PWRouteManeuver object.</Abstract>
-			<DeclaredIn>PWRouteManeuverOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWRouteViewControllerDelegate</TokenIdentifier>
+			<Abstract type="html">PWRouteViewControllerDelegate protocol definition.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,41 +13,40 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuverOverlay/setManeuver:</TokenIdentifier>
-			<Abstract type="html">  The current route maneuver to display.  This value is nil by default.</Abstract>
-			<DeclaredIn>PWRouteManeuverOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteViewControllerDelegate/didCalculateRoute:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the PWRouteViewController did calculate a route successfully.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
 			
-			<Declaration>@property PWRouteManeuver *maneuver</Declaration>
+			<Declaration>- (void)didCalculateRoute:(PWRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">The PWRoute calculated object.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/maneuver</Anchor>
+			<Anchor>//api/name/didCalculateRoute:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteManeuverOverlay/maneuver</TokenIdentifier>
-			<Abstract type="html">  The current route maneuver to display.  This value is nil by default.</Abstract>
-			<DeclaredIn>PWRouteManeuverOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteViewControllerDelegate/didDismissRouteViewController:</TokenIdentifier>
+			<Abstract type="html">Informs the receiver that the user dismissed the view controller, and returns the instruction last used (if any).</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
 			
-			<Declaration>@property PWRouteManeuver *maneuver</Declaration>
+			<Declaration>- (void)didDismissRouteViewController:(PWRouteInstruction *)instruction</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>instruction</Name>
+					<Abstract type="html">A PWRouteInstruction object last used after the dismissal.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/maneuver</Anchor>
+			<Anchor>//api/name/didDismissRouteViewController:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteManeuverOverlay/maneuver</TokenIdentifier>
-			<Abstract type="html">  The current route maneuver to display.  This value is nil by default.</Abstract>
-			<DeclaredIn>PWRouteManeuverOverlay.h</DeclaredIn>
-			
-			<Declaration>@property PWRouteManeuver *maneuver</Declaration>
-			
-			
-			<Anchor>//api/name/maneuver</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuilding.html">
+	<File path="Classes/PWBuildingViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuilding</TokenIdentifier>
-			<Abstract type="html">The building object encompasses a wide variety of information associated with the building. Information includes but is not limited to: floor data, floor resource data, street address and location.</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingViewController</TokenIdentifier>
+			<Abstract type="html">A view controller that let&apos;s the user browse and search a PWBuilding structure.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="2"/>
@@ -13,274 +13,76 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setVenueGUID:</TokenIdentifier>
-			<Abstract type="html">The venue GUID as specified by the mapping service. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingViewController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
 			
-			<Declaration>@property (copy, readonly) NSString *venueGUID</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWBuildingViewControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/venueGUID</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/venueGUID</TokenIdentifier>
-			<Abstract type="html">The venue GUID as specified by the mapping service. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
 			
-			<Declaration>@property (copy, readonly) NSString *venueGUID</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWBuildingViewControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/venueGUID</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/venueGUID</TokenIdentifier>
-			<Abstract type="html">The venue GUID as specified by the mapping service. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
 			
-			<Declaration>@property (copy, readonly) NSString *venueGUID</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWBuildingViewControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/venueGUID</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setCampusID:</TokenIdentifier>
-			<Abstract type="html">The campus identifier for the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingViewController/initWithBuilding:</TokenIdentifier>
+			<Abstract type="html">Inits a PWBuildingViewController instance for a given PWBuilding object.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWCampusIdentifier campusID</Declaration>
-			
-			
-			<Anchor>//api/name/campusID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/campusID</TokenIdentifier>
-			<Abstract type="html">The campus identifier for the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWCampusIdentifier campusID</Declaration>
-			
-			
-			<Anchor>//api/name/campusID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/campusID</TokenIdentifier>
-			<Abstract type="html">The campus identifier for the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWCampusIdentifier campusID</Declaration>
-			
-			
-			<Anchor>//api/name/campusID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setBuildingID:</TokenIdentifier>
-			<Abstract type="html">The building identifier. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
-			
-			
-			<Anchor>//api/name/buildingID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/buildingID</TokenIdentifier>
-			<Abstract type="html">The building identifier. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
-			
-			
-			<Anchor>//api/name/buildingID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/buildingID</TokenIdentifier>
-			<Abstract type="html">The building identifier. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWBuildingIdentifier buildingID</Declaration>
-			
-			
-			<Anchor>//api/name/buildingID</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setName:</TokenIdentifier>
-			<Abstract type="html">The building name. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/name</TokenIdentifier>
-			<Abstract type="html">The building name. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/name</TokenIdentifier>
-			<Abstract type="html">The building name. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setStreetAddress:</TokenIdentifier>
-			<Abstract type="html">The street address of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (copy, readonly) NSString *streetAddress</Declaration>
-			
-			
-			<Anchor>//api/name/streetAddress</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/streetAddress</TokenIdentifier>
-			<Abstract type="html">The street address of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (copy, readonly) NSString *streetAddress</Declaration>
-			
-			
-			<Anchor>//api/name/streetAddress</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/streetAddress</TokenIdentifier>
-			<Abstract type="html">The street address of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (copy, readonly) NSString *streetAddress</Declaration>
-			
-			
-			<Anchor>//api/name/streetAddress</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setLocation:</TokenIdentifier>
-			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is typically the center of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) CLLocationCoordinate2D location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/location</TokenIdentifier>
-			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is typically the center of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) CLLocationCoordinate2D location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/location</TokenIdentifier>
-			<Abstract type="html">The location of the building in the lat/long coordinate space. This location is typically the center of the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) CLLocationCoordinate2D location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setFloors:</TokenIdentifier>
-			<Abstract type="html">The PWBuildingFloor objects associated with the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSArray *floors</Declaration>
-			
-			
-			<Anchor>//api/name/floors</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/floors</TokenIdentifier>
-			<Abstract type="html">The PWBuildingFloor objects associated with the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSArray *floors</Declaration>
-			
-			
-			<Anchor>//api/name/floors</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/floors</TokenIdentifier>
-			<Abstract type="html">The PWBuildingFloor objects associated with the building. (read-only)</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSArray *floors</Declaration>
-			
-			
-			<Anchor>//api/name/floors</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/floorForIdentifier:</TokenIdentifier>
-			<Abstract type="html">Finds a PWBuildingFloor object in the building that matches the provided floor identifier.</Abstract>
-			<DeclaredIn>PWBuilding.h</DeclaredIn>
-			
-			<Declaration>- (PWBuildingFloor *)floorForIdentifier:(PWBuildingFloorIdentifier)identifier</Declaration>
+			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The building floor identifier to use for the search.</Abstract>
+					<Name>building</Name>
+					<Abstract type="html">A PWBuilding object.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The building&apos;s floor that matches the provided identifier, if one is found. If no matches are found, nil is returned.</Abstract></ReturnValue>
-			<Anchor>//api/name/floorForIdentifier:</Anchor>
+			<ReturnValue><Abstract type="html">Returns a PWBuildingViewController instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithBuilding:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingViewController/setFilterText:</TokenIdentifier>
+			<Abstract type="html">Filters the building&apos;s points of interest list with the given string.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)setFilterText:(NSString *)filterText</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filterText</Name>
+					<Abstract type="html">String value to filter building&apos;s POI list.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setFilterText:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

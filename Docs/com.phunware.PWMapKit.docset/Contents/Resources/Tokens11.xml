@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWDirectionsRequest.html">
+	<File path="Classes/PWRouteInstruction.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWDirectionsRequest</TokenIdentifier>
-			<Abstract type="html">The PWDirectionsRequest class is used by apps that work with indoor directions. To request directions, create a new instance of this class and configure it with the start and end points you need. Then, create a PWDirections object and use the methods of that class to initiate the request and process the results.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstruction</TokenIdentifier>
+			<Abstract type="html">PWRouteInstruction class represents one step inside a route with the necessary moves to go from the start point of interest and the end point of interest.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
 			
 			<NodeRef refid="11"/>
@@ -13,179 +13,294 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/setWaypoints:</TokenIdentifier>
-			<Abstract type="html">The waypoints (i.e. start and end points) to use for calculating directions. This array will always contain exactly two points.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setStartPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *waypoints</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *startPointOfInterest</Declaration>
 			
 			
-			<Anchor>//api/name/waypoints</Anchor>
+			<Anchor>//api/name/startPointOfInterest</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/waypoints</TokenIdentifier>
-			<Abstract type="html">The waypoints (i.e. start and end points) to use for calculating directions. This array will always contain exactly two points.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/startPointOfInterest</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *waypoints</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *startPointOfInterest</Declaration>
 			
 			
-			<Anchor>//api/name/waypoints</Anchor>
+			<Anchor>//api/name/startPointOfInterest</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsRequest/waypoints</TokenIdentifier>
-			<Abstract type="html">The waypoints (i.e. start and end points) to use for calculating directions. This array will always contain exactly two points.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/startPointOfInterest</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *waypoints</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *startPointOfInterest</Declaration>
 			
 			
-			<Anchor>//api/name/waypoints</Anchor>
+			<Anchor>//api/name/startPointOfInterest</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/setOptions:</TokenIdentifier>
-			<Abstract type="html">The options to use for calculating directions.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setEndPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">A reference to the destination, or end point of interest, for the route.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWDirectionsOptions *options</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *endPointOfInterest</Declaration>
 			
 			
-			<Anchor>//api/name/options</Anchor>
+			<Anchor>//api/name/endPointOfInterest</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/options</TokenIdentifier>
-			<Abstract type="html">The options to use for calculating directions.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/endPointOfInterest</TokenIdentifier>
+			<Abstract type="html">A reference to the destination, or end point of interest, for the route.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWDirectionsOptions *options</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *endPointOfInterest</Declaration>
 			
 			
-			<Anchor>//api/name/options</Anchor>
+			<Anchor>//api/name/endPointOfInterest</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsRequest/options</TokenIdentifier>
-			<Abstract type="html">The options to use for calculating directions.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/endPointOfInterest</TokenIdentifier>
+			<Abstract type="html">A reference to the destination, or end point of interest, for the route.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWDirectionsOptions *options</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *endPointOfInterest</Declaration>
 			
 			
-			<Anchor>//api/name/options</Anchor>
+			<Anchor>//api/name/endPointOfInterest</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/PWDirectionsRequest/requestWithWaypoints:options:</TokenIdentifier>
-			<Abstract type="html">Creates, initializes and returns a PWDirectionsRequest object with the specified waypoints and routing options.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setRoute:</TokenIdentifier>
+			<Abstract type="html">A reference to the route object the route instruction instance belongs to.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)requestWithWaypoints:(NSArray *)waypoints options:(PWDirectionsOptions *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>waypoints</Name>
-					<Abstract type="html">The source and destination locations. These locations must conform to the PWDirectionsWaypoint protocol. If fewer than two points are provided, an assertion failure will be thrown. If more than two points are provided, the first and last waypoints in the array will be used as the end points and all other points will be ignored.</Abstract>
-				</Parameter><Parameter>
-					<Name>options</Name>
-					<Abstract type="html">The directions options for this request. The provided options will be copied.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An initialized directions request object.</Abstract></ReturnValue>
-			<Anchor>//api/name/requestWithWaypoints:options:</Anchor>
+			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/set__deprecated:</TokenIdentifier>
-			<Abstract type="html">The starting point for routing directions. This value will be nil if the request is initialized with initWithLocation:destination:type:. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/route</TokenIdentifier>
+			<Abstract type="html">A reference to the route object the route instruction instance belongs to.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) id&lt;PWAnnotationProtocol&gt; source __deprecated</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/__deprecated</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/__deprecated</TokenIdentifier>
-			<Abstract type="html">The starting point for routing directions. This value will be nil if the request is initialized with initWithLocation:destination:type:. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/route</TokenIdentifier>
+			<Abstract type="html">A reference to the route object the route instruction instance belongs to.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) id&lt;PWAnnotationProtocol&gt; source __deprecated</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
 			
 			
-			<Anchor>//api/name/__deprecated</Anchor>
+			<Anchor>//api/name/route</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWDirectionsRequest/__deprecated</TokenIdentifier>
-			<Abstract type="html">The starting point for routing directions. This value will be nil if the request is initialized with initWithLocation:destination:type:. (read-only)</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovement:</TokenIdentifier>
+			<Abstract type="html">A NSString object representing the movement instruction for the current instruction instance.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) id&lt;PWAnnotationProtocol&gt; source __deprecated</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *movement</Declaration>
 			
 			
-			<Anchor>//api/name/__deprecated</Anchor>
+			<Anchor>//api/name/movement</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/initWithSource:destination:type:</TokenIdentifier>
-			<Abstract type="html">Initializes and returns a PWDirectionsRequest object with a source and destination annotation.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movement</TokenIdentifier>
+			<Abstract type="html">A NSString object representing the movement instruction for the current instruction instance.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithSource:(id&lt;PWAnnotationProtocol&gt;)source destination:(id&lt;PWAnnotationProtocol&gt;)destination type:(PWDirectionsType)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>source</Name>
-					<Abstract type="html">The source annotation. This object must conform to PWAnnotationProtocol and cannot be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>destination</Name>
-					<Abstract type="html">The destination annotation. This object must conform to PWAnnotationProtocol protocol and cannot be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The type of directions for this request.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The initialized directions request object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSource:destination:type:</Anchor>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *movement</Declaration>
+			
+			
+			<Anchor>//api/name/movement</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWDirectionsRequest/initWithLocation:destination:type:</TokenIdentifier>
-			<Abstract type="html">Initializes and returns a PWDirectionsRequest object with a source location and destination annotation.</Abstract>
-			<DeclaredIn>PWDirectionsRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movement</TokenIdentifier>
+			<Abstract type="html">A NSString object representing the movement instruction for the current instruction instance.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithLocation:(id&lt;PWLocation&gt;)location destination:(id&lt;PWAnnotationProtocol&gt;)destination type:(PWDirectionsType)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">The source location. This object must conform to the PWLocation protocol and cannot be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>destination</Name>
-					<Abstract type="html">The destination annotation. This object must conform to PWAnnotationProtocol and cannot be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The type of directions for this request.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An initialized directions request object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithLocation:destination:type:</Anchor>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *movement</Declaration>
+			
+			
+			<Anchor>//api/name/movement</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovementDirection:</TokenIdentifier>
+			<Abstract type="html">A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection movementDirection</Declaration>
+			
+			
+			<Anchor>//api/name/movementDirection</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movementDirection</TokenIdentifier>
+			<Abstract type="html">A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection movementDirection</Declaration>
+			
+			
+			<Anchor>//api/name/movementDirection</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movementDirection</TokenIdentifier>
+			<Abstract type="html">A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection movementDirection</Declaration>
+			
+			
+			<Anchor>//api/name/movementDirection</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurn:</TokenIdentifier>
+			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
+			
+			
+			<Anchor>//api/name/turn</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turn</TokenIdentifier>
+			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
+			
+			
+			<Anchor>//api/name/turn</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turn</TokenIdentifier>
+			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
+			
+			
+			<Anchor>//api/name/turn</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurnDirection:</TokenIdentifier>
+			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection turnDirection</Declaration>
+			
+			
+			<Anchor>//api/name/turnDirection</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turnDirection</TokenIdentifier>
+			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection turnDirection</Declaration>
+			
+			
+			<Anchor>//api/name/turnDirection</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turnDirection</TokenIdentifier>
+			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection turnDirection</Declaration>
+			
+			
+			<Anchor>//api/name/turnDirection</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setDistance:</TokenIdentifier>
+			<Abstract type="html">A CLLocationDistance property representing the total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/distance</TokenIdentifier>
+			<Abstract type="html">A CLLocationDistance property representing the total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/distance</TokenIdentifier>
+			<Abstract type="html">A CLLocationDistance property representing the total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

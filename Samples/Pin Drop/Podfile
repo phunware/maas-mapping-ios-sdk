@@ -1,8 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-
-platform :ios, '7.0'
-xcodeproj 'Pin Drop.xcodeproj'
-
-target :'Pin Drop', :exclusive => true do
-  pod 'PWMapKit'
-end

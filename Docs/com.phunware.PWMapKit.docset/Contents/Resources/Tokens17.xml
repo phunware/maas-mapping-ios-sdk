@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRoute.html">
+	<File path="Protocols/PWRouteInstructionViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRoute</TokenIdentifier>
-			<Abstract type="html">The PWRoute class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes route information you can display to the user, such as the name of the route, its distance and the expected travel time.</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWRouteInstructionViewDelegate</TokenIdentifier>
+			<Abstract type="html">PWRouteInstructionViewDelegate protocol definition.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,149 +13,26 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setDistance:</TokenIdentifier>
-			<Abstract type="html">The route distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteInstructionViewDelegate/route:didChangeRouteInstruction:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the route instruction has changed in the PWRouteInstructionsView instance.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) CLLocationDistance distance</Declaration>
+			<Declaration>- (void)route:(PWRoute *)route didChangeRouteInstruction:(PWRouteInstruction *)instruction</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">A reference to the current PWRoute object.</Abstract>
+				</Parameter><Parameter>
+					<Name>instruction</Name>
+					<Abstract type="html">A PWRouteInstruction reference to the new instruction that has changed in the view.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/route:didChangeRouteInstruction:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/distance</TokenIdentifier>
-			<Abstract type="html">The route distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) CLLocationDistance distance</Declaration>
-			
-			
-			<Anchor>//api/name/distance</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/distance</TokenIdentifier>
-			<Abstract type="html">The route distance in meters. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) CLLocationDistance distance</Declaration>
-			
-			
-			<Anchor>//api/name/distance</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setSteps:</TokenIdentifier>
-			<Abstract type="html">The array of steps that comprise the overall route. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSArray *steps</Declaration>
-			
-			
-			<Anchor>//api/name/steps</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/steps</TokenIdentifier>
-			<Abstract type="html">The array of steps that comprise the overall route. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSArray *steps</Declaration>
-			
-			
-			<Anchor>//api/name/steps</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/steps</TokenIdentifier>
-			<Abstract type="html">The array of steps that comprise the overall route. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSArray *steps</Declaration>
-			
-			
-			<Anchor>//api/name/steps</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setManeuvers:</TokenIdentifier>
-			<Abstract type="html">The array of maneuvers that a user is expected to perform in the traversal of this route.</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSArray *maneuvers</Declaration>
-			
-			
-			<Anchor>//api/name/maneuvers</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/maneuvers</TokenIdentifier>
-			<Abstract type="html">The array of maneuvers that a user is expected to perform in the traversal of this route.</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSArray *maneuvers</Declaration>
-			
-			
-			<Anchor>//api/name/maneuvers</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/maneuvers</TokenIdentifier>
-			<Abstract type="html">The array of maneuvers that a user is expected to perform in the traversal of this route.</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSArray *maneuvers</Declaration>
-			
-			
-			<Anchor>//api/name/maneuvers</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setAccessible:</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
-			
-			
-			<Anchor>//api/name/accessible</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/isAccessible</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
-			
-			
-			<Anchor>//api/name/accessible</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/accessible</TokenIdentifier>
-			<Abstract type="html">A Boolean value that indicates whether the PWRoute object is accessible. (read-only)</Abstract>
-			<DeclaredIn>PWRoute.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, getter=isAccessible) BOOL accessible</Declaration>
-			
-			
-			<Anchor>//api/name/accessible</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

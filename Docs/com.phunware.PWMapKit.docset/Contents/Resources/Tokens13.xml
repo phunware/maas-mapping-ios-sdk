@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWMapDocument.html">
+	<File path="Classes/PWRouteInstructionsViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWMapDocument</TokenIdentifier>
-			<Abstract type="html">A PWMapDocument object manages building floor data and its associated assets.</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstructionsViewController</TokenIdentifier>
+			<Abstract type="html">The PWRouteInstructionsViewController allows you to display route instructions list for a calculated PWRoute.</Abstract>
+			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -13,113 +13,59 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/setResource:</TokenIdentifier>
-			<Abstract type="html">The building floor resource associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsViewController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorResource *resource</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionsViewControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/resource</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/resource</TokenIdentifier>
-			<Abstract type="html">The building floor resource associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorResource *resource</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionsViewControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/resource</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapDocument/resource</TokenIdentifier>
-			<Abstract type="html">The building floor resource associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstructionsViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuildingFloorResource *resource</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionsViewControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/resource</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/setPdf:</TokenIdentifier>
-			<Abstract type="html">The PDF document associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsViewController/initWithRoute:</TokenIdentifier>
+			<Abstract type="html">Creates a PWRouteInstructionsView instance for the given route.</Abstract>
+			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWPDFDocument *pdf</Declaration>
-			
-			
-			<Anchor>//api/name/pdf</Anchor>
+			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">A PWRoute reference.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWRouteInstructionsView instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithRoute:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/pdf</TokenIdentifier>
-			<Abstract type="html">The PDF document associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWPDFDocument *pdf</Declaration>
-			
-			
-			<Anchor>//api/name/pdf</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapDocument/pdf</TokenIdentifier>
-			<Abstract type="html">The PDF document associated with the map document. (read-only)</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWPDFDocument *pdf</Declaration>
-			
-			
-			<Anchor>//api/name/pdf</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/setFileURL:</TokenIdentifier>
-			<Abstract type="html">The URL of the document&apos;s local file.</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSURL *fileURL</Declaration>
-			
-			
-			<Anchor>//api/name/fileURL</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapDocument/fileURL</TokenIdentifier>
-			<Abstract type="html">The URL of the document&apos;s local file.</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSURL *fileURL</Declaration>
-			
-			
-			<Anchor>//api/name/fileURL</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapDocument/fileURL</TokenIdentifier>
-			<Abstract type="html">The URL of the document&apos;s local file.</Abstract>
-			<DeclaredIn>PWMapDocument.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSURL *fileURL</Declaration>
-			
-			
-			<Anchor>//api/name/fileURL</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWBuildingOverlay.html">
+	<File path="Classes/PWPointOfInterest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingOverlay</TokenIdentifier>
-			<Abstract type="html">The PWBuildingOverlay object defines a specific type of annotation that represents a building on a map.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterest</TokenIdentifier>
+			<Abstract type="html">A PWPointOfInterest represents single point of interest defined within MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
@@ -13,258 +13,258 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setBuilding:</TokenIdentifier>
-			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The identifier for the point of interest structure that corresponds to the MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuilding *building</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
 			
 			
-			<Anchor>//api/name/building</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/building</TokenIdentifier>
-			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for the point of interest structure that corresponds to the MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuilding *building</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
 			
 			
-			<Anchor>//api/name/building</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/building</TokenIdentifier>
-			<Abstract type="html">The building object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for the point of interest structure that corresponds to the MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWBuilding *building</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
 			
 			
-			<Anchor>//api/name/building</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setCurrentDocument:</TokenIdentifier>
-			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the point of interest as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWMapDocument *currentDocument</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/currentDocument</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/currentDocument</TokenIdentifier>
-			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/name</TokenIdentifier>
+			<Abstract type="html">The name of the point of interest as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWMapDocument *currentDocument</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/currentDocument</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/currentDocument</TokenIdentifier>
-			<Abstract type="html">The map document object associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/name</TokenIdentifier>
+			<Abstract type="html">The name of the point of interest as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) PWMapDocument *currentDocument</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/currentDocument</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setCurrentFloor:</TokenIdentifier>
-			<Abstract type="html">The floor currently being displayed. This value may be &apos;nil&apos; while the building overlay is loading. Changing the floor to the same floor will have no effect. Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setSummary:</TokenIdentifier>
+			<Abstract type="html">A summary description of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property PWBuildingFloor *currentFloor</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *summary</Declaration>
 			
 			
-			<Anchor>//api/name/currentFloor</Anchor>
+			<Anchor>//api/name/summary</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/currentFloor</TokenIdentifier>
-			<Abstract type="html">The floor currently being displayed. This value may be &apos;nil&apos; while the building overlay is loading. Changing the floor to the same floor will have no effect. Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/summary</TokenIdentifier>
+			<Abstract type="html">A summary description of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property PWBuildingFloor *currentFloor</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *summary</Declaration>
 			
 			
-			<Anchor>//api/name/currentFloor</Anchor>
+			<Anchor>//api/name/summary</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/currentFloor</TokenIdentifier>
-			<Abstract type="html">The floor currently being displayed. This value may be &apos;nil&apos; while the building overlay is loading. Changing the floor to the same floor will have no effect. Attempt to access this property only after receiving the buildingOverlay:didFinishLoadingBuilding: delegate callback.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/summary</TokenIdentifier>
+			<Abstract type="html">A summary description of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property PWBuildingFloor *currentFloor</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *summary</Declaration>
 			
 			
-			<Anchor>//api/name/currentFloor</Anchor>
+			<Anchor>//api/name/summary</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setResources:</TokenIdentifier>
-			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setFloor:</TokenIdentifier>
+			<Abstract type="html">The PWFloor object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *resources</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
 			
 			
-			<Anchor>//api/name/resources</Anchor>
+			<Anchor>//api/name/floor</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/resources</TokenIdentifier>
-			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/floor</TokenIdentifier>
+			<Abstract type="html">The PWFloor object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *resources</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
 			
 			
-			<Anchor>//api/name/resources</Anchor>
+			<Anchor>//api/name/floor</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/resources</TokenIdentifier>
-			<Abstract type="html">The array of map document resources associated with the overlay. (read-only)</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/floor</TokenIdentifier>
+			<Abstract type="html">The PWFloor object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *resources</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
 			
 			
-			<Anchor>//api/name/resources</Anchor>
+			<Anchor>//api/name/floor</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setLoaded:</TokenIdentifier>
-			<Abstract type="html">A Boolean flag indicating whether the building overlay has loaded.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setPointOfInterestType:</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (getter=isLoaded) BOOL loaded</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
-			<Anchor>//api/name/loaded</Anchor>
+			<Anchor>//api/name/pointOfInterestType</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/isLoaded</TokenIdentifier>
-			<Abstract type="html">A Boolean flag indicating whether the building overlay has loaded.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/pointOfInterestType</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (getter=isLoaded) BOOL loaded</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
-			<Anchor>//api/name/loaded</Anchor>
+			<Anchor>//api/name/pointOfInterestType</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/loaded</TokenIdentifier>
-			<Abstract type="html">A Boolean flag indicating whether the building overlay has loaded.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/pointOfInterestType</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (getter=isLoaded) BOOL loaded</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
-			<Anchor>//api/name/loaded</Anchor>
+			<Anchor>//api/name/pointOfInterestType</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the PWBuildingOverlayDelegateProtocol protocol.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setImage:</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegateProtocol&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/image</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the PWBuildingOverlayDelegateProtocol protocol.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/image</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegateProtocol&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/image</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingOverlay/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver&apos;s delegate. The delegate must conform to the PWBuildingOverlayDelegateProtocol protocol.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/image</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;PWBuildingOverlayDelegateProtocol&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/image</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/initWithBuilding:</TokenIdentifier>
-			<Abstract type="html">Initializes the overlay with the specified building. This method will automatically fetch and cache all required resources. The delegate will receive a success or failure callback.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setCoordinate:</TokenIdentifier>
+			<Abstract type="html">The center point latitude and longitude of the building.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The building object to use when displaying building data on the map.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D coordinate</Declaration>
 			
-			<Anchor>//api/name/initWithBuilding:</Anchor>
+			
+			<Anchor>//api/name/coordinate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingOverlay/initWithBuilding:resources:</TokenIdentifier>
-			<Abstract type="html">Initializes the overlay with the specified building and resources. This initializer does not make any network calls.</Abstract>
-			<DeclaredIn>PWBuildingOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/coordinate</TokenIdentifier>
+			<Abstract type="html">The center point latitude and longitude of the building.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building resources:(NSArray *)resources</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">The building object to use when displaying building data on the map.</Abstract>
-				</Parameter><Parameter>
-					<Name>resources</Name>
-					<Abstract type="html">The map document resources associated with this overlay. The map document resources must be associated with the building object.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D coordinate</Declaration>
 			
-			<Anchor>//api/name/initWithBuilding:resources:</Anchor>
+			
+			<Anchor>//api/name/coordinate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/coordinate</TokenIdentifier>
+			<Abstract type="html">The center point latitude and longitude of the building.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

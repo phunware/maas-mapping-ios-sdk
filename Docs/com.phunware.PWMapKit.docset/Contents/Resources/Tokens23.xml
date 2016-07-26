@@ -1,125 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteSegment.html">
+	<File path="Constants/PWRouteSnapTolerance.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteSegment</TokenIdentifier>
-			<Abstract type="html">The indoor map object encompasses a wide variety of route segments. Each segment contain segment ID, start point and end point.</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PWRouteSnapTolerance</TokenIdentifier>
+			<Abstract type="html">Supported Route Snapping Tolerance values.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The floor identifier. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
-			
-			
-			<Anchor>//api/name/floorID</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapOff</TokenIdentifier>
+            <Abstract type="html">Route Snapping off.
+     </Abstract>
+            <Declaration>PWRouteSnapOff</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
             <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
-			
-			
-			<Anchor>//api/name/floorID</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceNormal</TokenIdentifier>
+            <Abstract type="html">Route Snapping normal.
+     </Abstract>
+            <Declaration>PWRouteSnapToleranceNormal</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
             <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteSegment/floorID</TokenIdentifier>
-			<Abstract type="html">The floor identifier. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWBuildingFloorIdentifier floorID</Declaration>
-			
-			
-			<Anchor>//api/name/floorID</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceMedium</TokenIdentifier>
+            <Abstract type="html">Route Snapping medium.
+     </Abstract>
+            <Declaration>PWRouteSnapToleranceMedium</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
             <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/setStartPointID:</TokenIdentifier>
-			<Abstract type="html">The starting point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWAnnotationIdentifier startPointID</Declaration>
-			
-			
-			<Anchor>//api/name/startPointID</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceHigh</TokenIdentifier>
+            <Abstract type="html">Route Snapping hihg.
+     </Abstract>
+            <Declaration>PWRouteSnapToleranceHigh</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
             <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/startPointID</TokenIdentifier>
-			<Abstract type="html">The starting point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWAnnotationIdentifier startPointID</Declaration>
-			
-			
-			<Anchor>//api/name/startPointID</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteSegment/startPointID</TokenIdentifier>
-			<Abstract type="html">The starting point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWAnnotationIdentifier startPointID</Declaration>
-			
-			
-			<Anchor>//api/name/startPointID</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/setEndPointID:</TokenIdentifier>
-			<Abstract type="html">The end point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWAnnotationIdentifier endPointID</Declaration>
-			
-			
-			<Anchor>//api/name/endPointID</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteSegment/endPointID</TokenIdentifier>
-			<Abstract type="html">The end point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWAnnotationIdentifier endPointID</Declaration>
-			
-			
-			<Anchor>//api/name/endPointID</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteSegment/endPointID</TokenIdentifier>
-			<Abstract type="html">The end point of the segment. (read-only)</Abstract>
-			<DeclaredIn>PWRouteSegment.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) PWAnnotationIdentifier endPointID</Declaration>
-			
-			
-			<Anchor>//api/name/endPointID</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
+        </Token>
+        
         
 	</File>
 </Tokens>

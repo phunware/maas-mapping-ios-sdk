@@ -1,76 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteOverlayRenderer.html">
+	<File path="Constants/PWRouteInstructionDirection.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteOverlayRenderer</TokenIdentifier>
-			<Abstract type="html">The PWRouteOverlayRenderer class defines the basic behavior for drawing a route-based overlay. The renderer draws the visual representation of a PWRouteStep object.</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PWRouteInstructionDirection</TokenIdentifier>
+			<Abstract type="html">Defines the different type of custom locations.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/setPolyline:</TokenIdentifier>
-			<Abstract type="html">The polyline that the overlay renderer is currently drawing. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
-			
-			
-			<Anchor>//api/name/polyline</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStraight</TokenIdentifier>
+            <Abstract type="html">Route instruction direction straight.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionStraight</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/polyline</TokenIdentifier>
-			<Abstract type="html">The polyline that the overlay renderer is currently drawing. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
-			
-			
-			<Anchor>//api/name/polyline</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionLeft</TokenIdentifier>
+            <Abstract type="html">Route instruction direction left.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionLeft</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteOverlayRenderer/polyline</TokenIdentifier>
-			<Abstract type="html">The polyline that the overlay renderer is currently drawing. (read-only)</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) MKPolyline *polyline</Declaration>
-			
-			
-			<Anchor>//api/name/polyline</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionRight</TokenIdentifier>
+            <Abstract type="html">Route instruction direction right.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionRight</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="22"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteOverlayRenderer/initWithRouteOverlay:buildingOverlay:mapView:</TokenIdentifier>
-			<Abstract type="html">Initializes and returns the route overlay renderer and associates it with the specified route overlay object.</Abstract>
-			<DeclaredIn>PWRouteOverlayRenderer.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)overlay buildingOverlay:(PWBuildingOverlay *)buildingOverlay mapView:(PWMapView *)mapView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>overlay</Name>
-					<Abstract type="html">The route overlay to initialize the renderer with. The route overlay contains several important pieces of information the route renderer needs to draw the route.</Abstract>
-				</Parameter><Parameter>
-					<Name>buildingOverlay</Name>
-					<Abstract type="html">The building overlay to initiatize the renderer with. The route overlay communicates with the building overlay to switch floors if necessary.</Abstract>
-				</Parameter><Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The mapView to initiatize the renderer with. The mapView is needed for the renderer to know the current zoom workaround state.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A basic route overlay renderer.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithRouteOverlay:buildingOverlay:mapView:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionBearLeft</TokenIdentifier>
+            <Abstract type="html">Route instruction direction bear left.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionBearLeft</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="22"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionBearRight</TokenIdentifier>
+            <Abstract type="html">Route instruction direction bear right.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionBearRight</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionFloorChange</TokenIdentifier>
+            <Abstract type="html">Route instruction direction floor change.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionFloorChange</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorUp</TokenIdentifier>
+            <Abstract type="html">Route instruction direction elevetor up.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionElevatorUp</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorDown</TokenIdentifier>
+            <Abstract type="html">Route instruction direction elevator down.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionElevatorDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStairsUp</TokenIdentifier>
+            <Abstract type="html">Route instruction direction stairs up.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionStairsUp</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStairsDown</TokenIdentifier>
+            <Abstract type="html">Route instruction direction stairs down.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionStairsDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

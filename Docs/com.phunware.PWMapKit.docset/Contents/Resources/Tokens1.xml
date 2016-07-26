@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWAnnotationLabel.html">
+	<File path="Classes/PWBuilding.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWAnnotationLabel</TokenIdentifier>
-			<Abstract type="html">The PWAnnotationLabel is a UILabel subclass used with annotation views that allows stroke color and width customizations.</Abstract>
-			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuilding</TokenIdentifier>
+			<Abstract type="html">A PWBuilding represents the building structure defined within MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
             
 			
 			<NodeRef refid="1"/>
@@ -13,77 +13,300 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWAnnotationLabel/setStrokeColor:</TokenIdentifier>
-			<Abstract type="html">The stroke color of the text outline.</Abstract>
-			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The identifier for the building structure that corresponds to the MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) UIColor *strokeColor</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
 			
 			
-			<Anchor>//api/name/strokeColor</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWAnnotationLabel/strokeColor</TokenIdentifier>
-			<Abstract type="html">The stroke color of the text outline.</Abstract>
-			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for the building structure that corresponds to the MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) UIColor *strokeColor</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
 			
 			
-			<Anchor>//api/name/strokeColor</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWAnnotationLabel/strokeColor</TokenIdentifier>
-			<Abstract type="html">The stroke color of the text outline.</Abstract>
-			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for the building structure that corresponds to the MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) UIColor *strokeColor</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
 			
 			
-			<Anchor>//api/name/strokeColor</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWAnnotationLabel/setStrokeWidth:</TokenIdentifier>
-			<Abstract type="html">The stroke width of the text outline.</Abstract>
-			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the building as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) CGFloat strokeWidth</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/strokeWidth</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWAnnotationLabel/strokeWidth</TokenIdentifier>
-			<Abstract type="html">The stroke width of the text outline.</Abstract>
-			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/name</TokenIdentifier>
+			<Abstract type="html">The name of the building as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) CGFloat strokeWidth</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/strokeWidth</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWAnnotationLabel/strokeWidth</TokenIdentifier>
-			<Abstract type="html">The stroke width of the text outline.</Abstract>
-			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/name</TokenIdentifier>
+			<Abstract type="html">The name of the building as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) CGFloat strokeWidth</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/strokeWidth</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setFloors:</TokenIdentifier>
+			<Abstract type="html">An array of PWFloor objects that are contained in the building.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *floors</Declaration>
+			
+			
+			<Anchor>//api/name/floors</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/floors</TokenIdentifier>
+			<Abstract type="html">An array of PWFloor objects that are contained in the building.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *floors</Declaration>
+			
+			
+			<Anchor>//api/name/floors</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/floors</TokenIdentifier>
+			<Abstract type="html">An array of PWFloor objects that are contained in the building.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *floors</Declaration>
+			
+			
+			<Anchor>//api/name/floors</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setPointOfInterestTypes:</TokenIdentifier>
+			<Abstract type="html">An array of PWPointOfInterestType objects that are used in MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointOfInterestTypes</Declaration>
+			
+			
+			<Anchor>//api/name/pointOfInterestTypes</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/pointOfInterestTypes</TokenIdentifier>
+			<Abstract type="html">An array of PWPointOfInterestType objects that are used in MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointOfInterestTypes</Declaration>
+			
+			
+			<Anchor>//api/name/pointOfInterestTypes</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/pointOfInterestTypes</TokenIdentifier>
+			<Abstract type="html">An array of PWPointOfInterestType objects that are used in MaaS Portal.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointOfInterestTypes</Declaration>
+			
+			
+			<Anchor>//api/name/pointOfInterestTypes</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setCoordinate:</TokenIdentifier>
+			<Abstract type="html">The center point latitude and longitude of the building.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/coordinate</TokenIdentifier>
+			<Abstract type="html">The center point latitude and longitude of the building.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/coordinate</TokenIdentifier>
+			<Abstract type="html">The center point latitude and longitude of the building.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWBuilding/buildingWithIdentifier:usingCache:completion:</TokenIdentifier>
+			<Abstract type="html">Instantiates a new building structure using the MaaS Portal identifier. The completion handler is called when the building structure is fully loaded, including any network access.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>+ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL)caching completion:(void ( ^ ) ( PWBuilding *building , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier used in MaaS Portal for the building.</Abstract>
+				</Parameter><Parameter>
+					<Name>caching</Name>
+					<Abstract type="html">YES/NO. Determines if the SDK will use prior cache information to instantiate the building structure. Default YES.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler that is called once building load is complete.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/buildingWithIdentifier:usingCache:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/initWithBuildingId:</TokenIdentifier>
+			<Abstract type="html">Returns a PWBuilding instance for the given buildingId.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithBuildingId:(NSInteger)buildingId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>buildingId</Name>
+					<Abstract type="html">The identifier used in MaaS Portal for the building.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWBuilding instance for the given buildingId.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithBuildingId:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/registerPointOfInterestType:title:image:</TokenIdentifier>
+			<Abstract type="html">Allows the SDK developer to &quot;override&quot; point of interest types with an alternate title and image.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>- (void)registerPointOfInterestType:(NSInteger)identifier title:(NSString *)title image:(UIImage *)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">Point of Interest Identifier defined in MaaS Portal.</Abstract>
+				</Parameter><Parameter>
+					<Name>title</Name>
+					<Abstract type="html">The title to be used.</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image to be used.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/registerPointOfInterestType:title:image:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/pointOfInterestById:</TokenIdentifier>
+			<Abstract type="html">Returns a PWPointOfInterest instance that has the given identifier.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>- (PWPointOfInterest *)pointOfInterestById:(NSInteger)identifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The MaaS portal identifier of the point of interest.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWPointOfInterest instance that has the given identifier.</Abstract></ReturnValue>
+			<Anchor>//api/name/pointOfInterestById:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/containsCoordinate:</TokenIdentifier>
+			<Abstract type="html">Determines if the coordinate is contained within the latitude and longitude bounds of the building.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)containsCoordinate:(CLLocationCoordinate2D)coordinate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>coordinate</Name>
+					<Abstract type="html">A CLLocationCoordinate2D reference.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a BOOL value YES/NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsCoordinate:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/pointOfInterestClosestToLocation:</TokenIdentifier>
+			<Abstract type="html">Finds the closest point of interest to the custom location.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>- (PWPointOfInterest *)pointOfInterestClosestToLocation:(PWCustomLocation *)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">A PWCustomLocation reference.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWPointOfInterest object.</Abstract></ReturnValue>
+			<Anchor>//api/name/pointOfInterestClosestToLocation:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

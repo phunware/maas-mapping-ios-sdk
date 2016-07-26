@@ -1,5 +1,13 @@
 #PWMapKit Changelog
 
+##v3.0.0 (Monday, July 25th, 2016)
+
+* API completely redesign.
+* Add light weight UI view controllers.
+* Performance improvements (PDF Tiling, Map/Building isolation, Memory reduction).
+* Bug fix for crashes result from HTTP response handler.
+
+
 ##v2.6.0 (Wednesday, September 30th, 2015)
 
 * Updated framework to leverage PWCore v2.0.0

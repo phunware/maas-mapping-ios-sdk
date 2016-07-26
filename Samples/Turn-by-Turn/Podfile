@@ -1,9 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-
-platform :ios, '7.0'
-xcodeproj 'Turn-by-Turn.xcodeproj'
-
-target :'Turn-by-Turn', :exclusive => true do
-  pod 'PWCore'
-  pod 'PWMapKit'
-end

@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, ‘7.0’
+xcodeproj ‘Route.xcodeproj'
+inhibit_all_warnings!
+
+
+target :Route do
+    pod 'PWMapKit’, ‘3.0.0’
+end
