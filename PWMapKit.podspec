@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "PWMapKit"
   s.version      = "3.0.0"
-  s.summary      = "Phunware Indoor Mapping SDK"
+  s.summary      = "Phunware Mapping SDK"
   s.homepage     = "http://phunware.github.io/maas-mapping-ios-sdk/"
   s.author       = { 'Phunware, Inc.' => 'http://www.phunware.com' }
   s.social_media_url = 'https://twitter.com/Phunware'
