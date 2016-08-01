@@ -16,11 +16,13 @@ PWMapKit SDK for iOS
 
 ## Installation
 
-Phunware recommends using [CocoaPods](http://www.cocoapods.org) to integrate the framework. Simply add
+* Phunware recommends using [CocoaPods](http://www.cocoapods.org) to integrate the framework. Simply add
  
-`pod 'PWMapKit'` 
+	`pod 'PWMapKit'` 
 
-to your podfile, then the dependencies of `PWCore` and `PWLocation` are automatically added.
+	to your podfile, then the dependencies of `PWCore` and `PWLocation` are automatically added.
+
+* Then add the `Framework/MNW_Images.xcassets` to your project, which contains the icons that will be used when starting a navigation.
 
 Alternatively, all of the following frameworks can be added to the Vendor/Phunware directory of your project:
 
