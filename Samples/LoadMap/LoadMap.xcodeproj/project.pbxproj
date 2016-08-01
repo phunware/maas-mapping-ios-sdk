@@ -15,6 +15,7 @@
 		9D383A931D46CDF5009AF797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D383A921D46CDF5009AF797 /* Assets.xcassets */; };
 		9D383A961D46CDF5009AF797 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D383A941D46CDF5009AF797 /* LaunchScreen.storyboard */; };
 		9D383AA11D46CDF5009AF797 /* LoadMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D383AA01D46CDF5009AF797 /* LoadMapTests.m */; };
+		9DBCA7831D4FE51A00C9CFB5 /* MNW_Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DBCA7821D4FE51A00C9CFB5 /* MNW_Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		9D383A9C1D46CDF5009AF797 /* LoadMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoadMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D383AA01D46CDF5009AF797 /* LoadMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadMapTests.m; sourceTree = "<group>"; };
 		9D383AA21D46CDF5009AF797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DBCA7821D4FE51A00C9CFB5 /* MNW_Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MNW_Images.xcassets; path = ../../../Framework/MNW_Images.xcassets; sourceTree = "<group>"; };
 		ECEAD8A3CD4818B95DF051CC /* Pods-LoadMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoadMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoadMap/Pods-LoadMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,12 +90,13 @@
 		9D383A851D46CDF5009AF797 /* LoadMap */ = {
 			isa = PBXGroup;
 			children = (
+				9DBCA7821D4FE51A00C9CFB5 /* MNW_Images.xcassets */,
+				9D383A921D46CDF5009AF797 /* Assets.xcassets */,
 				9D383A891D46CDF5009AF797 /* AppDelegate.h */,
 				9D383A8A1D46CDF5009AF797 /* AppDelegate.m */,
 				9D383A8C1D46CDF5009AF797 /* ViewController.h */,
 				9D383A8D1D46CDF5009AF797 /* ViewController.m */,
 				9D383A8F1D46CDF5009AF797 /* Main.storyboard */,
-				9D383A921D46CDF5009AF797 /* Assets.xcassets */,
 				9D383A941D46CDF5009AF797 /* LaunchScreen.storyboard */,
 				9D383A971D46CDF5009AF797 /* Info.plist */,
 				9D383A861D46CDF5009AF797 /* Supporting Files */,
@@ -220,6 +223,7 @@
 			files = (
 				9D383A961D46CDF5009AF797 /* LaunchScreen.storyboard in Resources */,
 				9D383A931D46CDF5009AF797 /* Assets.xcassets in Resources */,
+				9DBCA7831D4FE51A00C9CFB5 /* MNW_Images.xcassets in Resources */,
 				9D383A911D46CDF5009AF797 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
