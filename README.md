@@ -22,13 +22,7 @@ PWMapKit SDK for iOS
 
 	to your podfile, then the dependencies of `PWCore` and `PWLocation` are automatically added.
 
-* Then add the `Framework/MNW_Images.xcassets` to your project, which contains the icons that will be used when starting a navigation.
-
-Alternatively, all of the following frameworks can be added to the Vendor/Phunware directory of your project:
-
-- PWMapKit.framework
-- PWCore.framework
-- PWLocation.framework
+* Then add navigation icons the `Framework/MNW_Images.xcassets` to your project.
 
 
 ## Documentation
