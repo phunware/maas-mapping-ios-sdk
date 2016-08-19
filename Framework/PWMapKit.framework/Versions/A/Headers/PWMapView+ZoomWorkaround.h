@@ -17,5 +17,6 @@
 - (CLLocationCoordinate2D)forcedZoomWorkaroundCoordinateFromCoordinate:(CLLocationCoordinate2D)coordinate;
 
 - (void)toggleZoomWorkaround;
+- (void)toggleZoomWorkaroundWithIOSVersions:(NSArray*)iOSVersions;
 
 @end

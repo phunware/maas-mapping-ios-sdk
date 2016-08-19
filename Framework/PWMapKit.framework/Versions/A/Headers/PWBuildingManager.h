@@ -7,10 +7,41 @@
 
 @class PWBuilding;
 
+/**
+ Load building block
+ `building` The building info
+ `annotations` The list of annotation in this building
+ `resources` The related resource for this building
+ `error` The error message when it's failed to load the building
+ */
 typedef void (^PWLoadBuildingHandler)(PWBuilding *building, NSArray *annotations, NSArray *resources, NSError *error);
+
+/**
+ Building loaded notification block
+ `building` The building info was loaded
+ `error` The error message when it's failed to load the building
+ */
 typedef void (^PWBuildingHandler)(PWBuilding *building, NSError *error);
+
+/**
+ Annotation loaded notification block
+ `annotations` The list of annotation in this building
+ `error` The error message when it's failed to load the annotations
+ */
 typedef void (^PWBuildingAnnotationsHandler)(NSArray *annotations, NSError *error);
+
+/**
+ Building resources loaded notification block
+ `resources` The list of resources in this building
+ `error` The error message when it's failed to load the annotations
+ */
 typedef void (^PWBuildingResourcesHandler)(NSArray *resources, NSError *error);
+
+/**
+ Building annotation types loaded notification block
+ `types` The list of annotation type in this building
+ `error` The error message when it's failed to load the annotation types
+ */
 typedef void (^PWBuildingAnnotationTypesHandler)(NSArray *types, NSError *error);
 
 /**
