@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/Phunware'
 
   s.platform     = :ios, '7.0'
-  s.source       = { :git => "https://github.com/phunware/maas-mapping-ios-sdk.git", :tag => "v2.6.1" }
+  s.source       = { :git => "https://github.com/phunware/maas-mapping-ios-sdk.git", :tag => "v2.6.2" }
   s.license      = { :type => 'Copyright', :text => 'Copyright 2015 by Phunware Inc. All rights reserved.' }
 
   s.public_header_files = 'Framework/PWMapKit.framework/Versions/A/Headers/*.h'
