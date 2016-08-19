@@ -1,0 +1,16 @@
+PODS:
+  - PWCore (3.0.0)
+  - PWLocation (3.0.0):
+    - PWCore
+  - PWMapKit (3.0.0):
+    - PWLocation (~> 3.0.0)
+
+DEPENDENCIES:
+  - PWMapKit (= 3.0.0)
+
+SPEC CHECKSUMS:
+  PWCore: 483fa565e3ce61a3c67944fec87c73dd9cb0fdc5
+  PWLocation: 8a9a8271c318b7bd9ef3685dd3eb2adddd2156d9
+  PWMapKit: 0995f916073c1e7610cc50dfc5a702cdfa79883c
+
+COCOAPODS: 0.39.0

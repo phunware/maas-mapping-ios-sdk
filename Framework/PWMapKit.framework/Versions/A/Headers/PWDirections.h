@@ -12,6 +12,11 @@
 @class PWRoute;
 @class PWDirectionsOptions;
 
+/**
+ The direction response block
+ `response` The direction info
+ `error` The error information
+ */
 typedef void (^PWDirectionsHandler)(PWDirectionsResponse *response, NSError *error);
 
 /**

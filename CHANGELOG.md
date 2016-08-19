@@ -1,5 +1,10 @@
 #PWMapKit Changelog
 
+##v2.6.1 (Friday, August 19th, 2016)
+
+
+* Fixed an issue where the mapping stops loading building due to too much custom POI icons.
+
 ##v2.6.0 (Wednesday, September 30th, 2015)
 
 * Updated framework to leverage PWCore v2.0.0
