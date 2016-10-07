@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWPointOfInterestType.html">
+	<File path="Classes/PWMapViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterestType</TokenIdentifier>
-			<Abstract type="html">A PWPointOfInterestType represents single point of interest type defined within MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWMapViewController</TokenIdentifier>
+			<Abstract type="html">The PWMapViewController class provides a &quot;canned&quot; full featured view controller for displaying and navigating a building.  It is intended to simply and minimize the effort to incorporate mapping functionality, in as few steps as possible. SDK users wishing to further customize mapping capabilities should use MPMapView.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="8"/>
@@ -13,110 +13,129 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/setMapView:</TokenIdentifier>
+			<Abstract type="html">Reference to embedded Map View.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/identifier</TokenIdentifier>
-			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/mapView</TokenIdentifier>
+			<Abstract type="html">Reference to embedded Map View.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/identifier</TokenIdentifier>
-			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapViewController/mapView</TokenIdentifier>
+			<Abstract type="html">Reference to embedded Map View.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWMapView *mapView</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/mapView</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setName:</TokenIdentifier>
-			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/initWithBuilding:</TokenIdentifier>
+			<Abstract type="html">Initiatives a new Map View Controller with a PWBuilding Object</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>building</Name>
+					<Abstract type="html">A PWBuilding instance representing a building structure.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWMapViewController object for the given building.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithBuilding:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/name</TokenIdentifier>
-			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/navigateToPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">Positions the map to the supplied point of interest. The current floor with be changed as appropriate, and the POI&apos;s annotation will be popped-up.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			<Declaration>- (void)navigateToPointOfInterest:(PWPointOfInterest *)poi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>poi</Name>
+					<Abstract type="html">A PWPointOfInterest object representing any point of interest inside the building where the map should navigate to.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/navigateToPointOfInterest:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/name</TokenIdentifier>
-			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/navigateWithRoute:</TokenIdentifier>
+			<Abstract type="html">Starts a navigation on the building with a previously initialised PWRoute object. Displays navigation instructions on the PWMapViewController&apos;s map.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			<Declaration>- (void)navigateWithRoute:(PWRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">A PWRoute object representing a route to navigate on the building.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/navigateWithRoute:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setImage:</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/setRouteManeuver:</TokenIdentifier>
+			<Abstract type="html">Sets and dislays the current navitation instruction/steps during a navigation.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>- (void)setRouteManeuver:(PWRouteInstruction *)instruction</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>instruction</Name>
+					<Abstract type="html">A route instruction object for the route.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/image</Anchor>
+			<Anchor>//api/name/setRouteManeuver:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/image</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/setCenterCoordinate:zoomLevel:animated:</TokenIdentifier>
+			<Abstract type="html">Positions the map to the supplied center coordinate with the given zoom level and optional animation.</Abstract>
+			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>- (void)setCenterCoordinate:(CLLocationCoordinate2D)centerCoordinate zoomLevel:(NSUInteger)zoomLevel animated:(BOOL)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>centerCoordinate</Name>
+					<Abstract type="html">A CLLocationCoordinate2D object representing the latitude an longitude the map should zoom to.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoomLevel</Name>
+					<Abstract type="html">A NSUInteger value representing zoom level the map should zoom to.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">A BOOL property to determine whether the change of map&apos;s center should be animated or not.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/image</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
+			<Anchor>//api/name/setCenterCoordinate:zoomLevel:animated:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		

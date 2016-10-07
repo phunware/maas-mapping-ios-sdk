@@ -1,83 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWMapViewLocationType.html">
+	<File path="Protocols/PWRouteViewControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWMapViewLocationType</TokenIdentifier>
-			<Abstract type="html">Supported Location providers types.</Abstract>
-			<DeclaredIn>PWMapView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWRouteViewControllerDelegate</TokenIdentifier>
+			<Abstract type="html">PWRouteViewControllerDelegate protocol definition.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="21"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeNone</TokenIdentifier>
-            <Abstract type="html">Location provider type none.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeNone</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteViewControllerDelegate/didCalculateRoute:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the PWRouteViewController did calculate a route successfully.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)didCalculateRoute:(PWRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">The PWRoute calculated object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didCalculateRoute:</Anchor>
             <NodeRef refid="21"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMSE</TokenIdentifier>
-            <Abstract type="html">Location provider type MSE.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeMSE</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteViewControllerDelegate/didDismissRouteViewController:</TokenIdentifier>
+			<Abstract type="html">Informs the receiver that the user dismissed the view controller, and returns the instruction last used (if any).</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)didDismissRouteViewController:(PWRouteInstruction *)instruction</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>instruction</Name>
+					<Abstract type="html">A PWRouteInstruction object last used after the dismissal.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didDismissRouteViewController:</Anchor>
             <NodeRef refid="21"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeBLE</TokenIdentifier>
-            <Abstract type="html">Location provider type BLE.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeBLE</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="21"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeGPS</TokenIdentifier>
-            <Abstract type="html">Location provider type GPS.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeGPS</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="21"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeFused</TokenIdentifier>
-            <Abstract type="html">Location provider type Fused.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeFused</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="21"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMock</TokenIdentifier>
-            <Abstract type="html">Location provider type Mock.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeMock</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="21"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>
