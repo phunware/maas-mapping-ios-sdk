@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWPointOfInterestViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterestViewController</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestViewController allows you to display detailed information of a Point of Interest.</Abstract>
+			<DeclaredIn>PWPointOfInterestViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestViewController/initWithPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">Initializes a PWPointOfInterestViewController with the supplied point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterestViewController.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithPointOfInterest:(PWPointOfInterest *)pointOfInterest</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pointOfInterest</Name>
+					<Abstract type="html">A PWPointOfInterest object reference to initialise the PWPointOfInterestViewController object.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWPointOfInterestViewController instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPointOfInterest:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

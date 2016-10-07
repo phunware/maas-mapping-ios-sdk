@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/PWRouteInstructionsViewControllerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/PWRouteInstructionsViewControllerDelegate</TokenIdentifier>
+			<Abstract type="html">PWRouteInstructionsViewControllerDelegate protocol definition.</Abstract>
+			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteInstructionsViewControllerDelegate/didSelectRouteInstruction:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the user has selected one route instruction for the calculated route.</Abstract>
+			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)didSelectRouteInstruction:(PWRouteInstruction *)instruction</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>instruction</Name>
+					<Abstract type="html">A reference to the selected instruction object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didSelectRouteInstruction:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteInstructionsViewControllerDelegate/didDismissRouteViewController:</TokenIdentifier>
+			<Abstract type="html">Informs the receiver that the user dismissed the view controller, and returns the instruction last used (if any).</Abstract>
+			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)didDismissRouteViewController:(PWRouteInstruction *)instruction</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>instruction</Name>
+					<Abstract type="html">A PWRouteInstruction object last used after the dismissal.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didDismissRouteViewController:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWPointOfInterestType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterestType</TokenIdentifier>
+			<Abstract type="html">A PWPointOfInterestType represents single point of interest type defined within MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/name</TokenIdentifier>
+			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/name</TokenIdentifier>
+			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setImage:</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/image</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/image</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

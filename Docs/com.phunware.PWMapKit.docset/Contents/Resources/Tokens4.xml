@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWBuildingViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingViewController</TokenIdentifier>
+			<Abstract type="html">A view controller that let&apos;s the user browse and search a PWBuilding structure.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingViewController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) id&lt;PWBuildingViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) id&lt;PWBuildingViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) id&lt;PWBuildingViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingViewController/initWithBuilding:</TokenIdentifier>
+			<Abstract type="html">Inits a PWBuildingViewController instance for a given PWBuilding object.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>building</Name>
+					<Abstract type="html">A PWBuilding object.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWBuildingViewController instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithBuilding:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingViewController/setFilterText:</TokenIdentifier>
+			<Abstract type="html">Filters the building&apos;s points of interest list with the given string.</Abstract>
+			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)setFilterText:(NSString *)filterText</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filterText</Name>
+					<Abstract type="html">String value to filter building&apos;s POI list.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setFilterText:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

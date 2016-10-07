@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWBuildingAnnotationView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingAnnotationView</TokenIdentifier>
+			<Abstract type="html">The PWAnnotationView class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled with a corresponding building annotation object that conforms to the PWBuildingAnnotation protocol. When an annotation’s coordinate is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/setContainerView:</TokenIdentifier>
+			<Abstract type="html">The annotation containerView associated with the view. The annotation containerView contains both the label and imageView.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) UIView *containerView</Declaration>
+			
+			
+			<Anchor>//api/name/containerView</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/containerView</TokenIdentifier>
+			<Abstract type="html">The annotation containerView associated with the view. The annotation containerView contains both the label and imageView.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) UIView *containerView</Declaration>
+			
+			
+			<Anchor>//api/name/containerView</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotationView/containerView</TokenIdentifier>
+			<Abstract type="html">The annotation containerView associated with the view. The annotation containerView contains both the label and imageView.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) UIView *containerView</Declaration>
+			
+			
+			<Anchor>//api/name/containerView</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/setLabel:</TokenIdentifier>
+			<Abstract type="html">The annotation label associated with the view. The annotation label stroke color and stroke width can be customized.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) PWAnnotationLabel *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/label</TokenIdentifier>
+			<Abstract type="html">The annotation label associated with the view. The annotation label stroke color and stroke width can be customized.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) PWAnnotationLabel *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotationView/label</TokenIdentifier>
+			<Abstract type="html">The annotation label associated with the view. The annotation label stroke color and stroke width can be customized.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) PWAnnotationLabel *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/setImageView:</TokenIdentifier>
+			<Abstract type="html">The annotation imageView associated with the view.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) UIImageView *imageView</Declaration>
+			
+			
+			<Anchor>//api/name/imageView</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingAnnotationView/imageView</TokenIdentifier>
+			<Abstract type="html">The annotation imageView associated with the view.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) UIImageView *imageView</Declaration>
+			
+			
+			<Anchor>//api/name/imageView</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuildingAnnotationView/imageView</TokenIdentifier>
+			<Abstract type="html">The annotation imageView associated with the view.</Abstract>
+			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) UIImageView *imageView</Declaration>
+			
+			
+			<Anchor>//api/name/imageView</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
