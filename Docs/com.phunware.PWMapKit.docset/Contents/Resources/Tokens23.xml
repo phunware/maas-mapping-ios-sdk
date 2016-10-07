@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWRouteSnapTolerance.html">
+	<File path="Constants/PWMapViewLocationType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWRouteSnapTolerance</TokenIdentifier>
-			<Abstract type="html">Supported Route Snapping Tolerance values.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/PWMapViewLocationType</TokenIdentifier>
+			<Abstract type="html">Supported Location providers types.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
@@ -14,10 +14,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapOff</TokenIdentifier>
-            <Abstract type="html">Route Snapping off.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeNone</TokenIdentifier>
+            <Abstract type="html">Location provider type none.
      </Abstract>
-            <Declaration>PWRouteSnapOff</Declaration>
+            <Declaration>PWMapViewLocationTypeNone</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             
@@ -25,10 +25,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceNormal</TokenIdentifier>
-            <Abstract type="html">Route Snapping normal.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMSE</TokenIdentifier>
+            <Abstract type="html">Location provider type MSE.
      </Abstract>
-            <Declaration>PWRouteSnapToleranceNormal</Declaration>
+            <Declaration>PWMapViewLocationTypeMSE</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             
@@ -36,10 +36,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceMedium</TokenIdentifier>
-            <Abstract type="html">Route Snapping medium.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeBLE</TokenIdentifier>
+            <Abstract type="html">Location provider type BLE.
      </Abstract>
-            <Declaration>PWRouteSnapToleranceMedium</Declaration>
+            <Declaration>PWMapViewLocationTypeBLE</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             
@@ -47,10 +47,32 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceHigh</TokenIdentifier>
-            <Abstract type="html">Route Snapping hihg.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeGPS</TokenIdentifier>
+            <Abstract type="html">Location provider type GPS.
      </Abstract>
-            <Declaration>PWRouteSnapToleranceHigh</Declaration>
+            <Declaration>PWMapViewLocationTypeGPS</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeFused</TokenIdentifier>
+            <Abstract type="html">Location provider type Fused.
+     </Abstract>
+            <Declaration>PWMapViewLocationTypeFused</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMock</TokenIdentifier>
+            <Abstract type="html">Location provider type Mock.
+     </Abstract>
+            <Declaration>PWMapViewLocationTypeMock</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             

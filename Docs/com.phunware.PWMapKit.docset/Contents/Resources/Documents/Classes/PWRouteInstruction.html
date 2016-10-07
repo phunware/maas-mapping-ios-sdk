@@ -47,11 +47,15 @@
 	
 	<option value="//api/name/movementDirection">&nbsp;&nbsp;&nbsp;&nbsp;movementDirection</option>
 	
+	<option value="//api/name/movementTrueHeading">&nbsp;&nbsp;&nbsp;&nbsp;movementTrueHeading</option>
+	
 	<option value="//api/name/route">&nbsp;&nbsp;&nbsp;&nbsp;route</option>
 	
 	<option value="//api/name/startPointOfInterest">&nbsp;&nbsp;&nbsp;&nbsp;startPointOfInterest</option>
 	
 	<option value="//api/name/turn">&nbsp;&nbsp;&nbsp;&nbsp;turn</option>
+	
+	<option value="//api/name/turnAngle">&nbsp;&nbsp;&nbsp;&nbsp;turnAngle</option>
 	
 	<option value="//api/name/turnDirection">&nbsp;&nbsp;&nbsp;&nbsp;turnDirection</option>
 	
@@ -93,11 +97,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/movementDirection">movementDirection</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/movementTrueHeading">movementTrueHeading</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/route">route</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPointOfInterest">startPointOfInterest</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/turn">turn</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/turnAngle">turnAngle</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/turnDirection">turnDirection</a></span></li>
 	
@@ -190,6 +198,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/movementTrueHeading">&nbsp;&nbsp;movementTrueHeading</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/turn">&nbsp;&nbsp;turn</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -197,6 +211,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/turnDirection">&nbsp;&nbsp;turnDirection</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/turnAngle">&nbsp;&nbsp;turnAngle</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -364,6 +384,42 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/movementTrueHeading" title="movementTrueHeading"></a>
+	<h3 class="subsubtitle method-title">movementTrueHeading</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The heading of the <a href="#//api/name/movement">movement</a> relative to true north. Expressed as an angle in degrees between 0 and 360.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationDirection movementTrueHeading</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRouteInstruction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/route" title="route"></a>
 	<h3 class="subsubtitle method-title">route</h3>
 	
@@ -442,12 +498,52 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A NSString object representing the turn instruction for the current instruction instance.</p>
+		<ul>
+<li>A NSString ob#0  0x00000001004d6ab9 in [PWLLMapViewController route:didChangeRouteInstruction:] at /Users/sspry/Development/Bitbucket/mapping-sdk-ios/PWMapKitSample/PWMapKit3.0/LowLevel/PWLLMapViewController.m:366
+ject representing the turn instruction for the current instruction instance.</li>
+</ul>
+
 	</div>		
 	
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *turn</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRouteInstruction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/turnAngle" title="turnAngle"></a>
+	<h3 class="subsubtitle method-title">turnAngle</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The angle of the <a href="#//api/name/turn">turn</a>. Expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no <a href="#//api/name/turn">turn</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float turnAngle</code></div>
 
     
 	
@@ -529,7 +625,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Phunware, Inc.. All rights reserved. (Last updated: 2016-07-25)</span><br />
+						<p><span class="copyright">&copy; 2016 Phunware, Inc.. All rights reserved. (Last updated: 2016-10-07)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

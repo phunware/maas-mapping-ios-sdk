@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWRouteInstructionsViewControllerDelegate.html">
+	<File path="Protocols/PWMapViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWRouteInstructionsViewControllerDelegate</TokenIdentifier>
-			<Abstract type="html">PWRouteInstructionsViewControllerDelegate protocol definition.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWMapViewDelegate</TokenIdentifier>
+			<Abstract type="html">PWMapViewDelegate protocol definition</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,36 +13,408 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteInstructionsViewControllerDelegate/didSelectRouteInstruction:</TokenIdentifier>
-			<Abstract type="html">This delegate is called when the user has selected one route instruction for the calculated route.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:regionWillChangeAnimated:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the region displayed by the map view is about to change.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>- (void)didSelectRouteInstruction:(PWRouteInstruction *)instruction</Declaration>
+			<Declaration>- (void)mapView:(PWMapView *)mapView regionWillChangeAnimated:(BOOL)animated</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>instruction</Name>
-					<Abstract type="html">A reference to the selected instruction object.</Abstract>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">If YES, the change to the new region will be animated. If NO, the change will be made immediately.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/didSelectRouteInstruction:</Anchor>
+			<Anchor>//api/name/mapView:regionWillChangeAnimated:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteInstructionsViewControllerDelegate/didDismissRouteViewController:</TokenIdentifier>
-			<Abstract type="html">Informs the receiver that the user dismissed the view controller, and returns the instruction last used (if any).</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:regionDidChangeAnimated:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the region displayed by the map view just changed.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>- (void)didDismissRouteViewController:(PWRouteInstruction *)instruction</Declaration>
+			<Declaration>- (void)mapView:(PWMapView *)mapView regionDidChangeAnimated:(BOOL)animated</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>instruction</Name>
-					<Abstract type="html">A PWRouteInstruction object last used after the dismissal.</Abstract>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">If YES, the change to the new region will be animated. If NO, the change will be made immediately.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/didDismissRouteViewController:</Anchor>
+			<Anchor>//api/name/mapView:regionDidChangeAnimated:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewWillStartLoadingMap:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the specified map view is about to retrieve some map data.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapViewWillStartLoadingMap:(PWMapView *)mapView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapViewWillStartLoadingMap:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewDidFinishLoadingMap:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the specified map view successfully loaded the needed map data.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapViewDidFinishLoadingMap:(PWMapView *)mapView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapViewDidFinishLoadingMap:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewDidFailLoadingMap:withError:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the specified view was unable to load the map data.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapViewDidFailLoadingMap:(PWMapView *)mapView withError:(NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The map view that started the load operation.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The reason that the map data could not be loaded.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapViewDidFailLoadingMap:withError:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewWillStartRenderingMap:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the map view is about to start rendering some of its tiles.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapViewWillStartRenderingMap:(PWMapView *)mapView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapViewWillStartRenderingMap:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewDidFinishRenderingMap:fullyRendered:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the map view has finished rendering the map.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapViewDidFinishRenderingMap:(PWMapView *)mapView fullyRendered:(BOOL)fullyRendered</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>fullyRendered</Name>
+					<Abstract type="html">BOOL value to tell if the map view has been fully rendered.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapViewDidFinishRenderingMap:fullyRendered:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didSelectBuildingAnnotationView:withPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the PWBuildingAnnotationView was selected by the user.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didSelectBuildingAnnotationView:(PWBuildingAnnotationView *)view withPointOfInterest:(PWPointOfInterest *)poi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The selected PWBuildingAnnotationView object.</Abstract>
+				</Parameter><Parameter>
+					<Name>poi</Name>
+					<Abstract type="html">The PointOfInterest.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didSelectBuildingAnnotationView:withPointOfInterest:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didDeselectBuildingAnnotationView:withPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the PWBuildingAnnotationView was deselected by the user.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didDeselectBuildingAnnotationView:(PWBuildingAnnotationView *)view withPointOfInterest:(PWPointOfInterest *)poi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The selected PWBuildingAnnotationView object.</Abstract>
+				</Parameter><Parameter>
+					<Name>poi</Name>
+					<Abstract type="html">The PointOfInterest.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didDeselectBuildingAnnotationView:withPointOfInterest:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didAddBuildingAnnotationViews:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that one or more building annotation views were added to the map.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didAddBuildingAnnotationViews:(NSArray&lt;PWBuildingAnnotationView*&gt; *)views</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>views</Name>
+					<Abstract type="html">The selected PWBuildingAnnotationView object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didAddBuildingAnnotationViews:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didFinishLoadingBuilding:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the building was added to the map.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didFinishLoadingBuilding:(PWBuilding *)building</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>building</Name>
+					<Abstract type="html">The building object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didFinishLoadingBuilding:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didFailToLoadBuilding:error:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the building failed to load into the map.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didFailToLoadBuilding:(PWBuilding *)building error:(NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>building</Name>
+					<Abstract type="html">The building object.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The reason that the building data could not be loaded.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didFailToLoadBuilding:error:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didChangeFloor:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the map changed floors.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didChangeFloor:(PWFloor *)currentFloor</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>currentFloor</Name>
+					<Abstract type="html">The floor object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didChangeFloor:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didAnnotateView:withPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">This delegate is called prior to an annotation being displayed. The SDK user has the opportunity to modify the UI of the annotation; such as left/right/detail views and call outs.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didAnnotateView:(PWBuildingAnnotationView *)view withPointOfInterest:(PWPointOfInterest *)poi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The annotation view tapped.</Abstract>
+				</Parameter><Parameter>
+					<Name>poi</Name>
+					<Abstract type="html">The point of iterest represented by the annotation.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didAnnotateView:withPointOfInterest:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:annotationView:calloutAccessoryControlTapped:withPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when a UIControl (UIButton, etc) is tapped on the custom annotation.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView annotationView:(PWBuildingAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control withPointOfInterest:(PWPointOfInterest *)poi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The annotation view tapped.</Abstract>
+				</Parameter><Parameter>
+					<Name>control</Name>
+					<Abstract type="html">The callout accessory control tapped.</Abstract>
+				</Parameter><Parameter>
+					<Name>poi</Name>
+					<Abstract type="html">The point of iterest represented by the annotation.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:annotationView:calloutAccessoryControlTapped:withPointOfInterest:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didChangeRouteInstruction:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the the route instruction for the map has changed.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didChangeRouteInstruction:(PWRouteInstruction *)routeInstruction</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>routeInstruction</Name>
+					<Abstract type="html">The new route instruction.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didChangeRouteInstruction:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didUpdateHeading:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the heading of the user is updated. startUpdatingHeading must be called for this service to start.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didUpdateHeading:(CLHeading *)heading</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>heading</Name>
+					<Abstract type="html">The updated heading object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didUpdateHeading:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:locationManager:didUpdateIndoorUserLocation:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the indoor location of the user was updated.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView locationManager:(id&lt;PWLocationManager&gt;)locationManager didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The map view tracking the user’s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>locationManager</Name>
+					<Abstract type="html">The location manager providing location updates.</Abstract>
+				</Parameter><Parameter>
+					<Name>userLocation</Name>
+					<Abstract type="html">The location object representing the user’s latest location. This property may be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:locationManager:didUpdateIndoorUserLocation:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewStartedSnappingLocationToRoute:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the user location is close enough to a route instruction that the SDK will snap the blue dot to the route.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapViewStartedSnappingLocationToRoute:(PWMapView *)mapView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapViewStartedSnappingLocationToRoute:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewStoppedSnappingLocationToRoute:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the user location is too far from any route instruction to snap the blue dot to a route instruction. Distance threshold is based on current routeSnappingTolerance.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapViewStoppedSnappingLocationToRoute:(PWMapView *)mapView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapViewStoppedSnappingLocationToRoute:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

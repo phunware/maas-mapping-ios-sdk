@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWMapViewController.html">
+	<File path="Classes/PWFloor.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWMapViewController</TokenIdentifier>
-			<Abstract type="html">The PWMapViewController class provides a &quot;canned&quot; full featured view controller for displaying and navigating a building.  It is intended to simply and minimize the effort to incorporate mapping functionality, in as few steps as possible. SDK users wishing to further customize mapping capabilities should use MPMapView.</Abstract>
-			<DeclaredIn>PWMapViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWFloor</TokenIdentifier>
+			<Abstract type="html">A PWFloor represents a building&apos;s floor structure defined within MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,129 +13,308 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/setMapView:</TokenIdentifier>
-			<Abstract type="html">Reference to embedded Map View.</Abstract>
-			<DeclaredIn>PWMapViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setBuilding:</TokenIdentifier>
+			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWMapView *mapView</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/mapView</TokenIdentifier>
-			<Abstract type="html">Reference to embedded Map View.</Abstract>
-			<DeclaredIn>PWMapViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/building</TokenIdentifier>
+			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWMapView *mapView</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapViewController/mapView</TokenIdentifier>
-			<Abstract type="html">Reference to embedded Map View.</Abstract>
-			<DeclaredIn>PWMapViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/building</TokenIdentifier>
+			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWMapView *mapView</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/mapView</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/initWithBuilding:</TokenIdentifier>
-			<Abstract type="html">Initiatives a new Map View Controller with a PWBuilding Object</Abstract>
-			<DeclaredIn>PWMapViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The floor&apos;s identifier.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/floorID</TokenIdentifier>
+			<Abstract type="html">The floor&apos;s identifier.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/floorID</TokenIdentifier>
+			<Abstract type="html">The floor&apos;s identifier.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setLevel:</TokenIdentifier>
+			<Abstract type="html">The floor&apos;s level number.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
+			
+			
+			<Anchor>//api/name/level</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/level</TokenIdentifier>
+			<Abstract type="html">The floor&apos;s level number.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
+			
+			
+			<Anchor>//api/name/level</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/level</TokenIdentifier>
+			<Abstract type="html">The floor&apos;s level number.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
+			
+			
+			<Anchor>//api/name/level</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setPointsOfInterest:</TokenIdentifier>
+			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
+			
+			
+			<Anchor>//api/name/pointsOfInterest</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterest</TokenIdentifier>
+			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
+			
+			
+			<Anchor>//api/name/pointsOfInterest</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/pointsOfInterest</TokenIdentifier>
+			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
+			
+			
+			<Anchor>//api/name/pointsOfInterest</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setTopLeft:</TokenIdentifier>
+			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
+			
+			
+			<Anchor>//api/name/topLeft</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/topLeft</TokenIdentifier>
+			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
+			
+			
+			<Anchor>//api/name/topLeft</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/topLeft</TokenIdentifier>
+			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
+			
+			
+			<Anchor>//api/name/topLeft</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setBottomRight:</TokenIdentifier>
+			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			
+			
+			<Anchor>//api/name/bottomRight</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/bottomRight</TokenIdentifier>
+			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			
+			
+			<Anchor>//api/name/bottomRight</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/bottomRight</TokenIdentifier>
+			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			
+			
+			<Anchor>//api/name/bottomRight</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/containsCoordinate:</TokenIdentifier>
+			<Abstract type="html">Determines if a given coordinate is contained within the floor&apos;s bounding latitude and longitude.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)containsCoordinate:(CLLocationCoordinate2D)coordinate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">A PWBuilding instance representing a building structure.</Abstract>
+					<Name>coordinate</Name>
+					<Abstract type="html">A CLLocationCoordinate2D object containing latitude and longitude.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWMapViewController object for the given building.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithBuilding:</Anchor>
+			<ReturnValue><Abstract type="html">Returns a BOOL value saying if the floor contains the given coordinate.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsCoordinate:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/navigateToPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">Positions the map to the supplied point of interest. The current floor with be changed as appropriate, and the POI&apos;s annotation will be popped-up.</Abstract>
-			<DeclaredIn>PWMapViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterestOfType:</TokenIdentifier>
+			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>- (void)navigateToPointOfInterest:(PWPointOfInterest *)poi</Declaration>
+			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>poi</Name>
-					<Abstract type="html">A PWPointOfInterest object representing any point of interest inside the building where the map should navigate to.</Abstract>
+					<Name>type</Name>
+					<Abstract type="html">A PWPointOfInterestType.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/navigateToPointOfInterest:</Anchor>
+			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterestType objects for the given type.</Abstract></ReturnValue>
+			<Anchor>//api/name/pointsOfInterestOfType:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/navigateWithRoute:</TokenIdentifier>
-			<Abstract type="html">Starts a navigation on the building with a previously initialised PWRoute object. Displays navigation instructions on the PWMapViewController&apos;s map.</Abstract>
-			<DeclaredIn>PWMapViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterestOfType:containing:</TokenIdentifier>
+			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type and who&apos;s name contains the supplied text.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>- (void)navigateWithRoute:(PWRoute *)route</Declaration>
+			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>route</Name>
-					<Abstract type="html">A PWRoute object representing a route to navigate on the building.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/navigateWithRoute:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/setRouteManeuver:</TokenIdentifier>
-			<Abstract type="html">Sets and dislays the current navitation instruction/steps during a navigation.</Abstract>
-			<DeclaredIn>PWMapViewController.h</DeclaredIn>
-			
-			<Declaration>- (void)setRouteManeuver:(PWRouteInstruction *)instruction</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>instruction</Name>
-					<Abstract type="html">A route instruction object for the route.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setRouteManeuver:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/setCenterCoordinate:zoomLevel:animated:</TokenIdentifier>
-			<Abstract type="html">Positions the map to the supplied center coordinate with the given zoom level and optional animation.</Abstract>
-			<DeclaredIn>PWMapViewController.h</DeclaredIn>
-			
-			<Declaration>- (void)setCenterCoordinate:(CLLocationCoordinate2D)centerCoordinate zoomLevel:(NSUInteger)zoomLevel animated:(BOOL)animated</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>centerCoordinate</Name>
-					<Abstract type="html">A CLLocationCoordinate2D object representing the latitude an longitude the map should zoom to.</Abstract>
+					<Name>type</Name>
+					<Abstract type="html">A PWPointOfInterestType.</Abstract>
 				</Parameter><Parameter>
-					<Name>zoomLevel</Name>
-					<Abstract type="html">A NSUInteger value representing zoom level the map should zoom to.</Abstract>
-				</Parameter><Parameter>
-					<Name>animated</Name>
-					<Abstract type="html">A BOOL property to determine whether the change of map&apos;s center should be animated or not.</Abstract>
+					<Name>containingText</Name>
+					<Abstract type="html">A NSString substring of text to search for.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/setCenterCoordinate:zoomLevel:animated:</Anchor>
+			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterestType objects for the given type and who&apos;s name contains the supplied text.</Abstract></ReturnValue>
+			<Anchor>//api/name/pointsOfInterestOfType:containing:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

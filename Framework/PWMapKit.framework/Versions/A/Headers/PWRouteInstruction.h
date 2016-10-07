@@ -104,6 +104,11 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 @property (nonatomic,readonly) PWRouteInstructionDirection movementDirection;
 
 /**
+ *  The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.
+ */
+@property (nonatomic, readonly) CLLocationDirection movementTrueHeading;
+
+/**
  *  A NSString object representing the turn instruction for the current instruction instance.
  */
 @property (nonatomic,copy,readonly) NSString *turn;
@@ -112,6 +117,11 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
  *  A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.
  */
 @property (nonatomic,readonly) PWRouteInstructionDirection turnDirection;
+
+/**
+ *  The angle of the turn. Expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.
+ */
+@property (nonatomic, readonly) float turnAngle;
 
 /**
  *  A CLLocationDistance property representing the total distance of the route expressed in meters.

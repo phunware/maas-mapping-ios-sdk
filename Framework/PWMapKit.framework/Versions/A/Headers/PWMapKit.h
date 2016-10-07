@@ -16,6 +16,8 @@
 #import <PWMapKit/PWCustomLocation.h>
 #import <PWMapKit/PWRoute.h>
 #import <PWMapKit/PWRouteInstruction.h>
+/** Need to be added **/
+#import <PWMapKit/PWRouteStartView.h>
 
 /** Light weight UI **/
 #import <PWMapKit/PWMapViewController.h>
@@ -24,6 +26,8 @@
 #import <PWMapKit/PWRouteInstructionsView.h>
 #import <PWMapKit/PWRouteInstructionsViewController.h>
 #import <PWMapKit/PWPointOfInterestViewController.h>
+#import <PWMapKit/PWBuildingAnnotationView.h>
+#import <PWMapKit/PWAnnotationLabel.h>
 
 @interface PWMapKit : NSObject
 

@@ -1,5 +1,10 @@
 #PWMapKit Changelog
 
+##v3.0.1 (Friday, October 7th, 2016)
+
+* Public more `PWMapKit` delegate methods and APIs which `MKMapView` has.
+* Add `metaData` property in `PWPointOfInterest`.
+
 ##v3.0.0 (Monday, July 25th, 2016)
 
 * API completely redesign.
