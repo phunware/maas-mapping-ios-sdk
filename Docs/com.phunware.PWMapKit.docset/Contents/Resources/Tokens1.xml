@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWAnnotationLabel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWAnnotationLabel</TokenIdentifier>
+			<Abstract type="html">The PWAnnotationLabel is a UILabel subclass used with annotation views that allows stroke color and width customizations.</Abstract>
+			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAnnotationLabel/setStrokeColor:</TokenIdentifier>
+			<Abstract type="html">The stroke color of the text outline.</Abstract>
+			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIColor *strokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/strokeColor</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAnnotationLabel/strokeColor</TokenIdentifier>
+			<Abstract type="html">The stroke color of the text outline.</Abstract>
+			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIColor *strokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/strokeColor</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWAnnotationLabel/strokeColor</TokenIdentifier>
+			<Abstract type="html">The stroke color of the text outline.</Abstract>
+			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIColor *strokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/strokeColor</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAnnotationLabel/setStrokeWidth:</TokenIdentifier>
+			<Abstract type="html">The stroke width of the text outline.</Abstract>
+			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGFloat strokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/strokeWidth</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAnnotationLabel/strokeWidth</TokenIdentifier>
+			<Abstract type="html">The stroke width of the text outline.</Abstract>
+			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGFloat strokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/strokeWidth</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWAnnotationLabel/strokeWidth</TokenIdentifier>
+			<Abstract type="html">The stroke width of the text outline.</Abstract>
+			<DeclaredIn>PWAnnotationLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGFloat strokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/strokeWidth</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
