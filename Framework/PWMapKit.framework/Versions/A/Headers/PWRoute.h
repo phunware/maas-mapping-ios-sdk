@@ -47,9 +47,14 @@
 @property (nonatomic,readonly) NSInteger distance;
 
 /**
- *  An integer number representing the estimated time of the route expressed in seconds.
+ *  An integer number representing the estimated time of the route expressed in minutes.
  */
 @property (nonatomic,readonly) NSInteger estimatedTime;
+
+/**
+ *  A BOOL value that returns YES if the route was calculated with accessibility.
+ */
+@property (nonatomic, readonly) BOOL isAccessible;
 
 /**---------------------------------------------------------------------------------------
  * @name Class Methods

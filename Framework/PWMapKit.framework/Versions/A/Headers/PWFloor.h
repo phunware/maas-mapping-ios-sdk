@@ -35,6 +35,11 @@
 @property (nonatomic,copy,readonly) NSString *name;
 
 /**
+ *  The floor's identifier.
+ */
+@property (nonatomic,readonly) NSInteger floorID;
+
+/**
  *  The floor's level number.
  */
 @property (nonatomic,readonly) NSInteger level;
