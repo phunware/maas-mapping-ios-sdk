@@ -47,7 +47,7 @@
 @property (nonatomic,readonly) NSInteger distance;
 
 /**
- *  An integer number representing the estimated time of the route expressed in minutes.
+ *  An integer number representing the estimated time of the route expressed in seconds.
  */
 @property (nonatomic,readonly) NSInteger estimatedTime;
 

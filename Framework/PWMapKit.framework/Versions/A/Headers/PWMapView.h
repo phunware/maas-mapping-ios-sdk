@@ -290,7 +290,7 @@ extern NSString *const PWRouteInstructionChangedNotificationKey;
 /**
  *  The receiver’s delegate.
  */
-@property (nonatomic) id<PWMapViewDelegate> delegate;
+@property (nonatomic, weak) id<PWMapViewDelegate> delegate;
 
 /**
  *  The location provider currently used by the map view.
@@ -516,5 +516,17 @@ extern NSString *const PWRouteInstructionChangedNotificationKey;
  *  @param animated         A BOOL property to determine whether the change of map's region should be animated or not.
  */
 - (void) setCamera:(MKMapCamera *) camera animated:(BOOL)animated;
+
+/**
+ Register an location manager provider with the map view. This location provider is used when modifying the `indoorUserTrackingMode` or when `showsIndoorUserLocation` is set to `YES`.
+ @param locationManager The location manager to register with the map view. The location manager must conform to the `PWLocationManager` protocol.
+ */
+- (void)registerLocationManager:(id<PWLocationManager>)locationManager;
+
+/**
+ Unregister any location manager provider that is registered with the map view.
+ @discussion If the user's location is being displayed, it will not be hidden.
+ */
+- (void)unregisterLocationManager;
 
 @end

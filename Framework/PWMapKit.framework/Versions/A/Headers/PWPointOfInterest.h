@@ -55,6 +55,4 @@
  */
 @property (nonatomic,readonly) NSDictionary *metaData;
 
-
-
 @end
