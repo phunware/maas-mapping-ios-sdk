@@ -1,14 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://bitbucket.phunware.com/scm/misc/cocoapods-sdk-ios.git'
 
 platform :ios, ‘8.0’
 xcodeproj 'LoadMap.xcodeproj'
 inhibit_all_warnings!
 
-
 target :LoadMap do
-    pod 'PW_MapKit', ‘3.0.2.1’
-#    pod 'PWMapKit', :path => '/Users/xiangwei/Downloads/abc/mapping-sdk-ios'
-#    pod 'PWLocation', '3.0.0'
-    pod 'PWCore', '3.0.1'
+    pod 'PWMapKit'
 end
