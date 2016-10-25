@@ -5,8 +5,6 @@
 //  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
-#import "PWPointOfInterest.h"
-
 @class PWAnnotationLabel;
 
 /**
@@ -15,6 +13,11 @@
 
 @interface PWBuildingAnnotationView : MKAnnotationView
 
+/**
+ The annotation containerView associated with the view. The annotation containerView contains both the label and imageView.
+ 
+ @discussion The annotation containerView is automatically displayed or hidden based on whether or not it occludes other annotation view images or labels.
+ */
 @property (nonatomic, weak) UIView *containerView;
 
 /**
@@ -24,8 +27,11 @@
  */
 @property (nonatomic, weak) PWAnnotationLabel *label;
 
+/**
+ The annotation imageView associated with the view.
+ 
+ @discussion The annotation imageView is automatically displayed or hidden based on whether or not it occludes other annotation view images or labels.
+ */
 @property (nonatomic, weak) UIImageView *imageView;
-
-
 
 @end

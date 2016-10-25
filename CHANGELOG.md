@@ -1,5 +1,10 @@
 #PWMapKit Changelog
 
+##v3.0.2 (Tuesday, October 25th, 2016)
+
+* Fix the issue of memory leak.
+* Add/improve APIs for supporting ADA.
+
 ##v3.0.1 (Friday, October 7th, 2016)
 
 * Public more `PWMapKit` delegate methods and APIs which `MKMapView` has.
