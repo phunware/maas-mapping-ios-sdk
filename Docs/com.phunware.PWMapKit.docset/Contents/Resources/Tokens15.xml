@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstructionsViewController</TokenIdentifier>
-			<Abstract type="html">The PWRouteInstructionsViewController allows you to display route instructions list for a calculated PWRoute.</Abstract>
+			<Abstract type="html">The PWRouteInstructionsViewController allows the display of a route instructions list for a calculated PWRoute.</Abstract>
 			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
             
 			

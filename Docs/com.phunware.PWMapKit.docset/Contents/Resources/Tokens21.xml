@@ -14,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteViewControllerDelegate/didCalculateRoute:</TokenIdentifier>
-			<Abstract type="html">This delegate is called when the PWRouteViewController did calculate a route successfully.</Abstract>
+			<Abstract type="html">This delegate is called when the PWRouteViewController calculated a route successfully.</Abstract>
 			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
 			
 			<Declaration>- (void)didCalculateRoute:(PWRoute *)route</Declaration>

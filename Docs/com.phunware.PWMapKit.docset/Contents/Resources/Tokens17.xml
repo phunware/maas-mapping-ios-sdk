@@ -31,7 +31,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingViewControllerDelegate/didDismissBuildingViewController:</TokenIdentifier>
-			<Abstract type="html">Informs the receiver that the user dismissed the view controller, and returns the point of interest last selected (if any).</Abstract>
+			<Abstract type="html">Informs the receiver that the user dismissed the view controller and returns the point of interest last selected (if any).</Abstract>
 			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
 			
 			<Declaration>- (void)didDismissBuildingViewController:(PWPointOfInterest *)poi</Declaration>

@@ -53,6 +53,8 @@
 	
 	<option value="//api/name/mapView:didChangeRouteInstruction:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeRouteInstruction:</option>
 	
+	<option value="//api/name/mapView:didChangeTrackingMode:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeTrackingMode:</option>
+	
 	<option value="//api/name/mapView:didDeselectBuildingAnnotationView:withPointOfInterest:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didDeselectBuildingAnnotationView:withPointOfInterest:</option>
 	
 	<option value="//api/name/mapView:didFailToLoadBuilding:error:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFailToLoadBuilding:error:</option>
@@ -68,6 +70,10 @@
 	<option value="//api/name/mapView:regionDidChangeAnimated:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:regionDidChangeAnimated:</option>
 	
 	<option value="//api/name/mapView:regionWillChangeAnimated:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:regionWillChangeAnimated:</option>
+	
+	<option value="//api/name/mapView:rendererForOverlay:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:rendererForOverlay:</option>
+	
+	<option value="//api/name/mapView:viewForAnnotation:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:viewForAnnotation:</option>
 	
 	<option value="//api/name/mapViewDidFailLoadingMap:withError:">&nbsp;&nbsp;&nbsp;&nbsp;- mapViewDidFailLoadingMap:withError:</option>
 	
@@ -121,6 +127,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeRouteInstruction:">mapView:didChangeRouteInstruction:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeTrackingMode:">mapView:didChangeTrackingMode:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didDeselectBuildingAnnotationView:withPointOfInterest:">mapView:didDeselectBuildingAnnotationView:withPointOfInterest:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFailToLoadBuilding:error:">mapView:didFailToLoadBuilding:error:</a></span></li>
@@ -136,6 +144,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:regionDidChangeAnimated:">mapView:regionDidChangeAnimated:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:regionWillChangeAnimated:">mapView:regionWillChangeAnimated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:rendererForOverlay:">mapView:rendererForOverlay:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:viewForAnnotation:">mapView:viewForAnnotation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewDidFailLoadingMap:withError:">mapViewDidFailLoadingMap:withError:</a></span></li>
 	
@@ -324,6 +336,24 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:didChangeTrackingMode:">&ndash;&nbsp;mapView:didChangeTrackingMode:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:viewForAnnotation:">&ndash;&nbsp;mapView:viewForAnnotation:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:rendererForOverlay:">&ndash;&nbsp;mapView:rendererForOverlay:</a></code>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -460,7 +490,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>This delegate is called prior to an annotation being displayed. The SDK user has the opportunity to modify the UI of the annotation; such as left/right/detail views and call outs.</p>
+		<p>This delegate is called prior to an annotation being displayed. The SDK user has the opportunity to modify the UI of the annotation; such as left/right/detail views and call-outs.</p>
 	</div>		
 	
     
@@ -587,6 +617,57 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>routeInstruction</em></dt>
 			<dd><p>The new route instruction.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapView:didChangeTrackingMode:" title="mapView:didChangeTrackingMode:"></a>
+	<h3 class="subsubtitle method-title">mapView:didChangeTrackingMode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This delegate is called when the tracking mode of the map is changed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didChangeTrackingMode:(PWTrackingMode)<em>mode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The current map view instance.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mode</em></dt>
+			<dd><p>The new tracking mode.</p></dd>
 		</dl>
 		
 	</div>
@@ -1045,6 +1126,108 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/mapView:rendererForOverlay:" title="mapView:rendererForOverlay:"></a>
+	<h3 class="subsubtitle method-title">mapView:rendererForOverlay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Asks the delegate for a renderer object to use when drawing the specified overlay.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MKOverlayRenderer *)mapView:(MKMapView *)<em>mapView</em> rendererForOverlay:(id&lt;MKOverlay&gt;)<em>overlay</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view that requested the renderer object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>overlay</em></dt>
+			<dd><p>The overlay object that is about to be displayed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapView:viewForAnnotation:" title="mapView:viewForAnnotation:"></a>
+	<h3 class="subsubtitle method-title">mapView:viewForAnnotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the view associated with the specified annotation object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MKAnnotationView *)mapView:(MKMapView *)<em>mapView</em> viewForAnnotation:(id&lt;MKAnnotation&gt;)<em>annotation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view that requested the annotation view.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>annotation</em></dt>
+			<dd><p>The object representing the annotation that is about to be displayed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/mapViewDidFailLoadingMap:withError:" title="mapViewDidFailLoadingMap:withError:"></a>
 	<h3 class="subsubtitle method-title">mapViewDidFailLoadingMap:withError:</h3>
 	
@@ -1394,7 +1577,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Phunware, Inc.. All rights reserved. (Last updated: 2016-10-07)</span><br />
+						<p><span class="copyright">&copy; 2016 Phunware, Inc.. All rights reserved. (Last updated: 2016-11-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

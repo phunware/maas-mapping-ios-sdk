@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstructionsView</TokenIdentifier>
-			<Abstract type="html">The PWRouteInstructionsView class allows to display a calculated PWRoute instructions on the map view.</Abstract>
+			<Abstract type="html">The PWRouteInstructionsView class allows the display of a calculated PWRoute instructions on the map view.</Abstract>
 			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
             
 			

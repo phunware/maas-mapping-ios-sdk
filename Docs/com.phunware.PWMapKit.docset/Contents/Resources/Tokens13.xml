@@ -230,8 +230,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurn:</TokenIdentifier>
-			<Abstract type="html">*  A NSString ob#0	0x00000001004d6ab9 in [PWLLMapViewController route:didChangeRouteInstruction:] at /Users/sspry/Development/Bitbucket/mapping-sdk-ios/PWMapKitSample/PWMapKit3.0/LowLevel/PWLLMapViewController.m:366
-ject representing the turn instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
@@ -243,8 +242,7 @@ ject representing the turn instruction for the current instruction instance.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turn</TokenIdentifier>
-			<Abstract type="html">*  A NSString ob#0	0x00000001004d6ab9 in [PWLLMapViewController route:didChangeRouteInstruction:] at /Users/sspry/Development/Bitbucket/mapping-sdk-ios/PWMapKitSample/PWMapKit3.0/LowLevel/PWLLMapViewController.m:366
-ject representing the turn instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
@@ -256,8 +254,7 @@ ject representing the turn instruction for the current instruction instance.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turn</TokenIdentifier>
-			<Abstract type="html">*  A NSString ob#0	0x00000001004d6ab9 in [PWLLMapViewController route:didChangeRouteInstruction:] at /Users/sspry/Development/Bitbucket/mapping-sdk-ios/PWMapKitSample/PWMapKit3.0/LowLevel/PWLLMapViewController.m:366
-ject representing the turn instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
@@ -305,7 +302,7 @@ ject representing the turn instruction for the current instruction instance.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurnAngle:</TokenIdentifier>
-			<Abstract type="html">The angle of the turn. Expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
+			<Abstract type="html">The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) float turnAngle</Declaration>
@@ -317,7 +314,7 @@ ject representing the turn instruction for the current instruction instance.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turnAngle</TokenIdentifier>
-			<Abstract type="html">The angle of the turn. Expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
+			<Abstract type="html">The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) float turnAngle</Declaration>
@@ -329,7 +326,7 @@ ject representing the turn instruction for the current instruction instance.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turnAngle</TokenIdentifier>
-			<Abstract type="html">The angle of the turn. Expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
+			<Abstract type="html">The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) float turnAngle</Declaration>

@@ -300,7 +300,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterestOfType:containing:</TokenIdentifier>
-			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type and who&apos;s name contains the supplied text.</Abstract>
+			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type and whose name contains the supplied text.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
 			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText</Declaration>
@@ -313,7 +313,7 @@
 					<Abstract type="html">A NSString substring of text to search for.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterestType objects for the given type and who&apos;s name contains the supplied text.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterestType objects for the given type and whose name contains the supplied text.</Abstract></ReturnValue>
 			<Anchor>//api/name/pointsOfInterestOfType:containing:</Anchor>
             <NodeRef refid="6"/>
 		</Token>

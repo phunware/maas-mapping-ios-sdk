@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWRouteViewController</TokenIdentifier>
-			<Abstract type="html">A view controller that let&apos;s the user browse and search a PWBuilding structure to navigate from a start point of interest to an end point of interest.</Abstract>
+			<Abstract type="html">A view controller that lets the user browse and search a PWBuilding structure to navigate from a start point of interest to an end point of interest.</Abstract>
 			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
             
 			
@@ -122,7 +122,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/initWithBuilding:</TokenIdentifier>
-			<Abstract type="html">Inits a PWRouteViewController instance for a given building structure.</Abstract>
+			<Abstract type="html">Initializes a PWRouteViewController instance for a given building structure.</Abstract>
 			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
@@ -139,7 +139,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/initWithBuilding:withAccessibility:</TokenIdentifier>
-			<Abstract type="html">Inits a PWRouteViewController instance for a given building structure considering accessibility.</Abstract>
+			<Abstract type="html">Initializes a PWRouteViewController instance for a given building structure considering accessibility.</Abstract>
 			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building withAccessibility:(BOOL)accessible</Declaration>
@@ -149,7 +149,7 @@
 					<Abstract type="html">A PWBuilding object.</Abstract>
 				</Parameter><Parameter>
 					<Name>accessible</Name>
-					<Abstract type="html">A BOOL value to tell de init to considere accessibility or not.</Abstract>
+					<Abstract type="html">A BOOL value to determine if accessibility should be used while calculating the route.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Returns a PWRouteViewController instance.</Abstract></ReturnValue>
