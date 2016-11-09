@@ -275,6 +275,29 @@ extern NSString *const PWRouteInstructionChangedNotificationKey;
  */
 - (void)mapViewStoppedSnappingLocationToRoute:(PWMapView *)mapView;
 
+/**
+ *  This delegate is called when the tracking mode of the map is changed.
+ *  @param mapView           The current map view instance.
+ *  @param mode              The new tracking mode.
+ */
+- (void)mapView:(PWMapView *)mapView didChangeTrackingMode:(PWTrackingMode)mode;
+
+/**
+ *  Returns the view associated with the specified annotation object.
+ *
+ *  @param mapView The map view that requested the annotation view.
+ *  @param annotation The object representing the annotation that is about to be displayed.
+ */
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation;
+
+/**
+ *  Asks the delegate for a renderer object to use when drawing the specified overlay.
+ *
+ *  @param mapView The map view that requested the renderer object.
+ *  @param overlay The overlay object that is about to be displayed.
+ */
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay;
+
 @end
 
 /**
@@ -528,5 +551,77 @@ extern NSString *const PWRouteInstructionChangedNotificationKey;
  @discussion If the user's location is being displayed, it will not be hidden.
  */
 - (void)unregisterLocationManager;
+
+/**
+ *  Adds the specified annotation to the PWMapView.
+ *
+ *  @param annotation The annotation object to add to the receiver. This object must conform to the MKAnnotation protocol.
+ */
+- (void)addAnnotation:(id<MKAnnotation>)annotation;
+
+/**
+ *  Adds an array of annotation objects to the PWMapView.
+ *
+ *  @param annotations An array of annotation objects. Each object in the array must conform to the MKAnnotation protocol.
+ */
+- (void)addAnnotations:(NSArray<id<MKAnnotation>> *)annotations;
+
+/**
+ *  Removes the specified annotation object from the PWMapView.
+ *
+ *  @param annotation The annotation object to remove. This object must conform to the MKAnnotation protocol.
+ */
+- (void)removeAnnotation:(id<MKAnnotation>)annotation;
+
+/**
+ *  Removes an array of annotation objects from the PWMapView.
+ *
+ *  @param annotations The array of annotations to remove. Objects in the array must conform to the MKAnnotation protocol.
+ */
+- (void)removeAnnotations:(NSArray<id<MKAnnotation>> *)annotations;
+
+/**
+ *  Adds a single overlay object to the PWMapView.
+ *
+ *  @param overlay The overlay object to add. This object must conform to the MKOverlay protocol.
+ */
+- (void)addOverlay:(id<MKOverlay>)overlay;
+
+/**
+ *  Adds an array of overlay objects to the PWMapView.
+ *
+ *  @param overlays An array of objects, each of which must conform to the MKOverlay protocol.
+ */
+- (void)addOverlays:(NSArray<id<MKOverlay>> *)overlays;
+
+/**
+ *  Inserts an overlay object into the list associated with the PWMapView.
+ *
+ *  @param overlay The overlay object to insert.
+ *  @param index The index at which to insert the overlay object.
+ */
+- (void)insertOverlay:(id<MKOverlay>)overlay atIndex:(NSUInteger)index;
+
+/**
+ *  Exchanges the position of two overlay objects.
+ *
+ *  @param index1 The index of an overlay in the MKOverlayLevelAboveLabels map level.
+ *  @param index2 The index of another overlay in the MKOverlayLevelAboveLabels map level.
+ */
+- (void)exchangeOverlayAtIndex:(NSUInteger)index1 withOverlayAtIndex:(NSUInteger)index2;
+
+/**
+ *  Removes a single overlay object from the PWMapView.
+ *
+ *  @param overlay The overlay object to remove.
+ */
+- (void)removeOverlay:(id<MKOverlay>)overlay;
+
+/**
+ *  Removes one or more overlay objects from the PWMapView.
+ *
+ *  @param overlays An array of objects, each of which conforms to the MKOverlay protocol.
+ */
+- (void)removeOverlays:(NSArray<id<MKOverlay>> *)overlays;
 
 @end

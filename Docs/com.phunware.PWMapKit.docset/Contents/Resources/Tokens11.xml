@@ -21,7 +21,7 @@
 			<Parameters>
 				<Parameter>
 					<Name>pointOfInterest</Name>
-					<Abstract type="html">A PWPointOfInterest object reference to initialise the PWPointOfInterestViewController object.</Abstract>
+					<Abstract type="html">A PWPointOfInterest object reference to initialize the PWPointOfInterestViewController object.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Returns a PWPointOfInterestViewController instance.</Abstract></ReturnValue>

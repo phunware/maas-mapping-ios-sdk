@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWMapViewController</TokenIdentifier>
-			<Abstract type="html">The PWMapViewController class provides a &quot;canned&quot; full featured view controller for displaying and navigating a building.  It is intended to simply and minimize the effort to incorporate mapping functionality, in as few steps as possible. SDK users wishing to further customize mapping capabilities should use MPMapView.</Abstract>
+			<Abstract type="html">The PWMapViewController class provides a &quot;canned,&quot; full-featured view controller for displaying and navigating a building.  It is intended to simplify and minimize the effort to incorporate mapping functionality in as few steps as possible. SDK users wishing to further customize mapping capabilities should use MPMapView.</Abstract>
 			<DeclaredIn>PWMapViewController.h</DeclaredIn>
             
 			
@@ -50,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/initWithBuilding:</TokenIdentifier>
-			<Abstract type="html">Initiatives a new Map View Controller with a PWBuilding Object</Abstract>
+			<Abstract type="html">Initializes a new Map View Controller with a PWBuilding Object</Abstract>
 			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
@@ -67,7 +67,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/navigateToPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">Positions the map to the supplied point of interest. The current floor with be changed as appropriate, and the POI&apos;s annotation will be popped-up.</Abstract>
+			<Abstract type="html">Positions the map to the supplied point of interest. The current floor will be changed as appropriate, and the POI&apos;s annotation will be shown.</Abstract>
 			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
 			<Declaration>- (void)navigateToPointOfInterest:(PWPointOfInterest *)poi</Declaration>
@@ -84,7 +84,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapViewController/navigateWithRoute:</TokenIdentifier>
-			<Abstract type="html">Starts a navigation on the building with a previously initialised PWRoute object. Displays navigation instructions on the PWMapViewController&apos;s map.</Abstract>
+			<Abstract type="html">Starts a navigation on the building with a previously initialized PWRoute object. Displays navigation instructions on the PWMapViewController&apos;s map.</Abstract>
 			<DeclaredIn>PWMapViewController.h</DeclaredIn>
 			
 			<Declaration>- (void)navigateWithRoute:(PWRoute *)route</Declaration>

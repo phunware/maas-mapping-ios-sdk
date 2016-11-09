@@ -1,5 +1,11 @@
 #PWMapKit Changelog
 
+##v3.0.3 (Tuesday, November 8th, 2016)
+
+* Add observable/callback method for `trackingMode` in PWMapView.
+* Support adding custom annotation/overlay in PWMapView.
+* Bug fixes.
+
 ##v3.0.2 (Tuesday, October 25th, 2016)
 
 * Fix the issue of memory leak.

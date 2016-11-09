@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/c/tdef/PWRouteInstructionDirection</TokenIdentifier>
-			<Abstract type="html">Defines the different type of custom locations.</Abstract>
+			<Abstract type="html">Defines the different types of custom locations.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
 			
@@ -81,7 +81,7 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorUp</TokenIdentifier>
-            <Abstract type="html">Route instruction direction elevetor up.
+            <Abstract type="html">Route instruction direction elevator up.
      </Abstract>
             <Declaration>PWRouteInstructionDirectionElevatorUp</Declaration>
             

@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWCustomLocation</TokenIdentifier>
-			<Abstract type="html">A PWCustomLocation extends from PWPointOfInterest and represents single location point. PWCustomLocation Can represent user&apos;s current location or a user&apos;s dropped pin.</Abstract>
+			<Abstract type="html">A PWCustomLocation extends from PWPointOfInterest and represents single location point. PWCustomLocation can represent user&apos;s current location or a user&apos;s dropped pin.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
             
 			
@@ -14,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/setLocationType:</TokenIdentifier>
-			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents</Abstract>
+			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) PWCustomLocationType locationType</Declaration>
@@ -26,7 +26,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/locationType</TokenIdentifier>
-			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents</Abstract>
+			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) PWCustomLocationType locationType</Declaration>
@@ -38,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/locationType</TokenIdentifier>
-			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents</Abstract>
+			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) PWCustomLocationType locationType</Declaration>

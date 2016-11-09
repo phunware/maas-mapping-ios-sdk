@@ -50,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuildingViewController/initWithBuilding:</TokenIdentifier>
-			<Abstract type="html">Inits a PWBuildingViewController instance for a given PWBuilding object.</Abstract>
+			<Abstract type="html">Initializes a PWBuildingViewController instance for a given PWBuilding object.</Abstract>
 			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>

@@ -48,7 +48,7 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceHigh</TokenIdentifier>
-            <Abstract type="html">Route Snapping hihg.
+            <Abstract type="html">Route Snapping high.
      </Abstract>
             <Declaration>PWRouteSnapToleranceHigh</Declaration>
             

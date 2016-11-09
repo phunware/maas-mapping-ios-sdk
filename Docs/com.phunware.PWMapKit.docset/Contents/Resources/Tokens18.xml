@@ -274,7 +274,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didAnnotateView:withPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">This delegate is called prior to an annotation being displayed. The SDK user has the opportunity to modify the UI of the annotation; such as left/right/detail views and call outs.</Abstract>
+			<Abstract type="html">This delegate is called prior to an annotation being displayed. The SDK user has the opportunity to modify the UI of the annotation; such as left/right/detail views and call-outs.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)mapView:(PWMapView *)mapView didAnnotateView:(PWBuildingAnnotationView *)view withPointOfInterest:(PWPointOfInterest *)poi</Declaration>
@@ -415,6 +415,66 @@
 			</Parameters>
 			
 			<Anchor>//api/name/mapViewStoppedSnappingLocationToRoute:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didChangeTrackingMode:</TokenIdentifier>
+			<Abstract type="html">This delegate is called when the tracking mode of the map is changed.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(PWMapView *)mapView didChangeTrackingMode:(PWTrackingMode)mode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The current map view instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">The new tracking mode.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didChangeTrackingMode:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:viewForAnnotation:</TokenIdentifier>
+			<Abstract type="html">Returns the view associated with the specified annotation object.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id&lt;MKAnnotation&gt;)annotation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The map view that requested the annotation view.</Abstract>
+				</Parameter><Parameter>
+					<Name>annotation</Name>
+					<Abstract type="html">The object representing the annotation that is about to be displayed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:viewForAnnotation:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:rendererForOverlay:</TokenIdentifier>
+			<Abstract type="html">Asks the delegate for a renderer object to use when drawing the specified overlay.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id&lt;MKOverlay&gt;)overlay</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The map view that requested the renderer object.</Abstract>
+				</Parameter><Parameter>
+					<Name>overlay</Name>
+					<Abstract type="html">The overlay object that is about to be displayed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:rendererForOverlay:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

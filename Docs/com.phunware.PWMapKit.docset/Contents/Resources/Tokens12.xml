@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWRoute</TokenIdentifier>
-			<Abstract type="html">A PWRoute represents a route calculated for the user from within a building&apos;s boundaries start point of interest to end point of interest.</Abstract>
+			<Abstract type="html">A PWRoute represents a route calculated for the user from within a building&apos;s boundaries; start point of interest to end point of interest.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
             
 			
@@ -158,7 +158,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setDistance:</TokenIdentifier>
-			<Abstract type="html">An integer number representing the total distance of the route expressed in meters.</Abstract>
+			<Abstract type="html">An integer representing the total distance of the route expressed in meters.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSInteger distance</Declaration>
@@ -170,7 +170,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/distance</TokenIdentifier>
-			<Abstract type="html">An integer number representing the total distance of the route expressed in meters.</Abstract>
+			<Abstract type="html">An integer representing the total distance of the route expressed in meters.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSInteger distance</Declaration>
@@ -182,7 +182,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/distance</TokenIdentifier>
-			<Abstract type="html">An integer number representing the total distance of the route expressed in meters.</Abstract>
+			<Abstract type="html">An integer representing the total distance of the route expressed in meters.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSInteger distance</Declaration>
@@ -194,7 +194,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setEstimatedTime:</TokenIdentifier>
-			<Abstract type="html">An integer number representing the estimated time of the route expressed in minutes.</Abstract>
+			<Abstract type="html">An integer representing the estimated time of the route expressed in seconds.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSInteger estimatedTime</Declaration>
@@ -206,7 +206,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/estimatedTime</TokenIdentifier>
-			<Abstract type="html">An integer number representing the estimated time of the route expressed in minutes.</Abstract>
+			<Abstract type="html">An integer representing the estimated time of the route expressed in seconds.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSInteger estimatedTime</Declaration>
@@ -218,7 +218,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/estimatedTime</TokenIdentifier>
-			<Abstract type="html">An integer number representing the estimated time of the route expressed in minutes.</Abstract>
+			<Abstract type="html">An integer representing the estimated time of the route expressed in seconds.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSInteger estimatedTime</Declaration>
@@ -282,7 +282,7 @@
 					<Abstract type="html">BOOL Value to tell the route init if accessibility should be considered to calculate the route.</Abstract>
 				</Parameter><Parameter>
 					<Name>completion</Name>
-					<Abstract type="html">Completion handler that is called once the routes calculation is complete.</Abstract>
+					<Abstract type="html">Completion handler that is called once the route&apos;s calculation is complete.</Abstract>
 				</Parameter>
 			</Parameters>
 			

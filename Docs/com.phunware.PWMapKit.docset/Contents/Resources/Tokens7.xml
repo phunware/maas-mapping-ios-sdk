@@ -17,7 +17,7 @@
 			<Abstract type="html">The receiver’s delegate.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) id&lt;PWMapViewDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;PWMapViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">The receiver’s delegate.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) id&lt;PWMapViewDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;PWMapViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">The receiver’s delegate.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) id&lt;PWMapViewDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;PWMapViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -194,7 +194,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCustomLocation:</TokenIdentifier>
-			<Abstract type="html">A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a Dropped Pin).</Abstract>
+			<Abstract type="html">A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a dropped pin).</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
@@ -206,7 +206,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/customLocation</TokenIdentifier>
-			<Abstract type="html">A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a Dropped Pin).</Abstract>
+			<Abstract type="html">A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a dropped pin).</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
@@ -218,7 +218,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/customLocation</TokenIdentifier>
-			<Abstract type="html">A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a Dropped Pin).</Abstract>
+			<Abstract type="html">A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a dropped pin).</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
@@ -956,6 +956,211 @@
 			</Parameters>
 			
 			<Anchor>//api/name/setCamera:animated:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/registerLocationManager:</TokenIdentifier>
+			<Abstract type="html">Register an location manager provider with the map view. This location provider is used when modifying the indoorUserTrackingMode or when showsIndoorUserLocation is set to YES.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)registerLocationManager:(id&lt;PWLocationManager&gt;)locationManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locationManager</Name>
+					<Abstract type="html">The location manager to register with the map view. The location manager must conform to the PWLocationManager protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/registerLocationManager:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/unregisterLocationManager</TokenIdentifier>
+			<Abstract type="html">Unregister any location manager provider that is registered with the map view.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)unregisterLocationManager</Declaration>
+			
+			
+			<Anchor>//api/name/unregisterLocationManager</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/addAnnotation:</TokenIdentifier>
+			<Abstract type="html">Adds the specified annotation to the PWMapView.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)addAnnotation:(id&lt;MKAnnotation&gt;)annotation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>annotation</Name>
+					<Abstract type="html">The annotation object to add to the receiver. This object must conform to the MKAnnotation protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addAnnotation:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/addAnnotations:</TokenIdentifier>
+			<Abstract type="html">Adds an array of annotation objects to the PWMapView.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)addAnnotations:(NSArray&lt;id&lt;MKAnnotation&gt; &gt; *)annotations</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>annotations</Name>
+					<Abstract type="html">An array of annotation objects. Each object in the array must conform to the MKAnnotation protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addAnnotations:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/removeAnnotation:</TokenIdentifier>
+			<Abstract type="html">Removes the specified annotation object from the PWMapView.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)removeAnnotation:(id&lt;MKAnnotation&gt;)annotation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>annotation</Name>
+					<Abstract type="html">The annotation object to remove. This object must conform to the MKAnnotation protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeAnnotation:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/removeAnnotations:</TokenIdentifier>
+			<Abstract type="html">Removes an array of annotation objects from the PWMapView.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)removeAnnotations:(NSArray&lt;id&lt;MKAnnotation&gt; &gt; *)annotations</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>annotations</Name>
+					<Abstract type="html">The array of annotations to remove. Objects in the array must conform to the MKAnnotation protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeAnnotations:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/addOverlay:</TokenIdentifier>
+			<Abstract type="html">Adds a single overlay object to the PWMapView.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)addOverlay:(id&lt;MKOverlay&gt;)overlay</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>overlay</Name>
+					<Abstract type="html">The overlay object to add. This object must conform to the MKOverlay protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addOverlay:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/addOverlays:</TokenIdentifier>
+			<Abstract type="html">Adds an array of overlay objects to the PWMapView.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)addOverlays:(NSArray&lt;id&lt;MKOverlay&gt; &gt; *)overlays</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>overlays</Name>
+					<Abstract type="html">An array of objects, each of which must conform to the MKOverlay protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addOverlays:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/insertOverlay:atIndex:</TokenIdentifier>
+			<Abstract type="html">Inserts an overlay object into the list associated with the PWMapView.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)insertOverlay:(id&lt;MKOverlay&gt;)overlay atIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>overlay</Name>
+					<Abstract type="html">The overlay object to insert.</Abstract>
+				</Parameter><Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index at which to insert the overlay object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/insertOverlay:atIndex:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/exchangeOverlayAtIndex:withOverlayAtIndex:</TokenIdentifier>
+			<Abstract type="html">Exchanges the position of two overlay objects.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)exchangeOverlayAtIndex:(NSUInteger)index1 withOverlayAtIndex:(NSUInteger)index2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index1</Name>
+					<Abstract type="html">The index of an overlay in the MKOverlayLevelAboveLabels map level.</Abstract>
+				</Parameter><Parameter>
+					<Name>index2</Name>
+					<Abstract type="html">The index of another overlay in the MKOverlayLevelAboveLabels map level.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/exchangeOverlayAtIndex:withOverlayAtIndex:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/removeOverlay:</TokenIdentifier>
+			<Abstract type="html">Removes a single overlay object from the PWMapView.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)removeOverlay:(id&lt;MKOverlay&gt;)overlay</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>overlay</Name>
+					<Abstract type="html">The overlay object to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeOverlay:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/removeOverlays:</TokenIdentifier>
+			<Abstract type="html">Removes one or more overlay objects from the PWMapView.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)removeOverlays:(NSArray&lt;id&lt;MKOverlay&gt; &gt; *)overlays</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>overlays</Name>
+					<Abstract type="html">An array of objects, each of which conforms to the MKOverlay protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeOverlays:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
