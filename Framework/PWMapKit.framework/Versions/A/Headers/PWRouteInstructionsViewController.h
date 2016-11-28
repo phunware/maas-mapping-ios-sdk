@@ -44,7 +44,7 @@ static NSString *const kPWDirectionEndPin = @"PWDirectionEndPin";
 @end
 
 /**
- *  The PWRouteInstructionsViewController allows you to display route instructions list for a calculated PWRoute.
+ *  The PWRouteInstructionsViewController allows the display of a route instructions list for a calculated PWRoute.
  */
 @interface PWRouteInstructionsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 

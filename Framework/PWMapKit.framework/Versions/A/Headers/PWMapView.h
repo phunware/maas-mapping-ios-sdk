@@ -19,7 +19,7 @@
 #import "PWBuildingAnnotationView.h"
 
 /**
- *  Supported Location providers types.
+ *  Supported location providers types.
  */
 typedef NS_ENUM(NSInteger, PWMapViewLocationType) {
     /**
@@ -65,7 +65,7 @@ typedef NS_ENUM(NSUInteger, PWRouteSnapTolerance) {
      */
     PWRouteSnapToleranceMedium,
     /**
-     *  Route Snapping hihg.
+     *  Route Snapping high.
      */
     PWRouteSnapToleranceHigh
 };
@@ -220,7 +220,7 @@ extern NSString *const PWRouteInstructionChangedNotificationKey;
 - (void)mapView:(PWMapView *)mapView didChangeFloor:(PWFloor *)currentFloor;
 
 /**
- *  This delegate is called prior to an annotation being displayed. The SDK user has the opportunity to modify the UI of the annotation; such as left/right/detail views and call outs.
+ *  This delegate is called prior to an annotation being displayed. The SDK user has the opportunity to modify the UI of the annotation; such as left/right/detail views and call-outs.
  *
  *  @param mapView The current map view instance.
  *  @param view    The annotation view tapped.
@@ -336,7 +336,7 @@ extern NSString *const PWRouteInstructionChangedNotificationKey;
 @property (nonatomic) UIBarButtonItem *userTrackingBarButtonItem;
 
 /**
- *  A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a Dropped Pin).
+ *  A reference to the current custom location after the map view has been asked to navigate to a custom location (Current user position or a dropped pin).
  */
 @property (nonatomic) PWCustomLocation *customLocation;
 
@@ -466,7 +466,7 @@ extern NSString *const PWRouteInstructionChangedNotificationKey;
  *  Returns the annotation view of a PointOfInterest.
  *
  *  @param poi The Point of Interest. This parameter must not be nil.
- *  @discussion This method returns nil if the PointOfInterest if not visible in the Map.  This is due to reUse.
+ *  @discussion This method returns nil if the PointOfInterest if not visible in the Map.  This is due to reuse.
  */
 - (PWBuildingAnnotationView *) viewForPointOfInterest:(PWPointOfInterest *) poi;
 

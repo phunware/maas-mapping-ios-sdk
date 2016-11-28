@@ -29,7 +29,7 @@ static NSString *const kPWNavigationAccessibleImage = @"PWNavigationAccessibleIm
 @optional
 
 /**
- *  This delegate is called when the PWRouteViewController did calculate a route successfully.
+ *  This delegate is called when the PWRouteViewController calculated a route successfully.
  *
  *  @param route The PWRoute calculated object.
  */
@@ -45,7 +45,7 @@ static NSString *const kPWNavigationAccessibleImage = @"PWNavigationAccessibleIm
 @end
 
 /**
- *  A view controller that let's the user browse and search a PWBuilding structure to navigate from a start point of interest to an end point of interest.
+ *  A view controller that lets the user browse and search a PWBuilding structure to navigate from a start point of interest to an end point of interest.
  */
 @interface PWRouteViewController : UIViewController
 
@@ -75,7 +75,7 @@ static NSString *const kPWNavigationAccessibleImage = @"PWNavigationAccessibleIm
  */
 
 /**
- *  Inits a PWRouteViewController instance for a given building structure.
+ *  Initializes a PWRouteViewController instance for a given building structure.
  *
  *  @param building A PWBuilding object.
  *
@@ -84,10 +84,10 @@ static NSString *const kPWNavigationAccessibleImage = @"PWNavigationAccessibleIm
 - (instancetype) initWithBuilding:(PWBuilding *)building;
 
 /**
- *  Inits a PWRouteViewController instance for a given building structure considering accessibility.
+ *  Initializes a PWRouteViewController instance for a given building structure considering accessibility.
  *
  *  @param building   A PWBuilding object.
- *  @param accessible A BOOL value to tell de init to considere accessibility or not.
+ *  @param accessible A BOOL value to determine if accessibility should be used while calculating the route.
  *
  *  @return Returns a PWRouteViewController instance.
  */

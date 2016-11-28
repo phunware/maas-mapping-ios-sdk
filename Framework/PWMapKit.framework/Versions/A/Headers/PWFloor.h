@@ -83,12 +83,12 @@
 - (NSArray *) pointsOfInterestOfType:(PWPointOfInterestType *) type;
 
 /**
- *  Returns an array containing the floor's points of interest of the specified point of interest type and who's name contains the supplied text.
+ *  Returns an array containing the floor's points of interest of the specified point of interest type and whose name contains the supplied text.
  *
  *  @param type           A PWPointOfInterestType.
  *  @param containingText A NSString substring of text to search for.
  *
- *  @return Returns NSArray containing a list of PWPointOfInterestType objects for the given type and who's name contains the supplied text.
+ *  @return Returns NSArray containing a list of PWPointOfInterestType objects for the given type and whose name contains the supplied text.
  */
 - (NSArray *) pointsOfInterestOfType:(PWPointOfInterestType *) type containing:(NSString *) containingText;
 
