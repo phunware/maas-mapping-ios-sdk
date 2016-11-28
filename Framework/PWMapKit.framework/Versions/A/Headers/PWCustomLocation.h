@@ -13,7 +13,7 @@
 @class PWFloor;
 
 /**
- *  Defines the different type of custom locations
+ *  Defines the different types of custom locations
  */
 typedef NS_ENUM(NSUInteger, PWCustomLocationType) {
     /**
@@ -21,13 +21,13 @@ typedef NS_ENUM(NSUInteger, PWCustomLocationType) {
      */
     PWCustomLocationTypeCurrentLocation,
     /**
-     *  Represents custom location type for dropped ping location.
+     *  Represents custom location type for dropped pin location.
      */
     PWCustomLocationTypeDroppedPin
 };
 
 /**
- *  A PWCustomLocation extends from PWPointOfInterest and represents single location point. PWCustomLocation Can represent user's current location or a user's dropped pin.
+ *  A PWCustomLocation extends from PWPointOfInterest and represents single location point. PWCustomLocation can represent user's current location or a user's dropped pin.
  */
 @interface PWCustomLocation : PWPointOfInterest
 
@@ -37,7 +37,7 @@ typedef NS_ENUM(NSUInteger, PWCustomLocationType) {
  */
 
 /**
- *  The type of custom location the instance of PWCustomLocation represents
+ *  The type of custom location the instance of PWCustomLocation represents.
  */
 @property (nonatomic) PWCustomLocationType locationType;
 

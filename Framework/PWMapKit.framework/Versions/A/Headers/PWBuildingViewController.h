@@ -23,7 +23,7 @@
 - (void) didSelectPointOfInterest:(PWPointOfInterest *) poi;
 
 /**
- *  Informs the receiver that the user dismissed the view controller, and returns the point of interest last selected (if any).
+ *  Informs the receiver that the user dismissed the view controller and returns the point of interest last selected (if any).
  *
  *  @param poi the last selected point of interest.
  */
@@ -52,7 +52,7 @@
  */
 
 /**
- *  Inits a PWBuildingViewController instance for a given PWBuilding object.
+ *  Initializes a PWBuildingViewController instance for a given PWBuilding object.
  *
  *  @param building A PWBuilding object.
  *

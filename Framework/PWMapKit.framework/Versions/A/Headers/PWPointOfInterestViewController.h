@@ -23,7 +23,7 @@
 /**
  *  Initializes a PWPointOfInterestViewController with the supplied point of interest.
  *
- *  @param pointOfInterest A PWPointOfInterest object reference to initialise the PWPointOfInterestViewController object.
+ *  @param pointOfInterest A PWPointOfInterest object reference to initialize the PWPointOfInterestViewController object.
  *
  *  @return Returns a PWPointOfInterestViewController instance.
  */

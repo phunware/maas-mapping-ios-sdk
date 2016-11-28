@@ -23,7 +23,7 @@ static NSString *const kPWRouteInstructionDirectionStairsUp = @"PWRouteInstructi
 static NSString *const kPWRouteInstructionDirectionStairsDown = @"PWRouteInstructionDirectionStairsDown";
 
 /**
- *  Defines the different type of custom locations.
+ *  Defines the different types of custom locations.
  */
 typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
     /**
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
      */
     PWRouteInstructionDirectionFloorChange,
     /**
-     *  Route instruction direction elevetor up.
+     *  Route instruction direction elevator up.
      */
     PWRouteInstructionDirectionElevatorUp,
     /**
@@ -119,7 +119,7 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 @property (nonatomic,readonly) PWRouteInstructionDirection turnDirection;
 
 /**
- *  The angle of the turn. Expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.
+ *  The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.
  */
 @property (nonatomic, readonly) float turnAngle;
 

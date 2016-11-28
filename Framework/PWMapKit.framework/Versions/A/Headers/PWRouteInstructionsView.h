@@ -26,7 +26,7 @@
 @end
 
 /**
- *  The PWRouteInstructionsView class allows to display a calculated PWRoute instructions on the map view.
+ *  The PWRouteInstructionsView class allows the display of a calculated PWRoute instructions on the map view.
  */
 @interface PWRouteInstructionsView : UIView
 

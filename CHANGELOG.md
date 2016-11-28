@@ -1,4 +1,7 @@
 #PWMapKit Changelog
+##v3.0.4 (Monday, November 28th, 2016)
+
+* Avoid forcing map to current floor on navigation mode.
 
 ##v3.0.3 (Tuesday, November 8th, 2016)
 

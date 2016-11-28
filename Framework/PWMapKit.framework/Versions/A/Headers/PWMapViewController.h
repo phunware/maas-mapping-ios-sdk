@@ -25,7 +25,7 @@ static NSString *const kPWDirectionBarButtonItemImage = @"PWDirectionBarButtonIt
 static NSString *const kPWFloorBarButtonItemImage = @"PWFloorBarButtonItemImage";
 
 /**
- *  The PWMapViewController class provides a "canned" full featured view controller for displaying and navigating a building.  It is intended to simply and minimize the effort to incorporate mapping functionality, in as few steps as possible. SDK users wishing to further customize mapping capabilities should use MPMapView.
+ *  The PWMapViewController class provides a "canned," full-featured view controller for displaying and navigating a building.  It is intended to simplify and minimize the effort to incorporate mapping functionality in as few steps as possible. SDK users wishing to further customize mapping capabilities should use MPMapView.
  */
 @interface PWMapViewController : UIViewController
 
@@ -45,7 +45,7 @@ static NSString *const kPWFloorBarButtonItemImage = @"PWFloorBarButtonItemImage"
  */
 
 /**
- *  Initiatives a new Map View Controller with a PWBuilding Object
+ *  Initializes a new Map View Controller with a PWBuilding Object
  *
  *  @param building A PWBuilding instance representing a building structure.
  *
@@ -54,14 +54,14 @@ static NSString *const kPWFloorBarButtonItemImage = @"PWFloorBarButtonItemImage"
 - (instancetype) initWithBuilding:(PWBuilding *)building;
 
 /**
- *  Positions the map to the supplied point of interest. The current floor with be changed as appropriate, and the POI's annotation will be popped-up.
+ *  Positions the map to the supplied point of interest. The current floor will be changed as appropriate, and the POI's annotation will be shown.
  *
  *  @param poi A PWPointOfInterest object representing any point of interest inside the building where the map should navigate to.
  */
 - (void) navigateToPointOfInterest:(PWPointOfInterest *) poi;
 
 /**
- *  Starts a navigation on the building with a previously initialised PWRoute object. Displays navigation instructions on the PWMapViewController's map.
+ *  Starts a navigation on the building with a previously initialized PWRoute object. Displays navigation instructions on the PWMapViewController's map.
  *
  *  @param route A PWRoute object representing a route to navigate on the building.
  */
