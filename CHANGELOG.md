@@ -1,4 +1,10 @@
 #PWMapKit Changelog
+##v3.1.0 (Friday, Jan 27th, 2017)
+
+* Performance improvement for loading building data with bundle instead of numbers of API call.
+* Deprecated the API `+ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL) caching completion:(void(^)(PWBuilding *building, NSError *error))completion __deprecated;`  in PWBuilding, which is replaced by new API `+ (void)buildingWithIdentifier:(NSInteger)identifier completion:(void(^)(PWBuilding *building, NSError *error))completion;`.
+* Bug fix: Sometimes occupant can not zoom in as far as before once they have zoomed out on the map.
+
 ##v3.0.4 (Monday, November 28th, 2016)
 
 * Avoid forcing map to current floor on navigation mode.

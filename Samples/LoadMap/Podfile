@@ -1,9 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
+source 'ssh://git@bitbucket.phunware.com:7999/misc/cocoapods-sdk-ios.git'
 
 platform :ios, ‘8.0’
 xcodeproj 'LoadMap.xcodeproj'
 inhibit_all_warnings!
 
 target :LoadMap do
-    pod 'PWMapKit'
+    pod 'PWMapKit’
 end

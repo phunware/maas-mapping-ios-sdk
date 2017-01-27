@@ -60,8 +60,17 @@
  *  @param identifier The identifier used in MaaS Portal for the building.
  *  @param caching    YES/NO. Determines if the SDK will use prior cache information to instantiate the building structure. Default YES.
  *  @param completion Completion handler that is called once building load is complete.
+ *  @param discussion Please change to use `[PWBuilding buildingWithIdentifier:completion:]` instead.
  */
-+ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL) caching completion:(void(^)(PWBuilding *building, NSError *error))completion;
++ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL) caching completion:(void(^)(PWBuilding *building, NSError *error))completion __deprecated;
+
+/**
+ *  Instantiates a new building structure using the MaaS Portal identifier. The completion handler is called when the building structure is fully loaded.
+ *
+ *  @param identifier The identifier used in MaaS Portal for the building.
+ *  @param completion Completion handler that is called once building load is complete.
+ */
++ (void)buildingWithIdentifier:(NSInteger)identifier completion:(void(^)(PWBuilding *building, NSError *error))completion;
 
 /**---------------------------------------------------------------------------------------
  * @name Instance Methods
