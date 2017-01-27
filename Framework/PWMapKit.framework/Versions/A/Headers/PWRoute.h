@@ -71,4 +71,14 @@
  */
 + (void)initRouteFrom:(PWPointOfInterest *)startPoint to:(PWPointOfInterest *)endPoint accessibility:(BOOL)accessibility completion:(void(^)(PWRoute *route, NSError *error))completion;
 
+/**
+ *  Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated.
+ *
+ *  @param startPoint    PWPointOfInterest object representing the start point for the route calculation.
+ *  @param endPoint      PWPointOfInterest object representing the end point for the route calculation.
+ *  @param accessibility BOOL Value to tell the route init if accessibility should be considered to calculate the route.
+ *  @param completion    Completion handler that is called once the route's calculation is complete.
+ */
++ (void)createRouteFrom:(PWPointOfInterest *)start to:(PWPointOfInterest *)end accessibility:(BOOL)accessibility excluded:(NSArray *)pois completion:(void(^)(PWRoute *route, NSError *error))completion;
+
 @end

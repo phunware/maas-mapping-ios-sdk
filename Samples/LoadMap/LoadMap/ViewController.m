@@ -32,7 +32,7 @@
 }
 
 - (IBAction)loadMap:(id)sender {
-    [PWBuilding buildingWithIdentifier:20234 usingCache:YES completion:^(PWBuilding *building, NSError *error) {
+    [PWBuilding buildingWithIdentifier:20234 completion:^(PWBuilding *building, NSError *error) {
         // UI view controller initialization
         PWMapViewController *mapViewController = [[PWMapViewController alloc] initWithBuilding:building];
         
