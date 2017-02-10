@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
-#import <PWLocation/PWLocation.h>
 
 #import "PWBuilding.h"
 #import "PWFloor.h"
@@ -17,6 +16,9 @@
 #import "PWRouteInstruction.h"
 #import "PWCustomLocation.h"
 #import "PWBuildingAnnotationView.h"
+
+@class PWIndoorLocation;
+@protocol PWLocationManager;
 
 /**
  *  Supported location providers types.
