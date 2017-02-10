@@ -12,6 +12,8 @@
 
 #define kBLECustomerIdentifier @"<Senion Customer Identifier>"
 #define kBLEMapIdentifier @"<Senion Map Identifier>"
+#define kVirtualBeaconToken @"<Senion Map Identifier>"
+#define kBuildingIdentifier 0
 
 @interface ViewController ()
 
@@ -32,7 +34,7 @@
 }
 
 - (IBAction)loadMap:(id)sender {
-    [PWBuilding buildingWithIdentifier:20234 completion:^(PWBuilding *building, NSError *error) {
+    [PWBuilding buildingWithIdentifier:kBuildingIdentifier completion:^(PWBuilding *building, NSError *error) {
         // UI view controller initialization
         PWMapViewController *mapViewController = [[PWMapViewController alloc] initWithBuilding:building];
         
@@ -42,11 +44,16 @@
             // Set center of map
             [mapViewController setCenterCoordinate:building.coordinate zoomLevel:19 animated:NO];
             
-            // Set indoor location manager
-            NSDictionary *bleConfiguration = @{PWMapViewLocationTypeBLECustomIdentifierKey:kBLECustomerIdentifier,
-                                               PWMapViewLocationTypeBLEMapIdentifierKey:kBLEMapIdentifier,
-                                               PWMapViewLocationTypeFloorMapping:@{/* Floor ID Mapping, blue dot will not show without it. */}};
-            [mapViewController.mapView setMapViewLocationType:PWMapViewLocationTypeBLE configuration:bleConfiguration];
+            // Initialize the manager
+            PWManagedLocationManager *manager = [[PWManagedLocationManager alloc] initWithBuildingId:kBuildingIdentifier];
+            
+            // Configure the internal providers
+            manager.senionCustomerID = kBLECustomerIdentifier;
+            manager.senionMapID = kBLEMapIdentifier;
+            manager.virtualBeaconToken = kVirtualBeaconToken;
+            
+            // Regester the manager
+            [mapViewController.mapView registerLocationManager:manager];
         }];
     }];
 }
