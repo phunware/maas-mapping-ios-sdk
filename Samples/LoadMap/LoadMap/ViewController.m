@@ -7,6 +7,7 @@
 //
 
 #import <PWMapKit/PWMapKit.h>
+#import <PWLocation/PWLocation.h>
 
 #import "ViewController.h"
 
