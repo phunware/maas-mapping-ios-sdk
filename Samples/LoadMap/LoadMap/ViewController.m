@@ -13,7 +13,7 @@
 #define kBLECustomerIdentifier @"<Senion Customer Identifier>"
 #define kBLEMapIdentifier @"<Senion Map Identifier>"
 #define kVirtualBeaconToken @"<Senion Map Identifier>"
-#define kBuildingIdentifier @"<Building Identifier>"
+#define kBuildingIdentifier 0
 
 @interface ViewController ()
 
