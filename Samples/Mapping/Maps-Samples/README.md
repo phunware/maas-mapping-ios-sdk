@@ -11,7 +11,7 @@ The primary use of the Mapping sample demonstrates creating a map view to show t
 2. The `Maps-Samples.xcworkspace` should be gernated if the previous step is done successfully. Open the xcworkspace in Xcode.
 3. Open the `SampleConfiguration-Map.plist` file in Xcode and plug your Maas organization values into the corresponding fields below:
 
-````
+```
 appId
 accessKey
 signatureKey
@@ -19,20 +19,20 @@ signatureKey
 buildings ->
 identifier
 name
-````
+```
  For BLE such as Senion:
 
- ````
+ ```
 BLE ->
 mapIdentifier
 customerIdentifier
-````
+```
 For VBLE such as Beacon Point or Mist:
 
-````
+```
 VBLE ->
 sdkToken
-````
+```
 
 When fetching the building in MapViewController.m make sure to comment/uncomment the corresponding BLE or VBLE code depending on your configuration.
 
@@ -74,12 +74,15 @@ map.delegate = self;
 [self.view addSubview:map];
 
 [mapView setBuilding:<#building#>];
+```
 
 ### Search for points of interest
 
 ### DirectoryController.m
 
+```objc
 [<#floor#> pointsOfInterestOfType:<#pointOfInterestType#> containing:<#searchTerm#>]
+```
 
 ### Routing between two POIs
 
@@ -96,3 +99,16 @@ map.delegate = self;
  // Displaying a route on the map
  PWMapView *map = [[PWMapView alloc] initWithFrame:<#frame#>];
  [self.map navigateWithRoute:<#route#>];
+ ```
+
+ ### Custom Pin Annotation
+
+ ### MapViewController.m
+
+```objc
+MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+annotation.coordinate = CLLocationCoordinate2DMake(30.359648, -97.742567);
+annotation.title = @"A Custom Annotation";
+annotation.subtitle = @"A Custom Annotation";
+[self.mapView addAnnotation:annotation];
+```
