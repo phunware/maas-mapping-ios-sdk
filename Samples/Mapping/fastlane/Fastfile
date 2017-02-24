@@ -1,0 +1,44 @@
+import "ServicesFastfile/Fastfile"
+
+private_lane :configure_build do
+
+    jenkins_xcode_select version: "~> 8"
+
+    default_config(
+        workspace: "Maps-Samples.xcworkspace",
+        scheme: "Maps-ADA"
+    )
+    
+    add_build_type(
+        name: "debug",
+        config: "Debug"
+    )
+    
+    add_build_type(
+        name: "release",
+        config: "Release"
+    )
+
+    add_build_type(
+        name: "Maps-ADA",
+        config: "Maps-ADA"
+    )    		
+
+    add_product_flavor(
+        name: "Maps-ADA",
+        scheme: "Maps-ADA",
+        bundleId: "com.phunware.Maps-ADA"
+    )
+
+    add_signing_config(
+        name: "Maps-ADA",
+        cert_file: "CustomProfiles/Phunware-Certificates.p12",
+        cert_pw: "phunware10",
+        identity: "iPhone Distribution: Phunware, Inc.",
+        profileSpecifier: "Phunware Product SDK Wild",
+        teamId: "84CK77G588",
+        customProfilesPath: "CustomProfiles/"
+    )
+
+end
+ 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>appId</key>
+	<string>1536</string>
+	<key>accessKey</key>
+	<string>0f3123faa24059153988d99aa04f213c01304331</string>
+	<key>signatureKey</key>
+	<string>e985c835d420c1d71d89237b21f355faf4bad2fb</string>
+	<key>buildings</key>
+	<array>
+		<dict>
+			<key>identifier</key>
+			<real>52203</real>
+			<key>name</key>
+			<string>Phunware Austin</string>
+			<key>BLE</key>
+			<dict>
+				<key>mapIdentifier</key>
+				<string>&lt;user data input&gt;</string>
+				<key>customerIdentifier</key>
+				<string>&lt;user data input&gt;</string>
+			</dict>
+			<key>VBLE</key>
+			<dict>
+				<key>sdkToken</key>
+				<string>&lt;user data input&gt;</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

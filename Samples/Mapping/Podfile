@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://bitbucket.phunware.com/scm/misc/cocoapods-sdk-ios.git'
+
+target 'Maps-Samples' do
+    pod 'PWMapKit', ‘~> 3’
+    pod 'JDStatusBarNotification'
+    pod 'MBProgressHUD'
+    pod 'PureLayout'
+    pod 'ZFTokenField'
+    pod 'Fabric'
+    pod 'Crashlytics'
+end

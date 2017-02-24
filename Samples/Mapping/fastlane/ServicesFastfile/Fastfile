@@ -1,0 +1,831 @@
+# This is the top-level lane that is always called by Jenkins. The assemble
+# lane will invoke the private "configure_build" lane defined in the project's
+# fastfile and cause the configuration entries within it to be registered. The
+# configuration specified in the project's fastfile combined with the arguments
+# passed into the assemble lane will determine what is built and which server
+# it is uploaded to.
+#
+# TODO: document arguments
+
+lane :assemble do |options|
+    process_parameters(options)
+    
+    # Add the items that should be available by default (i.e. the
+    # debug and release build types, etc.)
+    add_standard_items
+
+    # Call the private lane defined in the local Fastfile to
+    # add any desired configuration items.
+    configure_build
+    
+    # Treat the default config scheme as a flavor that was added
+    # in order to simplify the logic
+    create_default_psuedo_flavor
+    
+    build_and_publish
+end
+
+before_all do |lane|
+    if lane != :add_attributions
+        # Download enterprise certs and profiles and any other global resources
+        import_resources(
+            url: "ssh://git@bitbucket.phunware.com:7999/services/dev-scripts-fastlane.git",
+            path: "ios/resources"
+        )
+
+        jenkins_setup
+
+        podfilePath = File.join(Dir.getwd, "..")
+        podfilePath = File.join(podfilePath, "Podfile")
+
+        if File.exist?(podfilePath)
+            cocoapods(use_bundle_exec: false)
+        end
+    end
+end
+
+after_all do |lane|
+    if lane != :add_attributions
+        jenkins_cleanup
+
+        tmp_path = File.join("..", Actions.lane_context[SharedValues::TMP_RESOURCES_ROOT])
+        if Dir.exist?(tmp_path)
+            sh("rm -rf '#{tmp_path}'")
+        end
+    end
+end
+
+error do |lane|
+    if lane != :add_attributions
+        tmp_path = File.join("..", Actions.lane_context[SharedValues::TMP_RESOURCES_ROOT])
+        if Dir.exist?(tmp_path)
+            sh("rm -rf '#{tmp_path}'")
+        end
+    end
+end
+
+private_lane :jenkins_setup do
+
+  # setup jenkins variables
+  if is_ci?
+    ENV['PH_OTA_UPLOAD'] = ENV['OTA']
+
+    # set build number to build job number
+    increment_build_number(
+      build_number: ENV['BUILD_NUMBER']
+    )
+
+    # remove build directory
+    sh "rm -rf build"
+
+    # Set output directory
+    output_directory_path = File.expand_path("../build/output")
+    UI.message "Set output directory path to: \"#{output_directory_path}\"."
+    ENV['GYM_BUILD_PATH'] = output_directory_path
+    ENV['GYM_OUTPUT_DIRECTORY'] = output_directory_path
+    ENV['SCAN_OUTPUT_DIRECTORY'] = output_directory_path
+    ENV['BACKUP_XCARCHIVE_DESTINATION'] = output_directory_path
+
+    derived_data_path = File.expand_path("../build/derivedData")
+    UI.message "Set derived data path to: \"#{derived_data_path}\"."
+    ENV['DERIVED_DATA_PATH'] = derived_data_path # Used by clear_derived_data.
+    ENV['XCODE_DERIVED_DATA_PATH'] = derived_data_path
+    ENV['GYM_DERIVED_DATA_PATH'] = derived_data_path
+    ENV['SCAN_DERIVED_DATA_PATH'] = derived_data_path
+    ENV['FL_CARTHAGE_DERIVED_DATA'] = derived_data_path
+
+  end
+
+end
+
+private_lane :jenkins_cleanup do
+    # then print out Jenkins description
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    if buildParams[:dryRun]
+        puts "Jenkins Description: No description available for dry runs"
+    else
+        jenkinsInfo = Actions.lane_context[SharedValues::JENKINS_INFO]
+        xcodeVer = Actions.lane_context[SharedValues::XCODE_SELECT_VALUE]
+        servers = jenkinsInfo[:servers]
+        config = get_configuration
+        
+        if xcodeVer.nil?
+            xcodeVer = "(unavailable)"
+        end
+    
+        displayName = "unavailable"
+        version = "unavailable"
+        bundleId = "unavailable"
+        if jenkinsInfo
+            displayName = jenkinsInfo[:displayName]
+            version = jenkinsInfo[:version]
+            bundleId = jenkinsInfo[:bundleId]
+        end
+
+        projectInfo = "#{displayName} (#{config}) #{version} #{bundleId}"
+        xcodeString = "Xcode #{xcodeVer}"
+    
+        if servers
+            otaLinks = "OTA Links:"
+        
+            if servers["pe"]
+                enterpriseLink = servers["pe"]
+                otaLinks += "<br>Enterprise: <a href=\"#{enterpriseLink}\">#{enterpriseLink}</a>"
+            end
+        
+            if servers["custom"]
+                customLink = servers["custom"]
+                otaLinks += "<br>Custom: <a href=\"#{customLink}\">#{customLink}</a>"
+            end
+        
+            if servers["submit"]
+                submitLink = servers["submit"]
+                otaLinks += "<br>Submit: <a href=\"#{submitLink}\">#{submitLink}</a>"
+            end
+        end
+    
+        puts "Jenkins Description: #{projectInfo}<br>#{xcodeString}<br>#{otaLinks}"
+    end
+end
+
+private_lane :process_parameters do |options|
+    buildType = options[:buildType]
+    productFlavor = options[:productFlavor]
+    otaServer = options[:otaServer]
+    distributionParam = options[:distribution]
+    uploadParam = options[:upload]
+    dryRunParam = options[:dryRun]
+    groupAliasesParam = options[:groupAliases]
+    
+    if buildType.nil? || buildType.empty?
+        buildType = "debug"
+    end
+    
+    if productFlavor.nil? || productFlavor.empty?
+        # Minimize the possibility of a name collision
+        # for this private name.
+        productFlavor = "com.phunware.fastlane.defaultFlavor"
+    end
+    
+    if otaServer.nil? || otaServer.empty?
+        # Minimize the possibility of a name collision
+        # for this private name.
+        otaServer = "com.phunware.fastlane.allOTAServers"
+    else
+        if !(["enterprise", "custom", "submit"].include? otaServer)
+            raise "\"otaServer\" must be one of \"enterprise\", \"custom\" or \"submit\". Value: \"#{otaServer}\"."
+        end
+    end
+    
+    distribution = false
+    if distributionParam && (distributionParam.is_a?(TrueClass) || distributionParam.is_a?(FalseClass))
+        distribution = distributionParam
+    end
+    
+    upload = true
+    if uploadParam && (uploadParam.is_a?(TrueClass) || uploadParam.is_a?(FalseClass))
+        upload = uploadParam
+    end
+    
+    dryRun = false
+    if dryRunParam && (dryRunParam.is_a?(TrueClass) || dryRunParam.is_a?(FalseClass))
+        dryRun = dryRunParam
+    end
+    
+    set_build_params(
+        buildType: buildType,
+        productFlavor: productFlavor,
+        otaServer: otaServer,
+        distribution: distribution,
+        upload: upload,
+        dryRun: dryRun,
+        groupAliases: groupAliasesParam
+    )
+end
+
+private_lane :add_standard_items do
+    add_standard_build_types
+    add_standard_signing_configs
+    add_standard_ota_servers
+end
+
+private_lane :add_standard_build_types do
+    add_build_type(
+        name: "debug",
+        config: "Debug"
+    )
+
+    add_build_type(
+        name: "release",
+        config: "Release"
+    )
+end
+
+private_lane :add_standard_signing_configs do |options|
+    certsPath = File.join(Actions.lane_context[SharedValues::FULL_RESOURCES_PATH], "certificates")
+    certFullPath = File.join(certsPath, "phunware-enterprise.p12")
+    profilesPath = File.join(Actions.lane_context[SharedValues::FULL_RESOURCES_PATH], "profiles")
+    
+    add_signing_config(
+        name: "enterprise",
+        cert_file: certFullPath,
+        cert_pw: "ph00sba11",
+        identity: "iPhone Distribution: Phunware, Inc.",
+        profileSpecifier: "Phunware Enterprise In House",
+        teamId: "84CK77G588",
+        customProfilesPath: profilesPath
+    )
+end
+
+private_lane :add_standard_ota_servers do
+    publish_to_custom_ota(
+        signingConfig: "debug"
+    )
+end
+
+private_lane :create_default_psuedo_flavor do
+    puts "Adding default flavor: com.phunware.fastlane.defaultFlavor"
+    defaultConfig = Actions.lane_context[SharedValues::DEFAULT_CONFIG]
+    
+    productFlavor = Hash.new()
+    
+    productFlavor[:name] = "com.phunware.fastlane.defaultFlavor"
+    
+    if defaultConfig[:scheme]
+        productFlavor[:scheme] = defaultConfig[:scheme]
+    end
+    
+    if defaultConfig[:bundleId]
+        productFlavor[:bundleId] = defaultConfig[:bundleId]
+    end
+    
+    if defaultConfig[:pathToInfoPlist]
+        productFlavor[:pathToInfoPlist] = defaultConfig[:pathToInfoPlist]
+    end
+    
+    add_product_flavor(productFlavor)
+end
+
+private_lane :build_and_publish do
+    require 'spare_keys'
+
+    debug_print_all_settings
+
+    defaultConfig = Actions.lane_context[SharedValues::DEFAULT_CONFIG]
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    resourcesPath = Actions.lane_context[SharedValues::FULL_RESOURCES_PATH]
+    
+    # Adding attributions files has to be done in a secondary process because,
+    # believe it or not, modifying and saving an xcodeproj file horses up the
+    # gym invocation if done in the same process.
+    sh("fastlane add_attributions scheme:\"#{defaultConfig[:scheme]}\" workspace:\"#{defaultConfig[:workspace]}\" project:\"#{defaultConfig[:project]}\" thirdPartyAttributions:\"#{defaultConfig[:thirdPartyAttributions]}\" resourcesPath:\"#{resourcesPath}\" dryRun:\"#{buildParams[:dryRun]}\"")
+
+    SpareKeys.temp_keychain true, "default" do |temp_keychain_path|
+        buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+        serverToDeploy = buildParams[:otaServer]
+        
+        otaServers = Actions.lane_context[SharedValues::OTA_SERVERS]
+        otaServers.each do |otaConfig|
+            if otaConfig[:name] == serverToDeploy || serverToDeploy == "com.phunware.fastlane.allOTAServers"
+                build_and_publish_ota_config(
+                    otaConfig: otaConfig,
+                    tempKeychainPath: temp_keychain_path
+                )
+            end
+        end
+    end
+end
+
+private_lane :build_and_publish_ota_config do |options|
+    otaConfig = options[:otaConfig]
+    tempKeychainPath = options[:tempKeychainPath]
+    
+    certSettings = collect_cert_settings(otaConfig: otaConfig)
+
+    gymSettings = collect_gym_settings(
+        otaConfig: otaConfig,
+        tempKeychainPath: tempKeychainPath
+    )
+    
+    otaSettings = collect_ota_settings(otaConfig: otaConfig)
+    
+    debug_print_build_settings(
+        server: otaConfig[:name],
+        gymSettings: gymSettings,
+        certSettings: certSettings,
+        otaSettings: otaSettings
+    )
+    
+    customProfilesPath = get_custom_profiles_path(otaConfig: otaConfig)
+    if customProfilesPath && !customProfilesPath.empty?
+        install_profiles(
+            profilesPath: customProfilesPath,
+            signingConfigName: otaConfig[:signingConfig]
+        )
+    end
+    
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    if buildParams[:dryRun] == false
+        import_certificate(
+            keychain_name: tempKeychainPath,
+            certificate_path: certSettings[:certificate_path],
+            certificate_password: certSettings[:certificate_password]
+        )
+        
+        gym(gymSettings)
+        ota(otaSettings)
+
+        if buildParams[:groupAliases].to_s != '' && buildParams[:groupAliases].to_s != 'none' && buildParams[:emails].to_s != '' && buildParams[:emails].to_s != 'none'
+            puts "======EXPORTING CRASHLYTICS BETA======"
+            buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+            puts buildParams
+            currentFlavor = Actions.lane_context[SharedValues::PRODUCT_FLAVORS].find { |flavor| flavor[:name] == buildParams[:productFlavor] }
+            sh("../Pods/Crashlytics/submit b8127086af392cb1b73dc00a7387bb7a0856138f 47c407d9fb90f3350023f2dac10c37722a9caf3ae98396a16b0b41715177000a -notesPath ../ReleaseNotes.txt -groupAliases #{buildParams[:groupAliases]} -emails #{buildParams[:emails]} -notifications YES -ipaPath ../build/output/#{currentFlavor[:scheme]}.ipa")
+        elsif buildParams[:groupAliases].to_s != '' && buildParams[:groupAliases].to_s != 'none'
+            puts "======EXPORTING CRASHLYTICS BETA======"
+            buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+            puts buildParams
+            currentFlavor = Actions.lane_context[SharedValues::PRODUCT_FLAVORS].find { |flavor| flavor[:name] == buildParams[:productFlavor] }
+            sh("../Pods/Crashlytics/submit b8127086af392cb1b73dc00a7387bb7a0856138f 47c407d9fb90f3350023f2dac10c37722a9caf3ae98396a16b0b41715177000a -notesPath ../ReleaseNotes.txt -groupAliases #{buildParams[:groupAliases]} -notifications YES -ipaPath ../build/output/#{currentFlavor[:scheme]}.ipa")
+        elsif buildParams[:emails].to_s != '' && buildParams[:emails].to_s != 'none'
+            puts "======EXPORTING CRASHLYTICS BETA======"
+            buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+            puts buildParams
+            currentFlavor = Actions.lane_context[SharedValues::PRODUCT_FLAVORS].find { |flavor| flavor[:name] == buildParams[:productFlavor] }
+            sh("../Pods/Crashlytics/submit b8127086af392cb1b73dc00a7387bb7a0856138f 47c407d9fb90f3350023f2dac10c37722a9caf3ae98396a16b0b41715177000a -notesPath ../ReleaseNotes.txt -emails #{buildParams[:emails]} -notifications YES -ipaPath ../build/output/#{currentFlavor[:scheme]}.ipa")
+        end
+    end
+end
+
+lane :add_attributions do |options|
+    require 'xcodeproj'
+    
+    thirdPartyAttributions = options[:thirdPartyAttributions]
+    scheme = options[:scheme]
+    workspace = options[:workspace]
+    project = options[:project]
+    resourcesPath = options[:resourcesPath]
+    dryRun = options[:dryRun]
+
+    puts ""
+    puts ""
+    puts ""
+    puts "==========( ADDING ATTRIBUTION FILES )=========="
+
+    if thirdPartyAttributions and !thirdPartyAttributions.empty?
+        if workspace
+            workspacePath = File.expand_path(File.join("..", workspace))
+            workspaceObj = Xcodeproj::Workspace.new_from_xcworkspace(workspacePath)
+            projectPath = workspaceObj.schemes[scheme]
+        elsif project && !project.empty?
+            projectPath = File.expand_path(File.join("..", project))
+        else
+            raise "You must provide either a workspace path or a project file path."
+        end
+        
+        projectObj = Xcodeproj::Project.open(projectPath)
+        
+        attributionsAlreadyPresent = false
+        projectObj.files.each { |fileRef|
+            basename = File.basename(fileRef.path)
+            if basename == "attributions.html" or basename == "attributions.plist"
+                attributionsAlreadyPresent = true
+                break
+            end
+        }
+
+        if attributionsAlreadyPresent
+            puts "The attributions files are already present."
+        else
+            attribHTMLFile = nil
+            attribPLISTFile = nil
+            if dryRun == false
+                scriptsPath = File.join(resourcesPath, "scripts")
+                scriptFullPath = File.join(scriptsPath, "attribution_builder.py")
+
+                generate_attributions(
+                    scriptPath: scriptFullPath,
+                    attributions_file_path: thirdPartyAttributions
+                )
+                
+                attribHTMLFile = Actions.lane_context[SharedValues::PW_ATTRIBUTION_HTML_PATH]
+                attribPLISTFile = Actions.lane_context[SharedValues::PW_ATTRIBUTION_PLIST_PATH]
+
+                puts ""            
+                puts "Generated files:"
+                puts "#{attribHTMLFile}"
+                puts "#{attribPLISTFile}"
+                puts ""            
+            end
+            
+            if attribHTMLFile && attribPLISTFile && File.exist?(attribHTMLFile) && File.exist?(attribPLISTFile)
+                projectObj.targets.each do |target|
+                    if target.product_type.end_with?("application")
+                        puts "Adding files to target: #{target.name}"
+                
+                        if dryRun == false
+                            htmlRef = projectObj.main_group.new_file(attribHTMLFile)
+                            plistRef = projectObj.main_group.new_file(attribPLISTFile)
+
+                            target.add_file_references([htmlRef, plistRef])
+
+                            phase = target.new_copy_files_build_phase("copy_attributions")
+                            phase.add_file_reference(htmlRef, true)
+                            phase.add_file_reference(plistRef, true)
+                        end
+                    else
+                        puts "Skipping target: #{target.name}"
+                    end
+                end
+                
+                projectObj.save(projectPath)
+            end
+        end
+    else
+        puts "A third party attributions text file was not specified."
+    end
+
+    puts "================================================"
+    puts ""
+    puts ""
+    puts ""
+end
+
+private_lane :install_profiles do |options|
+    profilesPath = options[:profilesPath]
+    signingConfigName = options[:signingConfigName]
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    profilesPath = "../#{profilesPath}/*.mobileprovision"
+    
+    puts ""
+    puts ""
+    puts ""
+    puts "==========( INSTALLING PROFILES FOR SIGNING CONFIG: \"#{signingConfigName}\" )=========="
+    puts "Installing from path \"#{profilesPath}\""
+    puts ""
+    
+    Dir.glob(profilesPath) do |profile|
+        if buildParams[:dryRun] == false
+            FastlaneCore::ProvisioningProfile.install(profile)
+        end
+
+        puts "#{profile}"
+    end
+
+    puts "========================================================================="
+    puts ""
+    puts ""
+    puts ""
+end
+
+private_lane :get_custom_profiles_path do |options|
+    otaConfig = options[:otaConfig]
+    customProfilesPath = nil
+
+    signingConfig = Actions.lane_context[SharedValues::SIGNING_CONFIGS].find { |config| config[:name] == otaConfig[:signingConfig] }
+    if signingConfig
+        customProfilesPath = signingConfig[:customProfilesPath]
+    end
+    
+    customProfilesPath
+end
+
+private_lane :collect_ota_settings do |options|
+    otaConfig = options[:otaConfig]
+    settings = Hash.new()
+    
+    codesign = otaConfig[:name]
+    if codesign == "enterprise"
+        codesign = "pe"
+    end
+        
+    settings[:codesign] = codesign
+    
+    iconFile = get_iconfile
+    if iconFile
+        settings[:iconFile] = iconFile
+    end
+
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    settings[:distribution] = buildParams[:distribution]
+    settings[:upload] = buildParams[:upload]
+    
+    if codesign == "submit" and !settings[:distribution]
+        settings[:upload] = false
+    end
+    
+    settings
+end
+
+private_lane :collect_cert_settings do |options|
+    otaConfig = options[:otaConfig]
+    settings = nil
+
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+
+    signingConfig = Actions.lane_context[SharedValues::SIGNING_CONFIGS].find { |config| config[:name] == buildParams[:productFlavor] }
+    if signingConfig
+        settings = Hash.new()
+
+        settings[:certificate_password] = signingConfig[:cert_pw]
+        settings[:certificate_path] = signingConfig[:cert_file]
+    end
+    
+    settings
+end
+
+private_lane :collect_gym_settings do |options|
+    otaConfig = options[:otaConfig]
+    tempKeychainPath = options[:tempKeychainPath]
+    settings = nil
+
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+
+    signingConfig = Actions.lane_context[SharedValues::SIGNING_CONFIGS].find { |config| config[:name] == buildParams[:productFlavor] }
+    if signingConfig
+        settings = Hash.new()
+
+        workspace = get_workspace
+        project = get_project
+        
+        if workspace
+            settings[:workspace] = workspace
+        elsif project
+            settings[:project] = project
+        end
+        
+        settings[:scheme] = get_scheme
+        settings[:configuration] = get_configuration
+        settings[:export_method] = get_export_method(otaConfig)
+        settings[:export_team_id] = signingConfig[:teamId]
+        settings[:codesigning_identity] = signingConfig[:identity]
+        settings[:silent] = false
+        settings[:clean] = true
+        settings[:include_symbols] = is_debug_build
+        settings[:disable_xcpretty] = true
+        settings[:suppress_xcode_output] = false
+        settings[:include_bitcode] = false
+        settings[:use_legacy_build_api] = true
+
+        xcargs = "OTHER_CODE_SIGN_FLAGS=\"--keychain #{tempKeychainPath}\" PROVISIONING_PROFILE_SPECIFIER=\"#{signingConfig[:profileSpecifier]}\""
+        
+        buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+        currentFlavor = Actions.lane_context[SharedValues::PRODUCT_FLAVORS].find { |flavor| flavor[:name] == buildParams[:productFlavor] }
+        if currentFlavor[:bundleId]
+            xcargs = "#{xcargs} PRODUCT_BUNDLE_IDENTIFIER=\"#{currentFlavor[:bundleId]}\""
+        end
+
+        settings[:xcargs] = xcargs
+    end
+    
+    settings
+end
+
+private_lane :get_iconfile do
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    currentFlavor = Actions.lane_context[SharedValues::PRODUCT_FLAVORS].find { |flavor| flavor[:name] == buildParams[:productFlavor] }
+    currentFlavor[:iconFile]
+end
+
+private_lane :debug_print_build_settings do |options|
+    server = options[:server]
+    gymSettings = options[:gymSettings]
+    certSettings = options[:certSettings]
+    otaSettings = options[:otaSettings]
+    
+    puts ""
+    puts ""
+    puts ""
+    puts "==========( BUILD SETTINGS FOR OTA: \"#{server}\" )=========="
+    
+    puts "GYM SETTINGS:"
+    puts "#{gymSettings}"
+    if gymSettings[:workspace]
+        puts "workspace"
+        puts "    workspace: #{gymSettings[:workspace]}"
+    elsif gymSettings[:project]
+        puts "project"
+        puts "    project: #{gymSettings[:project]}"
+    end
+    
+    puts "    scheme: #{gymSettings[:scheme]}"
+    puts "    configuration: #{gymSettings[:configuration]}"
+    puts "    export_method: #{gymSettings[:export_method]}"
+    puts "    export_team_id: #{gymSettings[:export_team_id]}"
+    puts "    codesigning_identity: #{gymSettings[:codesigning_identity]}"
+    puts "    xcargs: #{gymSettings[:xcargs]}"
+    puts ""
+    puts "CERT IMPORT SETTINGS:"
+    puts "    certificate_path: #{certSettings[:certificate_path]}"
+    puts "    certificate_password: #{certSettings[:certificate_password]}"
+    puts ""
+    puts "OTA SETTINGS:"
+    puts "    codesign (ota server): #{otaSettings[:codesign]}"
+    puts "    distribution: #{otaSettings[:distribution]}"
+
+    if otaSettings[:iconFile]
+        puts "    iconFile: #{otaSettings[:iconFile]}"
+    end
+
+    puts "    upload: #{otaSettings[:upload]}"
+    puts "======================================================="
+    puts ""
+    puts ""
+    puts ""
+end
+
+private_lane :get_workspace do
+    defaultConfig = Actions.lane_context[SharedValues::DEFAULT_CONFIG]
+    defaultConfig[:workspace]
+end
+
+private_lane :get_project do
+    defaultConfig = Actions.lane_context[SharedValues::DEFAULT_CONFIG]
+    defaultConfig[:project]
+end
+
+private_lane :get_scheme do
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    currentFlavor = Actions.lane_context[SharedValues::PRODUCT_FLAVORS].find { |flavor| flavor[:name] == buildParams[:productFlavor] }
+    currentFlavor[:scheme]
+end
+
+private_lane :get_configuration do
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    buildType = Actions.lane_context[SharedValues::BUILD_TYPES].find { |type| type[:name] == buildParams[:buildType] }
+    buildType[:config]
+end
+
+private_lane :get_export_method do |otaConfig|
+    export_method = nil
+    
+    if otaConfig[:name] == "enterprise"
+        export_method = "enterprise"
+    elsif otaConfig[:name] == "custom"
+        export_method = "enterprise"
+    elsif otaConfig[:name] == "submit"
+        export_method = "app-store"
+    else
+        raise "Unexpected ota server name: #{otaConfig[:name]}"
+    end
+
+    export_method
+end
+
+private_lane :is_debug_build do
+    isDebug = false
+    
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    buildTypeLower = buildParams[:buildType].downcase
+    if buildTypeLower.end_with? "debug"
+        isDebug = true
+    end
+    
+    isDebug
+end
+
+private_lane :debug_print_all_settings do
+    puts ""
+    puts ""
+    puts ""
+    puts "============( ALL SETTINGS )============"
+    
+    ######### buildParams #########
+    buildParams = Actions.lane_context[SharedValues::BUILD_PARAMS]
+    puts "BUILD PARAMS"
+    puts "    buildType: #{buildParams[:buildType]}"
+    puts "    productFlavor: #{buildParams[:productFlavor]}"
+    puts "    otaServer: #{buildParams[:otaServer]}"
+    puts "    distribution: #{buildParams[:distribution]}"
+    puts "    upload: #{buildParams[:upload]}"
+    puts "    dryRun: #{buildParams[:dryRun]}"
+    puts " "
+    
+    ######### defaultConfig #########
+    puts "DEFAULT CONFIG"
+    defaultConfig = Actions.lane_context[SharedValues::DEFAULT_CONFIG]
+
+    if defaultConfig[:workspace]
+        puts "    workspace: #{defaultConfig[:workspace]}"
+    end
+
+    if defaultConfig[:project]
+        puts "    project: #{defaultConfig[:project]}"
+    end
+    
+    if defaultConfig[:scheme]
+        puts "    scheme: #{defaultConfig[:scheme]}"
+    end
+    
+    if defaultConfig[:bundleId]
+        puts "    bundleId: #{defaultConfog[:bundleId]}"
+    end
+    
+    if defaultConfig[:iconFile]
+        puts "    iconFile: #{defaultConfig[:iconFile]}"
+    end
+    
+    if defaultConfig[:thirdPartyAttributions]
+        puts "    thirdPartyAttributions: #{defaultConfig[:thirdPartyAttributions]}"
+    end
+    puts ""
+    
+    ######### buildTypes #########
+    puts "BUILD TYPES"
+    buildTypes = Actions.lane_context[SharedValues::BUILD_TYPES]
+    buildTypes.each do |typeMap|
+        if typeMap[:name]
+            puts "    name: #{typeMap[:name]}"
+        end
+
+        if typeMap[:config]
+            puts "    config: #{typeMap[:config]}"
+        end
+
+        if typeMap[:versionSuffix]
+            puts "    versionSuffix: #{typeMap[:versionSuffix]}"
+        end
+        
+        puts ""
+    end
+
+    ######### productFlavors #########
+    puts "PRODUCT FLAVORS"
+    productFlavors = Actions.lane_context[SharedValues::PRODUCT_FLAVORS]
+    productFlavors.each do |flavorMap|
+        if flavorMap[:name]
+            puts "    name: #{flavorMap[:name]}"
+        end
+
+        if flavorMap[:scheme]
+            puts "    scheme: #{flavorMap[:scheme]}"
+        end
+
+        if flavorMap[:iconFile]
+            puts "    iconFile: #{flavorMap[:iconFile]}"
+        end
+
+        if flavorMap[:bundleId]
+            puts "    bundleId: #{flavorMap[:bundleId]}"
+        end
+        
+        if flavorMap[:pathToInfoPlist]
+            puts "    pathToInfoPlist: #{flavorMap[:pathToInfoPlist]}"
+        end
+        
+        puts ""
+    end
+
+    ######### signingConfigs #########
+    puts "SIGNING CONFIGS"
+    signingConfigs = Actions.lane_context[SharedValues::SIGNING_CONFIGS]
+    signingConfigs.each do |configMap|
+        if configMap[:name]
+            puts "    name: #{configMap[:name]}"
+        end
+
+        if configMap[:cert_file]
+            puts "    cert_file: #{configMap[:cert_file]}"
+        end
+
+        if configMap[:cert_pw]
+            puts "    cert_pw: #{configMap[:cert_pw]}"
+        end
+        
+        if configMap[:identity]
+            puts "    identity: #{configMap[:identity]}"
+        end
+        
+        if configMap[:teamId]
+            puts "    teamId: #{configMap[:teamId]}"
+        end
+
+        if configMap[:profileSpecifier]
+            puts "    profileSpecifier: #{configMap[:profileSpecifier]}"
+        end
+        
+        if configMap[:customProfilesPath]
+            puts "    customProfilesPath: #{configMap[:customProfilesPath]}"
+        end
+        
+        puts ""
+    end
+
+    ######### otaServers #########
+    puts "OTA SERVERS"
+    otaServers = Actions.lane_context[SharedValues::OTA_SERVERS]
+    otaServers.each do |serverMap|
+        if serverMap[:name] == "enterprise"
+            puts "    enterprise: #{serverMap[:signingConfig]}"
+        elsif serverMap[:name] == "custom"
+            puts "    custom: #{serverMap[:signingConfig]}"
+        elsif serverMap[:name] == "submit"
+            puts "    submit: #{serverMap[:signingConfig]}"
+        end
+    end
+    
+    puts "========================================="
+    puts ""
+    puts ""
+    puts ""
+end
