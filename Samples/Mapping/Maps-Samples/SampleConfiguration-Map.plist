@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>appId</key>
-	<string>1536</string>
+	<string>&lt;user data input&gt;</string>
 	<key>accessKey</key>
-	<string>0f3123faa24059153988d99aa04f213c01304331</string>
+	<string>&lt;user data input&gt;</string>
 	<key>signatureKey</key>
-	<string>e985c835d420c1d71d89237b21f355faf4bad2fb</string>
+	<string>&lt;user data input&gt;</string>
 	<key>buildings</key>
 	<array>
 		<dict>
 			<key>identifier</key>
-			<real>52203</real>
+			<real>0</real>
 			<key>name</key>
-			<string>Phunware Austin</string>
+			<string>&lt;user data input&gt;</string>
 			<key>BLE</key>
 			<dict>
 				<key>mapIdentifier</key>

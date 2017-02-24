@@ -10,7 +10,6 @@
 		9D8BD63F1D95E67600C22BCA /* RouteAccessibilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BD63E1D95E67600C22BCA /* RouteAccessibilityManager.m */; };
 		9D8BD6421D95EBF700C22BCA /* PWIndoorLocation+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BD6411D95EBF700C22BCA /* PWIndoorLocation+Helper.m */; };
 		9D8DDCB41D8C9CDF000FD733 /* PWBuilding+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDCB31D8C9CDF000FD733 /* PWBuilding+Helper.m */; };
-		D2A2C1DB65F17928F23A59BF /* libPods-Maps-ADA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C6949E5F0B64F6C91A4750 /* libPods-Maps-ADA.a */; };
 		E3138CB11D8C7D8A007E043E /* ShowAllStepsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3138CB01D8C7D8A007E043E /* ShowAllStepsTableViewCell.m */; };
 		E346471C1D873FDA00EDBD20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E346471B1D873FDA00EDBD20 /* main.m */; };
 		E34647251D873FDA00EDBD20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34647231D873FDA00EDBD20 /* Main.storyboard */; };
@@ -126,7 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2A2C1DB65F17928F23A59BF /* libPods-Maps-ADA.a in Frameworks */,
 				FE88A06D28FEF40EECA97515 /* libPods-Maps-Samples.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

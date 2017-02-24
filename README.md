@@ -70,27 +70,6 @@ PWRoute initRouteFrom:<#startPoint#> to:<#endPoint#> accessibility:<#accessibili
 }];
 ```
 
-## Sample Application
-
-1. Go to the `Samples/LoadMap` directory with `Terminal` in this project, then run `pod install`.
-2. The `LoadMap.xcworkspace` should be gernated if the previous step is done successfully, then open it in Xcode.
-3. Open the `AppDelegate.m` file in Xcode and put the right value for the constants below:
-
-````
-#define kAppID @"<App Identifier>"
-#define kAccessKey @"<Access Key>"
-#define kSignatureKey @"<Signature Key>"
-#define kEncryptionKey @"<Encrytion Key>"
-````
-Optional, open `ViewController.m` to replace the `buildingID` of `20234` and put the right value for the constants below:
-
-````
-#define kBLECustomerIdentifier @"<Senion Customer Identifier>"
-#define kBLEMapIdentifier @"<Senion Map Identifier>"
-...
-````
-
-
 ## Attribution
 
 PWMapKit uses the following third-party components. All components are prefixed with `PW` to avoid namespace collisions should your application also use an included component.
