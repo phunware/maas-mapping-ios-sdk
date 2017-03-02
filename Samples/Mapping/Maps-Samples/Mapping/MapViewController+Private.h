@@ -14,6 +14,7 @@
 #import "DirectoryController.h"
 #import "AroundMeController.h"
 #import "RouteController.h"
+#import "TrackingModeView.h"
 
 typedef NS_ENUM(NSUInteger, DirectorySegments) {
     DirectorySegmentsMap = 0,
@@ -58,6 +59,7 @@ typedef NS_ENUM(NSUInteger, DirectorySegments) {
 @property (nonatomic, strong) UIBarButtonItem *categoriesBarButton;
 @property (nonatomic, strong) UIBarButtonItem *distanceBarButton;
 @property (nonatomic, strong) UIBarButtonItem *cancelBarButton;
+@property (nonatomic, strong) TrackingModeView *trackingModeView;
 
 @property (nonatomic, strong) NSArray *filteredPOIs;
 @property (nonatomic) BOOL isDirectorySegments;

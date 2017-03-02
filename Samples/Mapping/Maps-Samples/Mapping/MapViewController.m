@@ -117,10 +117,12 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     _distanceBarButton.accessibilityLabel = PWLocalizedString(@"Distance", @"Distance");
     _distanceBarButton.accessibilityHint = PWLocalizedString(@"DistanceFilterButtonHint", @"Double tap to select distance filter");
     
+    _trackingModeView = [[TrackingModeView alloc] initWithMapView:self.mapView];
+    
     // Set map as selected segment
     [self.navigationItem setLeftBarButtonItem:_navigationBarButton];
     [self.navigationItem setRightBarButtonItem:nil];
-    [self setToolbarItems:@[_mapView.userTrackingBarButtonItem, _flexibleBarSpace, _categoriesBarButton, _flexibleBarSpace, _floorsBarButton] animated:YES];
+    [self setToolbarItems:@[_trackingModeView, _flexibleBarSpace, _categoriesBarButton, _flexibleBarSpace, _floorsBarButton] animated:YES];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(btnCancelRoute:) name:CancelCurrentRouteNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyShowRoute:) name:PlotRouteNotification object:nil];
@@ -219,7 +221,7 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     [self shrinkSearchField:YES showCancelButton:NO];
     [self setDirectorySegments];
     [self.navigationItem setLeftBarButtonItem:_navigationBarButton];
-    [self setToolbarItems:@[_mapView.userTrackingBarButtonItem, _flexibleBarSpace, _categoriesBarButton, _flexibleBarSpace, _floorsBarButton] animated:YES];
+    [self setToolbarItems:@[_trackingModeView, _flexibleBarSpace, _categoriesBarButton, _flexibleBarSpace, _floorsBarButton] animated:YES];
 }
 
 #pragma mark - Actions
@@ -367,6 +369,10 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     return view;
 }
 
+- (void)mapView:(PWMapView *)mapView didChangeTrackingMode:(PWTrackingMode)mode {
+    [self.trackingModeView updateButtonStateAnimated:YES];
+}
+
 #pragma mark - MapViewControllerDelegate
 
 - (void)notifyShowRoute:(NSNotification*)notification {
@@ -401,7 +407,7 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     [self.navigationItem setRightBarButtonItem:nil];
     [self.tableView setHidden:YES];
     [self setRouteSegments];
-    [self setToolbarItems:@[self.mapView.userTrackingBarButtonItem] animated:YES];
+    [self setToolbarItems:@[self.trackingModeView] animated:YES];
     
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 }

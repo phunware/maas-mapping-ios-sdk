@@ -116,7 +116,7 @@ typedef NS_ENUM(NSUInteger, RouteSegments) {
         case DirectorySegmentsMap: {
             [self resetMapView];
             [self shrinkSearchField:YES showCancelButton:NO];
-            [self setToolbarItems:@[self.mapView.userTrackingBarButtonItem, self.flexibleBarSpace, self.categoriesBarButton, self.flexibleBarSpace, self.floorsBarButton] animated:YES];
+            [self setToolbarItems:@[self.trackingModeView, self.flexibleBarSpace, self.categoriesBarButton, self.flexibleBarSpace, self.floorsBarButton] animated:YES];
             break;
         }
         case DirectorySegmentsDirectory: {
