@@ -11,6 +11,7 @@
 		9D8BD6421D95EBF700C22BCA /* PWIndoorLocation+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BD6411D95EBF700C22BCA /* PWIndoorLocation+Helper.m */; };
 		9D8DDCB41D8C9CDF000FD733 /* PWBuilding+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDCB31D8C9CDF000FD733 /* PWBuilding+Helper.m */; };
 		E3138CB11D8C7D8A007E043E /* ShowAllStepsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3138CB01D8C7D8A007E043E /* ShowAllStepsTableViewCell.m */; };
+		E32358681E688AD000674633 /* TrackingModeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E32358671E688AD000674633 /* TrackingModeView.m */; };
 		E346471C1D873FDA00EDBD20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E346471B1D873FDA00EDBD20 /* main.m */; };
 		E34647251D873FDA00EDBD20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34647231D873FDA00EDBD20 /* Main.storyboard */; };
 		E34647271D873FDA00EDBD20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34647261D873FDA00EDBD20 /* Assets.xcassets */; };
@@ -66,6 +67,8 @@
 		DAF047A48017663D27D45BC7 /* libPods-Maps-Samples.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Maps-Samples.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3138CAF1D8C7D8A007E043E /* ShowAllStepsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowAllStepsTableViewCell.h; path = Routing/PreRouting/ShowAllStepsTableViewCell.h; sourceTree = "<group>"; };
 		E3138CB01D8C7D8A007E043E /* ShowAllStepsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowAllStepsTableViewCell.m; path = Routing/PreRouting/ShowAllStepsTableViewCell.m; sourceTree = "<group>"; };
+		E32358661E688AD000674633 /* TrackingModeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingModeView.h; sourceTree = "<group>"; };
+		E32358671E688AD000674633 /* TrackingModeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingModeView.m; sourceTree = "<group>"; };
 		E34647171D873FDA00EDBD20 /* Maps-Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maps-Samples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E346471B1D873FDA00EDBD20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E34647241D873FDA00EDBD20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +182,16 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		E32358651E688AD000674633 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E32358661E688AD000674633 /* TrackingModeView.h */,
+				E32358671E688AD000674633 /* TrackingModeView.m */,
+			);
+			name = Views;
+			path = Mapping/Views;
+			sourceTree = "<group>";
+		};
 		E346470E1D873FDA00EDBD20 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				E34647611D87439B00EDBD20 /* Controllers */,
+				E32358651E688AD000674633 /* Views */,
 				E346476C1D8743DF00EDBD20 /* MapViewController.h */,
 				E346476D1D8743DF00EDBD20 /* MapViewController.m */,
 				E346476E1D8743DF00EDBD20 /* MapViewController+Private.h */,
@@ -474,6 +488,7 @@
 				E346476A1D8743CA00EDBD20 /* DirectoryController.m in Sources */,
 				E346479A1D8744F800EDBD20 /* PreRoutingViewController.m in Sources */,
 				E346479C1D8744F800EDBD20 /* RouteSummaryTableViewCell.m in Sources */,
+				E32358681E688AD000674633 /* TrackingModeView.m in Sources */,
 				E34647981D8744F800EDBD20 /* MapPreviewTableViewCell.m in Sources */,
 				E346478D1D8744EC00EDBD20 /* RoutingDirectionsTableView.m in Sources */,
 				E34647831D8744CF00EDBD20 /* POIDetailsTableViewCell.m in Sources */,
