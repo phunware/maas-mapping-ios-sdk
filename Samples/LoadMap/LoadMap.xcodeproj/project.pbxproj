@@ -16,6 +16,7 @@
 		9D383A961D46CDF5009AF797 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D383A941D46CDF5009AF797 /* LaunchScreen.storyboard */; };
 		9D383AA11D46CDF5009AF797 /* LoadMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D383AA01D46CDF5009AF797 /* LoadMapTests.m */; };
 		9DBCA7831D4FE51A00C9CFB5 /* MNW_Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DBCA7821D4FE51A00C9CFB5 /* MNW_Images.xcassets */; };
+		FBE7EFB81E71DAFF00B98BE2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FBE7EFB71E71DAFF00B98BE2 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		9D383AA21D46CDF5009AF797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DBCA7821D4FE51A00C9CFB5 /* MNW_Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MNW_Images.xcassets; path = ../../../Framework/MNW_Images.xcassets; sourceTree = "<group>"; };
 		ECEAD8A3CD4818B95DF051CC /* Pods-LoadMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoadMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoadMap/Pods-LoadMap.release.xcconfig"; sourceTree = "<group>"; };
+		FBE7EFB71E71DAFF00B98BE2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				9D383A871D46CDF5009AF797 /* main.m */,
+				FBE7EFB71E71DAFF00B98BE2 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			files = (
 				9D383A961D46CDF5009AF797 /* LaunchScreen.storyboard in Resources */,
 				9D383A931D46CDF5009AF797 /* Assets.xcassets in Resources */,
+				FBE7EFB81E71DAFF00B98BE2 /* Settings.bundle in Resources */,
 				9DBCA7831D4FE51A00C9CFB5 /* MNW_Images.xcassets in Resources */,
 				9D383A911D46CDF5009AF797 /* Main.storyboard in Resources */,
 			);
