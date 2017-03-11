@@ -15,7 +15,7 @@
 #define kAppID @"<App Identifier>"        // the App ID
 #define kAccessKey @"<Access Key>"        // the Access Key
 #define kSignatureKey @"<Signature Key>"  // the Signature Key
-#define kEncryptionKey @""                // keey it empty
+#define kEncryptionKey @""                // keep it empty
 
 @interface AppDelegate ()
 
