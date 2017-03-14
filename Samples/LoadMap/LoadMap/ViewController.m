@@ -13,14 +13,13 @@
 
 #define kBLECustomerIdentifier @"<Senion Customer Identifier>"
 #define kBLEMapIdentifier @"<Senion Map Identifier>"
-#define kVirtualBeaconToken @"<Senion Map Identifier>"
+#define kVirtualBeaconToken @"<Virtual Beacon Map Identifier>"
 #define kBuildingIdentifier 0
 
-@interface ViewController ()
+@interface ViewController () <PWMapViewDelegate, PWLocationManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *loadMapButton;
-
-- (IBAction)loadMap:(id)sender;
+@property (nonatomic, strong) PWMapView *mapView;
+@property (nonatomic, assign) BOOL firstLocationAcquired;
 
 @end
 
@@ -28,35 +27,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mapView = [PWMapView new];
+    self.mapView.delegate = self;
+    [self.view addSubview:self.mapView];
+    [self configureMapViewConstraints];
+    
+    __weak typeof(self) weakSelf = self;
+    [PWBuilding buildingWithIdentifier:kBuildingIdentifier completion:^(PWBuilding *building, NSError *error) {
+        [weakSelf.mapView setBuilding:building];
+        
+        PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:kBuildingIdentifier];
+        
+        managedLocationManager.senionMapID = kBLEMapIdentifier;
+        managedLocationManager.senionCustomerID = kBLECustomerIdentifier;
+        managedLocationManager.virtualBeaconToken = kVirtualBeaconToken;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.mapView registerLocationManager:managedLocationManager];
+        });
+    }];
+}
+
+- (void)configureMapViewConstraints {
+    self.mapView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0.0]];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)loadMap:(id)sender {
-    [PWBuilding buildingWithIdentifier:kBuildingIdentifier completion:^(PWBuilding *building, NSError *error) {
-        // UI view controller initialization
-        PWMapViewController *mapViewController = [[PWMapViewController alloc] initWithBuilding:building];
-        
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
-        // Present
-        [self presentViewController:navigationController animated:YES completion:^{
-            // Set center of map
-            [mapViewController setCenterCoordinate:building.coordinate zoomLevel:19 animated:NO];
-            
-            // Initialize the manager
-            PWManagedLocationManager *manager = [[PWManagedLocationManager alloc] initWithBuildingId:kBuildingIdentifier];
-            
-            // Configure the internal providers
-            manager.senionCustomerID = kBLECustomerIdentifier;
-            manager.senionMapID = kBLEMapIdentifier;
-            manager.virtualBeaconToken = kVirtualBeaconToken;
-            
-            // Regester the manager
-            [mapViewController.mapView registerLocationManager:manager];
-        }];
-    }];
+- (void)mapView:(PWMapView *)mapView locationManager:(id<PWLocationManager>)locationManager didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation {
+    if (!self.firstLocationAcquired) {
+        self.firstLocationAcquired = YES;
+        mapView.trackingMode = PWTrackingModeFollow;
+    }
 }
 
 @end
