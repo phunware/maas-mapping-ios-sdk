@@ -16,7 +16,7 @@
 #define kVirtualBeaconToken @"<Virtual Beacon Map Identifier>"
 #define kBuildingIdentifier 0
 
-@interface ViewController () <PWMapViewDelegate, PWLocationManagerDelegate>
+@interface ViewController () <PWMapViewDelegate>
 
 @property (nonatomic, strong) PWMapView *mapView;
 @property (nonatomic, assign) BOOL firstLocationAcquired;
