@@ -34,6 +34,8 @@
     self.currentLocationText = PWLocalizedString(@"CurrentLocation", @"Current Location");
     self.filterFloor = nil;
     self.filterPOIType = nil;
+    self.startPOI = nil;
+    self.endPOI = nil;
     
     _cancelBarButton = [[UIBarButtonItem alloc] initWithTitle:PWLocalizedString(@"Cancel", @"Cancel") style:UIBarButtonItemStylePlain target:self action:@selector(btnCancel:)];
     
@@ -53,6 +55,14 @@
         if (!self.filterFloor || self.filterFloor.level == floor.level) {
             [pois addObjectsFromArray:[floor pointsOfInterestOfType:self.filterPOIType containing:keyword]];
         }
+    }
+    if (self.startPOI) {
+        NSPredicate *identifierPredicate = [NSPredicate predicateWithFormat:@"identifier != %@", @(self.startPOI.identifier)];
+        [pois filterUsingPredicate:identifierPredicate];
+    }
+    if (self.endPOI) {
+        NSPredicate *identifierPredicate = [NSPredicate predicateWithFormat:@"identifier != %@", @(self.endPOI.identifier)];
+        [pois filterUsingPredicate:identifierPredicate];
     }
     NSSortDescriptor *nameSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES selector:@selector(caseInsensitiveCompare:)];
     self.filteredPOIs = [pois sortedArrayUsingDescriptors:@[nameSortDescriptor]];
@@ -96,12 +106,24 @@
     // Pin top of tableView to routeHeader instead of segmentsBackground
     [self.mapViewController.tableViewTopConstraint autoRemove];
     self.mapViewController.tableViewTopConstraint = [self.mapViewController.tableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.mapViewController.routeHeaderView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 - (void)hideRouteHeaderView {
     [self.mapViewController.tableViewTopConstraint autoRemove];
     self.mapViewController.tableViewTopConstraint = [self.tableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.mapViewController.segmentBackground];
     self.mapViewController.routeHeaderView.hidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (UIView *)headerView {
@@ -340,10 +362,16 @@
 #pragma mark - TextField Delegate
 
 - (BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
+    [self search:textField.text];
     return YES;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([textField isEqual:self.startField]) {
+        self.startPOI = nil;
+    } else if ([textField isEqual:self.endField]) {
+        self.endPOI = nil;
+    }
     if (range.length > 0) {
         [self search:[textField.text substringWithRange:NSMakeRange(0, range.location)]];
     } else {
@@ -358,6 +386,11 @@
 }
 
 - (BOOL) textFieldShouldClear:(UITextField *)textField {
+    if ([textField isEqual:self.startField]) {
+        self.startPOI = nil;
+    } else if ([textField isEqual:self.endField]) {
+        self.endPOI = nil;
+    }
     [self search:nil];
     [self.mapViewController.navigationItem setRightBarButtonItem:nil];
     return YES;
@@ -383,13 +416,26 @@
         [self.endField becomeFirstResponder];
         self.startField.text = poi.title;
         self.startPOI = poi;
+        [self.endField becomeFirstResponder];
     } else if (self.endField.isEditing) {
         [self.startField becomeFirstResponder];
         self.endField.text = poi.title;
         self.endPOI = poi;
+        [self.startField becomeFirstResponder];
     }
     
     [self preRouteCheck];
+}
+
+#pragma mark - Keyboard Adjustments
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height-self.mapViewController.tabBarController.tabBar.frame.size.height, 0);
 }
 
 @end

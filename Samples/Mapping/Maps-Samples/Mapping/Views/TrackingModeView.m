@@ -98,57 +98,39 @@ static CGRect buttonFrame = {0, 0, 34, 34};
 #pragma mark - State Management
 
 - (void)updateButtonStateAnimated:(BOOL)animated {
-    UIButton *displayedButton = [self displayedButton];
     UIButton *buttonToDisplay = nil;
     NSTimeInterval animationDuration = (animated ? 0.3 : 0);
+    NSArray *buttonsToHide;
     
     switch (self.mapView.trackingMode) {
         case PWTrackingModeNone:
             buttonToDisplay = self.noTrackingButton;
+            buttonsToHide = @[self.trackingFollowButton, self.trackingFollowWithHeadingButton];
             break;
             
         case PWTrackingModeFollow:
             buttonToDisplay = self.trackingFollowButton;
+            buttonsToHide = @[self.noTrackingButton, self.trackingFollowWithHeadingButton];
             break;
             
         case PWTrackingModeFollowWithHeading:
             buttonToDisplay = self.trackingFollowWithHeadingButton;
+            buttonsToHide = @[self.noTrackingButton, self.trackingFollowButton];
             break;
             
         default:
             break;
     }
     
-    if (displayedButton != buttonToDisplay) {
-        [UIView animateWithDuration:animationDuration animations:^{
-            displayedButton.alpha = 0;
-        } completion:^(BOOL finished) {
-            displayedButton.hidden = YES;
-        }];
-        
-        buttonToDisplay.alpha = 0;
+    [UIView animateWithDuration:animationDuration animations:^{
+        for (UIButton *button in buttonsToHide) {
+            button.alpha = 0;
+            button.hidden = YES;
+        }
         buttonToDisplay.hidden = NO;
-        buttonToDisplay.transform = CGAffineTransformMakeScale(0.2, 0.2);
-        
-        [UIView animateWithDuration:animationDuration animations:^{
-            buttonToDisplay.alpha = 1;
-            buttonToDisplay.transform = CGAffineTransformIdentity;
-        }];
-    }
-}
-
-- (UIButton *)displayedButton {
-    if (!self.noTrackingButton.hidden) {
-        return self.noTrackingButton;
-    }
-    else if (!self.trackingFollowButton.hidden) {
-        return self.trackingFollowButton;
-    }
-    else if (!self.trackingFollowWithHeadingButton.hidden) {
-        return self.trackingFollowWithHeadingButton;
-    }
-    
-    return nil;
+        buttonToDisplay.alpha = 1;
+        buttonToDisplay.transform = CGAffineTransformIdentity;
+    }];
 }
 
 #pragma mark - Actions
