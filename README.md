@@ -17,12 +17,18 @@ PWMapKit SDK for iOS
 ## Installation
 
 * Phunware recommends using [CocoaPods](http://www.cocoapods.org) to integrate the framework. Simply add
- 
-	`pod 'PWMapKit'` 
+
+	`pod 'PWMapKit'`
 
 	to your podfile, then the dependencies of `PWCore` and `PWLocation` are automatically added.
 
 * Then add navigation icons the `Framework/MNW_Images.xcassets` to your project.
+
+* Disable Bitcode by following these steps:
+1. Select your project target.
+2. Select Build Settings
+3. Navigate to Build Options > Enable Bitcode
+4. Set to NO
 
 
 ## Documentation
@@ -43,7 +49,7 @@ The primary use of the components of PWMapKit revolve around creating a map view
 	// Get the buliding object here
 	<#building#>					
 }];
-                    
+
 ...
 
 // Show the building on the map
