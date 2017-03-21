@@ -8,8 +8,8 @@ PWMapKit SDK for iOS
 
 ## Requirements
 
-- PWLocation v3.0.0 or greater (Automatically include when pod install PWMapKit)
-- PWCore v3.0.3 or greater (Automatically include when pod install PWMapKit)
+- PWLocation v3.0.0 or greater (Automatically included when pod install PWMapKit)
+- PWCore v3.0.3 or greater (Automatically included when pod install PWMapKit)
 - iOS 8.0 or greater
 - Xcode 8 or greater
 
@@ -61,11 +61,15 @@ map.delegate = self;
 ```
 
 
-### Set Indoor Location Manager
+### Register Location Provider
+
+The PWMapView can display a user location on the map if a location provider is registered with the PWMapView. The location providers are in the PWLocation framework, and each different provider requires different steps to set up (see readme here https://github.com/phunware/maas-location-ios-sdk to view setup examples of all different provider options). Once the location provider is initialized, the following call may be used to register the provider with the PWMapView:
 
 ```objc
-[mapView setMapViewLocationType:<#locationType#> configuration:<#configuration#>];
+[mapView registerLocationManager:<managerObject>];
 ```
+
+NOTE: If using a virtual beacon provider such as Mist or Beacon Point, the "Uses Bluetooth LE accessories" background mode must be enabled in the "Capabilities" tab of your project's settings.
 
 ### Routing
 
