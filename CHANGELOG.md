@@ -1,4 +1,17 @@
 #PWMapKit Changelog
+##v3.1.1 (Tuesday, Mar 28th, 2017)
+
+* Route behaivor improvements:
+	* Make `Follow Me` as default tracking mode.
+	* Automatically enable `Follow me` tracking mode when device is close to current route instruction.
+	* User can swip to view future/past route instructions when `Follow Me` is enabled.
+	 
+* Bug fixes:
+	* Use the cached bundle instead when network is unavailable.
+	* Wrong route instruction text for elevator.
+	* The callback `mapView:didDeselectBuildingAnnotationView:` never be fired.
+	* The POI image always be nil.
+
 ##v3.1.0 (Friday, Jan 27th, 2017)
 
 * Performance improvement for loading building data with bundle instead of numbers of API call.

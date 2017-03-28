@@ -399,6 +399,10 @@ extern NSString *const PWRouteInstructionChangedNotificationKey;
  */
 @property(nonatomic) MKMapRect visibleMapRect;
 
+/**
+ *  The resolution of current map view.
+ */
+@property(nonatomic, readonly) NSInteger zoomLevel;
 
 /**---------------------------------------------------------------------------------------
  * @name Instance Methods
