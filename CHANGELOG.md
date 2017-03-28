@@ -1,6 +1,7 @@
 #PWMapKit Changelog
 ##v3.1.1 (Tuesday, Mar 28th, 2017)
 
+* Enable `zoomLevel` property in PWMapView.
 * Route behaivor improvements:
 	* Make `Follow Me` as default tracking mode.
 	* Automatically enable `Follow me` tracking mode when device is close to current route instruction.
