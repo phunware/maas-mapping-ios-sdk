@@ -26,7 +26,7 @@
 /**
  *  The name of the point of interest type as defined in MaaS Portal.
  */
-@property (nonatomic,copy,readonly) NSString *name;
+@property (nonatomic,readonly) NSString *name;
 
 /**
  *  The representative UIImage of the point of interest type.
