@@ -10,7 +10,7 @@ PWMapKit SDK for iOS
 
 - PWLocation v3.0.0 or greater (Automatically included when pod install PWMapKit)
 - PWCore v3.0.3 or greater (Automatically included when pod install PWMapKit)
-- iOS 8.0 or greater
+- iOS 9.0 or greater
 - Xcode 8 or greater
 
 
