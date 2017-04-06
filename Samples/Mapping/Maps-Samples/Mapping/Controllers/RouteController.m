@@ -413,12 +413,10 @@
     }
     
     if (self.startField.isEditing) {
-        [self.endField becomeFirstResponder];
         self.startField.text = poi.title;
         self.startPOI = poi;
         [self.endField becomeFirstResponder];
     } else if (self.endField.isEditing) {
-        [self.startField becomeFirstResponder];
         self.endField.text = poi.title;
         self.endPOI = poi;
         [self.startField becomeFirstResponder];
@@ -435,7 +433,7 @@
 
 - (void)keyboardWillShow:(NSNotification *)notification {
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height-self.mapViewController.tabBarController.tabBar.frame.size.height, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height-self.mapViewController.navigationController.toolbar.frame.size.height, 0);
 }
 
 @end

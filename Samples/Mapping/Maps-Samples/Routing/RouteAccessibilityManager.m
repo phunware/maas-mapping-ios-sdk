@@ -82,7 +82,7 @@
     if (!_currentRouteInstruction)
         return;
     
-    CLLocationDistance distanceToEndPoint = [_currentLocation distanceTo:_currentRouteInstruction.endPointOfInterest.coordinate];
+    CLLocationDistance distanceToEndPoint = [_currentLocation distanceTo:_currentRouteInstruction.route.endPointOfInterest.coordinate];
     // Check if user is about to end current instruction
     if (distanceToEndPoint < kDistanceToTellInstructionWillChange) {
         // Check to avoid repeating
@@ -124,12 +124,12 @@
         }
         _notifiedRouteInstructionAboutChange = nil;
         
-        CLLocationDistance distanceToStartPoint = [_currentLocation distanceTo:_currentRouteInstruction.startPointOfInterest.coordinate];
+        CLLocationDistance distanceToStartPoint = [_currentLocation distanceTo:_currentRouteInstruction.route.startPointOfInterest.coordinate];
         // Check if it's time to tell the rest of distance
         if (distanceToStartPoint > _previousNotifiedDistance) {
             _previousNotifiedDistance = distanceToStartPoint + kDistanceToTellLongWayUpdate;
             
-            CLLocationDistance restDistance = [_currentLocation distanceTo:_currentRouteInstruction.endPointOfInterest.coordinate];
+            CLLocationDistance restDistance = [_currentLocation distanceTo:_currentRouteInstruction.route.endPointOfInterest.coordinate];
             NSString *accessibilityLabel = [NSString stringWithFormat:PWLocalizedString(@"ContinueXFeetThenTurnToXOClock", @"continue %@."), [self distanceFormat:restDistance]];
             if ([self.delegate respondsToSelector:@selector(routeInstruction:didLongDistanceMoveVO:)]) {
                 [self.delegate routeInstruction:_currentRouteInstruction didLongDistanceMoveVO:accessibilityLabel];

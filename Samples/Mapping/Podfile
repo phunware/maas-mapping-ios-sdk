@@ -1,5 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://bitbucket.phunware.com/scm/misc/cocoapods-sdk-ios.git'
+inhibit_all_warnings!
 
 target 'Maps-Samples' do
     pod 'PWMapKit', ‘~> 3’
@@ -9,4 +10,9 @@ target 'Maps-Samples' do
     pod 'ZFTokenField'
     pod 'Fabric'
     pod 'Crashlytics'
+    
+    # Remove for external sample
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'PW_Shared'
 end

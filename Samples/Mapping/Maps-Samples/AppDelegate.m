@@ -19,6 +19,9 @@
 #import "MapViewController.h"
 #import "CommonSettings.h"
 
+// Remove for external sample
+#import "FBManager.h"
+
 @interface AppDelegate ()
 
 @end
@@ -33,6 +36,16 @@
     [RouteAccessibilityManager sharedInstance].locationDistanceUnit = LocationDistanceUnitFeet;
     [RouteAccessibilityManager sharedInstance].directionType = DirectionTypeOClock;
     
+    // Remove for external sample
+    [[FBManager shared] configureWithAppDelegate:self];
+    
+    // Uncomment for external sample
+    //[self fetchConfiguration];
+    
+    return YES;
+}
+
+- (void)fetchConfiguration {
     __weak typeof(self) weakSelf = self;
     [[SimpleConfiguration sharedInstance] fetchConfiguration:^(NSDictionary *conf, NSError *error) {
         [PWCore setApplicationID:conf[@"appId"]
@@ -47,7 +60,7 @@
         } else {
             MapViewController *mapKitController = [[MapViewController alloc] initWithBuildingConfiguration:conf[@"buildings"][0]];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mapKitController];
-            navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0118 green:0.3961 blue:0.7529 alpha:1.0];
+            navigationController.navigationBar.barTintColor = [CommonSettings commonNavigationBarBackgroundColor];
             weakSelf.window.rootViewController = navigationController;
         }
         
@@ -65,8 +78,6 @@
             });
         }
     }];
-    
-    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -16,6 +16,8 @@
 #import "RouteController.h"
 #import "TrackingModeView.h"
 
+@class RouteInstructionsView;
+
 typedef NS_ENUM(NSUInteger, DirectorySegments) {
     DirectorySegmentsMap = 0,
     DirectorySegmentsDirectory,
@@ -28,7 +30,7 @@ typedef NS_ENUM(NSUInteger, DirectorySegments) {
 
 @property (nonatomic, strong) UIView *segmentBackground;
 @property (nonatomic, strong) UISegmentedControl *segments;
-@property (nonatomic, strong) PWRouteInstructionsView *routeInstruction;
+@property (nonatomic, strong) RouteInstructionsView *routeInstruction;
 @property (nonatomic, strong) RoutingDirectionsTableView *routingDirectionsTableView;
 @property (nonatomic, strong) UIView *routeHeaderView;
 
@@ -55,11 +57,14 @@ typedef NS_ENUM(NSUInteger, DirectorySegments) {
 #pragma mark - Bar button Items
 @property (nonatomic, strong) UIBarButtonItem *flexibleBarSpace;
 @property (nonatomic, strong) UIBarButtonItem *navigationBarButton;
-@property (nonatomic, copy) UIBarButtonItem *floorsBarButton;
+@property (nonatomic, strong) UIBarButtonItem *floorsBarButton;
 @property (nonatomic, strong) UIBarButtonItem *categoriesBarButton;
 @property (nonatomic, strong) UIBarButtonItem *distanceBarButton;
 @property (nonatomic, strong) UIBarButtonItem *cancelBarButton;
 @property (nonatomic, strong) TrackingModeView *trackingModeView;
+
+// Remove for external sample
+@property (nonatomic, strong) UIBarButtonItem *buildingsBarButton;
 
 @property (nonatomic, strong) NSArray *filteredPOIs;
 @property (nonatomic) BOOL isDirectorySegments;
@@ -69,6 +74,8 @@ typedef NS_ENUM(NSUInteger, DirectorySegments) {
 - (void)resetMapView;
 
 - (IBAction)btnCancelRoute:(id)sender;
+
+- (void)shouldShowRouteInstructions:(BOOL)show;
 
 #pragma mark - State
 

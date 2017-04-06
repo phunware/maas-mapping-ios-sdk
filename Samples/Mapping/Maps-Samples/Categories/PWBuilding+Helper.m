@@ -27,7 +27,10 @@
         }
     }
     
-    return availablePOITypes;
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [availablePOITypes sortUsingDescriptors:@[sortDescriptor]];
+    
+    return [availablePOITypes copy];
 }
 
 - (PWFloor *)floorForFloorID:(NSInteger)floorID {
