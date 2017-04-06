@@ -2,7 +2,7 @@
 //  PWRouteInstructionsView.m
 //  PWMapKit
 //
-//  Created by Steven Spry on 5/21/16.
+//  Created on 5/21/16.
 //  Copyright © 2016 Phunware. All rights reserved.
 //
 
