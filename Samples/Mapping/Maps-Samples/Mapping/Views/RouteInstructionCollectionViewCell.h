@@ -2,7 +2,7 @@
 //  PWRouteInstructionCollectionViewCell.h
 //  PWMapKit
 //
-//  Created by Steven Spry on 5/23/16.
+//  Created on 5/23/16.
 //  Copyright © 2016 Phunware. All rights reserved.
 //
 

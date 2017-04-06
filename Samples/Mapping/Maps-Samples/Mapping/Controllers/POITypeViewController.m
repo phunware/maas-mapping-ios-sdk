@@ -2,7 +2,7 @@
 //  POICategoryViewController.m
 //  Maps-Samples
 //
-//  Created by Chesley Stephens on 4/5/17.
+//  Created on 4/5/17.
 //  Copyright © 2017 Phunware. All rights reserved.
 //
 
