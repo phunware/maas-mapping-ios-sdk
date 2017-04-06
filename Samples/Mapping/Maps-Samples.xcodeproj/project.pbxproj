@@ -40,13 +40,6 @@
 		FBE7EFD11E72F5D900B98BE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBE7EFCD1E72F5D900B98BE2 /* Assets.xcassets */; };
 		FBE7EFD21E72F5D900B98BE2 /* DirectionImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBE7EFCE1E72F5D900B98BE2 /* DirectionImages.xcassets */; };
 		FBE7EFD31E72F5D900B98BE2 /* BuildingConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE7EFCF1E72F5D900B98BE2 /* BuildingConfiguration.plist */; };
-		FBE7EFDA1E72FAF200B98BE2 /* FBBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE7EFD71E72FAF200B98BE2 /* FBBuilding.m */; };
-		FBE7EFDB1E72FAF200B98BE2 /* FBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE7EFD91E72FAF200B98BE2 /* FBManager.m */; };
-		FBE7EFE21E72FB4700B98BE2 /* FBBuildingProviderPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE7EFDD1E72FB4700B98BE2 /* FBBuildingProviderPickerViewController.m */; };
-		FBE7EFE31E72FB4700B98BE2 /* FBBuildingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE7EFDF1E72FB4700B98BE2 /* FBBuildingsViewController.m */; };
-		FBE7EFE41E72FB4700B98BE2 /* FBBuildingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE7EFE11E72FB4700B98BE2 /* FBBuildingManager.m */; };
-		FBE7EFE61E730A5000B98BE2 /* LocalBuilding.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE7EFE51E730A5000B98BE2 /* LocalBuilding.plist */; };
-		FBE7EFE81E730E7500B98BE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE7EFE71E730E7500B98BE2 /* GoogleService-Info.plist */; };
 		FBE7EFEC1E76FF9400B98BE2 /* TrackingModeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE7EFEB1E76FF9400B98BE2 /* TrackingModeView.m */; };
 		FBE7EFF11E77153700B98BE2 /* RouteInstructionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE7EFEE1E77153700B98BE2 /* RouteInstructionCollectionViewCell.m */; };
 		FBE7EFF21E77153700B98BE2 /* RouteInstructionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE7EFF01E77153700B98BE2 /* RouteInstructionsView.m */; };
@@ -132,18 +125,6 @@
 		FBE7EFCE1E72F5D900B98BE2 /* DirectionImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DirectionImages.xcassets; sourceTree = "<group>"; };
 		FBE7EFCF1E72F5D900B98BE2 /* BuildingConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BuildingConfiguration.plist; sourceTree = "<group>"; };
 		FBE7EFD01E72F5D900B98BE2 /* Maps-Samples.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Maps-Samples.plist"; sourceTree = "<group>"; };
-		FBE7EFD61E72FAF200B98BE2 /* FBBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBBuilding.h; sourceTree = "<group>"; };
-		FBE7EFD71E72FAF200B98BE2 /* FBBuilding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBBuilding.m; sourceTree = "<group>"; };
-		FBE7EFD81E72FAF200B98BE2 /* FBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBManager.h; sourceTree = "<group>"; };
-		FBE7EFD91E72FAF200B98BE2 /* FBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBManager.m; sourceTree = "<group>"; };
-		FBE7EFDC1E72FB4700B98BE2 /* FBBuildingProviderPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBBuildingProviderPickerViewController.h; sourceTree = "<group>"; };
-		FBE7EFDD1E72FB4700B98BE2 /* FBBuildingProviderPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBBuildingProviderPickerViewController.m; sourceTree = "<group>"; };
-		FBE7EFDE1E72FB4700B98BE2 /* FBBuildingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBBuildingsViewController.h; sourceTree = "<group>"; };
-		FBE7EFDF1E72FB4700B98BE2 /* FBBuildingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBBuildingsViewController.m; sourceTree = "<group>"; };
-		FBE7EFE01E72FB4700B98BE2 /* FBBuildingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBBuildingManager.h; sourceTree = "<group>"; };
-		FBE7EFE11E72FB4700B98BE2 /* FBBuildingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBBuildingManager.m; sourceTree = "<group>"; };
-		FBE7EFE51E730A5000B98BE2 /* LocalBuilding.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LocalBuilding.plist; sourceTree = "<group>"; };
-		FBE7EFE71E730E7500B98BE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBE7EFEA1E76FF9400B98BE2 /* TrackingModeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingModeView.h; sourceTree = "<group>"; };
 		FBE7EFEB1E76FF9400B98BE2 /* TrackingModeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingModeView.m; sourceTree = "<group>"; };
 		FBE7EFED1E77153700B98BE2 /* RouteInstructionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteInstructionCollectionViewCell.h; sourceTree = "<group>"; };
@@ -234,7 +215,6 @@
 			children = (
 				E346475C1D87435E00EDBD20 /* Accessibility */,
 				E346475D1D87436700EDBD20 /* Categories */,
-				FBE7EFD51E72FAC500B98BE2 /* Firebase */,
 				E346475B1D87435900EDBD20 /* Mapping */,
 				E346475E1D87436F00EDBD20 /* POI */,
 				FBE7EFCC1E72F5D900B98BE2 /* Resources */,
@@ -378,25 +358,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		FBE7EFD51E72FAC500B98BE2 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				FBE7EFD61E72FAF200B98BE2 /* FBBuilding.h */,
-				FBE7EFD71E72FAF200B98BE2 /* FBBuilding.m */,
-				FBE7EFE01E72FB4700B98BE2 /* FBBuildingManager.h */,
-				FBE7EFE11E72FB4700B98BE2 /* FBBuildingManager.m */,
-				FBE7EFDC1E72FB4700B98BE2 /* FBBuildingProviderPickerViewController.h */,
-				FBE7EFDD1E72FB4700B98BE2 /* FBBuildingProviderPickerViewController.m */,
-				FBE7EFDE1E72FB4700B98BE2 /* FBBuildingsViewController.h */,
-				FBE7EFDF1E72FB4700B98BE2 /* FBBuildingsViewController.m */,
-				FBE7EFD81E72FAF200B98BE2 /* FBManager.h */,
-				FBE7EFD91E72FAF200B98BE2 /* FBManager.m */,
-				FBE7EFE71E730E7500B98BE2 /* GoogleService-Info.plist */,
-				FBE7EFE51E730A5000B98BE2 /* LocalBuilding.plist */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		FBE7EFE91E76FF9400B98BE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,9 +443,7 @@
 			files = (
 				FB670C661E96D21500B10FA5 /* Settings.bundle in Resources */,
 				FBE7EFC91E72F5C200B98BE2 /* LaunchScreen.storyboard in Resources */,
-				FBE7EFE81E730E7500B98BE2 /* GoogleService-Info.plist in Resources */,
 				FBE7EFD31E72F5D900B98BE2 /* BuildingConfiguration.plist in Resources */,
-				FBE7EFE61E730A5000B98BE2 /* LocalBuilding.plist in Resources */,
 				FBE7EFD11E72F5D900B98BE2 /* Assets.xcassets in Resources */,
 				FBE7EFCA1E72F5C200B98BE2 /* Main.storyboard in Resources */,
 				FBE7EFD21E72F5D900B98BE2 /* DirectionImages.xcassets in Resources */,
@@ -567,23 +526,18 @@
 				E34647841D8744CF00EDBD20 /* POIDetailsViewController.m in Sources */,
 				9D8DDCB41D8C9CDF000FD733 /* PWBuilding+Helper.m in Sources */,
 				E346476A1D8743CA00EDBD20 /* DirectoryController.m in Sources */,
-				FBE7EFDB1E72FAF200B98BE2 /* FBManager.m in Sources */,
 				E346479A1D8744F800EDBD20 /* PreRoutingViewController.m in Sources */,
 				E346479C1D8744F800EDBD20 /* RouteSummaryTableViewCell.m in Sources */,
 				E34647981D8744F800EDBD20 /* MapPreviewTableViewCell.m in Sources */,
-				FBE7EFE21E72FB4700B98BE2 /* FBBuildingProviderPickerViewController.m in Sources */,
 				E346478D1D8744EC00EDBD20 /* RoutingDirectionsTableView.m in Sources */,
 				FBE7EFF11E77153700B98BE2 /* RouteInstructionCollectionViewCell.m in Sources */,
 				E34647831D8744CF00EDBD20 /* POIDetailsTableViewCell.m in Sources */,
 				E34647821D8744CF00EDBD20 /* POIDetailsSummaryCell.m in Sources */,
 				E34647731D8743DF00EDBD20 /* MapViewController.m in Sources */,
-				FBE7EFDA1E72FAF200B98BE2 /* FBBuilding.m in Sources */,
 				9D8BD6421D95EBF700C22BCA /* PWIndoorLocation+Helper.m in Sources */,
 				FBE7EFF21E77153700B98BE2 /* RouteInstructionsView.m in Sources */,
 				E34647A81D87511400EDBD20 /* ConfirmVoiceOverViewController.m in Sources */,
-				FBE7EFE31E72FB4700B98BE2 /* FBBuildingsViewController.m in Sources */,
 				E346479F1D87451900EDBD20 /* CommonSettings.m in Sources */,
-				FBE7EFE41E72FB4700B98BE2 /* FBBuildingManager.m in Sources */,
 				9D8BD63F1D95E67600C22BCA /* RouteAccessibilityManager.m in Sources */,
 				E34647751D8743DF00EDBD20 /* MapViewController+Segments.m in Sources */,
 				E346479B1D8744F800EDBD20 /* RouteLabelTableViewCell.m in Sources */,

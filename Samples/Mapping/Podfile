@@ -10,9 +10,4 @@ target 'Maps-Samples' do
     pod 'ZFTokenField'
     pod 'Fabric'
     pod 'Crashlytics'
-    
-    # Remove for external sample
-    pod 'Firebase/Auth'
-    pod 'Firebase/Database'
-    pod 'PW_Shared'
 end

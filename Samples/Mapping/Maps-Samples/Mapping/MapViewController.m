@@ -23,9 +23,6 @@
 #import "RouteInstructionsView.h"
 #import "POITypeViewController.h"
 
-// Remove for external sample
-#import "FBBuildingManager.h"
-
 NSString * const CurrentUserHeadingUpdatedNotification = @"CurrentUserHeadingUpdated";
 NSString * const CurrentUserLocationUpdatedNotification = @"CurrentUserLocationUpdated";
 NSString * const CancelCurrentRouteNotification = @"CancelCurrentRouteNotification";
@@ -128,9 +125,6 @@ const CGFloat RouteInstructionHeight = 75.0f;
     
     self.trackingModeView = [[TrackingModeView alloc] initWithMapView:self.mapView];
     
-    // Remove for external sample
-    self.buildingsBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"list"] style:UIBarButtonItemStylePlain target:self action:@selector(btnChangeBuilding:)];
-    
     [self configureBottomToolbar];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(btnCancelRoute:) name:CancelCurrentRouteNotification object:nil];
@@ -157,9 +151,7 @@ const CGFloat RouteInstructionHeight = 75.0f;
     [self.navigationItem setLeftBarButtonItem:_navigationBarButton];
     [self.navigationItem setRightBarButtonItem:nil];
     
-    // Remove for external sample and uncomment next line
-    [self setToolbarItems:@[self.buildingsBarButton, self.flexibleBarSpace, self.trackingModeView, self.flexibleBarSpace, self.categoriesBarButton, self.flexibleBarSpace, self.floorsBarButton] animated:YES];
-    // [self setToolbarItems:@[self.trackingModeView, self.flexibleBarSpace, self.categoriesBarButton, self.flexibleBarSpace, self.floorsBarButton] animated:YES];
+    [self setToolbarItems:@[self.trackingModeView, self.flexibleBarSpace, self.categoriesBarButton, self.flexibleBarSpace, self.floorsBarButton] animated:YES];
 }
 
 #pragma mark - Override
@@ -196,45 +188,13 @@ const CGFloat RouteInstructionHeight = 75.0f;
         return;
     }
     
-    // Remove for external sample
-    [self showFirebaseBuildingSelection];
-    
-    // Uncomment for external sample
-    //[self fetchBuilding];
+    [self fetchBuilding];
     
     [self addCustomAnnotation];
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-// Remove for external sample
-- (void)showFirebaseBuildingSelection {
-    __weak typeof(self) weakself = self;
-    [[FBBuildingManager shared] showBuildingsViewController:self withSelectedBuildingCompletion:^{
-        [weakself.navigationController.view addSubview:weakself.loadingView];
-        
-        FBBuilding *fbBuilding = [FBBuildingManager shared].currentBuilding;
-        [PWCore setApplicationID:fbBuilding.appId accessKey:fbBuilding.accessKey signatureKey:fbBuilding.signatureKey encryptionKey:@""];
-        [PWCore setEnvironment:fbBuilding.environment];
-        weakself.buildingId = [[FBBuildingManager shared].currentBuilding.buildingId longValue];
-        
-        [PWBuilding buildingWithIdentifier:weakself.buildingId completion:^(PWBuilding *building, NSError *error) {
-            if (building) {
-                weakself.building = building;
-                [weakself.mapView setBuilding:weakself.building];
-                
-                weakself.buildingFinishedLoading = YES;
-                [weakself removeLoadingViewIfDone];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:weakself.buildingId];
-                    
-                    [weakself.mapView registerLocationManager:managedLocationManager];
-                });
-            }
-        }];
-    }];
 }
 
 - (void)fetchBuilding {
@@ -278,8 +238,6 @@ const CGFloat RouteInstructionHeight = 75.0f;
     self.distanceBarButton.target = self;
     self.mapView.hidden = NO;
     self.tableView.hidden = YES;
-    
-    self.buildingsBarButton.target = self;
     
     [self setTitle:nil];
     [self shrinkSearchField:YES showCancelButton:NO];
@@ -360,11 +318,6 @@ const CGFloat RouteInstructionHeight = 75.0f;
         [self.routingDirectionsTableView removeFromSuperview];
         self.routingDirectionsTableView = nil;
     }
-}
-
-// Remove for external sample
-- (void)btnChangeBuilding:(id)sender {
-    [self showFirebaseBuildingSelection];
 }
 
 #pragma mark - POITypeViewControllerDelegate

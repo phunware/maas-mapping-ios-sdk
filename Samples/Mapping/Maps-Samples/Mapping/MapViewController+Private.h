@@ -63,9 +63,6 @@ typedef NS_ENUM(NSUInteger, DirectorySegments) {
 @property (nonatomic, strong) UIBarButtonItem *cancelBarButton;
 @property (nonatomic, strong) TrackingModeView *trackingModeView;
 
-// Remove for external sample
-@property (nonatomic, strong) UIBarButtonItem *buildingsBarButton;
-
 @property (nonatomic, strong) NSArray *filteredPOIs;
 @property (nonatomic) BOOL isDirectorySegments;
 

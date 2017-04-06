@@ -19,9 +19,6 @@
 #import "MapViewController.h"
 #import "CommonSettings.h"
 
-// Remove for external sample
-#import "FBManager.h"
-
 @interface AppDelegate ()
 
 @end
@@ -36,11 +33,7 @@
     [RouteAccessibilityManager sharedInstance].locationDistanceUnit = LocationDistanceUnitFeet;
     [RouteAccessibilityManager sharedInstance].directionType = DirectionTypeOClock;
     
-    // Remove for external sample
-    [[FBManager shared] configureWithAppDelegate:self];
-    
-    // Uncomment for external sample
-    //[self fetchConfiguration];
+    [self fetchConfiguration];
     
     return YES;
 }
