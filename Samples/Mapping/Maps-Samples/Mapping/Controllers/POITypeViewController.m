@@ -1,5 +1,5 @@
 //
-//  POICategoryViewController.m
+//  POITypeViewController.m
 //  Maps-Samples
 //
 //  Created on 4/5/17.
