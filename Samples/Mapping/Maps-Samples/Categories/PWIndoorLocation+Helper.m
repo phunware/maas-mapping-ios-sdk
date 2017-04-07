@@ -2,7 +2,7 @@
 //  PWIndoorLocation+Helper.m
 //  Maps-Samples
 //
-//  Created by Xiangwei Wang on 9/23/16.
+//  Created on 9/23/16.
 //  Copyright © 2016 Phunware. All rights reserved.
 //
 

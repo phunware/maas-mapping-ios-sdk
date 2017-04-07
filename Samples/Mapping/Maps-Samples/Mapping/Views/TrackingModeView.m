@@ -100,7 +100,7 @@ static CGRect buttonFrame = {0, 0, 34, 34};
 - (void)updateButtonStateAnimated:(BOOL)animated {
     UIButton *buttonToDisplay = nil;
     NSTimeInterval animationDuration = (animated ? 0.3 : 0);
-    NSArray *buttonsToHide;
+    NSArray *buttonsToHide = @[];
     
     switch (self.mapView.trackingMode) {
         case PWTrackingModeNone:
@@ -130,7 +130,7 @@ static CGRect buttonFrame = {0, 0, 34, 34};
         buttonToDisplay.hidden = NO;
         buttonToDisplay.alpha = 1;
         buttonToDisplay.transform = CGAffineTransformIdentity;
-    }];
+    } completion:nil];
 }
 
 #pragma mark - Actions

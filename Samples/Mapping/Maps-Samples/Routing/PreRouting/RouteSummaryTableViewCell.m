@@ -75,7 +75,11 @@ static CGFloat const HeaderLabelBottomInset = 10.0;
     // Values
     NSDictionary *valueTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],
                                           NSFontAttributeName:[UIFont boldSystemFontOfSize:18.0]};
-    NSAttributedString *currentFloorValue = [[NSAttributedString alloc] initWithString:self.route.startPointOfInterest.floor.name?:PWLocalizedString(@"Unknown", @"Unknown") attributes:valueTextAttributes];
+    
+    PWFloor *startPointFloor = self.route.startPointOfInterest.floor;
+    PWFloor *endPointFloor = self.route.endPointOfInterest.floor;
+    
+    NSAttributedString *currentFloorValue = [[NSAttributedString alloc] initWithString:startPointFloor.name?:PWLocalizedString(@"Unknown", @"Unknown") attributes:valueTextAttributes];
     NSAttributedString *destinationPOIValue = [[NSAttributedString alloc] initWithString:self.route.endPointOfInterest.title?:PWLocalizedString(@"Unknown", @"Unknown") attributes:valueTextAttributes];
     NSString *estimatedTimeString = [numberFormatter stringFromNumber:@(self.route.estimatedTime)];
     NSString *travelTimeValueText = [NSString stringWithFormat:PWLocalizedString(@"XPluralMinutes", @"%@ minutes"), estimatedTimeString];
@@ -85,7 +89,7 @@ static CGFloat const HeaderLabelBottomInset = 10.0;
     NSAttributedString *travelTimeValue = [[NSAttributedString alloc] initWithString:travelTimeValueText attributes:valueTextAttributes];
     NSString *distanceValueText = [[RouteAccessibilityManager sharedInstance] distanceFormat:self.route.distance];
     NSAttributedString *distanceValue = [[NSAttributedString alloc] initWithString:distanceValueText attributes:valueTextAttributes];
-    long floors = labs(self.route.startPointOfInterest.floor.level - self.route.endPointOfInterest.floor.level);
+    long floors = labs(startPointFloor.level - endPointFloor.level);
     NSString *floorsToTravelValueText = [NSString stringWithFormat:PWLocalizedString(@"XPluralFloors", @"%li floors"), floors];
     if (floors == 1) {
         floorsToTravelValueText = [NSString stringWithFormat:PWLocalizedString(@"XSingleFloor", @"%li floor"), floors];

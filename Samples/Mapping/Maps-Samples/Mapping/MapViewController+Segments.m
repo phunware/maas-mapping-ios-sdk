@@ -99,11 +99,11 @@ typedef NS_ENUM(NSUInteger, RouteSegments) {
     if (!self.isDirectorySegments) {
         if (sender.selectedSegmentIndex == RouteSegmentsMap) {
             self.routingDirectionsTableView.hidden = YES;
-            self.routeInstruction.hidden = NO;
+            [self shouldShowRouteInstructions:YES];
             self.mapView.hidden = NO;
         } else if (sender.selectedSegmentIndex == RouteSegmentsList) {
             self.routingDirectionsTableView.hidden = NO;
-            self.routeInstruction.hidden = YES;
+            [self shouldShowRouteInstructions:NO];
             self.mapView.hidden = YES;
         }
         return;
@@ -116,7 +116,6 @@ typedef NS_ENUM(NSUInteger, RouteSegments) {
         case DirectorySegmentsMap: {
             [self resetMapView];
             [self shrinkSearchField:YES showCancelButton:NO];
-            [self setToolbarItems:@[self.trackingModeView, self.flexibleBarSpace, self.categoriesBarButton, self.flexibleBarSpace, self.floorsBarButton] animated:YES];
             break;
         }
         case DirectorySegmentsDirectory: {

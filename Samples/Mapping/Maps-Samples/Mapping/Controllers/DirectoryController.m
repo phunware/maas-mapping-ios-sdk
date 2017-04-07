@@ -21,8 +21,7 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithMapViewController:(MapViewController *)viewController {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         _building = viewController.building;
         _mapView = viewController.mapView;
         _tableView = viewController.tableView;
@@ -38,9 +37,17 @@
         _filterRadius = kDefaultSearchRadius;
         _filterFloor = nil;
         _filterPOIType = nil;
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     }
     
     return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Public
@@ -224,6 +231,17 @@
     PWPointOfInterest *pointOfInterest = [pointsOfInterestForSection objectAtIndex:indexPath.row];
     [self selectPointOfInterest:pointOfInterest];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Keyboard Adjustments
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height - self.mapViewController.navigationController.toolbar.frame.size.height, 0);
 }
 
 @end

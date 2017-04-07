@@ -20,15 +20,19 @@
 #import "PreRoutingViewController.h"
 #import "PWRouteInstruction+Helper.h"
 #import "PWBuilding+Helper.h"
+#import "RouteInstructionsView.h"
+#import "POITypeViewController.h"
 
 NSString * const CurrentUserHeadingUpdatedNotification = @"CurrentUserHeadingUpdated";
 NSString * const CurrentUserLocationUpdatedNotification = @"CurrentUserLocationUpdated";
 NSString * const CancelCurrentRouteNotification = @"CancelCurrentRouteNotification";
 NSString * const PlotRouteNotification = @"PlotRouteNotification";
 
-@interface MapViewController ()
+const CGFloat RouteInstructionHeight = 75.0f;
 
-@property (nonatomic) long buildingId;
+@interface MapViewController () <RouteInstructionViewDelegate, POITypeViewControllerDelegate>
+
+@property (nonatomic, assign) long buildingId;
 @property (nonatomic, strong) NSDictionary *configuration;
 
 @property (nonatomic, strong) UIActivityIndicatorView *loadingView;
@@ -86,46 +90,68 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     self.view.backgroundColor = [CommonSettings commonViewForgroundColor];
     
     // MapView
-    _mapView = [[PWMapView alloc] initWithFrame:CGRectZero];
-    _mapView.delegate = self;
-    _mapView.isAccessibilityElement = NO;
-    _mapView.accessibilityLabel = @"";
+    self.mapView = [[PWMapView alloc] initWithFrame:CGRectZero];
+    self.mapView.delegate = self;
+    self.mapView.isAccessibilityElement = NO;
+    self.mapView.accessibilityLabel = @"";
     [self.view addSubview:_mapView];
-    [_mapView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.segmentBackground];
-    [_mapView autoPinToBottomLayoutGuideOfViewController:self withInset:0];
-    [_mapView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_mapView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.mapView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.segmentBackground];
+    [self.mapView autoPinToBottomLayoutGuideOfViewController:self withInset:0];
+    [self.mapView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.mapView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    
+     [self configureRoutingInstructionsView];
     
     // Bar buttom items
-    _flexibleBarSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    _navigationBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation"] style:UIBarButtonItemStylePlain target:self action:@selector(btnNavigation:)];
-    _navigationBarButton.accessibilityLabel = PWLocalizedString(@"GetDirectionsButton", @"Get Directions");
-    _navigationBarButton.accessibilityHint = PWLocalizedString(@"NavigationButtonHint", @"Double tap to select points to start a route");
+    self.flexibleBarSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    self.navigationBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation"] style:UIBarButtonItemStylePlain target:self action:@selector(btnNavigation:)];
+    self.navigationBarButton.accessibilityLabel = PWLocalizedString(@"GetDirectionsButton", @"Get Directions");
+    self.navigationBarButton.accessibilityHint = PWLocalizedString(@"NavigationButtonHint", @"Double tap to select points to start a route");
     
-    _cancelBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(btnCancelRoute:)];
-    _cancelBarButton.accessibilityHint = PWLocalizedString(@"CancelButtonHint", @"Double tap to cancel the current route");
+    self.cancelBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(btnCancelRoute:)];
+    self.cancelBarButton.accessibilityHint = PWLocalizedString(@"CancelButtonHint", @"Double tap to cancel the current route");
     
-    _floorsBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"floor"] style:UIBarButtonItemStylePlain target:self action:@selector(btnChangeFloor:)];
-    _floorsBarButton.accessibilityLabel = PWLocalizedString(@"Floors", @"Floors");
-    _floorsBarButton.accessibilityHint = PWLocalizedString(@"FloorFilterButtonHint", @"Double tap to select floor filter");
+    self.floorsBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"floor"] style:UIBarButtonItemStylePlain target:self action:@selector(btnChangeFloor:)];
+    self.floorsBarButton.accessibilityLabel = PWLocalizedString(@"Floors", @"Floors");
+    self.floorsBarButton.accessibilityHint = PWLocalizedString(@"FloorFilterButtonHint", @"Double tap to select floor filter");
     
-    _categoriesBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"filter"] style:UIBarButtonItemStylePlain target:self action:@selector(btnChangeCategory:)];
-    _categoriesBarButton.accessibilityLabel = PWLocalizedString(@"Categories", @"Categories");
-    _categoriesBarButton.accessibilityHint = PWLocalizedString(@"CategoryFilterButtonHint", @"Double tap to select category filter");
+    self.categoriesBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"filter"] style:UIBarButtonItemStylePlain target:self action:@selector(btnChangeCategory:)];
+    self.categoriesBarButton.accessibilityLabel = PWLocalizedString(@"Categories", @"Categories");
+    self.categoriesBarButton.accessibilityHint = PWLocalizedString(@"CategoryFilterButtonHint", @"Double tap to select category filter");
     
-    _distanceBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"distance"] style:UIBarButtonItemStylePlain target:self action:@selector(btnChangeDistance:)];
-    _distanceBarButton.accessibilityLabel = PWLocalizedString(@"Distance", @"Distance");
-    _distanceBarButton.accessibilityHint = PWLocalizedString(@"DistanceFilterButtonHint", @"Double tap to select distance filter");
+    self.distanceBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"distance"] style:UIBarButtonItemStylePlain target:self action:@selector(btnChangeDistance:)];
+    self.distanceBarButton.accessibilityLabel = PWLocalizedString(@"Distance", @"Distance");
+    self.distanceBarButton.accessibilityHint = PWLocalizedString(@"DistanceFilterButtonHint", @"Double tap to select distance filter");
     
-    _trackingModeView = [[TrackingModeView alloc] initWithMapView:self.mapView];
+    self.trackingModeView = [[TrackingModeView alloc] initWithMapView:self.mapView];
     
-    // Set map as selected segment
-    [self.navigationItem setLeftBarButtonItem:_navigationBarButton];
-    [self.navigationItem setRightBarButtonItem:nil];
-    [self setToolbarItems:@[_trackingModeView, _flexibleBarSpace, _categoriesBarButton, _flexibleBarSpace, _floorsBarButton] animated:YES];
+    [self configureBottomToolbar];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(btnCancelRoute:) name:CancelCurrentRouteNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyShowRoute:) name:PlotRouteNotification object:nil];
+}
+
+- (void)configureRoutingInstructionsView {
+    self.routeInstruction = [[RouteInstructionsView alloc] init];
+    self.routeInstruction.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    self.routeInstruction.delegate = self;
+    [self.mapView addSubview:self.routeInstruction];
+    
+    [self.routeInstruction autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.segmentBackground];
+    [self.routeInstruction autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.routeInstruction autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.routeInstruction autoSetDimension:ALDimensionHeight toSize:RouteInstructionHeight];
+    
+    [self shouldShowRouteInstructions:NO];
+}
+
+- (void)configureBottomToolbar {
+    // Set map as selected segment
+    [self.navigationItem setLeftBarButtonItem:_navigationBarButton];
+    [self.navigationItem setRightBarButtonItem:nil];
+    
+    [self setToolbarItems:@[self.trackingModeView, self.flexibleBarSpace, self.categoriesBarButton, self.flexibleBarSpace, self.floorsBarButton] animated:YES];
 }
 
 #pragma mark - Override
@@ -150,22 +176,31 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     [self commonSetup];
     [self setupSearch];
     
-    _loadingView = [[UIActivityIndicatorView alloc] initWithFrame:self.view.frame];
-    _loadingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    _loadingView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _loadingView.backgroundColor = [UIColor lightGrayColor];
-    _loadingView.alpha = 0.8;
-    [_loadingView startAnimating];
-    [self.navigationController.view addSubview:_loadingView];
+    self.loadingView = [[UIActivityIndicatorView alloc] initWithFrame:self.view.frame];
+    self.loadingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    self.loadingView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.loadingView.backgroundColor = [UIColor lightGrayColor];
+    self.loadingView.alpha = 0.8;
+    [self.loadingView startAnimating];
     
     if (self.building) {
         [self.mapView setBuilding:self.building];
         return;
     }
     
-    // Fetch building
+    [self fetchBuilding];
+    
+    [self addCustomAnnotation];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)fetchBuilding {
     __weak typeof(self) weakself = self;
-    [PWBuilding buildingWithIdentifier:_buildingId completion:^(PWBuilding *building, NSError *error) {
+    [self.navigationController.view addSubview:self.loadingView];
+    [PWBuilding buildingWithIdentifier:self.buildingId completion:^(PWBuilding *building, NSError *error) {
         if (building) {
             weakself.building = building;
             [weakself.mapView setBuilding:weakself.building];
@@ -173,25 +208,12 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
             weakself.buildingFinishedLoading = YES;
             [weakself removeLoadingViewIfDone];
             dispatch_async(dispatch_get_main_queue(), ^{
-                // For virtual beacon change to use VBLE key
-                NSDictionary *bleConf = weakself.configuration[@"BLE"];
-                // NSDictionary *vbleConf = weakself.configuration[@"VBLE"];
                 PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:weakself.buildingId];
-                
-                // For virtual beacon uncomment virtualBeaconToken and remove senionCustomerID, senionMapID
-                managedLocationManager.senionCustomerID = bleConf[@"customerIdentifier"];
-                managedLocationManager.senionMapID = bleConf[@"mapIdentifier"];
-                // managedLocationManager.virtualBeaconToken = vbleConf[@"sdkToken"];
+
                 [weakself.mapView registerLocationManager:managedLocationManager];
             });
         }
     }];
-    
-    [self addCustomAnnotation];
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Public
@@ -207,31 +229,31 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
 }
 
 - (void)resetMapView {
-    _mapView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
-    _searchField.delegate = self;
-    _floorsBarButton.target = self;
-    _categoriesBarButton.target = self;
-    _distanceBarButton.target = self;
-    _mapView.hidden = NO;
-    _tableView.hidden = YES;
+    self.mapView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.searchField.delegate = self;
+    self.floorsBarButton.target = self;
+    self.categoriesBarButton.target = self;
+    self.distanceBarButton.target = self;
+    self.mapView.hidden = NO;
+    self.tableView.hidden = YES;
     
     [self setTitle:nil];
     [self shrinkSearchField:YES showCancelButton:NO];
     [self setDirectorySegments];
-    [self.navigationItem setLeftBarButtonItem:_navigationBarButton];
-    [self setToolbarItems:@[_trackingModeView, _flexibleBarSpace, _categoriesBarButton, _flexibleBarSpace, _floorsBarButton] animated:YES];
+
+    [self configureBottomToolbar];
 }
 
 #pragma mark - Actions
 
-- (IBAction)btnNavigation:(id)sender {
-    _routeController = _routeController ?: [[RouteController alloc] initWithMapViewController:self];
-    [_routeController loadView];
+- (void)btnNavigation:(id)sender {
+    self.routeController = self.routeController ?: [[RouteController alloc] initWithMapViewController:self];
+    [self.routeController loadView];
 }
 
-- (IBAction)btnChangeFloor:(id)sender {
+- (void)btnChangeFloor:(id)sender {
     __weak typeof(self) weakself = self;
     UIAlertController *alertController = [CommonSettings buildActionSheetWithItems:self.building.floors displayProperty:@"name" selectedItem:self.mapView.currentFloor title:PWLocalizedString(@"SheetTitleForFloor", @"Change Floor") actionNameFormat:nil topAction:nil selectAction:^(id selection) {
         [weakself.mapView setFloor:selection];
@@ -239,13 +261,19 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (IBAction)btnChangeCategory:(id)sender {
-    __weak typeof(self) weakself = self;
-    UIAlertController *alertController = [CommonSettings buildActionSheetWithItems:[self.building getAvailablePOITypes] displayProperty:@"name" selectedItem:self.filterPOIType title:PWLocalizedString(@"SheetTitleForCategory", @"Change Category") actionNameFormat:nil topAction:PWLocalizedString(@"SheetActionNameAllForCategory", @"All Categories") selectAction:^(id selection) {
-        weakself.filterPOIType = selection;
-        [weakself filterMapPOIByType:selection];
-    }];
-    [self presentViewController:alertController animated:YES completion:nil];
+- (void)btnChangeCategory:(id)sender {
+    POITypeViewController *poiTypeVC = [[POITypeViewController alloc] init];
+    poiTypeVC.delegate = self;
+    poiTypeVC.selectedPoiType = self.filterPOIType;
+    poiTypeVC.poiTypes = [self.building getAvailablePOITypes];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:poiTypeVC];
+    navigationController.navigationBar.barTintColor = [CommonSettings commonNavigationBarBackgroundColor];
+    navigationController.navigationBar.translucent = NO;
+    [navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 - (void)filterMapPOIByType:(PWPointOfInterestType *)type {
@@ -262,7 +290,7 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     }];
 }
 
-- (IBAction)btnChangeDistance:(id)sender {
+- (void)btnChangeDistance:(id)sender {
     __weak typeof(self) weakself = self;
     UIAlertController *alertController = [CommonSettings buildActionSheetWithItems:filterDistance() displayProperty:nil selectedItem:self.filterRadius title:PWLocalizedString(@"SheetTitleForDistance", @"Change Distance") actionNameFormat:nil topAction:nil selectAction:^(id selection) {
         weakself.filterRadius = selection;
@@ -271,7 +299,7 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (IBAction)btnCancelRoute:(id)sender {
+- (void)btnCancelRoute:(id)sender {
     [UIApplication sharedApplication].idleTimerDisabled = NO;
     [self resetMapView];
     
@@ -283,14 +311,20 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     self.offRouteTimer = nil;
 
     if (self.routeInstruction) {
-        [self.routeInstruction removeFromSuperview];
-        self.routeInstruction = nil;
+        [self shouldShowRouteInstructions:NO];
     }
     
     if (self.routingDirectionsTableView) {
         [self.routingDirectionsTableView removeFromSuperview];
         self.routingDirectionsTableView = nil;
     }
+}
+
+#pragma mark - POITypeViewControllerDelegate
+
+- (void)didSelectPOIType:(PWPointOfInterestType *)poiType {
+    self.filterPOIType = poiType;
+    [self filterMapPOIByType:poiType];
 }
 
 #pragma mark - Loading
@@ -383,14 +417,15 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
 }
 
 - (void)showRoute:(PWRoute *)route {
-    if ([self.mapView.currentRoute isEqual:route])
+    if ([self.mapView.currentRoute isEqual:route]) {
         return;
+    }
     
     // Plot route
     self.mapView.delegate = self;
     [self.mapView navigateWithRoute:route];
     [self.mapView setHidden:NO];
-    [self addRoutingInstructions];
+    [self shouldShowRouteInstructions:YES];
     [self showRoutingInstructionsList];
     [self.routingDirectionsTableView setHidden:YES];
     
@@ -428,24 +463,22 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
 
 #pragma mark - Routing
 
-- (void)addRoutingInstructions {
-    _routeInstruction = [[PWRouteInstructionsView alloc] initWithRoute:self.mapView.currentRoute];
-    _routeInstruction.delegate = self;
-    [self.mapView addSubview:_routeInstruction];
-    [_routeInstruction autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [_routeInstruction autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_routeInstruction autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [_routeInstruction autoSetDimension:ALDimensionHeight toSize:kRouteInstructionHeight];
+- (void)showRoutingInstructionsList {
+    self.routingDirectionsTableView = [[RoutingDirectionsTableView alloc] initWithRoute:self.mapView.currentRoute];
+    [self.view addSubview:_routingDirectionsTableView];
+    [self.routingDirectionsTableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.segmentBackground];
+    [self.routingDirectionsTableView autoPinToBottomLayoutGuideOfViewController:self withInset:0];
+    [self.routingDirectionsTableView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.routingDirectionsTableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.mapView startUpdatingHeading];
 }
 
-- (void)showRoutingInstructionsList {
-    _routingDirectionsTableView = [[RoutingDirectionsTableView alloc] initWithRoute:self.mapView.currentRoute];
-    [self.view addSubview:_routingDirectionsTableView];
-    [_routingDirectionsTableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.segmentBackground];
-    [_routingDirectionsTableView autoPinToBottomLayoutGuideOfViewController:self withInset:0];
-    [_routingDirectionsTableView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_routingDirectionsTableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [self.mapView startUpdatingHeading];
+- (void)shouldShowRouteInstructions:(BOOL)show {
+    self.routeInstruction.hidden = !show;
+    
+    if (show) {
+        self.routeInstruction.route = self.mapView.currentRoute;
+    }
 }
 
 - (void)userIsOffRoute {
@@ -458,7 +491,7 @@ NSString * const PlotRouteNotification = @"PlotRouteNotification";
     
     // Start route
     __weak typeof(self) weakSelf = self;
-    [PWRoute initRouteFrom:self.mapView.userLocation to:self.mapView.currentRoute.endPointOfInterest accessibility:self.mapView.currentRoute.isAccessible completion:^(PWRoute *route, NSError *error) {
+    [PWRoute initRouteFrom:self.mapView.userLocation to:self.mapView.currentRoute.endPointOfInterest accessibility:YES completion:^(PWRoute *route, NSError *error) {
         if (error) {
             NSLog(@"There was a problem with recalculating the route.");
             return;

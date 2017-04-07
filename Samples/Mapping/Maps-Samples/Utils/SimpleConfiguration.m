@@ -9,7 +9,7 @@
 #import "SimpleConfiguration.h"
 #import "CommonSettings.h"
 
-NSString * const SampleConfigurationPlist = @"SampleConfiguration-Map";
+NSString * const SampleConfigurationPlist = @"BuildingConfiguration";
 
 @interface SimpleConfiguration()
 
