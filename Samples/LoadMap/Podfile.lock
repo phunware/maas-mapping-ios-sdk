@@ -1,0 +1,27 @@
+PODS:
+  - MistSDK (0.0.1089)
+  - PWCore (3.0.4):
+    - SSZipArchive
+  - PWLocation (3.1.1):
+    - MistSDK
+    - PWCore
+    - TMCache
+  - PWMapKit (3.1.2):
+    - PWLocation
+  - SSZipArchive (1.8)
+  - TMCache (2.1.0)
+
+DEPENDENCIES:
+  - PWMapKit
+
+SPEC CHECKSUMS:
+  MistSDK: 7ff10acffb20685ceeac19afdd71786381f7a0aa
+  PWCore: b4b20c57fd8d4b802c2ff3340ac81cbe33b55eda
+  PWLocation: 6ea6088d6a4af478bbeea774ff9b300a09862e43
+  PWMapKit: 28e980774dd681bb23198d66648fdb7bd4c494bb
+  SSZipArchive: bcc95475eec29f3f60079b6b0714e4cd6c05e1eb
+  TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
+
+PODFILE CHECKSUM: ab784876b6406c78f283c74f529472dd23acea05
+
+COCOAPODS: 1.2.0

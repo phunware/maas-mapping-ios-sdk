@@ -1,0 +1,6 @@
+framework module PWLocation {
+  umbrella header "PWLocation.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,9 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/MistSDK/Framework" "${PODS_ROOT}/PWCore/Framework" "${PODS_ROOT}/PWLocation/Framework" "${PODS_ROOT}/PWMapKit/Framework"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MistSDK" "${PODS_ROOT}/Headers/Public/PWCore" "${PODS_ROOT}/Headers/Public/PWLocation" "${PODS_ROOT}/Headers/Public/PWMapKit" "${PODS_ROOT}/Headers/Public/SSZipArchive" "${PODS_ROOT}/Headers/Public/TMCache"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/SSZipArchive" "$PODS_CONFIGURATION_BUILD_DIR/TMCache"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MistSDK" -isystem "${PODS_ROOT}/Headers/Public/PWCore" -isystem "${PODS_ROOT}/Headers/Public/PWLocation" -isystem "${PODS_ROOT}/Headers/Public/PWMapKit" -isystem "${PODS_ROOT}/Headers/Public/SSZipArchive" -isystem "${PODS_ROOT}/Headers/Public/TMCache"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"SSZipArchive" -l"TMCache" -l"c++" -l"icucore" -l"sqlite3" -l"xml2.2" -l"z" -framework "CFNetwork" -framework "CoreBluetooth" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreMotion" -framework "CoreTelephony" -framework "Foundation" -framework "JavaScriptCore" -framework "MapKit" -framework "MistSDK" -framework "MobileCoreServices" -framework "PWCore" -framework "PWLocation" -framework "PWMapKit" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "UIKit"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods
