@@ -11,10 +11,7 @@
 
 #import "ViewController.h"
 
-#define kBLECustomerIdentifier @"<Senion Customer Identifier>"
-#define kBLEMapIdentifier @"<Senion Map Identifier>"
-#define kVirtualBeaconToken @"<Virtual Beacon Map Identifier>"
-#define kBuildingIdentifier 52203
+#define kBuildingIdentifier 0
 
 @interface ViewController () <PWMapViewDelegate>
 

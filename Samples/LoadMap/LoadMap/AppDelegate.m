@@ -9,9 +9,9 @@
 #import <PWCore/PWCore.h>
 #import "AppDelegate.h"
 
-#define kAppID @"1383"
-#define kAccessKey @"aca26bfdc28d44faf6a4f072bd6960e232970ff0"
-#define kSignatureKey @"fe53376845e917bf9ccc480bbc09f22c6e125ea3"
+#define kAppID @"<MaaS App ID>"
+#define kAccessKey @"<MaaS Access Key>"
+#define kSignatureKey @"<MaaS Signature Key>"
 #define kEncryptionKey @"<Encrytion Key>"
 
 @interface AppDelegate ()
