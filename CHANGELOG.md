@@ -1,7 +1,9 @@
 #PWMapKit Changelog
 ##v3.1.2 (Wednesday, Apr 12th, 2017)
 
-* Add PWCustomPointOfInterest.
+* New features
+	* Add PWCustomPointOfInterest.
+	* Create route API can now accept points to exclude.
 
 * Performance improvement
 	* Significantly reduce times of zoom level calculator.
