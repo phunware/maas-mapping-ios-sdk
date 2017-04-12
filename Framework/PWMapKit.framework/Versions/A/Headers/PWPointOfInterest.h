@@ -7,28 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
-#import <MapKit/MapKit.h>
 
 #import "PWPointOfInterestType.h"
 #import "PWFloor.h"
-
-@class PWFloor;
+#import "PWMapPoint.h"
 
 /**
  *  A PWPointOfInterest represents single point of interest defined within MaaS Portal.
  */
-@interface PWPointOfInterest : NSObject<MKAnnotation>
+@interface PWPointOfInterest : NSObject<PWMapPoint>
 
 /**---------------------------------------------------------------------------------------
  * @name Properties
  *  ---------------------------------------------------------------------------------------
  */
-
-/**
- *  The identifier for the point of interest structure that corresponds to the MaaS Portal.
- */
-@property (nonatomic,readonly) NSInteger identifier;
 
 /**
  *  A summary description of the point of interest.

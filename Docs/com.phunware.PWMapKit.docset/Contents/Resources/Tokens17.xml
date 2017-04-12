@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWBuildingViewControllerDelegate.html">
+	<File path="Classes/PWRouteViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWBuildingViewControllerDelegate</TokenIdentifier>
-			<Abstract type="html">PWBuildingViewControllerDelegate protocol definition.</Abstract>
-			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteViewController</TokenIdentifier>
+			<Abstract type="html">A view controller that lets the user browse and search a PWBuilding structure to navigate from a start point of interest to an end point of interest.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,36 +13,147 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingViewControllerDelegate/didSelectPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">Informs the receiver that the user selected a point of interest.</Abstract>
-			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)didSelectPointOfInterest:(PWPointOfInterest *)poi</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>poi</Name>
-					<Abstract type="html">The selected point of interest.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</Declaration>
 			
-			<Anchor>//api/name/didSelectPointOfInterest:</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingViewControllerDelegate/didDismissBuildingViewController:</TokenIdentifier>
-			<Abstract type="html">Informs the receiver that the user dismissed the view controller and returns the point of interest last selected (if any).</Abstract>
-			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)didDismissBuildingViewController:(PWPointOfInterest *)poi</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The receiver’s delegate.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/setCustomLocation:</TokenIdentifier>
+			<Abstract type="html">A reference to a current custom location.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
+			
+			
+			<Anchor>//api/name/customLocation</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/customLocation</TokenIdentifier>
+			<Abstract type="html">A reference to a current custom location.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
+			
+			
+			<Anchor>//api/name/customLocation</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteViewController/customLocation</TokenIdentifier>
+			<Abstract type="html">A reference to a current custom location.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
+			
+			
+			<Anchor>//api/name/customLocation</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/setUserLocation:</TokenIdentifier>
+			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCustomLocation *userLocation</Declaration>
+			
+			
+			<Anchor>//api/name/userLocation</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/userLocation</TokenIdentifier>
+			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCustomLocation *userLocation</Declaration>
+			
+			
+			<Anchor>//api/name/userLocation</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteViewController/userLocation</TokenIdentifier>
+			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCustomLocation *userLocation</Declaration>
+			
+			
+			<Anchor>//api/name/userLocation</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/initWithBuilding:</TokenIdentifier>
+			<Abstract type="html">Initializes a PWRouteViewController instance for a given building structure.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>poi</Name>
-					<Abstract type="html">the last selected point of interest.</Abstract>
+					<Name>building</Name>
+					<Abstract type="html">A PWBuilding object.</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWRouteViewController instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithBuilding:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/initWithBuilding:withAccessibility:</TokenIdentifier>
+			<Abstract type="html">Initializes a PWRouteViewController instance for a given building structure considering accessibility.</Abstract>
+			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
 			
-			<Anchor>//api/name/didDismissBuildingViewController:</Anchor>
+			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building withAccessibility:(BOOL)accessible</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>building</Name>
+					<Abstract type="html">A PWBuilding object.</Abstract>
+				</Parameter><Parameter>
+					<Name>accessible</Name>
+					<Abstract type="html">A BOOL value to determine if accessibility should be used while calculating the route.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWRouteViewController instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithBuilding:withAccessibility:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

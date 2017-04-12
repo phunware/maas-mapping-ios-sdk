@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteInstructionsViewController.html">
+	<File path="Classes/PWRouteInstructionsView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstructionsViewController</TokenIdentifier>
-			<Abstract type="html">The PWRouteInstructionsViewController allows the display of a route instructions list for a calculated PWRoute.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstructionsView</TokenIdentifier>
+			<Abstract type="html">The PWRouteInstructionsView class allows the display of a calculated PWRoute instructions on the map view.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,11 +13,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsViewController/setDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/setDelegate:</TokenIdentifier>
 			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionsViewControllerDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -25,11 +25,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsViewController/delegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/delegate</TokenIdentifier>
 			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionsViewControllerDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -37,11 +37,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstructionsViewController/delegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstructionsView/delegate</TokenIdentifier>
 			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionsViewControllerDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -49,9 +49,45 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsViewController/initWithRoute:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/setRoute:</TokenIdentifier>
+			<Abstract type="html">A reference to the route object of the PWRouteInstructionsView instance.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/route</TokenIdentifier>
+			<Abstract type="html">A reference to the route object of the PWRouteInstructionsView instance.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstructionsView/route</TokenIdentifier>
+			<Abstract type="html">A reference to the route object of the PWRouteInstructionsView instance.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWRoute *route</Declaration>
+			
+			
+			<Anchor>//api/name/route</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/initWithRoute:</TokenIdentifier>
 			<Abstract type="html">Creates a PWRouteInstructionsView instance for the given route.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route</Declaration>
 			<Parameters>
@@ -62,6 +98,18 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">Returns a PWRouteInstructionsView instance.</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithRoute:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsView/invalidateLayout</TokenIdentifier>
+			<Abstract type="html">Invalidates PWRouteInstructionsView layout.</Abstract>
+			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
+			
+			<Declaration>- (void)invalidateLayout</Declaration>
+			
+			
+			<Anchor>//api/name/invalidateLayout</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

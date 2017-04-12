@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWFloor.html">
+	<File path="Classes/PWCustomPointOfInterest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWFloor</TokenIdentifier>
-			<Abstract type="html">A PWFloor represents a building&apos;s floor structure defined within MaaS Portal.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWCustomPointOfInterest</TokenIdentifier>
+			<Abstract type="html">A PWCustomPointOfInterest represents custom single point of interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,308 +13,259 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setBuilding:</TokenIdentifier>
-			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setPointOfInterestType:</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
+			<Declaration>@property (nonatomic, copy) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
-			<Anchor>//api/name/building</Anchor>
+			<Anchor>//api/name/pointOfInterestType</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/building</TokenIdentifier>
-			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/pointOfInterestType</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
+			<Declaration>@property (nonatomic, copy) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
-			<Anchor>//api/name/building</Anchor>
+			<Anchor>//api/name/pointOfInterestType</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/building</TokenIdentifier>
-			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/pointOfInterestType</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
+			<Declaration>@property (nonatomic, copy) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
-			<Anchor>//api/name/building</Anchor>
+			<Anchor>//api/name/pointOfInterestType</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setName:</TokenIdentifier>
-			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setMetaData:</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the custom point of interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/metaData</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the custom point of interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/metaData</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the custom point of interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/metaData</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setFloorID:</TokenIdentifier>
-			<Abstract type="html">The floor&apos;s identifier.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setShowTextLabel:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the text label.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			<Declaration>@property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/showTextLabel</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/floorID</TokenIdentifier>
-			<Abstract type="html">The floor&apos;s identifier.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/isShowTextLabel</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the text label.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			<Declaration>@property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/showTextLabel</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/floorID</TokenIdentifier>
-			<Abstract type="html">The floor&apos;s identifier.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/showTextLabel</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the text label.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			<Declaration>@property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel</Declaration>
 			
 			
-			<Anchor>//api/name/floorID</Anchor>
+			<Anchor>//api/name/showTextLabel</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setLevel:</TokenIdentifier>
-			<Abstract type="html">The floor&apos;s level number.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setAccessible:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an accessible point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
+			<Declaration>@property (nonatomic, getter=isAccessible) BOOL accessible</Declaration>
 			
 			
-			<Anchor>//api/name/level</Anchor>
+			<Anchor>//api/name/accessible</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/level</TokenIdentifier>
-			<Abstract type="html">The floor&apos;s level number.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/isAccessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an accessible point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
+			<Declaration>@property (nonatomic, getter=isAccessible) BOOL accessible</Declaration>
 			
 			
-			<Anchor>//api/name/level</Anchor>
+			<Anchor>//api/name/accessible</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/level</TokenIdentifier>
-			<Abstract type="html">The floor&apos;s level number.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/accessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an accessible point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
+			<Declaration>@property (nonatomic, getter=isAccessible) BOOL accessible</Declaration>
 			
 			
-			<Anchor>//api/name/level</Anchor>
+			<Anchor>//api/name/accessible</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setPointsOfInterest:</TokenIdentifier>
-			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setVisualImpaired:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point is friendly to the visually-impaired.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
+			<Declaration>@property (nonatomic, getter=isVisualImpaired) BOOL visualImpaired</Declaration>
 			
 			
-			<Anchor>//api/name/pointsOfInterest</Anchor>
+			<Anchor>//api/name/visualImpaired</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterest</TokenIdentifier>
-			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/isVisualImpaired</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point is friendly to the visually-impaired.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
+			<Declaration>@property (nonatomic, getter=isVisualImpaired) BOOL visualImpaired</Declaration>
 			
 			
-			<Anchor>//api/name/pointsOfInterest</Anchor>
+			<Anchor>//api/name/visualImpaired</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/pointsOfInterest</TokenIdentifier>
-			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/visualImpaired</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point is friendly to the visually-impaired.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
+			<Declaration>@property (nonatomic, getter=isVisualImpaired) BOOL visualImpaired</Declaration>
 			
 			
-			<Anchor>//api/name/pointsOfInterest</Anchor>
+			<Anchor>//api/name/visualImpaired</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setTopLeft:</TokenIdentifier>
-			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setExit:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an exit point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (nonatomic, getter=isExit) BOOL exit</Declaration>
 			
 			
-			<Anchor>//api/name/topLeft</Anchor>
+			<Anchor>//api/name/exit</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/topLeft</TokenIdentifier>
-			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/isExit</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an exit point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (nonatomic, getter=isExit) BOOL exit</Declaration>
 			
 			
-			<Anchor>//api/name/topLeft</Anchor>
+			<Anchor>//api/name/exit</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/topLeft</TokenIdentifier>
-			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/exit</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an exit point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (nonatomic, getter=isExit) BOOL exit</Declaration>
 			
 			
-			<Anchor>//api/name/topLeft</Anchor>
+			<Anchor>//api/name/exit</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setBottomRight:</TokenIdentifier>
-			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/init</TokenIdentifier>
+			<Abstract type="html">Disable the default initializer.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>- (instancetype __nullable)init</Declaration>
 			
 			
-			<Anchor>//api/name/bottomRight</Anchor>
+			<Anchor>//api/name/init</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/bottomRight</TokenIdentifier>
-			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/initWithCoordinate:floorId:buildingId:title:image:</TokenIdentifier>
+			<Abstract type="html">Instantiates a PWCustomLocation object with the given parameters.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
-			
-			
-			<Anchor>//api/name/bottomRight</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/bottomRight</TokenIdentifier>
-			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
-			
-			
-			<Anchor>//api/name/bottomRight</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/containsCoordinate:</TokenIdentifier>
-			<Abstract type="html">Determines if a given coordinate is contained within the floor&apos;s bounding latitude and longitude.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)containsCoordinate:(CLLocationCoordinate2D)coordinate</Declaration>
+			<Declaration>- (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate floorId:(NSInteger)floorId buildingId:(NSInteger)buildingId title:(NSString *__nullable)title image:(UIImage *__nullable)image</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>coordinate</Name>
-					<Abstract type="html">A CLLocationCoordinate2D object containing latitude and longitude.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a BOOL value saying if the floor contains the given coordinate.</Abstract></ReturnValue>
-			<Anchor>//api/name/containsCoordinate:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterestOfType:</TokenIdentifier>
-			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>type</Name>
-					<Abstract type="html">A PWPointOfInterestType.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterestType objects for the given type.</Abstract></ReturnValue>
-			<Anchor>//api/name/pointsOfInterestOfType:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterestOfType:containing:</TokenIdentifier>
-			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type and whose name contains the supplied text.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>type</Name>
-					<Abstract type="html">A PWPointOfInterestType.</Abstract>
+					<Abstract type="html">The coordinate of custom point of interest</Abstract>
 				</Parameter><Parameter>
-					<Name>containingText</Name>
-					<Abstract type="html">A NSString substring of text to search for.</Abstract>
+					<Name>floorId</Name>
+					<Abstract type="html">The floor identifier of custom point of interest</Abstract>
+				</Parameter><Parameter>
+					<Name>buildingId</Name>
+					<Abstract type="html">The building identifier of custom point of interest</Abstract>
+				</Parameter><Parameter>
+					<Name>title</Name>
+					<Abstract type="html">The text title of custom point of interest</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The icon of custom point of interest</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterestType objects for the given type and whose name contains the supplied text.</Abstract></ReturnValue>
-			<Anchor>//api/name/pointsOfInterestOfType:containing:</Anchor>
+			<ReturnValue><Abstract type="html">Returns a PWCustomLocation object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCoordinate:floorId:buildingId:title:image:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

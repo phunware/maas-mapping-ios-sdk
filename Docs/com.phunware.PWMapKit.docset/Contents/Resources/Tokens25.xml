@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWRouteSnapTolerance.html">
+	<File path="Constants/PWRouteInstructionDirection.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWRouteSnapTolerance</TokenIdentifier>
-			<Abstract type="html">Supported Route Snapping Tolerance values.</Abstract>
-			<DeclaredIn>PWMapView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PWRouteInstructionDirection</TokenIdentifier>
+			<Abstract type="html">Defines the different types of custom locations.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
@@ -14,45 +14,111 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapOff</TokenIdentifier>
-            <Abstract type="html">Route Snapping off.
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStraight</TokenIdentifier>
+            <Abstract type="html">Route instruction direction straight.
      </Abstract>
-            <Declaration>PWRouteSnapOff</Declaration>
+            <Declaration>PWRouteInstructionDirectionStraight</Declaration>
             
-            <DeclaredIn>PWMapView.h</DeclaredIn>
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
             <NodeRef refid="25"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceNormal</TokenIdentifier>
-            <Abstract type="html">Route Snapping normal.
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionLeft</TokenIdentifier>
+            <Abstract type="html">Route instruction direction left.
      </Abstract>
-            <Declaration>PWRouteSnapToleranceNormal</Declaration>
+            <Declaration>PWRouteInstructionDirectionLeft</Declaration>
             
-            <DeclaredIn>PWMapView.h</DeclaredIn>
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
             <NodeRef refid="25"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceMedium</TokenIdentifier>
-            <Abstract type="html">Route Snapping medium.
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionRight</TokenIdentifier>
+            <Abstract type="html">Route instruction direction right.
      </Abstract>
-            <Declaration>PWRouteSnapToleranceMedium</Declaration>
+            <Declaration>PWRouteInstructionDirectionRight</Declaration>
             
-            <DeclaredIn>PWMapView.h</DeclaredIn>
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
             <NodeRef refid="25"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceHigh</TokenIdentifier>
-            <Abstract type="html">Route Snapping high.
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionBearLeft</TokenIdentifier>
+            <Abstract type="html">Route instruction direction bear left.
      </Abstract>
-            <Declaration>PWRouteSnapToleranceHigh</Declaration>
+            <Declaration>PWRouteInstructionDirectionBearLeft</Declaration>
             
-            <DeclaredIn>PWMapView.h</DeclaredIn>
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionBearRight</TokenIdentifier>
+            <Abstract type="html">Route instruction direction bear right.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionBearRight</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionFloorChange</TokenIdentifier>
+            <Abstract type="html">Route instruction direction floor change.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionFloorChange</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorUp</TokenIdentifier>
+            <Abstract type="html">Route instruction direction elevator up.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionElevatorUp</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorDown</TokenIdentifier>
+            <Abstract type="html">Route instruction direction elevator down.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionElevatorDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStairsUp</TokenIdentifier>
+            <Abstract type="html">Route instruction direction stairs up.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionStairsUp</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStairsDown</TokenIdentifier>
+            <Abstract type="html">Route instruction direction stairs down.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionStairsDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
             <NodeRef refid="25"/>
         </Token>

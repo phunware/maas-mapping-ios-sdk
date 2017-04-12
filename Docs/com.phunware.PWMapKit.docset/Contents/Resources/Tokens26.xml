@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWTrackingMode.html">
+	<File path="Constants/PWRouteSnapTolerance.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWTrackingMode</TokenIdentifier>
-			<Abstract type="html">Supported Tracking mode values.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/PWRouteSnapTolerance</TokenIdentifier>
+			<Abstract type="html">Supported Route Snapping Tolerance values.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
@@ -14,10 +14,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWTrackingModeNone</TokenIdentifier>
-            <Abstract type="html">Tracking mode off.
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapOff</TokenIdentifier>
+            <Abstract type="html">Route Snapping off.
      </Abstract>
-            <Declaration>PWTrackingModeNone</Declaration>
+            <Declaration>PWRouteSnapOff</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             
@@ -25,10 +25,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWTrackingModeFollow</TokenIdentifier>
-            <Abstract type="html">Tracks user movement of the map.
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceNormal</TokenIdentifier>
+            <Abstract type="html">Route Snapping normal.
      </Abstract>
-            <Declaration>PWTrackingModeFollow</Declaration>
+            <Declaration>PWRouteSnapToleranceNormal</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             
@@ -36,10 +36,21 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWTrackingModeFollowWithHeading</TokenIdentifier>
-            <Abstract type="html">Tracks user movement of the map and rotates when the heading changes.
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceMedium</TokenIdentifier>
+            <Abstract type="html">Route Snapping medium.
      </Abstract>
-            <Declaration>PWTrackingModeFollowWithHeading</Declaration>
+            <Declaration>PWRouteSnapToleranceMedium</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceHigh</TokenIdentifier>
+            <Abstract type="html">Route Snapping high.
+     </Abstract>
+            <Declaration>PWRouteSnapToleranceHigh</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             

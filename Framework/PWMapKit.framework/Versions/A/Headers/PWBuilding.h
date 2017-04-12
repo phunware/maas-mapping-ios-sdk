@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-#import "PWFloor.h"
-
-@class  PWPointOfInterest;
-@class  PWCustomLocation;
+@class PWFloor;
+@class PWPointOfInterest;
+@class PWCustomLocation;
 
 /**
  *  A PWBuilding represents the building structure defined within MaaS Portal.
@@ -121,5 +120,14 @@
  *  @return Returns a PWPointOfInterest object.
  */
 - (PWPointOfInterest *) pointOfInterestClosestToLocation:(PWCustomLocation *)location;
+
+/**
+ *  Returns a `PWFloor` instance that has the given floor identifier.
+ *
+ *  @param identifier The identifier of the floor.
+ *
+ *  @return Returns a `PWFloor` instance that has the given identifier.
+ */
+- (PWFloor *) getFloorByFloorId:(NSInteger)floorId;
 
 @end

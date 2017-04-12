@@ -14,7 +14,7 @@
 #define kBLECustomerIdentifier @"<Senion Customer Identifier>"
 #define kBLEMapIdentifier @"<Senion Map Identifier>"
 #define kVirtualBeaconToken @"<Virtual Beacon Map Identifier>"
-#define kBuildingIdentifier 0
+#define kBuildingIdentifier 52203
 
 @interface ViewController () <PWMapViewDelegate>
 
@@ -39,10 +39,6 @@
         
         PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:kBuildingIdentifier];
         
-        managedLocationManager.senionMapID = kBLEMapIdentifier;
-        managedLocationManager.senionCustomerID = kBLECustomerIdentifier;
-        managedLocationManager.virtualBeaconToken = kVirtualBeaconToken;
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.mapView registerLocationManager:managedLocationManager];
         });
@@ -55,10 +51,6 @@
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0.0]];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 - (void)mapView:(PWMapView *)mapView locationManager:(id<PWLocationManager>)locationManager didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation {

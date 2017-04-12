@@ -13,38 +13,51 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/setLocationType:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/set__deprecated:</TokenIdentifier>
 			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocationType locationType</Declaration>
+			<Declaration>@property (nonatomic) PWCustomLocationType locationType __deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/locationType</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/locationType</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/__deprecated</TokenIdentifier>
 			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocationType locationType</Declaration>
+			<Declaration>@property (nonatomic) PWCustomLocationType locationType __deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/locationType</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/locationType</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/__deprecated</TokenIdentifier>
 			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocationType locationType</Declaration>
+			<Declaration>@property (nonatomic) PWCustomLocationType locationType __deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/locationType</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/init</TokenIdentifier>
+			<Abstract type="html">@name Instance Methods
+---------------------------------------------------------------------------------------</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>- (instancetype __nonnull)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
@@ -53,7 +66,7 @@
 			<Abstract type="html">Instantiates a PWCustomLocation object with the given latitude and longitude parameters.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithLatitude:(double)latitude longitude:(double)longitude</Declaration>
+			<Declaration>- (instancetype __nullable)initWithLatitude:(double)latitude longitude:(double)longitude</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>latitude</Name>

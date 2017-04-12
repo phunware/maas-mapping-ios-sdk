@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWPointOfInterestType.html">
+	<File path="Classes/PWPointOfInterest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterestType</TokenIdentifier>
-			<Abstract type="html">A PWPointOfInterestType represents single point of interest type defined within MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterest</TokenIdentifier>
+			<Abstract type="html">A PWPointOfInterest represents single point of interest defined within MaaS Portal.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -13,81 +13,117 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setSummary:</TokenIdentifier>
+			<Abstract type="html">A summary description of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *summary</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/summary</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/identifier</TokenIdentifier>
-			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/summary</TokenIdentifier>
+			<Abstract type="html">A summary description of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *summary</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/summary</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/identifier</TokenIdentifier>
-			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/summary</TokenIdentifier>
+			<Abstract type="html">A summary description of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *summary</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/summary</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setName:</TokenIdentifier>
-			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setFloor:</TokenIdentifier>
+			<Abstract type="html">The PWFloor object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/floor</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/name</TokenIdentifier>
-			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/floor</TokenIdentifier>
+			<Abstract type="html">The PWFloor object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/floor</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/name</TokenIdentifier>
-			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/floor</TokenIdentifier>
+			<Abstract type="html">The PWFloor object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/floor</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setImage:</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setPointOfInterestType:</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
+			
+			
+			<Anchor>//api/name/pointOfInterestType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/pointOfInterestType</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
+			
+			
+			<Anchor>//api/name/pointOfInterestType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/pointOfInterestType</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
+			
+			
+			<Anchor>//api/name/pointOfInterestType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setImage:</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
 			
@@ -97,9 +133,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/image</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/image</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
 			
@@ -109,14 +145,50 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/image</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/image</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
 			
 			
 			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setMetaData:</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the point of interest.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

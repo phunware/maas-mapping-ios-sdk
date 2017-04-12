@@ -17,8 +17,8 @@
 #import "PWCustomLocation.h"
 #import "PWBuildingAnnotationView.h"
 
-@class PWIndoorLocation;
 @protocol PWLocationManager;
+@class PWIndoorLocation;
 
 /**
  *  Supported location providers types.

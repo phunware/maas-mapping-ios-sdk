@@ -11,7 +11,6 @@
 
 #import "PWRoute.h"
 
-
 static NSString *const kPWRouteInstructionDirectionSharpLeft = @"PWRouteInstructionDirectionSharpLeft";
 static NSString *const kPWRouteInstructionDirectionSharpRight = @"PWRouteInstructionDirectionSharpRight";
 static NSString *const kPWRouteInstructionDirectionStraight = @"PWRouteInstructionDirectionStraight";
@@ -79,14 +78,21 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
  */
 
 /**
- *  A reference to the origin, or start point of interest, for the route.
+ * Sequence of points represented by this maneuver.
  */
-@property (nonatomic,readonly) PWPointOfInterest *startPointOfInterest;
+@property (readonly, copy) NSArray /* PWMapPoint */ *points;
+
+/**
+ *  A reference to the origin, or start point of interest, for the route.
+ * @discussion Change to use points.firstObject
+ */
+@property (nonatomic,readonly) PWPointOfInterest *startPointOfInterest __deprecated;
 
 /**
  *  A reference to the destination, or end point of interest, for the route.
+ * @discussion Change to use points.lastObject
  */
-@property (nonatomic,readonly) PWPointOfInterest *endPointOfInterest;
+@property (nonatomic,readonly) PWPointOfInterest *endPointOfInterest __deprecated;
 
 /**
  *  A reference to the route object the route instruction instance belongs to.

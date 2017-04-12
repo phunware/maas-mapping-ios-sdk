@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWRouteInstructionDirection.html">
+	<File path="Constants/PWMapViewLocationType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWRouteInstructionDirection</TokenIdentifier>
-			<Abstract type="html">Defines the different types of custom locations.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PWMapViewLocationType</TokenIdentifier>
+			<Abstract type="html">Supported location providers types.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -14,111 +14,67 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStraight</TokenIdentifier>
-            <Abstract type="html">Route instruction direction straight.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeNone</TokenIdentifier>
+            <Abstract type="html">Location provider type none.
      </Abstract>
-            <Declaration>PWRouteInstructionDirectionStraight</Declaration>
+            <Declaration>PWMapViewLocationTypeNone</Declaration>
             
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            <DeclaredIn>PWMapView.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionLeft</TokenIdentifier>
-            <Abstract type="html">Route instruction direction left.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMSE</TokenIdentifier>
+            <Abstract type="html">Location provider type MSE.
      </Abstract>
-            <Declaration>PWRouteInstructionDirectionLeft</Declaration>
+            <Declaration>PWMapViewLocationTypeMSE</Declaration>
             
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            <DeclaredIn>PWMapView.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionRight</TokenIdentifier>
-            <Abstract type="html">Route instruction direction right.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeBLE</TokenIdentifier>
+            <Abstract type="html">Location provider type BLE.
      </Abstract>
-            <Declaration>PWRouteInstructionDirectionRight</Declaration>
+            <Declaration>PWMapViewLocationTypeBLE</Declaration>
             
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            <DeclaredIn>PWMapView.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionBearLeft</TokenIdentifier>
-            <Abstract type="html">Route instruction direction bear left.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeGPS</TokenIdentifier>
+            <Abstract type="html">Location provider type GPS.
      </Abstract>
-            <Declaration>PWRouteInstructionDirectionBearLeft</Declaration>
+            <Declaration>PWMapViewLocationTypeGPS</Declaration>
             
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            <DeclaredIn>PWMapView.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionBearRight</TokenIdentifier>
-            <Abstract type="html">Route instruction direction bear right.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeFused</TokenIdentifier>
+            <Abstract type="html">Location provider type Fused.
      </Abstract>
-            <Declaration>PWRouteInstructionDirectionBearRight</Declaration>
+            <Declaration>PWMapViewLocationTypeFused</Declaration>
             
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            <DeclaredIn>PWMapView.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionFloorChange</TokenIdentifier>
-            <Abstract type="html">Route instruction direction floor change.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMock</TokenIdentifier>
+            <Abstract type="html">Location provider type Mock.
      </Abstract>
-            <Declaration>PWRouteInstructionDirectionFloorChange</Declaration>
+            <Declaration>PWMapViewLocationTypeMock</Declaration>
             
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorUp</TokenIdentifier>
-            <Abstract type="html">Route instruction direction elevator up.
-     </Abstract>
-            <Declaration>PWRouteInstructionDirectionElevatorUp</Declaration>
-            
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorDown</TokenIdentifier>
-            <Abstract type="html">Route instruction direction elevator down.
-     </Abstract>
-            <Declaration>PWRouteInstructionDirectionElevatorDown</Declaration>
-            
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStairsUp</TokenIdentifier>
-            <Abstract type="html">Route instruction direction stairs up.
-     </Abstract>
-            <Declaration>PWRouteInstructionDirectionStairsUp</Declaration>
-            
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStairsDown</TokenIdentifier>
-            <Abstract type="html">Route instruction direction stairs down.
-     </Abstract>
-            <Declaration>PWRouteInstructionDirectionStairsDown</Declaration>
-            
-            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            <DeclaredIn>PWMapView.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>

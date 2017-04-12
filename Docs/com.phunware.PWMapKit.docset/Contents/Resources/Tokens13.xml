@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteInstruction.html">
+	<File path="Classes/PWRoute.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstruction</TokenIdentifier>
-			<Abstract type="html">PWRouteInstruction class represents one step inside a route with the necessary moves to go from the start point of interest and the end point of interest.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRoute</TokenIdentifier>
+			<Abstract type="html">A PWRoute represents a route calculated for the user from within a building&apos;s boundaries; start point of interest to end point of interest.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -13,335 +13,191 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setStartPointOfInterest:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setBuilding:</TokenIdentifier>
+			<Abstract type="html">A reference to the route&apos;s building object.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/building</TokenIdentifier>
+			<Abstract type="html">A reference to the route&apos;s building object.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/building</TokenIdentifier>
+			<Abstract type="html">A reference to the route&apos;s building object.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setStartPoint:</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; startPoint</Declaration>
+			
+			
+			<Anchor>//api/name/startPoint</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/startPoint</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; startPoint</Declaration>
+			
+			
+			<Anchor>//api/name/startPoint</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/startPoint</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; startPoint</Declaration>
+			
+			
+			<Anchor>//api/name/startPoint</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setEndPoint:</TokenIdentifier>
+			<Abstract type="html">A reference to the destination, or end point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; endPoint</Declaration>
+			
+			
+			<Anchor>//api/name/endPoint</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/endPoint</TokenIdentifier>
+			<Abstract type="html">A reference to the destination, or end point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; endPoint</Declaration>
+			
+			
+			<Anchor>//api/name/endPoint</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/endPoint</TokenIdentifier>
+			<Abstract type="html">A reference to the destination, or end point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; endPoint</Declaration>
+			
+			
+			<Anchor>//api/name/endPoint</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/set__deprecated:</TokenIdentifier>
 			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *startPointOfInterest</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/startPointOfInterest</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/startPointOfInterest</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/__deprecated</TokenIdentifier>
 			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *startPointOfInterest</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/startPointOfInterest</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/startPointOfInterest</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/__deprecated</TokenIdentifier>
 			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *startPointOfInterest</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/startPointOfInterest</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setEndPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">A reference to the destination, or end point of interest, for the route.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setRouteInstructions:</TokenIdentifier>
+			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *endPointOfInterest</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSArray *routeInstructions</Declaration>
 			
 			
-			<Anchor>//api/name/endPointOfInterest</Anchor>
+			<Anchor>//api/name/routeInstructions</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/endPointOfInterest</TokenIdentifier>
-			<Abstract type="html">A reference to the destination, or end point of interest, for the route.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/routeInstructions</TokenIdentifier>
+			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *endPointOfInterest</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSArray *routeInstructions</Declaration>
 			
 			
-			<Anchor>//api/name/endPointOfInterest</Anchor>
+			<Anchor>//api/name/routeInstructions</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/endPointOfInterest</TokenIdentifier>
-			<Abstract type="html">A reference to the destination, or end point of interest, for the route.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/routeInstructions</TokenIdentifier>
+			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *endPointOfInterest</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSArray *routeInstructions</Declaration>
 			
 			
-			<Anchor>//api/name/endPointOfInterest</Anchor>
+			<Anchor>//api/name/routeInstructions</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setRoute:</TokenIdentifier>
-			<Abstract type="html">A reference to the route object the route instruction instance belongs to.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
-			
-			
-			<Anchor>//api/name/route</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/route</TokenIdentifier>
-			<Abstract type="html">A reference to the route object the route instruction instance belongs to.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
-			
-			
-			<Anchor>//api/name/route</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/route</TokenIdentifier>
-			<Abstract type="html">A reference to the route object the route instruction instance belongs to.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
-			
-			
-			<Anchor>//api/name/route</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovement:</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the movement instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *movement</Declaration>
-			
-			
-			<Anchor>//api/name/movement</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movement</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the movement instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *movement</Declaration>
-			
-			
-			<Anchor>//api/name/movement</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movement</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the movement instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *movement</Declaration>
-			
-			
-			<Anchor>//api/name/movement</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovementDirection:</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection movementDirection</Declaration>
-			
-			
-			<Anchor>//api/name/movementDirection</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movementDirection</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection movementDirection</Declaration>
-			
-			
-			<Anchor>//api/name/movementDirection</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movementDirection</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection movementDirection</Declaration>
-			
-			
-			<Anchor>//api/name/movementDirection</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovementTrueHeading:</TokenIdentifier>
-			<Abstract type="html">The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDirection movementTrueHeading</Declaration>
-			
-			
-			<Anchor>//api/name/movementTrueHeading</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movementTrueHeading</TokenIdentifier>
-			<Abstract type="html">The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDirection movementTrueHeading</Declaration>
-			
-			
-			<Anchor>//api/name/movementTrueHeading</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movementTrueHeading</TokenIdentifier>
-			<Abstract type="html">The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDirection movementTrueHeading</Declaration>
-			
-			
-			<Anchor>//api/name/movementTrueHeading</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurn:</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
-			
-			
-			<Anchor>//api/name/turn</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turn</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
-			
-			
-			<Anchor>//api/name/turn</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turn</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
-			
-			
-			<Anchor>//api/name/turn</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurnDirection:</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection turnDirection</Declaration>
-			
-			
-			<Anchor>//api/name/turnDirection</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turnDirection</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection turnDirection</Declaration>
-			
-			
-			<Anchor>//api/name/turnDirection</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turnDirection</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection turnDirection</Declaration>
-			
-			
-			<Anchor>//api/name/turnDirection</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurnAngle:</TokenIdentifier>
-			<Abstract type="html">The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float turnAngle</Declaration>
-			
-			
-			<Anchor>//api/name/turnAngle</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turnAngle</TokenIdentifier>
-			<Abstract type="html">The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float turnAngle</Declaration>
-			
-			
-			<Anchor>//api/name/turnAngle</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turnAngle</TokenIdentifier>
-			<Abstract type="html">The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float turnAngle</Declaration>
-			
-			
-			<Anchor>//api/name/turnAngle</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setDistance:</TokenIdentifier>
-			<Abstract type="html">A CLLocationDistance property representing the total distance of the route expressed in meters.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setDistance:</TokenIdentifier>
+			<Abstract type="html">An integer representing the total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger distance</Declaration>
 			
 			
 			<Anchor>//api/name/distance</Anchor>
@@ -349,11 +205,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/distance</TokenIdentifier>
-			<Abstract type="html">A CLLocationDistance property representing the total distance of the route expressed in meters.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/distance</TokenIdentifier>
+			<Abstract type="html">An integer representing the total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger distance</Declaration>
 			
 			
 			<Anchor>//api/name/distance</Anchor>
@@ -361,14 +217,141 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/distance</TokenIdentifier>
-			<Abstract type="html">A CLLocationDistance property representing the total distance of the route expressed in meters.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/distance</TokenIdentifier>
+			<Abstract type="html">An integer representing the total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger distance</Declaration>
 			
 			
 			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setEstimatedTime:</TokenIdentifier>
+			<Abstract type="html">An integer representing the estimated time of the route expressed in seconds.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger estimatedTime</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedTime</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/estimatedTime</TokenIdentifier>
+			<Abstract type="html">An integer representing the estimated time of the route expressed in seconds.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger estimatedTime</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedTime</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/estimatedTime</TokenIdentifier>
+			<Abstract type="html">An integer representing the estimated time of the route expressed in seconds.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger estimatedTime</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedTime</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setAccessible:</TokenIdentifier>
+			<Abstract type="html">A BOOL value that returns YES if the route was calculated with accessibility.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/isAccessible</TokenIdentifier>
+			<Abstract type="html">A BOOL value that returns YES if the route was calculated with accessibility.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/accessible</TokenIdentifier>
+			<Abstract type="html">A BOOL value that returns YES if the route was calculated with accessibility.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRoute/initRouteFrom:to:accessibility:completion:</TokenIdentifier>
+			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>+ (void)initRouteFrom:(PWPointOfInterest *)startPoint to:(PWPointOfInterest *)endPoint accessibility:(BOOL)accessibility completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPoint</Name>
+					<Abstract type="html">PWPointOfInterest object representing the start point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>endPoint</Name>
+					<Abstract type="html">PWPointOfInterest object representing the end point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>accessibility</Name>
+					<Abstract type="html">BOOL Value to tell the route init if accessibility should be considered to calculate the route.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler that is called once the route&apos;s calculation is complete.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initRouteFrom:to:accessibility:completion:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRoute/createRouteFrom:to:accessibility:excludedPoints:completion:</TokenIdentifier>
+			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)startPoint to:(id&lt;PWMapPoint&gt;)endPoint accessibility:(BOOL)accessibility excludedPoints:(NSArray *)excludedPoints completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPoint</Name>
+					<Abstract type="html">A PWMapPoint object representing the start point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>endPoint</Name>
+					<Abstract type="html">A PWMapPoint object representing the end point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>accessibility</Name>
+					<Abstract type="html">A BOOL value to tell the route init if accessibility should be considered to calculate the route.</Abstract>
+				</Parameter><Parameter>
+					<Name>excludedPoints</Name>
+					<Abstract type="html">An array of points to tell the route result should exclude.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler that is called once the route&apos;s calculation is complete.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

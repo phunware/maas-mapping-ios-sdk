@@ -21,16 +21,16 @@
 /**
  *  The identifier for the point of interest type that corresponds to the MaaS Portal.
  */
-@property (nonatomic,readonly) NSInteger identifier;
+@property (nonatomic, readonly) NSInteger identifier;
 
 /**
  *  The name of the point of interest type as defined in MaaS Portal.
  */
-@property (nonatomic,readonly) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 
 /**
  *  The representative UIImage of the point of interest type.
  */
-@property (nonatomic,readonly) UIImage *image;
+@property (nonatomic, readonly) UIImage *image;
 
 @end

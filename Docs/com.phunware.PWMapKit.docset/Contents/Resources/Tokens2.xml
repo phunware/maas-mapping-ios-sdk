@@ -208,6 +208,9 @@
 				</Parameter><Parameter>
 					<Name>completion</Name>
 					<Abstract type="html">Completion handler that is called once building load is complete.</Abstract>
+				</Parameter><Parameter>
+					<Name>discussion</Name>
+					<Abstract type="html">Please change to use [PWBuilding buildingWithIdentifier:completion:] instead.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -323,6 +326,23 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">Returns a PWPointOfInterest object.</Abstract></ReturnValue>
 			<Anchor>//api/name/pointOfInterestClosestToLocation:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/getFloorByFloorId:</TokenIdentifier>
+			<Abstract type="html">Returns a PWFloor instance that has the given floor identifier.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>- (PWFloor *)getFloorByFloorId:(NSInteger)floorId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier of the floor.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWFloor instance that has the given identifier.</Abstract></ReturnValue>
+			<Anchor>//api/name/getFloorByFloorId:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

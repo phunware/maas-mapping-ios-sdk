@@ -1,17 +1,35 @@
 #PWMapKit Changelog
+##v3.1.2 (Wednesday, Apr 12th, 2017)
+
+* Add PWCustomPointOfInterest.
+
+* Performance improvement
+	* Significantly reduce times of zoom level calculator.
+	* Routing with tracking mode `Follow Me With Heading` improvement.
+	* Map load/render time lowered.
+
+* Bug Fixes
+	* Floor change intermittent failures.
+	* Route not found from current location to POI.
+
+* Other
+	* Deprecated startPointOfInterest and endPointOfInterest properties in PWRouteInstruction, replaced with startPoint and endPoint.
+	* Deprecated `initWithLatitude:` method in PWCustomLocation, replaced with `initWithCoordinate:`.
+	* Create PWMapPoint protocol and make POIs, waypoints, and custom location conform to it.
+
 ##v3.1.1 (Tuesday, Mar 28th, 2017)
 
 * Enable `zoomLevel` property in PWMapView.
-* Route behaivor improvements:
+* Route behavior improvements:
 	* Make `Follow Me` as default tracking mode.
 	* Automatically enable `Follow me` tracking mode when device is close to current route instruction.
-	* User can swip to view future/past route instructions when `Follow Me` is enabled.
+	* User can swipe to view future/past route instructions when `Follow Me` is enabled.
 	 
 * Bug fixes:
 	* Use the cached bundle instead when network is unavailable.
 	* Wrong route instruction text for elevator.
 	* The callback `mapView:didDeselectBuildingAnnotationView:` never be fired.
-	* The POI image always be nil.
+	* The PointOfInterestType image is always nil.
 
 ##v3.1.0 (Friday, Jan 27th, 2017)
 

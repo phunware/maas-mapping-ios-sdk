@@ -16,10 +16,11 @@
 #import <PWMapKit/PWCustomLocation.h>
 #import <PWMapKit/PWRoute.h>
 #import <PWMapKit/PWRouteInstruction.h>
-/** Need to be added **/
-#import <PWMapKit/PWRouteStartView.h>
+#import <PWMapKit/PWMapPoint.h>
+#import <PWMapKit/PWCustomPointOfInterest.h>
 
 /** Light weight UI **/
+#import <PWMapKit/PWRouteStartView.h>
 #import <PWMapKit/PWMapViewController.h>
 #import <PWMapKit/PWBuildingViewController.h>
 #import <PWMapKit/PWRouteViewController.h>
