@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWTrackingMode.html">
+	<File path="Constants/PWMapViewLocationType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWTrackingMode</TokenIdentifier>
-			<Abstract type="html">Supported Tracking mode values.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/PWMapViewLocationType</TokenIdentifier>
+			<Abstract type="html">Supported location providers types.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
@@ -14,10 +14,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWTrackingModeNone</TokenIdentifier>
-            <Abstract type="html">Tracking mode off.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeNone</TokenIdentifier>
+            <Abstract type="html">Location provider type none.
      </Abstract>
-            <Declaration>PWTrackingModeNone</Declaration>
+            <Declaration>PWMapViewLocationTypeNone</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             
@@ -25,10 +25,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWTrackingModeFollow</TokenIdentifier>
-            <Abstract type="html">Tracks user movement of the map.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMSE</TokenIdentifier>
+            <Abstract type="html">Location provider type MSE.
      </Abstract>
-            <Declaration>PWTrackingModeFollow</Declaration>
+            <Declaration>PWMapViewLocationTypeMSE</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             
@@ -36,10 +36,43 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWTrackingModeFollowWithHeading</TokenIdentifier>
-            <Abstract type="html">Tracks user movement of the map and rotates when the heading changes.
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeBLE</TokenIdentifier>
+            <Abstract type="html">Location provider type BLE.
      </Abstract>
-            <Declaration>PWTrackingModeFollowWithHeading</Declaration>
+            <Declaration>PWMapViewLocationTypeBLE</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeGPS</TokenIdentifier>
+            <Abstract type="html">Location provider type GPS.
+     </Abstract>
+            <Declaration>PWMapViewLocationTypeGPS</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeFused</TokenIdentifier>
+            <Abstract type="html">Location provider type Fused.
+     </Abstract>
+            <Declaration>PWMapViewLocationTypeFused</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMock</TokenIdentifier>
+            <Abstract type="html">Location provider type Mock.
+     </Abstract>
+            <Declaration>PWMapViewLocationTypeMock</Declaration>
             
             <DeclaredIn>PWMapView.h</DeclaredIn>
             

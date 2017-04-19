@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWRouteSnapTolerance.html">
+	<File path="Constants/PWCustomLocationType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWRouteSnapTolerance</TokenIdentifier>
-			<Abstract type="html">Supported Route Snapping Tolerance values.</Abstract>
-			<DeclaredIn>PWMapView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PWCustomLocationType</TokenIdentifier>
+			<Abstract type="html">Defines the different types of custom locations</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -14,45 +14,23 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapOff</TokenIdentifier>
-            <Abstract type="html">Route Snapping off.
+            <TokenIdentifier>//apple_ref/c/econst/PWCustomLocationTypeCurrentLocation</TokenIdentifier>
+            <Abstract type="html">Represents custom location type for current location.
      </Abstract>
-            <Declaration>PWRouteSnapOff</Declaration>
+            <Declaration>PWCustomLocationTypeCurrentLocation</Declaration>
             
-            <DeclaredIn>PWMapView.h</DeclaredIn>
+            <DeclaredIn>PWCustomLocation.h</DeclaredIn>
             
             <NodeRef refid="26"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceNormal</TokenIdentifier>
-            <Abstract type="html">Route Snapping normal.
+            <TokenIdentifier>//apple_ref/c/econst/PWCustomLocationTypeDroppedPin</TokenIdentifier>
+            <Abstract type="html">Represents custom location type for dropped pin location.
      </Abstract>
-            <Declaration>PWRouteSnapToleranceNormal</Declaration>
+            <Declaration>PWCustomLocationTypeDroppedPin</Declaration>
             
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="26"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceMedium</TokenIdentifier>
-            <Abstract type="html">Route Snapping medium.
-     </Abstract>
-            <Declaration>PWRouteSnapToleranceMedium</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="26"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceHigh</TokenIdentifier>
-            <Abstract type="html">Route Snapping high.
-     </Abstract>
-            <Declaration>PWRouteSnapToleranceHigh</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
+            <DeclaredIn>PWCustomLocation.h</DeclaredIn>
             
             <NodeRef refid="26"/>
         </Token>

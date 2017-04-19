@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>PWAnnotationLabel Class Reference</title>
+	<title>PWRouteStartViewDelegate Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -54,17 +52,15 @@
 
 	
 	
-	<optgroup label="Properties">
+
+	
+
+	
+	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/strokeColor">strokeColor</option>
-		
-		<option value="//api/name/strokeWidth">strokeWidth</option>
+		<option value="//api/name/didSelectDetails:">- didSelectDetails:</option>
 		
 	</optgroup>
-	
-
-	
-
 	
 	
 </select>
@@ -79,29 +75,21 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">PWAnnotationLabel Class Reference</h1>
+					<h1 class="title">PWRouteStartViewDelegate Protocol Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Inherits from</th>
-	<td>UILabel</td>
+	<th>Conforms to</th>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>PWAnnotationLabel.h</td>
+	<td>PWRouteStartView.h</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>PWAnnotationLabel</code> is a <code>UILabel</code> subclass used with annotation views that allows stroke color and width customizations.</p>
-					</div>
-					
-					
 
 					
 					
@@ -114,8 +102,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/strokeColor" title="strokeColor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/strokeColor">&nbsp;&nbsp;strokeColor</a></code>
+	<a name="//api/name/didSelectDetails:" title="didSelectDetails:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didSelectDetails:">&ndash;&nbsp;didSelectDetails:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -123,76 +111,10 @@
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>The stroke color of the text outline.</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) UIColor *strokeColor</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)didSelectDetails:(PWRoute *)<em>route</em></code></div>
 
 		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWAnnotationLabel.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/strokeWidth" title="strokeWidth"></a>
-	<h3 class="method-title"><code><a href="#//api/name/strokeWidth">&nbsp;&nbsp;strokeWidth</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The stroke width of the text outline.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGFloat strokeWidth</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWAnnotationLabel.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div>
