@@ -1,83 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PWMapViewLocationType.html">
+	<File path="Protocols/PWRouteStartViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PWMapViewLocationType</TokenIdentifier>
-			<Abstract type="html">Supported location providers types.</Abstract>
-			<DeclaredIn>PWMapView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWRouteStartViewDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteStartView.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeNone</TokenIdentifier>
-            <Abstract type="html">Location provider type none.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeNone</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteStartViewDelegate/didSelectDetails:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteStartView.h</DeclaredIn>
+			
+			<Declaration>- (void)didSelectDetails:(PWRoute *)route</Declaration>
+			
+			
+			<Anchor>//api/name/didSelectDetails:</Anchor>
             <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMSE</TokenIdentifier>
-            <Abstract type="html">Location provider type MSE.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeMSE</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeBLE</TokenIdentifier>
-            <Abstract type="html">Location provider type BLE.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeBLE</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeGPS</TokenIdentifier>
-            <Abstract type="html">Location provider type GPS.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeGPS</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeFused</TokenIdentifier>
-            <Abstract type="html">Location provider type Fused.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeFused</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PWMapViewLocationTypeMock</TokenIdentifier>
-            <Abstract type="html">Location provider type Mock.
-     </Abstract>
-            <Declaration>PWMapViewLocationTypeMock</Declaration>
-            
-            <DeclaredIn>PWMapView.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

@@ -62,6 +62,35 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/initWithCoordinate:identifier:floorId:buildingId:title:</TokenIdentifier>
+			<Abstract type="html">Instantiates a PWCustomLocation object with the given properties.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>- (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate identifier:(NSInteger)identifier floorId:(NSInteger)floorId buildingId:(NSInteger)buildingId title:(NSString *__nullable)title</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>coordinate</Name>
+					<Abstract type="html">The lat, long position of the custom location</Abstract>
+				</Parameter><Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">Integer to help the developer identify the custom location</Abstract>
+				</Parameter><Parameter>
+					<Name>floorId</Name>
+					<Abstract type="html">The MaaS identifier of the floor the custom location is on</Abstract>
+				</Parameter><Parameter>
+					<Name>buildingId</Name>
+					<Abstract type="html">The MaaS identifier of the building the custom location is in</Abstract>
+				</Parameter><Parameter>
+					<Name>title</Name>
+					<Abstract type="html">The name of the custom location</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWCustomLocation object, or nil if the given coordinate is invalid.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCoordinate:identifier:floorId:buildingId:title:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/initWithLatitude:longitude:</TokenIdentifier>
 			<Abstract type="html">Instantiates a PWCustomLocation object with the given latitude and longitude parameters.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>

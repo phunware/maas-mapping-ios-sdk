@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWRouteInstructionViewDelegate.html">
+	<File path="Protocols/PWMapPoint.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWRouteInstructionViewDelegate</TokenIdentifier>
-			<Abstract type="html">PWRouteInstructionViewDelegate protocol definition.</Abstract>
-			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/PWMapPoint</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,22 +13,218 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWRouteInstructionViewDelegate/route:didChangeRouteInstruction:</TokenIdentifier>
-			<Abstract type="html">This delegate is called when the route instruction has changed in the PWRouteInstructionsView instance.</Abstract>
-			<DeclaredIn>PWRouteInstructionsView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The point identifier as specified by the mapping service.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
 			
-			<Declaration>- (void)route:(PWRoute *)route didChangeRouteInstruction:(PWRouteInstruction *)instruction</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>route</Name>
-					<Abstract type="html">A reference to the current PWRoute object.</Abstract>
-				</Parameter><Parameter>
-					<Name>instruction</Name>
-					<Abstract type="html">A PWRouteInstruction reference to the new instruction that has changed in the view.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
 			
-			<Anchor>//api/name/route:didChangeRouteInstruction:</Anchor>
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/identifier</TokenIdentifier>
+			<Abstract type="html">The point identifier as specified by the mapping service.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWMapPoint/identifier</TokenIdentifier>
+			<Abstract type="html">The point identifier as specified by the mapping service.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWMapPoint/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/setBuildingID:</TokenIdentifier>
+			<Abstract type="html">The building identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/buildingID</TokenIdentifier>
+			<Abstract type="html">The building identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWMapPoint/buildingID</TokenIdentifier>
+			<Abstract type="html">The building identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/setAccessible:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an accessible point.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/isAccessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an accessible point.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWMapPoint/accessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an accessible point.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/setVisualImpaired:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point is friendly to the visually-impaired.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isVisualImpaired) BOOL visualImpaired</Declaration>
+			
+			
+			<Anchor>//api/name/visualImpaired</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/isVisualImpaired</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point is friendly to the visually-impaired.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isVisualImpaired) BOOL visualImpaired</Declaration>
+			
+			
+			<Anchor>//api/name/visualImpaired</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWMapPoint/visualImpaired</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point is friendly to the visually-impaired.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isVisualImpaired) BOOL visualImpaired</Declaration>
+			
+			
+			<Anchor>//api/name/visualImpaired</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/setExit:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an exit point.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isExit) BOOL exit</Declaration>
+			
+			
+			<Anchor>//api/name/exit</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/isExit</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an exit point.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isExit) BOOL exit</Declaration>
+			
+			
+			<Anchor>//api/name/exit</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWMapPoint/exit</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an exit point.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isExit) BOOL exit</Declaration>
+			
+			
+			<Anchor>//api/name/exit</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

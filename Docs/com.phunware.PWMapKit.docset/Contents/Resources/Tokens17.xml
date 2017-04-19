@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteViewController.html">
+	<File path="Classes/PWRouteStartView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteViewController</TokenIdentifier>
-			<Abstract type="html">A view controller that lets the user browse and search a PWBuilding structure to navigate from a start point of interest to an end point of interest.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRouteStartView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteStartView.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,23 +13,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStartView/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteStartView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</Declaration>
+			<Declaration>@property (strong, atomic) id&lt;PWRouteStartViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -37,11 +25,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStartView/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteStartView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</Declaration>
+			<Declaration>@property (strong, atomic) id&lt;PWRouteStartViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -49,111 +37,26 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/setCustomLocation:</TokenIdentifier>
-			<Abstract type="html">A reference to a current custom location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteStartView/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteStartView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
+			<Declaration>@property (strong, atomic) id&lt;PWRouteStartViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/customLocation</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/customLocation</TokenIdentifier>
-			<Abstract type="html">A reference to a current custom location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteStartView/setRoute:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWRouteStartView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
-			
-			
-			<Anchor>//api/name/customLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteViewController/customLocation</TokenIdentifier>
-			<Abstract type="html">A reference to a current custom location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
+			<Declaration>- (void)setRoute:(PWRoute *)route</Declaration>
 			
 			
-			<Anchor>//api/name/customLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/setUserLocation:</TokenIdentifier>
-			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *userLocation</Declaration>
-			
-			
-			<Anchor>//api/name/userLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/userLocation</TokenIdentifier>
-			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *userLocation</Declaration>
-			
-			
-			<Anchor>//api/name/userLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteViewController/userLocation</TokenIdentifier>
-			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *userLocation</Declaration>
-			
-			
-			<Anchor>//api/name/userLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/initWithBuilding:</TokenIdentifier>
-			<Abstract type="html">Initializes a PWRouteViewController instance for a given building structure.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">A PWBuilding object.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWRouteViewController instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithBuilding:</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/initWithBuilding:withAccessibility:</TokenIdentifier>
-			<Abstract type="html">Initializes a PWRouteViewController instance for a given building structure considering accessibility.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building withAccessibility:(BOOL)accessible</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">A PWBuilding object.</Abstract>
-				</Parameter><Parameter>
-					<Name>accessible</Name>
-					<Abstract type="html">A BOOL value to determine if accessibility should be used while calculating the route.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWRouteViewController instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithBuilding:withAccessibility:</Anchor>
+			<Anchor>//api/name/setRoute:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
