@@ -46,6 +46,23 @@ typedef NS_ENUM(NSUInteger, PWCustomLocationType) {
 - (instancetype __nonnull)init __unavailable;
 
 /**
+ *  Instantiates a PWCustomLocation object with the given properties.
+ *
+ *  @param coordinate   The lat, long position of the custom location
+ *  @param identifier   Integer to help the developer identify the custom location
+ *  @param floorId      The MaaS identifier of the floor the custom location is on
+ *  @param buildingId   The MaaS identifier of the building the custom location is in
+ *  @param title        The name of the custom location
+ *
+ *  @return Returns a PWCustomLocation object, or nil if the given coordinate is invalid.
+ */
+- (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate
+                                   identifier:(NSInteger)identifier
+                                      floorId:(NSInteger)floorId
+                                   buildingId:(NSInteger)buildingId
+                                        title:(NSString* __nullable)title;
+
+/**
  *  Instantiates a PWCustomLocation object with the given latitude and longitude parameters.
  *
  *  @param latitude  A double value to represent the latitude of a custom location

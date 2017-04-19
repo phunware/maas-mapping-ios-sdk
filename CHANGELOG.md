@@ -1,4 +1,10 @@
 #PWMapKit Changelog
+##v3.1.3 (Wednesday, Apr 19th, 2017)
+
+* Bug fixes
+	* Can route from user location on first user location update
+	* PWCustomLocation public initialization method
+
 ##v3.1.2 (Wednesday, Apr 12th, 2017)
 
 * New features
