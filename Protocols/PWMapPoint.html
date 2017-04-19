@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>PWPointOfInterest Class Reference</title>
+	<title>PWMapPoint Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -56,15 +54,17 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/floor">floor</option>
+		<option value="//api/name/accessible">accessible</option>
 		
-		<option value="//api/name/image">image</option>
+		<option value="//api/name/buildingID">buildingID</option>
 		
-		<option value="//api/name/metaData">metaData</option>
+		<option value="//api/name/exit">exit</option>
 		
-		<option value="//api/name/pointOfInterestType">pointOfInterestType</option>
+		<option value="//api/name/floorID">floorID</option>
 		
-		<option value="//api/name/summary">summary</option>
+		<option value="//api/name/identifier">identifier</option>
+		
+		<option value="//api/name/visualImpaired">visualImpaired</option>
 		
 	</optgroup>
 	
@@ -85,32 +85,21 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">PWPointOfInterest Class Reference</h1>
+					<h1 class="title">PWMapPoint Protocol Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Inherits from</th>
-	<td>NSObject</td>
-</tr><tr>
 	<th>Conforms to</th>
-	<td><a href="../Protocols/PWMapPoint.html">PWMapPoint</a></td>
+	<td>MKAnnotation</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>PWPointOfInterest.h</td>
+	<td>PWMapPoint.h</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A PWPointOfInterest represents single point of interest defined within MaaS Portal.</p>
-					</div>
-					
-					
 
 					
 					
@@ -118,14 +107,14 @@
 						<a title="Tasks" name="tasks"></a>
 						
 
-						<a title="Properties" name="task_Properties"></a>
 						
-<h2 class="task-title">Properties</h2>
+						
+
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/summary" title="summary"></a>
-	<h3 class="method-title"><code><a href="#//api/name/summary">&nbsp;&nbsp;summary</a></code>
-</h3>
+	<a name="//api/name/identifier" title="identifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/identifier">&nbsp;&nbsp;identifier</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -134,12 +123,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A summary description of the point of interest.</p>
+				<p>The point identifier as specified by the mapping service.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *summary</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger identifier</code></div>
 
 		    
 			
@@ -157,16 +146,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+				<p><code class="declared-in-ref">PWMapPoint.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/floor" title="floor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/floor">&nbsp;&nbsp;floor</a></code>
-</h3>
+	<a name="//api/name/floorID" title="floorID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/floorID">&nbsp;&nbsp;floorID</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -175,12 +164,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The <a href="../Classes/PWFloor.html">PWFloor</a> object that the point of interest is a member of.</p>
+				<p>The floor <a href="#//api/name/identifier">identifier</a> for which this point applies.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, weak) PWFloor *floor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger floorID</code></div>
 
 		    
 			
@@ -198,16 +187,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+				<p><code class="declared-in-ref">PWMapPoint.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/pointOfInterestType" title="pointOfInterestType"></a>
-	<h3 class="method-title"><code><a href="#//api/name/pointOfInterestType">&nbsp;&nbsp;pointOfInterestType</a></code>
-</h3>
+	<a name="//api/name/buildingID" title="buildingID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/buildingID">&nbsp;&nbsp;buildingID</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -216,12 +205,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The <a href="../Classes/PWPointOfInterestType.html">PWPointOfInterestType</a> object that the point of interest is a member of.</p>
+				<p>The building <a href="#//api/name/identifier">identifier</a> for which this point applies.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger buildingID</code></div>
 
 		    
 			
@@ -239,16 +228,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+				<p><code class="declared-in-ref">PWMapPoint.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/image" title="image"></a>
-	<h3 class="method-title"><code><a href="#//api/name/image">&nbsp;&nbsp;image</a></code>
-</h3>
+	<a name="//api/name/accessible" title="accessible"></a>
+	<h3 class="method-title"><code><a href="#//api/name/accessible">&nbsp;&nbsp;accessible</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -257,12 +246,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The representative UIImage of the point of interest.</p>
+				<p>A flag indicating whether it&rsquo;s an accessible point.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIImage *image</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</code></div>
 
 		    
 			
@@ -280,16 +269,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+				<p><code class="declared-in-ref">PWMapPoint.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/metaData" title="metaData"></a>
-	<h3 class="method-title"><code><a href="#//api/name/metaData">&nbsp;&nbsp;metaData</a></code>
-</h3>
+	<a name="//api/name/visualImpaired" title="visualImpaired"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visualImpaired">&nbsp;&nbsp;visualImpaired</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -298,12 +287,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Metadata associated with the point of interest.</p>
+				<p>A flag indicating whether the point is friendly to the visually-impaired.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *metaData</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isVisualImpaired) BOOL visualImpaired</code></div>
 
 		    
 			
@@ -321,7 +310,48 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+				<p><code class="declared-in-ref">PWMapPoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exit" title="exit"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exit">&nbsp;&nbsp;exit</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A flag indicating whether it&rsquo;s an exit point.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isExit) BOOL exit</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapPoint.h</code></p>
 			</div>
 			
 			
