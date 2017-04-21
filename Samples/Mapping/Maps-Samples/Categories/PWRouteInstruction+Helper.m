@@ -55,14 +55,14 @@
 }
 
 - (BOOL)isEqualRouteInstruction:(PWRouteInstruction *)object {
-    if (!object || !CLLocationCoordinate2DIsValid(object.route.startPointOfInterest.coordinate) || !CLLocationCoordinate2DIsValid(object.route.endPointOfInterest.coordinate)) {
+    if (!object || !CLLocationCoordinate2DIsValid(object.route.startPoint.coordinate) || !CLLocationCoordinate2DIsValid(object.route.endPoint.coordinate)) {
         return NO;
     }
     
-    if (self.route.startPointOfInterest.coordinate.latitude == object.route.startPointOfInterest.coordinate.latitude &&
-        self.route.startPointOfInterest.coordinate.longitude == object.route.startPointOfInterest.coordinate.longitude &&
-        self.route.endPointOfInterest.coordinate.latitude == object.route.endPointOfInterest.coordinate.latitude &&
-        self.route.endPointOfInterest.coordinate.longitude == object.route.endPointOfInterest.coordinate.longitude) {
+    if (self.route.startPoint.coordinate.latitude == object.route.startPoint.coordinate.latitude &&
+        self.route.startPoint.coordinate.longitude == object.route.startPoint.coordinate.longitude &&
+        self.route.endPoint.coordinate.latitude == object.route.endPoint.coordinate.latitude &&
+        self.route.endPoint.coordinate.longitude == object.route.endPoint.coordinate.longitude) {
         return YES;
     }
     

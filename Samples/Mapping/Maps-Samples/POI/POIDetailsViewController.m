@@ -165,7 +165,7 @@ static CGFloat const GetDirectionsContainerViewHeight = 80.0;
 
 - (void)getDirectionsButtonTapped {
     __weak typeof(self) weakSelf = self;
-    [PWRoute initRouteFrom:self.userLocation to:self.pointOfInterest accessibility:YES completion:^(PWRoute *route, NSError *error) {
+    [PWRoute createRouteFrom:self.userLocation to:self.pointOfInterest accessibility:YES excludedPoints:nil completion:^(PWRoute *route, NSError *error) {
         PreRoutingViewController *preRoutingViewController = [PreRoutingViewController new];
         preRoutingViewController.route = route;
         [weakSelf showViewController:preRoutingViewController sender:weakSelf];

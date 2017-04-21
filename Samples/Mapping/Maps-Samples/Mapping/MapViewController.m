@@ -491,7 +491,7 @@ const CGFloat RouteInstructionHeight = 75.0f;
     
     // Start route
     __weak typeof(self) weakSelf = self;
-    [PWRoute initRouteFrom:self.mapView.userLocation to:self.mapView.currentRoute.endPointOfInterest accessibility:YES completion:^(PWRoute *route, NSError *error) {
+    [PWRoute createRouteFrom:self.mapView.userLocation to:self.mapView.currentRoute.endPoint accessibility:YES excludedPoints:nil completion:^(PWRoute *route, NSError *error) {
         if (error) {
             NSLog(@"There was a problem with recalculating the route.");
             return;

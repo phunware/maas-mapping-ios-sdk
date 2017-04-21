@@ -43,7 +43,7 @@ NSString * const MapPreviewTableViewCellReuseIdentifier = @"MapPreviewTableViewC
     if (!self.routeAlreadyStarted) {
         self.routeAlreadyStarted = YES;
         
-        [self.mapView setFloor:self.route.startPointOfInterest.floor];
+        [self.mapView setFloor:[self.route.building getFloorByFloorId:self.route.startPoint.floorID]];
         [self.mapView navigateWithRoute:self.route];
     }
 }

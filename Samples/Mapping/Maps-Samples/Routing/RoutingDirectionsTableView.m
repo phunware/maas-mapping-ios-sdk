@@ -165,7 +165,7 @@
     UILabel *second = [[UILabel alloc] initWithFrame:CGRectZero];
     second.font = [UIFont boldSystemFontOfSize:20.0];
     second.textColor = [UIColor darkGrayColor];
-    second.text = self.route.endPointOfInterest.title;
+    second.text = self.route.endPoint.title;
     second.backgroundColor = [CommonSettings commonViewForgroundColor];
     [headerView addSubview:second];
     [second autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:first withOffset:kStandardLineSpace];
@@ -175,7 +175,7 @@
     UILabel *third = [[UILabel alloc] initWithFrame:CGRectZero];
     third.font = [UIFont boldSystemFontOfSize:17.0];
     third.textColor = [UIColor darkGrayColor];
-    third.text = self.route.endPointOfInterest.floor.name;
+    third.text = [self.route.building getFloorByFloorId:self.route.endPoint.floorID].name;
     third.backgroundColor = [CommonSettings commonViewForgroundColor];
     [headerView addSubview:third];
     [third autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:second withOffset:kStandardLineSpace];

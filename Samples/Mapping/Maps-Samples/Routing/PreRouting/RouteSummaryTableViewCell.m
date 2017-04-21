@@ -76,11 +76,11 @@ static CGFloat const HeaderLabelBottomInset = 10.0;
     NSDictionary *valueTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],
                                           NSFontAttributeName:[UIFont boldSystemFontOfSize:18.0]};
     
-    PWFloor *startPointFloor = self.route.startPointOfInterest.floor;
-    PWFloor *endPointFloor = self.route.endPointOfInterest.floor;
+    PWFloor *startPointFloor = [self.route.building getFloorByFloorId:self.route.startPoint.floorID];
+    PWFloor *endPointFloor = [self.route.building getFloorByFloorId:self.route.endPoint.floorID];
     
     NSAttributedString *currentFloorValue = [[NSAttributedString alloc] initWithString:startPointFloor.name?:PWLocalizedString(@"Unknown", @"Unknown") attributes:valueTextAttributes];
-    NSAttributedString *destinationPOIValue = [[NSAttributedString alloc] initWithString:self.route.endPointOfInterest.title?:PWLocalizedString(@"Unknown", @"Unknown") attributes:valueTextAttributes];
+    NSAttributedString *destinationPOIValue = [[NSAttributedString alloc] initWithString:self.route.endPoint.title?:PWLocalizedString(@"Unknown", @"Unknown") attributes:valueTextAttributes];
     NSString *estimatedTimeString = [numberFormatter stringFromNumber:@(self.route.estimatedTime)];
     NSString *travelTimeValueText = [NSString stringWithFormat:PWLocalizedString(@"XPluralMinutes", @"%@ minutes"), estimatedTimeString];
     if ([estimatedTimeString isEqualToString:@"1"]) {
