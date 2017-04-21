@@ -321,7 +321,7 @@
     }
     
     BOOL accessibility = _accessibilityButton.selected;
-    PWPointOfInterest *startPoint = self.startPOI;
+    id<PWMapPoint> startPoint = self.startPOI;
     if (!startPoint) {
         if ([self.startField.text isEqualToString:self.droppedPinText]) {
             startPoint = self.mapViewController.mapView.customLocation;
@@ -329,7 +329,7 @@
             startPoint = self.mapViewController.mapView.userLocation;
         }
     }
-    PWPointOfInterest *endPoint = self.endPOI;
+    id<PWMapPoint> endPoint = self.endPOI;
     if (!endPoint) {
         if ([self.endField.text isEqualToString:self.droppedPinText]) {
             endPoint = self.mapViewController.mapView.customLocation;
@@ -339,7 +339,7 @@
     }
     
     __weak typeof(self) weakself = self;
-    [PWRoute initRouteFrom:startPoint to:endPoint accessibility:accessibility completion:^(PWRoute *route, NSError *error) {
+    [PWRoute createRouteFrom:startPoint to:endPoint accessibility:accessibility excludedPoints:nil completion:^(PWRoute *route, NSError *error) {
         if (route) {
             [weakself.mapViewController.navigationItem setRightBarButtonItem:nil];
             [weakself.tableView setHidden:YES];
