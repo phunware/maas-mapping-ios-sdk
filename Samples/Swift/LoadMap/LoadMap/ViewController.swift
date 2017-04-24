@@ -26,10 +26,12 @@ class ViewController: UIViewController {
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             self?.mapView.setBuilding(building)
             
-            let managedLocationManager = PWManagedLocationManager.init(buildingId: (self?.buildingIdentifier)!)
-            
-            DispatchQueue.main.async {
-                self?.mapView.register(managedLocationManager)
+            if let buildingIdentifier = self?.buildingIdentifier {
+                let managedLocationManager = PWManagedLocationManager.init(buildingId: buildingIdentifier)
+                
+                DispatchQueue.main.async {
+                    self?.mapView.register(managedLocationManager)
+                }
             }
         }
     }
