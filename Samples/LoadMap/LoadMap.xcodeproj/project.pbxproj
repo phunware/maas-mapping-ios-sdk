@@ -193,7 +193,7 @@
 				TargetAttributes = {
 					9D383A821D46CDF5009AF797 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 84CK77G588;
+						ProvisioningStyle = Automatic;
 					};
 					9D383A9B1D46CDF5009AF797 = {
 						CreatedOnToolsVersion = 7.3;
@@ -376,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -414,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -426,7 +426,8 @@
 			baseConfigurationReference = 106A58AF4DEC5F748D2FFEE1 /* Pods-LoadMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 84CK77G588;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LoadMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.LoadMap;
@@ -439,7 +440,8 @@
 			baseConfigurationReference = ECEAD8A3CD4818B95DF051CC /* Pods-LoadMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 84CK77G588;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LoadMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.LoadMap;
@@ -481,7 +483,7 @@
 				9D383AA41D46CDF5009AF797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		9D383AA51D46CDF5009AF797 /* Build configuration list for PBXNativeTarget "LoadMap" */ = {
 			isa = XCConfigurationList;
@@ -490,7 +492,7 @@
 				9D383AA71D46CDF5009AF797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		9D383AA81D46CDF5009AF797 /* Build configuration list for PBXNativeTarget "LoadMapTests" */ = {
 			isa = XCConfigurationList;
@@ -499,7 +501,7 @@
 				9D383AAA1D46CDF5009AF797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
