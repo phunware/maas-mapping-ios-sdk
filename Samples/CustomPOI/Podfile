@@ -5,5 +5,5 @@ xcodeproj 'CustomPOI.xcodeproj'
 inhibit_all_warnings!
 
 target :CustomPOI do
-    pod 'PWMapKit’, ‘~> 3.1’
+    pod 'PWMapKit’
 end
