@@ -24,7 +24,6 @@
 		E34A02FE1EAE923B00569719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E34A03011EAE923B00569719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E34A03031EAE923B00569719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E34A031A1EAE932200569719 /* LoadMap copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LoadMap copy-Info.plist"; path = "/Users/patrickdunshee/repos/test/maas-mapping-ios-sdk/Samples/Swift/LoadMap/LoadMap copy-Info.plist"; sourceTree = "<absolute>"; };
 		F1FA4280A3EB8097B787C15F /* Pods-LoadMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoadMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoadMap/Pods-LoadMap.debug.xcconfig"; sourceTree = "<group>"; };
 		F9D70C5C5F35353846AFF224 /* Pods_LoadMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoadMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -65,7 +64,6 @@
 				E34A02F51EAE923B00569719 /* Products */,
 				836B88B9EF9196952274D9BA /* Pods */,
 				97D4CF6400D7017AD9FFDAB4 /* Frameworks */,
-				E34A031A1EAE932200569719 /* LoadMap copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
