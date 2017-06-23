@@ -57,6 +57,8 @@
 	
 	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
 	
+	<option value="//api/name/locationSharingDelegate">&nbsp;&nbsp;&nbsp;&nbsp;locationSharingDelegate</option>
+	
 	<option value="//api/name/mapType">&nbsp;&nbsp;&nbsp;&nbsp;mapType</option>
 	
 	<option value="//api/name/mapViewLocationType">&nbsp;&nbsp;&nbsp;&nbsp;mapViewLocationType</option>
@@ -65,6 +67,10 @@
 	
 	<option value="//api/name/routeSnappingTolerance">&nbsp;&nbsp;&nbsp;&nbsp;routeSnappingTolerance</option>
 	
+	<option value="//api/name/sharedLocationDisplayName">&nbsp;&nbsp;&nbsp;&nbsp;sharedLocationDisplayName</option>
+	
+	<option value="//api/name/sharedLocationUserType">&nbsp;&nbsp;&nbsp;&nbsp;sharedLocationUserType</option>
+	
 	<option value="//api/name/trackingMode">&nbsp;&nbsp;&nbsp;&nbsp;trackingMode</option>
 	
 	<option value="//api/name/userLocation">&nbsp;&nbsp;&nbsp;&nbsp;userLocation</option>
@@ -72,6 +78,8 @@
 	<option value="//api/name/userTrackingBarButtonItem">&nbsp;&nbsp;&nbsp;&nbsp;userTrackingBarButtonItem</option>
 	
 	<option value="//api/name/visibleMapRect">&nbsp;&nbsp;&nbsp;&nbsp;visibleMapRect</option>
+	
+	<option value="//api/name/zoomLevel">&nbsp;&nbsp;&nbsp;&nbsp;zoomLevel</option>
 	
 	
 	
@@ -134,7 +142,15 @@
 	
 	<option value="//api/name/showPointsOfInterest:">&nbsp;&nbsp;&nbsp;&nbsp;- showPointsOfInterest:</option>
 	
+	<option value="//api/name/startRetrievingSharedLocations">&nbsp;&nbsp;&nbsp;&nbsp;- startRetrievingSharedLocations</option>
+	
+	<option value="//api/name/startSharingUserLocation">&nbsp;&nbsp;&nbsp;&nbsp;- startSharingUserLocation</option>
+	
 	<option value="//api/name/startUpdatingHeading">&nbsp;&nbsp;&nbsp;&nbsp;- startUpdatingHeading</option>
+	
+	<option value="//api/name/stopRetrievingSharedLocations">&nbsp;&nbsp;&nbsp;&nbsp;- stopRetrievingSharedLocations</option>
+	
+	<option value="//api/name/stopSharingUserLocation">&nbsp;&nbsp;&nbsp;&nbsp;- stopSharingUserLocation</option>
 	
 	<option value="//api/name/stopUpdatingHeading">&nbsp;&nbsp;&nbsp;&nbsp;- stopUpdatingHeading</option>
 	
@@ -188,6 +204,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationSharingDelegate">locationSharingDelegate</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapType">mapType</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapViewLocationType">mapViewLocationType</a></span></li>
@@ -196,6 +214,10 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/routeSnappingTolerance">routeSnappingTolerance</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedLocationDisplayName">sharedLocationDisplayName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedLocationUserType">sharedLocationUserType</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/trackingMode">trackingMode</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userLocation">userLocation</a></span></li>
@@ -203,6 +225,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userTrackingBarButtonItem">userTrackingBarButtonItem</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/visibleMapRect">visibleMapRect</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zoomLevel">zoomLevel</a></span></li>
 	
 </ul></li>
 
@@ -266,7 +290,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showPointsOfInterest:">showPointsOfInterest:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startRetrievingSharedLocations">startRetrievingSharedLocations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startSharingUserLocation">startSharingUserLocation</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startUpdatingHeading">startUpdatingHeading</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopRetrievingSharedLocations">stopRetrievingSharedLocations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopSharingUserLocation">stopSharingUserLocation</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopUpdatingHeading">stopUpdatingHeading</a></span></li>
 	
@@ -330,6 +362,12 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationSharingDelegate">&nbsp;&nbsp;locationSharingDelegate</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -426,6 +464,24 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/visibleMapRect">&nbsp;&nbsp;visibleMapRect</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/zoomLevel">&nbsp;&nbsp;zoomLevel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedLocationDisplayName">&nbsp;&nbsp;sharedLocationDisplayName</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedLocationUserType">&nbsp;&nbsp;sharedLocationUserType</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -620,6 +676,30 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeOverlays:">&ndash;&nbsp;removeOverlays:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startSharingUserLocation">&ndash;&nbsp;startSharingUserLocation</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startRetrievingSharedLocations">&ndash;&nbsp;startRetrievingSharedLocations</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopSharingUserLocation">&ndash;&nbsp;stopSharingUserLocation</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopRetrievingSharedLocations">&ndash;&nbsp;stopRetrievingSharedLocations</a></code>
 	</span>
 	
 	
@@ -961,6 +1041,42 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/locationSharingDelegate" title="locationSharingDelegate"></a>
+	<h3 class="subsubtitle method-title">locationSharingDelegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The location sharing <a href="#//api/name/delegate">delegate</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;PWLocationSharingDelegate&gt; locationSharingDelegate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/mapType" title="mapType"></a>
 	<h3 class="subsubtitle method-title">mapType</h3>
 	
@@ -1081,6 +1197,78 @@
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic) PWRouteSnapTolerance routeSnappingTolerance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedLocationDisplayName" title="sharedLocationDisplayName"></a>
+	<h3 class="subsubtitle method-title">sharedLocationDisplayName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The display name when sharing location</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *sharedLocationDisplayName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedLocationUserType" title="sharedLocationUserType"></a>
+	<h3 class="subsubtitle method-title">sharedLocationUserType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The user type when sharing location</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *sharedLocationUserType</code></div>
 
     
 	
@@ -1242,6 +1430,42 @@
 		<pre><code>Changing the value of this property updates the map view immediately. If you want to animate the change, use the setVisibleMapRect:animated: method instead.
 </code></pre>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/zoomLevel" title="zoomLevel"></a>
+	<h3 class="subsubtitle method-title">zoomLevel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The resolution of current map view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger zoomLevel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -2555,6 +2779,78 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/startRetrievingSharedLocations" title="startRetrievingSharedLocations"></a>
+	<h3 class="subsubtitle method-title">startRetrievingSharedLocations</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts retrieving other user&rsquo;s shared locations</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startRetrievingSharedLocations</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startSharingUserLocation" title="startSharingUserLocation"></a>
+	<h3 class="subsubtitle method-title">startSharingUserLocation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts sharing the user&rsquo;s current location</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startSharingUserLocation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/startUpdatingHeading" title="startUpdatingHeading"></a>
 	<h3 class="subsubtitle method-title">startUpdatingHeading</h3>
 	
@@ -2567,6 +2863,78 @@
     
 
 	<div class="method-subsection method-declaration"><code>- (void)startUpdatingHeading</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopRetrievingSharedLocations" title="stopRetrievingSharedLocations"></a>
+	<h3 class="subsubtitle method-title">stopRetrievingSharedLocations</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops retrieving other user&rsquo;s shared locations</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopRetrievingSharedLocations</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopSharingUserLocation" title="stopSharingUserLocation"></a>
+	<h3 class="subsubtitle method-title">stopSharingUserLocation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops sharing the user&rsquo;s current location</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopSharingUserLocation</code></div>
 
     
 	
@@ -2736,7 +3104,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-01-26)</span><br />
+						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-06-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWBuildingViewControllerDelegate Protocol Reference</title>
+		<title>PWLocationSharingDelegate Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWBuildingViewControllerDelegate Protocol Reference</h1>
+				<h1 class="hideInXcode">PWLocationSharingDelegate Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -25,8 +25,6 @@
 				<li id="jumpto_button" role="navigation">
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
-	
-	<option value="overview">Overview</option>
 	
 	
 	
@@ -43,9 +41,11 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/didDismissBuildingViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- didDismissBuildingViewController:</option>
+	<option value="//api/name/didAddSharedLocations:">&nbsp;&nbsp;&nbsp;&nbsp;- didAddSharedLocations:</option>
 	
-	<option value="//api/name/didSelectPointOfInterest:">&nbsp;&nbsp;&nbsp;&nbsp;- didSelectPointOfInterest:</option>
+	<option value="//api/name/didRemoveSharedLocations:">&nbsp;&nbsp;&nbsp;&nbsp;- didRemoveSharedLocations:</option>
+	
+	<option value="//api/name/didUpdateSharedLocations:">&nbsp;&nbsp;&nbsp;&nbsp;- didUpdateSharedLocations:</option>
 	
 	
 	
@@ -56,8 +56,6 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
-
 
 
 
@@ -75,9 +73,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didDismissBuildingViewController:">didDismissBuildingViewController:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didAddSharedLocations:">didAddSharedLocations:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didSelectPointOfInterest:">didSelectPointOfInterest:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didRemoveSharedLocations:">didRemoveSharedLocations:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didUpdateSharedLocations:">didUpdateSharedLocations:</a></span></li>
 	
 </ul></li>
 
@@ -86,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWBuildingViewControllerDelegate Protocol Reference" name="top"></a>
+				<a title="PWLocationSharingDelegate Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -95,7 +95,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWBuildingViewControllerDelegate Protocol Reference</h1>
+						<h1 class="title title-header">PWLocationSharingDelegate Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -106,20 +106,12 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWBuildingViewController.h</td>
+	<td class="specification-value">PWLocationSharingDelegate.h</td>
 </tr>
 						</tbody></table></div>
 					
                     
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>PWBuildingViewControllerDelegate protocol definition.</p>
-					</div>
-					
-					
 					
 					
 					
@@ -134,13 +126,19 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/didSelectPointOfInterest:">&ndash;&nbsp;didSelectPointOfInterest:</a></code>
+		<code><a href="#//api/name/didUpdateSharedLocations:">&ndash;&nbsp;didUpdateSharedLocations:</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didAddSharedLocations:">&ndash;&nbsp;didAddSharedLocations:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/didDismissBuildingViewController:">&ndash;&nbsp;didDismissBuildingViewController:</a></code>
+		<code><a href="#//api/name/didRemoveSharedLocations:">&ndash;&nbsp;didRemoveSharedLocations:</a></code>
 	</span>
 	
 	
@@ -162,18 +160,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/didDismissBuildingViewController:" title="didDismissBuildingViewController:"></a>
-	<h3 class="subsubtitle method-title">didDismissBuildingViewController:</h3>
+	<a name="//api/name/didAddSharedLocations:" title="didAddSharedLocations:"></a>
+	<h3 class="subsubtitle method-title">didAddSharedLocations:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Informs the receiver that the user dismissed the view controller and returns the point of interest last selected (if any).</p>
+		<p>Passes a set of only added shared locations to the delegate</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)didDismissBuildingViewController:(PWPointOfInterest *)<em>poi</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)didAddSharedLocations:(NSSet&lt;PWSharedLocation*&gt; *)<em>addedSharedLocations</em></code></div>
 
     
 	
@@ -181,8 +179,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>poi</em></dt>
-			<dd><p>the last selected point of interest.</p></dd>
+			<dt><em>addedSharedLocations</em></dt>
+			<dd><p>Shared locations that just started sharing</p></dd>
 		</dl>
 		
 	</div>
@@ -201,25 +199,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingViewController.h</code><br />
+		<code class="declared-in-ref">PWLocationSharingDelegate.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/didSelectPointOfInterest:" title="didSelectPointOfInterest:"></a>
-	<h3 class="subsubtitle method-title">didSelectPointOfInterest:</h3>
+	<a name="//api/name/didRemoveSharedLocations:" title="didRemoveSharedLocations:"></a>
+	<h3 class="subsubtitle method-title">didRemoveSharedLocations:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Informs the receiver that the user selected a point of interest.</p>
+		<p>Passes a set of only removed shared locations to the delegate</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)didSelectPointOfInterest:(PWPointOfInterest *)<em>poi</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)didRemoveSharedLocations:(NSSet&lt;PWSharedLocation*&gt; *)<em>removedSharedLocations</em></code></div>
 
     
 	
@@ -227,8 +225,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>poi</em></dt>
-			<dd><p>The selected point of interest.</p></dd>
+			<dt><em>removedSharedLocations</em></dt>
+			<dd><p>Shared locations that just stopped sharing</p></dd>
 		</dl>
 		
 	</div>
@@ -247,7 +245,53 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWBuildingViewController.h</code><br />
+		<code class="declared-in-ref">PWLocationSharingDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didUpdateSharedLocations:" title="didUpdateSharedLocations:"></a>
+	<h3 class="subsubtitle method-title">didUpdateSharedLocations:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that it has retrieved all shared locations</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)didUpdateSharedLocations:(NSSet&lt;PWSharedLocation*&gt; *)<em>sharedLocations</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sharedLocations</em></dt>
+			<dd><p>The current list of all shared locations</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWLocationSharingDelegate.h</code><br />
 	</div>				
 	
 	
@@ -271,7 +315,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-01-26)</span><br />
+						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-06-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

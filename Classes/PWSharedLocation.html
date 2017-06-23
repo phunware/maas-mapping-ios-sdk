@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWPointOfInterest Class Reference</title>
+		<title>PWSharedLocation Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWPointOfInterest Class Reference</h1>
+				<h1 class="hideInXcode">PWSharedLocation Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,19 +39,30 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/floor">&nbsp;&nbsp;&nbsp;&nbsp;floor</option>
+	<option value="//api/name/buildingId">&nbsp;&nbsp;&nbsp;&nbsp;buildingId</option>
 	
-	<option value="//api/name/image">&nbsp;&nbsp;&nbsp;&nbsp;image</option>
+	<option value="//api/name/confidenceFactor">&nbsp;&nbsp;&nbsp;&nbsp;confidenceFactor</option>
 	
-	<option value="//api/name/metaData">&nbsp;&nbsp;&nbsp;&nbsp;metaData</option>
+	<option value="//api/name/deviceId">&nbsp;&nbsp;&nbsp;&nbsp;deviceId</option>
 	
-	<option value="//api/name/pointOfInterestType">&nbsp;&nbsp;&nbsp;&nbsp;pointOfInterestType</option>
+	<option value="//api/name/displayName">&nbsp;&nbsp;&nbsp;&nbsp;displayName</option>
 	
-	<option value="//api/name/summary">&nbsp;&nbsp;&nbsp;&nbsp;summary</option>
+	<option value="//api/name/floorId">&nbsp;&nbsp;&nbsp;&nbsp;floorId</option>
+	
+	<option value="//api/name/location">&nbsp;&nbsp;&nbsp;&nbsp;location</option>
+	
+	<option value="//api/name/source">&nbsp;&nbsp;&nbsp;&nbsp;source</option>
+	
+	<option value="//api/name/userType">&nbsp;&nbsp;&nbsp;&nbsp;userType</option>
 	
 	
 	
 	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
 	
 	
 	
@@ -79,15 +90,21 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floor">floor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buildingId">buildingId</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/image">image</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/confidenceFactor">confidenceFactor</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/metaData">metaData</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceId">deviceId</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pointOfInterestType">pointOfInterestType</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/displayName">displayName</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/summary">summary</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorId">floorId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/location">location</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/source">source</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userType">userType</a></span></li>
 	
 </ul></li>
 
@@ -95,12 +112,18 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+</ul></li>
+
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWPointOfInterest Class Reference" name="top"></a>
+				<a title="PWSharedLocation Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -109,7 +132,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWPointOfInterest Class Reference</h1>
+						<h1 class="title title-header">PWSharedLocation Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -119,11 +142,8 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/PWMapPoint.html">PWMapPoint</a></td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWPointOfInterest.h</td>
+	<td class="specification-value">PWSharedLocation.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -133,7 +153,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A PWPointOfInterest represents single point of interest defined within MaaS Portal.</p>
+						<p>A PWSharedLocation represents a shared <a href="#//api/name/location">location</a>.</p>
 					</div>
 					
 					
@@ -151,33 +171,57 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/summary">&nbsp;&nbsp;summary</a></code>
+		<code><a href="#//api/name/buildingId">&nbsp;&nbsp;buildingId</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/floor">&nbsp;&nbsp;floor</a></code>
+		<code><a href="#//api/name/floorId">&nbsp;&nbsp;floorId</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/pointOfInterestType">&nbsp;&nbsp;pointOfInterestType</a></code>
+		<code><a href="#//api/name/deviceId">&nbsp;&nbsp;deviceId</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/image">&nbsp;&nbsp;image</a></code>
+		<code><a href="#//api/name/source">&nbsp;&nbsp;source</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/metaData">&nbsp;&nbsp;metaData</a></code>
+		<code><a href="#//api/name/displayName">&nbsp;&nbsp;displayName</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/confidenceFactor">&nbsp;&nbsp;confidenceFactor</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userType">&nbsp;&nbsp;userType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -193,18 +237,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/floor" title="floor"></a>
-	<h3 class="subsubtitle method-title">floor</h3>
+	<a name="//api/name/buildingId" title="buildingId"></a>
+	<h3 class="subsubtitle method-title">buildingId</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The <a href="../Classes/PWFloor.html">PWFloor</a> object that the point of interest is a member of.</p>
+		<p>The building identifier.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, weak) PWFloor *floor</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSNumber *buildingId</code></div>
 
     
 	
@@ -222,25 +266,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWPointOfInterest.h</code><br />
+		<code class="declared-in-ref">PWSharedLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/image" title="image"></a>
-	<h3 class="subsubtitle method-title">image</h3>
+	<a name="//api/name/confidenceFactor" title="confidenceFactor"></a>
+	<h3 class="subsubtitle method-title">confidenceFactor</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The representative UIImage of the point of interest.</p>
+		<p>The accuracy of the shared <a href="#//api/name/location">location</a>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIImage *image</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSNumber *confidenceFactor</code></div>
 
     
 	
@@ -258,25 +302,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWPointOfInterest.h</code><br />
+		<code class="declared-in-ref">PWSharedLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/metaData" title="metaData"></a>
-	<h3 class="subsubtitle method-title">metaData</h3>
+	<a name="//api/name/deviceId" title="deviceId"></a>
+	<h3 class="subsubtitle method-title">deviceId</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Metadata associated with the point of interest.</p>
+		<p>The device identifier.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *metaData</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *deviceId</code></div>
 
     
 	
@@ -294,25 +338,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWPointOfInterest.h</code><br />
+		<code class="declared-in-ref">PWSharedLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/pointOfInterestType" title="pointOfInterestType"></a>
-	<h3 class="subsubtitle method-title">pointOfInterestType</h3>
+	<a name="//api/name/displayName" title="displayName"></a>
+	<h3 class="subsubtitle method-title">displayName</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The <a href="../Classes/PWPointOfInterestType.html">PWPointOfInterestType</a> object that the point of interest is a member of.</p>
+		<p>The display name of the shared <a href="#//api/name/location">location</a>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *displayName</code></div>
 
     
 	
@@ -330,25 +374,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWPointOfInterest.h</code><br />
+		<code class="declared-in-ref">PWSharedLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/summary" title="summary"></a>
-	<h3 class="subsubtitle method-title">summary</h3>
+	<a name="//api/name/floorId" title="floorId"></a>
+	<h3 class="subsubtitle method-title">floorId</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A summary description of the point of interest.</p>
+		<p>The floor identifier.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *summary</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSNumber *floorId</code></div>
 
     
 	
@@ -366,7 +410,115 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWPointOfInterest.h</code><br />
+		<code class="declared-in-ref">PWSharedLocation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/location" title="location"></a>
+	<h3 class="subsubtitle method-title">location</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The current location of the shared location.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) CLLocationCoordinate2D location</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWSharedLocation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/source" title="source"></a>
+	<h3 class="subsubtitle method-title">source</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The source of where the shared <a href="#//api/name/location">location</a> is coming from.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *source</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWSharedLocation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userType" title="userType"></a>
+	<h3 class="subsubtitle method-title">userType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The user type of the shared <a href="#//api/name/location">location</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *userType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWSharedLocation.h</code><br />
 	</div>				
 	
 	
@@ -377,6 +529,23 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+    
+</div>
+						
+					</div>
 					
 					
                     

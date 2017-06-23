@@ -39,9 +39,9 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/distance">&nbsp;&nbsp;&nbsp;&nbsp;distance</option>
+	<option value="//api/name/__deprecated">&nbsp;&nbsp;&nbsp;&nbsp;__deprecated</option>
 	
-	<option value="//api/name/endPointOfInterest">&nbsp;&nbsp;&nbsp;&nbsp;endPointOfInterest</option>
+	<option value="//api/name/distance">&nbsp;&nbsp;&nbsp;&nbsp;distance</option>
 	
 	<option value="//api/name/movement">&nbsp;&nbsp;&nbsp;&nbsp;movement</option>
 	
@@ -49,9 +49,9 @@
 	
 	<option value="//api/name/movementTrueHeading">&nbsp;&nbsp;&nbsp;&nbsp;movementTrueHeading</option>
 	
-	<option value="//api/name/route">&nbsp;&nbsp;&nbsp;&nbsp;route</option>
+	<option value="//api/name/points">&nbsp;&nbsp;&nbsp;&nbsp;points</option>
 	
-	<option value="//api/name/startPointOfInterest">&nbsp;&nbsp;&nbsp;&nbsp;startPointOfInterest</option>
+	<option value="//api/name/route">&nbsp;&nbsp;&nbsp;&nbsp;route</option>
 	
 	<option value="//api/name/turn">&nbsp;&nbsp;&nbsp;&nbsp;turn</option>
 	
@@ -89,9 +89,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/distance">distance</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/__deprecated">__deprecated</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endPointOfInterest">endPointOfInterest</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/distance">distance</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/movement">movement</a></span></li>
 	
@@ -99,9 +99,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/movementTrueHeading">movementTrueHeading</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/route">route</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/points">points</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPointOfInterest">startPointOfInterest</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/route">route</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/turn">turn</a></span></li>
 	
@@ -168,13 +168,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startPointOfInterest">&nbsp;&nbsp;startPointOfInterest</a></code>
+		<code><a href="#//api/name/points">&nbsp;&nbsp;points</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/endPointOfInterest">&nbsp;&nbsp;endPointOfInterest</a></code>
+		<code><a href="#//api/name/__deprecated">&nbsp;&nbsp;__deprecated</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -240,18 +240,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/distance" title="distance"></a>
-	<h3 class="subsubtitle method-title">distance</h3>
+	<a name="//api/name/__deprecated" title="__deprecated"></a>
+	<h3 class="subsubtitle method-title">__deprecated</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A CLLocationDistance property representing the total distance of the <a href="#//api/name/route">route</a> expressed in meters.</p>
+		<p>A reference to the origin, or start point of interest, for the <a href="#//api/name/route">route</a>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationDistance distance</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</code></div>
 
     
 	
@@ -260,6 +260,11 @@
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Change to use <a href="#//api/name/points">points</a>.firstObject</p>
+	</div>
 	
 	
 	
@@ -276,18 +281,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/endPointOfInterest" title="endPointOfInterest"></a>
-	<h3 class="subsubtitle method-title">endPointOfInterest</h3>
+	<a name="//api/name/distance" title="distance"></a>
+	<h3 class="subsubtitle method-title">distance</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A reference to the destination, or end point of interest, for the <a href="#//api/name/route">route</a>.</p>
+		<p>A CLLocationDistance property representing the total distance of the <a href="#//api/name/route">route</a> expressed in meters.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWPointOfInterest *endPointOfInterest</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationDistance distance</code></div>
 
     
 	
@@ -420,18 +425,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/route" title="route"></a>
-	<h3 class="subsubtitle method-title">route</h3>
+	<a name="//api/name/points" title="points"></a>
+	<h3 class="subsubtitle method-title">points</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A reference to the route object the route instruction instance belongs to.</p>
+		<p>Sequence of points represented by this maneuver.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWRoute *route</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSArray *points</code></div>
 
     
 	
@@ -456,18 +461,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startPointOfInterest" title="startPointOfInterest"></a>
-	<h3 class="subsubtitle method-title">startPointOfInterest</h3>
+	<a name="//api/name/route" title="route"></a>
+	<h3 class="subsubtitle method-title">route</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A reference to the origin, or start point of interest, for the <a href="#//api/name/route">route</a>.</p>
+		<p>A reference to the route object the route instruction instance belongs to.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWPointOfInterest *startPointOfInterest</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWRoute *route</code></div>
 
     
 	
@@ -621,7 +626,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-01-26)</span><br />
+						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-06-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

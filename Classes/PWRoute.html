@@ -39,24 +39,28 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/__deprecated">&nbsp;&nbsp;&nbsp;&nbsp;__deprecated</option>
+	
+	<option value="//api/name/accessible">&nbsp;&nbsp;&nbsp;&nbsp;accessible</option>
+	
 	<option value="//api/name/building">&nbsp;&nbsp;&nbsp;&nbsp;building</option>
 	
 	<option value="//api/name/distance">&nbsp;&nbsp;&nbsp;&nbsp;distance</option>
 	
-	<option value="//api/name/endPointOfInterest">&nbsp;&nbsp;&nbsp;&nbsp;endPointOfInterest</option>
+	<option value="//api/name/endPoint">&nbsp;&nbsp;&nbsp;&nbsp;endPoint</option>
 	
 	<option value="//api/name/estimatedTime">&nbsp;&nbsp;&nbsp;&nbsp;estimatedTime</option>
 	
-	<option value="//api/name/isAccessible">&nbsp;&nbsp;&nbsp;&nbsp;isAccessible</option>
-	
 	<option value="//api/name/routeInstructions">&nbsp;&nbsp;&nbsp;&nbsp;routeInstructions</option>
 	
-	<option value="//api/name/startPointOfInterest">&nbsp;&nbsp;&nbsp;&nbsp;startPointOfInterest</option>
+	<option value="//api/name/startPoint">&nbsp;&nbsp;&nbsp;&nbsp;startPoint</option>
 	
 	
 	
 	
 	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ createRouteFrom:to:accessibility:excludedPoints:completion:</option>
 	
 	<option value="//api/name/initRouteFrom:to:accessibility:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ initRouteFrom:to:accessibility:completion:</option>
 	
@@ -90,25 +94,29 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/__deprecated">__deprecated</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/accessible">accessible</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/building">building</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/distance">distance</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endPointOfInterest">endPointOfInterest</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endPoint">endPoint</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/estimatedTime">estimatedTime</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAccessible">isAccessible</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/routeInstructions">routeInstructions</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPointOfInterest">startPointOfInterest</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPoint">startPoint</a></span></li>
 	
 </ul></li>
 
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:">createRouteFrom:to:accessibility:excludedPoints:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initRouteFrom:to:accessibility:completion:">initRouteFrom:to:accessibility:completion:</a></span></li>
 	
@@ -175,13 +183,19 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startPointOfInterest">&nbsp;&nbsp;startPointOfInterest</a></code>
+		<code><a href="#//api/name/startPoint">&nbsp;&nbsp;startPoint</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/endPointOfInterest">&nbsp;&nbsp;endPointOfInterest</a></code>
+		<code><a href="#//api/name/endPoint">&nbsp;&nbsp;endPoint</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/__deprecated">&nbsp;&nbsp;__deprecated</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -205,7 +219,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/isAccessible">&nbsp;&nbsp;isAccessible</a></code>
+		<code><a href="#//api/name/accessible">&nbsp;&nbsp;accessible</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -223,6 +237,12 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:">+&nbsp;createRouteFrom:to:accessibility:excludedPoints:completion:</a></code>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -235,6 +255,83 @@
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/__deprecated" title="__deprecated"></a>
+	<h3 class="subsubtitle method-title">__deprecated</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A reference to the origin, or start point of interest, for the route.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Change to use <a href="#//api/name/startPoint"><code>startPoint</code></a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRoute.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/accessible" title="accessible"></a>
+	<h3 class="subsubtitle method-title">accessible</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A BOOL value that returns YES if the route was calculated with accessibility.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRoute.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/building" title="building"></a>
@@ -309,18 +406,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/endPointOfInterest" title="endPointOfInterest"></a>
-	<h3 class="subsubtitle method-title">endPointOfInterest</h3>
+	<a name="//api/name/endPoint" title="endPoint"></a>
+	<h3 class="subsubtitle method-title">endPoint</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A reference to the destination, or end point of interest, for the route.</p>
+		<p>A reference to the destination, or end point for the route.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWPointOfInterest *endPointOfInterest</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) id&lt;PWMapPoint&gt; endPoint</code></div>
 
     
 	
@@ -381,42 +478,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/isAccessible" title="isAccessible"></a>
-	<h3 class="subsubtitle method-title">isAccessible</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>A BOOL value that returns YES if the route was calculated with accessibility.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isAccessible</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWRoute.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/routeInstructions" title="routeInstructions"></a>
 	<h3 class="subsubtitle method-title">routeInstructions</h3>
 	
@@ -428,7 +489,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSMutableArray *routeInstructions</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *routeInstructions</code></div>
 
     
 	
@@ -453,18 +514,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startPointOfInterest" title="startPointOfInterest"></a>
-	<h3 class="subsubtitle method-title">startPointOfInterest</h3>
+	<a name="//api/name/startPoint" title="startPoint"></a>
+	<h3 class="subsubtitle method-title">startPoint</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A reference to the origin, or start point of interest, for the route.</p>
+		<p>A reference to the origin, or start point for the route.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWPointOfInterest *startPointOfInterest</code></div>
+	<div class="method-subsection method-declaration"><code>@property (readonly) id&lt;PWMapPoint&gt; startPoint</code></div>
 
     
 	
@@ -495,6 +556,72 @@
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:" title="createRouteFrom:to:accessibility:excludedPoints:completion:"></a>
+	<h3 class="subsubtitle method-title">createRouteFrom:to:accessibility:excludedPoints:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)<em>startPoint</em> to:(id&lt;PWMapPoint&gt;)<em>endPoint</em> accessibility:(BOOL)<em>accessibility</em> excludedPoints:(NSArray *)<em>excludedPoints</em> completion:(void ( ^ ) ( PWRoute *route , NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>startPoint</em></dt>
+			<dd><p>A <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a> object representing the start point for the route calculation.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>endPoint</em></dt>
+			<dd><p>A <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a> object representing the end point for the route calculation.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>accessibility</em></dt>
+			<dd><p>A BOOL value to tell the route init if accessibility should be considered to calculate the route.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>excludedPoints</em></dt>
+			<dd><p>An array of points to tell the route result should exclude.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion handler that is called once the route&rsquo;s calculation is complete.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWRoute.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/initRouteFrom:to:accessibility:completion:" title="initRouteFrom:to:accessibility:completion:"></a>
@@ -543,6 +670,11 @@
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Please change to use <code>createRouteFrom: to: accessibility: excludedPoints: completion:</code></p>
+	</div>
+	
 	
 	
 	
@@ -577,7 +709,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-01-26)</span><br />
+						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-06-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

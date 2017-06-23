@@ -39,7 +39,7 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/locationType">&nbsp;&nbsp;&nbsp;&nbsp;locationType</option>
+	<option value="//api/name/__deprecated">&nbsp;&nbsp;&nbsp;&nbsp;__deprecated</option>
 	
 	
 	
@@ -47,6 +47,10 @@
 	
 	
 	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	
+	<option value="//api/name/initWithCoordinate:identifier:floorId:buildingId:title:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithCoordinate:identifier:floorId:buildingId:title:</option>
 	
 	<option value="//api/name/initWithLatitude:longitude:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithLatitude:longitude:</option>
 	
@@ -68,8 +72,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Instance Methods">Instance Methods</a></span></li>
-	
 </ul></li>
 
 
@@ -78,7 +80,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationType">locationType</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/__deprecated">__deprecated</a></span></li>
 	
 </ul></li>
 
@@ -87,6 +89,10 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithCoordinate:identifier:floorId:buildingId:title:">initWithCoordinate:identifier:floorId:buildingId:title:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithLatitude:longitude:">initWithLatitude:longitude:</a></span></li>
 	
@@ -114,7 +120,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value"><a href="../Classes/PWPointOfInterest.html">PWPointOfInterest</a> : NSObject</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/PWMapPoint.html">PWMapPoint</a></td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">PWCustomLocation.h</td>
@@ -140,24 +149,28 @@
 						
 						
 						<a title="Properties" name="task_Properties"></a>
-						<h3 class="subsubtitle task-title">Properties</h3>
-
+						
+<h3 class="subsubtitle task-title">Properties</h3>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/locationType">&nbsp;&nbsp;locationType</a></code>
+		<code><a href="#//api/name/__deprecated">&nbsp;&nbsp;__deprecated</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
-</li>
-						</ul>
-						
-						
-						<a title="Instance Methods" name="task_Instance Methods"></a>
-						<h3 class="subsubtitle task-title">Instance Methods</h3>
-
-						<ul class="task-list">
-							<li>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithCoordinate:identifier:floorId:buildingId:title:">&ndash;&nbsp;initWithCoordinate:identifier:floorId:buildingId:title:</a></code>
+	</span>
+	
+	
+</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/initWithLatitude:longitude:">&ndash;&nbsp;initWithLatitude:longitude:</a></code>
 	</span>
@@ -177,8 +190,8 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/locationType" title="locationType"></a>
-	<h3 class="subsubtitle method-title">locationType</h3>
+	<a name="//api/name/__deprecated" title="__deprecated"></a>
+	<h3 class="subsubtitle method-title">__deprecated</h3>
 	
 	
 	
@@ -188,7 +201,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic) PWCustomLocationType locationType</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) PWCustomLocationType locationType __deprecated</code></div>
 
     
 	
@@ -223,6 +236,113 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<h2>@name Instance Methods</h2>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype __nonnull)init</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWCustomLocation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithCoordinate:identifier:floorId:buildingId:title:" title="initWithCoordinate:identifier:floorId:buildingId:title:"></a>
+	<h3 class="subsubtitle method-title">initWithCoordinate:identifier:floorId:buildingId:title:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Instantiates a PWCustomLocation object with the given properties.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)<em>coordinate</em> identifier:(NSInteger)<em>identifier</em> floorId:(NSInteger)<em>floorId</em> buildingId:(NSInteger)<em>buildingId</em> title:(NSString *__nullable)<em>title</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The lat, long position of the custom location</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identifier</em></dt>
+			<dd><p>Integer to help the developer identify the custom location</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floorId</em></dt>
+			<dd><p>The MaaS identifier of the floor the custom location is on</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>buildingId</em></dt>
+			<dd><p>The MaaS identifier of the building the custom location is in</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The name of the custom location</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns a PWCustomLocation object, or nil if the given coordinate is invalid.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWCustomLocation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/initWithLatitude:longitude:" title="initWithLatitude:longitude:"></a>
 	<h3 class="subsubtitle method-title">initWithLatitude:longitude:</h3>
 	
@@ -234,7 +354,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithLatitude:(double)<em>latitude</em> longitude:(double)<em>longitude</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype __nullable)initWithLatitude:(double)<em>latitude</em> longitude:(double)<em>longitude</em></code></div>
 
     
 	
@@ -296,7 +416,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-01-26)</span><br />
+						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-06-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
