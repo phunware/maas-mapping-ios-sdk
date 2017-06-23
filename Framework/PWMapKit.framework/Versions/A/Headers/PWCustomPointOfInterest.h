@@ -2,7 +2,6 @@
 //  PWCustomPointOfInterest.h
 //  PWMapKit
 //
-//  Created by Xiangwei Wang on 07/03/2017.
 //  Copyright © 2017 Phunware. All rights reserved.
 //
 
@@ -51,7 +50,7 @@
 - (instancetype __nullable)init __unavailable;
 
 /**
- *  Instantiates a PWCustomLocation object with the given parameters.
+ *  Instantiates a `PWCustomPointOfInterest` object with the given parameters.
  *
  *  @param coordinate The coordinate of custom point of interest
  *  @param floorId The floor identifier of custom point of interest
@@ -59,7 +58,7 @@
  *  @param title The text title of custom point of interest
  *  @param image The icon of custom point of interest
  *
- *  @return Returns a PWCustomLocation object.
+ *  @return Returns a `PWCustomPointOfInterest` object.
  */
 - (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate
                            floorId:(NSInteger)floorId

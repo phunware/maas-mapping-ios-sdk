@@ -1,4 +1,16 @@
 #PWMapKit Changelog
+##v3.1.4 (Monday, Jun 26th, 2017)
+
+* Add friend finder feature and related API.
+* Improve route calculator for finding shortest route path.
+* User experience improvement by getting more stable route orientation.
+* Add support for escalator with routing.
+* Bug fixes
+	* Map floor rotates incorrectly while each floor has different rotation angle.
+	* Start/End of route has empty title.
+	* Changing map zoom levels for POI's are not reflected
+
+
 ##v3.1.3 (Wednesday, Apr 19th, 2017)
 
 * Bug fixes

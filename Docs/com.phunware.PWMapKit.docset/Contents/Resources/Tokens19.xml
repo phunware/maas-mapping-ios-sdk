@@ -1,51 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/PWBuildingViewControllerDelegate.html">
+	<File path="Constants/PWRouteSnapTolerance.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/PWBuildingViewControllerDelegate</TokenIdentifier>
-			<Abstract type="html">PWBuildingViewControllerDelegate protocol definition.</Abstract>
-			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PWRouteSnapTolerance</TokenIdentifier>
+			<Abstract type="html">Supported Route Snapping Tolerance values.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingViewControllerDelegate/didSelectPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">Informs the receiver that the user selected a point of interest.</Abstract>
-			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
-			
-			<Declaration>- (void)didSelectPointOfInterest:(PWPointOfInterest *)poi</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>poi</Name>
-					<Abstract type="html">The selected point of interest.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/didSelectPointOfInterest:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapOff</TokenIdentifier>
+            <Abstract type="html">Route Snapping off.
+     </Abstract>
+            <Declaration>PWRouteSnapOff</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
             <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWBuildingViewControllerDelegate/didDismissBuildingViewController:</TokenIdentifier>
-			<Abstract type="html">Informs the receiver that the user dismissed the view controller and returns the point of interest last selected (if any).</Abstract>
-			<DeclaredIn>PWBuildingViewController.h</DeclaredIn>
-			
-			<Declaration>- (void)didDismissBuildingViewController:(PWPointOfInterest *)poi</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>poi</Name>
-					<Abstract type="html">the last selected point of interest.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/didDismissBuildingViewController:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceNormal</TokenIdentifier>
+            <Abstract type="html">Route Snapping normal.
+     </Abstract>
+            <Declaration>PWRouteSnapToleranceNormal</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
             <NodeRef refid="19"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceMedium</TokenIdentifier>
+            <Abstract type="html">Route Snapping medium.
+     </Abstract>
+            <Declaration>PWRouteSnapToleranceMedium</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="19"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceHigh</TokenIdentifier>
+            <Abstract type="html">Route Snapping high.
+     </Abstract>
+            <Declaration>PWRouteSnapToleranceHigh</Declaration>
+            
+            <DeclaredIn>PWMapView.h</DeclaredIn>
+            
+            <NodeRef refid="19"/>
+        </Token>
         
         
 	</File>

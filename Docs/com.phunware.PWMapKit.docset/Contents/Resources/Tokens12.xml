@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWPointOfInterestViewController.html">
+	<File path="Classes/PWSharedLocation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterestViewController</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestViewController allows you to display detailed information of a Point of Interest.</Abstract>
-			<DeclaredIn>PWPointOfInterestViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWSharedLocation</TokenIdentifier>
+			<Abstract type="html">A PWSharedLocation represents a shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
             
 			
 			<NodeRef refid="12"/>
@@ -13,19 +13,302 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestViewController/initWithPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">Initializes a PWPointOfInterestViewController with the supplied point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterestViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/setBuildingId:</TokenIdentifier>
+			<Abstract type="html">The building identifier.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithPointOfInterest:(PWPointOfInterest *)pointOfInterest</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>pointOfInterest</Name>
-					<Abstract type="html">A PWPointOfInterest object reference to initialize the PWPointOfInterestViewController object.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWPointOfInterestViewController instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithPointOfInterest:</Anchor>
+			<Declaration>@property (nonatomic, strong, readonly) NSNumber *buildingId</Declaration>
+			
+			
+			<Anchor>//api/name/buildingId</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/buildingId</TokenIdentifier>
+			<Abstract type="html">The building identifier.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSNumber *buildingId</Declaration>
+			
+			
+			<Anchor>//api/name/buildingId</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWSharedLocation/buildingId</TokenIdentifier>
+			<Abstract type="html">The building identifier.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSNumber *buildingId</Declaration>
+			
+			
+			<Anchor>//api/name/buildingId</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/setFloorId:</TokenIdentifier>
+			<Abstract type="html">The floor identifier.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSNumber *floorId</Declaration>
+			
+			
+			<Anchor>//api/name/floorId</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/floorId</TokenIdentifier>
+			<Abstract type="html">The floor identifier.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSNumber *floorId</Declaration>
+			
+			
+			<Anchor>//api/name/floorId</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWSharedLocation/floorId</TokenIdentifier>
+			<Abstract type="html">The floor identifier.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSNumber *floorId</Declaration>
+			
+			
+			<Anchor>//api/name/floorId</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/setDeviceId:</TokenIdentifier>
+			<Abstract type="html">The device identifier.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *deviceId</Declaration>
+			
+			
+			<Anchor>//api/name/deviceId</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/deviceId</TokenIdentifier>
+			<Abstract type="html">The device identifier.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *deviceId</Declaration>
+			
+			
+			<Anchor>//api/name/deviceId</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWSharedLocation/deviceId</TokenIdentifier>
+			<Abstract type="html">The device identifier.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *deviceId</Declaration>
+			
+			
+			<Anchor>//api/name/deviceId</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/setSource:</TokenIdentifier>
+			<Abstract type="html">The source of where the shared location is coming from.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *source</Declaration>
+			
+			
+			<Anchor>//api/name/source</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/source</TokenIdentifier>
+			<Abstract type="html">The source of where the shared location is coming from.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *source</Declaration>
+			
+			
+			<Anchor>//api/name/source</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWSharedLocation/source</TokenIdentifier>
+			<Abstract type="html">The source of where the shared location is coming from.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *source</Declaration>
+			
+			
+			<Anchor>//api/name/source</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/setDisplayName:</TokenIdentifier>
+			<Abstract type="html">The display name of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *displayName</Declaration>
+			
+			
+			<Anchor>//api/name/displayName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/displayName</TokenIdentifier>
+			<Abstract type="html">The display name of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *displayName</Declaration>
+			
+			
+			<Anchor>//api/name/displayName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWSharedLocation/displayName</TokenIdentifier>
+			<Abstract type="html">The display name of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *displayName</Declaration>
+			
+			
+			<Anchor>//api/name/displayName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/setLocation:</TokenIdentifier>
+			<Abstract type="html">The current location of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) CLLocationCoordinate2D location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/location</TokenIdentifier>
+			<Abstract type="html">The current location of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) CLLocationCoordinate2D location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWSharedLocation/location</TokenIdentifier>
+			<Abstract type="html">The current location of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) CLLocationCoordinate2D location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/setConfidenceFactor:</TokenIdentifier>
+			<Abstract type="html">The accuracy of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSNumber *confidenceFactor</Declaration>
+			
+			
+			<Anchor>//api/name/confidenceFactor</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/confidenceFactor</TokenIdentifier>
+			<Abstract type="html">The accuracy of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSNumber *confidenceFactor</Declaration>
+			
+			
+			<Anchor>//api/name/confidenceFactor</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWSharedLocation/confidenceFactor</TokenIdentifier>
+			<Abstract type="html">The accuracy of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSNumber *confidenceFactor</Declaration>
+			
+			
+			<Anchor>//api/name/confidenceFactor</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/setUserType:</TokenIdentifier>
+			<Abstract type="html">The user type of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *userType</Declaration>
+			
+			
+			<Anchor>//api/name/userType</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/userType</TokenIdentifier>
+			<Abstract type="html">The user type of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *userType</Declaration>
+			
+			
+			<Anchor>//api/name/userType</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWSharedLocation/userType</TokenIdentifier>
+			<Abstract type="html">The user type of the shared location.</Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *userType</Declaration>
+			
+			
+			<Anchor>//api/name/userType</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/init</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

@@ -2,8 +2,7 @@
 //  PWRouteInstruction.h
 //  PWMapKit
 //
-//  Created by Steven Spry on 5/19/16.
-//  Copyright © 2016 Phunware. All rights reserved.
+//  Copyright © 2017 Phunware. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -20,6 +19,8 @@ static NSString *const kPWRouteInstructionDirectionElevatorUp = @"PWRouteInstruc
 static NSString *const kPWRouteInstructionDirectionElevatorDown = @"PWRouteInstructionDirectionElevatorDown";
 static NSString *const kPWRouteInstructionDirectionStairsUp = @"PWRouteInstructionDirectionStairsUp";
 static NSString *const kPWRouteInstructionDirectionStairsDown = @"PWRouteInstructionDirectionStairsDown";
+static NSString *const kPWRouteInstructionDirectionEscalatorUp = @"PWRouteInstructionDirectionEscalatorUp";
+static NSString *const kPWRouteInstructionDirectionEscalatorDown = @"PWRouteInstructionDirectionEscalatorDown";
 
 /**
  *  Defines the different types of custom locations.
@@ -64,7 +65,15 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
     /**
      *  Route instruction direction stairs down.
      */
-    PWRouteInstructionDirectionStairsDown
+    PWRouteInstructionDirectionStairsDown,
+    /**
+     *  Route instruction direction escalator up.
+     */
+    PWRouteInstructionDirectionEscalatorUp,
+    /**
+     *  Route instruction direction escalator down.
+     */
+    PWRouteInstructionDirectionEscalatorDown
 };
 
 /**
