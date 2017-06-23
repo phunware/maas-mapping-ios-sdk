@@ -1,70 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteInstructionsViewController.html">
+	<File path="Constants/PWCustomLocationType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstructionsViewController</TokenIdentifier>
-			<Abstract type="html">The PWRouteInstructionsViewController allows the display of a route instructions list for a calculated PWRoute.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PWCustomLocationType</TokenIdentifier>
+			<Abstract type="html">Defines the different types of custom locations</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsViewController/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionsViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWCustomLocationTypeCurrentLocation</TokenIdentifier>
+            <Abstract type="html">Represents custom location type for current location.
+     </Abstract>
+            <Declaration>PWCustomLocationTypeCurrentLocation</Declaration>
+            
+            <DeclaredIn>PWCustomLocation.h</DeclaredIn>
+            
             <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionsViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWCustomLocationTypeDroppedPin</TokenIdentifier>
+            <Abstract type="html">Represents custom location type for dropped pin location.
+     </Abstract>
+            <Declaration>PWCustomLocationTypeDroppedPin</Declaration>
+            
+            <DeclaredIn>PWCustomLocation.h</DeclaredIn>
+            
             <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstructionsViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) id&lt;PWRouteInstructionsViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstructionsViewController/initWithRoute:</TokenIdentifier>
-			<Abstract type="html">Creates a PWRouteInstructionsView instance for the given route.</Abstract>
-			<DeclaredIn>PWRouteInstructionsViewController.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithRoute:(PWRoute *)route</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>route</Name>
-					<Abstract type="html">A PWRoute reference.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWRouteInstructionsView instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithRoute:</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
+        </Token>
         
         
 	</File>

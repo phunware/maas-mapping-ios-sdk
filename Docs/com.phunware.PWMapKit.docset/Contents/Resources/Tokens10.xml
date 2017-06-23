@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWPointOfInterest.html">
+	<File path="Classes/PWRoute.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterest</TokenIdentifier>
-			<Abstract type="html">A PWPointOfInterest represents single point of interest defined within MaaS Portal.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWRoute</TokenIdentifier>
+			<Abstract type="html">A PWRoute represents a route calculated for the user from within a building&apos;s boundaries; start point of interest to end point of interest.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -13,182 +13,345 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setSummary:</TokenIdentifier>
-			<Abstract type="html">A summary description of the point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setBuilding:</TokenIdentifier>
+			<Abstract type="html">A reference to the route&apos;s building object.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *summary</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/summary</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/summary</TokenIdentifier>
-			<Abstract type="html">A summary description of the point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/building</TokenIdentifier>
+			<Abstract type="html">A reference to the route&apos;s building object.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *summary</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/summary</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/summary</TokenIdentifier>
-			<Abstract type="html">A summary description of the point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/building</TokenIdentifier>
+			<Abstract type="html">A reference to the route&apos;s building object.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *summary</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
 			
 			
-			<Anchor>//api/name/summary</Anchor>
+			<Anchor>//api/name/building</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setFloor:</TokenIdentifier>
-			<Abstract type="html">The PWFloor object that the point of interest is a member of.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setStartPoint:</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; startPoint</Declaration>
 			
 			
-			<Anchor>//api/name/floor</Anchor>
+			<Anchor>//api/name/startPoint</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/floor</TokenIdentifier>
-			<Abstract type="html">The PWFloor object that the point of interest is a member of.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/startPoint</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; startPoint</Declaration>
 			
 			
-			<Anchor>//api/name/floor</Anchor>
+			<Anchor>//api/name/startPoint</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/floor</TokenIdentifier>
-			<Abstract type="html">The PWFloor object that the point of interest is a member of.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/startPoint</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; startPoint</Declaration>
 			
 			
-			<Anchor>//api/name/floor</Anchor>
+			<Anchor>//api/name/startPoint</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setPointOfInterestType:</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setEndPoint:</TokenIdentifier>
+			<Abstract type="html">A reference to the destination, or end point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; endPoint</Declaration>
 			
 			
-			<Anchor>//api/name/pointOfInterestType</Anchor>
+			<Anchor>//api/name/endPoint</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/pointOfInterestType</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/endPoint</TokenIdentifier>
+			<Abstract type="html">A reference to the destination, or end point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; endPoint</Declaration>
 			
 			
-			<Anchor>//api/name/pointOfInterestType</Anchor>
+			<Anchor>//api/name/endPoint</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/pointOfInterestType</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/endPoint</TokenIdentifier>
+			<Abstract type="html">A reference to the destination, or end point for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
+			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; endPoint</Declaration>
 			
 			
-			<Anchor>//api/name/pointOfInterestType</Anchor>
+			<Anchor>//api/name/endPoint</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setImage:</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/set__deprecated:</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/image</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/image</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/__deprecated</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/image</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/image</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/__deprecated</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/image</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setMetaData:</TokenIdentifier>
-			<Abstract type="html">Metadata associated with the point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setRouteInstructions:</TokenIdentifier>
+			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSArray *routeInstructions</Declaration>
 			
 			
-			<Anchor>//api/name/metaData</Anchor>
+			<Anchor>//api/name/routeInstructions</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/metaData</TokenIdentifier>
-			<Abstract type="html">Metadata associated with the point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/routeInstructions</TokenIdentifier>
+			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSArray *routeInstructions</Declaration>
 			
 			
-			<Anchor>//api/name/metaData</Anchor>
+			<Anchor>//api/name/routeInstructions</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/metaData</TokenIdentifier>
-			<Abstract type="html">Metadata associated with the point of interest.</Abstract>
-			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/routeInstructions</TokenIdentifier>
+			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSArray *routeInstructions</Declaration>
 			
 			
-			<Anchor>//api/name/metaData</Anchor>
+			<Anchor>//api/name/routeInstructions</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setDistance:</TokenIdentifier>
+			<Abstract type="html">An integer representing the total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/distance</TokenIdentifier>
+			<Abstract type="html">An integer representing the total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/distance</TokenIdentifier>
+			<Abstract type="html">An integer representing the total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setEstimatedTime:</TokenIdentifier>
+			<Abstract type="html">An integer representing the estimated time of the route expressed in seconds.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger estimatedTime</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedTime</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/estimatedTime</TokenIdentifier>
+			<Abstract type="html">An integer representing the estimated time of the route expressed in seconds.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger estimatedTime</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedTime</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/estimatedTime</TokenIdentifier>
+			<Abstract type="html">An integer representing the estimated time of the route expressed in seconds.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger estimatedTime</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedTime</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setAccessible:</TokenIdentifier>
+			<Abstract type="html">A BOOL value that returns YES if the route was calculated with accessibility.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/isAccessible</TokenIdentifier>
+			<Abstract type="html">A BOOL value that returns YES if the route was calculated with accessibility.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/accessible</TokenIdentifier>
+			<Abstract type="html">A BOOL value that returns YES if the route was calculated with accessibility.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRoute/initRouteFrom:to:accessibility:completion:</TokenIdentifier>
+			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>+ (void)initRouteFrom:(PWPointOfInterest *)startPoint to:(PWPointOfInterest *)endPoint accessibility:(BOOL)accessibility completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPoint</Name>
+					<Abstract type="html">PWPointOfInterest object representing the start point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>endPoint</Name>
+					<Abstract type="html">PWPointOfInterest object representing the end point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>accessibility</Name>
+					<Abstract type="html">BOOL Value to tell the route init if accessibility should be considered to calculate the route.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler that is called once the route&apos;s calculation is complete.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initRouteFrom:to:accessibility:completion:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRoute/createRouteFrom:to:accessibility:excludedPoints:completion:</TokenIdentifier>
+			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)startPoint to:(id&lt;PWMapPoint&gt;)endPoint accessibility:(BOOL)accessibility excludedPoints:(NSArray *)excludedPoints completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPoint</Name>
+					<Abstract type="html">A PWMapPoint object representing the start point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>endPoint</Name>
+					<Abstract type="html">A PWMapPoint object representing the end point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>accessibility</Name>
+					<Abstract type="html">A BOOL value to tell the route init if accessibility should be considered to calculate the route.</Abstract>
+				</Parameter><Parameter>
+					<Name>excludedPoints</Name>
+					<Abstract type="html">An array of points to tell the route result should exclude.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler that is called once the route&apos;s calculation is complete.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

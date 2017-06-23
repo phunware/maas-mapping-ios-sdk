@@ -2,8 +2,7 @@
 //  PWRoute.h
 //  PWMapKit
 //
-//  Created by Steven Spry on 5/12/16.
-//  Copyright © 2016 Phunware. All rights reserved.
+//  Copyright © 2017 Phunware. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

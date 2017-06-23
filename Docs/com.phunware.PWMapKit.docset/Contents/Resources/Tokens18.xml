@@ -1,162 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWRouteViewController.html">
+	<File path="Constants/PWRouteInstructionDirection.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWRouteViewController</TokenIdentifier>
-			<Abstract type="html">A view controller that lets the user browse and search a PWBuilding structure to navigate from a start point of interest to an end point of interest.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PWRouteInstructionDirection</TokenIdentifier>
+			<Abstract type="html">Defines the different types of custom locations.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStraight</TokenIdentifier>
+            <Abstract type="html">Route instruction direction straight.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionStraight</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionLeft</TokenIdentifier>
+            <Abstract type="html">Route instruction direction left.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionLeft</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The receiver’s delegate.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) id&lt;PWRouteViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionRight</TokenIdentifier>
+            <Abstract type="html">Route instruction direction right.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionRight</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/setCustomLocation:</TokenIdentifier>
-			<Abstract type="html">A reference to a current custom location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
-			
-			
-			<Anchor>//api/name/customLocation</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionBearLeft</TokenIdentifier>
+            <Abstract type="html">Route instruction direction bear left.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionBearLeft</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/customLocation</TokenIdentifier>
-			<Abstract type="html">A reference to a current custom location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
-			
-			
-			<Anchor>//api/name/customLocation</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionBearRight</TokenIdentifier>
+            <Abstract type="html">Route instruction direction bear right.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionBearRight</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteViewController/customLocation</TokenIdentifier>
-			<Abstract type="html">A reference to a current custom location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *customLocation</Declaration>
-			
-			
-			<Anchor>//api/name/customLocation</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionFloorChange</TokenIdentifier>
+            <Abstract type="html">Route instruction direction floor change.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionFloorChange</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/setUserLocation:</TokenIdentifier>
-			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *userLocation</Declaration>
-			
-			
-			<Anchor>//api/name/userLocation</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorUp</TokenIdentifier>
+            <Abstract type="html">Route instruction direction elevator up.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionElevatorUp</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/userLocation</TokenIdentifier>
-			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *userLocation</Declaration>
-			
-			
-			<Anchor>//api/name/userLocation</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorDown</TokenIdentifier>
+            <Abstract type="html">Route instruction direction elevator down.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionElevatorDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteViewController/userLocation</TokenIdentifier>
-			<Abstract type="html">A reference to the user&apos;s current location.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *userLocation</Declaration>
-			
-			
-			<Anchor>//api/name/userLocation</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStairsUp</TokenIdentifier>
+            <Abstract type="html">Route instruction direction stairs up.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionStairsUp</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/initWithBuilding:</TokenIdentifier>
-			<Abstract type="html">Initializes a PWRouteViewController instance for a given building structure.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">A PWBuilding object.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWRouteViewController instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithBuilding:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStairsDown</TokenIdentifier>
+            <Abstract type="html">Route instruction direction stairs down.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionStairsDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteViewController/initWithBuilding:withAccessibility:</TokenIdentifier>
-			<Abstract type="html">Initializes a PWRouteViewController instance for a given building structure considering accessibility.</Abstract>
-			<DeclaredIn>PWRouteViewController.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithBuilding:(PWBuilding *)building withAccessibility:(BOOL)accessible</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>building</Name>
-					<Abstract type="html">A PWBuilding object.</Abstract>
-				</Parameter><Parameter>
-					<Name>accessible</Name>
-					<Abstract type="html">A BOOL value to determine if accessibility should be used while calculating the route.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWRouteViewController instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithBuilding:withAccessibility:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionEscalatorUp</TokenIdentifier>
+            <Abstract type="html">Route instruction direction escalator up.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionEscalatorUp</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
             <NodeRef refid="18"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionEscalatorDown</TokenIdentifier>
+            <Abstract type="html">Route instruction direction escalator down.
+     </Abstract>
+            <Declaration>PWRouteInstructionDirectionEscalatorDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="18"/>
+        </Token>
         
         
 	</File>

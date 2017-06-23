@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PWCustomLocation.html">
+	<File path="Classes/PWCustomPointOfInterest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PWCustomLocation</TokenIdentifier>
-			<Abstract type="html">A PWCustomLocation extends from PWPointOfInterest and represents single location point. PWCustomLocation can represent user&apos;s current location or a user&apos;s dropped pin.</Abstract>
-			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PWCustomPointOfInterest</TokenIdentifier>
+			<Abstract type="html">A PWCustomPointOfInterest represents custom single point of interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
@@ -13,48 +13,227 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/set__deprecated:</TokenIdentifier>
-			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
-			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setPointOfInterestType:</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocationType locationType __deprecated</Declaration>
+			<Declaration>@property (nonatomic, copy) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
-			<Anchor>//api/name/__deprecated</Anchor>
+			<Anchor>//api/name/pointOfInterestType</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/__deprecated</TokenIdentifier>
-			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
-			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/pointOfInterestType</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocationType locationType __deprecated</Declaration>
+			<Declaration>@property (nonatomic, copy) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
-			<Anchor>//api/name/__deprecated</Anchor>
+			<Anchor>//api/name/pointOfInterestType</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/__deprecated</TokenIdentifier>
-			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
-			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/pointOfInterestType</TokenIdentifier>
+			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocationType locationType __deprecated</Declaration>
+			<Declaration>@property (nonatomic, copy) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
-			<Anchor>//api/name/__deprecated</Anchor>
+			<Anchor>//api/name/pointOfInterestType</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/init</TokenIdentifier>
-			<Abstract type="html">@name Instance Methods
----------------------------------------------------------------------------------------</Abstract>
-			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setMetaData:</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the custom point of interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>- (instancetype __nonnull)init</Declaration>
+			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the custom point of interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with the custom point of interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setShowTextLabel:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the text label.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel</Declaration>
+			
+			
+			<Anchor>//api/name/showTextLabel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/isShowTextLabel</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the text label.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel</Declaration>
+			
+			
+			<Anchor>//api/name/showTextLabel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/showTextLabel</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the text label.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel</Declaration>
+			
+			
+			<Anchor>//api/name/showTextLabel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setAccessible:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an accessible point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/isAccessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an accessible point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/accessible</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an accessible point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isAccessible) BOOL accessible</Declaration>
+			
+			
+			<Anchor>//api/name/accessible</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setVisualImpaired:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point is friendly to the visually-impaired.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isVisualImpaired) BOOL visualImpaired</Declaration>
+			
+			
+			<Anchor>//api/name/visualImpaired</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/isVisualImpaired</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point is friendly to the visually-impaired.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isVisualImpaired) BOOL visualImpaired</Declaration>
+			
+			
+			<Anchor>//api/name/visualImpaired</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/visualImpaired</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether the point is friendly to the visually-impaired.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isVisualImpaired) BOOL visualImpaired</Declaration>
+			
+			
+			<Anchor>//api/name/visualImpaired</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setExit:</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an exit point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isExit) BOOL exit</Declaration>
+			
+			
+			<Anchor>//api/name/exit</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/isExit</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an exit point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isExit) BOOL exit</Declaration>
+			
+			
+			<Anchor>//api/name/exit</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/exit</TokenIdentifier>
+			<Abstract type="html">A flag indicating whether it&apos;s an exit point.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isExit) BOOL exit</Declaration>
+			
+			
+			<Anchor>//api/name/exit</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/init</TokenIdentifier>
+			<Abstract type="html">Disable the default initializer.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>- (instancetype __nullable)init</Declaration>
 			
 			
 			<Anchor>//api/name/init</Anchor>
@@ -62,51 +241,31 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/initWithCoordinate:identifier:floorId:buildingId:title:</TokenIdentifier>
-			<Abstract type="html">Instantiates a PWCustomLocation object with the given properties.</Abstract>
-			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/initWithCoordinate:floorId:buildingId:title:image:</TokenIdentifier>
+			<Abstract type="html">Instantiates a PWCustomPointOfInterest object with the given parameters.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>- (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate identifier:(NSInteger)identifier floorId:(NSInteger)floorId buildingId:(NSInteger)buildingId title:(NSString *__nullable)title</Declaration>
+			<Declaration>- (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate floorId:(NSInteger)floorId buildingId:(NSInteger)buildingId title:(NSString *__nullable)title image:(UIImage *__nullable)image</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>coordinate</Name>
-					<Abstract type="html">The lat, long position of the custom location</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">Integer to help the developer identify the custom location</Abstract>
+					<Abstract type="html">The coordinate of custom point of interest</Abstract>
 				</Parameter><Parameter>
 					<Name>floorId</Name>
-					<Abstract type="html">The MaaS identifier of the floor the custom location is on</Abstract>
+					<Abstract type="html">The floor identifier of custom point of interest</Abstract>
 				</Parameter><Parameter>
 					<Name>buildingId</Name>
-					<Abstract type="html">The MaaS identifier of the building the custom location is in</Abstract>
+					<Abstract type="html">The building identifier of custom point of interest</Abstract>
 				</Parameter><Parameter>
 					<Name>title</Name>
-					<Abstract type="html">The name of the custom location</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWCustomLocation object, or nil if the given coordinate is invalid.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCoordinate:identifier:floorId:buildingId:title:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/initWithLatitude:longitude:</TokenIdentifier>
-			<Abstract type="html">Instantiates a PWCustomLocation object with the given latitude and longitude parameters.</Abstract>
-			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
-			
-			<Declaration>- (instancetype __nullable)initWithLatitude:(double)latitude longitude:(double)longitude</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>latitude</Name>
-					<Abstract type="html">A double value to represent the latitude of a custom location</Abstract>
+					<Abstract type="html">The text title of custom point of interest</Abstract>
 				</Parameter><Parameter>
-					<Name>longitude</Name>
-					<Abstract type="html">A double value to represent the longitude of a custom location</Abstract>
+					<Name>image</Name>
+					<Abstract type="html">The icon of custom point of interest</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWCustomLocation object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithLatitude:longitude:</Anchor>
+			<ReturnValue><Abstract type="html">Returns a PWCustomPointOfInterest object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCoordinate:floorId:buildingId:title:image:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
