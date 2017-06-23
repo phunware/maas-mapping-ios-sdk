@@ -1,7 +1,6 @@
 #PWMapKit Changelog
 ##v3.1.4 (Monday, Jun 26th, 2017)
 
-* Add friend finder feature and related API.
 * Improve route calculator for finding shortest route path.
 * User experience improvement by getting more stable route orientation.
 * Add support for escalator with routing.
@@ -44,7 +43,7 @@
 	* Make `Follow Me` as default tracking mode.
 	* Automatically enable `Follow me` tracking mode when device is close to current route instruction.
 	* User can swipe to view future/past route instructions when `Follow Me` is enabled.
-	 
+
 * Bug fixes:
 	* Use the cached bundle instead when network is unavailable.
 	* Wrong route instruction text for elevator.
@@ -97,7 +96,7 @@
 
 * Added ability for developer to control whether or not the maneuver change is animated. See `- (BOOL)mapViewShouldAnimateAutomaticRouteManeuverChange:(PWMapView *)mapView` delegate method.
 
-* Added new method to PWMapView, `-(void)setRouteManever:(PWRouteManever *)maneuver animated:(BOOL)animated` that allows you to control whether or no the maneuver is animated when switching. 
+* Added new method to PWMapView, `-(void)setRouteManever:(PWRouteManever *)maneuver animated:(BOOL)animated` that allows you to control whether or no the maneuver is animated when switching.
 
   **NOTE**: The old method, `-(void)setRouteManever:(PWRouteManever *)maneuver` no longer animates the maneuver change.
 
@@ -153,15 +152,15 @@
 * Fixed a bug where setting `showsIndoorUserLocation` on `PWMapView to ‘NO’ would not hide the blue dot.
 * Fixed a bug where toggling route snapping tolerance would not resume route snapping when reenabled.
 * Added the ability to stop loading a building. See `stopLoadingBuilding` method on `PWMapView` for more information.
-* Fixed a bug where memory for the routing graph wasn't being released when the `PWMapView` instance was being deallocated. 
+* Fixed a bug where memory for the routing graph wasn't being released when the `PWMapView` instance was being deallocated.
 * Fixed a bug where building assets would get ‘stuck’ while the user’s blue dot continued to move during a route across multiple floors (with a valid indoor location).
 * Added a flag to `PWBuildingAnnotationProtocol`, `occlusionEnabled`. This flag determines whether the annotation label for a given annotation will be occluded by other labels. If `occlusionEnabled` is set to `NO`, the annotation label will **always** be visible.
 * `PWMapView` now correctly calls the delegate callback ` -mapView:didChangeIndoorUserTrackingMode:`.
 * Added options that allow routing from any point of interest, user location or dropped pin annotation to any other point of interest, user location or dropped pin annotation (in other words, any type of route endpoint is now allowed on either end of the route). See `PWDirections` and `PWDirectionsWaypointProtocol` for more information.
-* Enhanced routing functionality now uses a synchronous directions request interface. The former asynchronous request/response model is still supported but will be deprecated. 
+* Enhanced routing functionality now uses a synchronous directions request interface. The former asynchronous request/response model is still supported but will be deprecated.
 * Renamed `PWBuildingOverlayDelegate` to `PWBuildingOverlayDelegateProtocol`.
-* Deprecated the old indoor location manager registration interface in favor of a more simply named method with accompanying unregister method. 
-* Removed the `-setCurrentFloor:` PWMapView property mutator declaration and removed the `readonly` attribute of the property. 
+* Deprecated the old indoor location manager registration interface in favor of a more simply named method with accompanying unregister method.
+* Removed the `-setCurrentFloor:` PWMapView property mutator declaration and removed the `readonly` attribute of the property.
 
 ##v2.3.1 (Monday, March 2nd, 2015)
 * Fixed bug where when routing across multiple floors with a valid indoor location the build asset would get 'stuck' while the blue dot continued to move.
