@@ -1,5 +1,5 @@
 //
-//  RouteInstructionTableViewCell.m
+//  RoutingDirectionsTableViewCell.m
 //  PWMapKit
 //
 //  Created on 8/15/16.

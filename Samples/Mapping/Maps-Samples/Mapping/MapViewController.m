@@ -44,7 +44,7 @@ const CGFloat RouteInstructionHeight = 75.0f;
 @property (nonatomic, assign) BOOL buildingFinishedLoading;
 @property (nonatomic, assign) BOOL directoryWasAutoSelected;
 @property (nonatomic, assign) BOOL userWasInformedOfReachingDestination;
-@property (nonatomic, assign) BOOL zoomWasSetWhenLocationWasFound;
+@property (nonatomic, assign) BOOL firstLocationAcquired;
 
 @end
 
@@ -375,11 +375,11 @@ const CGFloat RouteInstructionHeight = 75.0f;
         return;
     }
     
-    if (!self.zoomWasSetWhenLocationWasFound) {
-        self.zoomWasSetWhenLocationWasFound = YES;
+    if (!self.firstLocationAcquired) {
+        self.firstLocationAcquired = YES;
         PWFloor *currentUserFloor = [self.building floorForFloorID:userLocation.floorID];
         [self.mapView setFloor:currentUserFloor];
-        [self.mapView setCenterCoordinate:userLocation.coordinate zoomLevel:30 animated:YES];
+        [self.mapView setTrackingMode:PWTrackingModeFollow];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:CurrentUserLocationUpdatedNotification object:userLocation];
 }

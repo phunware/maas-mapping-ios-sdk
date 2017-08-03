@@ -18,37 +18,14 @@ signatureKey
 
 buildings ->
 identifier
-name
 ```
- For BLE such as Senion:
-
- ```
-BLE ->
-mapIdentifier
-customerIdentifier
-```
-For VBLE such as Beacon Point or Mist:
-
-```
-VBLE ->
-sdkToken
-```
-
-When fetching the building in MapViewController.m make sure to comment/uncomment the corresponding BLE or VBLE code depending on your configuration.
 
 ```objc
 [PWBuilding buildingWithIdentifier:_buildingId completion:^(PWBuilding *building, NSError *error) {
    ...
         dispatch_async(dispatch_get_main_queue(), ^{
-            // For virtual beacon change to use VBLE key
-            NSDictionary *bleConf = weakself.configuration[@"BLE"];
-            // NSDictionary *vbleConf = weakself.configuration[@"VBLE"];
             PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:weakself.buildingId];
-            
-            // For virtual beacon uncomment virtualBeaconToken and remove senionCustomerID, senionMapID
-            managedLocationManager.senionCustomerID = bleConf[@"customerIdentifier"];
-            managedLocationManager.senionMapID = bleConf[@"mapIdentifier"];
-            // managedLocationManager.virtualBeaconToken = vbleConf[@"sdkToken"];
+
             [weakself.mapView registerLocationManager:managedLocationManager];
         });
    ...
@@ -65,7 +42,7 @@ When fetching the building in MapViewController.m make sure to comment/uncomment
 	// Get the buliding object here
 	<#building#>					
 }];
-                    
+
 ...
 
 // Show the building on the map
