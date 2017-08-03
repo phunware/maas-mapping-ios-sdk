@@ -3,30 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>appId</key>
-	<string>&lt;user data input&gt;</string>
+	<string>&lt;User input data&gt;</string>
 	<key>accessKey</key>
-	<string>&lt;user data input&gt;</string>
+	<string>&lt;User input data&gt;</string>
 	<key>signatureKey</key>
-	<string>&lt;user data input&gt;</string>
+	<string>&lt;User input data&gt;</string>
 	<key>buildings</key>
 	<array>
 		<dict>
 			<key>identifier</key>
-			<real>0</real>
-			<key>name</key>
-			<string>&lt;user data input&gt;</string>
-			<key>BLE</key>
-			<dict>
-				<key>mapIdentifier</key>
-				<string>&lt;user data input&gt;</string>
-				<key>customerIdentifier</key>
-				<string>&lt;user data input&gt;</string>
-			</dict>
-			<key>VBLE</key>
-			<dict>
-				<key>sdkToken</key>
-				<string>&lt;user data input&gt;</string>
-			</dict>
+			<integer>0</integer>
 		</dict>
 	</array>
 </dict>

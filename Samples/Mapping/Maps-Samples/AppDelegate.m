@@ -32,7 +32,7 @@
     
     [RouteAccessibilityManager sharedInstance].locationDistanceUnit = LocationDistanceUnitFeet;
     [RouteAccessibilityManager sharedInstance].directionType = DirectionTypeOClock;
-    
+
     [self fetchConfiguration];
     
     return YES;
@@ -43,8 +43,7 @@
     [[SimpleConfiguration sharedInstance] fetchConfiguration:^(NSDictionary *conf, NSError *error) {
         [PWCore setApplicationID:conf[@"appId"]
                        accessKey:conf[@"accessKey"]
-                    signatureKey:conf[@"signatureKey"]
-                   encryptionKey:conf[@"encryptionKey"]?:@""];
+                    signatureKey:conf[@"signatureKey"]];
         
         weakSelf.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         if (UIAccessibilityIsVoiceOverRunning() && ![[NSUserDefaults standardUserDefaults] boolForKey:VoiceOverConfirmedKey]) {

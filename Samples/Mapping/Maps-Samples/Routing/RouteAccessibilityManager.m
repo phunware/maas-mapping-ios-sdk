@@ -7,11 +7,11 @@
 //
 
 #import <PWMapKit/PWMapKit.h>
+#import <PWLocation/PWLocation.h>
 
 #import "RouteAccessibilityManager.h"
 #import "MapViewController.h"
 #import "CommonSettings.h"
-#import "PWIndoorLocation+Helper.h"
 #import "PWRouteInstruction+Helper.h"
 
 #define kUpdateFrequency 2
@@ -82,7 +82,8 @@
     if (!_currentRouteInstruction)
         return;
     
-    CLLocationDistance distanceToEndPoint = [_currentLocation distanceTo:_currentRouteInstruction.route.endPoint.coordinate];
+    id<PWMapPoint> endPointOfInstruction = [self.currentRouteInstruction.points lastObject];
+    CLLocationDistance distanceToEndPoint = [self distanceTo:self.currentLocation.coordinate from:endPointOfInstruction.coordinate];
     // Check if user is about to end current instruction
     if (distanceToEndPoint < kDistanceToTellInstructionWillChange) {
         // Check to avoid repeating
@@ -124,12 +125,12 @@
         }
         _notifiedRouteInstructionAboutChange = nil;
         
-        CLLocationDistance distanceToStartPoint = [_currentLocation distanceTo:_currentRouteInstruction.route.startPoint.coordinate];
+        CLLocationDistance distanceToStartPoint = [self distanceTo:self.currentLocation.coordinate from:self.currentRouteInstruction.route.startPoint.coordinate];
         // Check if it's time to tell the rest of distance
         if (distanceToStartPoint > _previousNotifiedDistance) {
             _previousNotifiedDistance = distanceToStartPoint + kDistanceToTellLongWayUpdate;
             
-            CLLocationDistance restDistance = [_currentLocation distanceTo:_currentRouteInstruction.route.endPoint.coordinate];
+            CLLocationDistance restDistance = [self distanceTo:self.currentLocation.coordinate from:self.currentRouteInstruction.route.endPoint.coordinate];
             NSString *accessibilityLabel = [NSString stringWithFormat:PWLocalizedString(@"ContinueXFeetThenTurnToXOClock", @"continue %@."), [self distanceFormat:restDistance]];
             if ([self.delegate respondsToSelector:@selector(routeInstruction:didLongDistanceMoveVO:)]) {
                 [self.delegate routeInstruction:_currentRouteInstruction didLongDistanceMoveVO:accessibilityLabel];
@@ -212,6 +213,12 @@
 }
 
 #pragma mark - Private
+
+- (CLLocationDistance)distanceTo:(CLLocationCoordinate2D)destination from:(CLLocationCoordinate2D)origin {
+    CLLocation *startLocation = [[CLLocation alloc] initWithLatitude:self.currentLocation.coordinate.latitude longitude:self.currentLocation.coordinate.longitude];
+    CLLocation *endLocation = [[CLLocation alloc] initWithLatitude:self.currentRouteInstruction.route.endPoint.coordinate.latitude longitude:self.currentRouteInstruction.route.endPoint.coordinate.longitude];
+    return [startLocation distanceFromLocation:endLocation];
+}
 
 - (NSString *)distanceFormat:(CLLocationDistance)meter {
     int distanceIntValue = 0;

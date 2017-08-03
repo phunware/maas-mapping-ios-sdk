@@ -16,7 +16,7 @@ extern NSString * const CurrentUserLocationUpdatedNotification;
 extern NSString * const CancelCurrentRouteNotification;
 extern NSString * const PlotRouteNotification;
 
-@interface MapViewController : UIViewController <PWMapViewDelegate, PWRouteStartViewDelegate, PWRouteInstructionViewDelegate>
+@interface MapViewController : UIViewController <PWMapViewDelegate>
 
 #pragma mark - Properties
 

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9D8BD63F1D95E67600C22BCA /* RouteAccessibilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BD63E1D95E67600C22BCA /* RouteAccessibilityManager.m */; };
-		9D8BD6421D95EBF700C22BCA /* PWIndoorLocation+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BD6411D95EBF700C22BCA /* PWIndoorLocation+Helper.m */; };
 		9D8DDCB41D8C9CDF000FD733 /* PWBuilding+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDCB31D8C9CDF000FD733 /* PWBuilding+Helper.m */; };
 		E3138CB11D8C7D8A007E043E /* ShowAllStepsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3138CB01D8C7D8A007E043E /* ShowAllStepsTableViewCell.m */; };
 		E34647501D87421400EDBD20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E34647431D87421400EDBD20 /* AppDelegate.m */; };
@@ -59,8 +58,6 @@
 		7BCB192D0DFDEE5BD6DDAD0B /* libPods-Maps-SamplesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Maps-SamplesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D8BD63D1D95E67600C22BCA /* RouteAccessibilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteAccessibilityManager.h; path = Routing/RouteAccessibilityManager.h; sourceTree = "<group>"; };
 		9D8BD63E1D95E67600C22BCA /* RouteAccessibilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteAccessibilityManager.m; path = Routing/RouteAccessibilityManager.m; sourceTree = "<group>"; };
-		9D8BD6401D95EBF700C22BCA /* PWIndoorLocation+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PWIndoorLocation+Helper.h"; path = "Categories/PWIndoorLocation+Helper.h"; sourceTree = "<group>"; };
-		9D8BD6411D95EBF700C22BCA /* PWIndoorLocation+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PWIndoorLocation+Helper.m"; path = "Categories/PWIndoorLocation+Helper.m"; sourceTree = "<group>"; };
 		9D8DDCB21D8C9CDF000FD733 /* PWBuilding+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PWBuilding+Helper.h"; path = "Categories/PWBuilding+Helper.h"; sourceTree = "<group>"; };
 		9D8DDCB31D8C9CDF000FD733 /* PWBuilding+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PWBuilding+Helper.m"; path = "Categories/PWBuilding+Helper.m"; sourceTree = "<group>"; };
 		A49FDDFFADAE5B2436BEE2E4 /* Pods-Maps-SamplesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maps-SamplesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Maps-SamplesUITests/Pods-Maps-SamplesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -258,8 +255,6 @@
 			children = (
 				9D8DDCB21D8C9CDF000FD733 /* PWBuilding+Helper.h */,
 				9D8DDCB31D8C9CDF000FD733 /* PWBuilding+Helper.m */,
-				9D8BD6401D95EBF700C22BCA /* PWIndoorLocation+Helper.h */,
-				9D8BD6411D95EBF700C22BCA /* PWIndoorLocation+Helper.m */,
 				E34647791D8744A800EDBD20 /* PWRouteInstruction+Helper.h */,
 				E346477A1D8744A800EDBD20 /* PWRouteInstruction+Helper.m */,
 			);
@@ -408,7 +403,8 @@
 				TargetAttributes = {
 					E34647161D873FDA00EDBD20 = {
 						CreatedOnToolsVersion = 7.3.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 84CK77G588;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -488,13 +484,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Maps-Samples-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EDAF37AB50FF31E51041E1CF /* [CP] Embed Pods Frameworks */ = {
@@ -503,9 +502,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Maps-Samples/Pods-Maps-Samples-frameworks.sh",
+				"${PODS_ROOT}/MistSDK/Framework/MistSDK.framework",
+				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MistSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWCore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -533,7 +537,6 @@
 				E34647831D8744CF00EDBD20 /* POIDetailsTableViewCell.m in Sources */,
 				E34647821D8744CF00EDBD20 /* POIDetailsSummaryCell.m in Sources */,
 				E34647731D8743DF00EDBD20 /* MapViewController.m in Sources */,
-				9D8BD6421D95EBF700C22BCA /* PWIndoorLocation+Helper.m in Sources */,
 				FBE7EFF21E77153700B98BE2 /* RouteInstructionsView.m in Sources */,
 				E34647A81D87511400EDBD20 /* ConfirmVoiceOverViewController.m in Sources */,
 				E346479F1D87451900EDBD20 /* CommonSettings.m in Sources */,
@@ -597,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "f051d59b-d336-42a3-938b-eb29ada42498";
@@ -642,7 +645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "f051d59b-d336-42a3-938b-eb29ada42498";
 				SDKROOT = iphoneos;
@@ -658,14 +661,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 84CK77G588;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Maps-Samples/Resources/Maps-Samples.plist";
+				INFOPLIST_FILE = "Maps-Samples/Resources/Maps-Samples.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phunware.Maps-Samples";
 				PRODUCT_NAME = "Maps-Samples";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "240c94c8-363b-4cda-b7ec-9364d96b2616";
+				PROVISIONING_PROFILE_SPECIFIER = Phunware_Wild2;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -676,15 +679,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Phunware, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 84CK77G588;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Maps-Samples/Resources/Maps-Samples.plist";
+				INFOPLIST_FILE = "Maps-Samples/Resources/Maps-Samples.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phunware.Maps-Samples";
 				PRODUCT_NAME = "Maps-Samples";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "f051d59b-d336-42a3-938b-eb29ada42498";
+				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
