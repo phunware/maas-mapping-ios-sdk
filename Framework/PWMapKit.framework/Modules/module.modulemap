@@ -1,6 +1,6 @@
 framework module PWMapKit {
-	  umbrella header "PWMapKit.h"
+  umbrella header "PWMapKit.h"
 
-	  export *
-	  module * { export * }
-	}
+  export *
+  module * { export * }
+}

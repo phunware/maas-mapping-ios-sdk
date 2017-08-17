@@ -1,4 +1,10 @@
 #PWMapKit Changelog
+##v3.1.5 (Thursday, Aug 17th, 2017)
+
+* Fix route issue with a curved manuever.
+* Fix orientation issue when the heading service is turned on by developer.
+
+
 ##v3.1.4 (Monday, Jun 26th, 2017)
 
 * Improve route calculator for finding shortest route path.
