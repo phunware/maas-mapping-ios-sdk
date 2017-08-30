@@ -1,4 +1,8 @@
 #PWMapKit Changelog
+##v3.1.6 (Wednesday, Aug 30th, 2017)
+
+* Update to PWLocation 3.1.7
+
 ##v3.1.5 (Thursday, Aug 17th, 2017)
 
 * Fix route issue with a curved manuever.
