@@ -2,13 +2,11 @@
 //  PWRouteInstruction.h
 //  PWMapKit
 //
-//  Copyright © 2017 Phunware. All rights reserved.
+//  Copyright (c) 2017 Phunware. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
-
-#import "PWRoute.h"
+@class PWRoute;
+@class PWPointOfInterest;
 
 static NSString *const kPWRouteInstructionDirectionSharpLeft = @"PWRouteInstructionDirectionSharpLeft";
 static NSString *const kPWRouteInstructionDirectionSharpRight = @"PWRouteInstructionDirectionSharpRight";
@@ -22,125 +20,114 @@ static NSString *const kPWRouteInstructionDirectionStairsDown = @"PWRouteInstruc
 static NSString *const kPWRouteInstructionDirectionEscalatorUp = @"PWRouteInstructionDirectionEscalatorUp";
 static NSString *const kPWRouteInstructionDirectionEscalatorDown = @"PWRouteInstructionDirectionEscalatorDown";
 
-/**
- *  Defines the different types of custom locations.
- */
 typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
-    /**
-     *  Route instruction direction straight.
-     */
+    /** Indicates a straight route instruction */
     PWRouteInstructionDirectionStraight,
-    /**
-     *  Route instruction direction left.
-     */
+    /** Indicates a left-turn route instruction */
     PWRouteInstructionDirectionLeft,
-    /**
-     *  Route instruction direction right.
-     */
+    /** Indicates a right route instruction */
     PWRouteInstructionDirectionRight,
-    /**
-     *  Route instruction direction bear left.
-     */
+    /** Indicates a a bear left route instruction */
     PWRouteInstructionDirectionBearLeft,
-    /**
-     *  Route instruction direction bear right.
-     */
+    /** Indicates a bear left route instruction */
     PWRouteInstructionDirectionBearRight,
-    /**
-     *  Route instruction direction floor change.
-     */
+    /** Indicates a floor change route instruction */
     PWRouteInstructionDirectionFloorChange,
-    /**
-     *  Route instruction direction elevator up.
-     */
+    /** Indicates a elevator up */
     PWRouteInstructionDirectionElevatorUp,
-    /**
-     *  Route instruction direction elevator down.
-     */
+    /** Indicates a elevator down */
     PWRouteInstructionDirectionElevatorDown,
-    /**
-     *  Route instruction direction stairs up.
-     */
+    /** Indicates a stairs up */
     PWRouteInstructionDirectionStairsUp,
-    /**
-     *  Route instruction direction stairs down.
-     */
+    /** Indicates a stairs down */
     PWRouteInstructionDirectionStairsDown,
-    /**
-     *  Route instruction direction escalator up.
-     */
+    /** Indicates a escalator up */
     PWRouteInstructionDirectionEscalatorUp,
-    /**
-     *  Route instruction direction escalator down.
-     */
+    /** Indicates a escalator down */
     PWRouteInstructionDirectionEscalatorDown
 };
 
 /**
- *  PWRouteInstruction class represents one step inside a route with the necessary moves to go from the start point of interest and the end point of interest.
+ A `PWRouteInstruction` class represents one step inside a route with the necessary moves to go from the start point and the end point.
  */
+
 @interface PWRouteInstruction : NSObject
 
-/**---------------------------------------------------------------------------------------
- * @name Properties
- *  ---------------------------------------------------------------------------------------
- */
+# pragma mark - Summary
 
 /**
- * Sequence of points represented by this maneuver.
+ * A reference to the `PWRoute` object.
  */
-@property (readonly, copy) NSArray /* PWMapPoint */ *points;
+@property (readonly, nonatomic, weak) PWRoute *route;
 
 /**
- *  A reference to the origin, or start point of interest, for the route.
- * @discussion Change to use points.firstObject
+ * The total distance of the route expressed in meters.
  */
-@property (nonatomic,readonly) PWPointOfInterest *startPointOfInterest __deprecated;
+@property (readonly, nonatomic) CLLocationDistance distance;
 
 /**
- *  A reference to the destination, or end point of interest, for the route.
- * @discussion Change to use points.lastObject
+ * The sequence of points represented by this maneuver.
  */
-@property (nonatomic,readonly) PWPointOfInterest *endPointOfInterest __deprecated;
+@property (readonly, nonatomic) NSArray /* PWMapPoint */ *points;
 
 /**
- *  A reference to the route object the route instruction instance belongs to.
+ Polyline representing the sequence of points to be drawn for this instruction.
  */
-@property (nonatomic,readonly) PWRoute *route;
+@property (readonly, nonatomic) MKPolyline *polyline;
 
 /**
- *  A NSString object representing the movement instruction for the current instruction instance.
+ A flag check if it's last route instruction in the associated route.
  */
-@property (nonatomic,copy,readonly) NSString *movement;
+@property (nonatomic, readonly, getter=isLast) BOOL last;
+
+# pragma mark - Current Instruction Properties
 
 /**
- *  A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.
+ * The text of representing the movement instruction for the current instruction instance.
  */
-@property (nonatomic,readonly) PWRouteInstructionDirection movementDirection;
+@property (readonly, nonatomic) NSString *movement;
 
 /**
- *  The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.
+ * The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.
  */
-@property (nonatomic, readonly) CLLocationDirection movementTrueHeading;
+@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection;
 
 /**
- *  A NSString object representing the turn instruction for the current instruction instance.
+ * The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.
  */
-@property (nonatomic,copy,readonly) NSString *turn;
+@property (readonly, nonatomic) CLLocationDirection movementTrueHeading;
+
+# pragma mark - Turn(to Next) Instruction Properties
 
 /**
- *  A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.
+ * A NSString object representing the turn instruction for the current instruction instance.
+ * @discussion Replace with `movement`.
  */
-@property (nonatomic,readonly) PWRouteInstructionDirection turnDirection;
+@property (readonly, nonatomic) NSString *turn;
 
 /**
- *  The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.
+ * A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.
+ * @discussion Replace with `movementDirection`.
  */
-@property (nonatomic, readonly) float turnAngle;
+@property (readonly, nonatomic) PWRouteInstructionDirection turnDirection;
 
 /**
- *  A CLLocationDistance property representing the total distance of the route expressed in meters.
+ * The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.
  */
-@property (nonatomic,readonly) CLLocationDistance distance;
+@property (readonly, nonatomic) CLLocationDirection turnAngle;
+
+# pragma mark - Deprecated Properties
+
+/**
+ * A reference to the origin, or start point-of-interest, for the route. It may be nil when it's a way point instead of point-of-interest.
+ * @discussion Replace with points.firstObject.
+ */
+@property (readonly, nonatomic) PWPointOfInterest *startPointOfInterest __deprecated;
+
+/**
+ * A reference to the destination, or end point-of-interest, for the route. It may be nil when it's a way point instead of point-of-interest.
+ * @discussion Replace with points.lastObject.
+ */
+@property (readonly, nonatomic) PWPointOfInterest *endPointOfInterest __deprecated;
 
 @end

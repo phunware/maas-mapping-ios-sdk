@@ -1,4 +1,10 @@
 #PWMapKit Changelog
+##v3.1.6.1 (Wednesday, Sep 6th, 2017)
+
+* Add two new delegate callback for PWMapView:
+	* - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view;
+	* - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view;
+
 ##v3.1.6 (Wednesday, Aug 30th, 2017)
 
 * Update to PWLocation 3.1.7

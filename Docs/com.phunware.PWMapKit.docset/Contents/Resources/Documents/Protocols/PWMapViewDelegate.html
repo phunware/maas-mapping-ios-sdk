@@ -55,11 +55,15 @@
 	
 	<option value="//api/name/mapView:didChangeTrackingMode:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didChangeTrackingMode:</option>
 	
+	<option value="//api/name/mapView:didDeselectAnnotationView:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didDeselectAnnotationView:</option>
+	
 	<option value="//api/name/mapView:didDeselectBuildingAnnotationView:withPointOfInterest:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didDeselectBuildingAnnotationView:withPointOfInterest:</option>
 	
 	<option value="//api/name/mapView:didFailToLoadBuilding:error:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFailToLoadBuilding:error:</option>
 	
 	<option value="//api/name/mapView:didFinishLoadingBuilding:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didFinishLoadingBuilding:</option>
+	
+	<option value="//api/name/mapView:didSelectAnnotationView:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didSelectAnnotationView:</option>
 	
 	<option value="//api/name/mapView:didSelectBuildingAnnotationView:withPointOfInterest:">&nbsp;&nbsp;&nbsp;&nbsp;- mapView:didSelectBuildingAnnotationView:withPointOfInterest:</option>
 	
@@ -129,11 +133,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didChangeTrackingMode:">mapView:didChangeTrackingMode:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didDeselectAnnotationView:">mapView:didDeselectAnnotationView:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didDeselectBuildingAnnotationView:withPointOfInterest:">mapView:didDeselectBuildingAnnotationView:withPointOfInterest:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFailToLoadBuilding:error:">mapView:didFailToLoadBuilding:error:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didFinishLoadingBuilding:">mapView:didFinishLoadingBuilding:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didSelectAnnotationView:">mapView:didSelectAnnotationView:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapView:didSelectBuildingAnnotationView:withPointOfInterest:">mapView:didSelectBuildingAnnotationView:withPointOfInterest:</a></span></li>
 	
@@ -255,6 +263,18 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/mapViewDidFinishRenderingMap:fullyRendered:">&ndash;&nbsp;mapViewDidFinishRenderingMap:fullyRendered:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:didSelectAnnotationView:">&ndash;&nbsp;mapView:didSelectAnnotationView:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapView:didDeselectAnnotationView:">&ndash;&nbsp;mapView:didDeselectAnnotationView:</a></code>
 	</span>
 	
 	
@@ -693,6 +713,57 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/mapView:didDeselectAnnotationView:" title="mapView:didDeselectAnnotationView:"></a>
+	<h3 class="subsubtitle method-title">mapView:didDeselectAnnotationView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that one of its annotation views was deselected. You can use this method to track changes in the selection state of annotation views.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(MKMapView *)<em>mapView</em> didDeselectAnnotationView:(MKAnnotationView *)<em>view</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view containing the annotation view.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd><p>The annotation view that was deselected.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/mapView:didDeselectBuildingAnnotationView:withPointOfInterest:" title="mapView:didDeselectBuildingAnnotationView:withPointOfInterest:"></a>
 	<h3 class="subsubtitle method-title">mapView:didDeselectBuildingAnnotationView:withPointOfInterest:</h3>
 	
@@ -831,6 +902,57 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>building</em></dt>
 			<dd><p>The building object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWMapView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapView:didSelectAnnotationView:" title="mapView:didSelectAnnotationView:"></a>
+	<h3 class="subsubtitle method-title">mapView:didSelectAnnotationView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that one of its annotation views was selected. You can use this method to track changes in the selection state of annotation views.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)mapView:(MKMapView *)<em>mapView</em> didSelectAnnotationView:(MKAnnotationView *)<em>view</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapView</em></dt>
+			<dd><p>The map view containing the annotation view.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd><p>The annotation view that was selected.</p></dd>
 		</dl>
 		
 	</div>
@@ -1577,7 +1699,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-06-23)</span><br />
+						<p><span class="copyright">&copy; 2017 Phunware, Inc.. All rights reserved. (Last updated: 2017-09-06)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

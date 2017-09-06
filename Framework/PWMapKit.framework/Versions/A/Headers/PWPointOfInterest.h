@@ -2,48 +2,42 @@
 //  PWPointOfInterest.h
 //  PWMapKit
 //
-//  Copyright © 2017 Phunware. All rights reserved.
+//  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-#import "PWPointOfInterestType.h"
-#import "PWFloor.h"
 #import "PWMapPoint.h"
 
-/**
- *  A PWPointOfInterest represents single point of interest defined within MaaS Portal.
- */
-@interface PWPointOfInterest : NSObject<PWMapPoint>
-
-/**---------------------------------------------------------------------------------------
- * @name Properties
- *  ---------------------------------------------------------------------------------------
- */
+@class PWFloor;
+@class PWPointOfInterestType;
 
 /**
- *  A summary description of the point of interest.
+ The building annotation object is a convenience class that implements the `PWPointOfInterest` protocol. This class it primarily for internal use and not exposed in the SDK.
  */
-@property (nonatomic,copy,readonly) NSString *summary;
+@interface PWPointOfInterest : NSObject <PWMapPoint>
 
 /**
- *  The PWFloor object that the point of interest is a member of.
+ *  A summary description of the point-of-interest.
  */
-@property (nonatomic,readonly,weak) PWFloor *floor;
+@property (readonly) NSString *summary;
 
 /**
- *  The PWPointOfInterestType object that the point of interest is a member of.
+ *  The PWFloor object that the point-of-interest is a member of.
  */
-@property (nonatomic,copy,readonly) PWPointOfInterestType *pointOfInterestType;
+@property (readonly, weak) PWFloor *floor;
 
 /**
- *  The representative UIImage of the point of interest.
+ *  The PWPointOfInterestType object that the point-of-interest is a member of.
  */
-@property (nonatomic,readonly) UIImage *image;
+@property (readonly) PWPointOfInterestType *pointOfInterestType;
 
 /**
- Metadata associated with the point of interest.
+ *  The representative UIImage of the point-of-interest.
  */
-@property (nonatomic,readonly) NSDictionary *metaData;
+@property (readonly) UIImage *image;
+
+/**
+ * Metadata associated with the point-of-interest.
+ */
+@property (readonly) NSDictionary *metaData;
 
 @end
