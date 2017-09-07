@@ -144,6 +144,46 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didSelectAnnotationView:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that one of its annotation views was selected. You can use this method to track changes in the selection state of annotation views.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The map view containing the annotation view.</Abstract>
+				</Parameter><Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The annotation view that was selected.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didSelectAnnotationView:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didDeselectAnnotationView:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that one of its annotation views was deselected. You can use this method to track changes in the selection state of annotation views.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapView</Name>
+					<Abstract type="html">The map view containing the annotation view.</Abstract>
+				</Parameter><Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The annotation view that was deselected.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mapView:didDeselectAnnotationView:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didSelectBuildingAnnotationView:withPointOfInterest:</TokenIdentifier>
 			<Abstract type="html">Tells the delegate that the PWBuildingAnnotationView was selected by the user.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
