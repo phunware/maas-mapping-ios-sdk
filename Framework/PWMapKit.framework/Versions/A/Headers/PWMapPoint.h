@@ -25,8 +25,6 @@
  */
 @property (nonatomic, readonly) NSInteger buildingID;
 
-@optional
-
 /**
  A flag indicating whether it's an accessible point.
  */
