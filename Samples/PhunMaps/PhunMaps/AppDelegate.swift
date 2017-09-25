@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  LoadMap
+//  Mapping-Sample
 //
-//  Created on 4/24/17.
+//  Created on 5/31/17.
 //  Copyright © 2017 Phunware. All rights reserved.
 //
 
@@ -13,13 +13,10 @@ import PWCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let applicationId = "2028"
-    let accessKey = "a108a7a6a9694d11a0c919e43f416a468899ec8d"
-    let signatureKey = "79a426ef02cb640f56956fdad9856eecdefa91b0"
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        ConfigurationManager.shared.configure()
         return true
     }
 

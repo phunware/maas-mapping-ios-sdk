@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>buildingId</key>
+	<integer>0</integer>
+	<key>name</key>
+	<string>&lt;Your_Building_Name&gt;</string>
+	<key>ios</key>
+	<dict>
+		<key>appId</key>
+		<string>&lt;Your_Maas_App_Id&gt;</string>
+		<key>accessKey</key>
+		<string>&lt;Your_Maas_Access_Key&gt;</string>
+		<key>signatureKey</key>
+		<string>&lt;Your_Maas_Signature_Key&gt;</string>
+	</dict>
+</dict>
+</plist>

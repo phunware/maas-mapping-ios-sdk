@@ -11,10 +11,12 @@ import PWMapKit
 import PWLocation
 
 class ViewController: UIViewController {
-    let buildingIdentifier = 0
+    let buildingIdentifier = 59770
     
     let mapView = PWMapView()
     var firstLocationAcquired = false
+    
+    var manager: PWManagedLocationManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +24,18 @@ class ViewController: UIViewController {
         mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()
+        manager = PWManagedLocationManager.init(buildingId: buildingIdentifier)
+        manager.delegate = self
+        manager.startUpdatingLocation()
         
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             self?.mapView.setBuilding(building)
             
             if let buildingIdentifier = self?.buildingIdentifier {
-                let managedLocationManager = PWManagedLocationManager.init(buildingId: buildingIdentifier)
+//                let managedLocationManager = PWManagedLocationManager.init(buildingId: buildingIdentifier)
                 
                 DispatchQueue.main.async {
-                    self?.mapView.register(managedLocationManager)
+//                    self?.mapView.register(managedLocationManager)
                 }
             }
         }
@@ -51,5 +56,20 @@ extension ViewController: PWMapViewDelegate {
             firstLocationAcquired = true
             mapView.trackingMode = .follow
         }
+    }
+    
+    func mapViewDidFailLoadingMap(_ mapView: PWMapView!, withError error: Error!) {
+        print("\(error)")
+    }
+}
+
+extension ViewController: PWLocationManagerDelegate {
+    
+    func locationManager(_ manager: PWLocationManager!, failedWithError error: Error!) {
+        print("\(error)")
+    }
+    
+    func locationManager(_ manager: PWLocationManager!, didUpdateTo location: PWLocationProtocol!) {
+        print("?")
     }
 }
