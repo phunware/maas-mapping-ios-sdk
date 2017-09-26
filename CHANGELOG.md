@@ -1,4 +1,8 @@
 #PWMapKit Changelog
+
+##v3.1.6.2 (Friday, Sep 8th, 2017)
+* Update to PWLocation 3.1.7.1
+
 ##v3.1.6.1 (Wednesday, Sep 6th, 2017)
 
 * Add two new delegate callback for PWMapView:

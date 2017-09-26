@@ -6,69 +6,26 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
-
-#import "PWMapPoint.h"
-@class PWPointOfInterestType;
-@class PWFloor;
+#import "PWPointOfInterestType.h"
+#import "PWPointOfInterest.h"
 
 /**
- *  A PWCustomPointOfInterest represents custom single point-of-interest.
+ *  A PWCustomPointOfInterest represents custom single point of interest.
  */
-@interface PWCustomPointOfInterest : NSObject <PWMapPoint>
+@interface PWCustomPointOfInterest : PWPointOfInterest
 
 /**
- The point identifier as specified by the mapping service.
+ *  The PWPointOfInterestType object that the point of interest is a member of.
  */
-@property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic, copy) PWPointOfInterestType * __nullable pointOfInterestType;
 
 /**
- The point identifier as specified by the mapping service.
+ Metadata associated with the custom point of interest.
  */
-@property (nonatomic) NSInteger identifier;
-
-/**
- The floor identifier for which this point applies.
- */
-@property (nonatomic) NSInteger floorID;
-
-/**
- The floor for which this point applies.
- */
-@property (nonatomic, nullable) PWFloor *floor;
-
-/**
- The building identifier for which this point applies.
- */
-@property (nonatomic) NSInteger buildingID;
-
-/**
- *  The title of the point-of-interest.
- */
-@property (nonatomic, copy, nullable) NSString *title;
-
-/**
- *  A summary description of the point-of-interest.
- */
-@property (nonatomic, copy, nullable) NSString *summary;
-
-/**
- *  The representative UIImage of the point-of-interest.
- */
-@property (nonatomic, nullable) UIImage *image;
-
-/**
- *  A `PWPointOfInterestType` object that this custom point-of-interest is a member of, a type image icon will automatically be applied if `image` property is not set.
- */
-@property (nonatomic, nullable) PWPointOfInterestType *pointOfInterestType;
-
-/**
- Metadata associated with the custom point-of-interest, using it to pass data as you want.
- */
-@property (nonatomic, nullable) NSDictionary *metaData;
+@property (nonatomic, strong) NSDictionary * __nullable metaData;
 
 /** 
- A flag indicating whether it's to display or hide the label text.
+ A flag indicating whether it's to display or hide the text label.
  */
 @property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel;
 
@@ -87,14 +44,19 @@
  */
 @property (nonatomic, getter=isExit) BOOL exit;
 
+/** 
+ * Disable the default initializer.
+ */
+- (instancetype __nullable)init __unavailable;
+
 /**
  *  Instantiates a `PWCustomPointOfInterest` object with the given parameters.
  *
- *  @param coordinate The coordinate of custom point-of-interest.
- *  @param floorId The floor identifier the custom point-of-interest on.
- *  @param buildingId The building identifier the custom point-of-interest in.
- *  @param title The title of custom point-of-interest.
- *  @param image The icon of custom point-of-interest.
+ *  @param coordinate The coordinate of custom point of interest
+ *  @param floorId The floor identifier of custom point of interest
+ *  @param buildingId The building identifier of custom point of interest
+ *  @param title The text title of custom point of interest
+ *  @param image The icon of custom point of interest
  *
  *  @return Returns a `PWCustomPointOfInterest` object.
  */
