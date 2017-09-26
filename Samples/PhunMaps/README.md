@@ -63,7 +63,7 @@ floor.pointsOfInterest(of:<#pointOfInterestType#> containing:<#searchTerm#>)
 
 ### Routing between two POIs
 
-### MapViewController.m
+### MapViewController.swift
 
 ```swift
 // Initializing a route
