@@ -6,6 +6,6 @@ target 'LoadMap' do
   use_frameworks!
 
   # Pods for LoadMap
-  pod 'PWMapKit’, '3.1.4'
+  pod 'PWMapKit’
 
 end

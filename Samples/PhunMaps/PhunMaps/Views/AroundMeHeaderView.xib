@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="WoX-D1-yp1" customClass="AroundMeHeaderView" customModule="Mapping_Sample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently At:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dy6-3w-eGR">
+                    <rect key="frame" x="10" y="5" width="349" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIs-Nq-7cj" userLabel="Nearest POI Label">
+                    <rect key="frame" x="10" y="34" width="349" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxA-Ld-e4B" userLabel="Following Container">
+                    <rect key="frame" x="0.0" y="60" width="375" height="27"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following are within 25 feet:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqB-Eh-4VC">
+                            <rect key="frame" x="8" y="2" width="359" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="TqB-Eh-4VC" firstAttribute="leading" secondItem="cxA-Ld-e4B" secondAttribute="leading" constant="8" id="BWA-40-HWL"/>
+                        <constraint firstItem="TqB-Eh-4VC" firstAttribute="top" secondItem="cxA-Ld-e4B" secondAttribute="top" constant="2" id="CES-qP-lVh"/>
+                        <constraint firstAttribute="height" constant="27" id="S8M-UB-YmQ"/>
+                        <constraint firstAttribute="trailing" secondItem="TqB-Eh-4VC" secondAttribute="trailing" constant="8" id="c5F-xM-rdK"/>
+                        <constraint firstAttribute="bottom" secondItem="TqB-Eh-4VC" secondAttribute="bottom" constant="4" id="kJq-Jz-vVi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Dy6-3w-eGR" firstAttribute="leading" secondItem="B7p-H9-31g" secondAttribute="leading" constant="10" id="1p4-4r-UcU"/>
+                <constraint firstItem="Dy6-3w-eGR" firstAttribute="top" secondItem="B7p-H9-31g" secondAttribute="top" constant="5" id="Jh3-vc-ybY"/>
+                <constraint firstItem="UIs-Nq-7cj" firstAttribute="leading" secondItem="Dy6-3w-eGR" secondAttribute="leading" id="LGF-WV-8Ed"/>
+                <constraint firstItem="UIs-Nq-7cj" firstAttribute="top" secondItem="Dy6-3w-eGR" secondAttribute="bottom" constant="5" id="MJt-Fw-0J7"/>
+                <constraint firstItem="B7p-H9-31g" firstAttribute="bottom" secondItem="cxA-Ld-e4B" secondAttribute="bottom" id="TDv-Zw-L0Q"/>
+                <constraint firstItem="UIs-Nq-7cj" firstAttribute="trailing" secondItem="Dy6-3w-eGR" secondAttribute="trailing" id="cnl-gu-kFQ"/>
+                <constraint firstItem="B7p-H9-31g" firstAttribute="trailing" secondItem="cxA-Ld-e4B" secondAttribute="trailing" id="dfr-6o-9GV"/>
+                <constraint firstItem="B7p-H9-31g" firstAttribute="trailing" secondItem="Dy6-3w-eGR" secondAttribute="trailing" constant="16" id="eWM-S0-66s"/>
+                <constraint firstItem="cxA-Ld-e4B" firstAttribute="leading" secondItem="B7p-H9-31g" secondAttribute="leading" id="gRm-tk-zEP"/>
+                <constraint firstItem="cxA-Ld-e4B" firstAttribute="top" secondItem="UIs-Nq-7cj" secondAttribute="bottom" constant="5" id="klL-1n-5Kx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="B7p-H9-31g"/>
+            <connections>
+                <outlet property="currentlyAtLabel" destination="Dy6-3w-eGR" id="VDi-Fw-E6R"/>
+                <outlet property="followingAreWithinContainerHeightConstraint" destination="S8M-UB-YmQ" id="sAQ-GQ-eX9"/>
+                <outlet property="followingAreWithinLabel" destination="TqB-Eh-4VC" id="CpH-U4-mdM"/>
+                <outlet property="nearestPOILabel" destination="UIs-Nq-7cj" id="KZw-DV-LrQ"/>
+            </connections>
+            <point key="canvasLocation" x="-9.5" y="171.5"/>
+        </view>
+    </objects>
+</document>
