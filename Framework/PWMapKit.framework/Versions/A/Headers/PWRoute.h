@@ -2,68 +2,76 @@
 //  PWRoute.h
 //  PWMapKit
 //
-//  Copyright (c) 2017 Phunware. All rights reserved.
+//  Copyright © 2017 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
+#import "PWBuilding.h"
+#import "PWPointOfInterest.h"
 #import "PWMapPoint.h"
 
-@class PWBuilding;
-@class PWPointOfInterest;
-
 /**
- The `PWRoute` class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes route information you can display to the user, such as the name of the route, its distance and the expected travel time.
- 
- Do not create instances of this class directly. Instead, request directions to receive route objects. For more information about requesting directions, see `PWDirections` Class Reference.
+ *  A PWRoute represents a route calculated for the user from within a building's boundaries; start point of interest to end point of interest.
  */
-
 @interface PWRoute : NSObject
 
+/**---------------------------------------------------------------------------------------
+ * @name Properties
+ *  ---------------------------------------------------------------------------------------
+ */
+
 /**
- * A reference to the route's building object.
+ *  A reference to the route's building object.
  */
 @property (nonatomic,readonly) PWBuilding *building;
 
 /**
- * A reference to the origin, or start point for the route.
+ *  A reference to the origin, or start point for the route.
  */
 @property (readonly) id<PWMapPoint> startPoint;
 
 /**
- * A reference to the destination, or end point for the route.
+ *  A reference to the destination, or end point for the route.
  */
 @property (readonly) id<PWMapPoint> endPoint;
 
 /**
- * A reference to the origin, or start point-of-interest, for the route.
+ *  A reference to the origin, or start point of interest, for the route.
  * @discussion Change to use `startPoint`
  */
 @property (nonatomic,readonly) PWPointOfInterest *startPointOfInterest __deprecated;
 
 /**
- * A reference to the destination, or end point-of-interest, for the route.
+ *  A reference to the destination, or end point of interest, for the route.
  * @discussion Change to use `endPoint`
  */
 @property (nonatomic,readonly) PWPointOfInterest *endPointOfInterest __deprecated;
 
 /**
- * An array of PWRouteInstruction objects containing instructions to follow the route path.
+ *  An array of PWRouteInstruction objects containing instructions to follow the route path.
  */
-@property (nonatomic,readonly) NSArray/* PWRouteInstruction */ *routeInstructions;
+@property (nonatomic,readonly) NSArray *routeInstructions;
 
 /**
- * An integer representing the total distance of the route expressed in meters.
+ *  An integer representing the total distance of the route expressed in meters.
  */
-@property (nonatomic,readonly) CLLocationDistance distance;
+@property (nonatomic,readonly) NSInteger distance;
 
 /**
- * An integer representing the estimated time of the route expressed in seconds.
+ *  An integer representing the estimated time of the route expressed in seconds.
  */
 @property (nonatomic,readonly) NSInteger estimatedTime;
 
 /**
- * A BOOL value that returns YES if the route was calculated with accessibility.
+ *  A BOOL value that returns YES if the route was calculated with accessibility.
  */
 @property (nonatomic, readonly, getter=isAccessible) BOOL accessible;
+
+/**---------------------------------------------------------------------------------------
+ * @name Class Methods
+ *  ---------------------------------------------------------------------------------------
+ */
 
 /**
  *  Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated.
