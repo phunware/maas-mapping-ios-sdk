@@ -36,6 +36,8 @@
 	<true/>
 	<key>NSLocationUsageDescription</key>
 	<string>Location access needed for blue dot</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location access required for blue dot</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
