@@ -22,15 +22,6 @@ PWMapKit SDK for iOS
 
 	to your podfile, then the dependencies of `PWCore` and `PWLocation` are automatically added.
 
-* Then add navigation icons the `Framework/MNW_Images.xcassets` to your project.
-
-* Disable Bitcode by following these steps:
-1. Select your project target.
-2. Select Build Settings
-3. Navigate to Build Options > Enable Bitcode
-4. Set to NO
-
-
 ## Documentation
 
 Framework documentation is included in the the repository's `Documents` folder in both HTML and Docset formats. You can also find the [latest documentation online](http://phunware.github.io/maas-mapping-ios-sdk/).
@@ -57,7 +48,7 @@ PWMapView *map = [[PWMapView alloc] initWithFrame:<#frame#>];
 map.delegate = self;
 [self.view addSubview:map];
 
-[mapView setBuilding:<#building#>];
+[mapView setBuilding:<#building#> animated:<#animated#> onCompletion:(void (^)(NSError *error))completion]
 ```
 
 
@@ -74,7 +65,7 @@ NOTE: If using a virtual beacon provider such as Mist or Beacon Point, the "Uses
 ### Routing
 
 ```
-PWRoute initRouteFrom:<#startPoint#> to:<#endPoint#> accessibility:<#accessibility#> completion:^(PWRoute *route, NSError *error) {
+[PWRoute initRouteFrom:<#startPoint#> to:<#endPoint#> accessibility:<#accessibility#> excludedPoints:<#excludedPoints#> completion:^(PWRoute *route, NSError *error) {
 	// Plot the route on the map
 	[mapView navigateWithRoute:route];            
 }];
