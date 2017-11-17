@@ -368,6 +368,9 @@ extension BaseViewController: DirectoryViewControllerDelegate {
     
     func didSelectPOI(selectedPOI: PWPointOfInterest) {
         cancelSearch()
-        mapViewController.mapView.navigate(to: selectedPOI)
+        if selectedPOI.floorID != mapViewController.mapView.currentFloor.floorID {
+            mapViewController.mapView.currentFloor = mapViewController.mapView.building.floor(byId: selectedPOI.floorID)
+        }
+        mapViewController.mapView.setCenter(selectedPOI.coordinate, animated: true)
     }
 }

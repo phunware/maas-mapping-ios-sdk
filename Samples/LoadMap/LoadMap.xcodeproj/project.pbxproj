@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5FEDC1A6C7897A9032E1AA20 /* Pods_LoadMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D70C5C5F35353846AFF224 /* Pods_LoadMap.framework */; };
+		06AA9B6344238E94C5FF6DE8 /* libPods-LoadMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F89D223C1F6DE84C4EAF6ACC /* libPods-LoadMap.a */; };
 		E34A02F81EAE923B00569719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A02F71EAE923B00569719 /* AppDelegate.swift */; };
 		E34A02FA1EAE923B00569719 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A02F91EAE923B00569719 /* ViewController.swift */; };
 		E34A02FD1EAE923B00569719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34A02FB1EAE923B00569719 /* Main.storyboard */; };
@@ -25,7 +25,7 @@
 		E34A03011EAE923B00569719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E34A03031EAE923B00569719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1FA4280A3EB8097B787C15F /* Pods-LoadMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoadMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoadMap/Pods-LoadMap.debug.xcconfig"; sourceTree = "<group>"; };
-		F9D70C5C5F35353846AFF224 /* Pods_LoadMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoadMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F89D223C1F6DE84C4EAF6ACC /* libPods-LoadMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoadMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FEDC1A6C7897A9032E1AA20 /* Pods_LoadMap.framework in Frameworks */,
+				06AA9B6344238E94C5FF6DE8 /* libPods-LoadMap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +52,7 @@
 		97D4CF6400D7017AD9FFDAB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F9D70C5C5F35353846AFF224 /* Pods_LoadMap.framework */,
+				F89D223C1F6DE84C4EAF6ACC /* libPods-LoadMap.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

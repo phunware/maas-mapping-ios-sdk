@@ -1,7 +1,7 @@
 PWMapKit SDK for iOS
 ====================
 
-> Version 3.1.7
+> Version 3.2.0
 
 **PWMapKit** is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services.  Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -21,15 +21,6 @@ PWMapKit SDK for iOS
 	`pod 'PWMapKit'`
 
 	to your podfile, then the dependencies of `PWCore` and `PWLocation` are automatically added.
-
-* Then add navigation icons the `Framework/MNW_Images.xcassets` to your project.
-
-* Disable Bitcode by following these steps:
-1. Select your project target.
-2. Select Build Settings
-3. Navigate to Build Options > Enable Bitcode
-4. Set to NO
-
 
 ## Documentation
 
@@ -57,7 +48,7 @@ PWMapView *map = [[PWMapView alloc] initWithFrame:<#frame#>];
 map.delegate = self;
 [self.view addSubview:map];
 
-[mapView setBuilding:<#building#>];
+[mapView setBuilding:<#building#> animated:<#animated#> onCompletion:(void (^)(NSError *error))completion]
 ```
 
 
@@ -74,7 +65,7 @@ NOTE: If using a virtual beacon provider such as Mist or Beacon Point, the "Uses
 ### Routing
 
 ```
-PWRoute initRouteFrom:<#startPoint#> to:<#endPoint#> accessibility:<#accessibility#> completion:^(PWRoute *route, NSError *error) {
+[PWRoute initRouteFrom:<#startPoint#> to:<#endPoint#> accessibility:<#accessibility#> excludedPoints:<#excludedPoints#> completion:^(PWRoute *route, NSError *error) {
 	// Plot the route on the map
 	[mapView navigateWithRoute:route];            
 }];

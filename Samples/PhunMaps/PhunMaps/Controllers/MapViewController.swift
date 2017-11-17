@@ -51,7 +51,6 @@ class MapViewController: UIViewController, SegmentedViewController {
     
     let mapView = PWMapView()
     let loadingView = UIActivityIndicatorView()
-    var firstLocationAcquired = false
     
     var firstLaunch = true
     
@@ -107,19 +106,19 @@ class MapViewController: UIViewController, SegmentedViewController {
         let buildingId = ConfigurationManager.shared.currentConfiguration.buildingId
         
         PWBuilding.building(withIdentifier: buildingId!) { [weak self] (building, error) in
+            self?.loadingView.removeFromSuperview()
             guard let building = building, error == nil else {
                 print(error!.localizedDescription)
                 return
             }
             self?.configurationManager.currentConfiguration.loadedBuilding = building
-            self?.mapView.setBuilding(building)
-            
-            let managedLocationManager = PWManagedLocationManager.init(buildingId: buildingId!)
-            
-            self?.loadingView.removeFromSuperview()
-            DispatchQueue.main.async {
-                self?.mapView.register(managedLocationManager)
-            }
+            self?.mapView.setBuilding(building, animated: false, onCompletion: { (error) in
+                let managedLocationManager = PWManagedLocationManager.init(buildingId: buildingId!)
+                DispatchQueue.main.async {
+                    self?.mapView.register(managedLocationManager)
+                    self?.mapView.trackingMode = .follow
+                }
+            })
         }
     }
 
@@ -157,7 +156,7 @@ class MapViewController: UIViewController, SegmentedViewController {
         }
         
         for poi in pointsOfInterest {
-            if let view = mapView.viewForPoint(poi) {
+            if let view = mapView.view(for: poi) {
                 if let poiType = poiType {
                     view.isHidden = poiType.identifier != poi.pointOfInterestType!.identifier
                 } else {
@@ -173,18 +172,18 @@ class MapViewController: UIViewController, SegmentedViewController {
 extension MapViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWIndoorLocation!) {
-        if !firstLocationAcquired {
-            firstLocationAcquired = true
-            mapView.trackingMode = .follow
-        }
-		NotificationCenter.default.post(name: .updateIndoorLocation, object: userLocation)
+         // NotificationCenter.default.post(name: .updateIndoorLocation, object: userLocation)
+    }
+    
+    func mapView(_ mapView: PWMapView!, didFailToLocateIndoorUserWithError error: Error!) {
+        print(error.localizedDescription)
     }
     
     func mapView(_ mapView: PWMapView!, didUpdate heading: CLHeading!) {
         NotificationCenter.default.post(name: .headingUpdated, object: heading)
     }
     
-    func mapView(_ mapView: PWMapView!, didChange mode: PWTrackingMode) {
+    func mapView(_ mapView: PWMapView!, didChangeIndoorUserTrackingMode mode: PWTrackingMode) {
         var newTrackingModeImage = UIImage.emptyTrackingImage(color: .white)
         switch mode {
         case .none:

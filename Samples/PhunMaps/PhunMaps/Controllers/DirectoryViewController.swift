@@ -79,7 +79,7 @@ class DirectoryViewController: UIViewController, SegmentedViewController, POISea
             }
         } else if identifier == String(describing: POIDetailsViewController.self), let destination = segue.destination as? POIDetailsViewController {
             destination.pointOfInterest = selectedPOI
-            destination.userLocation = mapView?.userLocation
+            destination.userLocation = mapView?.indoorUserLocation
         }
     }
 }

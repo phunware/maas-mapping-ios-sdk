@@ -32,7 +32,7 @@ class RouteInstructionHeaderView: UITableViewHeaderFooterView {
             return
         }
         destinationPointOfInterestLabel.text = route.endPoint.title ?? NSLocalizedString("Unknown", comment: "")
-        if let destinationFloor = route.building.getFloorByFloorId(route.endPoint.floorID) {
+        if let destinationFloor = route.building.floor(byId: route.endPoint.floorID) {
             destinationFloorLabel.text = destinationFloor.name
         } else {
             destinationFloorLabel.text = NSLocalizedString("Unknown floor", comment: "")

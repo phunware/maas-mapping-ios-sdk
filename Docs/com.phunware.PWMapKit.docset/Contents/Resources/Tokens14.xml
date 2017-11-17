@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intf/PWMapPoint</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">An interface for associating your content with a specific indoor map location.</Abstract>
 			<DeclaredIn>PWMapPoint.h</DeclaredIn>
             
 			

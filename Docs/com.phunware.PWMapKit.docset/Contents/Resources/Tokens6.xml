@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWFloor</TokenIdentifier>
-			<Abstract type="html">A PWFloor represents a building&apos;s floor structure defined within MaaS Portal.</Abstract>
+			<Abstract type="html">The building floor object encapsulates all data related to a floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
             
 			
@@ -17,7 +17,7 @@
 			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
+			<Declaration>@property (readonly, weak) PWBuilding *building</Declaration>
 			
 			
 			<Anchor>//api/name/building</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
+			<Declaration>@property (readonly, weak) PWBuilding *building</Declaration>
 			
 			
 			<Anchor>//api/name/building</Anchor>
@@ -41,46 +41,10 @@
 			<Abstract type="html">A reference to the floor&apos;s building object.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWBuilding *building</Declaration>
+			<Declaration>@property (readonly, weak) PWBuilding *building</Declaration>
 			
 			
 			<Anchor>//api/name/building</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setName:</TokenIdentifier>
-			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/name</TokenIdentifier>
-			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
-			<DeclaredIn>PWFloor.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
@@ -89,7 +53,7 @@
 			<Abstract type="html">The floor&apos;s identifier.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			<Declaration>@property (readonly) NSInteger floorID</Declaration>
 			
 			
 			<Anchor>//api/name/floorID</Anchor>
@@ -101,7 +65,7 @@
 			<Abstract type="html">The floor&apos;s identifier.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			<Declaration>@property (readonly) NSInteger floorID</Declaration>
 			
 			
 			<Anchor>//api/name/floorID</Anchor>
@@ -113,10 +77,46 @@
 			<Abstract type="html">The floor&apos;s identifier.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger floorID</Declaration>
+			<Declaration>@property (readonly) NSInteger floorID</Declaration>
 			
 			
 			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWFloor/name</TokenIdentifier>
+			<Abstract type="html">The name of the floor as defined in MaaS Portal.</Abstract>
+			<DeclaredIn>PWFloor.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
@@ -125,7 +125,7 @@
 			<Abstract type="html">The floor&apos;s level number.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
+			<Declaration>@property (readonly) NSInteger level</Declaration>
 			
 			
 			<Anchor>//api/name/level</Anchor>
@@ -137,7 +137,7 @@
 			<Abstract type="html">The floor&apos;s level number.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
+			<Declaration>@property (readonly) NSInteger level</Declaration>
 			
 			
 			<Anchor>//api/name/level</Anchor>
@@ -149,7 +149,7 @@
 			<Abstract type="html">The floor&apos;s level number.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger level</Declaration>
+			<Declaration>@property (readonly) NSInteger level</Declaration>
 			
 			
 			<Anchor>//api/name/level</Anchor>
@@ -161,7 +161,7 @@
 			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
+			<Declaration>@property (readonly) NSArray *pointsOfInterest</Declaration>
 			
 			
 			<Anchor>//api/name/pointsOfInterest</Anchor>
@@ -173,7 +173,7 @@
 			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
+			<Declaration>@property (readonly) NSArray *pointsOfInterest</Declaration>
 			
 			
 			<Anchor>//api/name/pointsOfInterest</Anchor>
@@ -185,7 +185,7 @@
 			<Abstract type="html">An array of PWPointOfInterestType objects that belong to the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSMutableArray *pointsOfInterest</Declaration>
+			<Declaration>@property (readonly) NSArray *pointsOfInterest</Declaration>
 			
 			
 			<Anchor>//api/name/pointsOfInterest</Anchor>
@@ -197,7 +197,7 @@
 			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D topLeft</Declaration>
 			
 			
 			<Anchor>//api/name/topLeft</Anchor>
@@ -209,7 +209,7 @@
 			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D topLeft</Declaration>
 			
 			
 			<Anchor>//api/name/topLeft</Anchor>
@@ -221,7 +221,7 @@
 			<Abstract type="html">The top-left coordinate (latitude and longitude) of the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D topLeft</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D topLeft</Declaration>
 			
 			
 			<Anchor>//api/name/topLeft</Anchor>
@@ -233,7 +233,7 @@
 			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D bottomRight</Declaration>
 			
 			
 			<Anchor>//api/name/bottomRight</Anchor>
@@ -245,7 +245,7 @@
 			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D bottomRight</Declaration>
 			
 			
 			<Anchor>//api/name/bottomRight</Anchor>
@@ -257,7 +257,7 @@
 			<Abstract type="html">The bottom-right coordinate (latitude and longitude) of the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D bottomRight</Declaration>
+			<Declaration>@property (readonly) CLLocationCoordinate2D bottomRight</Declaration>
 			
 			
 			<Anchor>//api/name/bottomRight</Anchor>
@@ -283,7 +283,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterestOfType:</TokenIdentifier>
-			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type.</Abstract>
+			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point-of-interest type.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
 			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type</Declaration>
@@ -300,7 +300,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWFloor/pointsOfInterestOfType:containing:</TokenIdentifier>
-			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point of interest type and whose name contains the supplied text.</Abstract>
+			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point-of-interest type and whose name contains the supplied text.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
 			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText</Declaration>

@@ -55,7 +55,7 @@ class PreRoutingViewController: UIViewController {
         startNavigationButton.addTarget(self, action: #selector(startNavigation(sender:)), for: .touchUpInside)
         
         if let route = route {
-            mapViewForPreview.setBuilding(route.building)
+            mapViewForPreview.building = route.building
         }
     }
     

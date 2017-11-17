@@ -15,7 +15,7 @@ class POIDetailsViewController: UIViewController {
     @IBOutlet weak var directionsButton: UIButton!
     
     var pointOfInterest: PWPointOfInterest?
-    var userLocation: PWCustomLocation?
+    var userLocation: PWUserLocation?
     var route: PWRoute?
     
     fileprivate var rowMapping = [rowMap]()

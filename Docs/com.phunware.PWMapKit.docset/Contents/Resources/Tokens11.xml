@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWRouteInstruction</TokenIdentifier>
-			<Abstract type="html">PWRouteInstruction class represents one step inside a route with the necessary moves to go from the start point of interest and the end point of interest.</Abstract>
+			<Abstract type="html">A PWRouteInstruction class represents one step inside a route with the necessary moves to go from the start point and the end point.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
 			
@@ -13,83 +13,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setPoints:</TokenIdentifier>
-			<Abstract type="html">Sequence of points represented by this maneuver.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, copy) NSArray *points</Declaration>
-			
-			
-			<Anchor>//api/name/points</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/points</TokenIdentifier>
-			<Abstract type="html">Sequence of points represented by this maneuver.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, copy) NSArray *points</Declaration>
-			
-			
-			<Anchor>//api/name/points</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/points</TokenIdentifier>
-			<Abstract type="html">Sequence of points represented by this maneuver.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, copy) NSArray *points</Declaration>
-			
-			
-			<Anchor>//api/name/points</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/set__deprecated:</TokenIdentifier>
-			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</Declaration>
-			
-			
-			<Anchor>//api/name/__deprecated</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/__deprecated</TokenIdentifier>
-			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</Declaration>
-			
-			
-			<Anchor>//api/name/__deprecated</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/__deprecated</TokenIdentifier>
-			<Abstract type="html">A reference to the origin, or start point of interest, for the route.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</Declaration>
-			
-			
-			<Anchor>//api/name/__deprecated</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setRoute:</TokenIdentifier>
-			<Abstract type="html">A reference to the route object the route instruction instance belongs to.</Abstract>
+			<Abstract type="html">A reference to the PWRoute object.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			<Declaration>@property (readonly, nonatomic, weak) PWRoute *route</Declaration>
 			
 			
 			<Anchor>//api/name/route</Anchor>
@@ -98,10 +26,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/route</TokenIdentifier>
-			<Abstract type="html">A reference to the route object the route instruction instance belongs to.</Abstract>
+			<Abstract type="html">A reference to the PWRoute object.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			<Declaration>@property (readonly, nonatomic, weak) PWRoute *route</Declaration>
 			
 			
 			<Anchor>//api/name/route</Anchor>
@@ -110,10 +38,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/route</TokenIdentifier>
-			<Abstract type="html">A reference to the route object the route instruction instance belongs to.</Abstract>
+			<Abstract type="html">A reference to the PWRoute object.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRoute *route</Declaration>
+			<Declaration>@property (readonly, nonatomic, weak) PWRoute *route</Declaration>
 			
 			
 			<Anchor>//api/name/route</Anchor>
@@ -121,11 +49,155 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovement:</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the movement instruction for the current instruction instance.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setDistance:</TokenIdentifier>
+			<Abstract type="html">The total distance of the route expressed in meters.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *movement</Declaration>
+			<Declaration>@property (readonly, nonatomic) CLLocationDistance distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/distance</TokenIdentifier>
+			<Abstract type="html">The total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) CLLocationDistance distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/distance</TokenIdentifier>
+			<Abstract type="html">The total distance of the route expressed in meters.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) CLLocationDistance distance</Declaration>
+			
+			
+			<Anchor>//api/name/distance</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setPoints:</TokenIdentifier>
+			<Abstract type="html">The sequence of points represented by this maneuver.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) NSArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/points</TokenIdentifier>
+			<Abstract type="html">The sequence of points represented by this maneuver.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) NSArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/points</TokenIdentifier>
+			<Abstract type="html">The sequence of points represented by this maneuver.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) NSArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setPolyline:</TokenIdentifier>
+			<Abstract type="html">Polyline representing the sequence of points to be drawn for this instruction.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) MKPolyline *polyline</Declaration>
+			
+			
+			<Anchor>//api/name/polyline</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/polyline</TokenIdentifier>
+			<Abstract type="html">Polyline representing the sequence of points to be drawn for this instruction.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) MKPolyline *polyline</Declaration>
+			
+			
+			<Anchor>//api/name/polyline</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/polyline</TokenIdentifier>
+			<Abstract type="html">Polyline representing the sequence of points to be drawn for this instruction.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) MKPolyline *polyline</Declaration>
+			
+			
+			<Anchor>//api/name/polyline</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setLast:</TokenIdentifier>
+			<Abstract type="html">A flag check if it&apos;s last route instruction in the associated route.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isLast) BOOL last</Declaration>
+			
+			
+			<Anchor>//api/name/last</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/isLast</TokenIdentifier>
+			<Abstract type="html">A flag check if it&apos;s last route instruction in the associated route.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isLast) BOOL last</Declaration>
+			
+			
+			<Anchor>//api/name/last</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/last</TokenIdentifier>
+			<Abstract type="html">A flag check if it&apos;s last route instruction in the associated route.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isLast) BOOL last</Declaration>
+			
+			
+			<Anchor>//api/name/last</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovement:</TokenIdentifier>
+			<Abstract type="html">The text of representing the movement instruction for the current instruction instance.</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) NSString *movement</Declaration>
 			
 			
 			<Anchor>//api/name/movement</Anchor>
@@ -134,10 +206,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movement</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the movement instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">The text of representing the movement instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *movement</Declaration>
+			<Declaration>@property (readonly, nonatomic) NSString *movement</Declaration>
 			
 			
 			<Anchor>//api/name/movement</Anchor>
@@ -146,10 +218,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movement</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the movement instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">The text of representing the movement instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *movement</Declaration>
+			<Declaration>@property (readonly, nonatomic) NSString *movement</Declaration>
 			
 			
 			<Anchor>//api/name/movement</Anchor>
@@ -158,10 +230,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovementDirection:</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<Abstract type="html">The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection movementDirection</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection</Declaration>
 			
 			
 			<Anchor>//api/name/movementDirection</Anchor>
@@ -170,10 +242,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movementDirection</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<Abstract type="html">The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection movementDirection</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection</Declaration>
 			
 			
 			<Anchor>//api/name/movementDirection</Anchor>
@@ -182,10 +254,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movementDirection</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<Abstract type="html">The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection movementDirection</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection</Declaration>
 			
 			
 			<Anchor>//api/name/movementDirection</Anchor>
@@ -197,7 +269,7 @@
 			<Abstract type="html">The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDirection movementTrueHeading</Declaration>
+			<Declaration>@property (readonly, nonatomic) CLLocationDirection movementTrueHeading</Declaration>
 			
 			
 			<Anchor>//api/name/movementTrueHeading</Anchor>
@@ -209,7 +281,7 @@
 			<Abstract type="html">The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDirection movementTrueHeading</Declaration>
+			<Declaration>@property (readonly, nonatomic) CLLocationDirection movementTrueHeading</Declaration>
 			
 			
 			<Anchor>//api/name/movementTrueHeading</Anchor>
@@ -221,7 +293,7 @@
 			<Abstract type="html">The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDirection movementTrueHeading</Declaration>
+			<Declaration>@property (readonly, nonatomic) CLLocationDirection movementTrueHeading</Declaration>
 			
 			
 			<Anchor>//api/name/movementTrueHeading</Anchor>
@@ -233,7 +305,7 @@
 			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
+			<Declaration>@property (readonly, nonatomic) NSString *turn</Declaration>
 			
 			
 			<Anchor>//api/name/turn</Anchor>
@@ -245,7 +317,7 @@
 			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
+			<Declaration>@property (readonly, nonatomic) NSString *turn</Declaration>
 			
 			
 			<Anchor>//api/name/turn</Anchor>
@@ -257,7 +329,7 @@
 			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *turn</Declaration>
+			<Declaration>@property (readonly, nonatomic) NSString *turn</Declaration>
 			
 			
 			<Anchor>//api/name/turn</Anchor>
@@ -269,7 +341,7 @@
 			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection turnDirection</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection turnDirection</Declaration>
 			
 			
 			<Anchor>//api/name/turnDirection</Anchor>
@@ -281,7 +353,7 @@
 			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection turnDirection</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection turnDirection</Declaration>
 			
 			
 			<Anchor>//api/name/turnDirection</Anchor>
@@ -293,7 +365,7 @@
 			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWRouteInstructionDirection turnDirection</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection turnDirection</Declaration>
 			
 			
 			<Anchor>//api/name/turnDirection</Anchor>
@@ -305,7 +377,7 @@
 			<Abstract type="html">The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float turnAngle</Declaration>
+			<Declaration>@property (readonly, nonatomic) CLLocationDirection turnAngle</Declaration>
 			
 			
 			<Anchor>//api/name/turnAngle</Anchor>
@@ -317,7 +389,7 @@
 			<Abstract type="html">The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float turnAngle</Declaration>
+			<Declaration>@property (readonly, nonatomic) CLLocationDirection turnAngle</Declaration>
 			
 			
 			<Anchor>//api/name/turnAngle</Anchor>
@@ -329,7 +401,7 @@
 			<Abstract type="html">The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float turnAngle</Declaration>
+			<Declaration>@property (readonly, nonatomic) CLLocationDirection turnAngle</Declaration>
 			
 			
 			<Anchor>//api/name/turnAngle</Anchor>
@@ -337,38 +409,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setDistance:</TokenIdentifier>
-			<Abstract type="html">A CLLocationDistance property representing the total distance of the route expressed in meters.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/set__deprecated:</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point-of-interest, for the route. It may be nil when it&apos;s a way point instead of point-of-interest.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWPointOfInterest *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/distance</TokenIdentifier>
-			<Abstract type="html">A CLLocationDistance property representing the total distance of the route expressed in meters.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/__deprecated</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point-of-interest, for the route. It may be nil when it&apos;s a way point instead of point-of-interest.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWPointOfInterest *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/distance</TokenIdentifier>
-			<Abstract type="html">A CLLocationDistance property representing the total distance of the route expressed in meters.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/__deprecated</TokenIdentifier>
+			<Abstract type="html">A reference to the origin, or start point-of-interest, for the route. It may be nil when it&apos;s a way point instead of point-of-interest.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CLLocationDistance distance</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWPointOfInterest *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

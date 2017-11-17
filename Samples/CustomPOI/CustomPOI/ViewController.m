@@ -46,19 +46,19 @@
     [PWBuilding buildingWithIdentifier:kBuildingIdentifier completion:^(PWBuilding *building, NSError *error) {
         if (building) {
             // Set building for the map
-            [weakself.mapView setBuilding:building];
-            
-            // ======================================
-            // Add custom point of interest
-            //
-            // Important: It has to put after building setting
-            //
-            // ======================================
-            [weakself addCustomPointOfInterest];
-            
-            // Remove loading indicator
-            [weakself.loadingView stopAnimating];
-            [weakself.loadingView removeFromSuperview];
+            [weakself.mapView setBuilding:building animated:YES onCompletion:^(NSError *error) {
+                // ======================================
+                // Add custom point of interest
+                //
+                // Important: It has to put after building setting
+                //
+                // ======================================
+                [weakself addCustomPointOfInterest];
+                
+                // Remove loading indicator
+                [weakself.loadingView stopAnimating];
+                [weakself.loadingView removeFromSuperview];
+            }];
         }
     }];
 }

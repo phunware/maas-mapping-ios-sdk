@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterestType</TokenIdentifier>
-			<Abstract type="html">A PWPointOfInterestType represents single point of interest type defined within MaaS Portal.</Abstract>
+			<Abstract type="html">An object encompasses a variety of information associated with point-of-interest type.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
             
 			
@@ -14,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
+			<Abstract type="html">The point-of-interest type identifier.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
@@ -26,7 +26,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/identifier</TokenIdentifier>
-			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
+			<Abstract type="html">The point-of-interest type identifier.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
@@ -38,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/identifier</TokenIdentifier>
-			<Abstract type="html">The identifier for the point of interest type that corresponds to the MaaS Portal.</Abstract>
+			<Abstract type="html">The point-of-interest type identifier.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSInteger identifier</Declaration>
@@ -50,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setName:</TokenIdentifier>
-			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
+			<Abstract type="html">The point-of-interest name.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
@@ -62,7 +62,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/name</TokenIdentifier>
-			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
+			<Abstract type="html">The point-of-interest name.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
@@ -74,7 +74,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/name</TokenIdentifier>
-			<Abstract type="html">The name of the point of interest type as defined in MaaS Portal.</Abstract>
+			<Abstract type="html">The point-of-interest name.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
@@ -85,38 +85,74 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setImage:</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/set__deprecated:</TokenIdentifier>
+			<Abstract type="html">The point-of-interest icon image, it&apos;s deprecated and you should use iconURL property to create an image object instead.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>@property (nonatomic, readonly) UIImage *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/image</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/image</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/__deprecated</TokenIdentifier>
+			<Abstract type="html">The point-of-interest icon image, it&apos;s deprecated and you should use iconURL property to create an image object instead.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>@property (nonatomic, readonly) UIImage *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/image</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/image</TokenIdentifier>
-			<Abstract type="html">The representative UIImage of the point of interest type.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/__deprecated</TokenIdentifier>
+			<Abstract type="html">The point-of-interest icon image, it&apos;s deprecated and you should use iconURL property to create an image object instead.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>@property (nonatomic, readonly) UIImage *__deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/image</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setIconURL:</TokenIdentifier>
+			<Abstract type="html">The point-of-interest icon URL.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSURL *iconURL</Declaration>
+			
+			
+			<Anchor>//api/name/iconURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/iconURL</TokenIdentifier>
+			<Abstract type="html">The point-of-interest icon URL.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSURL *iconURL</Declaration>
+			
+			
+			<Anchor>//api/name/iconURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/iconURL</TokenIdentifier>
+			<Abstract type="html">The point-of-interest icon URL.</Abstract>
+			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSURL *iconURL</Declaration>
+			
+			
+			<Anchor>//api/name/iconURL</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

@@ -1,4 +1,13 @@
 #PWMapKit Changelog
+
+##v3.2.0 (Friday, Nov 17th, 2017)
+
+* Change `PWMapView` to be a subclass of `MKMapView`
+* Be able to set initial floor for the building map through its delegate `[PWMapViewDelegate mapViewWillSetInitialFloor:]`.
+* Be able to set initial display region for the building map through its delegate `[PWMapViewDelegate mapViewWillSetCameraAfterLoadingBuilding:]`.
+* Upgrade instruction and change detail: https://github.com/phunware/maas-mapping-ios-sdk/wiki/Upgrade-from-3.x.x-to-3.2.0
+
+ 
 ##v3.1.7 (Thursday, Oct 19th, 2017)
 
 * Update to PWLocation 3.1.9

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zhN-Ba-0Cx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zhN-Ba-0Cx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--Base View Controller-->
         <scene sceneID="hGQ-fl-Exr">
             <objects>
-                <viewController id="GKC-iW-akt" customClass="BaseViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GKC-iW-akt" customClass="BaseViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VON-ch-qpi"/>
                         <viewControllerLayoutGuide type="bottom" id="QOe-Fe-A2O"/>
@@ -51,7 +51,7 @@
                                     <segue destination="BYZ-38-t0r" kind="embed" id="O2g-EJ-xGb"/>
                                 </connections>
                             </containerView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-uU-POK" customClass="ToolbarView" customModule="Mapping_Sample" customModuleProvider="target">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-uU-POK" customClass="ToolbarView" customModule="PhunMaps" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2re-AD-NZK"/>
@@ -125,7 +125,7 @@
         <!--Around Me View Controller-->
         <scene sceneID="2HK-ai-C8t">
             <objects>
-                <viewController id="FZC-G2-GPF" customClass="AroundMeViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FZC-G2-GPF" customClass="AroundMeViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dbb-bG-m0Y"/>
                         <viewControllerLayoutGuide type="bottom" id="IZE-t9-6ir"/>
@@ -164,7 +164,7 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -215,7 +215,7 @@
         <!--Type Selection View Controller-->
         <scene sceneID="GsF-f8-W3Z">
             <objects>
-                <viewController id="Akj-bn-Qrx" customClass="POITypeSelectionViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Akj-bn-Qrx" customClass="POITypeSelectionViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="55P-Yw-4mL"/>
                         <viewControllerLayoutGuide type="bottom" id="fjL-ct-T6b"/>
@@ -272,7 +272,7 @@
         <!--Map Floor Selection View Controller-->
         <scene sceneID="VRl-o4-NXo">
             <objects>
-                <viewController id="9kE-zR-YTl" customClass="MapFloorSelectionViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9kE-zR-YTl" customClass="MapFloorSelectionViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kqv-0h-nuT"/>
                         <viewControllerLayoutGuide type="bottom" id="ZGc-a7-rsv"/>
@@ -329,7 +329,7 @@
         <!--Route View Controller-->
         <scene sceneID="OQz-9P-dJ8">
             <objects>
-                <viewController id="IHv-Yp-Mja" customClass="RouteViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IHv-Yp-Mja" customClass="RouteViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P4x-Dm-UP4"/>
                         <viewControllerLayoutGuide type="bottom" id="ffi-Bs-eyb"/>
@@ -341,12 +341,15 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0k9-1Z-dr8">
                                 <rect key="frame" x="0.0" y="175" width="375" height="428"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="428" id="1oP-Zm-jke"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="IHv-Yp-Mja" id="nls-ci-aNB"/>
                                     <outlet property="delegate" destination="IHv-Yp-Mja" id="Iux-sl-yrl"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BES-ef-mrk" customClass="RouteHeaderView" customModule="Mapping_Sample" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BES-ef-mrk" customClass="RouteHeaderView" customModule="PhunMaps" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Qc-z6-E9m" userLabel="Start Field">
@@ -390,39 +393,32 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-km-8af">
-                                        <rect key="frame" x="52" y="135" width="85" height="30"/>
-                                        <state key="normal" title="Dropped Pin"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cif-TL-cRJ">
-                                        <rect key="frame" x="208" y="135" width="115" height="30"/>
+                                        <rect key="frame" x="52" y="133" width="271" height="30"/>
                                         <state key="normal" title="Current Location"/>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="cif-TL-cRJ" firstAttribute="trailing" secondItem="QIP-TD-RwN" secondAttribute="trailing" id="1kF-vO-UFv"/>
                                     <constraint firstItem="N9q-aa-pjG" firstAttribute="leading" secondItem="7Qc-z6-E9m" secondAttribute="trailing" constant="10" id="2pT-Hh-Gi6"/>
-                                    <constraint firstAttribute="bottom" secondItem="pcl-km-8af" secondAttribute="bottom" constant="10" id="AvN-II-d2j"/>
+                                    <constraint firstItem="cif-TL-cRJ" firstAttribute="centerX" secondItem="QIP-TD-RwN" secondAttribute="centerX" id="47e-9i-tjn"/>
                                     <constraint firstItem="QIP-TD-RwN" firstAttribute="top" secondItem="Ojl-o9-Xu5" secondAttribute="bottom" constant="10" id="BGd-2v-Wws"/>
-                                    <constraint firstItem="pcl-km-8af" firstAttribute="top" secondItem="QIP-TD-RwN" secondAttribute="bottom" constant="10" id="BlM-Av-ZEc"/>
                                     <constraint firstItem="Tbw-qK-GNC" firstAttribute="top" secondItem="BES-ef-mrk" secondAttribute="top" constant="32" id="C8R-3x-C2Z"/>
                                     <constraint firstItem="Tbw-qK-GNC" firstAttribute="leading" secondItem="BES-ef-mrk" secondAttribute="leading" constant="10" id="MaK-Yh-Hxi"/>
                                     <constraint firstItem="7Qc-z6-E9m" firstAttribute="leading" secondItem="Tbw-qK-GNC" secondAttribute="trailing" constant="10" id="STT-Q7-gDU"/>
                                     <constraint firstItem="QIP-TD-RwN" firstAttribute="leading" secondItem="Ojl-o9-Xu5" secondAttribute="leading" id="Sv3-yL-PtO"/>
                                     <constraint firstAttribute="trailing" secondItem="N9q-aa-pjG" secondAttribute="trailing" constant="10" id="Taf-Ju-TsG"/>
-                                    <constraint firstItem="pcl-km-8af" firstAttribute="leading" secondItem="QIP-TD-RwN" secondAttribute="leading" id="UZw-XP-CZ1"/>
                                     <constraint firstItem="Ojl-o9-Xu5" firstAttribute="trailing" secondItem="7Qc-z6-E9m" secondAttribute="trailing" id="Uq6-8J-zb8"/>
                                     <constraint firstItem="N9q-aa-pjG" firstAttribute="centerY" secondItem="Tbw-qK-GNC" secondAttribute="centerY" id="Xg4-dD-Wrp"/>
                                     <constraint firstItem="Ojl-o9-Xu5" firstAttribute="top" secondItem="7Qc-z6-E9m" secondAttribute="bottom" constant="10" id="Y6Z-Dl-hoX"/>
                                     <constraint firstItem="Ojl-o9-Xu5" firstAttribute="leading" secondItem="7Qc-z6-E9m" secondAttribute="leading" id="YTC-Rr-dws"/>
+                                    <constraint firstItem="cif-TL-cRJ" firstAttribute="top" secondItem="QIP-TD-RwN" secondAttribute="bottom" constant="8" symbolic="YES" id="ZDk-nf-Qr0"/>
                                     <constraint firstItem="7Qc-z6-E9m" firstAttribute="top" secondItem="BES-ef-mrk" secondAttribute="top" constant="10" id="bj2-09-ybU"/>
-                                    <constraint firstItem="cif-TL-cRJ" firstAttribute="centerY" secondItem="pcl-km-8af" secondAttribute="centerY" id="oT0-Z6-BQN"/>
                                     <constraint firstItem="QIP-TD-RwN" firstAttribute="trailing" secondItem="Ojl-o9-Xu5" secondAttribute="trailing" id="xrT-Qg-4O4"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="accessibilityButton" destination="N9q-aa-pjG" id="XTN-4N-sHW"/>
                                     <outlet property="currentLocationButton" destination="cif-TL-cRJ" id="SKH-52-WSE"/>
-                                    <outlet property="droppedPinButton" destination="pcl-km-8af" id="ibl-g1-HmV"/>
                                     <outlet property="endTextField" destination="Ojl-o9-Xu5" id="cPN-b0-D0F"/>
                                     <outlet property="routeButton" destination="QIP-TD-RwN" id="uQ5-Q9-WHE"/>
                                     <outlet property="startTextField" destination="7Qc-z6-E9m" id="Hkb-PU-Q4S"/>
@@ -454,7 +450,7 @@
         <!--Directory View Controller-->
         <scene sceneID="9wJ-97-R2C">
             <objects>
-                <viewController storyboardIdentifier="DirectoryViewController" id="rYj-st-hLg" customClass="DirectoryViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DirectoryViewController" id="rYj-st-hLg" customClass="DirectoryViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CY6-rd-3Qo"/>
                         <viewControllerLayoutGuide type="bottom" id="Vah-DQ-TMW"/>
@@ -493,7 +489,7 @@
         <!--POI Details View Controller-->
         <scene sceneID="bQZ-Rw-NPd">
             <objects>
-                <viewController id="83H-5A-1aG" userLabel="POI Details View Controller" customClass="POIDetailsViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="83H-5A-1aG" userLabel="POI Details View Controller" customClass="POIDetailsViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NLc-Nz-G7J"/>
                         <viewControllerLayoutGuide type="bottom" id="K2g-Vu-coG"/>
@@ -506,7 +502,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="POIDetailsCell" rowHeight="55" id="I9r-TA-n3r" userLabel="POI Details Cell" customClass="POIDetailsCell" customModule="Mapping_Sample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="POIDetailsCell" rowHeight="55" id="I9r-TA-n3r" userLabel="POI Details Cell" customClass="POIDetailsCell" customModule="PhunMaps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I9r-TA-n3r" id="uZe-jC-ELZ">
@@ -514,13 +510,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYk-Xi-iTJ">
-                                                    <rect key="frame" x="8" y="8" width="48" height="24"/>
+                                                    <rect key="frame" x="15" y="11" width="48" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6C-wk-EbE">
-                                                    <rect key="frame" x="8" y="34" width="0.0" height="16"/>
+                                                    <rect key="frame" x="15" y="37" width="0.0" height="10"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -539,7 +535,7 @@
                                             <outlet property="titleLabel" destination="bYk-Xi-iTJ" id="WZZ-4s-v3b"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="POIDetailsSummaryCell" id="1J9-7u-EHi" userLabel="POI Details Summary Cell" customClass="POIDetailsSummaryCell" customModule="Mapping_Sample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="POIDetailsSummaryCell" id="1J9-7u-EHi" userLabel="POI Details Summary Cell" customClass="POIDetailsSummaryCell" customModule="PhunMaps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="83" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1J9-7u-EHi" id="NeD-Bu-GEf">
@@ -547,7 +543,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reH-am-sbM">
-                                                    <rect key="frame" x="8" y="12" width="359" height="24"/>
+                                                    <rect key="frame" x="15" y="15" width="345" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -606,7 +602,7 @@
         <!--Pre Routing View Controller-->
         <scene sceneID="Bu9-ei-xbz">
             <objects>
-                <viewController id="gD2-0a-8P5" customClass="PreRoutingViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gD2-0a-8P5" customClass="PreRoutingViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7T2-OX-h16"/>
                         <viewControllerLayoutGuide type="bottom" id="MDq-an-ff1"/>
@@ -619,7 +615,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RouteSummaryCell" id="NlU-D1-QSo" userLabel="Route Summary Cell" customClass="RouteSummaryCell" customModule="Mapping_Sample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RouteSummaryCell" id="NlU-D1-QSo" userLabel="Route Summary Cell" customClass="RouteSummaryCell" customModule="PhunMaps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NlU-D1-QSo" id="lqy-Hd-YYs">
@@ -644,7 +640,7 @@
                                             <outlet property="routeSummaryLabel" destination="C2D-Y6-3mQ" id="thF-k6-308"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RouteLabelCell" id="FSU-bE-dhY" userLabel="Route Label Cell" customClass="RouteLabelCell" customModule="Mapping_Sample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RouteLabelCell" id="FSU-bE-dhY" userLabel="Route Label Cell" customClass="RouteLabelCell" customModule="PhunMaps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FSU-bE-dhY" id="eQK-y0-KCy">
@@ -669,7 +665,7 @@
                                             <outlet property="routeLabel" destination="4bt-Y4-RVM" id="nYz-Jn-Nya"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PreRouteInstructionCell" rowHeight="61" id="0nz-R0-pmV" userLabel="Pre Route Instruction Cell" customClass="PreRouteInstructionCell" customModule="Mapping_Sample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PreRouteInstructionCell" rowHeight="61" id="0nz-R0-pmV" userLabel="Pre Route Instruction Cell" customClass="PreRouteInstructionCell" customModule="PhunMaps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="375" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0nz-R0-pmV" id="1RT-ll-kcM">
@@ -704,7 +700,7 @@
                                             <outlet property="movementLabel" destination="Ies-j2-Yyd" id="sIy-eR-FHC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowAllInstructionsCell" id="e3r-Cj-Blq" userLabel="Show All Steps Cell" customClass="ShowAllInstructionsCell" customModule="Mapping_Sample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowAllInstructionsCell" id="e3r-Cj-Blq" userLabel="Show All Steps Cell" customClass="ShowAllInstructionsCell" customModule="PhunMaps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="177" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e3r-Cj-Blq" id="uCe-dv-ZqT">
@@ -728,7 +724,7 @@
                                             <outlet property="showAllStepsButton" destination="p83-dT-JHS" id="EJZ-oG-Mvy"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapPreviewCell" rowHeight="218" id="Djx-YO-HTs" customClass="MapPreviewCell" customModule="Mapping_Sample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapPreviewCell" rowHeight="218" id="Djx-YO-HTs" customClass="MapPreviewCell" customModule="PhunMaps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="221" width="375" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Djx-YO-HTs" id="Slf-Od-zWl">
@@ -814,7 +810,7 @@
         <!--Route List View Controller-->
         <scene sceneID="crl-SZ-R9m">
             <objects>
-                <viewController id="5Rd-fw-XNg" customClass="RouteListViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5Rd-fw-XNg" customClass="RouteListViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JJM-vG-27i"/>
                         <viewControllerLayoutGuide type="bottom" id="0BJ-ao-scf"/>
@@ -827,7 +823,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RouteInstructionCell" rowHeight="78" id="SOy-2z-bnd" customClass="RouteInstructionCell" customModule="Mapping_Sample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RouteInstructionCell" rowHeight="78" id="SOy-2z-bnd" customClass="RouteInstructionCell" customModule="PhunMaps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SOy-2z-bnd" id="5ip-mN-9Pk">
@@ -835,32 +831,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-5X-VsR" userLabel="Current Movement">
-                                                    <rect key="frame" x="10" y="15" width="45" height="45"/>
+                                                    <rect key="frame" x="10" y="18" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="EBh-hC-gRo"/>
                                                         <constraint firstAttribute="height" constant="45" id="ZAQ-2K-Qai"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APs-n9-w4K">
-                                                    <rect key="frame" x="63" y="15" width="289" height="26.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Distance" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APs-n9-w4K">
+                                                    <rect key="frame" x="63" y="18" width="282" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Then:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNb-Vk-PSd">
-                                                    <rect key="frame" x="63" y="41" width="44" height="21"/>
+                                                    <rect key="frame" x="63" y="44" width="44" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npb-IC-q5t" userLabel="Turn label">
-                                                    <rect key="frame" x="137" y="42" width="230" height="21"/>
+                                                    <rect key="frame" x="137" y="45" width="223" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-Mi-0Ec">
-                                                    <rect key="frame" x="112" y="42" width="20" height="20"/>
+                                                    <rect key="frame" x="112" y="45" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="6Xb-hm-5hy"/>
                                                         <constraint firstAttribute="height" constant="20" id="S3K-bh-sXU"/>
@@ -954,7 +950,7 @@
         <!--Route Instructions View Controller-->
         <scene sceneID="o8p-vF-xmS">
             <objects>
-                <viewController id="C7p-Lj-M8O" customClass="RouteInstructionsViewController" customModule="Mapping_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C7p-Lj-M8O" customClass="RouteInstructionsViewController" customModule="PhunMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZMb-y3-p3H"/>
                         <viewControllerLayoutGuide type="bottom" id="61l-J2-8cZ"/>
@@ -1003,5 +999,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="wT2-Tz-Nxz"/>
         <segue reference="jvw-YD-oEr"/>
+        <segue reference="j2I-id-Ejx"/>
     </inferredMetricsTieBreakers>
 </document>

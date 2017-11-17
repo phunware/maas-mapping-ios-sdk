@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWCustomLocation</TokenIdentifier>
-			<Abstract type="html">A PWCustomLocation extends from PWPointOfInterest and represents single location point. PWCustomLocation can represent user&apos;s current location or a user&apos;s dropped pin.</Abstract>
+			<Abstract type="html">An annotation which represents a user&apos;s dropped pin.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
             
 			
@@ -13,51 +13,182 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/set__deprecated:</TokenIdentifier>
-			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/setCoordinate:</TokenIdentifier>
+			<Abstract type="html">Center latitude and longitude of this annotation.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocationType locationType __deprecated</Declaration>
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
 			
 			
-			<Anchor>//api/name/__deprecated</Anchor>
+			<Anchor>//api/name/coordinate</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/__deprecated</TokenIdentifier>
-			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/coordinate</TokenIdentifier>
+			<Abstract type="html">Center latitude and longitude of this annotation.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocationType locationType __deprecated</Declaration>
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
 			
 			
-			<Anchor>//api/name/__deprecated</Anchor>
+			<Anchor>//api/name/coordinate</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/__deprecated</TokenIdentifier>
-			<Abstract type="html">The type of custom location the instance of PWCustomLocation represents.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/coordinate</TokenIdentifier>
+			<Abstract type="html">Center latitude and longitude of this annotation.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) PWCustomLocationType locationType __deprecated</Declaration>
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
 			
 			
-			<Anchor>//api/name/__deprecated</Anchor>
+			<Anchor>//api/name/coordinate</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/init</TokenIdentifier>
-			<Abstract type="html">@name Instance Methods
----------------------------------------------------------------------------------------</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The identifier of this annotation.</Abstract>
 			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
 			
-			<Declaration>- (instancetype __nonnull)init</Declaration>
+			<Declaration>@property (nonatomic) NSInteger identifier</Declaration>
 			
 			
-			<Anchor>//api/name/init</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier of this annotation.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier of this annotation.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The MaaS identifier of the floor the custom location is on.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/floorID</TokenIdentifier>
+			<Abstract type="html">The MaaS identifier of the floor the custom location is on.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/floorID</TokenIdentifier>
+			<Abstract type="html">The MaaS identifier of the floor the custom location is on.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/setBuildingID:</TokenIdentifier>
+			<Abstract type="html">The MaaS identifier of the building the custom location is in.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/buildingID</TokenIdentifier>
+			<Abstract type="html">The MaaS identifier of the building the custom location is in.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/buildingID</TokenIdentifier>
+			<Abstract type="html">The MaaS identifier of the building the custom location is in.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/setTitle:</TokenIdentifier>
+			<Abstract type="html">The name of the this annotation.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSString *title</Declaration>
+			
+			
+			<Anchor>//api/name/title</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/title</TokenIdentifier>
+			<Abstract type="html">The name of the this annotation.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSString *title</Declaration>
+			
+			
+			<Anchor>//api/name/title</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomLocation/title</TokenIdentifier>
+			<Abstract type="html">The name of the this annotation.</Abstract>
+			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSString *title</Declaration>
+			
+			
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
@@ -87,26 +218,6 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">Returns a PWCustomLocation object, or nil if the given coordinate is invalid.</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithCoordinate:identifier:floorId:buildingId:title:</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomLocation/initWithLatitude:longitude:</TokenIdentifier>
-			<Abstract type="html">Instantiates a PWCustomLocation object with the given latitude and longitude parameters.</Abstract>
-			<DeclaredIn>PWCustomLocation.h</DeclaredIn>
-			
-			<Declaration>- (instancetype __nullable)initWithLatitude:(double)latitude longitude:(double)longitude</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>latitude</Name>
-					<Abstract type="html">A double value to represent the latitude of a custom location</Abstract>
-				</Parameter><Parameter>
-					<Name>longitude</Name>
-					<Abstract type="html">A double value to represent the longitude of a custom location</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a PWCustomLocation object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithLatitude:longitude:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
