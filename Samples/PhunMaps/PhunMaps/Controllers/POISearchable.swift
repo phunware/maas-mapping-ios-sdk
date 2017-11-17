@@ -68,7 +68,7 @@ extension POISearchable {
     func buildSectionedPOIs() {
         sectionedPOIs.removeAll()
         for pointOfInterest in filteredPOIs {
-            if let title = pointOfInterest.title, let firstChar = title.characters.first {
+            if let title = pointOfInterest.title, let firstChar = title.first {
                 let firstCharString = String(describing: firstChar)
                 if sectionedPOIs[firstCharString] != nil {
                     var sectionPOI = sectionedPOIs[firstCharString]!

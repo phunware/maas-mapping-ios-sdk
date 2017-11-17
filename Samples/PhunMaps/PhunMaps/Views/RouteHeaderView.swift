@@ -19,29 +19,26 @@ class RouteHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var swapButton: UIButton!
     @IBOutlet weak var routeButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
-    @IBOutlet weak var droppedPinButton: UIButton!
     
     override func awakeFromNib() {
         contentView.backgroundColor = .white
     }
     
-    func configureFor(mapView: PWMapView, textFieldDelegate: UITextFieldDelegate, accessibilityButtonSelector: Selector, swapButtonSelector: Selector, routeButtonSelector: Selector, currentLocationButtonSelector: Selector, droppedPinButtonSelector: Selector, selectorTarget: Any) {
+    func configureFor(mapView: PWMapView, textFieldDelegate: UITextFieldDelegate, accessibilityButtonSelector: Selector, swapButtonSelector: Selector, routeButtonSelector: Selector, currentLocationButtonSelector: Selector, selectorTarget: Any) {
         startTextField.delegate = textFieldDelegate
         endTextField.delegate = textFieldDelegate
         accessibilityButton.addTarget(selectorTarget, action: accessibilityButtonSelector, for: .touchUpInside)
         swapButton.addTarget(selectorTarget, action: swapButtonSelector, for: .touchUpInside)
         routeButton.addTarget(selectorTarget, action: routeButtonSelector, for: .touchUpInside)
         currentLocationButton.addTarget(selectorTarget, action: currentLocationButtonSelector, for: .touchUpInside)
-        droppedPinButton.addTarget(selectorTarget, action: droppedPinButtonSelector, for: .touchUpInside)
         
         configureTextFields()
         swapButton.accessibilityHint = NSLocalizedString("Tap to reverse start point and end point", comment: "")
         configureAccessibilityButton()
         configureRouteButton()
         configureCurrentLocationButtonFor(mapView: mapView)
-        configureDroppedPinButtonFor(mapView: mapView)
         
-        accessibilityElements = [startTextField, swapButton, endTextField, accessibilityButton, routeButton, droppedPinButton, currentLocationButton]
+        accessibilityElements = [startTextField, swapButton, endTextField, accessibilityButton, routeButton, currentLocationButton]
     }
     
     func configureTextFields() {
@@ -85,11 +82,6 @@ class RouteHeaderView: UITableViewHeaderFooterView {
     
     func configureCurrentLocationButtonFor(mapView: PWMapView) {
         currentLocationButton.setTitle(NSLocalizedString("Current Location", comment: ""), for: .normal)
-        currentLocationButton.isEnabled = mapView.userLocation != nil
-    }
-    
-    func configureDroppedPinButtonFor(mapView: PWMapView) {
-        droppedPinButton.setTitle(NSLocalizedString("Dropped Pin", comment: ""), for: .normal)
-        droppedPinButton.isEnabled = mapView.customLocation != nil
+        currentLocationButton.isEnabled = mapView.indoorUserLocation != nil
     }
 }

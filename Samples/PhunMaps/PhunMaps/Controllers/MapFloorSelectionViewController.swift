@@ -45,7 +45,7 @@ extension MapFloorSelectionViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if let floor = mapView.building.floors[indexPath.row] as? PWFloor {
-            mapView.setFloor(floor)
+            mapView.currentFloor = floor
         }
         
         dismiss(animated: true, completion: nil)

@@ -36,7 +36,6 @@
 		FB20A94E1EF0721300F1083F /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20A9441EF0721300F1083F /* AppConfiguration.swift */; };
 		FB20A94F1EF0721300F1083F /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20A9451EF0721300F1083F /* ConfigurationManager.swift */; };
 		FB20A9541EF0721300F1083F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20A94C1EF0721300F1083F /* MapViewController.swift */; };
-		FB20A9591EF0723400F1083F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB20A9551EF0723400F1083F /* GoogleService-Info.plist */; };
 		FB20A95C1EF0723400F1083F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB20A9581EF0723400F1083F /* Settings.bundle */; };
 		FB3431A21F74390500A149FD /* RouteInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3431A11F74390500A149FD /* RouteInstructionsViewController.swift */; };
 		FB3431A41F743D7A00A149FD /* RouteInstructionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3431A31F743D7A00A149FD /* RouteInstructionCollectionViewCell.swift */; };
@@ -94,7 +93,6 @@
 		FB20A9441EF0721300F1083F /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		FB20A9451EF0721300F1083F /* ConfigurationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 		FB20A94C1EF0721300F1083F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		FB20A9551EF0723400F1083F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB20A9561EF0723400F1083F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB20A9581EF0723400F1083F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		FB3431A11F74390500A149FD /* RouteInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInstructionsViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				E3424EF11EDF1A6E002ADA73 /* Assets.xcassets */,
 				E3424EF21EDF1A6E002ADA73 /* DefaultConfiguration.plist */,
 				E3424EF31EDF1A6E002ADA73 /* DirectionImages.xcassets */,
-				FB20A9551EF0723400F1083F /* GoogleService-Info.plist */,
 				FB20A9561EF0723400F1083F /* Info.plist */,
 				FB20A9581EF0723400F1083F /* Settings.bundle */,
 			);
@@ -309,7 +306,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 84CK77G588;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -351,7 +348,6 @@
 				FB3431A61F74412100A149FD /* RouteInstructionCollectionViewCell.xib in Resources */,
 				E3424F011EDF1A6E002ADA73 /* Assets.xcassets in Resources */,
 				E32FCE341F754DBA00FCDE5F /* AroundMeHeaderView.xib in Resources */,
-				FB20A9591EF0723400F1083F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +410,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -577,6 +573,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = PhunMaps/Resources/Info.plist;
@@ -584,6 +581,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.PhunMaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "392f85ba-dc65-4d4f-a964-155c0bf2e9cc";
+				PROVISIONING_PROFILE_SPECIFIER = Phunware_Wild2;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -596,12 +595,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = PhunMaps/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.PhunMaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "392f85ba-dc65-4d4f-a964-155c0bf2e9cc";
+				PROVISIONING_PROFILE_SPECIFIER = Phunware_Wild2;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};

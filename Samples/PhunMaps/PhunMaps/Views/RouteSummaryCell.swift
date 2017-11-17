@@ -28,8 +28,8 @@ class RouteSummaryCell: UITableViewCell {
         var keyArray = [String]()
         var valueArray = [String]()
         
-        let startPointFloor = route.building.getFloorByFloorId(route.startPoint.floorID)
-        let endPointFloor = route.building.getFloorByFloorId(route.endPoint.floorID)
+        let startPointFloor = route.building.floor(byId: route.startPoint.floorID)
+        let endPointFloor = route.building.floor(byId: route.endPoint.floorID)
         
         keyArray.append(NSLocalizedString("Currently On", comment: ""))
         valueArray.append((startPointFloor?.name ?? NSLocalizedString("Unknown", comment: "")))

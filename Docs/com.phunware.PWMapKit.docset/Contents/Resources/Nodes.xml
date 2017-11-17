@@ -48,8 +48,6 @@
 						<NodeRef refid="16"/>
 						<NodeRef refid="17"/>
 						<NodeRef refid="18"/>
-						<NodeRef refid="19"/>
-						<NodeRef refid="20"/>
 						
 					</Subnodes>
 				</Node>
@@ -517,26 +515,16 @@
         </Node>
 		
         <Node id="16" type="file" documentType="reference">
-            <Name>PWCustomLocationType</Name>
-            <Path>Constants/PWCustomLocationType.html</Path>
-            
-        </Node>
-		<Node id="17" type="file" documentType="reference">
-            <Name>PWMapViewLocationType</Name>
-            <Path>Constants/PWMapViewLocationType.html</Path>
-            
-        </Node>
-		<Node id="18" type="file" documentType="reference">
             <Name>PWRouteInstructionDirection</Name>
             <Path>Constants/PWRouteInstructionDirection.html</Path>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>PWRouteSnapTolerance</Name>
             <Path>Constants/PWRouteSnapTolerance.html</Path>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>PWTrackingMode</Name>
             <Path>Constants/PWTrackingMode.html</Path>
             

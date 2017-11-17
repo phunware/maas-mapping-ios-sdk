@@ -13,7 +13,6 @@ import PWMapKit
 class RouteViewController: UIViewController, POISearchable {
     
     let currentLocationText = NSLocalizedString("Current Location", comment: "")
-    let droppedPinText = NSLocalizedString("Dropped Pin", comment: "")
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var routeHeaderView: RouteHeaderView!
@@ -63,7 +62,7 @@ class RouteViewController: UIViewController, POISearchable {
         sectionedPOIs = [String : [PWPointOfInterest]]()
         sortedSectionedPOIKeys = [String]()
         
-        routeHeaderView.configureFor(mapView: mapView, textFieldDelegate: self, accessibilityButtonSelector: #selector(accessibilityTapped), swapButtonSelector: #selector(swapTapped), routeButtonSelector: #selector(routeTapped), currentLocationButtonSelector: #selector(currentLocationTapped), droppedPinButtonSelector: #selector(droppedPinTapped), selectorTarget: self)
+        routeHeaderView.configureFor(mapView: mapView, textFieldDelegate: self, accessibilityButtonSelector: #selector(accessibilityTapped), swapButtonSelector: #selector(swapTapped), routeButtonSelector: #selector(routeTapped), currentLocationButtonSelector: #selector(currentLocationTapped), selectorTarget: self)
         
         search(keyword: nil, pointsToExclude: pointsToExclude)
         
@@ -96,7 +95,7 @@ class RouteViewController: UIViewController, POISearchable {
             }
         }
         
-        if startText.characters.count > 0 && endText.characters.count > 0 {
+        if startText.count > 0 && endText.count > 0 {
             setRouteButton(active: true)
         } else {
             setRouteButton(active: false)
@@ -251,18 +250,14 @@ extension RouteViewController {
         
         var startPoint: PWMapPoint? = startPointOfInterest
         if startPoint == nil, let startText = routeHeaderView.startTextField.text {
-            if startText == droppedPinText {
-                startPoint = mapView.customLocation
-            } else if startText == currentLocationText {
-                startPoint = mapView.userLocation
+            if startText == currentLocationText {
+                startPoint = mapView.indoorUserLocation
             }
         }
         var endPoint: PWMapPoint? = endPointOfInterest
         if endPoint == nil, let endText = routeHeaderView.endTextField.text {
-            if endText == droppedPinText {
-                endPoint = mapView.customLocation
-            } else if endText == currentLocationText {
-                endPoint = mapView.userLocation
+            if endText == currentLocationText {
+                endPoint = mapView.indoorUserLocation
             }
         }
         
@@ -297,18 +292,6 @@ extension RouteViewController {
             routeHeaderView.startTextField.becomeFirstResponder()
         } else {
             routeHeaderView.startTextField.text = currentLocationText
-            routeHeaderView.endTextField.becomeFirstResponder()
-        }
-        
-        preRouteCheck()
-    }
-    
-    func droppedPinTapped() {
-        if routeHeaderView.endTextField.isEditing {
-            routeHeaderView.endTextField.text = droppedPinText
-            routeHeaderView.startTextField.becomeFirstResponder()
-        } else {
-            routeHeaderView.startTextField.text = droppedPinText
             routeHeaderView.endTextField.becomeFirstResponder()
         }
         

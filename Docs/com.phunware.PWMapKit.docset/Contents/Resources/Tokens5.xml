@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWCustomPointOfInterest</TokenIdentifier>
-			<Abstract type="html">A PWCustomPointOfInterest represents custom single point of interest.</Abstract>
+			<Abstract type="html">A PWCustomPointOfInterest represents custom single point-of-interest.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
             
 			
@@ -13,11 +13,299 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setPointOfInterestType:</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setCoordinate:</TokenIdentifier>
+			<Abstract type="html">The point identifier as specified by the mapping service.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) PWPointOfInterestType *pointOfInterestType</Declaration>
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/coordinate</TokenIdentifier>
+			<Abstract type="html">The point identifier as specified by the mapping service.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/coordinate</TokenIdentifier>
+			<Abstract type="html">The point identifier as specified by the mapping service.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The point identifier as specified by the mapping service.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/identifier</TokenIdentifier>
+			<Abstract type="html">The point identifier as specified by the mapping service.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/identifier</TokenIdentifier>
+			<Abstract type="html">The point identifier as specified by the mapping service.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setFloorID:</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/floorID</TokenIdentifier>
+			<Abstract type="html">The floor identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger floorID</Declaration>
+			
+			
+			<Anchor>//api/name/floorID</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setFloor:</TokenIdentifier>
+			<Abstract type="html">The floor for which this point applies.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) PWFloor *floor</Declaration>
+			
+			
+			<Anchor>//api/name/floor</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/floor</TokenIdentifier>
+			<Abstract type="html">The floor for which this point applies.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) PWFloor *floor</Declaration>
+			
+			
+			<Anchor>//api/name/floor</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/floor</TokenIdentifier>
+			<Abstract type="html">The floor for which this point applies.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) PWFloor *floor</Declaration>
+			
+			
+			<Anchor>//api/name/floor</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setBuildingID:</TokenIdentifier>
+			<Abstract type="html">The building identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/buildingID</TokenIdentifier>
+			<Abstract type="html">The building identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/buildingID</TokenIdentifier>
+			<Abstract type="html">The building identifier for which this point applies.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger buildingID</Declaration>
+			
+			
+			<Anchor>//api/name/buildingID</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setTitle:</TokenIdentifier>
+			<Abstract type="html">The title of the point-of-interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSString *title</Declaration>
+			
+			
+			<Anchor>//api/name/title</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/title</TokenIdentifier>
+			<Abstract type="html">The title of the point-of-interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSString *title</Declaration>
+			
+			
+			<Anchor>//api/name/title</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/title</TokenIdentifier>
+			<Abstract type="html">The title of the point-of-interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSString *title</Declaration>
+			
+			
+			<Anchor>//api/name/title</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setSummary:</TokenIdentifier>
+			<Abstract type="html">A summary description of the point-of-interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSString *summary</Declaration>
+			
+			
+			<Anchor>//api/name/summary</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/summary</TokenIdentifier>
+			<Abstract type="html">A summary description of the point-of-interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSString *summary</Declaration>
+			
+			
+			<Anchor>//api/name/summary</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/summary</TokenIdentifier>
+			<Abstract type="html">A summary description of the point-of-interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSString *summary</Declaration>
+			
+			
+			<Anchor>//api/name/summary</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setImage:</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point-of-interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/image</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point-of-interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/image</TokenIdentifier>
+			<Abstract type="html">The representative UIImage of the point-of-interest.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setPointOfInterestType:</TokenIdentifier>
+			<Abstract type="html">A PWPointOfInterestType object that this custom point-of-interest is a member of, a type image icon will automatically be applied if image property is not set.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
 			<Anchor>//api/name/pointOfInterestType</Anchor>
@@ -26,10 +314,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/pointOfInterestType</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<Abstract type="html">A PWPointOfInterestType object that this custom point-of-interest is a member of, a type image icon will automatically be applied if image property is not set.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) PWPointOfInterestType *pointOfInterestType</Declaration>
+			<Declaration>@property (nonatomic, nullable) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
 			<Anchor>//api/name/pointOfInterestType</Anchor>
@@ -38,10 +326,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/pointOfInterestType</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestType object that the point of interest is a member of.</Abstract>
+			<Abstract type="html">A PWPointOfInterestType object that this custom point-of-interest is a member of, a type image icon will automatically be applied if image property is not set.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) PWPointOfInterestType *pointOfInterestType</Declaration>
+			<Declaration>@property (nonatomic, nullable) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
 			<Anchor>//api/name/pointOfInterestType</Anchor>
@@ -50,10 +338,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setMetaData:</TokenIdentifier>
-			<Abstract type="html">Metadata associated with the custom point of interest.</Abstract>
+			<Abstract type="html">Metadata associated with the custom point-of-interest, using it to pass data as you want.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSDictionary *metaData</Declaration>
 			
 			
 			<Anchor>//api/name/metaData</Anchor>
@@ -62,10 +350,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/metaData</TokenIdentifier>
-			<Abstract type="html">Metadata associated with the custom point of interest.</Abstract>
+			<Abstract type="html">Metadata associated with the custom point-of-interest, using it to pass data as you want.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSDictionary *metaData</Declaration>
 			
 			
 			<Anchor>//api/name/metaData</Anchor>
@@ -74,10 +362,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/metaData</TokenIdentifier>
-			<Abstract type="html">Metadata associated with the custom point of interest.</Abstract>
+			<Abstract type="html">Metadata associated with the custom point-of-interest, using it to pass data as you want.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSDictionary *metaData</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSDictionary *metaData</Declaration>
 			
 			
 			<Anchor>//api/name/metaData</Anchor>
@@ -86,7 +374,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/setShowTextLabel:</TokenIdentifier>
-			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the text label.</Abstract>
+			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the label text.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel</Declaration>
@@ -98,7 +386,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/isShowTextLabel</TokenIdentifier>
-			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the text label.</Abstract>
+			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the label text.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel</Declaration>
@@ -110,7 +398,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWCustomPointOfInterest/showTextLabel</TokenIdentifier>
-			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the text label.</Abstract>
+			<Abstract type="html">A flag indicating whether it&apos;s to display or hide the label text.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel</Declaration>
@@ -229,18 +517,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/init</TokenIdentifier>
-			<Abstract type="html">Disable the default initializer.</Abstract>
-			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
-			
-			<Declaration>- (instancetype __nullable)init</Declaration>
-			
-			
-			<Anchor>//api/name/init</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/initWithCoordinate:floorId:buildingId:title:image:</TokenIdentifier>
 			<Abstract type="html">Instantiates a PWCustomPointOfInterest object with the given parameters.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
@@ -249,19 +525,19 @@
 			<Parameters>
 				<Parameter>
 					<Name>coordinate</Name>
-					<Abstract type="html">The coordinate of custom point of interest</Abstract>
+					<Abstract type="html">The coordinate of custom point-of-interest.</Abstract>
 				</Parameter><Parameter>
 					<Name>floorId</Name>
-					<Abstract type="html">The floor identifier of custom point of interest</Abstract>
+					<Abstract type="html">The floor identifier the custom point-of-interest on.</Abstract>
 				</Parameter><Parameter>
 					<Name>buildingId</Name>
-					<Abstract type="html">The building identifier of custom point of interest</Abstract>
+					<Abstract type="html">The building identifier the custom point-of-interest in.</Abstract>
 				</Parameter><Parameter>
 					<Name>title</Name>
-					<Abstract type="html">The text title of custom point of interest</Abstract>
+					<Abstract type="html">The title of custom point-of-interest.</Abstract>
 				</Parameter><Parameter>
 					<Name>image</Name>
-					<Abstract type="html">The icon of custom point of interest</Abstract>
+					<Abstract type="html">The icon of custom point-of-interest.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Returns a PWCustomPointOfInterest object.</Abstract></ReturnValue>

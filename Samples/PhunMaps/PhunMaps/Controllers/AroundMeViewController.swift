@@ -126,7 +126,7 @@ class AroundMeViewController: UIViewController, SegmentedViewController, POISear
             }
         } else if identifier == String(describing: POIDetailsViewController.self), let destination = segue.destination as? POIDetailsViewController {
             destination.pointOfInterest = selectedPOI
-            destination.userLocation = mapView?.userLocation
+            destination.userLocation = mapView?.indoorUserLocation
         }
     }
 	
@@ -136,7 +136,7 @@ class AroundMeViewController: UIViewController, SegmentedViewController, POISear
 		}
 		
 		for poi in pointsOfInterest {
-			if let view = mapView?.viewForPoint(poi) {
+			if let view = mapView?.view(for: poi) {
 				if let poiType = poiType {
 					view.isHidden = poiType.identifier != poi.pointOfInterestType!.identifier
 				} else {
@@ -181,7 +181,7 @@ class AroundMeViewController: UIViewController, SegmentedViewController, POISear
             filteredPOIs = [PWPointOfInterest]()
         }
         
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
 }
 

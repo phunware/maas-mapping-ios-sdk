@@ -302,7 +302,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWSharedLocation/init</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Initialization</Abstract>
 			<DeclaredIn>PWSharedLocation.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)init</Declaration>
