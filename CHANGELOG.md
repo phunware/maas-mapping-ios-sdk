@@ -1,5 +1,9 @@
 #PWMapKit Changelog
-##v3.1.8 (Monday, Dec 18th, 2017)
+##v3.1.9 (Wednesday, Jan 10th, 2018)
+
+* Update to PWLocation 3.1.11
+
+* ##v3.1.8 (Monday, Dec 18th, 2017)
 
 * Update to PWLocation 3.1.10
 
