@@ -65,7 +65,7 @@ extension ViewController: PWMapViewDelegate {
             }).first as? PWPointOfInterest
             
             if destinationPOI == nil {
-                print("You specified `destinationPOIIdentifier = \(destinationPOIIdentifier)` POI is not existed.")
+                print("You specified `destinationPOIIdentifier = \(destinationPOIIdentifier)` POI not found.")
                 return
             }
             
