@@ -101,6 +101,8 @@ class MapViewController: UIViewController, SegmentedViewController {
         configureToolbar()
     }
     
+    func segmentedViewWillDisappear() { }
+    
     func loadBuilding() {
         navigationController?.view.addSubview(loadingView)
         let buildingId = ConfigurationManager.shared.currentConfiguration.buildingId

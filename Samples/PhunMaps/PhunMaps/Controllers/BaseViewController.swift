@@ -16,6 +16,7 @@ protocol SegmentedViewController {
     var toolbar: ToolbarView! { get set }
     
     func segmentedViewWillAppear()
+    func segmentedViewWillDisappear()
 }
 
 class BaseViewController: UIViewController {
@@ -34,8 +35,6 @@ class BaseViewController: UIViewController {
     weak var directoryViewController: DirectoryViewController!
     weak var aroundMeViewController: AroundMeViewController!
     weak var listViewController: RouteListViewController!
-    
-    var visibleDirectoryViewController: DirectoryViewController?
     
     @IBOutlet weak var toolbar: ToolbarView!
     
@@ -71,6 +70,8 @@ class BaseViewController: UIViewController {
     }
     var selectedSegmentBeforeRouting: segments!
     var containerViews: [UIView]!
+    
+    var currentSegmentedController: SegmentedViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,7 +128,7 @@ class BaseViewController: UIViewController {
                 directoryViewController.toolbar = toolbar
             } else if let viewController = viewController as? AroundMeViewController {
                 aroundMeViewController = viewController
-				aroundMeViewController.mapView = mapViewController.mapView
+                aroundMeViewController.mapView = mapViewController.mapView
                 aroundMeViewController.toolbar = toolbar
             } else if let viewController = viewController as? RouteListViewController {
                 listViewController = viewController
@@ -137,26 +138,28 @@ class BaseViewController: UIViewController {
     }
     
     func switchSegment(segmentedControl: UISegmentedControl, animated: Bool = true) {
+        currentSegmentedController?.segmentedViewWillDisappear()
+        
         switch currentSegments[segmentedControl.selectedSegmentIndex] {
         case .map:
-            visibleDirectoryViewController = nil
             mapViewController.segmentedViewWillAppear()
+            currentSegmentedController = mapViewController
             if !routingMode() {
                 setDefaultMapSearchState()
             }
             
             transitionToContainer(view: mapContainerView, animated: animated)
         case .directory:
-            visibleDirectoryViewController = directoryViewController
             directoryViewController.segmentedViewWillAppear()
+            currentSegmentedController = directoryViewController
             searchtextFieldLeadingConstraint.constant = defaultSearchTextFieldLeading
             navigationItem.leftBarButtonItem = nil
             setDefaultSearchState(searchFieldLeadingConstant: defaultSearchTextFieldLeading)
             
             transitionToContainer(view: directoryContainerView, animated: animated)
         case .aroundMe:
-            visibleDirectoryViewController = nil
             aroundMeViewController.segmentedViewWillAppear()
+            currentSegmentedController = aroundMeViewController
             searchtextFieldLeadingConstraint.constant = defaultSearchTextFieldLeading
             navigationItem.leftBarButtonItem = nil
             setDefaultSearchState(searchFieldLeadingConstant: defaultSearchTextFieldLeading)
@@ -164,7 +167,7 @@ class BaseViewController: UIViewController {
             transitionToContainer(view: aroundMeContainerView, animated: animated)
         case .list:
             listViewController.segmentedViewWillAppear()
-            
+            currentSegmentedController = listViewController
             transitionToContainer(view: listContainerView, animated: animated)
         }
     }
@@ -182,14 +185,14 @@ class BaseViewController: UIViewController {
                     }
                 }
             }
-        }, completion: { [weak self] (finished) in
-            if let containerViews = self?.containerViews {
-                for containerView in containerViews {
-                    if containerView != view {
-                        containerView.isHidden = true
+            }, completion: { [weak self] (finished) in
+                if let containerViews = self?.containerViews {
+                    for containerView in containerViews {
+                        if containerView != view {
+                            containerView.isHidden = true
+                        }
                     }
                 }
-            }
         })
     }
     
@@ -297,7 +300,6 @@ extension BaseViewController: UITextFieldDelegate {
             searchtextFieldLeadingConstraint.constant = 80
             navigationItem.leftBarButtonItem = cancelButton
             
-            visibleDirectoryViewController = mapViewController.mapDirectoryViewController
             mapViewController.mapDirectoryContainerView.isHidden = false
             mapViewController.mapDirectoryViewController.search(keyword: searchTextField.text)
             mapViewController.mapDirectoryViewController.delegate = self
@@ -322,7 +324,7 @@ extension BaseViewController: UITextFieldDelegate {
             mapViewController.mapDirectoryViewController.searchKeyword = searchText
             aroundMeViewController.searchKeyword = searchText
         }
-
+        
         return true
     }
     
@@ -374,3 +376,4 @@ extension BaseViewController: DirectoryViewControllerDelegate {
         mapViewController.mapView.setCenter(selectedPOI.coordinate, animated: true)
     }
 }
+
