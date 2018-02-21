@@ -62,6 +62,8 @@ class DirectoryViewController: UIViewController, SegmentedViewController, POISea
         search(keyword: searchKeyword, pointsToExclude: nil, poiType: filteredPOIType)
         configureToolbar()
     }
+    
+    func segmentedViewWillDisappear() { }
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {

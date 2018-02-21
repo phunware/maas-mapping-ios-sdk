@@ -101,6 +101,8 @@ class MapViewController: UIViewController, SegmentedViewController {
         configureToolbar()
     }
     
+    func segmentedViewWillDisappear() { }
+    
     func loadBuilding() {
         navigationController?.view.addSubview(loadingView)
         let buildingId = ConfigurationManager.shared.currentConfiguration.buildingId
@@ -172,7 +174,7 @@ class MapViewController: UIViewController, SegmentedViewController {
 extension MapViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWIndoorLocation!) {
-         // NotificationCenter.default.post(name: .updateIndoorLocation, object: userLocation)
+         NotificationCenter.default.post(name: .updateIndoorLocation, object: userLocation)
     }
     
     func mapView(_ mapView: PWMapView!, didFailToLocateIndoorUserWithError error: Error!) {

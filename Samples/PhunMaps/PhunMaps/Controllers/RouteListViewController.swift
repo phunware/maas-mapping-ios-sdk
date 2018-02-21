@@ -41,9 +41,8 @@ class RouteListViewController: UIViewController, SegmentedViewController {
         tableView.sectionHeaderHeight = UITableViewAutomaticDimension
     }
     
-    func segmentedViewWillAppear() {
-        
-    }
+    func segmentedViewWillAppear() { }
+    func segmentedViewWillDisappear() { }
     
     func cellFor(routeInstruction: PWRouteInstruction) -> RouteInstructionCell? {
         let indexPath = IndexPath(row: routeInstruction.indexOfInstruction(), section: 0)

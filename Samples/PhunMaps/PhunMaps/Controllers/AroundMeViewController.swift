@@ -67,7 +67,6 @@ class AroundMeViewController: UIViewController, SegmentedViewController, POISear
 		filterRadius = CommonSettingsConstants.Distance.defaultSearchRadius as NSNumber
 		
 		sortedSectionedPOIKeys = [String]()
-		NotificationCenter.default.addObserver(self, selector: #selector(updateLocation(notification:)), name: .updateIndoorLocation, object: nil)
 		tableView.register(UINib(nibName: "POITableViewCell", bundle: nil), forCellReuseIdentifier: POICellIdentifier)
         tableView.register(UINib(nibName: String(describing: AroundMeHeaderView.self), bundle: nil), forHeaderFooterViewReuseIdentifier: String(describing: AroundMeHeaderView.self))
         
@@ -82,10 +81,15 @@ class AroundMeViewController: UIViewController, SegmentedViewController, POISear
 	}
 	
 	func segmentedViewWillAppear() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLocation(notification:)), name: .updateIndoorLocation, object: nil)
 		search(keyword: nil)
 		configureHeaderView()
         configureToolbar()
 	}
+    
+    func segmentedViewWillDisappear() {
+        NotificationCenter.default.removeObserver(self, name: .updateIndoorLocation, object: nil)
+    }
 	
 	func configureHeaderView() {
 		if lastLocation == nil {
