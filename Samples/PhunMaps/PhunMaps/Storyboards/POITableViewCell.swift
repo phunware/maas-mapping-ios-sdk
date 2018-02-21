@@ -7,11 +7,16 @@
 
 import UIKit
 import PWMapKit
+import Kingfisher
 
 let POICellIdentifier = "POICellIdentifier"
 
 class POITableViewCell: UITableViewCell {
 	
+    @IBOutlet weak var poiImageView: UIImageView!
+    @IBOutlet weak var poiTitleLabel: UILabel!
+    @IBOutlet weak var poiDetailLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -21,23 +26,17 @@ class POITableViewCell: UITableViewCell {
     }
 	
 	func setPointOfInterest(poi: PWPointOfInterest) {
-		if let image = poi.image {
-			self.imageView?.image = image
-			
-			let size = CGSize(width: CommonSettingsConstants.UI.standardIconSize, height: CommonSettingsConstants.UI.standardIconSize)
-			UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
-			let imageRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
-			self.imageView?.image?.draw(in: imageRect)
-			self.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
-			UIGraphicsEndImageContext()
+		if let imageURL = poi.imageURL {
+            poiImageView.kf.indicatorType = .activity
+            poiImageView.kf.setImage(with: imageURL)
 		}
-		
-		if let title = poi.title {
-			self.textLabel?.text = title
-		}
-		
-		if let floorName = poi.floor.name {
-			self.detailTextLabel?.text = floorName
-		}
+        
+        if let title = poi.title {
+            self.poiTitleLabel?.text = title
+        }
+
+        if let floorName = poi.floor.name {
+            self.poiDetailLabel?.text = floorName
+        }
 	}
 }
