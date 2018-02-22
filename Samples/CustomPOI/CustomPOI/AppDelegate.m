@@ -27,8 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [PWCore setApplicationID:kAppID
                    accessKey:kAccessKey
-                signatureKey:kSignatureKey
-               encryptionKey:kEncryptionKey];
+                signatureKey:kSignatureKey];
     
     return YES;
 }

@@ -10,7 +10,7 @@
 
 #import "ViewController.h"
 
-#define kBuildingIdentifier 0  // Getting from building edit page on Phunware MaaS portal
+#define kBuildingIdentifier 0  // From building edit page on Phunware MaaS portal
 
 @interface ViewController() <PWMapViewDelegate>
 

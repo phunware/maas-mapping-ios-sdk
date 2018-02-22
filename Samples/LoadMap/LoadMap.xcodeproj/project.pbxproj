@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06AA9B6344238E94C5FF6DE8 /* libPods-LoadMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F89D223C1F6DE84C4EAF6ACC /* libPods-LoadMap.a */; };
 		E34A02F81EAE923B00569719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A02F71EAE923B00569719 /* AppDelegate.swift */; };
 		E34A02FA1EAE923B00569719 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A02F91EAE923B00569719 /* ViewController.swift */; };
 		E34A02FD1EAE923B00569719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34A02FB1EAE923B00569719 /* Main.storyboard */; };
 		E34A02FF1EAE923B00569719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34A02FE1EAE923B00569719 /* Assets.xcassets */; };
 		E34A03021EAE923B00569719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34A03001EAE923B00569719 /* LaunchScreen.storyboard */; };
+		EEB64E8655CD3B86701A3491 /* Pods_LoadMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C921149B3261CD73DE7345 /* Pods_LoadMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43C921149B3261CD73DE7345 /* Pods_LoadMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoadMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B336CC06B4BAD47689A0A54 /* Pods-LoadMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoadMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoadMap/Pods-LoadMap.release.xcconfig"; sourceTree = "<group>"; };
 		E34A02F41EAE923B00569719 /* LoadMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34A02F71EAE923B00569719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		E34A03011EAE923B00569719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E34A03031EAE923B00569719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1FA4280A3EB8097B787C15F /* Pods-LoadMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoadMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoadMap/Pods-LoadMap.debug.xcconfig"; sourceTree = "<group>"; };
-		F89D223C1F6DE84C4EAF6ACC /* libPods-LoadMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoadMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06AA9B6344238E94C5FF6DE8 /* libPods-LoadMap.a in Frameworks */,
+				EEB64E8655CD3B86701A3491 /* Pods_LoadMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +52,7 @@
 		97D4CF6400D7017AD9FFDAB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F89D223C1F6DE84C4EAF6ACC /* libPods-LoadMap.a */,
+				43C921149B3261CD73DE7345 /* Pods_LoadMap.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,6 +124,7 @@
 					E34A02F31EAE923B00569719 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 84CK77G588;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -175,6 +176,8 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${PODS_ROOT}/MistSDK/Framework/MistSDK.framework",
 				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
+				"${PODS_ROOT}/PWLocation/Framework/PWLocation.framework",
+				"${PODS_ROOT}/PWMapKit/Framework/PWMapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/TMCache/TMCache.framework",
 			);
@@ -183,6 +186,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MistSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWMapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMCache.framework",
 			);
@@ -221,7 +226,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -363,7 +368,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.LoadMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -377,7 +383,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.LoadMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
