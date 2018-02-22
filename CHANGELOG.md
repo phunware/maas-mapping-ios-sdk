@@ -1,39 +1,43 @@
-#PWMapKit Changelog
+# PWMapKit Changelog
+## 3.3.0 (Thursday, Feb 22nd, 2018)
+#### Features
+* Update to PWLocation 3.3.0
+* Added support for JWT
 
-##v3.2.0 (Friday, Nov 17th, 2017)
+#### Bug fixes / performance enhancements
+* Fixed issue with small POI icons on iOS 11
+* Fixed crash when starting Location Sharing
+* Fixed crash with annotation view
+* Fixed issue where follow me mode is disabled on floor switch
 
+#### Developer stuff
+* Added additional logging for troubleshooting
+
+## 3.2.0 (Friday, Nov 17th, 2017)
 * Change `PWMapView` to be a subclass of `MKMapView`
 * Be able to set initial floor for the building map through its delegate `[PWMapViewDelegate mapViewWillSetInitialFloor:]`.
 * Be able to set initial display region for the building map through its delegate `[PWMapViewDelegate mapViewWillSetCameraAfterLoadingBuilding:]`.
 * Upgrade instruction and change detail: https://github.com/phunware/maas-mapping-ios-sdk/wiki/Upgrade-from-3.x.x-to-3.2.0
 
- 
-##v3.1.7 (Thursday, Oct 19th, 2017)
-
+## 3.1.7 (Thursday, Oct 19th, 2017)
 * Update to PWLocation 3.1.9
 
-##v3.1.6.2 (Friday, Oct 13th, 2017)
-
+## 3.1.6.2 (Friday, Oct 13th, 2017)
 * Update to PWLocation 3.1.8
 
-##v3.1.6.1 (Wednesday, Sep 6th, 2017)
-
+## 3.1.6.1 (Wednesday, Sep 6th, 2017)
 * Add two new delegate callback for PWMapView:
 	* - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view;
 	* - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view;
 
-##v3.1.6 (Wednesday, Aug 30th, 2017)
-
+## v3.1.6 (Wednesday, Aug 30th, 2017)
 * Update to PWLocation 3.1.7
 
-##v3.1.5 (Thursday, Aug 17th, 2017)
-
+## 3.1.5 (Thursday, Aug 17th, 2017)
 * Fix route issue with a curved manuever.
 * Fix orientation issue when the heading service is turned on by developer.
 
-
-##v3.1.4 (Monday, Jun 26th, 2017)
-
+## 3.1.4 (Monday, Jun 26th, 2017)
 * Improve route calculator for finding shortest route path.
 * User experience improvement by getting more stable route orientation.
 * Add support for escalator with routing.
@@ -42,15 +46,12 @@
 	* Start/End of route has empty title.
 	* Changing map zoom levels for POI's are not reflected
 
-
-##v3.1.3 (Wednesday, Apr 19th, 2017)
-
+## 3.1.3 (Wednesday, Apr 19th, 2017)
 * Bug fixes
 	* Can route from user location on first user location update
 	* PWCustomLocation public initialization method
 
-##v3.1.2 (Wednesday, Apr 12th, 2017)
-
+## 3.1.2 (Wednesday, Apr 12th, 2017)
 * New features
 	* Add PWCustomPointOfInterest.
 	* Create route API can now accept points to exclude.
@@ -69,8 +70,7 @@
 	* Deprecated `initWithLatitude:` method in PWCustomLocation, replaced with `initWithCoordinate:`.
 	* Create PWMapPoint protocol and make POIs, waypoints, and custom location conform to it.
 
-##v3.1.1 (Tuesday, Mar 28th, 2017)
-
+## 3.1.1 (Tuesday, Mar 28th, 2017)
 * Enable `zoomLevel` property in PWMapView.
 * Route behavior improvements:
 	* Make `Follow Me` as default tracking mode.
@@ -83,92 +83,69 @@
 	* The callback `mapView:didDeselectBuildingAnnotationView:` never be fired.
 	* The PointOfInterestType image is always nil.
 
-##v3.1.0 (Friday, Jan 27th, 2017)
-
+## 3.1.0 (Friday, Jan 27th, 2017)
 * Performance improvement for loading building data with bundle instead of numbers of API call.
 * Deprecated the API `+ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL) caching completion:(void(^)(PWBuilding *building, NSError *error))completion __deprecated;`  in PWBuilding, which is replaced by new API `+ (void)buildingWithIdentifier:(NSInteger)identifier completion:(void(^)(PWBuilding *building, NSError *error))completion;`.
 * Bug fix: Sometimes occupant can not zoom in as far as before once they have zoomed out on the map.
 
-##v3.0.4 (Monday, November 28th, 2016)
-
+## 3.0.4 (Monday, Nov 28th, 2016)
 * Avoid forcing map to current floor on navigation mode.
 
-##v3.0.3 (Tuesday, November 8th, 2016)
-
+## 3.0.3 (Tuesday, Nov 8th, 2016)
 * Add observable/callback method for `trackingMode` in PWMapView.
 * Support adding custom annotation/overlay in PWMapView.
 * Bug fixes.
 
-##v3.0.2 (Tuesday, October 25th, 2016)
-
+## 3.0.2 (Tuesday, Oct 25th, 2016)
 * Fix the issue of memory leak.
 * Add/improve APIs for supporting ADA.
 
-##v3.0.1 (Friday, October 7th, 2016)
-
+## 3.0.1 (Friday, Oct 7th, 2016)
 * Public more `PWMapKit` delegate methods and APIs which `MKMapView` has.
 * Add `metaData` property in `PWPointOfInterest`.
 
-##v3.0.0 (Monday, July 25th, 2016)
+## 3.0.0 (Monday, Jul 25th, 2016)
 
 * API completely redesign.
 * Add light weight UI view controllers.
 * Performance improvements (PDF Tiling, Map/Building isolation, Memory reduction).
 * Bug fix for crashes result from HTTP response handler.
 
-
-##v2.6.0 (Wednesday, September 30th, 2015)
-
+##v2.6.0 (Wednesday, Sep 30th, 2015)
 * Updated framework to leverage PWCore v2.0.0
-
 * Updated internal networking interfaces to use HTTPS endpoints
-
 * Fixed a race condition that would occur when trying to load building assets
 
-##v2.5.1 (Thursday, July 20th, 2015)
-
+## 2.5.1 (Thursday, Jul 20th, 2015)
 * Added ability for developer to control whether or not the maneuver change is animated. See `- (BOOL)mapViewShouldAnimateAutomaticRouteManeuverChange:(PWMapView *)mapView` delegate method.
-
 * Added new method to PWMapView, `-(void)setRouteManever:(PWRouteManever *)maneuver animated:(BOOL)animated` that allows you to control whether or no the maneuver is animated when switching.
 
   **NOTE**: The old method, `-(void)setRouteManever:(PWRouteManever *)maneuver` no longer animates the maneuver change.
 
 * Added property to `PWDirectionsOptions` called `excludedPointIdentifiers`. Specify an array of point identifiers that you would like to exclude from routing. Please see `PWDirectionsOptions` header for more information.
-
 * Fixed an issue where automatic maneuver switching would not work with the GPS location provider if the floor identifier was unknown. Now switches the to closest maneuver on a given floor.
-
 * Fixed an issue where toggling the zoom workaround on/off would no longer preserve the center position.
-
 * Instrumented SDK with mapping & navigation analytics. Analytics are disabled by default. See `PWMapKitAnalytics` for more information and to enable.
 
 * Updating zoom workaround to with iOS 8.4 and all subsequent iOS 8 versions. Note that the zoom workaround will not work on iOS 9 since iOS 9 resolves the issue.
 
-##v2.5.0 (Thursday, June 4th, 2015)
-
+## 2.5.0 (Thursday, June 4th, 2015)
 * Added support for turn-by-turn directions. Turn-by-turn maneuvers can be accessed by accessing the `maneuvers` property on a `PWRoute` object. You can plot a route maneuver on a `PWMapView` intance by calling `setRouteManeuver:` with a valid `PWRouteManeuver` object. All previous route behavior is still present and unaffected. Please see the turn-by-turn sample as an example of how to implement turn-by-turn.
 
   **NOTE**: You will need to plot a route maneuever in order to enter turn-by-turn mode.
 
 * Route maneuvers switch automatically when location upates are available and the indoor user tracking mode is set to `PWIndoorUserTrackingModeFollow` or `PWIndoorUserTrackingModeFollowWithHeading`. You can manually set route maneuvers if desired but that will set the indoor user tracking mode to `PWIndoorUserTrackingModeNone`.
-
 * Added new class, `PWRouteManeuever`. A route maneuver encapsulates information related to given maneuver such as turn direction, distance and other information.
-
 * Route steps are now automatically selected by the SDK in response to user initiated floor changes or location updates. A new callback has been created when a route step changes.
-
 * Added `PWMapView` delegate callback `mapView:didChangeRouteStep:`. This method is called whenever the `PWRouteStep` being displayed by the map view changes.
-
 * Added `PWMapView` delegate callback `mapView:didChangeRouteManeuver:`. This method is called whenever the `PWRouteManeuver` being displayed by the map changes.
-
 * Routing and maneuver overlays now use the `mapView.tintColor` property when rendering their overlays.
-
 * When registering a `PWGPSLocationManager` with the map view the location will now show on all floors regardless of whether or not there is a valid `floorIDMapping` match.
 
-##v2.5.0 - BETA 1 (Friday, May 15th, 2015)
-
+## 2.5.0 - BETA 1 (Friday, May 15th, 2015)
 * Beta release of turn-by-turn features
 
-##v2.4.1 (Monday, April 27th, 2015)
-
+## 2.4.1 (Monday, Apr 27th, 2015)
 * Fixed issue where `didFailToLoadBuilding:` was not being called while in airplane mode on initial launch with no cached data.
 * Fixed a memory issue where route steps and segments were not being released when destroying a `PWMapView` instance.
 * Fixed issue where `PWMapView` delegate method `mapView:didChangeIndoorUserTrackingMode:` would not be called in certain instance.
@@ -176,8 +153,7 @@
 * Added horizontal accuracy bubble to indoor blue dot view.
 * Added discreet sample apps for Pin Drop, Zoom Workaround, POI Management
 
-##v2.4.0 (Friday, March 13th, 2015)
-
+## 2.4.0 (Friday, Mar 13th, 2015)
 * Added the ability to enable and disable annotation zoom levels. See the `annotationZoomLevelsEnabled` property on `PWMapView` for more information.
 * Added the ability for users to add and remove `PWBuildingAnnotation` objects to and from the map view. NOTE: When adding or removing annotations, only `annotationID` equality will be checked.
 * Fixed a bug where inaccessible routes were sometimes returned for accessible-only requests.
@@ -195,11 +171,11 @@
 * Deprecated the old indoor location manager registration interface in favor of a more simply named method with accompanying unregister method.
 * Removed the `-setCurrentFloor:` PWMapView property mutator declaration and removed the `readonly` attribute of the property.
 
-##v2.3.1 (Monday, March 2nd, 2015)
+## 2.3.1 (Monday, Mar 2nd, 2015)
 * Fixed bug where when routing across multiple floors with a valid indoor location the build asset would get 'stuck' while the blue dot continued to move.
 * Updated `PWRouteOverlayRenderer` initializer to accept a building overlay as part of initialization: `- (instancetype)initWithRouteOverlay:(PWRouteOverlay *)overlay buildingOverlay:(PWBuildingOverlay *)buildingOverlay`
 
-##v2.3.0 (Thursday, January 29th, 2015)
+## 2.3.0 (Thursday, Jan 29th, 2015)
 * Added new "blue dot smoothing" functionality to provide a better user location tracking experience.
 * Added `blueDotSmoothingEnabled` boolean property to `PWMapView` for turning blue dot smoothing on and off.
 * Added `routeSnappingTolerance` enumeration property to `PWMapView` for turning off route snapping or setting a different tolerance.
@@ -219,15 +195,15 @@
 * Many bug fixes and performance enhancements
 * Small updates to sample code
 
-##v2.2.0 (Friday, October 31st, 2014)
+## 2.2.0 (Friday, Oct 31st, 2014)
 * Promoting BETA 2 to GA candidate
 
-##v2.2.0 BETA 2 (Wednesday, October 29th, 2014)
+## 2.2.0 BETA 2 (Wednesday, Oct 29th, 2014)
 * Fixed issue where `imageURL` property on a PWBuildingAnnotation would sometimes return `nil`
 * Fixed issue where POI icon image would not display on first load under certain memory constrained conditions
 * Updated sample app to resolve to some routing centering issues
 
-##v2.2.0 BETA (Monday, October 27th, 2014)
+## 2.2.0 BETA (Monday, Oct 27th, 2014)
 * `PWAnnotation` (protocol) renamed to `PWAnnotationProtocol`
 * Added `PWAnnotationType`
 * `PWBuilding`
@@ -257,30 +233,30 @@
 * `PWRouteStep`
 * Added `annotations` property
 
-##v2.1.2 (Tuesday, October 7th, 2014)
+## 2.1.2 (Tuesday, Oct 7th, 2014)
  * Fixed issue where building annotation callout view displaying would cause strange behavior on iOS 8
  * Small bug fixes and optimiziations
 
-##v2.1.1 (Friday, September 18th, 2014)
+## 2.1.1 (Friday, Sep 18th, 2014)
  * General availability for native mapping SDK. See README.md for integration details.
 
-##v2.1.1 BETA (Friday, August 15th, 2014)
+## 2.1.1 BETA (Friday, Aug 15th, 2014)
  * Added support for labels in PWBuildingAnnotationView
  * Added support for real-time dynamic label occlusion
  * Added support for Phunware zoom levels. See POI details in MaaS portal to configure.
 
-##v2.1.0 BETA (Friday, August 1st, 2014)
+## 2.1.0 BETA (Friday, Aug 1st, 2014)
  * Removed location providers from PWMapKit and added to PWLocation SDK.
  * PWMapKit now has a dependency on PWLocation
  * Several bug fixes related to map positioning
 
-##v2.0.3 BETA (Friday, July 10th, 2014)
+## 2.0.3 BETA (Friday, Jul 10th, 2014)
  * Fixed crashing issue with `registerLocationManagerForIndoorLocationUpdates` method.
  * Fixed issue where multiple navigation annotations were appearing on the map view when scrolling
  * Fixed crashing issue in sample related to route view controller
 
-##v2.0.2 BETA (Thursday, July 9th, 2014)
+## 2.0.2 BETA (Thursday, Jul 9th, 2014)
  * Native mapping beta release
 
-##v1.0.0 (Wednesday, January 1st, 2014)
+## 1.0.0 (Wednesday, Jan 1st, 2014)
  * Initial release
