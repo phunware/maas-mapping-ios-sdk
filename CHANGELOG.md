@@ -1,7 +1,7 @@
 # PWMapKit Changelog
 ## 3.3.0 (Thursday, Feb 22nd, 2018)
 #### Features
-* Update to PWLocation 3.3.0
+* Update to PWLocation 3.3.x
 * Added support for JWT
 
 #### Bug fixes / performance enhancements
