@@ -164,7 +164,7 @@
 					E33E49BC1ED605840008950E = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 84CK77G588;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -401,7 +401,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = Phunware_Wild2;
 				SWIFT_OBJC_BRIDGING_HEADER = "LocationSharing/LocationSharing-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -421,7 +422,8 @@
 				PROVISIONING_PROFILE = "f051d59b-d336-42a3-938b-eb29ada42498";
 				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild";
 				SWIFT_OBJC_BRIDGING_HEADER = "LocationSharing/LocationSharing-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

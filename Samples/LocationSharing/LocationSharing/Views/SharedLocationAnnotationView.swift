@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SVPulsingAnnotationView
+import MapKit
 
 extension Notification.Name {
     static let didUpdateAnnotation = Notification.Name("didUpdateAnnotation")
@@ -64,7 +64,7 @@ extension SharedLocationAnnotationView {
         floatingTextLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -5.0).isActive = true
     }
     
-    func didUpdateAnnotation() {
+    @objc func didUpdateAnnotation() {
         DispatchQueue.main.async { [weak self] in
             guard let annotation = self?.annotation as? SharedLocationAnnotation else {
                 return

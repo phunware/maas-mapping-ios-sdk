@@ -9,8 +9,5 @@ target 'LocationSharing' do
   use_frameworks!
 
   # Pods for LocationSharing
-  pod 'PWMapKit', :path => '/Users/patrickdunshee/repos/forks/mapping-sdk-ios'
-  #pod 'PWLocation', :path => '/Users/patrickdunshee/repos/forks/location-sdk-ios'
-  pod 'StepInsideSdk', :http => 'https://phunware-765bf3b3:6dfeef13a4494f79@artifacts.senionlab.com/pods/stepinside-sdk/5.1.1.zip'
-  pod 'SVPulsingAnnotationView', :git => 'https://github.com/TransitApp/SVPulsingAnnotationView'
+  pod 'PWMapKit'
 end
