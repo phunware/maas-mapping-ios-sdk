@@ -1,18 +1,37 @@
 PWMapKit Samples for iOS
 ====================
 
+## CustomPOI
+
+### Overview
+- Create custom point of interest on the indoor map.
+
+## ImmediateRoute
+
+### Overview
+- Display map with building
+- Route from current location to POI as soon as location is acquired
+
 ## LoadMap
+
+### Overview
+- Display map with building
+- Show current location in building
+
+## LocationSharing
+
+### Overview
+- Display map with building
+- Show current location in building
+- Show current location of other users of the app in the same building on the map
+
+## PhunMaps
 
 ### Overview
 - Display map with building
 - Search for points of interest in building
 - Route from current location to a selected point of interest
-- Fully accessible using voice over to guide user during route
 
-## CustomPOI
-
-### Overview
-- Create custom point of interest on the indoor map.
 
 Privacy
 -----------
