@@ -6,7 +6,7 @@ PWMapKit Samples - Location Sharing
 
 ## Requirements
 
-- PWMapKit *Beta* 1.1.9.7
+- PWMapKit 3.3.0 or greater
 - iOS 9.0 or greater
 - Xcode 8 or greater
 
@@ -29,7 +29,6 @@ PWMapKit Samples - Location Sharing
 	applicationId - The App ID
 	accessKey - The Access Key
 	signatureKey - The Signature Key
-	encryptionKey - leave it empty with ""
 
 * Then select 'ViewController.swift', put a building ID for 'buildingIdentifier', which you can get from building edit page in Phunware MaaS Portal
 
