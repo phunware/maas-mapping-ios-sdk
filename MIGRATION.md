@@ -19,7 +19,7 @@ Before v3.2.0 the `PWMapView` is a subclass of `UIView` and provides almost all 
 
 1. Open the `Podfile` from your project and change PWMapKit include as `pod 'PWMapKit', '3.2.0'`, then run `pod update` in the Terminal to update the framework.
 
-2. Search for `.userLocation` in whole project and replace the PWMapView`.userLocation` with PWMapView`.indoorUserLocation`, and don't forget change its type from `PWUserLocation` to `PWCustomLocation`.
+2. Search for `.userLocation` in whole project and replace the PWMapView`.userLocation` with PWMapView`.indoorUserLocation`, and don't forget change its type from `PWCustomLocation` to `PWUserLocation`.
 
 3. Search for `.floor` in whole project and replace the PWMapView`.floor` with PWMapView`.currentFloor`.
 
