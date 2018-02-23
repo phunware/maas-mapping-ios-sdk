@@ -232,10 +232,8 @@
 				"${PODS_ROOT}/MistSDK/Framework/MistSDK.framework",
 				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
 				"${PODS_ROOT}/PWLocation/Framework/PWLocation.framework",
-				"${BUILT_PRODUCTS_DIR}/PWMapKit/PWMapKit.framework",
+				"${PODS_ROOT}/PWMapKit/Framework/PWMapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
-				"${BUILT_PRODUCTS_DIR}/SVPulsingAnnotationView/SVPulsingAnnotationView.framework",
-				"${PODS_ROOT}/StepInsideSdk/StepInsideSdk.framework",
 				"${BUILT_PRODUCTS_DIR}/TMCache/TMCache.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -246,8 +244,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWMapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPulsingAnnotationView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StepInsideSdk.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMCache.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
