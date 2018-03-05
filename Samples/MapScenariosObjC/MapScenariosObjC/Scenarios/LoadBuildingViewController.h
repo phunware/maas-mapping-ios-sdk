@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LoadBuildingViewController.h
 //  MapScenariosObjC
 //
 //  Created on 3/5/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScenarioSelectViewController : UITableViewController
-
+@interface LoadBuildingViewController : UIViewController
 
 @end
-

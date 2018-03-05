@@ -2,16 +2,16 @@
 //  LoadMapViewController.m
 //  MapScenariosObjC
 //
-//  Created by Patrick Dunshee on 3/5/18.
-//  Copyright © 2018 Patrick Dunshee. All rights reserved.
+//  Created on 3/5/18.
+//  Copyright © 2018 Phunware. All rights reserved.
 //
 
-#import "LoadMapViewController.h"
+#import "BluedotLocationViewController.h"
 #import <PWMapKit/PWMapKit.h>
 
 static NSInteger buildingIdentifier = 0; // Enter your building identifier here, found on the building's Edit page on Maas portal
 
-@interface LoadMapViewController () <PWMapViewDelegate>
+@interface BluedotLocationViewController () <PWMapViewDelegate>
 
 @property (nonatomic, strong) PWMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -19,12 +19,12 @@ static NSInteger buildingIdentifier = 0; // Enter your building identifier here,
 
 @end
 
-@implementation LoadMapViewController
+@implementation BluedotLocationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"LoadMap";
+    self.navigationItem.title = @"Bluedot Location";
     
     self.locationManager = [CLLocationManager new];
     [self.locationManager requestWhenInUseAuthorization];

@@ -14,7 +14,8 @@
 		E3C76E68204DAB0400780D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3C76E67204DAB0400780D0F /* Assets.xcassets */; };
 		E3C76E6B204DAB0400780D0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C76E69204DAB0400780D0F /* LaunchScreen.storyboard */; };
 		E3C76E6E204DAB0400780D0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E6D204DAB0400780D0F /* main.m */; };
-		E3C76E77204DB0A300780D0F /* LoadMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E76204DB0A300780D0F /* LoadMapViewController.m */; };
+		E3C76E77204DB0A300780D0F /* BluedotLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E76204DB0A300780D0F /* BluedotLocationViewController.m */; };
+		E3C76E7A204DEB8200780D0F /* LoadBuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E79204DEB8200780D0F /* LoadBuildingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,10 @@
 		E3C76E6A204DAB0400780D0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3C76E6C204DAB0400780D0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3C76E6D204DAB0400780D0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E3C76E75204DB0A300780D0F /* LoadMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadMapViewController.h; sourceTree = "<group>"; };
-		E3C76E76204DB0A300780D0F /* LoadMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadMapViewController.m; sourceTree = "<group>"; };
+		E3C76E75204DB0A300780D0F /* BluedotLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluedotLocationViewController.h; sourceTree = "<group>"; };
+		E3C76E76204DB0A300780D0F /* BluedotLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BluedotLocationViewController.m; sourceTree = "<group>"; };
+		E3C76E78204DEB8200780D0F /* LoadBuildingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadBuildingViewController.h; sourceTree = "<group>"; };
+		E3C76E79204DEB8200780D0F /* LoadBuildingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadBuildingViewController.m; sourceTree = "<group>"; };
 		FC3E93A2BD3D81AC52891571 /* Pods-MapScenariosObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenariosObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenariosObjC/Pods-MapScenariosObjC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,8 +105,10 @@
 		E3C76E74204DB07E00780D0F /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
-				E3C76E75204DB0A300780D0F /* LoadMapViewController.h */,
-				E3C76E76204DB0A300780D0F /* LoadMapViewController.m */,
+				E3C76E75204DB0A300780D0F /* BluedotLocationViewController.h */,
+				E3C76E76204DB0A300780D0F /* BluedotLocationViewController.m */,
+				E3C76E78204DEB8200780D0F /* LoadBuildingViewController.h */,
+				E3C76E79204DEB8200780D0F /* LoadBuildingViewController.m */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -249,9 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C76E63204DAB0400780D0F /* ScenarioSelectViewController.m in Sources */,
+				E3C76E7A204DEB8200780D0F /* LoadBuildingViewController.m in Sources */,
 				E3C76E6E204DAB0400780D0F /* main.m in Sources */,
 				E3C76E60204DAB0400780D0F /* AppDelegate.m in Sources */,
-				E3C76E77204DB0A300780D0F /* LoadMapViewController.m in Sources */,
+				E3C76E77204DB0A300780D0F /* BluedotLocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
