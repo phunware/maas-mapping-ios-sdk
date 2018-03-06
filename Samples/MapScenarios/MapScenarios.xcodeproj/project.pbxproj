@@ -15,6 +15,7 @@
 		E3C379A6204D90AA00905731 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C379A4204D90AA00905731 /* LaunchScreen.storyboard */; };
 		E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */; };
 		E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */; };
+		E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E3C379A7204D90AA00905731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluedotLocationViewController.swift; sourceTree = "<group>"; };
 		E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBuildingViewController.swift; sourceTree = "<group>"; };
+		E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */,
 				E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */,
+				E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */,
 				E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */,
 				E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */,
+				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

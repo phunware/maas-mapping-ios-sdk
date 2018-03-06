@@ -75,6 +75,33 @@
                                             <segue destination="Iff-tT-hKk" kind="show" id="bT7-DI-4U8"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationModesCell" textLabel="10p-Hh-nOV" detailTextLabel="e3Z-Zo-aGy" style="IBUITableViewCellStyleSubtitle" id="JD4-vZ-I0F" userLabel="LocationModesCell">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JD4-vZ-I0F" id="piN-Cf-LfJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Location Modes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10p-Hh-nOV">
+                                                    <rect key="frame" x="16" y="5" width="122" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Different ways for the camera to follow the blue dot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e3Z-Zo-aGy">
+                                                    <rect key="frame" x="16" y="25.5" width="290.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="O7R-OB-KgB" kind="show" id="ugZ-wq-hgF"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -118,6 +145,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36e-pu-CBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1454" y="-497"/>
+        </scene>
+        <!--Location Modes View Controller-->
+        <scene sceneID="c9h-Gn-HuI">
+            <objects>
+                <viewController id="O7R-OB-KgB" customClass="LocationModesViewController" customModule="MapScenarios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eUM-0C-hWi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Q-9v-Ryk">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tjO-tW-NfH"/>
+                                    <barButtonItem id="aZS-AH-e9L">
+                                        <connections>
+                                            <action selector="trackingModeButtonTapped:" destination="O7R-OB-KgB" id="Ojt-bt-X1A"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PdB-Xn-vNW" firstAttribute="bottom" secondItem="Z1Q-9v-Ryk" secondAttribute="bottom" id="KmF-9M-UNX"/>
+                            <constraint firstItem="PdB-Xn-vNW" firstAttribute="trailing" secondItem="Z1Q-9v-Ryk" secondAttribute="trailing" id="ea6-Vf-92n"/>
+                            <constraint firstItem="Z1Q-9v-Ryk" firstAttribute="leading" secondItem="PdB-Xn-vNW" secondAttribute="leading" id="ywa-FJ-f3t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PdB-Xn-vNW"/>
+                    </view>
+                    <connections>
+                        <outlet property="toolbar" destination="Z1Q-9v-Ryk" id="mnw-MD-x4V"/>
+                        <outlet property="trackingModeButton" destination="aZS-AH-e9L" id="3PZ-Wf-WYG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1qb-xb-1Jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1454" y="170"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Pd-Uv-S3B">

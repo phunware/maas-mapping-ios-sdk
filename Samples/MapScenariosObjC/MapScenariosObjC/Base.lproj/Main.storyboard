@@ -48,7 +48,7 @@
                                             <segue destination="zF2-eO-qfh" kind="show" id="5xi-Nf-Vmp"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="GlW-6b-OxT" detailTextLabel="iJY-IZ-PUk" style="IBUITableViewCellStyleSubtitle" id="KIC-hb-PiU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BluedotLocationCell" textLabel="GlW-6b-OxT" detailTextLabel="iJY-IZ-PUk" style="IBUITableViewCellStyleSubtitle" id="KIC-hb-PiU" userLabel="BluedotLocationCell">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KIC-hb-PiU" id="fwm-Ea-7gU">
@@ -75,6 +75,33 @@
                                             <segue destination="d9X-Lt-MeP" kind="show" id="zLm-hY-bxV"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationModesCell" textLabel="0gf-GO-jpu" detailTextLabel="Kaw-e1-l25" style="IBUITableViewCellStyleSubtitle" id="G0u-GB-OB6" userLabel="LocationModesCell">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G0u-GB-OB6" id="oTt-f8-s2j">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Location Modes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0gf-GO-jpu">
+                                                    <rect key="frame" x="16" y="5" width="122" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Different ways for the camera to follow the blue dot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kaw-e1-l25">
+                                                    <rect key="frame" x="16" y="25.5" width="290.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="wbD-fb-ARD" kind="show" id="sxv-V2-8kn"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -88,6 +115,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQK-al-PhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="479.19999999999999" y="17.541229385307346"/>
+        </scene>
+        <!--Location Modes View Controller-->
+        <scene sceneID="Ksp-1A-daV">
+            <objects>
+                <viewController id="wbD-fb-ARD" customClass="LocationModesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MuL-Pk-Hhw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WED-zM-W0S">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EJk-RH-Nbc"/>
+                                    <barButtonItem id="G2f-Er-HzC">
+                                        <connections>
+                                            <action selector="trackingModeButtonTapped:" destination="wbD-fb-ARD" id="FZn-wa-jN8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cvH-U9-0lg" firstAttribute="bottom" secondItem="WED-zM-W0S" secondAttribute="bottom" id="V9S-F2-1U9"/>
+                            <constraint firstItem="cvH-U9-0lg" firstAttribute="trailing" secondItem="WED-zM-W0S" secondAttribute="trailing" id="g1r-tr-erq"/>
+                            <constraint firstItem="WED-zM-W0S" firstAttribute="leading" secondItem="cvH-U9-0lg" secondAttribute="leading" id="x2d-Tm-cWU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cvH-U9-0lg"/>
+                    </view>
+                    <connections>
+                        <outlet property="toolbar" destination="WED-zM-W0S" id="7PM-Cv-4QT"/>
+                        <outlet property="trackingModeButton" destination="G2f-Er-HzC" id="ihC-43-xFV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMC-iV-UnA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1310" y="439"/>
         </scene>
         <!--Load Building View Controller-->
         <scene sceneID="Sf0-V4-Fuq">
