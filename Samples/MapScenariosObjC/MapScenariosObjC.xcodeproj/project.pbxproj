@@ -17,6 +17,7 @@
 		E3C76E77204DB0A300780D0F /* BluedotLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E76204DB0A300780D0F /* BluedotLocationViewController.m */; };
 		E3C76E7A204DEB8200780D0F /* LoadBuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E79204DEB8200780D0F /* LoadBuildingViewController.m */; };
 		E3C76E81204EEC8E00780D0F /* LocationModesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E80204EEC8E00780D0F /* LocationModesViewController.m */; };
+		E3C771C820504A6000780D0F /* CustomPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C720504A6000780D0F /* CustomPOIViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		E3C76E79204DEB8200780D0F /* LoadBuildingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadBuildingViewController.m; sourceTree = "<group>"; };
 		E3C76E7F204EEC8E00780D0F /* LocationModesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationModesViewController.h; sourceTree = "<group>"; };
 		E3C76E80204EEC8E00780D0F /* LocationModesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationModesViewController.m; sourceTree = "<group>"; };
+		E3C771C620504A6000780D0F /* CustomPOIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPOIViewController.h; sourceTree = "<group>"; };
+		E3C771C720504A6000780D0F /* CustomPOIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPOIViewController.m; sourceTree = "<group>"; };
 		FC3E93A2BD3D81AC52891571 /* Pods-MapScenariosObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenariosObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenariosObjC/Pods-MapScenariosObjC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +113,8 @@
 			children = (
 				E3C76E75204DB0A300780D0F /* BluedotLocationViewController.h */,
 				E3C76E76204DB0A300780D0F /* BluedotLocationViewController.m */,
+				E3C771C620504A6000780D0F /* CustomPOIViewController.h */,
+				E3C771C720504A6000780D0F /* CustomPOIViewController.m */,
 				E3C76E78204DEB8200780D0F /* LoadBuildingViewController.h */,
 				E3C76E79204DEB8200780D0F /* LoadBuildingViewController.m */,
 				E3C76E7F204EEC8E00780D0F /* LocationModesViewController.h */,
@@ -258,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3C771C820504A6000780D0F /* CustomPOIViewController.m in Sources */,
 				E3C76E63204DAB0400780D0F /* ScenarioSelectViewController.m in Sources */,
 				E3C76E7A204DEB8200780D0F /* LoadBuildingViewController.m in Sources */,
 				E3C76E6E204DAB0400780D0F /* main.m in Sources */,

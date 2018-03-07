@@ -6,8 +6,10 @@
 //  Copyright © 2018 Phunware. All rights reserved.
 //
 
-#import "LocationModesViewController.h"
 #import <PWMapKit/PWMapKit.h>
+#import <PWCore/PWCore.h>
+
+#import "LocationModesViewController.h"
 
 @implementation UIImage (TrackingMode)
 
@@ -94,9 +96,11 @@
 
 @end
 
-static NSInteger buildingIdentifier = 0; // Enter your building identifier here, found on the building's Edit page on Maas portal
-
 @interface LocationModesViewController () <PWMapViewDelegate>
+
+@property (nonatomic, strong) NSString *applicationId;
+@property (nonatomic, strong) NSString *accessKey;
+@property (nonatomic, strong) NSString *signatureKey;
 
 @property (nonatomic, strong) PWMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
@@ -106,10 +110,25 @@ static NSInteger buildingIdentifier = 0; // Enter your building identifier here,
 
 @implementation LocationModesViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        _buildingIdentifier = 0; // Enter your building identifier here, found on the building's Edit page on Maas portal
+        // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
+        _applicationId = @"";
+        _accessKey = @"";
+        _signatureKey = @"";
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.title = @"Location Modes";
+    
+    if (self.applicationId.length > 0 && self.accessKey.length > 0 && self.signatureKey.length > 0) {
+        [PWCore setApplicationID:self.applicationId accessKey:self.accessKey signatureKey:self.signatureKey];
+    }
     
     self.mapView = [PWMapView new];
     self.mapView.delegate = self;
@@ -118,10 +137,10 @@ static NSInteger buildingIdentifier = 0; // Enter your building identifier here,
     
     self.trackingModeButton.image = [UIImage emptyTrackingImage:[UIColor blueColor]];
     
-    [PWBuilding buildingWithIdentifier:buildingIdentifier completion:^(PWBuilding *building, NSError *error) {
+    [PWBuilding buildingWithIdentifier:self.buildingIdentifier completion:^(PWBuilding *building, NSError *error) {
         __weak typeof(self) weakSelf = self;
         [weakSelf.mapView setBuilding:building animated:YES onCompletion:^(NSError *error) {
-            PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:buildingIdentifier];
+            PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:weakSelf.buildingIdentifier];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.mapView registerLocationManager:managedLocationManager];
             });

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import PWMapKit
+import PWCore
 
 extension UIImage {
     
@@ -105,7 +106,12 @@ extension UIImage {
 
 class LocationModesViewController: UIViewController {
     
-    let buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+    // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
+    let applicationId = ""
+    let accessKey = ""
+    let signatureKey = ""
+    
+    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
     
     let mapView = PWMapView()
     
@@ -116,6 +122,10 @@ class LocationModesViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Location Modes"
+        
+        if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 {
+            PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        }
         
         mapView.delegate = self
         view.addSubview(mapView)

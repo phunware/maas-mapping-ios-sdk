@@ -10,4 +10,6 @@
 
 @interface LocationModesViewController : UIViewController
 
+@property (nonatomic, assign) NSInteger buildingIdentifier;
+
 @end

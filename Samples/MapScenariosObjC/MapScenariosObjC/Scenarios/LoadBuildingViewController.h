@@ -10,4 +10,6 @@
 
 @interface LoadBuildingViewController : UIViewController
 
+@property (nonatomic, assign) NSInteger buildingIdentifier;
+
 @end

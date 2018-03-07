@@ -1,17 +1,17 @@
 //
-//  LoadBuildingViewController.m
+//  CustomPOIViewController.m
 //  MapScenariosObjC
 //
-//  Created on 3/5/18.
+//  Created on 3/7/18.
 //  Copyright © 2018 Phunware. All rights reserved.
 //
 
 #import <PWMapKit/PWMapKit.h>
 #import <PWCore/PWCore.h>
 
-#import "LoadBuildingViewController.h"
+#import "CustomPOIViewController.h"
 
-@interface LoadBuildingViewController ()
+@interface CustomPOIViewController ()
 
 @property (nonatomic, strong) NSString *applicationId;
 @property (nonatomic, strong) NSString *accessKey;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation LoadBuildingViewController
+@implementation CustomPOIViewController
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
@@ -37,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Load Building";
+    self.navigationItem.title = @"Create Custom POI";
     
     if (self.applicationId.length > 0 && self.accessKey.length > 0 && self.signatureKey.length > 0) {
         [PWCore setApplicationID:self.applicationId accessKey:self.accessKey signatureKey:self.signatureKey];
@@ -49,7 +49,9 @@
     
     [PWBuilding buildingWithIdentifier:self.buildingIdentifier completion:^(PWBuilding *building, NSError *error) {
         __weak typeof(self) weakSelf = self;
-        [weakSelf.mapView setBuilding:building animated:YES onCompletion:nil];
+        [weakSelf.mapView setBuilding:building animated:YES onCompletion:^(NSError *error) {
+            [weakSelf addCustomPointOfInterest];
+        }];
     }];
 }
 
@@ -59,6 +61,23 @@
     [[self.mapView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
     [[self.mapView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor] setActive:YES];
     [[self.mapView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor] setActive:YES];
+}
+
+- (void)addCustomPointOfInterest {
+    // The (lat, long) for the custom point of interest
+    CLLocationCoordinate2D poiLocation = CLLocationCoordinate2DMake(30.359931, -97.742507);
+    
+    // The custom point of interest will only show on the floor identifier specified here, or it will display on all floors if set to 0
+    NSInteger poiFloorId = 0;
+    
+    NSString *poiTitle = @"Custom POI";
+    
+    // If the image parameter is nil, it will use the POI icon for any specified `pointOfInterestType`. If no image is set and no `pointOfInterestType` is set, the SDK will use this default icon: https://lbs-prod.s3.amazonaws.com/stock_assets/icons/0_higher.png
+    PWCustomPointOfInterest *customPOI = [[PWCustomPointOfInterest alloc] initWithCoordinate:poiLocation floorId:poiFloorId buildingId:self.buildingIdentifier title:poiTitle image:nil];
+    
+    customPOI.showTextLabel = YES;
+    
+    [self.mapView addAnnotation:customPOI];
 }
 
 @end

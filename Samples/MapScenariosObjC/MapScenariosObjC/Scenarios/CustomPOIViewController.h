@@ -1,14 +1,14 @@
 //
-//  LoadMapViewController.h
+//  CustomPOIViewController.h
 //  MapScenariosObjC
 //
-//  Created on 3/5/18.
+//  Created on 3/7/18.
 //  Copyright © 2018 Phunware. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface BluedotLocationViewController : UIViewController
+@interface CustomPOIViewController : UIViewController
 
 @property (nonatomic, assign) NSInteger buildingIdentifier;
 

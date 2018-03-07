@@ -45,7 +45,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="yd7-y4-KGh" kind="show" id="saf-bu-L5H"/>
+                                            <segue destination="yd7-y4-KGh" kind="show" identifier="LoadBuildingViewController" id="saf-bu-L5H"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BluedotLocationCell" textLabel="Dfw-HA-UPm" detailTextLabel="pIW-YL-xkF" style="IBUITableViewCellStyleSubtitle" id="bbj-nX-QbE">
@@ -72,7 +72,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Iff-tT-hKk" kind="show" id="bT7-DI-4U8"/>
+                                            <segue destination="Iff-tT-hKk" kind="show" identifier="BluedotLocationViewController" id="bT7-DI-4U8"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationModesCell" textLabel="10p-Hh-nOV" detailTextLabel="e3Z-Zo-aGy" style="IBUITableViewCellStyleSubtitle" id="JD4-vZ-I0F" userLabel="LocationModesCell">
@@ -99,7 +99,34 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="O7R-OB-KgB" kind="show" id="ugZ-wq-hgF"/>
+                                            <segue destination="O7R-OB-KgB" kind="show" identifier="LocationModesViewController" id="ugZ-wq-hgF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomPOICell" textLabel="JmT-aZ-f1a" detailTextLabel="YH4-42-ANB" style="IBUITableViewCellStyleSubtitle" id="WH0-k9-JdP" userLabel="CustomPOICell">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WH0-k9-JdP" id="VpI-zR-IrA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Create Custom Point of Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JmT-aZ-f1a">
+                                                    <rect key="frame" x="16" y="5" width="240.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Add a point of interest to your building programmatically" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YH4-42-ANB">
+                                                    <rect key="frame" x="16" y="25.5" width="319" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="35U-j6-EHh" kind="show" identifier="CustomPOIViewController" id="EmN-ke-rHt"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -129,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxH-I0-NXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="-1165"/>
+            <point key="canvasLocation" x="1452" y="-1684"/>
         </scene>
         <!--Bluedot Location View Controller-->
         <scene sceneID="mba-Xo-D1y">
@@ -144,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36e-pu-CBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="-497"/>
+            <point key="canvasLocation" x="1452" y="-1015"/>
         </scene>
         <!--Location Modes View Controller-->
         <scene sceneID="c9h-Gn-HuI">
@@ -181,7 +208,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qb-xb-1Jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="170"/>
+            <point key="canvasLocation" x="1452" y="-349"/>
+        </scene>
+        <!--CustomPOI View Controller-->
+        <scene sceneID="e6a-29-d8M">
+            <objects>
+                <viewController id="35U-j6-EHh" customClass="CustomPOIViewController" customModule="MapScenarios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3qd-0u-991">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hQD-ZU-MAR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A0b-7Q-Qby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="346"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Pd-Uv-S3B">
