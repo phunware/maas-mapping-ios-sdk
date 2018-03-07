@@ -1,17 +1,17 @@
 //
-//  BluedotLocationViewController.swift
+//  RoutingViewController.swift
 //  MapScenarios
 //
-//  Created on 3/5/18.
+//  Created on 3/7/18.
 //  Copyright © 2018 Phunware. All rights reserved.
 //
 
 import Foundation
 import UIKit
-import PWMapKit
 import PWCore
+import PWMapKit
 
-class BluedotLocationViewController: UIViewController {
+class RoutingViewController: UIViewController {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     let applicationId = ""
@@ -27,7 +27,7 @@ class BluedotLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Bluedot Location"
+        navigationItem.title = "Route to Point of Interest"
         
         if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 {
             PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
@@ -61,14 +61,37 @@ class BluedotLocationViewController: UIViewController {
     }
 }
 
-// MARK: - PWMapViewDelegate
-
-extension BluedotLocationViewController: PWMapViewDelegate {
+extension RoutingViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWIndoorLocation!) {
         if !firstLocationAcquired {
             firstLocationAcquired = true
             mapView.trackingMode = .follow
+            
+            let destinationPOIIdentifier = 42539739 /* Replace with the destination POI identifier */
+            
+            // Plot the route from your current location
+            let destinationPOI = mapView.building.pois.filter({
+                if let poi = $0 as? PWPointOfInterest {
+                    return poi.identifier == destinationPOIIdentifier
+                } else {
+                    return false
+                }
+            }).first as? PWPointOfInterest
+            
+            if destinationPOI == nil {
+                print("You specified `destinationPOIIdentifier = \(destinationPOIIdentifier)` POI not found.")
+                return
+            }
+            
+            PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { (route, error) in
+                guard let route = route else {
+                    print("Couldn't find a route from you current location to the destination.")
+                    return
+                }
+                
+                mapView.navigate(with: route)
+            })
         }
     }
 }

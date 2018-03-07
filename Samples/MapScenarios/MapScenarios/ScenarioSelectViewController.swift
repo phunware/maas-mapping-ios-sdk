@@ -63,6 +63,12 @@ class ScenarioSelectViewController: UITableViewController {
                     customPOIViewController.buildingIdentifier = universalBuildingIdentifier
                 }
             }
+        case String(describing: RoutingViewController.self):
+            if let routingViewController = segue.destination as? RoutingViewController {
+                if routingViewController.buildingIdentifier == 0 {
+                    routingViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+            }
         default:
             break
         }

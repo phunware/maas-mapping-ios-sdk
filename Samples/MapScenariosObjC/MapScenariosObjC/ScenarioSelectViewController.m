@@ -13,6 +13,7 @@
 #import "LoadBuildingViewController.h"
 #import "LocationModesViewController.h"
 #import "CustomPOIViewController.h"
+#import "RoutingViewController.h"
 
 // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
 // These are universal across all view controllers but will be overridden by configured values in the individual controllers
@@ -62,6 +63,11 @@ static NSInteger universalBuildingIdentifier = 0;
         CustomPOIViewController *customPOIViewController = segue.destinationViewController;
         if (customPOIViewController.buildingIdentifier == 0) {
             customPOIViewController.buildingIdentifier = universalBuildingIdentifier;
+        }
+    } else if ([segue.identifier isEqualToString:NSStringFromClass([RoutingViewController class])]) {
+        RoutingViewController *routingViewController = segue.destinationViewController;
+        if (routingViewController.buildingIdentifier == 0) {
+            routingViewController.buildingIdentifier = universalBuildingIdentifier;
         }
     }
 }
