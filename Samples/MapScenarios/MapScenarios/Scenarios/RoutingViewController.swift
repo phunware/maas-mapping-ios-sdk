@@ -68,7 +68,7 @@ extension RoutingViewController: PWMapViewDelegate {
             firstLocationAcquired = true
             mapView.trackingMode = .follow
             
-            let destinationPOIIdentifier = 42539739 /* Replace with the destination POI identifier */
+            let destinationPOIIdentifier = 0 /* Replace with the destination POI identifier */
             
             // Plot the route from your current location
             let destinationPOI = mapView.building.pois.filter({

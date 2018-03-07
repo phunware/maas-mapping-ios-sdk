@@ -79,7 +79,7 @@
         self.firstLocationAcquired = YES;
         self.mapView.trackingMode = PWTrackingModeFollow;
         
-        NSInteger destinationPOIIdentifier = 42539739; /* Replace with the destination POI identifier */
+        NSInteger destinationPOIIdentifier = 0; /* Replace with the destination POI identifier */
         
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier = %d", destinationPOIIdentifier];
         NSArray *filteredArray = [self.mapView.building.pois filteredArrayUsingPredicate:predicate];
