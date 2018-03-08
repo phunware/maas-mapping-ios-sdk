@@ -19,6 +19,7 @@
 		E3C76E81204EEC8E00780D0F /* LocationModesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E80204EEC8E00780D0F /* LocationModesViewController.m */; };
 		E3C771C820504A6000780D0F /* CustomPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C720504A6000780D0F /* CustomPOIViewController.m */; };
 		E3C771CD2050792D00780D0F /* RoutingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C771CC2050792D00780D0F /* RoutingViewController.m */; };
+		E3C771D22051B22300780D0F /* SearchPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C771D12051B22300780D0F /* SearchPOIViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		E3C771C720504A6000780D0F /* CustomPOIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPOIViewController.m; sourceTree = "<group>"; };
 		E3C771CB2050792D00780D0F /* RoutingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoutingViewController.h; sourceTree = "<group>"; };
 		E3C771CC2050792D00780D0F /* RoutingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoutingViewController.m; sourceTree = "<group>"; };
+		E3C771D02051B22300780D0F /* SearchPOIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchPOIViewController.h; sourceTree = "<group>"; };
+		E3C771D12051B22300780D0F /* SearchPOIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchPOIViewController.m; sourceTree = "<group>"; };
 		FC3E93A2BD3D81AC52891571 /* Pods-MapScenariosObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenariosObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenariosObjC/Pods-MapScenariosObjC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +127,8 @@
 				E3C76E80204EEC8E00780D0F /* LocationModesViewController.m */,
 				E3C771CB2050792D00780D0F /* RoutingViewController.h */,
 				E3C771CC2050792D00780D0F /* RoutingViewController.m */,
+				E3C771D02051B22300780D0F /* SearchPOIViewController.h */,
+				E3C771D12051B22300780D0F /* SearchPOIViewController.m */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
 				"${PODS_ROOT}/PWLocation/Framework/PWLocation.framework",
 				"${PODS_ROOT}/PWMapKit/Framework/PWMapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/TMCache/TMCache.framework",
 			);
@@ -220,6 +226,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWMapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMCache.framework",
 			);
@@ -273,6 +280,7 @@
 				E3C76E63204DAB0400780D0F /* ScenarioSelectViewController.m in Sources */,
 				E3C76E7A204DEB8200780D0F /* LoadBuildingViewController.m in Sources */,
 				E3C76E6E204DAB0400780D0F /* main.m in Sources */,
+				E3C771D22051B22300780D0F /* SearchPOIViewController.m in Sources */,
 				E3C76E60204DAB0400780D0F /* AppDelegate.m in Sources */,
 				E3C76E81204EEC8E00780D0F /* LocationModesViewController.m in Sources */,
 				E3C76E77204DB0A300780D0F /* BluedotLocationViewController.m in Sources */,

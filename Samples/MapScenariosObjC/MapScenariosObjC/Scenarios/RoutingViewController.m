@@ -81,16 +81,21 @@
         
         NSInteger destinationPOIIdentifier = 0; /* Replace with the destination POI identifier */
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier = %d", destinationPOIIdentifier];
-        NSArray *filteredArray = [self.mapView.building.pois filteredArrayUsingPredicate:predicate];
+        PWPointOfInterest *destinationPOI;
+        if (destinationPOIIdentifier != 0) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier = %d", destinationPOIIdentifier];
+            NSArray *filteredArray = [self.mapView.building.pois filteredArrayUsingPredicate:predicate];
+            destinationPOI = [filteredArray firstObject];
+        } else {
+            destinationPOI = [self.mapView.building.pois firstObject];
+        }
         
-        PWPointOfInterest *pointOfInterest = [filteredArray firstObject];
-        if (!pointOfInterest) {
-            NSLog(@"You specified `destinationPOIIdentifier = %@` POI not found", @(destinationPOIIdentifier));
+        if (!destinationPOI) {
+            NSLog(@"No points of interest found, please add at least one to the building in the Maas portal");
             return;
         }
         
-        [PWRoute createRouteFrom:self.mapView.indoorUserLocation to:pointOfInterest accessibility:NO excludedPoints:nil completion:^(PWRoute *route, NSError *error) {
+        [PWRoute createRouteFrom:self.mapView.indoorUserLocation to:destinationPOI accessibility:NO excludedPoints:nil completion:^(PWRoute *route, NSError *error) {
             __weak typeof(self) weakSelf = self;
             
             if (route) {

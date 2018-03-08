@@ -18,6 +18,7 @@
 		E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */; };
 		E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */; };
 		E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C92050555D00780D0F /* RoutingViewController.swift */; };
+		E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModesViewController.swift; sourceTree = "<group>"; };
 		E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPOIViewController.swift; sourceTree = "<group>"; };
 		E3C771C92050555D00780D0F /* RoutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingViewController.swift; sourceTree = "<group>"; };
+		E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPOIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */,
 				E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */,
 				E3C771C92050555D00780D0F /* RoutingViewController.swift */,
+				E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${PODS_ROOT}/MistSDK/Framework/MistSDK.framework",
 				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
 				"${PODS_ROOT}/PWLocation/Framework/PWLocation.framework",
@@ -200,6 +204,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MistSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWLocation.framework",
@@ -257,6 +262,7 @@
 				E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */,
 				E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */,
 				E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */,
+				E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */,
 				E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */,
 				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
 			);
