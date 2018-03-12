@@ -31,6 +31,9 @@ Framework documentation is included in the the repository's `Documents` folder i
 
 The primary use of the components of PWMapKit revolve around creating a map view, displaying points of interest, showing the user's location and indoor routing.
 
+### Setup
+
+Make sure your app is correctly [set up](https://github.com/phunware/maas-core-ios-sdk#application-setup) before you start working on map integration.
 
 ### Adding Map View
 
