@@ -51,7 +51,7 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
 
 @end
 
-@interface SearchPOIViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface SearchPOIViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSString *applicationId;
 @property (nonatomic, strong) NSString *accessKey;
@@ -61,6 +61,8 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *sortedPointsOfInterest;
+@property (nonatomic, strong) NSArray *filteredPointsOfInterest;
+@property (nonatomic, strong) UISearchController *searchController;
 
 @end
 
@@ -86,6 +88,9 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
         [PWCore setApplicationID:self.applicationId accessKey:self.accessKey signatureKey:self.signatureKey];
     }
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
     self.mapView = [PWMapView new];
     [self.view addSubview:self.mapView];
     [self configureMapViewConstraints];
@@ -95,10 +100,13 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
         [weakSelf.mapView setBuilding:building animated:YES onCompletion:^(NSError *error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf configureTableView];
-                weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStylePlain target:weakSelf action:@selector(searchTapped)];
             });
         }];
     }];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)configureMapViewConstraints {
@@ -112,7 +120,9 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
 - (void)configureTableView {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
     self.sortedPointsOfInterest = [self.mapView.building.pois sortedArrayUsingDescriptors:@[sortDescriptor]];
+    self.filteredPointsOfInterest = [self.sortedPointsOfInterest copy];
     
+    [self configureSearchController];
     self.tableView = [UITableView new];
     self.tableView.hidden = YES;
     [self.tableView registerClass:[POITableViewCell class] forCellReuseIdentifier:poiCellReuseIdentifier];
@@ -125,14 +135,20 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
 
 - (void)configureTableViewConstraints {
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
-    [[self.tableView.topAnchor constraintEqualToAnchor:self.view.topAnchor] setActive:YES];
+    [[self.tableView.topAnchor constraintEqualToAnchor:self.navigationController.navigationBar.bottomAnchor] setActive:YES];
     [[self.tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
     [[self.tableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor] setActive:YES];
     [[self.tableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor] setActive:YES];
 }
 
-- (void)searchTapped {
-    self.tableView.hidden = !self.tableView.hidden;
+- (void)configureSearchController {
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.obscuresBackgroundDuringPresentation = NO;
+    self.searchController.searchBar.placeholder = @"Search Points of Interest";
+    self.searchController.searchBar.delegate = self;
+    self.definesPresentationContext = YES;
+    self.navigationItem.searchController = self.searchController;
 }
 
 #pragma mark - UITableViewDataSource
@@ -142,14 +158,14 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.sortedPointsOfInterest.count;
+    return self.filteredPointsOfInterest.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     POITableViewCell *poiCell = [tableView dequeueReusableCellWithIdentifier:poiCellReuseIdentifier forIndexPath:indexPath];
     [poiCell configureSubviews];
     
-    PWPointOfInterest *pointOfInterest = self.sortedPointsOfInterest[indexPath.row];
+    PWPointOfInterest *pointOfInterest = self.filteredPointsOfInterest[indexPath.row];
     [poiCell.poiImageView sd_setImageWithURL:pointOfInterest.imageURL];
     poiCell.titleLabel.text = pointOfInterest.title;
     
@@ -160,13 +176,53 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.searchController.searchBar endEditing:YES];
     self.tableView.hidden = YES;
-    PWPointOfInterest *pointOfInterest = self.sortedPointsOfInterest[indexPath.row];
+    PWPointOfInterest *pointOfInterest = self.filteredPointsOfInterest[indexPath.row];
     if (self.mapView.currentFloor.floorID != pointOfInterest.floorID) {
         PWFloor *newFloor = [self.mapView.building floorById:pointOfInterest.floorID];
         self.mapView.currentFloor = newFloor;
     }
     [self.mapView selectAnnotation:pointOfInterest animated:YES];
+}
+
+#pragma mark - UISearchResultsUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    if (searchController.searchBar.text == nil || searchController.searchBar.text.length == 0) {
+        self.filteredPointsOfInterest = [self.sortedPointsOfInterest copy];
+        [self.tableView reloadData];
+        return;
+    }
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[c] %@", searchController.searchBar.text];
+    self.filteredPointsOfInterest = [self.sortedPointsOfInterest filteredArrayUsingPredicate:predicate];
+    [self.tableView reloadData];
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.tableView.hidden = NO;
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    self.tableView.hidden = YES;
+}
+
+#pragma mark - Adjust for keyboard
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    NSDictionary *userInfo = [notification userInfo];
+    CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0);
+    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0);
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    self.tableView.contentInset = UIEdgeInsetsZero;
+    self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero;
 }
 
 @end

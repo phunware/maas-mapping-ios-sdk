@@ -1,23 +1,6 @@
 PWMapKit Samples for iOS
 ====================
 
-## CustomPOI
-
-### Overview
-- Create custom point of interest on the indoor map.
-
-## ImmediateRoute
-
-### Overview
-- Display map with building
-- Route from current location to POI as soon as location is acquired
-
-## LoadMap
-
-### Overview
-- Display map with building
-- Show current location in building
-
 ## LocationSharing
 
 ### Overview
@@ -31,6 +14,58 @@ PWMapKit Samples for iOS
 - Display map with building
 - Search for points of interest in building
 - Route from current location to a selected point of interest
+
+## MapScenarios
+
+### Overview
+- Six different use cases in both Swift and Objective C
+- Each use case functional within one ViewController
+
+### LoadBuildingViewController
+- Display your building on the map
+
+##### Usage:
+- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+
+### BluedotLocationViewController
+- Display current location in your building as reported by location provider
+
+##### Usage:
+- Configure location provider on building's edit page in Maas portal, then configure for each floor
+- Fill out applicationId, accessKey, signatureKey, and buildingIdentifier in the ViewController
+
+### CustomPOIViewController
+- Add a point of interest to the map programmatically
+
+##### Usage:
+- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Specify a `poiLocation` that is within the bounds of your building
+- Optionally fill out configuration values in `addCustomPointOfInterest` such as `poiFloorId`, `poiTitle` etc.
+
+### LocationModesViewController
+- Button to switch the map's camera mode to follow current location, not follow current location, or follow current location and align the camera to the device compass
+
+##### Usage:
+- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Tap the arrow button to visualize the various location modes
+
+### RoutingViewController
+- Route to a point of interest as soon as location is acquired
+
+##### Usage:
+- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Add at least one point of interest to your building in the Maas portal, and connect it with a segment to the nearest waypoint
+- Optionally specify a `destinationPOIIdentifier` to route to, which can be found on the point of interest's `Edit` page. If left as `0`, it will use the first point of interest found.
+
+### SearchPOIViewController
+- View list of points of interest in table
+- Filter points of interest list by title
+- Select point of interest and view its location in your building
+
+##### Usage:
+- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Add at least one point of interest to your building in the Maas portal
+- Tap search bar to view and filter list of selectable points of interest
 
 
 Privacy

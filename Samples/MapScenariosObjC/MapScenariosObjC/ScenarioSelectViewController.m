@@ -18,11 +18,11 @@
 
 // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
 // These are universal across all view controllers but will be overridden by configured values in the individual controllers
-static NSString *universalApplicationId = @"";
-static NSString *universalAccessKey = @"";
-static NSString *universalSignatureKey = @"";
+static NSString *universalApplicationId = @"1460";
+static NSString *universalAccessKey = @"46f390d8a01859b5dbfa804db1634dd9603399df";
+static NSString *universalSignatureKey = @"9a92d23a51d49114b19d54c3f1c0508a4a98e576";
 // Building identifier to be used in all view controllers, overridden when set in individual controllers
-static NSInteger universalBuildingIdentifier = 0;
+static NSInteger universalBuildingIdentifier = 43760;
 
 @interface ScenarioSelectViewController ()
 

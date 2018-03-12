@@ -50,7 +50,6 @@ class CustomPOIViewController: UIViewController {
     }
     
     func addCustomPointOfInterest() {
-        // The (lat, long) of the custom point of interest
         let poiLocation = CLLocationCoordinate2DMake(30.359931, -97.742507)
         
         // The custom point of interest will only show on the floor identifier specified here, or it will display on all floors if set to 0

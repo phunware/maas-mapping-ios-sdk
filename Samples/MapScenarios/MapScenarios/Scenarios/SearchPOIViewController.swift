@@ -57,6 +57,8 @@ class SearchPOIViewController: UIViewController {
     let tableView = UITableView()
     let poiCellReuseIdentifier = "POICell"
     var sortedPointsOfInterest = [PWPointOfInterest]()
+    var filteredPointsOfInterest = [PWPointOfInterest]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,19 +69,23 @@ class SearchPOIViewController: UIViewController {
             PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+        
         view.addSubview(mapView)
         configureMapViewConstraints()
         
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
                 DispatchQueue.main.async {
-                    if let strongSelf = self {
-                        strongSelf.configureTableView()
-                        strongSelf.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Search", style: .plain, target: strongSelf, action: #selector(strongSelf.searchTapped))
-                    }
+                    self?.configureTableView()
                 }
             })
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func configureMapViewConstraints() {
@@ -98,7 +104,9 @@ class SearchPOIViewController: UIViewController {
             return false
         }) as? [PWPointOfInterest] {
             sortedPointsOfInterest = sortedPoints
+            filteredPointsOfInterest = sortedPointsOfInterest
         }
+        configureSearchController()
         tableView.isHidden = true
         tableView.register(POITableViewCell.self, forCellReuseIdentifier: poiCellReuseIdentifier)
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -110,14 +118,19 @@ class SearchPOIViewController: UIViewController {
     
     func configureTableViewConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: navigationController!.navigationBar.bottomAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
-    @objc func searchTapped() {
-        tableView.isHidden = !tableView.isHidden
+    func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Points of Interest"
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
     }
 }
 
@@ -130,14 +143,14 @@ extension SearchPOIViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedPointsOfInterest.count
+        return filteredPointsOfInterest.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let poiCell = tableView.dequeueReusableCell(withIdentifier: poiCellReuseIdentifier, for: indexPath) as! POITableViewCell
         poiCell.configureSubviews()
         
-        let pointOfInterest = sortedPointsOfInterest[indexPath.row]
+        let pointOfInterest = filteredPointsOfInterest[indexPath.row]
         if let imageURL = pointOfInterest.imageURL {
             poiCell.poiImageView.kf.indicatorType = .activity
             poiCell.poiImageView.kf.setImage(with: imageURL)
@@ -153,8 +166,9 @@ extension SearchPOIViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        searchController.searchBar.endEditing(true)
         self.tableView.isHidden = true
-        let pointOfInterest = sortedPointsOfInterest[indexPath.row]
+        let pointOfInterest = filteredPointsOfInterest[indexPath.row]
         if mapView.currentFloor.floorID != pointOfInterest.floorID {
             let newFloor = mapView.building.floor(byId: pointOfInterest.floorID)
             mapView.currentFloor = newFloor
@@ -163,3 +177,50 @@ extension SearchPOIViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UISearchResultsUpdating
+
+extension SearchPOIViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text, searchText.count > 0 else {
+            filteredPointsOfInterest = sortedPointsOfInterest
+            tableView.reloadData()
+            return
+        }
+        filteredPointsOfInterest = sortedPointsOfInterest.filter({( pointOfInterest : PWPointOfInterest) -> Bool in
+            return pointOfInterest.title.lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension SearchPOIViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tableView.isHidden = false
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        tableView.isHidden = true
+    }
+}
+
+// MARK: - Adjust for keyboard
+
+extension SearchPOIViewController {
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
+            tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        tableView.contentInset = .zero
+        tableView.scrollIndicatorInsets = .zero
+    }
+}
