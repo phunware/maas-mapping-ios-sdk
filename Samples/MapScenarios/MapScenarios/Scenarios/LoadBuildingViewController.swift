@@ -13,9 +13,9 @@ import PWCore
 class LoadBuildingViewController: UIViewController {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
-    let applicationId = ""
-    let accessKey = ""
-    let signatureKey = ""
+    var applicationId = ""
+    var accessKey = ""
+    var signatureKey = ""
     
     var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
     
@@ -26,8 +26,10 @@ class LoadBuildingViewController: UIViewController {
         
         navigationItem.title = "Load Building"
         
-        if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 {
+        if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 && buildingIdentifier != 0 {
             PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        } else {
+            fatalError("applicationId, accessKey, signatureKey, and buildingIdentifier must be set")
         }
         
         view.addSubview(mapView)

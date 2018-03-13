@@ -10,6 +10,9 @@
 
 @interface BluedotLocationViewController : UIViewController
 
+@property (nonatomic, strong) NSString *applicationId;
+@property (nonatomic, strong) NSString *accessKey;
+@property (nonatomic, strong) NSString *signatureKey;
 @property (nonatomic, assign) NSInteger buildingIdentifier;
 
 @end

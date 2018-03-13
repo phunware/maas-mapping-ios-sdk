@@ -98,10 +98,6 @@
 
 @interface LocationModesViewController () <PWMapViewDelegate>
 
-@property (nonatomic, strong) NSString *applicationId;
-@property (nonatomic, strong) NSString *accessKey;
-@property (nonatomic, strong) NSString *signatureKey;
-
 @property (nonatomic, strong) PWMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *trackingModeButton;
@@ -126,8 +122,10 @@
     
     self.navigationItem.title = @"Location Modes";
     
-    if (self.applicationId.length > 0 && self.accessKey.length > 0 && self.signatureKey.length > 0) {
+    if (self.applicationId.length > 0 && self.accessKey.length > 0 && self.signatureKey.length > 0 && self.buildingIdentifier != 0) {
         [PWCore setApplicationID:self.applicationId accessKey:self.accessKey signatureKey:self.signatureKey];
+    } else {
+        [NSException raise:@"MissingConfiguration" format:@"applicationId, accessKey, signatureKey, and buildingIdentifier must be set"];
     }
     
     self.mapView = [PWMapView new];

@@ -13,10 +13,6 @@
 
 @interface CustomPOIViewController ()
 
-@property (nonatomic, strong) NSString *applicationId;
-@property (nonatomic, strong) NSString *accessKey;
-@property (nonatomic, strong) NSString *signatureKey;
-
 @property (nonatomic, strong) PWMapView *mapView;
 
 @end
@@ -39,8 +35,10 @@
     
     self.navigationItem.title = @"Create Custom POI";
     
-    if (self.applicationId.length > 0 && self.accessKey.length > 0 && self.signatureKey.length > 0) {
+    if (self.applicationId.length > 0 && self.accessKey.length > 0 && self.signatureKey.length > 0 && self.buildingIdentifier != 0) {
         [PWCore setApplicationID:self.applicationId accessKey:self.accessKey signatureKey:self.signatureKey];
+    } else {
+        [NSException raise:@"MissingConfiguration" format:@"applicationId, accessKey, signatureKey, and buildingIdentifier must be set"];
     }
     
     self.mapView = [PWMapView new];
