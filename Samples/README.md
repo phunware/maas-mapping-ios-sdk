@@ -1,13 +1,6 @@
 PWMapKit Samples for iOS
 ====================
 
-## LocationSharing
-
-### Overview
-- Display map with building
-- Show current location in building
-- Show current location of other users of the app in the same building on the map
-
 ## PhunMaps
 
 ### Overview
@@ -66,6 +59,15 @@ PWMapKit Samples for iOS
 - Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
 - Add at least one point of interest to your building in the Maas portal
 - Tap search bar to view and filter list of selectable points of interest
+
+### LocationSharing
+- Show current location in building
+- Show current location of other users of the app in the same building on the map
+
+##### Usage:
+- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Tap "Settings" button to change device name or type
+- Required to have at least two unique device identifiers with blue dot in the same building to see usage
 
 
 Privacy

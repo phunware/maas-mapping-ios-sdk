@@ -75,6 +75,12 @@ class ScenarioSelectViewController: UITableViewController {
                     searchPOIViewController.buildingIdentifier = universalBuildingIdentifier
                 }
             }
+        case String(describing: LocationSharingViewController.self):
+            if let locationSharingViewController = segue.destination as? LocationSharingViewController {
+                if locationSharingViewController.buildingIdentifier == 0 {
+                    locationSharingViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+            }
         default:
             break
         }
