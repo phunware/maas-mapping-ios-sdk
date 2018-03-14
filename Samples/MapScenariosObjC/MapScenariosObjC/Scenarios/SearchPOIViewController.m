@@ -53,10 +53,6 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
 
 @interface SearchPOIViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate>
 
-@property (nonatomic, strong) NSString *applicationId;
-@property (nonatomic, strong) NSString *accessKey;
-@property (nonatomic, strong) NSString *signatureKey;
-
 @property (nonatomic, strong) PWMapView *mapView;
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -84,8 +80,10 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
     
     self.navigationItem.title = @"Search for Point of Interest";
     
-    if (self.applicationId.length > 0 && self.accessKey.length > 0 && self.signatureKey.length > 0) {
+    if (self.applicationId.length > 0 && self.accessKey.length > 0 && self.signatureKey.length > 0 && self.buildingIdentifier != 0) {
         [PWCore setApplicationID:self.applicationId accessKey:self.accessKey signatureKey:self.signatureKey];
+    } else {
+        [NSException raise:@"MissingConfiguration" format:@"applicationId, accessKey, signatureKey, and buildingIdentifier must be set"];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];

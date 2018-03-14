@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31FD3E6A5C004E3364DA11B9 /* Pods_MapScenariosObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA9B5159779B28C006A8BF0 /* Pods_MapScenariosObjC.framework */; };
+		E36BB695205818E5003640CA /* LocationSharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36BB694205818E5003640CA /* LocationSharingViewController.m */; };
 		E3C76E60204DAB0400780D0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E5F204DAB0400780D0F /* AppDelegate.m */; };
 		E3C76E63204DAB0400780D0F /* ScenarioSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E62204DAB0400780D0F /* ScenarioSelectViewController.m */; };
 		E3C76E66204DAB0400780D0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C76E64204DAB0400780D0F /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		3BA9B5159779B28C006A8BF0 /* Pods_MapScenariosObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapScenariosObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDC0E2C83E2FE227A8D3794 /* Pods-MapScenariosObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenariosObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenariosObjC/Pods-MapScenariosObjC.release.xcconfig"; sourceTree = "<group>"; };
+		E36BB693205818E5003640CA /* LocationSharingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationSharingViewController.h; sourceTree = "<group>"; };
+		E36BB694205818E5003640CA /* LocationSharingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationSharingViewController.m; sourceTree = "<group>"; };
 		E3C76E5B204DAB0400780D0F /* MapScenariosObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapScenariosObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C76E5E204DAB0400780D0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E3C76E5F204DAB0400780D0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				E3C76E79204DEB8200780D0F /* LoadBuildingViewController.m */,
 				E3C76E7F204EEC8E00780D0F /* LocationModesViewController.h */,
 				E3C76E80204EEC8E00780D0F /* LocationModesViewController.m */,
+				E36BB693205818E5003640CA /* LocationSharingViewController.h */,
+				E36BB694205818E5003640CA /* LocationSharingViewController.m */,
 				E3C771CB2050792D00780D0F /* RoutingViewController.h */,
 				E3C771CC2050792D00780D0F /* RoutingViewController.m */,
 				E3C771D02051B22300780D0F /* SearchPOIViewController.h */,
@@ -279,6 +284,7 @@
 				E3C771CD2050792D00780D0F /* RoutingViewController.m in Sources */,
 				E3C76E63204DAB0400780D0F /* ScenarioSelectViewController.m in Sources */,
 				E3C76E7A204DEB8200780D0F /* LoadBuildingViewController.m in Sources */,
+				E36BB695205818E5003640CA /* LocationSharingViewController.m in Sources */,
 				E3C76E6E204DAB0400780D0F /* main.m in Sources */,
 				E3C771D22051B22300780D0F /* SearchPOIViewController.m in Sources */,
 				E3C76E60204DAB0400780D0F /* AppDelegate.m in Sources */,
