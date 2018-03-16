@@ -76,6 +76,7 @@ class SearchPOIViewController: UIViewController {
         
         view.addSubview(mapView)
         configureMapViewConstraints()
+        navigationItem.searchController = searchController
         
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
@@ -131,8 +132,6 @@ class SearchPOIViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Points of Interest"
         searchController.searchBar.delegate = self
-        definesPresentationContext = true
-        navigationItem.searchController = searchController
     }
 }
 

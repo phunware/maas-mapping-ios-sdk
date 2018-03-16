@@ -92,6 +92,8 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
     self.mapView = [PWMapView new];
     [self.view addSubview:self.mapView];
     [self configureMapViewConstraints];
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.navigationItem.searchController = self.searchController;
     
     [PWBuilding buildingWithIdentifier:self.buildingIdentifier completion:^(PWBuilding *building, NSError *error) {
         __weak typeof(self) weakSelf = self;
@@ -140,13 +142,10 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
 }
 
 - (void)configureSearchController {
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
     self.searchController.obscuresBackgroundDuringPresentation = NO;
     self.searchController.searchBar.placeholder = @"Search Points of Interest";
     self.searchController.searchBar.delegate = self;
-    self.definesPresentationContext = YES;
-    self.navigationItem.searchController = self.searchController;
 }
 
 #pragma mark - UITableViewDataSource
