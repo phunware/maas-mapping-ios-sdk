@@ -180,7 +180,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="DS6-oM-vx8" kind="show" identifier="SearchPOIViewController" id="rdy-ZN-kvl"/>
+                                            <segue destination="DS6-oM-vx8" kind="show" identifier="SearchPOIViewController" id="QeR-58-t5Z"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationSharingCell" textLabel="KnX-mq-y1M" detailTextLabel="jQP-bF-b4S" style="IBUITableViewCellStyleSubtitle" id="9l6-hL-kwb" userLabel="LocationSharingCell">
@@ -331,10 +331,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Zed-kC-LSg"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aLg-HI-goU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWr-mz-q4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1452" y="1701"/>
+            <point key="canvasLocation" x="1452" y="1695"/>
         </scene>
         <!--Location Sharing View Controller-->
         <scene sceneID="Y4V-0i-EI1">
