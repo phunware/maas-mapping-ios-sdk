@@ -86,6 +86,31 @@
  A flag indicating whether it's an exit point.
  */
 @property (nonatomic, getter=isExit) BOOL exit;
+/**
+ * The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
+ * -1 - always visible(the default value).
+ * 1 - subtract 4 from the maximum zoom level that current iOS map supports, it's 18.
+ * 2 - subtract 3 from the maximum zoom level that current iOS map supports, it's 19.
+ * 3 - subtract 2 from the maximum zoom level that current iOS map supports, it's 20.
+ * 4 - subtract 1 from the maximum zoom level that current iOS map supports, it's 21.
+ * 5 - the maximum zoom level that current iOS map supports, it's 22.
+ *
+ * @discussion The point-of-interest is only visble when the map zoom level is between `minZoomLevel` and `maxZoomLevel`, it's `-1` by default.
+ */
+@property (nonatomic) NSInteger minZoomLevel;
+
+/**
+ * The maximum zoom level that the point-of-interest is visible on, and the below are the possible values:
+ * -1 - always visible(the default value).
+ * 1 - subtract 4 from the maximum zoom level that current iOS map supports, it's 18.
+ * 2 - subtract 3 from the maximum zoom level that current iOS map supports, it's 19.
+ * 3 - subtract 2 from the maximum zoom level that current iOS map supports, it's 20.
+ * 4 - subtract 1 from the maximum zoom level that current iOS map supports, it's 21.
+ * 5 - the maximum zoom level that current iOS map supports, it's 22.
+ *
+ * @discussion The point-of-interest is only visble when the map zoom level is between `minZoomLevel` and `maxZoomLevel`, it's `-1` by default.
+ */
+@property (nonatomic) NSInteger maxZoomLevel;
 
 /**
  *  Instantiates a `PWCustomPointOfInterest` object with the given parameters.

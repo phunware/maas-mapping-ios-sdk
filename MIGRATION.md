@@ -1,5 +1,5 @@
 # PWMapKit Migration Guide
-## Upgrade from 3.2.x to 3.3.0
+## Upgrade from 3.2.x to 3.3.x
 
 #### General
 
@@ -7,7 +7,7 @@ This release has some changes to support our new Location BLE provider.
 
 ##### Upgrade Steps
 
-1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.3.0'`, then run `pod update` in the Terminal to update the framework. This will take in the latest version of PWLocation 3.3.x with latest version of PWCore 3.3.x.
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.3.x'`, then run `pod update` in the Terminal to update the framework. This will take in the latest version of PWLocation 3.3.x with latest version of PWCore 3.3.x.
 
 ## Upgrade from 3.1.x to 3.2.0:
 

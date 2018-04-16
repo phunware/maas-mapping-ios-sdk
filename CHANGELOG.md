@@ -1,4 +1,15 @@
 # PWMapKit Changelog
+## 3.3.1 (Monday, Apr 16th, 2018)
+#### Features
+* Update to PWLocation 3.3.4
+* Added retry mechanism for flood pdfs
+* Exposes new bundle userInfo on PWBuilding object
+* Exposes zoom level on POIs
+
+#### Bug fixes / performance enhancements
+* Fixed issue where module was not registered
+* Fixed slow loading POI images
+
 ## 3.3.0 (Thursday, Feb 22nd, 2018)
 #### Features
 * Update to PWLocation 3.3.x

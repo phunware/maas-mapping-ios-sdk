@@ -229,6 +229,114 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setMinZoomLevel:</TokenIdentifier>
+			<Abstract type="html">The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible.
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&apos;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&apos;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&apos;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&apos;s 21.
+5 - the maximum zoom level that current iOS map supports, it&apos;s 22.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger minZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/minZoomLevel</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/minZoomLevel</TokenIdentifier>
+			<Abstract type="html">The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible.
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&apos;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&apos;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&apos;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&apos;s 21.
+5 - the maximum zoom level that current iOS map supports, it&apos;s 22.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger minZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/minZoomLevel</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/minZoomLevel</TokenIdentifier>
+			<Abstract type="html">The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible.
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&apos;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&apos;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&apos;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&apos;s 21.
+5 - the maximum zoom level that current iOS map supports, it&apos;s 22.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger minZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/minZoomLevel</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setMaxZoomLevel:</TokenIdentifier>
+			<Abstract type="html">The maximum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible.
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&apos;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&apos;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&apos;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&apos;s 21.
+5 - the maximum zoom level that current iOS map supports, it&apos;s 22.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger maxZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/maxZoomLevel</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/maxZoomLevel</TokenIdentifier>
+			<Abstract type="html">The maximum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible.
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&apos;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&apos;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&apos;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&apos;s 21.
+5 - the maximum zoom level that current iOS map supports, it&apos;s 22.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger maxZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/maxZoomLevel</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/maxZoomLevel</TokenIdentifier>
+			<Abstract type="html">The maximum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible.
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&apos;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&apos;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&apos;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&apos;s 21.
+5 - the maximum zoom level that current iOS map supports, it&apos;s 22.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger maxZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/maxZoomLevel</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setTitle:</TokenIdentifier>
 			<Abstract type="html">The title of the Point of Interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>

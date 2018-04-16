@@ -47,6 +47,11 @@
 @property (readonly) CLLocationCoordinate2D coordinate;
 
 /**
+ *  Extra information about the PWBuilding object and the data it consumes.
+ */
+@property (readonly) NSDictionary *userInfo;
+
+/**
  Create `PWBuilding` with provided building identifier.
  @param identifier The building identifier to use for initialization.
  @param completion The block to execute when the building data is completely loaded.

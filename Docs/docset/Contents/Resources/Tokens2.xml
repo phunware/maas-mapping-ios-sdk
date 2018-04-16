@@ -229,6 +229,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setUserInfo:</TokenIdentifier>
+			<Abstract type="html">Extra information about the PWBuilding object and the data it consumes.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary *userInfo</Declaration>
+			
+			
+			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/userInfo</TokenIdentifier>
+			<Abstract type="html">Extra information about the PWBuilding object and the data it consumes.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary *userInfo</Declaration>
+			
+			
+			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/userInfo</TokenIdentifier>
+			<Abstract type="html">Extra information about the PWBuilding object and the data it consumes.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary *userInfo</Declaration>
+			
+			
+			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/PWBuilding/buildingWithIdentifier:completion:</TokenIdentifier>
 			<Abstract type="html">Create PWBuilding with provided building identifier.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>

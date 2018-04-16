@@ -46,6 +46,32 @@
 @property (nonatomic, readonly) NSDictionary *metaData;
 
 /**
+ * The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
+ * -1 - always visible.
+ * 1 - subtract 4 from the maximum zoom level that current iOS map supports, it's 18.
+ * 2 - subtract 3 from the maximum zoom level that current iOS map supports, it's 19.
+ * 3 - subtract 2 from the maximum zoom level that current iOS map supports, it's 20.
+ * 4 - subtract 1 from the maximum zoom level that current iOS map supports, it's 21.
+ * 5 - the maximum zoom level that current iOS map supports, it's 22.
+ *
+ * @discussion The point-of-interest is only visble when the map zoom level is between `minZoomLevel` and `maxZoomLevel`.
+ */
+@property (nonatomic, readonly) NSInteger minZoomLevel;
+
+/**
+ * The maximum zoom level that the point-of-interest is visible on, and the below are the possible values:
+ * -1 - always visible.
+ * 1 - subtract 4 from the maximum zoom level that current iOS map supports, it's 18.
+ * 2 - subtract 3 from the maximum zoom level that current iOS map supports, it's 19.
+ * 3 - subtract 2 from the maximum zoom level that current iOS map supports, it's 20.
+ * 4 - subtract 1 from the maximum zoom level that current iOS map supports, it's 21.
+ * 5 - the maximum zoom level that current iOS map supports, it's 22.
+ *
+ * @discussion The point-of-interest is only visble when the map zoom level is between `minZoomLevel` and `maxZoomLevel`.
+ */
+@property (nonatomic, readonly) NSInteger maxZoomLevel;
+
+/**
  * The title of the Point of Interest.
  */
 @property (nonatomic, copy, readwrite) NSString *title;
