@@ -2,7 +2,7 @@
 ## 3.3.1 (Monday, Apr 16th, 2018)
 #### Features
 * Update to PWLocation 3.3.4
-* Added retry mechanism for flood pdfs
+* Added retry mechanism for floor pdfs
 * Exposes new bundle userInfo on PWBuilding object
 * Exposes zoom level on POIs
 
