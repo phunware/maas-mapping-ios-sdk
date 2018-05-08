@@ -52,14 +52,18 @@ class MapViewController: UIViewController, SegmentedViewController {
     let mapView = PWMapView()
     let loadingView = UIActivityIndicatorView()
     
-    var firstLaunch = true
+    let locationManager = CLLocationManager()
+    var firstLocationAcquired = false
     
     let mapPOITypeSelectionSegue = "MapPOITypeSelection"
     let mapFloorSelectionSegue = "MapFloorSelection"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
         mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()
@@ -115,12 +119,15 @@ class MapViewController: UIViewController, SegmentedViewController {
             }
             self?.configurationManager.currentConfiguration.loadedBuilding = building
             self?.mapView.setBuilding(building, animated: false, onCompletion: { (error) in
-                let managedLocationManager = PWManagedLocationManager.init(buildingId: buildingId!)
-                DispatchQueue.main.async {
-                    self?.mapView.register(managedLocationManager)
-                    self?.mapView.trackingMode = .follow
-                }
+                self?.startManagedLocationManager()
             })
+        }
+    }
+    
+    func startManagedLocationManager() {
+        let managedLocationManager = PWManagedLocationManager(buildingId:  ConfigurationManager.shared.currentConfiguration.buildingId)
+        DispatchQueue.main.async { [weak self] in
+            self?.mapView.register(managedLocationManager)
         }
     }
 
@@ -175,6 +182,10 @@ extension MapViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWIndoorLocation!) {
          NotificationCenter.default.post(name: .updateIndoorLocation, object: userLocation)
+        if !firstLocationAcquired {
+            firstLocationAcquired = true
+            mapView.trackingMode = .follow
+        }
     }
     
     func mapView(_ mapView: PWMapView!, didFailToLocateIndoorUserWithError error: Error!) {
@@ -256,6 +267,20 @@ extension MapViewController {
             mapView.trackingMode = .followWithHeading
         case .followWithHeading:
             mapView.trackingMode = .none
+        }
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            startManagedLocationManager()
+        default:
+            print("Not authorized to start PWManagedLocationManager")
         }
     }
 }

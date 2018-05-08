@@ -35,6 +35,7 @@ class RoutingViewController: UIViewController {
             fatalError("applicationId, accessKey, signatureKey, and buildingIdentifier must be set")
         }
         
+        locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
         mapView.delegate = self
@@ -54,6 +55,13 @@ class RoutingViewController: UIViewController {
         }
     }
     
+    func startManagedLocationManager() {
+        let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
+        DispatchQueue.main.async { [weak self] in
+            self?.mapView.register(managedLocationManager)
+        }
+    }
+    
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -62,6 +70,8 @@ class RoutingViewController: UIViewController {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 }
+
+// MARK: - PWMapViewDelegate
 
 extension RoutingViewController: PWMapViewDelegate {
     
@@ -100,6 +110,20 @@ extension RoutingViewController: PWMapViewDelegate {
                 
                 mapView.navigate(with: route)
             })
+        }
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension RoutingViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            startManagedLocationManager()
+        default:
+            print("Not authorized to start PWManagedLocationManager")
         }
     }
 }

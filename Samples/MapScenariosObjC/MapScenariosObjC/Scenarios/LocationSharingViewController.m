@@ -109,7 +109,7 @@ static NSString * const deviceTypeKey = @"DeviceTypeKey";
 
 #pragma mark - LocationSharingViewController
 
-@interface LocationSharingViewController () <PWMapViewDelegate, PWLocationSharingDelegate>
+@interface LocationSharingViewController () <PWMapViewDelegate, PWLocationSharingDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) PWMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -150,6 +150,7 @@ static NSString * const deviceTypeKey = @"DeviceTypeKey";
     }
     
     self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
     
     self.mapView = [PWMapView new];
@@ -163,16 +164,20 @@ static NSString * const deviceTypeKey = @"DeviceTypeKey";
     [PWBuilding buildingWithIdentifier:self.buildingIdentifier completion:^(PWBuilding *building, NSError *error) {
         __weak typeof(self) weakSelf = self;
         [weakSelf.mapView setBuilding:building animated:YES onCompletion:^(NSError *error) {
-            PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:weakSelf.buildingIdentifier];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.mapView registerLocationManager:managedLocationManager];
-                [weakSelf.mapView startSharingUserLocation];
-                [weakSelf.mapView startRetrievingSharedLocations];
-                
-                weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:weakSelf action:@selector(settingsTapped)];
-            });
+            [weakSelf startManagedLocationManager];
         }];
     }];
+}
+
+- (void)startManagedLocationManager {
+    PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:self.buildingIdentifier];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.mapView registerLocationManager:managedLocationManager];
+        [self.mapView startSharingUserLocation];
+        [self.mapView startRetrievingSharedLocations];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(settingsTapped)];
+    });
 }
 
 - (void)configureMapViewConstraints {
@@ -289,6 +294,16 @@ static NSString * const deviceTypeKey = @"DeviceTypeKey";
                 [weakSelf.sharedLocationAnnotations removeObjectForKey:removedSharedLocation.deviceId];
             }
         });
+    }
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self startManagedLocationManager];
+    } else {
+        NSLog(@"Not authorized to start PWManagedLocationManager");
     }
 }
 
