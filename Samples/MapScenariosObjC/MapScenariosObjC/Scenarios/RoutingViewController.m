@@ -11,7 +11,7 @@
 
 #import "RoutingViewController.h"
 
-@interface RoutingViewController () <PWMapViewDelegate>
+@interface RoutingViewController () <PWMapViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) PWMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -44,6 +44,7 @@
     }
     
     self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
     
     self.mapView = [PWMapView new];
@@ -54,12 +55,16 @@
     [PWBuilding buildingWithIdentifier:self.buildingIdentifier completion:^(PWBuilding *building, NSError *error) {
         __weak typeof(self) weakSelf = self;
         [weakSelf.mapView setBuilding:building animated:YES onCompletion:^(NSError *error) {
-            PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:weakSelf.buildingIdentifier];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.mapView registerLocationManager:managedLocationManager];
-            });
+            [weakSelf startManagedLocationManager];
         }];
     }];
+}
+
+- (void)startManagedLocationManager {
+    PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:self.buildingIdentifier];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.mapView registerLocationManager:managedLocationManager];
+    });
 }
 
 - (void)configureMapViewConstraints {
@@ -100,6 +105,16 @@
                 [weakSelf.mapView navigateWithRoute:route];
             }
         }];
+    }
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self startManagedLocationManager];
+    } else {
+        NSLog(@"Not authorized to start PWManagedLocationManager");
     }
 }
 

@@ -96,9 +96,10 @@
 
 @end
 
-@interface LocationModesViewController () <PWMapViewDelegate>
+@interface LocationModesViewController () <PWMapViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) PWMapView *mapView;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *trackingModeButton;
 
@@ -128,6 +129,10 @@
         [NSException raise:@"MissingConfiguration" format:@"applicationId, accessKey, signatureKey, and buildingIdentifier must be set"];
     }
     
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
+    
     self.mapView = [PWMapView new];
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
@@ -138,12 +143,16 @@
     [PWBuilding buildingWithIdentifier:self.buildingIdentifier completion:^(PWBuilding *building, NSError *error) {
         __weak typeof(self) weakSelf = self;
         [weakSelf.mapView setBuilding:building animated:YES onCompletion:^(NSError *error) {
-            PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:weakSelf.buildingIdentifier];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.mapView registerLocationManager:managedLocationManager];
-            });
+            [weakSelf startManagedLocationManager];
         }];
     }];
+}
+
+- (void)startManagedLocationManager {
+    PWManagedLocationManager *managedLocationManager = [[PWManagedLocationManager alloc] initWithBuildingId:self.buildingIdentifier];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.mapView registerLocationManager:managedLocationManager];
+    });
 }
 
 - (void)configureMapViewConstraints {
@@ -185,6 +194,16 @@
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self startManagedLocationManager];
+    } else {
+        NSLog(@"Not authorized to start PWManagedLocationManager");
     }
 }
 

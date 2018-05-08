@@ -5,6 +5,6 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'MapScenariosObjC' do
-  pod 'PWMapKit'
+  pod 'PWMapKit', '~> 3.4.0'
   pod 'SDWebImage'
 end
