@@ -8,8 +8,8 @@ PWMapKit SDK for iOS
 
 ## Requirements
 
-- PWLocation 3.3.4 and above (Automatically included when pod install PWMapKit)
-- PWCore 3.4.x (Automatically included when pod install PWMapKit)
+- PWLocation 3.4.0 and above (Automatically included when pod install PWMapKit)
+- PWCore 3.5.x (Automatically included when pod install PWMapKit)
 - iOS 9.0 or greater
 - Xcode 8 or greater
 
@@ -34,6 +34,10 @@ The primary use of the components of PWMapKit revolve around creating a map view
 ### Setup
 
 Make sure your app is correctly [set up](https://github.com/phunware/maas-core-ios-sdk#application-setup) before you start working on map integration.
+
+## Location Permissions
+
+Location authorization of "When In Use" or "Always" is required for a PWLocationManager to function normally. Please follow [Apple's Best Practices](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services) for requesting location permissions. Do not attempt to use a PWLocationManager if the user does not provide location authorization as this can lead to unexpected behavior.
 
 ### Adding Map View
 

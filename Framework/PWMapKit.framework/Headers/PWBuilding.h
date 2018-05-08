@@ -60,6 +60,15 @@
 + (void)buildingWithIdentifier:(NSInteger)identifier completion:(void(^)(PWBuilding *building, NSError *error))completion;
 
 /**
+ Create `PWBuilding` with provided building identifier.
+ @param identifier The building identifier to use for initialization.
+ @param cacheFallbackTimeout The timeout for network request to get the building before falling back to the cached version. This is only used if a cached building exists. For non-cached buildings this is not honored.
+ @param completion The block to execute when the building data is completely loaded.
+ @discussion It checks the network connectivity before starting to download the building, if it's disconnected, use cached one and returns immediately, otherwise to check if the cached is up to date then decide it's necessary to re-download if it completes within the fallback timeout. Otherwise will return the cached building.
+ */
++ (void)buildingWithIdentifier:(NSInteger)identifier cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout completion:(void(^)(PWBuilding *building, NSError *error))completion;
+
+/**
  * Create `PWBuilding` with provided building identifier.
  * @param identifier The building identifier to use for initialization.
  * @param caching YES/NO. Determines if the SDK will use prior cache information to instantiate the building structure. Default YES.

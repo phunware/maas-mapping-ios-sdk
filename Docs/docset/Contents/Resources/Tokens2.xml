@@ -285,6 +285,29 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWBuilding/buildingWithIdentifier:cacheFallbackTimeout:completion:</TokenIdentifier>
+			<Abstract type="html">Create PWBuilding with provided building identifier.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>+ (void)buildingWithIdentifier:(NSInteger)identifier cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout completion:(void ( ^ ) ( PWBuilding *building , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The building identifier to use for initialization.</Abstract>
+				</Parameter><Parameter>
+					<Name>cacheFallbackTimeout</Name>
+					<Abstract type="html">The timeout for network request to get the building before falling back to the cached version. This is only used if a cached building exists. For non-cached buildings this is not honored.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">The block to execute when the building data is completely loaded.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/buildingWithIdentifier:cacheFallbackTimeout:completion:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/PWBuilding/buildingWithIdentifier:usingCache:completion:</TokenIdentifier>
 			<Abstract type="html">Create PWBuilding with provided building identifier. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; Use buildingWithIdentifier:completion: instead, since v3.2.0&lt;/span&gt;)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>

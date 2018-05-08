@@ -1,4 +1,12 @@
 # PWMapKit Changelog
+## 3.4.0 (Tuesday, May 8th, 2018)
+#### Features
+* Update to PWLocation 3.4.0 which removes prompting for location permissions
+* Added configurable cache fall back timeout when loading a building
+
+#### Bug fixes / performance enhancements
+* Fixed issue where PWMapView could freeze
+
 ## 3.3.1 (Monday, Apr 16th, 2018)
 #### Features
 * Update to PWLocation 3.3.4
