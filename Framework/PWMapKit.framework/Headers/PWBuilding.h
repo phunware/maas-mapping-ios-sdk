@@ -47,7 +47,7 @@
 @property (readonly) CLLocationCoordinate2D coordinate;
 
 /**
- *  Extra information about the PWBuilding object and the data it consumes.
+ *  Extra information about the `PWBuilding` object and the data it consumes.
  */
 @property (readonly) NSDictionary *userInfo;
 
@@ -55,7 +55,7 @@
  Create `PWBuilding` with provided building identifier.
  @param identifier The building identifier to use for initialization.
  @param completion The block to execute when the building data is completely loaded.
- @discussion It checks the network connectivity before starting to download the building, if it's disconnected, use cached one and returns immediately, otherwise to check if the cached is up to date then decide it's necessary to re-download.
+ @discussion It checks the network connectivity before starting to download the building: if it's disconnected, use cached one and return immediately, otherwise check if the cached bulding is up to date then decide if it's necessary to re-download.
  */
 + (void)buildingWithIdentifier:(NSInteger)identifier completion:(void(^)(PWBuilding *building, NSError *error))completion;
 
@@ -64,7 +64,7 @@
  @param identifier The building identifier to use for initialization.
  @param cacheFallbackTimeout The timeout for network request to get the building before falling back to the cached version. This is only used if a cached building exists. For non-cached buildings this is not honored.
  @param completion The block to execute when the building data is completely loaded.
- @discussion It checks the network connectivity before starting to download the building, if it's disconnected, use cached one and returns immediately, otherwise to check if the cached is up to date then decide it's necessary to re-download if it completes within the fallback timeout. Otherwise will return the cached building.
+ @discussion It checks the network connectivity before starting to download the building: if it's disconnected, use cached one and return immediately, otherwise check if the cached building is up to date then decide if it's necessary to re-download if it completes within the fallback timeout. Otherwise will return the cached building.
  */
 + (void)buildingWithIdentifier:(NSInteger)identifier cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout completion:(void(^)(PWBuilding *building, NSError *error))completion;
 
@@ -76,7 +76,7 @@
  *
  * @deprecated Use `buildingWithIdentifier:completion:` instead, since v3.2.0
  */
-+ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL) caching completion:(void(^)(PWBuilding *building, NSError *error))completion __deprecated;
++ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL)caching completion:(void(^)(PWBuilding *building, NSError *error))completion __deprecated;
 
 /**
  * Returns a `PWFloor` instance that has the given floor identifier.
@@ -95,14 +95,14 @@
 - (PWFloor *)floorById:(NSInteger)identifier;
 
 /**
- * Returns a PWPointOfInterest instance that has the given identifier.
+ * Returns a `PWPointOfInterest` instance that has the given identifier.
  * @param identifier The MaaS portal identifier of the point-of-interest.
  * @return Returns a `PWPointOfInterest` instance that has the given identifier.
  */
 - (PWPointOfInterest *)pointOfInterestById:(NSInteger)identifier;
 
 /**
- * Finds the closest point-of-interest to the custom location.
+ * Finds the closest point-of-interest to the `PWMapPoint` object's location.
  * @param location A `PWMapPoint` reference.
  * @return Returns a `PWPointOfInterest` object.
  */

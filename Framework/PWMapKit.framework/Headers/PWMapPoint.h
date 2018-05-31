@@ -9,7 +9,7 @@
 @protocol MKAnnotation;
 
 /**
- * An interface for associating your content with a specific indoor map location.
+ * A protocol for associating your content with a specific indoor map location.
  */
 @protocol PWMapPoint <MKAnnotation>
 
@@ -19,29 +19,29 @@
 @property (nonatomic, readonly) NSInteger identifier;
 
 /**
- The floor identifier for which this point applies.
+ The identifier of the floor this point belongs to.
  */
 @property (nonatomic, readonly) NSInteger floorID;
 
 /**
- The building identifier for which this point applies.
+ The identifier of the building this point belongs to.
  */
 @property (nonatomic, readonly) NSInteger buildingID;
 
 @optional
 
 /**
- A flag indicating whether it's an accessible point.
+ A flag indicating if it's an accessible point.
  */
 @property (nonatomic, readonly, getter=isAccessible) BOOL accessible;
 
 /**
- A flag indicating whether the point is friendly to the visually-impaired.
+ A flag indicating if the point is friendly to the visually-impaired.
  */
 @property (nonatomic, readonly, getter=isVisualImpaired) BOOL visualImpaired;
 
 /**
- A flag indicating whether it's an exit point.
+ A flag indicating if it's an exit point.
  */
 @property (nonatomic, readonly, getter=isExit) BOOL exit;
 

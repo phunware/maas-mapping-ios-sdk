@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWMapView</TokenIdentifier>
-			<Abstract type="html">A PWMapView object provides an embeddable map interface. It is similar to the one provided by the maps application but is specifically tailored to indoor maps. PWMapView subclasses MKMapView to provide a convenient interface that downloads, stores and displays indoor maps and associated points of interest (POIs). Usage of this class is optional but recommended for basic indoor map implementations. For more control, please refer to PWBuildingOverlay and PWRouteOverlay,  which PWMapView is built upon.</Abstract>
+			<Abstract type="html">A PWMapView object provides an embeddable map interface. It is similar to the one provided by the maps application but is specifically tailored to indoor maps. PWMapView subclasses MKMapView to provide a convenient interface that downloads, stores and displays indoor maps and associated points of interest (POIs). Usage of this class is optional but recommended for basic indoor map implementations.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
             
 			
@@ -446,7 +446,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setPointOfInterestCustomizingEnabled:</TokenIdentifier>
-			<Abstract type="html">Determines whether or not the point-of-interest(PWPointOfInterest, PWCustomPointOfInterest and PWCustomLocation is able to be customized.</Abstract>
+			<Abstract type="html">Determines whether or not the point-of-interest(PWPointOfInterest, PWCustomPointOfInterest is able to be customized.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) BOOL pointOfInterestCustomizingEnabled</Declaration>
@@ -458,7 +458,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/pointOfInterestCustomizingEnabled</TokenIdentifier>
-			<Abstract type="html">Determines whether or not the point-of-interest(PWPointOfInterest, PWCustomPointOfInterest and PWCustomLocation is able to be customized.</Abstract>
+			<Abstract type="html">Determines whether or not the point-of-interest(PWPointOfInterest, PWCustomPointOfInterest is able to be customized.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) BOOL pointOfInterestCustomizingEnabled</Declaration>
@@ -470,7 +470,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/pointOfInterestCustomizingEnabled</TokenIdentifier>
-			<Abstract type="html">Determines whether or not the point-of-interest(PWPointOfInterest, PWCustomPointOfInterest and PWCustomLocation is able to be customized.</Abstract>
+			<Abstract type="html">Determines whether or not the point-of-interest(PWPointOfInterest, PWCustomPointOfInterest is able to be customized.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) BOOL pointOfInterestCustomizingEnabled</Declaration>
@@ -590,7 +590,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setTrackingModeSwitchInterval:</TokenIdentifier>
-			<Abstract type="html">The time interval the user stays in PWTrackingModeNone mode, it will automatically change back to the follow mode set by user.</Abstract>
+			<Abstract type="html">The time interval the user stays in PWTrackingModeNone mode before the map view will automatically change back to the tracking mode set by user.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) NSInteger trackingModeSwitchInterval</Declaration>
@@ -602,7 +602,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/trackingModeSwitchInterval</TokenIdentifier>
-			<Abstract type="html">The time interval the user stays in PWTrackingModeNone mode, it will automatically change back to the follow mode set by user.</Abstract>
+			<Abstract type="html">The time interval the user stays in PWTrackingModeNone mode before the map view will automatically change back to the tracking mode set by user.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) NSInteger trackingModeSwitchInterval</Declaration>
@@ -614,13 +614,49 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/trackingModeSwitchInterval</TokenIdentifier>
-			<Abstract type="html">The time interval the user stays in PWTrackingModeNone mode, it will automatically change back to the follow mode set by user.</Abstract>
+			<Abstract type="html">The time interval the user stays in PWTrackingModeNone mode before the map view will automatically change back to the tracking mode set by user.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) NSInteger trackingModeSwitchInterval</Declaration>
 			
 			
 			<Anchor>//api/name/trackingModeSwitchInterval</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setDisplayDebugLocationDots:</TokenIdentifier>
+			<Abstract type="html">For internal use only.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL displayDebugLocationDots</Declaration>
+			
+			
+			<Anchor>//api/name/displayDebugLocationDots</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/displayDebugLocationDots</TokenIdentifier>
+			<Abstract type="html">For internal use only.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL displayDebugLocationDots</Declaration>
+			
+			
+			<Anchor>//api/name/displayDebugLocationDots</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/displayDebugLocationDots</TokenIdentifier>
+			<Abstract type="html">For internal use only.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL displayDebugLocationDots</Declaration>
+			
+			
+			<Anchor>//api/name/displayDebugLocationDots</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
@@ -686,7 +722,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/registerLocationManager:</TokenIdentifier>
-			<Abstract type="html">Register an indoor location manager provider with the map view. This location provider is used when modifying the indoorUserTrackingMode or when showsIndoorUserLocation is set to YES.</Abstract>
+			<Abstract type="html">Register an indoor location manager provider with the map view. This location provider is started immediately and used when modifying the indoorUserTrackingMode.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)registerLocationManager:(id&lt;PWLocationManager&gt;)locationManager</Declaration>
@@ -703,7 +739,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/unregisterLocationManager</TokenIdentifier>
-			<Abstract type="html">Unregister any indoor location manager provider that is registered with the map view.</Abstract>
+			<Abstract type="html">Unregister any indoor location manager that is registered with the map view.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)unregisterLocationManager</Declaration>
@@ -732,7 +768,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setRouteManeuver:</TokenIdentifier>
-			<Abstract type="html">Display the specified PWRouteInstruction on the map. If needed, this will change the current floor to the required floor for the instruction.</Abstract>
+			<Abstract type="html">Highlight the specified PWRouteInstruction on the map. If needed, this will change the current floor to the floor of the instruction.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)setRouteManeuver:(PWRouteInstruction *)instruction</Declaration>
@@ -769,7 +805,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentRouteInstruction</TokenIdentifier>
-			<Abstract type="html">Returns the current PWRouteInstruction being displayed. If no route is displayed, this method will return nil.</Abstract>
+			<Abstract type="html">Returns the current PWRouteInstruction being highlighted. If no route is displayed, this method will return nil.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (PWRouteInstruction *)currentRouteInstruction</Declaration>
@@ -781,7 +817,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/cancelRouting</TokenIdentifier>
-			<Abstract type="html">Cancel the route displayed in the map view. This method will remove the route from the map view and set the PWRoute and PWRouteStep properties to nil.</Abstract>
+			<Abstract type="html">Cancel the route displayed in the map view. This method will remove the route from the map view and set the PWRoute property to nil.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)cancelRouting</Declaration>
@@ -841,7 +877,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/set__deprecated:</TokenIdentifier>
-			<Abstract type="html">A reference to the dropped pin location. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; No longer support, since v3.2.0&lt;/span&gt;)</Abstract>
+			<Abstract type="html">A reference to the dropped pin location. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; No longer supported since v3.2.0&lt;/span&gt;)</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) PWCustomLocation *__deprecated</Declaration>
@@ -853,7 +889,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/__deprecated</TokenIdentifier>
-			<Abstract type="html">A reference to the dropped pin location. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; No longer support, since v3.2.0&lt;/span&gt;)</Abstract>
+			<Abstract type="html">A reference to the dropped pin location. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; No longer supported since v3.2.0&lt;/span&gt;)</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) PWCustomLocation *__deprecated</Declaration>
@@ -865,7 +901,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/__deprecated</TokenIdentifier>
-			<Abstract type="html">A reference to the dropped pin location. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; No longer support, since v3.2.0&lt;/span&gt;)</Abstract>
+			<Abstract type="html">A reference to the dropped pin location. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; No longer supported since v3.2.0&lt;/span&gt;)</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic) PWCustomLocation *__deprecated</Declaration>
@@ -884,10 +920,10 @@
 			<Parameters>
 				<Parameter>
 					<Name>centerCoordinate</Name>
-					<Abstract type="html">A CLLocationCoordinate2D object representing the latitude an longitude the map should zoom to.</Abstract>
+					<Abstract type="html">A CLLocationCoordinate2D object representing the latitude and longitude the map should zoom to.</Abstract>
 				</Parameter><Parameter>
 					<Name>zoomLevel</Name>
-					<Abstract type="html">A NSUInteger value representing zoom level the map should zoom to.</Abstract>
+					<Abstract type="html">An NSUInteger value representing the zoom level the map should zoom to.</Abstract>
 				</Parameter><Parameter>
 					<Name>animated</Name>
 					<Abstract type="html">A BOOL property to determine whether the change of map&apos;s center should be animated or not.</Abstract>

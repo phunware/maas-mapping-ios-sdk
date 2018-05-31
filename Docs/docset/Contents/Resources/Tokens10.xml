@@ -50,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setStartPoint:</TokenIdentifier>
-			<Abstract type="html">A reference to the origin, or start point for the route.</Abstract>
+			<Abstract type="html">A reference to the origin, or start point, for the route.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; startPoint</Declaration>
@@ -62,7 +62,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/startPoint</TokenIdentifier>
-			<Abstract type="html">A reference to the origin, or start point for the route.</Abstract>
+			<Abstract type="html">A reference to the origin, or start point, for the route.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; startPoint</Declaration>
@@ -74,7 +74,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/startPoint</TokenIdentifier>
-			<Abstract type="html">A reference to the origin, or start point for the route.</Abstract>
+			<Abstract type="html">A reference to the origin, or start point, for the route.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; startPoint</Declaration>
@@ -86,7 +86,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setEndPoint:</TokenIdentifier>
-			<Abstract type="html">A reference to the destination, or end point for the route.</Abstract>
+			<Abstract type="html">A reference to the destination, or end point, for the route.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; endPoint</Declaration>
@@ -98,7 +98,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/endPoint</TokenIdentifier>
-			<Abstract type="html">A reference to the destination, or end point for the route.</Abstract>
+			<Abstract type="html">A reference to the destination, or end point, for the route.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; endPoint</Declaration>
@@ -110,7 +110,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/endPoint</TokenIdentifier>
-			<Abstract type="html">A reference to the destination, or end point for the route.</Abstract>
+			<Abstract type="html">A reference to the destination, or end point, for the route.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>@property (readonly) id&lt;PWMapPoint&gt; endPoint</Declaration>
@@ -328,7 +328,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/PWRoute/createRouteFrom:to:accessibility:excludedPoints:completion:</TokenIdentifier>
-			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated.</Abstract>
+			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start PWMapPoint and the end PWMapPoint. The completion handler is called when the route is fully calculated.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)startPoint to:(id&lt;PWMapPoint&gt;)endPoint accessibility:(BOOL)accessibility excludedPoints:(NSArray *)excludedPoints completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
@@ -341,10 +341,10 @@
 					<Abstract type="html">A PWMapPoint object representing the end point for the route calculation.</Abstract>
 				</Parameter><Parameter>
 					<Name>accessibility</Name>
-					<Abstract type="html">A BOOL value to tell the route init if accessibility should be considered to calculate the route.</Abstract>
+					<Abstract type="html">A BOOL value to tell the route builder if accessibility should be considered to calculate the route.</Abstract>
 				</Parameter><Parameter>
 					<Name>excludedPoints</Name>
-					<Abstract type="html">An array of points to tell the route result should exclude.</Abstract>
+					<Abstract type="html">An array of PWMapPoint objects to be excluded when building the route.</Abstract>
 				</Parameter><Parameter>
 					<Name>completion</Name>
 					<Abstract type="html">Completion handler that is called once the route&apos;s calculation is complete.</Abstract>

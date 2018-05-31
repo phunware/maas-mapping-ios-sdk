@@ -26,7 +26,7 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/PWRouteSnapToleranceNormal</TokenIdentifier>
-            <Abstract type="html">     Snap blue dot on the route path when the distance is less than the value of current location accuracy
+            <Abstract type="html">     Snap blue dot to the route path when the distance is less than the value of current location accuracy
      </Abstract>
             <Declaration>PWRouteSnapToleranceNormal</Declaration>
             

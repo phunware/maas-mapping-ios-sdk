@@ -383,7 +383,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/pointOfInterestClosestToLocation:</TokenIdentifier>
-			<Abstract type="html">Finds the closest point-of-interest to the custom location.</Abstract>
+			<Abstract type="html">Finds the closest point-of-interest to the PWMapPoint object&apos;s location.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
 			<Declaration>- (PWPointOfInterest *)pointOfInterestClosestToLocation:(id&lt;PWMapPoint&gt;)location</Declaration>

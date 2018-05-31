@@ -13,12 +13,12 @@
 @class PWFloor;
 
 /**
- *  A PWCustomPointOfInterest represents custom single point-of-interest.
+ *  A PWCustomPointOfInterest represents a custom point-of-interest.
  */
 @interface PWCustomPointOfInterest : NSObject <PWMapPoint>
 
 /**
- The point identifier as specified by the mapping service.
+ The location of the point-of-interest.
  */
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 
@@ -28,17 +28,17 @@
 @property (nonatomic) NSInteger identifier;
 
 /**
- The floor identifier for which this point applies.
+ The identifier of the floor this point belongs to.
  */
 @property (nonatomic) NSInteger floorID;
 
 /**
- The floor for which this point applies.
+ The floor this point belongs to.
  */
 @property (nonatomic, nullable) PWFloor *floor;
 
 /**
- The building identifier for which this point applies.
+ The identifier of the building this point belongs to.
  */
 @property (nonatomic) NSInteger buildingID;
 
@@ -58,34 +58,35 @@
 @property (nonatomic, nullable) UIImage *image;
 
 /**
- *  A `PWPointOfInterestType` object that this custom point-of-interest is a member of, a type image icon will automatically be applied if `image` property is not set.
+ *  A `PWPointOfInterestType` object that this custom point-of-interest is a member of, a type image icon will automatically be applied if the `image` property is not set.
  */
 @property (nonatomic, nullable) PWPointOfInterestType *pointOfInterestType;
 
 /**
- Metadata associated with the custom point-of-interest, using it to pass data as you want.
+ Optional data specified by the developer and associated with the custom point-of-interest.
  */
 @property (nonatomic, nullable) NSDictionary *metaData;
 
 /** 
- A flag indicating whether it's to display or hide the label text.
+ A flag indicating whether the label text should be shown or hidden.
  */
 @property (nonatomic, getter=isShowTextLabel) BOOL showTextLabel;
 
 /**
- A flag indicating whether it's an accessible point.
+ A flag indicating if it's an accessible point.
  */
 @property (nonatomic, getter=isAccessible) BOOL accessible;
 
 /**
- A flag indicating whether the point is friendly to the visually-impaired.
+ A flag indicating if the point is friendly to the visually-impaired.
  */
 @property (nonatomic, getter=isVisualImpaired) BOOL visualImpaired;
 
 /**
- A flag indicating whether it's an exit point.
+ A flag indicating if it's an exit point.
  */
 @property (nonatomic, getter=isExit) BOOL exit;
+
 /**
  * The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
  * -1 - always visible(the default value).
@@ -116,10 +117,10 @@
  *  Instantiates a `PWCustomPointOfInterest` object with the given parameters.
  *
  *  @param coordinate The coordinate of custom point-of-interest.
- *  @param floorId The floor identifier the custom point-of-interest on.
- *  @param buildingId The building identifier the custom point-of-interest in.
- *  @param title The title of custom point-of-interest.
- *  @param image The icon of custom point-of-interest.
+ *  @param floorId The identifier of the floor the custom point-of-interest is on.
+ *  @param buildingId The identifier of the building the custom point-of-interest is in.
+ *  @param title The title of the custom point-of-interest.
+ *  @param image The icon of the custom point-of-interest.
  *
  *  @return Returns a `PWCustomPointOfInterest` object.
  */

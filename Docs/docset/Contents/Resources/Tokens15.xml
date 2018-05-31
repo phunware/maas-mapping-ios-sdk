@@ -14,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewWillSetCamera:</TokenIdentifier>
-			<Abstract type="html">Asks the delegate that the MKMapCamera will be set when the building is completely loaded.</Abstract>
+			<Abstract type="html">Asks the delegate how the MKMapCamera will be set when the building is completely loaded.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (MKMapCamera *)mapViewWillSetCamera:(PWMapView *)mapView</Declaration>
@@ -24,14 +24,14 @@
 					<Abstract type="html">The map view that started the load operation.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The MKMapCamera will be set when the building is completely loaded.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The MKMapCamera that will be set when the building is completely loaded.</Abstract></ReturnValue>
 			<Anchor>//api/name/mapViewWillSetCamera:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewWillSetInitialFloor:</TokenIdentifier>
-			<Abstract type="html">Asks the delegate that the PWFloor will be set as intial floor.</Abstract>
+			<Abstract type="html">Asks the delegate for the PWFloor that will be displayed as the intial floor.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (PWFloor *)mapViewWillSetInitialFloor:(PWMapView *)mapView</Declaration>
@@ -41,14 +41,14 @@
 					<Abstract type="html">The map view that started the load operation.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The PWFloor will be set as initial floor.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The PWFloor that will be set as the initial floor.</Abstract></ReturnValue>
 			<Anchor>//api/name/mapViewWillSetInitialFloor:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didFinishLoadingBuilding:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified map view successfully loaded necessary building data.</Abstract>
+			<Abstract type="html">Tells the delegate that the specified map view successfully loaded the necessary building data.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)mapView:(PWMapView *)mapView didFinishLoadingBuilding:(PWBuilding *)building</Declaration>
@@ -111,17 +111,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didFailedToChangeFloor:error:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the specified map view successfully changed the building floor.</Abstract>
+			<Abstract type="html">Tells the delegate that the specified map view failed to change the building floor.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)mapView:(PWMapView *)mapView didFailedToChangeFloor:(PWFloor *)floor error:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>mapView</Name>
-					<Abstract type="html">The map view that changed the floor.</Abstract>
+					<Abstract type="html">The map view that attempted to change the floor.</Abstract>
 				</Parameter><Parameter>
 					<Name>floor</Name>
-					<Abstract type="html">The floor tried to change in the map view.</Abstract>
+					<Abstract type="html">The floor that the map view attempted to change to.</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
 					<Abstract type="html">The reason that the floor could not be loaded.</Abstract>
@@ -178,7 +178,7 @@
 					<Abstract type="html">The map view tracking the user’s indoor location.</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">An error object containing the reason why location tracking failed.</Abstract>
+					<Abstract type="html">An error object containing the reason why location acquisition failed.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -228,7 +228,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapViewStoppedSnappingLocationToRoute:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the user&apos;s location was not snapped to a route.</Abstract>
+			<Abstract type="html">Tells the delegate that the user&apos;s location was unsnapped from a route.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)mapViewStoppedSnappingLocationToRoute:(PWMapView *)mapView</Declaration>
@@ -244,28 +244,8 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didChangeRouteStep:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the route step being displayed has changed.</Abstract>
-			<DeclaredIn>PWMapView.h</DeclaredIn>
-			
-			<Declaration>- (void)mapView:(PWMapView *)mapView didChangeRouteStep:(PWRouteStep *)step</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mapView</Name>
-					<Abstract type="html">The map view reporting the step change.</Abstract>
-				</Parameter><Parameter>
-					<Name>step</Name>
-					<Abstract type="html">The new route step being displayed on the map.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/mapView:didChangeRouteStep:</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didChangeRouteInstruction:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the route step being displayed has changed.</Abstract>
+			<Abstract type="html">Tells the delegate that the route instruction being highlighted has changed.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)mapView:(PWMapView *)mapView didChangeRouteInstruction:(PWRouteInstruction *)instruction</Declaration>
@@ -275,7 +255,7 @@
 					<Abstract type="html">The map view reporting the step change.</Abstract>
 				</Parameter><Parameter>
 					<Name>instruction</Name>
-					<Abstract type="html">The new instruction being displayed on the map, or nil if it has been cleared.</Abstract>
+					<Abstract type="html">The new instruction being highlighted on the map, or nil if it has been cleared.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -302,7 +282,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didChangeIndoorUserTrackingMode:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the user&apos;s location was updated.</Abstract>
+			<Abstract type="html">Tells the delegate that the map view&apos;s user tracking mode was updated.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)mapView:(PWMapView *)mapView didChangeIndoorUserTrackingMode:(PWTrackingMode)mode</Declaration>
@@ -359,7 +339,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:viewForPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">Returns the view associated with the specified point-of-interest object.</Abstract>
+			<Abstract type="html">Requests the view associated with the specified point-of-interest object.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (MKAnnotationView *)mapView:(PWMapView *)mapView viewForPointOfInterest:(PWPointOfInterest *)poi</Declaration>
@@ -379,7 +359,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didAnnotateView:withPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that one or more point-of-interest views were added to the map.</Abstract>
+			<Abstract type="html">Tells the delegate that a point-of-interest view was added to the map.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)mapView:(PWMapView *)mapView didAnnotateView:(PWBuildingAnnotationView *)view withPointOfInterest:(PWPointOfInterest *)poi</Declaration>
@@ -471,7 +451,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapViewDelegate/mapView:didDeselectBuildingAnnotationView:withPointOfInterest:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that one of its annotation views was selected.</Abstract>
+			<Abstract type="html">Tells the delegate that one of its annotation views was deselected.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
 			<Declaration>- (void)mapView:(PWMapView *)mapView didDeselectBuildingAnnotationView:(PWBuildingAnnotationView *)view withPointOfInterest:(PWPointOfInterest *)poi</Declaration>

@@ -36,7 +36,7 @@
 @property (readonly) NSInteger level;
 
 /**
- *  An array of `PWPointOfInterestType` objects that belong to the floor.
+ *  An array of `PWPointOfInterest` objects that belong to the floor.
  */
 @property (readonly) NSArray *pointsOfInterest;
 
@@ -55,7 +55,7 @@
  *  @param coordinate A CLLocationCoordinate2D object containing latitude and longitude.
  *  @return Returns a `BOOL` value saying if the floor contains the given coordinate.
  */
-- (BOOL)containsCoordinate:(CLLocationCoordinate2D) coordinate;
+- (BOOL)containsCoordinate:(CLLocationCoordinate2D)coordinate;
 
 /**
  *  Returns an array containing the floor's points of interest of the specified point-of-interest type.
@@ -65,10 +65,10 @@
 - (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type;
 
 /**
- *  Returns an array containing the floor's points of interest of the specified point-of-interest type and whose name contains the supplied text.
+ *  Returns an array containing the floor's points of interest of the specified point-of-interest type and whose name or description contains the supplied text.
  *  @param type A `PWPointOfInterestType`.
- *  @param containingText A `NSString` substring of text to search for.
- *  @return Returns `NSArray` containing a list of `PWPointOfInterestType` objects for the given type and whose name contains the supplied text.
+ *  @param containingText A `NSString` substring of text to search for in the name and description.
+ *  @return Returns `NSArray` containing a list of `PWPointOfInterest` objects for the given type and whose name or description contains the supplied text.
  */
 - (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText;
 

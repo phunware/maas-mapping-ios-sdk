@@ -50,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setDistance:</TokenIdentifier>
-			<Abstract type="html">The total distance of the route expressed in meters.</Abstract>
+			<Abstract type="html">The total distance of the instruction expressed in meters.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) CLLocationDistance distance</Declaration>
@@ -62,7 +62,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/distance</TokenIdentifier>
-			<Abstract type="html">The total distance of the route expressed in meters.</Abstract>
+			<Abstract type="html">The total distance of the instruction expressed in meters.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) CLLocationDistance distance</Declaration>
@@ -74,7 +74,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/distance</TokenIdentifier>
-			<Abstract type="html">The total distance of the route expressed in meters.</Abstract>
+			<Abstract type="html">The total distance of the instruction expressed in meters.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) CLLocationDistance distance</Declaration>
@@ -86,7 +86,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setPoints:</TokenIdentifier>
-			<Abstract type="html">The sequence of points represented by this maneuver.</Abstract>
+			<Abstract type="html">The sequence of points represented by this instruction.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) NSArray *points</Declaration>
@@ -98,7 +98,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/points</TokenIdentifier>
-			<Abstract type="html">The sequence of points represented by this maneuver.</Abstract>
+			<Abstract type="html">The sequence of points represented by this instruction.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) NSArray *points</Declaration>
@@ -110,7 +110,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/points</TokenIdentifier>
-			<Abstract type="html">The sequence of points represented by this maneuver.</Abstract>
+			<Abstract type="html">The sequence of points represented by this instruction.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) NSArray *points</Declaration>
@@ -158,7 +158,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setLast:</TokenIdentifier>
-			<Abstract type="html">A flag check if it&apos;s last route instruction in the associated route.</Abstract>
+			<Abstract type="html">A flag indicating if it&apos;s the last route instruction in the associated route.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly, getter=isLast) BOOL last</Declaration>
@@ -170,7 +170,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/isLast</TokenIdentifier>
-			<Abstract type="html">A flag check if it&apos;s last route instruction in the associated route.</Abstract>
+			<Abstract type="html">A flag indicating if it&apos;s the last route instruction in the associated route.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly, getter=isLast) BOOL last</Declaration>
@@ -182,7 +182,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/last</TokenIdentifier>
-			<Abstract type="html">A flag check if it&apos;s last route instruction in the associated route.</Abstract>
+			<Abstract type="html">A flag indicating if it&apos;s the last route instruction in the associated route.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly, getter=isLast) BOOL last</Declaration>
@@ -194,7 +194,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovement:</TokenIdentifier>
-			<Abstract type="html">The text of representing the movement instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">The text representing the movement instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) NSString *movement</Declaration>
@@ -206,7 +206,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movement</TokenIdentifier>
-			<Abstract type="html">The text of representing the movement instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">The text representing the movement instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) NSString *movement</Declaration>
@@ -218,7 +218,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movement</TokenIdentifier>
-			<Abstract type="html">The text of representing the movement instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">The text representing the movement instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) NSString *movement</Declaration>
@@ -302,7 +302,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurn:</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">An NSString object representing the turn instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) NSString *turn</Declaration>
@@ -314,7 +314,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turn</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">An NSString object representing the turn instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) NSString *turn</Declaration>
@@ -326,7 +326,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turn</TokenIdentifier>
-			<Abstract type="html">A NSString object representing the turn instruction for the current instruction instance.</Abstract>
+			<Abstract type="html">An NSString object representing the turn instruction for the current instruction instance.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) NSString *turn</Declaration>
@@ -338,7 +338,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurnDirection:</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<Abstract type="html">An NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection turnDirection</Declaration>
@@ -350,7 +350,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turnDirection</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<Abstract type="html">An NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection turnDirection</Declaration>
@@ -362,7 +362,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turnDirection</TokenIdentifier>
-			<Abstract type="html">A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
+			<Abstract type="html">An NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
 			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection turnDirection</Declaration>

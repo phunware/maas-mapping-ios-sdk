@@ -11,22 +11,22 @@
 @class PWPointOfInterestType;
 
 /**
- The building annotation object is a convenience class that implements the `PWPointOfInterest` protocol. This class it primarily for internal use and not exposed in the SDK.
+ This class represents a point-of-interest defined on the MaaS portal and contains data associated with that point-of-interest.
  */
 @interface PWPointOfInterest : NSObject <PWMapPoint>
 
 /**
- *  A summary description of the point-of-interest.
+ *  A description of the point-of-interest.
  */
 @property (nonatomic, readonly) NSString *summary;
 
 /**
- *  The PWFloor object that the point-of-interest is a member of.
+ *  The `PWFloor` object that the point-of-interest belongs to.
  */
 @property (nonatomic, readonly, weak) PWFloor *floor;
 
 /**
- *  The PWPointOfInterestType object that the point-of-interest is a member of.
+ *  The `PWPointOfInterestType` object that the point-of-interest is a member of.
  */
 @property (nonatomic, readonly) PWPointOfInterestType *pointOfInterestType;
 
@@ -72,12 +72,12 @@
 @property (nonatomic, readonly) NSInteger maxZoomLevel;
 
 /**
- * The title of the Point of Interest.
+ * The title of the point-of-interest.
  */
 @property (nonatomic, copy, readwrite) NSString *title;
 
 /**
- * The subtitle of the Point of Interest.
+ * The subtitle of the point-of-interest.
  */
 @property (nonatomic, copy, readwrite) NSString *subtitle;
 

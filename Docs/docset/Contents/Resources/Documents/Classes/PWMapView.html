@@ -68,6 +68,8 @@
 		
 		<option value="//api/name/delegate">delegate</option>
 		
+		<option value="//api/name/displayDebugLocationDots">displayDebugLocationDots</option>
+		
 		<option value="//api/name/floorTransitionModeEnabled">floorTransitionModeEnabled</option>
 		
 		<option value="//api/name/indoorUserLocation">indoorUserLocation</option>
@@ -182,7 +184,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A <code>PWMapView</code> object provides an embeddable map interface. It is similar to the one provided by the maps application but is specifically tailored to indoor maps. <code>PWMapView</code> subclasses <code>MKMapView</code> to provide a convenient interface that downloads, stores and displays indoor maps and associated points of interest (POIs). Usage of this class is optional but recommended for basic indoor map implementations. For more control, please refer to <code>PWBuildingOverlay</code> and <code>PWRouteOverlay</code>,  which <code>PWMapView</code> is built upon.</p>
+						<p>A <code>PWMapView</code> object provides an embeddable map interface. It is similar to the one provided by the maps application but is specifically tailored to indoor maps. <code>PWMapView</code> subclasses <code>MKMapView</code> to provide a convenient interface that downloads, stores and displays indoor maps and associated points of interest (POIs). Usage of this class is optional but recommended for basic indoor map implementations.</p>
 					</div>
 					
 					
@@ -487,7 +489,7 @@
 
 <p>Showing the user’s indoor location does not guarantee that the location is visible on the map. The user might have scrolled the map to a different point, causing the current location to be offscreen. To determine whether the user’s location is currently displayed on the map, use the <a href="#//api/name/indoorUserLocationVisible"><code>indoorUserLocationVisible</code></a> property.</p>
 
-<p>When setting this property to <code>NO</code> follow <a href="../Constants/PWTrackingMode.html"><code>PWTrackingMode</code></a> will be set to <code>PWTrackingModeNone</code>.</p>
+<p>When setting this property to <code>NO</code>, <a href="../Constants/PWTrackingMode.html"><code>PWTrackingMode</code></a> will be set to <code>PWTrackingModeNone</code>.</p>
 			</div>
 			
 
@@ -574,7 +576,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If blue dot smoothing is active, this property will report a calculated position and will thus be very volatile.</p>
+				<p>If blue dot smoothing is active, this property will report an interpolated position and will thus be very volatile.</p>
 			</div>
 			
 
@@ -621,8 +623,6 @@
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Possible values are described in <a href="../Constants/PWTrackingMode.html"><code>PWTrackingMode</code></a>. It&rsquo;s important to note that this property replaces the <code>userTrackingMode</code> property of type <code>MKUserTrackingMode</code> on <code>MKMapView</code>. Setting this value will have no effect if an indoor location manager has not been registered with the map view.</p>
-
-<p>Setting the tracking mode to <code>PWTrackingModeFollow</code> or <code>PWTrackingModeFollowWithHeading</code> causes the map view to center the map on that location and (optionally) orient the map with fixed north. If the map is zoomed out, the map view automatically zooms in on the user’s location, effectively changing the current visible region.</p>
 			</div>
 			
 
@@ -751,7 +751,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Determines whether or not the point-of-interest(<a href="../Classes/PWPointOfInterest.html"><code>PWPointOfInterest</code></a>, <a href="../Classes/PWCustomPointOfInterest.html"><code>PWCustomPointOfInterest</code></a> and <a href="../Classes/PWCustomLocation.html"><code>PWCustomLocation</code></a>) is able to be customized.</p>
+				<p>Determines whether or not the point-of-interest(<a href="../Classes/PWPointOfInterest.html"><code>PWPointOfInterest</code></a>, <a href="../Classes/PWCustomPointOfInterest.html"><code>PWCustomPointOfInterest</code></a>) is able to be customized.</p>
 			</div>
 			
 		    
@@ -768,7 +768,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The SDK shows all the internal annotations without asking for their annotation views by calling <code>- mapView: viewForAnnotation:</code>, those internal annotation types includes: <a href="../Classes/PWPointOfInterest.html"><code>PWPointOfInterest</code></a>, <a href="../Classes/PWCustomPointOfInterest.html"><code>PWCustomPointOfInterest</code></a> and <a href="../Classes/PWCustomLocation.html"><code>PWCustomLocation</code></a>.</p>
+				<p>The SDK shows all the internal annotations without asking for their annotation views by calling <code>- mapView: viewForAnnotation:</code>, those internal annotation types includes: <a href="../Classes/PWPointOfInterest.html"><code>PWPointOfInterest</code></a>, <a href="../Classes/PWCustomPointOfInterest.html"><code>PWCustomPointOfInterest</code></a>.</p>
 
 <p>If <code>pointOfInterestCustomizingEnabled</code> is set to <code>YES</code>, you are responsible to provide annotation views for the point-of-interests by implementing <code>- mapView: viewForAnnotation:</code>, but it will keep using the one provided by SDK if you don&rsquo;t or provide an invalid one. This feature is turned off by default.</p>
 			</div>
@@ -922,7 +922,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The time interval the user stays in <code>PWTrackingModeNone</code> mode, it will automatically change back to the follow mode set by user.</p>
+				<p>The time interval the user stays in <code>PWTrackingModeNone</code> mode before the map view will automatically change back to the tracking mode set by user.</p>
 			</div>
 			
 		    
@@ -941,6 +941,47 @@
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Set to <code>-1</code> if you don&rsquo;t want enable this feature, and <code>10</code> seconds is used by default.</p>
 			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/displayDebugLocationDots" title="displayDebugLocationDots"></a>
+	<h3 class="method-title"><code><a href="#//api/name/displayDebugLocationDots">&nbsp;&nbsp;displayDebugLocationDots</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>For internal use only.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL displayDebugLocationDots</code></div>
+
+		    
+			
+
+			
+
+			
+
 			
 
 			
@@ -1002,7 +1043,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>After initialization you can set <a href="#//api/name/building"><code>building</code></a> property or call <code>loadBuilding: onCompletion:</code> to display the <a href="#//api/name/building">building</a> on the map. If you choose to load with <code>loadBuilding: onCompletion:</code> you will get result from the completion block once it&rsquo;s done. And no matter whichever you choose, the <a href="#//api/name/delegate">delegate</a> will receive a <code>mapView:didFinishLoadingBuilding:error:</code>.</p>
+				<p>After initialization you can set <a href="#//api/name/building"><code>building</code></a> property or call <code></code>setBuilding:<code> animated: onCompletion:</code> to display the <a href="#//api/name/building">building</a> on the map. If you choose to load with <code></code>setBuilding:<code> animated: onCompletion:</code> you will get result from the completion block once it&rsquo;s done. In both cases, the <a href="#//api/name/delegate">delegate</a> will receive a <code>mapView:didFinishLoadingBuilding:error:</code> callback.</p>
 			</div>
 			
 
@@ -1162,7 +1203,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Register an indoor location manager provider with the map view. This location provider is used when modifying the <code>indoorUserTrackingMode</code> or when <a href="#//api/name/showsIndoorUserLocation"><code>showsIndoorUserLocation</code></a> is set to <code>YES</code>.</p>
+				<p>Register an indoor location manager provider with the map view. This location provider is started immediately and used when modifying the <code>indoorUserTrackingMode</code>.</p>
 			</div>
 			
 		    
@@ -1215,7 +1256,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Unregister any indoor location manager provider that is registered with the map view.</p>
+				<p>Unregister any indoor location manager that is registered with the map view.</p>
 			</div>
 			
 		    
@@ -1314,7 +1355,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Display the specified <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> on the map. If needed, this will change the current floor to the required floor for the instruction.</p>
+				<p>Highlight the specified <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> on the map. If needed, this will change the current floor to the floor of the instruction.</p>
 			</div>
 			
 		    
@@ -1430,7 +1471,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns the current <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> being displayed. If no route is displayed, this method will return <code>nil</code>.</p>
+				<p>Returns the current <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> being highlighted. If no route is displayed, this method will return <code>nil</code>.</p>
 			</div>
 			
 		    
@@ -1476,7 +1517,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Cancel the route displayed in the map view. This method will remove the route from the map view and set the <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> and <code>PWRouteStep</code> properties to <code>nil</code>.</p>
+				<p>Cancel the route displayed in the map view. This method will remove the route from the map view and set the <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> property to <code>nil</code>.</p>
 			</div>
 			
 		    
@@ -1681,7 +1722,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A reference to the dropped pin location. (<b class="deprecated">Deprecated:</b><span class="deprecated"> No longer support, since v3.2.0</span>)</p>
+				<p>A reference to the dropped pin location. (<b class="deprecated">Deprecated:</b><span class="deprecated"> No longer supported since v3.2.0</span>)</p>
 			</div>
 			
 		    
@@ -1737,12 +1778,12 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>centerCoordinate</code></th>
-						<td><p>A CLLocationCoordinate2D object representing the latitude an longitude the map should zoom to.</p></td>
+						<td><p>A CLLocationCoordinate2D object representing the latitude and longitude the map should zoom to.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>zoomLevel</code></th>
-						<td><p>A <code>NSUInteger</code> value representing zoom level the map should zoom to.</p></td>
+						<td><p>An <code>NSUInteger</code> value representing the zoom level the map should zoom to.</p></td>
 					</tr>
 				
 					<tr>
@@ -2251,7 +2292,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-05-08</p>
+						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-05-31</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

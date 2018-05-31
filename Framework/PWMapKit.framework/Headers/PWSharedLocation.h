@@ -19,8 +19,8 @@
  */
 
 /**
-*  The building identifier.
-*/
+ *  The building identifier.
+ */
 @property (nonatomic, strong, readonly) NSNumber *buildingId;
 
 /**

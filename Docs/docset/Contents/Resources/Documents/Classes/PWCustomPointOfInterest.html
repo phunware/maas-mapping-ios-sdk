@@ -135,7 +135,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A PWCustomPointOfInterest represents custom single point-of-interest.</p>
+						<p>A PWCustomPointOfInterest represents a custom point-of-interest.</p>
 					</div>
 					
 					
@@ -162,7 +162,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The point <a href="#//api/name/identifier">identifier</a> as specified by the mapping service.</p>
+				<p>The location of the point-of-interest.</p>
 			</div>
 			
 		    
@@ -244,7 +244,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The <a href="#//api/name/floor">floor</a> <a href="#//api/name/identifier">identifier</a> for which this point applies.</p>
+				<p>The <a href="#//api/name/identifier">identifier</a> of the <a href="#//api/name/floor">floor</a> this point belongs to.</p>
 			</div>
 			
 		    
@@ -285,7 +285,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The floor for which this point applies.</p>
+				<p>The floor this point belongs to.</p>
 			</div>
 			
 		    
@@ -326,7 +326,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The building <a href="#//api/name/identifier">identifier</a> for which this point applies.</p>
+				<p>The <a href="#//api/name/identifier">identifier</a> of the building this point belongs to.</p>
 			</div>
 			
 		    
@@ -490,7 +490,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A <a href="../Classes/PWPointOfInterestType.html"><code>PWPointOfInterestType</code></a> object that this custom point-of-interest is a member of, a type <a href="#//api/name/image">image</a> icon will automatically be applied if <a href="#//api/name/image"><code>image</code></a> property is not set.</p>
+				<p>A <a href="../Classes/PWPointOfInterestType.html"><code>PWPointOfInterestType</code></a> object that this custom point-of-interest is a member of, a type <a href="#//api/name/image">image</a> icon will automatically be applied if the <a href="#//api/name/image"><code>image</code></a> property is not set.</p>
 			</div>
 			
 		    
@@ -531,7 +531,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Metadata associated with the custom point-of-interest, using it to pass data as you want.</p>
+				<p>Optional data specified by the developer and associated with the custom point-of-interest.</p>
 			</div>
 			
 		    
@@ -572,7 +572,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A flag indicating whether it&rsquo;s to display or hide the label text.</p>
+				<p>A flag indicating whether the label text should be shown or hidden.</p>
 			</div>
 			
 		    
@@ -613,7 +613,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A flag indicating whether it&rsquo;s an accessible point.</p>
+				<p>A flag indicating if it&rsquo;s an accessible point.</p>
 			</div>
 			
 		    
@@ -654,7 +654,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A flag indicating whether the point is friendly to the visually-impaired.</p>
+				<p>A flag indicating if the point is friendly to the visually-impaired.</p>
 			</div>
 			
 		    
@@ -695,7 +695,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A flag indicating whether it&rsquo;s an exit point.</p>
+				<p>A flag indicating if it&rsquo;s an exit point.</p>
 			</div>
 			
 		    
@@ -860,22 +860,22 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>floorId</code></th>
-						<td><p>The <a href="#//api/name/floor">floor</a> <a href="#//api/name/identifier">identifier</a> the custom point-of-interest on.</p></td>
+						<td><p>The <a href="#//api/name/identifier">identifier</a> of the <a href="#//api/name/floor">floor</a> the custom point-of-interest is on.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>buildingId</code></th>
-						<td><p>The building <a href="#//api/name/identifier">identifier</a> the custom point-of-interest in.</p></td>
+						<td><p>The <a href="#//api/name/identifier">identifier</a> of the building the custom point-of-interest is in.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>title</code></th>
-						<td><p>The <a href="#//api/name/title">title</a> of custom point-of-interest.</p></td>
+						<td><p>The <a href="#//api/name/title">title</a> of the custom point-of-interest.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>image</code></th>
-						<td><p>The icon of custom point-of-interest.</p></td>
+						<td><p>The icon of the custom point-of-interest.</p></td>
 					</tr>
 				
 				</table>
@@ -921,7 +921,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-05-08</p>
+						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-05-31</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

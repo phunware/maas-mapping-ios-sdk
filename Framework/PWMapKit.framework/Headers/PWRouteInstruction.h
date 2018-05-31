@@ -66,12 +66,12 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 @property (readonly, nonatomic, weak) PWRoute *route;
 
 /**
- * The total distance of the route expressed in meters.
+ * The total distance of the instruction expressed in meters.
  */
 @property (readonly, nonatomic) CLLocationDistance distance;
 
 /**
- * The sequence of points represented by this maneuver.
+ * The sequence of points represented by this instruction.
  */
 @property (readonly, nonatomic) NSArray /* PWMapPoint */ *points;
 
@@ -81,19 +81,19 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 @property (readonly, nonatomic) MKPolyline *polyline;
 
 /**
- A flag check if it's last route instruction in the associated route.
+ A flag indicating if it's the last route instruction in the associated route.
  */
 @property (nonatomic, readonly, getter=isLast) BOOL last;
 
 # pragma mark - Current Instruction Properties
 
 /**
- * The text of representing the movement instruction for the current instruction instance.
+ * The text representing the movement instruction for the current instruction instance.
  */
 @property (readonly, nonatomic) NSString *movement;
 
 /**
- * The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.
+ * The direction of the movement for the current instruction instance. Possible values are defined on the `PWRouteInstructionDirection` ENUM constant.
  */
 @property (readonly, nonatomic) PWRouteInstructionDirection movementDirection;
 
@@ -105,14 +105,12 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 # pragma mark - Turn(to Next) Instruction Properties
 
 /**
- * A NSString object representing the turn instruction for the current instruction instance.
- * @discussion Replace with `movement`.
+ * An NSString object representing the turn instruction for the current instruction instance.
  */
 @property (readonly, nonatomic) NSString *turn;
 
 /**
- * A NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.
- * @discussion Replace with `movementDirection`.
+ * An NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the `PWRouteInstructionDirection` ENUM constant.
  */
 @property (readonly, nonatomic) PWRouteInstructionDirection turnDirection;
 

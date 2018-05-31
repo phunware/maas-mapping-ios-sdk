@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWPointOfInterest</TokenIdentifier>
-			<Abstract type="html">The building annotation object is a convenience class that implements the PWPointOfInterest protocol. This class it primarily for internal use and not exposed in the SDK.</Abstract>
+			<Abstract type="html">This class represents a point-of-interest defined on the MaaS portal and contains data associated with that point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
             
 			
@@ -14,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setSummary:</TokenIdentifier>
-			<Abstract type="html">A summary description of the point-of-interest.</Abstract>
+			<Abstract type="html">A description of the point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *summary</Declaration>
@@ -26,7 +26,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/summary</TokenIdentifier>
-			<Abstract type="html">A summary description of the point-of-interest.</Abstract>
+			<Abstract type="html">A description of the point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *summary</Declaration>
@@ -38,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/summary</TokenIdentifier>
-			<Abstract type="html">A summary description of the point-of-interest.</Abstract>
+			<Abstract type="html">A description of the point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *summary</Declaration>
@@ -50,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setFloor:</TokenIdentifier>
-			<Abstract type="html">The PWFloor object that the point-of-interest is a member of.</Abstract>
+			<Abstract type="html">The PWFloor object that the point-of-interest belongs to.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
@@ -62,7 +62,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/floor</TokenIdentifier>
-			<Abstract type="html">The PWFloor object that the point-of-interest is a member of.</Abstract>
+			<Abstract type="html">The PWFloor object that the point-of-interest belongs to.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
@@ -74,7 +74,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/floor</TokenIdentifier>
-			<Abstract type="html">The PWFloor object that the point-of-interest is a member of.</Abstract>
+			<Abstract type="html">The PWFloor object that the point-of-interest belongs to.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
@@ -338,7 +338,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setTitle:</TokenIdentifier>
-			<Abstract type="html">The title of the Point of Interest.</Abstract>
+			<Abstract type="html">The title of the point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readwrite) NSString *title</Declaration>
@@ -350,7 +350,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/title</TokenIdentifier>
-			<Abstract type="html">The title of the Point of Interest.</Abstract>
+			<Abstract type="html">The title of the point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readwrite) NSString *title</Declaration>
@@ -362,7 +362,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/title</TokenIdentifier>
-			<Abstract type="html">The title of the Point of Interest.</Abstract>
+			<Abstract type="html">The title of the point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readwrite) NSString *title</Declaration>
@@ -374,7 +374,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setSubtitle:</TokenIdentifier>
-			<Abstract type="html">The subtitle of the Point of Interest.</Abstract>
+			<Abstract type="html">The subtitle of the point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readwrite) NSString *subtitle</Declaration>
@@ -386,7 +386,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/subtitle</TokenIdentifier>
-			<Abstract type="html">The subtitle of the Point of Interest.</Abstract>
+			<Abstract type="html">The subtitle of the point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readwrite) NSString *subtitle</Declaration>
@@ -398,7 +398,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/subtitle</TokenIdentifier>
-			<Abstract type="html">The subtitle of the Point of Interest.</Abstract>
+			<Abstract type="html">The subtitle of the point-of-interest.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readwrite) NSString *subtitle</Declaration>

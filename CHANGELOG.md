@@ -1,4 +1,11 @@
 # PWMapKit Changelog
+## 3.4.1 (Thursday, May 31st, 2018)
+#### Features
+* Update to PWLocation 3.4.1
+
+#### Bug fixes / performance enhancements
+* Zoom in closer to building
+
 ## 3.4.0 (Tuesday, May 8th, 2018)
 #### Features
 * Update to PWLocation 3.4.0 which removes prompting for location permissions

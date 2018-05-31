@@ -7,7 +7,7 @@ This release bumps the version of PWLocation which no longer prompts for locatio
 
 ##### Upgrade Steps
 
-1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.3.x'`, then run `pod update` in the Terminal to update the framework. This will take in the latest version of PWLocation 3.3.x with latest version of PWCore 3.3.x.
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.3.x'`, then run `pod update` in the Terminal to update the framework. This will take in the latest version of PWLocation 3.3.x with latest version of PWCore 3.6.x.
 
 2. Please follow [Apple's Best Practices](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services) for requesting location permissions.
 

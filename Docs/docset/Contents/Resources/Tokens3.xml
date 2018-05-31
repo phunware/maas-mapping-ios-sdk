@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWBuildingAnnotationView</TokenIdentifier>
-			<Abstract type="html">The PWAnnotationView class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled with a corresponding building annotation object that conforms to the PWPointOfInterest protocol. When an annotation’s coordinate is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.</Abstract>
+			<Abstract type="html">The PWBuildingAnnotationView class is responsible for presenting visual building annotations in a map view. Annotation views are loosely coupled with a corresponding building annotation object that conforms to the PWMapPoint protocol. When an annotation’s coordinate is in the visible region, the map view asks its delegate to provide a corresponding annotation view. Annotation views may be recycled later and put into a reuse queue maintained by the map view.</Abstract>
 			<DeclaredIn>PWBuildingAnnotationView.h</DeclaredIn>
             
 			
