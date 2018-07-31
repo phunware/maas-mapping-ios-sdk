@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Phunware, Inc.' => 'http://www.phunware.com' }
   s.social_media_url = 'https://twitter.com/Phunware'
 
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '10.0'
   s.source       = { :git => "https://github.com/phunware/maas-mapping-ios-sdk.git", :tag => "v3.5.0" }
   s.license      = { :type => 'Copyright', :text => 'Copyright 2015 by Phunware Inc. All rights reserved.' }
 
