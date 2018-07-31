@@ -161,7 +161,7 @@
 			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *routeInstructions</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</Declaration>
 			
 			
 			<Anchor>//api/name/routeInstructions</Anchor>
@@ -173,7 +173,7 @@
 			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *routeInstructions</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</Declaration>
 			
 			
 			<Anchor>//api/name/routeInstructions</Anchor>
@@ -185,7 +185,7 @@
 			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *routeInstructions</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</Declaration>
 			
 			
 			<Anchor>//api/name/routeInstructions</Anchor>

@@ -125,7 +125,7 @@
 			<Abstract type="html">An array of PWPointOfInterest objects that are contained in the building.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *pois</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWPointOfInterest*&gt; *pois</Declaration>
 			
 			
 			<Anchor>//api/name/pois</Anchor>
@@ -137,7 +137,7 @@
 			<Abstract type="html">An array of PWPointOfInterest objects that are contained in the building.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *pois</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWPointOfInterest*&gt; *pois</Declaration>
 			
 			
 			<Anchor>//api/name/pois</Anchor>
@@ -149,7 +149,7 @@
 			<Abstract type="html">An array of PWPointOfInterest objects that are contained in the building.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *pois</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWPointOfInterest*&gt; *pois</Declaration>
 			
 			
 			<Anchor>//api/name/pois</Anchor>
@@ -161,7 +161,7 @@
 			<Abstract type="html">An array of PWPointOfInterestType objects that are used in MaaS Portal.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *pointOfInterestTypes</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWPointOfInterestType*&gt; *pointOfInterestTypes</Declaration>
 			
 			
 			<Anchor>//api/name/pointOfInterestTypes</Anchor>
@@ -173,7 +173,7 @@
 			<Abstract type="html">An array of PWPointOfInterestType objects that are used in MaaS Portal.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *pointOfInterestTypes</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWPointOfInterestType*&gt; *pointOfInterestTypes</Declaration>
 			
 			
 			<Anchor>//api/name/pointOfInterestTypes</Anchor>
@@ -185,7 +185,7 @@
 			<Abstract type="html">An array of PWPointOfInterestType objects that are used in MaaS Portal.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *pointOfInterestTypes</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWPointOfInterestType*&gt; *pointOfInterestTypes</Declaration>
 			
 			
 			<Anchor>//api/name/pointOfInterestTypes</Anchor>

@@ -7,8 +7,9 @@
 
 #import <CoreLocation/CLLocation.h>
 
-@class PWPointOfInterestType;
 @class PWBuilding;
+@class PWPointOfInterest;
+@class PWPointOfInterestType;
 
 /**
  * The building floor object encapsulates all data related to a floor.
@@ -38,7 +39,7 @@
 /**
  *  An array of `PWPointOfInterest` objects that belong to the floor.
  */
-@property (readonly) NSArray *pointsOfInterest;
+@property (readonly) NSArray<PWPointOfInterest *> *pointsOfInterest;
 
 /**
  *  The top-left coordinate (latitude and longitude) of the floor.
@@ -60,9 +61,9 @@
 /**
  *  Returns an array containing the floor's points of interest of the specified point-of-interest type.
  *  @param type A `PWPointOfInterestType`.
- *  @return Returns `NSArray` containing a list of `PWPointOfInterestType` objects for the given type.
+ *  @return Returns `NSArray` containing a list of `PWPointOfInterest` objects for the given type.
  */
-- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type;
+- (NSArray<PWPointOfInterest *> *)pointsOfInterestOfType:(PWPointOfInterestType *)type;
 
 /**
  *  Returns an array containing the floor's points of interest of the specified point-of-interest type and whose name or description contains the supplied text.
@@ -70,6 +71,6 @@
  *  @param containingText A `NSString` substring of text to search for in the name and description.
  *  @return Returns `NSArray` containing a list of `PWPointOfInterest` objects for the given type and whose name or description contains the supplied text.
  */
-- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText;
+- (NSArray<PWPointOfInterest *> *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText;
 
 @end

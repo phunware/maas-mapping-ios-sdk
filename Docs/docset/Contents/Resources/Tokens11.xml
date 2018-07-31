@@ -89,7 +89,7 @@
 			<Abstract type="html">The sequence of points represented by this instruction.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, nonatomic) NSArray *points</Declaration>
+			<Declaration>@property (readonly, nonatomic) NSArray&lt;id&lt;PWMapPoint&gt; &gt; *points</Declaration>
 			
 			
 			<Anchor>//api/name/points</Anchor>
@@ -101,7 +101,7 @@
 			<Abstract type="html">The sequence of points represented by this instruction.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, nonatomic) NSArray *points</Declaration>
+			<Declaration>@property (readonly, nonatomic) NSArray&lt;id&lt;PWMapPoint&gt; &gt; *points</Declaration>
 			
 			
 			<Anchor>//api/name/points</Anchor>
@@ -113,7 +113,7 @@
 			<Abstract type="html">The sequence of points represented by this instruction.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, nonatomic) NSArray *points</Declaration>
+			<Declaration>@property (readonly, nonatomic) NSArray&lt;id&lt;PWMapPoint&gt; &gt; *points</Declaration>
 			
 			
 			<Anchor>//api/name/points</Anchor>

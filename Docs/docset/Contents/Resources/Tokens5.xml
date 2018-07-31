@@ -125,7 +125,7 @@
 			<Abstract type="html">The floor this point belongs to.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, nullable) PWFloor *floor</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable, weak) PWFloor *floor</Declaration>
 			
 			
 			<Anchor>//api/name/floor</Anchor>
@@ -137,7 +137,7 @@
 			<Abstract type="html">The floor this point belongs to.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, nullable) PWFloor *floor</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable, weak) PWFloor *floor</Declaration>
 			
 			
 			<Anchor>//api/name/floor</Anchor>
@@ -149,7 +149,7 @@
 			<Abstract type="html">The floor this point belongs to.</Abstract>
 			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, nullable) PWFloor *floor</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable, weak) PWFloor *floor</Declaration>
 			
 			
 			<Anchor>//api/name/floor</Anchor>
@@ -621,6 +621,32 @@
 			
 			
 			<Anchor>//api/name/maxZoomLevel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWCustomPointOfInterest/initWithCoordinate:floor:title:image:</TokenIdentifier>
+			<Abstract type="html">Instantiates a PWCustomPointOfInterest object with the given parameters.</Abstract>
+			<DeclaredIn>PWCustomPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>- (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate floor:(PWFloor *)floor title:(NSString *__nullable)title image:(UIImage *__nullable)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>coordinate</Name>
+					<Abstract type="html">The coordinate of custom point-of-interest.</Abstract>
+				</Parameter><Parameter>
+					<Name>floor</Name>
+					<Abstract type="html">The floor the custom point-of-interest is on.</Abstract>
+				</Parameter><Parameter>
+					<Name>title</Name>
+					<Abstract type="html">The title of the custom point-of-interest.</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The icon of the custom point-of-interest.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a PWCustomPointOfInterest object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCoordinate:floor:title:image:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

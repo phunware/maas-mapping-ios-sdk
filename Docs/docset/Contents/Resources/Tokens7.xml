@@ -625,6 +625,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setDisplayWaypointDotsOnRouteLine:</TokenIdentifier>
+			<Abstract type="html">Determines whether or not the waypoints are displaying as dots on route lines. This feature is turned off by default.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine</Declaration>
+			
+			
+			<Anchor>//api/name/displayWaypointDotsOnRouteLine</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/displayWaypointDotsOnRouteLine</TokenIdentifier>
+			<Abstract type="html">Determines whether or not the waypoints are displaying as dots on route lines. This feature is turned off by default.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine</Declaration>
+			
+			
+			<Anchor>//api/name/displayWaypointDotsOnRouteLine</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/displayWaypointDotsOnRouteLine</TokenIdentifier>
+			<Abstract type="html">Determines whether or not the waypoints are displaying as dots on route lines. This feature is turned off by default.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine</Declaration>
+			
+			
+			<Anchor>//api/name/displayWaypointDotsOnRouteLine</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setDisplayDebugLocationDots:</TokenIdentifier>
 			<Abstract type="html">For internal use only.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>

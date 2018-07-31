@@ -161,7 +161,7 @@
 			<Abstract type="html">An array of PWPointOfInterest objects that belong to the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *pointsOfInterest</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWPointOfInterest*&gt; *pointsOfInterest</Declaration>
 			
 			
 			<Anchor>//api/name/pointsOfInterest</Anchor>
@@ -173,7 +173,7 @@
 			<Abstract type="html">An array of PWPointOfInterest objects that belong to the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *pointsOfInterest</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWPointOfInterest*&gt; *pointsOfInterest</Declaration>
 			
 			
 			<Anchor>//api/name/pointsOfInterest</Anchor>
@@ -185,7 +185,7 @@
 			<Abstract type="html">An array of PWPointOfInterest objects that belong to the floor.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *pointsOfInterest</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWPointOfInterest*&gt; *pointsOfInterest</Declaration>
 			
 			
 			<Anchor>//api/name/pointsOfInterest</Anchor>
@@ -286,14 +286,14 @@
 			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point-of-interest type.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type</Declaration>
+			<Declaration>- (NSArray&lt;PWPointOfInterest*&gt; *)pointsOfInterestOfType:(PWPointOfInterestType *)type</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>type</Name>
 					<Abstract type="html">A PWPointOfInterestType.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterestType objects for the given type.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">Returns NSArray containing a list of PWPointOfInterest objects for the given type.</Abstract></ReturnValue>
 			<Anchor>//api/name/pointsOfInterestOfType:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
@@ -303,7 +303,7 @@
 			<Abstract type="html">Returns an array containing the floor&apos;s points of interest of the specified point-of-interest type and whose name or description contains the supplied text.</Abstract>
 			<DeclaredIn>PWFloor.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText</Declaration>
+			<Declaration>- (NSArray&lt;PWPointOfInterest*&gt; *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>type</Name>

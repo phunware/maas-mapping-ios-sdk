@@ -191,7 +191,7 @@
 			<Abstract type="html">Tells the delegate that the indoor location of the user was updated.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>- (void)mapView:(PWMapView *)mapView locationManager:(id&lt;PWLocationManager&gt;)locationManager didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation</Declaration>
+			<Declaration>- (void)mapView:(PWMapView *)mapView locationManager:(id&lt;PWLocationManager&gt;)locationManager didUpdateIndoorUserLocation:(PWUserLocation *)userLocation</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>mapView</Name>

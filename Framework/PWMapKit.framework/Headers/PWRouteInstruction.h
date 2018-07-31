@@ -10,6 +10,7 @@
 
 @class PWRoute;
 @class PWPointOfInterest;
+@protocol PWMapPoint;
 
 static NSString *const kPWRouteInstructionDirectionSharpLeft = @"PWRouteInstructionDirectionSharpLeft";
 static NSString *const kPWRouteInstructionDirectionSharpRight = @"PWRouteInstructionDirectionSharpRight";
@@ -73,7 +74,7 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 /**
  * The sequence of points represented by this instruction.
  */
-@property (readonly, nonatomic) NSArray /* PWMapPoint */ *points;
+@property (readonly, nonatomic) NSArray<id<PWMapPoint>> *points;
 
 /**
  Polyline representing the sequence of points to be drawn for this instruction.

@@ -48,7 +48,7 @@
 /**
  * An array of `PWRouteInstruction` objects containing instructions to follow the route path.
  */
-@property (nonatomic,readonly) NSArray/* PWRouteInstruction */ *routeInstructions;
+@property (nonatomic,readonly) NSArray<PWRouteInstruction *> *routeInstructions;
 
 /**
  * An integer representing the total distance of the route expressed in meters.

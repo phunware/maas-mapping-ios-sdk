@@ -1,4 +1,15 @@
 # PWMapKit Changelog
+## 3.5.0 (Tuesday, July 31st, 2018)
+#### Features
+* Check for local floor PDF assets in app bundle before reaching out to server
+* Waypoints in route line are now configurable and off by default
+* Updated minimum deployment target to iOS 10
+
+#### Bug fixes / performance enhancements
+* Fix incorrect calculation for containsCoordinate on PWFloor
+* Increase floor change routing weight to match server algorithm
+* Fix for cut off POI names and missing POI names
+
 ## 3.4.1 (Thursday, May 31st, 2018)
 #### Features
 * Update to PWLocation 3.4.1

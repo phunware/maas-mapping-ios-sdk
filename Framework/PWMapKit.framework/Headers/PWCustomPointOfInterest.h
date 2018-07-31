@@ -35,7 +35,7 @@
 /**
  The floor this point belongs to.
  */
-@property (nonatomic, nullable) PWFloor *floor;
+@property (nonatomic, readonly, nullable, weak) PWFloor *floor;
 
 /**
  The identifier of the building this point belongs to.
@@ -117,6 +117,21 @@
  *  Instantiates a `PWCustomPointOfInterest` object with the given parameters.
  *
  *  @param coordinate The coordinate of custom point-of-interest.
+ *  @param floor The floor the custom point-of-interest is on.
+ *  @param title The title of the custom point-of-interest.
+ *  @param image The icon of the custom point-of-interest.
+ *
+ *  @return Returns a `PWCustomPointOfInterest` object.
+ */
+- (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate
+                                        floor:(PWFloor *)floor
+                                        title:(NSString * __nullable)title
+                                        image:(UIImage * __nullable)image;
+
+/**
+ *  Instantiates a `PWCustomPointOfInterest` object with the given parameters.
+ *
+ *  @param coordinate The coordinate of custom point-of-interest.
  *  @param floorId The identifier of the floor the custom point-of-interest is on.
  *  @param buildingId The identifier of the building the custom point-of-interest is in.
  *  @param title The title of the custom point-of-interest.
@@ -128,6 +143,6 @@
                            floorId:(NSInteger)floorId
                         buildingId:(NSInteger)buildingId
                              title:(NSString * __nullable)title
-                             image:(UIImage * __nullable)image;
+                             image:(UIImage * __nullable)image __deprecated;
 
 @end

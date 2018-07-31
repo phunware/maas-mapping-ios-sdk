@@ -10,6 +10,7 @@
 @protocol PWMapPoint;
 @class PWFloor;
 @class PWPointOfInterest;
+@class PWPointOfInterestType;
 
 /**
  The building object encompasses a wide variety of information associated with the building. Information includes but is not limited to: floor data, floor resource data, street address and location.
@@ -34,12 +35,12 @@
 /**
  *  An array of `PWPointOfInterest` objects that are contained in the building.
  */
-@property (readonly) NSArray *pois;
+@property (readonly) NSArray<PWPointOfInterest *> *pois;
 
 /**
  *  An array of `PWPointOfInterestType` objects that are used in MaaS Portal.
  */
-@property (readonly) NSArray *pointOfInterestTypes;
+@property (readonly) NSArray<PWPointOfInterestType *> *pointOfInterestTypes;
 
 /**
  *  The center coordinate of the building.
