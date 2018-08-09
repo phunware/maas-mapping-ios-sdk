@@ -135,7 +135,7 @@ class AroundMeViewController: UIViewController, SegmentedViewController, POISear
     }
 	
 	func filterMapPOIByType(poiType: PWPointOfInterestType?) {
-		guard let pointsOfInterest = mapView?.currentFloor.pointsOfInterest as? [PWPointOfInterest] else {
+		guard let pointsOfInterest = mapView?.currentFloor.pointsOfInterest else {
 			return
 		}
 		
@@ -162,14 +162,12 @@ class AroundMeViewController: UIViewController, SegmentedViewController, POISear
         for floor in floors {
             if floor.floorID == lastLocation.floorID {
                 for poi in floor.pointsOfInterest(of: filteredPOIType, containing: keyword) {
-                    if let poi = poi as? PWPointOfInterest {
-                        let poiLocation = CLLocation(latitude: poi.coordinate.latitude, longitude: poi.coordinate.longitude)
-                        let distanceInMeters = userLocation.distance(from: poiLocation)
-                        let distanceInFeet = CommonSettings.feetFromMeters(distanceInMeters)
-                        
-                        if distanceInFeet < filterRadius.doubleValue {
-                            pois.append(poi)
-                        }
+                    let poiLocation = CLLocation(latitude: poi.coordinate.latitude, longitude: poi.coordinate.longitude)
+                    let distanceInMeters = userLocation.distance(from: poiLocation)
+                    let distanceInFeet = CommonSettings.feetFromMeters(distanceInMeters)
+                    
+                    if distanceInFeet < filterRadius.doubleValue {
+                        pois.append(poi)
                     }
                 }
             }
@@ -240,7 +238,7 @@ extension AroundMeViewController: UITableViewDelegate {
 
 extension AroundMeViewController {
     
-	func updateLocation(notification: NSNotification) {
+	@objc func updateLocation(notification: NSNotification) {
 		if let userlocation = notification.object as? PWIndoorLocation {
 			if lastLocation == nil || abs(lastLocation.timestamp.timeIntervalSinceNow) > 2 {
 				lastLocation = userlocation
@@ -258,11 +256,11 @@ extension AroundMeViewController {
 		toolbar.setItems([categorySelectBarButton, toolbar.flexibleBarSpace, distanceFilterBarButton], animated: true)
 	}
 	
-	func changeCategory() {
+	@objc func changeCategory() {
 		performSegue(withIdentifier: mapPOITypeSelectionSegue, sender: self)
 	}
 
-	func changeFilter() {
+	@objc func changeFilter() {
 		let alertController = CommonSettings.buildActionSheetWithItems(CommonSettingsConstants.Distance.filterDistances as [AnyObject], displayProperty: nil, selectedItem:filterRadius, title:NSLocalizedString("Change Distance", comment:"SheetTitleForDistance"), actionNameFormat:NSLocalizedString("%@ feet", comment:"") , topAction: nil) { [weak self] (selection) in
             if let distance = selection as? Int {
                 self?.filterRadius = NSNumber(integerLiteral: distance)

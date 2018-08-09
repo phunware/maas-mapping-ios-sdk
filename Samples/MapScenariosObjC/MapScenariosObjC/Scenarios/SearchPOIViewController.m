@@ -8,7 +8,6 @@
 
 #import <PWMapKit/PWMapKit.h>
 #import <PWCore/PWCore.h>
-#import <SDWebImage/UIImageView+WebCache.h>
 
 #import "SearchPOIViewController.h"
 
@@ -163,7 +162,7 @@ static NSString * const poiCellReuseIdentifier = @"POICell";
     [poiCell configureSubviews];
     
     PWPointOfInterest *pointOfInterest = self.filteredPointsOfInterest[indexPath.row];
-    [poiCell.poiImageView sd_setImageWithURL:pointOfInterest.imageURL];
+    poiCell.poiImageView.image = pointOfInterest.image;
     poiCell.titleLabel.text = pointOfInterest.title;
     
     return poiCell;

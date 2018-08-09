@@ -142,7 +142,7 @@ extension DirectoryViewController {
         toolbar.setItems([categorySelectBarButton], animated: true)
     }
     
-    func changeCategory() {
+    @objc func changeCategory() {
         performSegue(withIdentifier: mapPOITypeSelectionSegue, sender: self)
     }
 }

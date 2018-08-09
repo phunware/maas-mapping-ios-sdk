@@ -137,7 +137,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func switchSegment(segmentedControl: UISegmentedControl, animated: Bool = true) {
+    @objc func switchSegment(segmentedControl: UISegmentedControl, animated: Bool = true) {
         currentSegmentedController?.segmentedViewWillDisappear()
         
         switch currentSegments[segmentedControl.selectedSegmentIndex] {
@@ -196,7 +196,7 @@ class BaseViewController: UIViewController {
         })
     }
     
-    func cancelButtonTapped() {
+    @objc func cancelButtonTapped() {
         if routingMode() {
             mapViewController.cancelRoute()
             
@@ -219,7 +219,7 @@ class BaseViewController: UIViewController {
         setDefaultMapSearchState()
     }
     
-    func navigationButtonTapped() {
+    @objc func navigationButtonTapped() {
         performSegue(withIdentifier: routeSegueIdentifier, sender: self)
     }
     
@@ -235,7 +235,7 @@ class BaseViewController: UIViewController {
         searchTextField.endEditing(true)
     }
     
-    func startRoutingMode(notification: Notification) {
+    @objc func startRoutingMode(notification: Notification) {
         if let route = notification.object as? PWRoute {
             listViewController.route = route
         }
@@ -348,13 +348,13 @@ extension BaseViewController: UITextFieldDelegate {
 
 extension BaseViewController {
     
-    func keyboardWillHide() {
+    @objc func keyboardWillHide() {
         directoryViewController.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         aroundMeViewController.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         mapViewController.mapDirectoryViewController.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
-    func keyboardWillShow(notification: Notification) {
+    @objc func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let insets = UIEdgeInsetsMake(0, 0, keyboardSize.size.height - toolbar.frame.height, 0)
             directoryViewController.tableView.contentInset = insets

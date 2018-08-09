@@ -55,7 +55,7 @@ class POIDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         if let pointOfInterest = pointOfInterest {
             title = pointOfInterest.title
         }
@@ -65,12 +65,12 @@ class POIDetailsViewController: UIViewController {
         super.viewDidDisappear(animated)
     }
     
-    func getDirectionsPressed(sender: UIButton) {
+    @objc func getDirectionsPressed(sender: UIButton) {
         guard let userLocation = userLocation, let pointOfInterest = pointOfInterest else {
             return
         }
         
-        PWRoute.createRoute(from: userLocation, to: pointOfInterest, accessibility: true, excludedPoints: nil) { [weak self] (route, error) in
+        PWRoute.createRoute(from: userLocation, to: pointOfInterest, accessibility: false, excludedPoints: nil) { [weak self] (route, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return

@@ -116,7 +116,7 @@ extension PreRoutingViewController {
         segmentedControl.selectedSegmentIndex = 0
     }
     
-    func segmentedControlChanged(_ sender: UISegmentedControl) {
+    @objc func segmentedControlChanged(_ sender: UISegmentedControl) {
         configureRowMapping(selectedSegment: segmentsList[segmentedControl.selectedSegmentIndex])
         tableView.reloadData()
     }
@@ -173,7 +173,7 @@ extension PreRoutingViewController: UITableViewDataSource {
             }
         case .instruction:
             if let instructionCell = tableView.dequeueReusableCell(withIdentifier: String(describing: PreRouteInstructionCell.self), for: indexPath) as? PreRouteInstructionCell {
-                if let indexOffset = rowMapping.index(of: .instruction), let instruction = route?.routeInstructions[indexPath.row-indexOffset]as? PWRouteInstruction {
+                if let indexOffset = rowMapping.index(of: .instruction), let instruction = route?.routeInstructions[indexPath.row - indexOffset] {
                     instructionCell.configure(forInstruction: instruction)
                 }
                 cell = instructionCell
@@ -195,13 +195,13 @@ extension PreRoutingViewController: UITableViewDataSource {
 
 extension PreRoutingViewController {
     
-    func showAllInstructions(sender: UIButton) {
+    @objc func showAllInstructions(sender: UIButton) {
         showAllInstructions = true
         configureRowMapping(selectedSegment: segmentsList[segmentedControl.selectedSegmentIndex])
         tableView.reloadData()
     }
     
-    func startNavigation(sender: UIButton) {
+    @objc func startNavigation(sender: UIButton) {
         segmentedControl.isHidden = true
         navigationController?.popToRootViewController(animated: true)
         

@@ -13,8 +13,8 @@ extension PWBuilding {
     func allPOIs() -> [PWPointOfInterest] {
         var allPOIs = [PWPointOfInterest]()
         for floor in floors {
-            if let floor = floor as? PWFloor, let pointsOfInterest = floor.pointsOfInterest as? [PWPointOfInterest] {
-                allPOIs.append(contentsOf: pointsOfInterest)
+            if let floor = floor as? PWFloor {
+                allPOIs.append(contentsOf: floor.pointsOfInterest)
             }
         }
         return allPOIs

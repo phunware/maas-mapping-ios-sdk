@@ -61,9 +61,9 @@ class RouteSummaryCell: UITableViewCell {
     }
     
     func formattedString(keys keyArray: [String], values valueArray: [String]) -> NSAttributedString {
-        let keyTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont.systemFont(ofSize: 18.0)]
-        let valueTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont.boldSystemFont(ofSize: 18.0)]
-        let newlineAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont.systemFont(ofSize: 14.0)]
+        let keyTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 18.0)]
+        let valueTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white,NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 18.0)]
+        let newlineAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14.0)]
         let newlineAttributedString = NSAttributedString(string: "\n", attributes: newlineAttributes)
         
         let formattedString = NSMutableAttributedString()

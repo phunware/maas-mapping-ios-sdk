@@ -27,12 +27,12 @@ class POITypeSelectionViewController: UIViewController {
         
         navigationController?.navigationBar.barTintColor = CommonSettings.navigationBarBackgroundColor
         navigationController?.navigationBar.tintColor = CommonSettings.navigationBarForegroundColor
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : CommonSettings.viewForegroundColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : CommonSettings.viewForegroundColor]
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(close(barButtonItem:)))
     }
     
-    func close(barButtonItem: UIBarButtonItem) {
+    @objc func close(barButtonItem: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     

@@ -38,7 +38,7 @@ extension POISearchable {
         
         var pois = [PWPointOfInterest]()
         for floor in floors {
-            if let floorPOIs = floor.pointsOfInterest(of: poiType, containing: keyword) as? [PWPointOfInterest] {
+            if let floorPOIs = floor.pointsOfInterest(of: poiType, containing: keyword) {
                 pois.append(contentsOf: floorPOIs)
             }
         }

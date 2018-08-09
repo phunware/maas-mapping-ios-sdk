@@ -23,12 +23,12 @@ class MapFloorSelectionViewController: UIViewController {
         
         navigationController?.navigationBar.barTintColor = CommonSettings.navigationBarBackgroundColor
         navigationController?.navigationBar.tintColor = CommonSettings.navigationBarForegroundColor
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : CommonSettings.viewForegroundColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : CommonSettings.viewForegroundColor]
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(close(barButtonItem:)))
     }
     
-    func close(barButtonItem: UIBarButtonItem) {
+    @objc func close(barButtonItem: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -57,6 +57,9 @@ extension MapFloorSelectionViewController: UITableViewDelegate {
 extension MapFloorSelectionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard mapView.building != nil else {
+            return 0
+        }
         return mapView.building.floors.count
     }
     

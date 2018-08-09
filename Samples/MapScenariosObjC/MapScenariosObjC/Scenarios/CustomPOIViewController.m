@@ -64,14 +64,10 @@
 - (void)addCustomPointOfInterest {
     // The (lat, long) for the custom point of interest
     CLLocationCoordinate2D poiLocation = CLLocationCoordinate2DMake(30.359931, -97.742507);
-    
-    // The custom point of interest will only show on the floor identifier specified here, or it will display on all floors if set to 0
-    NSInteger poiFloorId = 0;
-    
     NSString *poiTitle = @"Custom POI";
     
     // If the image parameter is nil, it will use the POI icon for any specified `pointOfInterestType`. If no image is set and no `pointOfInterestType` is set, the SDK will use this default icon: https://lbs-prod.s3.amazonaws.com/stock_assets/icons/0_higher.png
-    PWCustomPointOfInterest *customPOI = [[PWCustomPointOfInterest alloc] initWithCoordinate:poiLocation floorId:poiFloorId buildingId:self.buildingIdentifier title:poiTitle image:nil];
+    PWCustomPointOfInterest *customPOI = [[PWCustomPointOfInterest alloc] initWithCoordinate:poiLocation floor:self.mapView.currentFloor title:poiTitle image:nil];
     
     customPOI.showTextLabel = YES;
     

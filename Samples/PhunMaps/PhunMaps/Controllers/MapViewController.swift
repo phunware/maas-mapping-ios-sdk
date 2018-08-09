@@ -112,15 +112,17 @@ class MapViewController: UIViewController, SegmentedViewController {
         let buildingId = ConfigurationManager.shared.currentConfiguration.buildingId
         
         PWBuilding.building(withIdentifier: buildingId!) { [weak self] (building, error) in
-            self?.loadingView.removeFromSuperview()
-            guard let building = building, error == nil else {
-                print(error!.localizedDescription)
-                return
+            DispatchQueue.main.async {
+                self?.loadingView.removeFromSuperview()
+                guard let building = building, error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                self?.configurationManager.currentConfiguration.loadedBuilding = building
+                self?.mapView.setBuilding(building, animated: false, onCompletion: { (error) in
+                    self?.startManagedLocationManager()
+                })
             }
-            self?.configurationManager.currentConfiguration.loadedBuilding = building
-            self?.mapView.setBuilding(building, animated: false, onCompletion: { (error) in
-                self?.startManagedLocationManager()
-            })
         }
     }
     
@@ -160,7 +162,7 @@ class MapViewController: UIViewController, SegmentedViewController {
     }
     
     func filterMapPOIByType(poiType: PWPointOfInterestType?) {
-        guard let pointsOfInterest = mapView.currentFloor.pointsOfInterest as? [PWPointOfInterest] else {
+        guard let pointsOfInterest = mapView.currentFloor.pointsOfInterest else {
             return
         }
         
@@ -180,8 +182,8 @@ class MapViewController: UIViewController, SegmentedViewController {
 
 extension MapViewController: PWMapViewDelegate {
     
-    func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWIndoorLocation!) {
-         NotificationCenter.default.post(name: .updateIndoorLocation, object: userLocation)
+    func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
+        NotificationCenter.default.post(name: .updateIndoorLocation, object: userLocation)
         if !firstLocationAcquired {
             firstLocationAcquired = true
             mapView.trackingMode = .follow
@@ -226,7 +228,7 @@ extension MapViewController: RouteInstructionViewControllerDelegate {
 
 extension MapViewController {
     
-    func startRoute(notification: Notification) {
+    @objc func startRoute(notification: Notification) {
         if let route = notification.object as? PWRoute {
             mapView.navigate(with: route)
             mapView.trackingMode = .followWithHeading
@@ -251,15 +253,15 @@ extension MapViewController {
         mapDirectoryViewController.toolbar = toolbar
     }
     
-    func changeFloor() {
+    @objc func changeFloor() {
         performSegue(withIdentifier: mapFloorSelectionSegue, sender: self)
     }
     
-    func changeCategory() {
+    @objc func changeCategory() {
         performSegue(withIdentifier: mapPOITypeSelectionSegue, sender: self)
     }
     
-    func changeTrackingMode() {
+    @objc func changeTrackingMode() {
         switch mapView.trackingMode {
         case .none:
             mapView.trackingMode = .follow

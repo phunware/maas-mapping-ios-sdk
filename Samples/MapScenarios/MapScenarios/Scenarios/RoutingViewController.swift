@@ -75,7 +75,7 @@ class RoutingViewController: UIViewController {
 
 extension RoutingViewController: PWMapViewDelegate {
     
-    func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWIndoorLocation!) {
+    func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         if !firstLocationAcquired {
             firstLocationAcquired = true
             mapView.trackingMode = .follow
@@ -85,14 +85,10 @@ extension RoutingViewController: PWMapViewDelegate {
             var destinationPOI: PWPointOfInterest!
             if destinationPOIIdentifier != 0 {
                 destinationPOI = mapView.building.pois.filter({
-                    if let poi = $0 as? PWPointOfInterest {
-                        return poi.identifier == destinationPOIIdentifier
-                    } else {
-                        return false
-                    }
-                }).first as? PWPointOfInterest
+                    return $0.identifier == destinationPOIIdentifier
+                }).first
             } else {
-                if let firstPOI = mapView.building.pois.first as? PWPointOfInterest {
+                if let firstPOI = mapView.building.pois.first {
                     destinationPOI = firstPOI
                 }
             }

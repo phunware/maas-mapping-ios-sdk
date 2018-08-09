@@ -53,14 +53,10 @@ class CustomPOIViewController: UIViewController {
     
     func addCustomPointOfInterest() {
         let poiLocation = CLLocationCoordinate2DMake(30.359931, -97.742507)
-        
-        // The custom point of interest will only show on the floor identifier specified here, or it will display on all floors if set to 0
-        let poiFloorId = 0
-        
         let poiTitle = "Custom POI"
         
         // If the image parameter is nil, it will use the POI icon for any specified `pointOfInterestType`. If no image is set and no `pointOfInterestType` is set, the SDK will use this default icon: https://lbs-prod.s3.amazonaws.com/stock_assets/icons/0_higher.png
-        let customPOI = PWCustomPointOfInterest(coordinate: poiLocation, floorId: poiFloorId, buildingId: buildingIdentifier, title: poiTitle, image: nil)
+        let customPOI = PWCustomPointOfInterest(coordinate: poiLocation, floor: mapView.currentFloor, title: poiTitle, image: nil)
         
         customPOI?.isShowTextLabel = true
         
