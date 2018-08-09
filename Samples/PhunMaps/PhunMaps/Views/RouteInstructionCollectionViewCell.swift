@@ -20,14 +20,14 @@ class RouteInstructionCollectionViewCell: UICollectionViewCell {
     
     var routeInstruction: PWRouteInstruction? {
         didSet {
-            guard let routeInstruction = routeInstruction, let routeInstructions = routeInstruction.route.routeInstructions as? [PWRouteInstruction], let indexOfRouteInstruction = routeInstructions.index(of: routeInstruction) else {
+            guard let routeInstruction = routeInstruction, let indexOfRouteInstruction = routeInstruction.route.routeInstructions.index(of: routeInstruction) else {
                 return
             }
             
             movementImage.image = CommonSettings.imageFromDirection(routeInstruction.movementDirection)
             movementLabel.text = routeInstruction.movement
             
-            let routeInstructionCount = routeInstructions.count
+            let routeInstructionCount = routeInstruction.route.routeInstructions.count
             if indexOfRouteInstruction == routeInstructionCount - 1 {
                 nextLabel.text = nil
                 turnImage.image = nil

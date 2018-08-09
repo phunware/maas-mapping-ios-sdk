@@ -229,7 +229,7 @@ class LocationSharingViewController: UIViewController {
 
 extension LocationSharingViewController: PWMapViewDelegate {
     
-    func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWIndoorLocation!) {
+    func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         if !firstLocationAcquired {
             firstLocationAcquired = true
             mapView.trackingMode = .follow

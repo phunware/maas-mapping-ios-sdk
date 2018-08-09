@@ -7,7 +7,6 @@
 
 import UIKit
 import PWMapKit
-import Kingfisher
 
 let POICellIdentifier = "POICellIdentifier"
 
@@ -26,10 +25,7 @@ class POITableViewCell: UITableViewCell {
     }
 	
 	func setPointOfInterest(poi: PWPointOfInterest) {
-		if let imageURL = poi.imageURL {
-            poiImageView.kf.indicatorType = .activity
-            poiImageView.kf.setImage(with: imageURL)
-		}
+        poiImageView.image = poi.image
         
         if let title = poi.title {
             self.poiTitleLabel?.text = title

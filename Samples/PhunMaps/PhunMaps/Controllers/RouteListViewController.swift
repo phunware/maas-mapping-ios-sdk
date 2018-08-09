@@ -70,7 +70,8 @@ extension RouteListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RouteInstructionCell.self), for: indexPath)
         
-        if let routeInstructionCell = cell as? RouteInstructionCell, let routeInstruction = route.routeInstructions[indexPath.row] as? PWRouteInstruction {
+        if let routeInstructionCell = cell as? RouteInstructionCell {
+            let routeInstruction = route.routeInstructions[indexPath.row]
             routeInstructionCell.routeAccessibilityManager = routeAccessibilityManager
             routeInstructionCell.configureFor(routeInstruction: routeInstruction)
         }
@@ -95,7 +96,7 @@ extension RouteListViewController: UITableViewDataSource {
 extension RouteListViewController {
     
     func voiceOverCurrentRouteInstruction() {
-        guard let routeInstruction = route.routeInstructions.first as? PWRouteInstruction else {
+        guard let routeInstruction = route.routeInstructions.first else {
             return
         }
         if selectedInstruction == nil {

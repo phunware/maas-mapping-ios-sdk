@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import PWMapKit
 import PWCore
-import Kingfisher
 
 class POITableViewCell: UITableViewCell {
     
@@ -100,15 +99,11 @@ class SearchPOIViewController: UIViewController {
     }
     
     func configureTableView() {
-        if let sortedPoints = mapView.building.pois.sorted(by: {
-            if let poi1 = $0 as? PWPointOfInterest, let poi2 = $1 as? PWPointOfInterest {
-                return poi1.title < poi2.title
-            }
-            return false
-        }) as? [PWPointOfInterest] {
-            sortedPointsOfInterest = sortedPoints
-            filteredPointsOfInterest = sortedPointsOfInterest
-        }
+        let sortedPoints = mapView.building.pois.sorted(by: {
+            return $0.title < $1.title
+        })
+        sortedPointsOfInterest = sortedPoints
+        filteredPointsOfInterest = sortedPointsOfInterest
         configureSearchController()
         tableView.isHidden = true
         tableView.register(POITableViewCell.self, forCellReuseIdentifier: poiCellReuseIdentifier)
@@ -152,10 +147,7 @@ extension SearchPOIViewController: UITableViewDataSource {
         poiCell.configureSubviews()
         
         let pointOfInterest = filteredPointsOfInterest[indexPath.row]
-        if let imageURL = pointOfInterest.imageURL {
-            poiCell.poiImageView.kf.indicatorType = .activity
-            poiCell.poiImageView.kf.setImage(with: imageURL)
-        }
+        poiCell.poiImageView.image = pointOfInterest.image
         poiCell.titleLabel.text = pointOfInterest.title
         return poiCell
     }

@@ -77,7 +77,7 @@
 
 #pragma mark - PWMapViewDelegate
 
-- (void)mapView:(PWMapView *)mapView locationManager:(id<PWLocationManager>)locationManager didUpdateIndoorUserLocation:(PWIndoorLocation *)userLocation {
+- (void)mapView:(PWMapView *)mapView locationManager:(id<PWLocationManager>)locationManager didUpdateIndoorUserLocation:(PWUserLocation *)userLocation {
     if (!self.firstLocationAcquired) {
         self.firstLocationAcquired = YES;
         self.mapView.trackingMode = PWTrackingModeFollow;

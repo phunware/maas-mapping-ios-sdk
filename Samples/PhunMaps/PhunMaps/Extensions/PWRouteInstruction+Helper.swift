@@ -16,7 +16,7 @@ extension PWRouteInstruction {
     }
     
     func isLastInstruction() -> Bool {
-        if let lastInstruction = route.routeInstructions.last as? PWRouteInstruction {
+        if let lastInstruction = route.routeInstructions.last {
             return lastInstruction == self
         }
         return false
@@ -25,20 +25,14 @@ extension PWRouteInstruction {
     func nextInstruction() -> PWRouteInstruction? {
         if isLastInstruction() {
             return nil
-        } else if let nextInstruction = route.routeInstructions[indexOfInstruction()+1] as? PWRouteInstruction {
-            return nextInstruction
         } else {
-            return nil
+            return route.routeInstructions[indexOfInstruction() + 1]
         }
     }
     
     func indexOfInstruction() -> Int {
         let index = route.routeInstructions.index(where: { (item) -> Bool in
-            if let instruction = item as? PWRouteInstruction {
-                return instruction == self
-            } else {
-                return false
-            }
+            return item == self
         })
         return index ?? 0
     }

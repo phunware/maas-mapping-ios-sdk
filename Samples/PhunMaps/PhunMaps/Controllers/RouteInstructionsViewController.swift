@@ -67,21 +67,21 @@ class RouteInstructionsViewController: UIViewController {
     }
     
     func updateForInstructionChange(currentIndex: Int) {
-        guard let route = route, let routeInstructions = route.routeInstructions as? [PWRouteInstruction], routeInstructions.count > currentIndex else {
+        guard let route = route, route.routeInstructions.count > currentIndex else {
             return
         }
         
         self.currentIndex = currentIndex
-        let routeInstruction = routeInstructions[currentIndex]
+        let routeInstruction = route.routeInstructions[currentIndex]
         delegate?.didChangeRouteInstruction(route: route, routeInstruction: routeInstruction)
     }
     
-    func changeRouteInstruction(notification: Notification) {
-        guard let routeInstruction = notification.object as? PWRouteInstruction, let route = route, let routeInstructions = route.routeInstructions as? [PWRouteInstruction], routeInstructions[self.currentIndex] != routeInstruction else {
+    @objc func changeRouteInstruction(notification: Notification) {
+        guard let routeInstruction = notification.object as? PWRouteInstruction, let route = route, route.routeInstructions[self.currentIndex] != routeInstruction else {
             return
         }
         
-        if let index = routeInstructions.index(of: routeInstruction) {
+        if let index = route.routeInstructions.index(of: routeInstruction) {
             let indexPath = IndexPath(row: index, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         }
@@ -113,7 +113,7 @@ extension RouteInstructionsViewController: UICollectionViewDataSource {
         var cell = UICollectionViewCell()
         if let routeInstructionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: RouteInstructionCollectionViewCell.self), for: indexPath) as? RouteInstructionCollectionViewCell {
             if let route = route, let routeInstructions = route.routeInstructions, routeInstructions.count > indexPath.row {
-                routeInstructionCollectionViewCell.routeInstruction = routeInstructions[indexPath.row] as? PWRouteInstruction
+                routeInstructionCollectionViewCell.routeInstruction = routeInstructions[indexPath.row]
             }
             cell = routeInstructionCollectionViewCell
         }

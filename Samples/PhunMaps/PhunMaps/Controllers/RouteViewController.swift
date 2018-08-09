@@ -49,7 +49,7 @@ class RouteViewController: UIViewController, POISearchable {
         
         navigationController?.navigationBar.barTintColor = CommonSettings.navigationBarBackgroundColor
         navigationController?.navigationBar.tintColor = CommonSettings.navigationBarForegroundColor
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : CommonSettings.viewForegroundColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : CommonSettings.viewForegroundColor]
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(close(barButtonItem:)))
         
@@ -73,7 +73,7 @@ class RouteViewController: UIViewController, POISearchable {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func close(barButtonItem: UIBarButtonItem) {
+    @objc func close(barButtonItem: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -220,7 +220,7 @@ extension RouteViewController: UITextFieldDelegate {
 
 extension RouteViewController {
     
-    func accessibilityTapped() {
+    @objc func accessibilityTapped() {
         if routeHeaderView.accessibilityButton.alpha == 1.0 {
             routeHeaderView.accessibilityButton.accessibilityHint = NSLocalizedString("Tap to enable wheelchair accessible route", comment: "")
             routeHeaderView.accessibilityButton.isSelected = false
@@ -232,7 +232,7 @@ extension RouteViewController {
         }
     }
     
-    func swapTapped() {
+    @objc func swapTapped() {
         routeHeaderView.startTextField.text = endPointOfInterest?.title ?? ""
         routeHeaderView.endTextField.text = startPointOfInterest?.title ?? ""
         
@@ -241,7 +241,7 @@ extension RouteViewController {
         endPointOfInterest = startPointCopy
     }
     
-    func routeTapped() {
+    @objc func routeTapped() {
         if routeHeaderView.startTextField.isEditing {
             routeHeaderView.startTextField.resignFirstResponder()
         } else if routeHeaderView.endTextField.isEditing {
@@ -286,7 +286,7 @@ extension RouteViewController {
         }
     }
     
-    func currentLocationTapped() {
+    @objc func currentLocationTapped() {
         if routeHeaderView.endTextField.isEditing {
             routeHeaderView.endTextField.text = currentLocationText
             routeHeaderView.startTextField.becomeFirstResponder()
@@ -303,14 +303,14 @@ extension RouteViewController {
 
 extension RouteViewController {
     
-    func keyboardWillShow(notification: Notification) {
+    @objc func keyboardWillShow(notification: Notification) {
         if let keyboardFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRect = keyboardFrame.cgRectValue
             tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardRect.size.height, 0)
         }
     }
     
-    func keyboardWillHide(notification: Notification) {
+    @objc func keyboardWillHide(notification: Notification) {
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
     }
 }

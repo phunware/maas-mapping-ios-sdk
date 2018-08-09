@@ -36,7 +36,7 @@ class RouteAccessibilityManager: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func headingUpdated(notification: Notification) {
+    @objc func headingUpdated(notification: Notification) {
         guard let heading = notification.object as? CLHeading, let currentInstruction = currentInstruction else {
             return
         }
@@ -49,7 +49,7 @@ class RouteAccessibilityManager: NSObject {
         delegate?.routeInstruction(currentInstruction, didChangeOrientation: accessibilityString, orientationIsCorrect: isCorrectOrientation)
     }
     
-    func routeInstructionUpdated(notification: Notification) {
+    @objc func routeInstructionUpdated(notification: Notification) {
         guard let routeInstruction = notification.object as? PWRouteInstruction else {
             return
         }
