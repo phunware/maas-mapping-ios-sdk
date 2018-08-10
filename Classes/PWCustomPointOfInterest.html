@@ -72,7 +72,11 @@
 		
 		<option value="//api/name/image">image</option>
 		
+		<option value="//api/name/maxZoomLevel">maxZoomLevel</option>
+		
 		<option value="//api/name/metaData">metaData</option>
+		
+		<option value="//api/name/minZoomLevel">minZoomLevel</option>
 		
 		<option value="//api/name/pointOfInterestType">pointOfInterestType</option>
 		
@@ -91,6 +95,8 @@
 
 	
 	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithCoordinate:floor:title:image:">- initWithCoordinate:floor:title:image:</option>
 		
 		<option value="//api/name/initWithCoordinate:floorId:buildingId:title:image:">- initWithCoordinate:floorId:buildingId:title:image:</option>
 		
@@ -131,7 +137,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A PWCustomPointOfInterest represents custom single point-of-interest.</p>
+						<p>A PWCustomPointOfInterest represents a custom point-of-interest.</p>
 					</div>
 					
 					
@@ -158,7 +164,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The point <a href="#//api/name/identifier">identifier</a> as specified by the mapping service.</p>
+				<p>The location of the point-of-interest.</p>
 			</div>
 			
 		    
@@ -240,7 +246,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The <a href="#//api/name/floor">floor</a> <a href="#//api/name/identifier">identifier</a> for which this point applies.</p>
+				<p>The <a href="#//api/name/identifier">identifier</a> of the <a href="#//api/name/floor">floor</a> this point belongs to.</p>
 			</div>
 			
 		    
@@ -281,12 +287,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The floor for which this point applies.</p>
+				<p>The floor this point belongs to.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) PWFloor *floor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable, weak) PWFloor *floor</code></div>
 
 		    
 			
@@ -322,7 +328,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The building <a href="#//api/name/identifier">identifier</a> for which this point applies.</p>
+				<p>The <a href="#//api/name/identifier">identifier</a> of the building this point belongs to.</p>
 			</div>
 			
 		    
@@ -486,7 +492,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A <a href="../Classes/PWPointOfInterestType.html"><code>PWPointOfInterestType</code></a> object that this custom point-of-interest is a member of, a type <a href="#//api/name/image">image</a> icon will automatically be applied if <a href="#//api/name/image"><code>image</code></a> property is not set.</p>
+				<p>A <a href="../Classes/PWPointOfInterestType.html"><code>PWPointOfInterestType</code></a> object that this custom point-of-interest is a member of, a type <a href="#//api/name/image">image</a> icon will automatically be applied if the <a href="#//api/name/image"><code>image</code></a> property is not set.</p>
 			</div>
 			
 		    
@@ -527,7 +533,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Metadata associated with the custom point-of-interest, using it to pass data as you want.</p>
+				<p>Optional data specified by the developer and associated with the custom point-of-interest.</p>
 			</div>
 			
 		    
@@ -568,7 +574,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A flag indicating whether it&rsquo;s to display or hide the label text.</p>
+				<p>A flag indicating whether the label text should be shown or hidden.</p>
 			</div>
 			
 		    
@@ -609,7 +615,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A flag indicating whether it&rsquo;s an accessible point.</p>
+				<p>A flag indicating if it&rsquo;s an accessible point.</p>
 			</div>
 			
 		    
@@ -650,7 +656,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A flag indicating whether the point is friendly to the visually-impaired.</p>
+				<p>A flag indicating if the point is friendly to the visually-impaired.</p>
 			</div>
 			
 		    
@@ -691,7 +697,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A flag indicating whether it&rsquo;s an exit point.</p>
+				<p>A flag indicating if it&rsquo;s an exit point.</p>
 			</div>
 			
 		    
@@ -701,6 +707,183 @@
 		    
 			
 
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWCustomPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/minZoomLevel" title="minZoomLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minZoomLevel">&nbsp;&nbsp;minZoomLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible(the default value).
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&rsquo;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&rsquo;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&rsquo;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&rsquo;s 21.
+5 - the maximum zoom level that current iOS map supports, it&rsquo;s 22.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger minZoomLevel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The point-of-interest is only visble when the map zoom level is between <code>minZoomLevel</code> and <a href="#//api/name/maxZoomLevel"><code>maxZoomLevel</code></a>, it&rsquo;s <code>-1</code> by default.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWCustomPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxZoomLevel" title="maxZoomLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxZoomLevel">&nbsp;&nbsp;maxZoomLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible(the default value).
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&rsquo;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&rsquo;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&rsquo;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&rsquo;s 21.
+5 - the maximum zoom level that current iOS map supports, it&rsquo;s 22.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger maxZoomLevel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The point-of-interest is only visble when the map zoom level is between <a href="#//api/name/minZoomLevel"><code>minZoomLevel</code></a> and <code>maxZoomLevel</code>, it&rsquo;s <code>-1</code> by default.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWCustomPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoordinate:floor:title:image:" title="initWithCoordinate:floor:title:image:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoordinate:floor:title:image:">&ndash;&nbsp;initWithCoordinate:floor:title:image:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instantiates a <code>PWCustomPointOfInterest</code> object with the given parameters.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype __nullable)initWithCoordinate:(CLLocationCoordinate2D)<em>coordinate</em> floor:(PWFloor *)<em>floor</em> title:(NSString *__nullable)<em>title</em> image:(UIImage *__nullable)<em>image</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>coordinate</code></th>
+						<td><p>The <a href="#//api/name/coordinate">coordinate</a> of custom point-of-interest.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>floor</code></th>
+						<td><p>The <a href="#//api/name/floor">floor</a> the custom point-of-interest is on.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>title</code></th>
+						<td><p>The <a href="#//api/name/title">title</a> of the custom point-of-interest.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The icon of the custom point-of-interest.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns a <code>PWCustomPointOfInterest</code> object.</p>
+			</div>
 			
 
 			
@@ -752,22 +935,22 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>floorId</code></th>
-						<td><p>The <a href="#//api/name/floor">floor</a> <a href="#//api/name/identifier">identifier</a> the custom point-of-interest on.</p></td>
+						<td><p>The <a href="#//api/name/identifier">identifier</a> of the <a href="#//api/name/floor">floor</a> the custom point-of-interest is on.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>buildingId</code></th>
-						<td><p>The building <a href="#//api/name/identifier">identifier</a> the custom point-of-interest in.</p></td>
+						<td><p>The <a href="#//api/name/identifier">identifier</a> of the building the custom point-of-interest is in.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>title</code></th>
-						<td><p>The <a href="#//api/name/title">title</a> of custom point-of-interest.</p></td>
+						<td><p>The <a href="#//api/name/title">title</a> of the custom point-of-interest.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>image</code></th>
-						<td><p>The icon of custom point-of-interest.</p></td>
+						<td><p>The icon of the custom point-of-interest.</p></td>
 					</tr>
 				
 				</table>
@@ -813,7 +996,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-02-22</p>
+						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-07-31</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

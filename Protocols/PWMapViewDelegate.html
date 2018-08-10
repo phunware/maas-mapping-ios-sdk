@@ -72,8 +72,6 @@
 		
 		<option value="//api/name/mapView:didChangeRouteInstruction:">- mapView:didChangeRouteInstruction:</option>
 		
-		<option value="//api/name/mapView:didChangeRouteStep:">- mapView:didChangeRouteStep:</option>
-		
 		<option value="//api/name/mapView:didDeselectBuildingAnnotationView:withPointOfInterest:">- mapView:didDeselectBuildingAnnotationView:withPointOfInterest:</option>
 		
 		<option value="//api/name/mapView:didFailToLoadBuilding:error:">- mapView:didFailToLoadBuilding:error:</option>
@@ -169,7 +167,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Asks the delegate that the <code>MKMapCamera</code> will be set when the building is completely loaded.</p>
+				<p>Asks the delegate how the <code>MKMapCamera</code> will be set when the building is completely loaded.</p>
 			</div>
 			
 		    
@@ -194,7 +192,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The <code>MKMapCamera</code> will be set when the building is completely loaded.</p>
+				<p>The <code>MKMapCamera</code> that will be set when the building is completely loaded.</p>
 			</div>
 			
 
@@ -203,7 +201,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>It&rsquo;s optional, SDK will set a appropriate camera to make the entire building fit the screen if it&rsquo;s not implemented.</p>
+				<p>This callback is optional; the SDK will set a appropriate camera to make the entire building fit the screen if it&rsquo;s not implemented.</p>
 			</div>
 			
 
@@ -232,7 +230,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Asks the delegate that the <a href="../Classes/PWFloor.html"><code>PWFloor</code></a> will be set as intial floor.</p>
+				<p>Asks the delegate for the <a href="../Classes/PWFloor.html"><code>PWFloor</code></a> that will be displayed as the intial floor.</p>
 			</div>
 			
 		    
@@ -257,7 +255,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The <a href="../Classes/PWFloor.html"><code>PWFloor</code></a> will be set as initial floor.</p>
+				<p>The <a href="../Classes/PWFloor.html"><code>PWFloor</code></a> that will be set as the initial floor.</p>
 			</div>
 			
 
@@ -266,7 +264,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>It&rsquo;s optional, SDK will set the floor which has minimum level as intial floor if it&rsquo;s not implemented.</p>
+				<p>This callback is optional; the SDK will set the floor which has minimum level as intial floor if it&rsquo;s not implemented.</p>
 			</div>
 			
 
@@ -295,7 +293,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Tells the delegate that the specified map view successfully loaded necessary building data.</p>
+				<p>Tells the delegate that the specified map view successfully loaded the necessary building data.</p>
 			</div>
 			
 		    
@@ -489,7 +487,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Tells the delegate that the specified map view successfully changed the building floor.</p>
+				<p>Tells the delegate that the specified map view failed to change the building floor.</p>
 			</div>
 			
 		    
@@ -504,12 +502,12 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>mapView</code></th>
-						<td><p>The map view that changed the floor.</p></td>
+						<td><p>The map view that attempted to change the floor.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>floor</code></th>
-						<td><p>The floor tried to change in the map view.</p></td>
+						<td><p>The floor that the map view attempted to change to.</p></td>
 					</tr>
 				
 					<tr>
@@ -688,7 +686,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>An error object containing the reason why location tracking failed.</p></td>
+						<td><p>An error object containing the reason why location acquisition failed.</p></td>
 					</tr>
 				
 				</table>
@@ -731,7 +729,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> locationManager:(id&lt;PWLocationManager&gt;)<em>locationManager</em> didUpdateIndoorUserLocation:(PWIndoorLocation *)<em>userLocation</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> locationManager:(id&lt;PWLocationManager&gt;)<em>locationManager</em> didUpdateIndoorUserLocation:(PWUserLocation *)<em>userLocation</em></code></div>
 
 		    
 			
@@ -852,7 +850,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Tells the delegate that the user&rsquo;s location was not snapped to a route.</p>
+				<p>Tells the delegate that the user&rsquo;s location was unsnapped from a route.</p>
 			</div>
 			
 		    
@@ -899,64 +897,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/mapView:didChangeRouteStep:" title="mapView:didChangeRouteStep:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/mapView:didChangeRouteStep:">&ndash;&nbsp;mapView:didChangeRouteStep:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Tells the delegate that the route step being displayed has changed.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)mapView:(PWMapView *)<em>mapView</em> didChangeRouteStep:(PWRouteStep *)<em>step</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>mapView</code></th>
-						<td><p>The map view reporting the step change.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>step</code></th>
-						<td><p>The new route step being displayed on the map.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWMapView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/mapView:didChangeRouteInstruction:" title="mapView:didChangeRouteInstruction:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/mapView:didChangeRouteInstruction:">&ndash;&nbsp;mapView:didChangeRouteInstruction:</a></code>
 </h3>
@@ -968,7 +908,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Tells the delegate that the route step being displayed has changed.</p>
+				<p>Tells the delegate that the route instruction being highlighted has changed.</p>
 			</div>
 			
 		    
@@ -988,7 +928,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>instruction</code></th>
-						<td><p>The new instruction being displayed on the map, or nil if it has been cleared.</p></td>
+						<td><p>The new instruction being highlighted on the map, or nil if it has been cleared.</p></td>
 					</tr>
 				
 				</table>
@@ -1089,7 +1029,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Tells the delegate that the user&rsquo;s location was updated.</p>
+				<p>Tells the delegate that the map view&rsquo;s user tracking mode was updated.</p>
 			</div>
 			
 		    
@@ -1268,7 +1208,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns the view associated with the specified point-of-interest object.</p>
+				<p>Requests the view associated with the specified point-of-interest object.</p>
 			</div>
 			
 		    
@@ -1302,7 +1242,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The same result by using <code>mapView:viewForAnnotation:</code>.</p>
+				<p>The same result as using <code>mapView:viewForAnnotation:</code>.</p>
 			</div>
 			
 
@@ -1331,7 +1271,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Tells the delegate that one or more point-of-interest views were added to the map.</p>
+				<p>Tells the delegate that a point-of-interest view was added to the map.</p>
 			</div>
 			
 		    
@@ -1370,7 +1310,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The same result by using <code>mapView:didAddAnnotationViews:</code>.</p>
+				<p>The same result as using <code>mapView:didAddAnnotationViews:</code>.</p>
 			</div>
 			
 
@@ -1433,7 +1373,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The same result by using <code>mapView:didAddBuildingAnnotationViews:</code>.</p>
+				<p>The same result as using <code>mapView:didAddBuildingAnnotationViews:</code>.</p>
 			</div>
 			
 
@@ -1506,7 +1446,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The same result by using <code>mapView:calloutAccessoryControlTapped:</code>.</p>
+				<p>The same result as using <code>mapView:calloutAccessoryControlTapped:</code>.</p>
 			</div>
 			
 
@@ -1603,7 +1543,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Tells the delegate that one of its annotation views was selected.</p>
+				<p>Tells the delegate that one of its annotation views was deselected.</p>
 			</div>
 			
 		    
@@ -1642,7 +1582,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The same result by using <code>deselectAnnotations:animated:</code>.</p>
+				<p>The same result as using <code>deselectAnnotations:animated:</code>.</p>
 			</div>
 			
 
@@ -1674,7 +1614,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-02-22</p>
+						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-07-31</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
