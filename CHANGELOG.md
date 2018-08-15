@@ -1,4 +1,8 @@
 # PWMapKit Changelog
+## 3.5.1 (Wednesday, Aug 15th, 2018)
+#### Bug fixes / performance enhancements
+* Update for PWLocation 3.5.1 compatibility
+
 ## 3.5.0 (Tuesday, July 31st, 2018)
 #### Features
 * Check for local floor PDF assets in app bundle before reaching out to server
