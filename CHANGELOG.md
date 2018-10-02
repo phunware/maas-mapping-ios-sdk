@@ -1,4 +1,11 @@
 # PWMapKit Changelog
+## 3.5.2 (Tuesday, Oct 2nd, 2018)
+#### Features
+* Add PWRouteOptions to customize the route UI
+
+#### Bug fixes / performance enhancements
+* Fix POI zoom levels sometimes not working
+
 ## 3.5.1 (Wednesday, Aug 15th, 2018)
 #### Bug fixes / performance enhancements
 * Update for PWLocation 3.5.1 compatibility

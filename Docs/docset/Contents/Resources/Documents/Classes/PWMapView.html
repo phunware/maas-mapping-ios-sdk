@@ -70,8 +70,6 @@
 		
 		<option value="//api/name/displayDebugLocationDots">displayDebugLocationDots</option>
 		
-		<option value="//api/name/displayWaypointDotsOnRouteLine">displayWaypointDotsOnRouteLine</option>
-		
 		<option value="//api/name/floorTransitionModeEnabled">floorTransitionModeEnabled</option>
 		
 		<option value="//api/name/indoorUserLocation">indoorUserLocation</option>
@@ -117,6 +115,8 @@
 		<option value="//api/name/navigateToPointOfInterest:">- navigateToPointOfInterest:</option>
 		
 		<option value="//api/name/navigateWithRoute:">- navigateWithRoute:</option>
+		
+		<option value="//api/name/navigateWithRoute:options:">- navigateWithRoute:options:</option>
 		
 		<option value="//api/name/registerLocationManager:">- registerLocationManager:</option>
 		
@@ -959,8 +959,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/displayWaypointDotsOnRouteLine" title="displayWaypointDotsOnRouteLine"></a>
-	<h3 class="method-title"><code><a href="#//api/name/displayWaypointDotsOnRouteLine">&nbsp;&nbsp;displayWaypointDotsOnRouteLine</a></code>
+	<a name="//api/name/__deprecated" title="__deprecated"></a>
+	<h3 class="method-title"><code><a href="#//api/name/__deprecated">&nbsp;&nbsp;__deprecated</a></code>
 </h3>
 
 	<div class="method-info">
@@ -975,7 +975,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine __deprecated</code></div>
 
 		    
 			
@@ -984,6 +984,11 @@
 
 			
 
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Use <code>PWRouteUIOptions.showJoinPoint' instead when displaying a route with</code><a href="#//api/name/navigateWithRoute:">navigateWithRoute:</a> options:`.</p>
+			</div>
 			
 
 			
@@ -1387,6 +1392,64 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/navigateWithRoute:options:" title="navigateWithRoute:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/navigateWithRoute:options:">&ndash;&nbsp;navigateWithRoute:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Load a <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object into the map view with specified color for the paths. This method will plot a basic route line on the map view. The route object must not be <code>nil</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)navigateWithRoute:(PWRoute *)<em>route</em> options:(PWRouteUIOptions *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>route</code></th>
+						<td><p>The <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object to display in the map view.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>The <code>PWRouteUIOptions</code> object to custom the color of route path, the junction type of line, etc.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/setRouteManeuver:" title="setRouteManeuver:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/setRouteManeuver:">&ndash;&nbsp;setRouteManeuver:</a></code>
 </h3>
@@ -1730,47 +1793,6 @@
 		    
 
 			<div class="method-subsection method-declaration"><code>- (void)stopRetrievingSharedLocations</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWMapView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/__deprecated" title="__deprecated"></a>
-	<h3 class="method-title"><code><a href="#//api/name/__deprecated">&nbsp;&nbsp;__deprecated</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>A reference to the dropped pin location. (<b class="deprecated">Deprecated:</b><span class="deprecated"> No longer supported since v3.2.0</span>)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) PWCustomLocation *__deprecated</code></div>
 
 		    
 			
@@ -2335,7 +2357,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-08-15</p>
+						<p class="copyright">Copyright &copy; 2018 Phunware, Inc. All rights reserved. Updated: 2018-10-02</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

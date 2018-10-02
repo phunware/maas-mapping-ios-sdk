@@ -625,38 +625,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setDisplayWaypointDotsOnRouteLine:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/set__deprecated:</TokenIdentifier>
 			<Abstract type="html">Determines whether or not the waypoints are displaying as dots on route lines. This feature is turned off by default.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine</Declaration>
+			<Declaration>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine __deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/displayWaypointDotsOnRouteLine</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/displayWaypointDotsOnRouteLine</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/__deprecated</TokenIdentifier>
 			<Abstract type="html">Determines whether or not the waypoints are displaying as dots on route lines. This feature is turned off by default.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine</Declaration>
+			<Declaration>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine __deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/displayWaypointDotsOnRouteLine</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/displayWaypointDotsOnRouteLine</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/__deprecated</TokenIdentifier>
 			<Abstract type="html">Determines whether or not the waypoints are displaying as dots on route lines. This feature is turned off by default.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine</Declaration>
+			<Declaration>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine __deprecated</Declaration>
 			
 			
-			<Anchor>//api/name/displayWaypointDotsOnRouteLine</Anchor>
+			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
@@ -803,6 +803,26 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/navigateWithRoute:options:</TokenIdentifier>
+			<Abstract type="html">Load a PWRoute object into the map view with specified color for the paths. This method will plot a basic route line on the map view. The route object must not be nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)navigateWithRoute:(PWRoute *)route options:(PWRouteUIOptions *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">The PWRoute object to display in the map view.</Abstract>
+				</Parameter><Parameter>
+					<Name>options</Name>
+					<Abstract type="html">The PWRouteUIOptions object to custom the color of route path, the junction type of line, etc.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/navigateWithRoute:options:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setRouteManeuver:</TokenIdentifier>
 			<Abstract type="html">Highlight the specified PWRouteInstruction on the map. If needed, this will change the current floor to the floor of the instruction.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
@@ -908,42 +928,6 @@
 			
 			
 			<Anchor>//api/name/stopRetrievingSharedLocations</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/set__deprecated:</TokenIdentifier>
-			<Abstract type="html">A reference to the dropped pin location. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; No longer supported since v3.2.0&lt;/span&gt;)</Abstract>
-			<DeclaredIn>PWMapView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *__deprecated</Declaration>
-			
-			
-			<Anchor>//api/name/__deprecated</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/__deprecated</TokenIdentifier>
-			<Abstract type="html">A reference to the dropped pin location. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; No longer supported since v3.2.0&lt;/span&gt;)</Abstract>
-			<DeclaredIn>PWMapView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *__deprecated</Declaration>
-			
-			
-			<Anchor>//api/name/__deprecated</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/__deprecated</TokenIdentifier>
-			<Abstract type="html">A reference to the dropped pin location. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; No longer supported since v3.2.0&lt;/span&gt;)</Abstract>
-			<DeclaredIn>PWMapView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) PWCustomLocation *__deprecated</Declaration>
-			
-			
-			<Anchor>//api/name/__deprecated</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

@@ -16,6 +16,7 @@
 #import <PWMapKit/PWUserLocation.h>
 #import <PWMapKit/PWRoute.h>
 #import <PWMapKit/PWRouteInstruction.h>
+#import <PWMapKit/PWRouteUIOptions.h>
 #import <PWMapKit/PWMapPoint.h>
 #import <PWMapKit/PWCustomPointOfInterest.h>
 #import <PWMapKit/PWBuildingAnnotationView.h>
@@ -23,7 +24,7 @@
 #import <PWMapKit/PWSharedLocation.h>
 #import <PWMapKit/PWLocationSharingDelegate.h>
 
-static NSString *const PWMapKitVersion = @"3.5.1";
+static NSString *const PWMapKitVersion = @"3.5.2";
 
 @interface PWMapKit : NSObject
 
