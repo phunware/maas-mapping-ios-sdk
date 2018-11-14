@@ -1,4 +1,16 @@
 # PWMapKit Migration Guide
+## Upgrade from 3.5.x to 3.6.x
+
+#### General
+
+This release includes PWCore 3.8.x which contains new automatic screen view analytic events and simplified analytic event creation.
+
+#### Upgrade Steps
+
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.6.x'`, then run `pod update` in the Terminal to update the framework.
+
+2. Check out the [migration guide](https://github.com/phunware/maas-core-ios-sdk/blob/master/MIGRATION.md) for PWCore 3.8.x on updating to the new analytics API.
+
 ## Upgrade from 3.4.x to 3.5.x
 
 #### General

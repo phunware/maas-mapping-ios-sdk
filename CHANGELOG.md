@@ -1,4 +1,8 @@
 # PWMapKit Changelog
+## 3.6.0 (Wednesday, November 14th, 2018)
+#### Features
+* Update for PWLocation 3.6.0 compatibility, with new PWCore 3.8.0 using new automatic screen view analytic events and simplified custom event creation.
+
 ## 3.5.2 (Tuesday, Oct 2nd, 2018)
 #### Features
 * Add PWRouteOptions to customize the route UI
