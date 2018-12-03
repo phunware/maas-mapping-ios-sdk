@@ -44,11 +44,13 @@ PWMapKit Samples for iOS
 
 ### RoutingViewController
 - Route to a point of interest as soon as location is acquired
+- Route configuration such as the color of path, show join point etc.
 
 ##### Usage:
 - Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
 - Add at least one point of interest to your building in the Maas portal, and connect it with a segment to the nearest waypoint
 - Optionally specify a `destinationPOIIdentifier` to route to, which can be found on the point of interest's `Edit` page. If left as `0`, it will use the first point of interest found.
+- Custom route display by giving a `PWRouteUIOptions` as second parameter of `mapView.navigate(with: route, options: routeUIOptions)`.
 
 ### SearchPOIViewController
 - View list of points of interest in table

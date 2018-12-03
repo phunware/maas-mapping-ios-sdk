@@ -102,7 +102,16 @@
             __weak typeof(self) weakSelf = self;
             
             if (route) {
-                [weakSelf.mapView navigateWithRoute:route];
+                PWRouteUIOptions *routeOptions = [PWRouteUIOptions new];
+//                routeOptions.routeStrokeColor = <#routeStrokeColor#>
+//                routeOptions.directionFillColor = <#directionFillColor#>
+//                routeOptions.directionStrokeColor = <#directionStrokeColor#>
+//                routeOptions.instructionFillColor = <#instructionFillColor#>
+//                routeOptions.instructionStrokeColor = <#instructionStrokeColor#>
+//                routeOptions.showJoinPoint = <#true or false#>
+//                routeOptions.joinPointColor = <#joinPointColor#>
+//                routeOptions.lineJoin = <#.miter, round or bevel#>
+                [weakSelf.mapView navigateWithRoute:route options:routeOptions];
             }
         }];
     }

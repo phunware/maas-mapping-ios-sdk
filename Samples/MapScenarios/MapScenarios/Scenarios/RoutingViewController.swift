@@ -104,7 +104,16 @@ extension RoutingViewController: PWMapViewDelegate {
                     return
                 }
                 
-                mapView.navigate(with: route)
+                let routeOptions = PWRouteUIOptions()
+//                routeOptions.routeStrokeColor = <#routeStrokeColor#>
+//                routeOptions.directionFillColor = <#directionFillColor#>
+//                routeOptions.directionStrokeColor = <#directionStrokeColor#>
+//                routeOptions.instructionFillColor = <#instructionFillColor#>
+//                routeOptions.instructionStrokeColor = <#instructionStrokeColor#>
+//                routeOptions.showJoinPoint = <#true or false#>
+//                routeOptions.joinPointColor = <#joinPointColor#>
+//                routeOptions.lineJoin = <#.miter, round or bevel#>
+                mapView.navigate(with: route, options: routeOptions)
             })
         }
     }
