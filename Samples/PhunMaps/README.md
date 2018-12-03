@@ -32,7 +32,7 @@ PWBuilding.building(withIdentifier: buildingId!) { [weak self] (building, error)
 }
 ```
 
-### Adding Map View
+## Adding Map View
 
 ### MapViewController.swift
 
@@ -53,7 +53,7 @@ view.addSubview(mapView)
 mapView.setBuilding(building)
 ```
 
-### Search for points of interest
+## Search for points of interest
 
 ### DirectoryController.swift
 
@@ -61,7 +61,7 @@ mapView.setBuilding(building)
 floor.pointsOfInterest(of:<#pointOfInterestType#> containing:<#searchTerm#>)
 ```
 
-### Routing between two POIs
+## Routing between two POIs
 
 ### MapViewController.swift
 
@@ -75,4 +75,25 @@ floor.pointsOfInterest(of:<#pointOfInterestType#> containing:<#searchTerm#>)
 
  // Displaying a route on the map
  mapView.navigate(with: route)
- ```
+```
+ 
+
+### RouteViewController.swift
+
+By default, the color of route path is sky blue, the color of direction is white and the join point is disabled. You can use `mapView.navigate(with: route, options: routeUIOptions)` to change it by giving a `routeUIOptions` like the below.
+
+```swift
+// Conifgure your route options
+let routeOptions = PWRouteUIOptions()
+routeOptions.routeStrokeColor = <#routeStrokeColor#> 
+routeOptions.directionFillColor = <#directionFillColor#> 
+routeOptions.directionStrokeColor = <#directionStrokeColor#> 
+routeOptions.instructionFillColor = <#instructionFillColor#> 
+routeOptions.instructionStrokeColor = <#instructionStrokeColor#> 
+routeOptions.showJoinPoint = <#true or false#> 
+routeOptions.joinPointColor = <#joinPointColor#> 
+routeOptions.lineJoin = <#.miter, round or bevel#>
+
+// Display the `route` on the map with your configuration
+mapView.navigate(with: route, options: routeOptions)
+```
