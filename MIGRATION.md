@@ -1,4 +1,14 @@
 # PWMapKit Migration Guide
+## Upgrade from 3.6.x to 3.7.x
+
+#### General
+
+This release includes PWLocation 3.7.x which contains beacon maintenance features.
+
+#### Upgrade Steps
+
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.7.x'`, then run `pod update` in the Terminal to update the framework.
+
 ## Upgrade from 3.5.x to 3.6.x
 
 #### General

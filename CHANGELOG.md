@@ -1,4 +1,13 @@
 # PWMapKit Changelog
+## 3.7.0 (Thursday, January 10th, 2019)
+#### Features
+* Update for PWLocation 3.7.0 compatibility, which includes beacon maintenance features.
+
+#### Bug fixes / performance enhancements
+* Fix route display not removed after completion
+* Fix elevator route crash
+* Fix call `setRouteManeuver` from `didChangeInstruction` infinite loop
+
 ## 3.6.0 (Wednesday, November 14th, 2018)
 #### Features
 * Update for PWLocation 3.6.0 compatibility, with new PWCore 3.8.0 using new automatic screen view analytic events and simplified custom event creation.
