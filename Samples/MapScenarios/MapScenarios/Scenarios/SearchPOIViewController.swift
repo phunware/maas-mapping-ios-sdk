@@ -70,8 +70,8 @@ class SearchPOIViewController: UIViewController {
             fatalError("applicationId, accessKey, signatureKey, and buildingIdentifier must be set")
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         view.addSubview(mapView)
         configureMapViewConstraints()
@@ -107,7 +107,7 @@ class SearchPOIViewController: UIViewController {
         configureSearchController()
         tableView.isHidden = true
         tableView.register(POITableViewCell.self, forCellReuseIdentifier: poiCellReuseIdentifier)
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
@@ -206,9 +206,9 @@ extension SearchPOIViewController: UISearchBarDelegate {
 extension SearchPOIViewController {
     
     @objc func keyboardWillShow(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
-            tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+            tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
         }
     }
     

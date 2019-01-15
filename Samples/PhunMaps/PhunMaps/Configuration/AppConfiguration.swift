@@ -40,7 +40,7 @@ class BuildingAppConfiguration: NSObject, AppConfiguration {
         appId = String(describing: maasConfigurationDictionary["appId"]!)
         accessKey = String(describing: maasConfigurationDictionary["accessKey"]!)
         signatureKey = String(describing: maasConfigurationDictionary["signatureKey"]!)
-        buildingId = dictionary["buildingId"]! as! Int
+        buildingId = dictionary["buildingId"]! as? Int
         
         if let name = dictionary["name"] as? String {
             self.name = name
