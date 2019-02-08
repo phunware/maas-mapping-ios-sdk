@@ -13,11 +13,11 @@ class ScenarioSelectViewController: UITableViewController {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     // These are universal across all view controllers but will be overridden by configured values in the individual controllers
-    let universalApplicationId = ""
-    let universalAccessKey = ""
-    let universalSignatureKey = ""
+    let universalApplicationId = "1460"
+    let universalAccessKey = "46f390d8a01859b5dbfa804db1634dd9603399df"
+    let universalSignatureKey = "9a92d23a51d49114b19d54c3f1c0508a4a98e576"
     // Building identifier to be used in all view controllers, overridden when set in individual controllers
-    let universalBuildingIdentifier = 0
+    let universalBuildingIdentifier = 43760
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,9 +112,53 @@ class ScenarioSelectViewController: UITableViewController {
                     locationSharingViewController.signatureKey = universalSignatureKey
                 }
             }
+        case String(describing: TurnByTurnViewController.self):
+            if let turnByTurnViewController = segue.destination as? TurnByTurnViewController {
+                if turnByTurnViewController.buildingIdentifier == 0 {
+                    turnByTurnViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+                if turnByTurnViewController.applicationId.count == 0 || turnByTurnViewController.accessKey.count == 0 || turnByTurnViewController.signatureKey.count == 0 {
+                    turnByTurnViewController.applicationId = universalApplicationId
+                    turnByTurnViewController.accessKey = universalAccessKey
+                    turnByTurnViewController.signatureKey = universalSignatureKey
+                }
+            }
+        case String(describing: WalkTimeViewController.self):
+            if let walkTimeViewController = segue.destination as? WalkTimeViewController {
+                if walkTimeViewController.buildingIdentifier == 0 {
+                    walkTimeViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+                if walkTimeViewController.applicationId.count == 0 || walkTimeViewController.accessKey.count == 0 || walkTimeViewController.signatureKey.count == 0 {
+                    walkTimeViewController.applicationId = universalApplicationId
+                    walkTimeViewController.accessKey = universalAccessKey
+                    walkTimeViewController.signatureKey = universalSignatureKey
+                }
+            }
         default:
             break
         }
     }
 }
 
+extension UIViewController {
+    
+    func validateBuildingSetting(appId: String, accessKey: String, signatureKey: String, buildingId: Int) -> Bool {
+        if appId.isEmpty || accessKey.isEmpty || signatureKey.isEmpty {
+            let alertVC = UIAlertController(title: "Code Update Required", message: "Please put your applicationId/accessKey/signatureKey and buildingId in ScenarioSelectViewController.swift or the related view controllers.", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertVC.addAction(confirmAction)
+            self.present(alertVC, animated: true, completion: nil)
+            return false
+        }
+        
+        return true
+    }
+    
+    func warning(_ message: String) {
+        let alertVC = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertVC.addAction(confirmAction)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+}

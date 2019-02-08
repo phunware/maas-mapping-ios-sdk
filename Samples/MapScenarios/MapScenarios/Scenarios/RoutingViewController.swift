@@ -18,38 +18,40 @@ class RoutingViewController: UIViewController {
     var accessKey = ""
     var signatureKey = ""
     
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+    // Enter your building identifier here, found on the building's Edit page on Maas portal
+    var buildingIdentifier = 0
+    
+    // Destination POI identifier for routing
+    var destinationPOIIdentifier: Int = 0
     
     let mapView = PWMapView()
-    let locationManager = CLLocationManager()
     var firstLocationAcquired = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Route to Point of Interest"
-        
-        if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 && buildingIdentifier != 0 {
-            PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
-        } else {
-            fatalError("applicationId, accessKey, signatureKey, and buildingIdentifier must be set")
+        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+            return
         }
         
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        if destinationPOIIdentifier == 0 {
+            warning("Please set a valid value for `destinationPOIIdentifier` in RoutingViewController.swift")
+            return
+        }
+        
+        navigationItem.title = "Route to Point of Interest"
+        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         
         mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()
         
+        // Start loading building
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                if let buildingIdentifier = self?.buildingIdentifier {
-                    let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
-                    
-                    DispatchQueue.main.async {
-                        self?.mapView.register(managedLocationManager)
-                    }
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
                 }
             })
         }
@@ -69,6 +71,42 @@ class RoutingViewController: UIViewController {
         mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
+    
+    //*************************************
+    // Plot route on the map
+    //*************************************
+    func route() {
+        // Set tracking mode to follow me
+        mapView.trackingMode = .follow
+        
+        // Find the destination POI
+        let destinationPOI = mapView.building.pois.filter({
+            return $0.identifier == destinationPOIIdentifier
+        }).first
+        if destinationPOI == nil {
+            warning("No points of interest found, please add at least one to the building in the Maas portal")
+            return
+        }
+        
+        // Calculate a route and plot on the map
+        PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
+            guard let route = route else {
+                self?.warning("Couldn't find a route from you current location to the destination.")
+                return
+            }
+            
+            let routeOptions = PWRouteUIOptions()
+            // routeOptions.routeStrokeColor = <#routeStrokeColor#>
+            // routeOptions.directionFillColor = <#directionFillColor#>
+            // routeOptions.directionStrokeColor = <#directionStrokeColor#>
+            // routeOptions.instructionFillColor = <#instructionFillColor#>
+            // routeOptions.instructionStrokeColor = <#instructionStrokeColor#>
+            // routeOptions.showJoinPoint = <#true or false#>
+            // routeOptions.joinPointColor = <#joinPointColor#>
+            // routeOptions.lineJoin = <#.miter, round or bevel#>
+            self?.mapView.navigate(with: route, options: routeOptions)
+        })
+    }
 }
 
 // MARK: - PWMapViewDelegate
@@ -78,43 +116,7 @@ extension RoutingViewController: PWMapViewDelegate {
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         if !firstLocationAcquired {
             firstLocationAcquired = true
-            mapView.trackingMode = .follow
-            
-            let destinationPOIIdentifier = 0 /* Replace with the destination POI identifier */
-            
-            var destinationPOI: PWPointOfInterest!
-            if destinationPOIIdentifier != 0 {
-                destinationPOI = mapView.building.pois.filter({
-                    return $0.identifier == destinationPOIIdentifier
-                }).first
-            } else {
-                if let firstPOI = mapView.building.pois.first {
-                    destinationPOI = firstPOI
-                }
-            }
-            
-            if destinationPOI == nil {
-                print("No points of interest found, please add at least one to the building in the Maas portal")
-                return
-            }
-            
-            PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { (route, error) in
-                guard let route = route else {
-                    print("Couldn't find a route from you current location to the destination.")
-                    return
-                }
-                
-                let routeOptions = PWRouteUIOptions()
-//                routeOptions.routeStrokeColor = <#routeStrokeColor#>
-//                routeOptions.directionFillColor = <#directionFillColor#>
-//                routeOptions.directionStrokeColor = <#directionStrokeColor#>
-//                routeOptions.instructionFillColor = <#instructionFillColor#>
-//                routeOptions.instructionStrokeColor = <#instructionStrokeColor#>
-//                routeOptions.showJoinPoint = <#true or false#>
-//                routeOptions.joinPointColor = <#joinPointColor#>
-//                routeOptions.lineJoin = <#.miter, round or bevel#>
-                mapView.navigate(with: route, options: routeOptions)
-            })
+            route()
         }
     }
 }
