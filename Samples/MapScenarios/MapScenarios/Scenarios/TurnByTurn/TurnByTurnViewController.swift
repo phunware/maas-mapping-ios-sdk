@@ -18,11 +18,11 @@ class TurnByTurnViewController: UIViewController {
     var signatureKey = ""
     
     // Enter your building identifier here, found on the building's Edit page on Maas portal
-    var buildingIdentifier = 0
+    var buildingIdentifier: Int = 0
     
     // Destination POI identifier for routing
-    var startPOIIdentifier: Int = 42539731
-    var destinationPOIIdentifier: Int = 42539784
+    var startPOIIdentifier: Int = 0
+    var destinationPOIIdentifier: Int = 0
     
     let mapView = PWMapView()
     let locationManager = CLLocationManager()
