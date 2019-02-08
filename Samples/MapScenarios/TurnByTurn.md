@@ -1,7 +1,7 @@
 Turn-By-Turn Navigation
 ====================
 
-![MacDown Screenshot](../images/turnbyturn.jpg)
+![MacDown Screenshot](../Images/turnbyturn.jpg)
 
 ### Featur Detail
 - Display turn-by-turn route instruction card on top of map.
