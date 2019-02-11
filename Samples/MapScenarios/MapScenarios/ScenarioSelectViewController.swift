@@ -112,9 +112,53 @@ class ScenarioSelectViewController: UITableViewController {
                     locationSharingViewController.signatureKey = universalSignatureKey
                 }
             }
+        case String(describing: TurnByTurnViewController.self):
+            if let turnByTurnViewController = segue.destination as? TurnByTurnViewController {
+                if turnByTurnViewController.buildingIdentifier == 0 {
+                    turnByTurnViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+                if turnByTurnViewController.applicationId.count == 0 || turnByTurnViewController.accessKey.count == 0 || turnByTurnViewController.signatureKey.count == 0 {
+                    turnByTurnViewController.applicationId = universalApplicationId
+                    turnByTurnViewController.accessKey = universalAccessKey
+                    turnByTurnViewController.signatureKey = universalSignatureKey
+                }
+            }
+        case String(describing: WalkTimeViewController.self):
+            if let walkTimeViewController = segue.destination as? WalkTimeViewController {
+                if walkTimeViewController.buildingIdentifier == 0 {
+                    walkTimeViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+                if walkTimeViewController.applicationId.count == 0 || walkTimeViewController.accessKey.count == 0 || walkTimeViewController.signatureKey.count == 0 {
+                    walkTimeViewController.applicationId = universalApplicationId
+                    walkTimeViewController.accessKey = universalAccessKey
+                    walkTimeViewController.signatureKey = universalSignatureKey
+                }
+            }
         default:
             break
         }
     }
 }
 
+extension UIViewController {
+    
+    func validateBuildingSetting(appId: String, accessKey: String, signatureKey: String, buildingId: Int) -> Bool {
+        if appId.isEmpty || accessKey.isEmpty || signatureKey.isEmpty {
+            let alertVC = UIAlertController(title: "Code Update Required", message: "Please put your applicationId/accessKey/signatureKey and buildingId in ScenarioSelectViewController.swift or the related view controllers.", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertVC.addAction(confirmAction)
+            self.present(alertVC, animated: true, completion: nil)
+            return false
+        }
+        
+        return true
+    }
+    
+    func warning(_ message: String) {
+        let alertVC = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertVC.addAction(confirmAction)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+}
