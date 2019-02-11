@@ -1,17 +1,17 @@
 //
-//  RoutingViewController.swift
+//  VoicedRouteViewController.swift
 //  MapScenarios
 //
-//  Created on 3/7/18.
-//  Copyright © 2018 Phunware. All rights reserved.
+//  Created on 2/5/19.
+//  Copyright © 2019 Patrick Dunshee. All rights reserved.
 //
 
-import Foundation
-import UIKit
+import AVFoundation
 import PWCore
 import PWMapKit
+import UIKit
 
-class RoutingViewController: UIViewController {
+class VoicedRouteViewController: UIViewController {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -23,11 +23,26 @@ class RoutingViewController: UIViewController {
     let mapView = PWMapView()
     let locationManager = CLLocationManager()
     var firstLocationAcquired = false
+    var previouslyReadInstructions = Set<PWRouteInstruction>()
+    private let speechEnabledKey = "SpeechEnabled"
+    var speechEnabled: Bool {
+        get {
+            if UserDefaults.standard.value(forKey: speechEnabledKey) == nil {
+                return true
+            }
+            return UserDefaults.standard.bool(forKey: speechEnabledKey)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: speechEnabledKey)
+        }
+    }
+    let speechSynthesizer = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Route to Point of Interest"
+        configureSpeechButton()
         
         if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 && buildingIdentifier != 0 {
             PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
@@ -54,6 +69,14 @@ class RoutingViewController: UIViewController {
         }
     }
     
+    func configureMapViewConstraints() {
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
     func startManagedLocationManager() {
         DispatchQueue.main.async { [weak self] in
             if let buildingIdentifier = self?.buildingIdentifier {
@@ -63,18 +86,27 @@ class RoutingViewController: UIViewController {
         }
     }
     
-    func configureMapViewConstraints() {
-        mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    // MARK: Voice Prompts Button
+    
+    func configureSpeechButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Speech", style: .plain, target: self, action: #selector(speechButtonTapped))
+        updateSpeechButton()
+    }
+    
+    func updateSpeechButton() {
+        navigationItem.rightBarButtonItem?.tintColor = speechEnabled ? .blue : .darkGray
+    }
+    
+    @objc
+    func speechButtonTapped() {
+        speechEnabled = !speechEnabled
+        updateSpeechButton()
     }
 }
 
 // MARK: - PWMapViewDelegate
 
-extension RoutingViewController: PWMapViewDelegate {
+extension VoicedRouteViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         if !firstLocationAcquired {
@@ -85,12 +117,10 @@ extension RoutingViewController: PWMapViewDelegate {
             
             var destinationPOI: PWPointOfInterest!
             if destinationPOIIdentifier != 0 {
-                destinationPOI = mapView.building.pois.filter({
-                    return $0.identifier == destinationPOIIdentifier
-                }).first
+                destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
             } else {
                 if let firstPOI = mapView.building.pois.first {
-                    destinationPOI = firstPOI
+                    destinationPOI = mapView.building.pois[2]
                 }
             }
             
@@ -105,24 +135,31 @@ extension RoutingViewController: PWMapViewDelegate {
                     return
                 }
                 
-                let routeOptions = PWRouteUIOptions()
-//                routeOptions.routeStrokeColor = <#routeStrokeColor#>
-//                routeOptions.directionFillColor = <#directionFillColor#>
-//                routeOptions.directionStrokeColor = <#directionStrokeColor#>
-//                routeOptions.instructionFillColor = <#instructionFillColor#>
-//                routeOptions.instructionStrokeColor = <#instructionStrokeColor#>
-//                routeOptions.showJoinPoint = <#true or false#>
-//                routeOptions.joinPointColor = <#joinPointColor#>
-//                routeOptions.lineJoin = <#.miter, round or bevel#>
-                mapView.navigate(with: route, options: routeOptions)
+                mapView.navigate(with: route)
             })
         }
+    }
+    
+    func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
+        guard let movement = instruction.movement, speechEnabled, !previouslyReadInstructions.contains(instruction) else {
+            return
+        }
+        previouslyReadInstructions.insert(instruction)
+        var voicePrompt = "\(movement)"
+        if let turn = instruction.turn {
+            voicePrompt = voicePrompt + ", then \(turn)"
+        }
+        let utterance = AVSpeechUtterance(string: voicePrompt)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-us")
+        
+        speechSynthesizer.stopSpeaking(at: .immediate)
+        speechSynthesizer.speak(utterance)
     }
 }
 
 // MARK: - CLLocationManagerDelegate
 
-extension RoutingViewController: CLLocationManagerDelegate {
+extension VoicedRouteViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -133,3 +170,4 @@ extension RoutingViewController: CLLocationManagerDelegate {
         }
     }
 }
+

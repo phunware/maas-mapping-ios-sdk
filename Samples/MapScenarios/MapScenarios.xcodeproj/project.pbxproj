@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		179CA613BC173C9078F0724C /* Pods_MapScenarios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
+		E37857FD2209D50B0059A179 /* VoicedRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */; };
 		E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799B204D90AA00905731 /* AppDelegate.swift */; };
 		E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */; };
 		E3C379A1204D90AA00905731 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C3799F204D90AA00905731 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.debug.xcconfig"; sourceTree = "<group>"; };
 		A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapScenarios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BB69120571B57003640CA /* LocationSharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSharingViewController.swift; sourceTree = "<group>"; };
+		E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicedRouteViewController.swift; sourceTree = "<group>"; };
 		E3C37998204D90AA00905731 /* MapScenarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapScenarios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C3799B204D90AA00905731 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioSelectViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				E36BB69120571B57003640CA /* LocationSharingViewController.swift */,
 				E3C771C92050555D00780D0F /* RoutingViewController.swift */,
 				E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */,
+				E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */,
 				E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */,
 				E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */,
+				E37857FD2209D50B0059A179 /* VoicedRouteViewController.swift in Sources */,
 				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
