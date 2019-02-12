@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		179CA613BC173C9078F0724C /* Pods_MapScenarios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */; };
+		9D6C1DCD220E0A4200C046DF /* DirectionImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C1DCC220E0A4100C046DF /* DirectionImages.xcassets */; };
+		9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */; };
+		9DE2FAAA2204CE3800EE5DF5 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */; };
+		9DE2FAB72204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */; };
+		9DE2FAB92204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
 		E37857FD2209D50B0059A179 /* VoicedRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */; };
+		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
 		E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799B204D90AA00905731 /* AppDelegate.swift */; };
 		E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */; };
 		E3C379A1204D90AA00905731 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C3799F204D90AA00905731 /* Main.storyboard */; };
@@ -26,9 +32,15 @@
 /* Begin PBXFileReference section */
 		728C41C18DA051CD358ABD7B /* Pods-MapScenarios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.release.xcconfig"; sourceTree = "<group>"; };
 		9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.debug.xcconfig"; sourceTree = "<group>"; };
+		9D6C1DCC220E0A4100C046DF /* DirectionImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = DirectionImages.xcassets; path = MapScenarios/Assets.xcassets/DirectionImages.xcassets; sourceTree = SOURCE_ROOT; };
+		9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnViewController.swift; sourceTree = "<group>"; };
+		9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
+		9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnByTurnInstructionCollectionViewCell.swift; sourceTree = "<group>"; };
+		9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TurnByTurnInstructionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapScenarios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BB69120571B57003640CA /* LocationSharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSharingViewController.swift; sourceTree = "<group>"; };
 		E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicedRouteViewController.swift; sourceTree = "<group>"; };
+		E378581C221313500059A179 /* PWRoute+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWRoute+Helper.swift"; sourceTree = "<group>"; };
 		E3C37998204D90AA00905731 /* MapScenarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapScenarios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C3799B204D90AA00905731 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioSelectViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +85,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9D6C1DCB220E09EB00C046DF /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				9D6C1DCC220E0A4100C046DF /* DirectionImages.xcassets */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		9D93FCE02208A2C700A2EB02 /* TurnByTurn */ = {
+			isa = PBXGroup;
+			children = (
+				9D6C1DCB220E09EB00C046DF /* Icons */,
+				9DE2FAB22204F5C500EE5DF5 /* Cells */,
+				9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */,
+			);
+			path = TurnByTurn;
+			sourceTree = "<group>";
+		};
+		9DE2FAB22204F5C500EE5DF5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */,
+				9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E378581B221313200059A179 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E378581C221313500059A179 /* PWRoute+Helper.swift */,
+			);
+			name = Extensions;
+			path = MapScenarios/Extensions;
+			sourceTree = SOURCE_ROOT;
+		};
 		E3C3798F204D90AA00905731 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +156,8 @@
 		E3C76E4F204D95BB00780D0F /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
+				E378581B221313200059A179 /* Extensions */,
+				9D93FCE02208A2C700A2EB02 /* TurnByTurn */,
 				E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */,
 				E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */,
 				E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */,
@@ -116,6 +166,7 @@
 				E3C771C92050555D00780D0F /* RoutingViewController.swift */,
 				E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */,
 				E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */,
+				9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -185,6 +236,8 @@
 				E3C379A6204D90AA00905731 /* LaunchScreen.storyboard in Resources */,
 				E3C379A3204D90AA00905731 /* Assets.xcassets in Resources */,
 				E3C379A1204D90AA00905731 /* Main.storyboard in Resources */,
+				9D6C1DCD220E0A4200C046DF /* DirectionImages.xcassets in Resources */,
+				9DE2FAB92204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +299,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE2FAAA2204CE3800EE5DF5 /* WalkTimeViewController.swift in Sources */,
 				E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */,
+				9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */,
+				9DE2FAB72204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */,
+				E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */,
 				E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
 				E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */,

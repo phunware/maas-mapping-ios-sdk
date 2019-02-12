@@ -29,14 +29,9 @@ class BluedotLocationViewController: UIViewController {
         
         navigationItem.title = "Bluedot Location"
         
-        if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 && buildingIdentifier != 0 {
-            PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
-        } else {
-            fatalError("applicationId, accessKey, signatureKey, and buildingIdentifier must be set")
+        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+            return
         }
-        
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
         
         mapView.delegate = self
         view.addSubview(mapView)
@@ -44,9 +39,10 @@ class BluedotLocationViewController: UIViewController {
         
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                if let error = error {
-                    print("Error retrieving building: \(error.localizedDescription)")
-                } else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways {
+                self?.locationManager.delegate = self
+                if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+                    self?.locationManager.requestWhenInUseAuthorization()
+                } else {
                     self?.startManagedLocationManager()
                 }
             })
@@ -54,8 +50,11 @@ class BluedotLocationViewController: UIViewController {
     }
     
     func startManagedLocationManager() {
-        let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
         DispatchQueue.main.async { [weak self] in
+            guard let buildingIdentifier = self?.buildingIdentifier else {
+                return
+            }
+            let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
             self?.mapView.register(managedLocationManager)
         }
     }
@@ -90,7 +89,8 @@ extension BluedotLocationViewController: CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             startManagedLocationManager()
         default:
-            print("Not authorized to start PWManagedLocationManager")
+            mapView.unregisterLocationManager()
+            print("Not authorized to start PWLocationManager")
         }
     }
 }

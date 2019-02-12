@@ -5,15 +5,15 @@
 	<key>buildingId</key>
 	<integer>0</integer>
 	<key>name</key>
-	<string>&lt;Your_Building_Name&gt;</string>
+	<string>Your_Building_Name</string>
 	<key>ios</key>
 	<dict>
 		<key>appId</key>
-		<string>&lt;Your_Maas_App_Id&gt;</string>
+		<string>Your_Maas_App_Id</string>
 		<key>accessKey</key>
-		<string>&lt;Your_Maas_Access_Key&gt;</string>
+		<string>Your_Maas_Access_Key</string>
 		<key>signatureKey</key>
-		<string>&lt;Your_Maas_Signature_Key&gt;</string>
+		<string>Your_Maas_Signature_Key</string>
 	</dict>
 </dict>
 </plist>

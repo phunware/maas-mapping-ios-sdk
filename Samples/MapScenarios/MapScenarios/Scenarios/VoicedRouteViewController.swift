@@ -44,14 +44,9 @@ class VoicedRouteViewController: UIViewController {
         navigationItem.title = "Route to Point of Interest"
         configureSpeechButton()
         
-        if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 && buildingIdentifier != 0 {
-            PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
-        } else {
-            fatalError("applicationId, accessKey, signatureKey, and buildingIdentifier must be set")
+        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+            return
         }
-        
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
         
         mapView.delegate = self
         view.addSubview(mapView)
@@ -59,11 +54,11 @@ class VoicedRouteViewController: UIViewController {
         
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                if let buildingIdentifier = self?.buildingIdentifier {
-                    DispatchQueue.main.async {
-                        let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
-                        self?.mapView.register(managedLocationManager)
-                    }
+                self?.locationManager.delegate = self
+                if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+                    self?.locationManager.requestWhenInUseAuthorization()
+                } else {
+                    self?.startManagedLocationManager()
                 }
             })
         }
@@ -166,7 +161,8 @@ extension VoicedRouteViewController: CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             startManagedLocationManager()
         default:
-            print("Not authorized to start PWManagedLocationManager")
+            mapView.unregisterLocationManager()
+            print("Not authorized to start PWLocationManager")
         }
     }
 }
