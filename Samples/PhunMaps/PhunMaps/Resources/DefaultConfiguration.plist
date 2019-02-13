@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>buildingId</key>
-	<integer>82633</integer>
+	<integer>0</integer>
 	<key>name</key>
-	<string>Austin Office</string>
+	<string>Your_Building_Name</string>
 	<key>ios</key>
 	<dict>
 		<key>appId</key>
-		<string>584</string>
+		<string>Your_Maas_App_Id</string>
 		<key>accessKey</key>
-		<string>9a745d35b0906460a2d92afbd422323b4af73997</string>
+		<string>Your_Maas_Access_Key</string>
 		<key>signatureKey</key>
-		<string>8b153e4e8ca2bae656ef2feeeb000bb096bd872e</string>
+		<string>Your_Maas_Signature_Key</string>
 	</dict>
 </dict>
 </plist>

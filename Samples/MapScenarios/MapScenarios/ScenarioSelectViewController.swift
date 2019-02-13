@@ -112,6 +112,17 @@ class ScenarioSelectViewController: UITableViewController {
                     locationSharingViewController.signatureKey = universalSignatureKey
                 }
             }
+        case String(describing: VoicedRouteViewController.self):
+            if let voicedRouteViewController = segue.destination as? VoicedRouteViewController {
+                if voicedRouteViewController.buildingIdentifier == 0 {
+                    voicedRouteViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+                if voicedRouteViewController.applicationId.count == 0 || voicedRouteViewController.accessKey.count == 0 || voicedRouteViewController.signatureKey.count == 0 {
+                    voicedRouteViewController.applicationId = universalApplicationId
+                    voicedRouteViewController.accessKey = universalAccessKey
+                    voicedRouteViewController.signatureKey = universalSignatureKey
+                }
+            }
         case String(describing: TurnByTurnViewController.self):
             if let turnByTurnViewController = segue.destination as? TurnByTurnViewController {
                 if turnByTurnViewController.buildingIdentifier == 0 {
@@ -143,7 +154,7 @@ class ScenarioSelectViewController: UITableViewController {
 extension UIViewController {
     
     func validateBuildingSetting(appId: String, accessKey: String, signatureKey: String, buildingId: Int) -> Bool {
-        if appId.isEmpty || accessKey.isEmpty || signatureKey.isEmpty {
+        if appId.isEmpty || accessKey.isEmpty || signatureKey.isEmpty || buildingId == 0 {
             let alertVC = UIAlertController(title: "Code Update Required", message: "Please put your applicationId/accessKey/signatureKey and buildingId in ScenarioSelectViewController.swift or the related view controllers.", preferredStyle: .alert)
             let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertVC.addAction(confirmAction)
