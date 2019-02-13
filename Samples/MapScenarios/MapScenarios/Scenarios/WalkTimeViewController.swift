@@ -94,37 +94,18 @@ class WalkTimeViewController: UIViewController {
     }
     
     func updateWalkTimeLabel() {
-        guard let route = mapView.currentRoute, let currentInstruction = mapView.currentRouteInstruction(), var instructionIndex = route.routeInstructions.index(of: currentInstruction) else {
+        guard let distanceRemaining = mapView.remainingRouteDistanceFromCurrentLocation() else {
             walkTimeLabel.text = ""
             return
         }
-        // Use user location for current route instruction index if possible
-        if let userLocation = mapView.indoorUserLocation, let closestInstruction = route.closestInstructionTo(userLocation), let closestInstructionIndex = route.routeInstructions.index(of: closestInstruction) {
-            instructionIndex = closestInstructionIndex
-        }
         
-        let estimatedWalkTimeInMinutes = calculateEstimatedWalkTimeInMinutes(route: route, currentRouteInstructionIndex: instructionIndex)
+        let estimatedWalkTimeInSeconds = distanceRemaining / walkSpeed
+        let estimatedWalkTimeInMinutes = Int(ceil(estimatedWalkTimeInSeconds / 60.0))
         if estimatedWalkTimeInMinutes <= 1 {
             walkTimeLabel.text = "Under 1 minute til arrival"
         } else {
             walkTimeLabel.text = "\(estimatedWalkTimeInMinutes) minutes til arrival"
         }
-    }
-    
-    func calculateEstimatedWalkTimeInMinutes(route: PWRoute, currentRouteInstructionIndex: Int) -> Int {
-        var distanceTotal = 0.0
-        var numberOfFloorSwitchInstructions = 0
-        for i in currentRouteInstructionIndex..<route.routeInstructions.count {
-            let instruction = route.routeInstructions[i]
-            if instruction.movementDirection == .floorChange {
-                numberOfFloorSwitchInstructions += 1
-            } else {
-                distanceTotal = distanceTotal + instruction.distance
-            }
-        }
-        let estimatedWalkTimeInSeconds = route.distance / walkSpeed
-        let estimatedWalkTimeInMinutes = Int(ceil(estimatedWalkTimeInSeconds / 60.0))
-        return estimatedWalkTimeInMinutes
     }
     
     func updateWalkSpeed(latestLocation: PWUserLocation) {

@@ -145,7 +145,7 @@ extension VoicedRouteViewController: PWMapViewDelegate {
             voicePrompt = voicePrompt + ", then \(turn)"
         }
         let utterance = AVSpeechUtterance(string: voicePrompt)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-us")
+        utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
         
         speechSynthesizer.stopSpeaking(at: .immediate)
         speechSynthesizer.speak(utterance)

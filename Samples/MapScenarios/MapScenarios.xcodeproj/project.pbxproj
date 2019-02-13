@@ -16,6 +16,7 @@
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
 		E37857FD2209D50B0059A179 /* VoicedRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */; };
 		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
+		E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581E22145F4F0059A179 /* PWMapView+Helper.swift */; };
 		E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799B204D90AA00905731 /* AppDelegate.swift */; };
 		E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */; };
 		E3C379A1204D90AA00905731 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C3799F204D90AA00905731 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		E36BB69120571B57003640CA /* LocationSharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSharingViewController.swift; sourceTree = "<group>"; };
 		E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicedRouteViewController.swift; sourceTree = "<group>"; };
 		E378581C221313500059A179 /* PWRoute+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWRoute+Helper.swift"; sourceTree = "<group>"; };
+		E378581E22145F4F0059A179 /* PWMapView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWMapView+Helper.swift"; sourceTree = "<group>"; };
 		E3C37998204D90AA00905731 /* MapScenarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapScenarios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C3799B204D90AA00905731 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioSelectViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		E378581B221313200059A179 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E378581E22145F4F0059A179 /* PWMapView+Helper.swift */,
 				E378581C221313500059A179 /* PWRoute+Helper.swift */,
 			);
 			name = Extensions;
@@ -312,6 +315,7 @@
 				E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */,
 				E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */,
 				E37857FD2209D50B0059A179 /* VoicedRouteViewController.swift in Sources */,
+				E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */,
 				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
