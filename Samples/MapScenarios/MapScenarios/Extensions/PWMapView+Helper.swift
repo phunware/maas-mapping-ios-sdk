@@ -2,8 +2,8 @@
 //  PWMapView+Helper.swift
 //  MapScenarios
 //
-//  Created by Patrick Dunshee on 2/13/19.
-//  Copyright © 2019 Patrick Dunshee. All rights reserved.
+//  Created on 2/13/19.
+//  Copyright © 2019 Phunware. All rights reserved.
 //
 
 import PWMapKit

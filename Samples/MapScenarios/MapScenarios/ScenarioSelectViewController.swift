@@ -112,15 +112,15 @@ class ScenarioSelectViewController: UITableViewController {
                     locationSharingViewController.signatureKey = universalSignatureKey
                 }
             }
-        case String(describing: VoicedRouteViewController.self):
-            if let voicedRouteViewController = segue.destination as? VoicedRouteViewController {
-                if voicedRouteViewController.buildingIdentifier == 0 {
-                    voicedRouteViewController.buildingIdentifier = universalBuildingIdentifier
+        case String(describing: VoicePromptRouteViewController.self):
+            if let voicePromptRouteViewController = segue.destination as? VoicePromptRouteViewController {
+                if voicePromptRouteViewController.buildingIdentifier == 0 {
+                    voicePromptRouteViewController.buildingIdentifier = universalBuildingIdentifier
                 }
-                if voicedRouteViewController.applicationId.count == 0 || voicedRouteViewController.accessKey.count == 0 || voicedRouteViewController.signatureKey.count == 0 {
-                    voicedRouteViewController.applicationId = universalApplicationId
-                    voicedRouteViewController.accessKey = universalAccessKey
-                    voicedRouteViewController.signatureKey = universalSignatureKey
+                if voicePromptRouteViewController.applicationId.count == 0 || voicePromptRouteViewController.accessKey.count == 0 || voicePromptRouteViewController.signatureKey.count == 0 {
+                    voicePromptRouteViewController.applicationId = universalApplicationId
+                    voicePromptRouteViewController.accessKey = universalAccessKey
+                    voicePromptRouteViewController.signatureKey = universalSignatureKey
                 }
             }
         case String(describing: TurnByTurnViewController.self):
