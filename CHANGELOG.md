@@ -1,4 +1,8 @@
 # PWMapKit Changelog
+## 3.7.1 (Wednesday, February 20th, 2019)
+#### Bug fixes / performance enhancements
+* Use new v3.0 Map-API
+
 ## 3.7.0 (Thursday, January 10th, 2019)
 #### Features
 * Update for PWLocation 3.7.0 compatibility, which includes beacon maintenance features.
