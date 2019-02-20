@@ -14,9 +14,11 @@
 		9DE2FAB72204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */; };
 		9DE2FAB92204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
-		E37857FD2209D50B0059A179 /* VoicedRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */; };
 		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
 		E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581E22145F4F0059A179 /* PWMapView+Helper.swift */; };
+		E37858212216FB840059A179 /* MKMapPoint+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37858202216FB840059A179 /* MKMapPoint+Helper.swift */; };
+		E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */; };
+		E3785826221706680059A179 /* VoicePromptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785825221706680059A179 /* VoicePromptButton.swift */; };
 		E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799B204D90AA00905731 /* AppDelegate.swift */; };
 		E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */; };
 		E3C379A1204D90AA00905731 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C3799F204D90AA00905731 /* Main.storyboard */; };
@@ -40,9 +42,11 @@
 		9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TurnByTurnInstructionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapScenarios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BB69120571B57003640CA /* LocationSharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSharingViewController.swift; sourceTree = "<group>"; };
-		E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicedRouteViewController.swift; sourceTree = "<group>"; };
 		E378581C221313500059A179 /* PWRoute+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWRoute+Helper.swift"; sourceTree = "<group>"; };
 		E378581E22145F4F0059A179 /* PWMapView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWMapView+Helper.swift"; sourceTree = "<group>"; };
+		E37858202216FB840059A179 /* MKMapPoint+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapPoint+Helper.swift"; sourceTree = "<group>"; };
+		E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoicePromptRouteViewController.swift; sourceTree = "<group>"; };
+		E3785825221706680059A179 /* VoicePromptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePromptButton.swift; sourceTree = "<group>"; };
 		E3C37998204D90AA00905731 /* MapScenarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapScenarios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C3799B204D90AA00905731 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioSelectViewController.swift; sourceTree = "<group>"; };
@@ -117,12 +121,22 @@
 		E378581B221313200059A179 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E37858202216FB840059A179 /* MKMapPoint+Helper.swift */,
 				E378581E22145F4F0059A179 /* PWMapView+Helper.swift */,
 				E378581C221313500059A179 /* PWRoute+Helper.swift */,
 			);
 			name = Extensions;
 			path = MapScenarios/Extensions;
 			sourceTree = SOURCE_ROOT;
+		};
+		E37858222217062D0059A179 /* Voice Prompt */ = {
+			isa = PBXGroup;
+			children = (
+				E3785825221706680059A179 /* VoicePromptButton.swift */,
+				E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */,
+			);
+			path = "Voice Prompt";
+			sourceTree = "<group>";
 		};
 		E3C3798F204D90AA00905731 = {
 			isa = PBXGroup;
@@ -159,6 +173,7 @@
 		E3C76E4F204D95BB00780D0F /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
+				E37858222217062D0059A179 /* Voice Prompt */,
 				E378581B221313200059A179 /* Extensions */,
 				9D93FCE02208A2C700A2EB02 /* TurnByTurn */,
 				E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */,
@@ -168,7 +183,6 @@
 				E36BB69120571B57003640CA /* LocationSharingViewController.swift */,
 				E3C771C92050555D00780D0F /* RoutingViewController.swift */,
 				E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */,
-				E37857FC2209D50B0059A179 /* VoicedRouteViewController.swift */,
 				9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */,
 			);
 			path = Scenarios;
@@ -307,6 +321,7 @@
 				9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */,
 				9DE2FAB72204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */,
 				E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */,
+				E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */,
 				E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
 				E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */,
@@ -314,7 +329,8 @@
 				E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */,
 				E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */,
 				E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */,
-				E37857FD2209D50B0059A179 /* VoicedRouteViewController.swift in Sources */,
+				E3785826221706680059A179 /* VoicePromptButton.swift in Sources */,
+				E37858212216FB840059A179 /* MKMapPoint+Helper.swift in Sources */,
 				E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */,
 				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
 			);

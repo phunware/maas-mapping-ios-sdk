@@ -265,7 +265,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationSharingCell" textLabel="yA8-81-sfn" detailTextLabel="Pey-Ej-1CD" style="IBUITableViewCellStyleSubtitle" id="SYq-xN-N3x" userLabel="VoicedRouteCell">
-                                        <rect key="frame" x="0.0" y="336" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="424" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SYq-xN-N3x" id="fuH-rc-4ys">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -288,7 +288,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="k8d-HL-X4c" kind="show" identifier="VoicedRouteViewController" id="9gu-y5-bVc"/>
+                                            <segue destination="k8d-HL-X4c" kind="show" identifier="VoicePromptRouteViewController" id="9gu-y5-bVc"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -372,10 +372,10 @@
             </objects>
             <point key="canvasLocation" x="1452" y="-349"/>
         </scene>
-        <!--Voiced Route View Controller-->
+        <!--Voice Prompt Route View Controller-->
         <scene sceneID="Qy2-nr-D9z">
             <objects>
-                <viewController id="k8d-HL-X4c" customClass="VoicedRouteViewController" customModule="MapScenarios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k8d-HL-X4c" customClass="VoicePromptRouteViewController" customModule="MapScenarios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9dr-W8-ZsE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
