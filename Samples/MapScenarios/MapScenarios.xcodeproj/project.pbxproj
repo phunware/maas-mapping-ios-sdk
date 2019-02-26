@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		179CA613BC173C9078F0724C /* Pods_MapScenarios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */; };
+		9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */; };
+		9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */; };
+		9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */; };
+		9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */; };
 		9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */; };
-		9DE2FAAA2204CE3800EE5DF5 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
 		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
 		E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581E22145F4F0059A179 /* PWMapView+Helper.swift */; };
@@ -26,7 +29,6 @@
 		E3C379A1204D90AA00905731 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C3799F204D90AA00905731 /* Main.storyboard */; };
 		E3C379A3204D90AA00905731 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3C379A2204D90AA00905731 /* Assets.xcassets */; };
 		E3C379A6204D90AA00905731 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C379A4204D90AA00905731 /* LaunchScreen.storyboard */; };
-		E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */; };
 		E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */; };
 		E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */; };
 		E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */; };
@@ -37,8 +39,11 @@
 /* Begin PBXFileReference section */
 		728C41C18DA051CD358ABD7B /* Pods-MapScenarios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.release.xcconfig"; sourceTree = "<group>"; };
 		9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.debug.xcconfig"; sourceTree = "<group>"; };
+		9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluedotLocationViewController.swift; sourceTree = "<group>"; };
+		9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
+		9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkTimeView.xib; sourceTree = "<group>"; };
+		9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkTimeView.swift; sourceTree = "<group>"; };
 		9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnViewController.swift; sourceTree = "<group>"; };
-		9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
 		A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapScenarios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BB69120571B57003640CA /* LocationSharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSharingViewController.swift; sourceTree = "<group>"; };
 		E378581C221313500059A179 /* PWRoute+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWRoute+Helper.swift"; sourceTree = "<group>"; };
@@ -58,7 +63,6 @@
 		E3C379A2204D90AA00905731 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3C379A5204D90AA00905731 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3C379A7204D90AA00905731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluedotLocationViewController.swift; sourceTree = "<group>"; };
 		E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBuildingViewController.swift; sourceTree = "<group>"; };
 		E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModesViewController.swift; sourceTree = "<group>"; };
 		E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPOIViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,24 @@
 				A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D1ECD282225DD510029A667 /* WalkTime */ = {
+			isa = PBXGroup;
+			children = (
+				9D1ECD2D2225DE310029A667 /* Views */,
+				9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */,
+			);
+			path = WalkTime;
+			sourceTree = "<group>";
+		};
+		9D1ECD2D2225DE310029A667 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */,
+				9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9D93FCE02208A2C700A2EB02 /* TurnByTurn */ = {
@@ -190,14 +212,14 @@
 				E37858222217062D0059A179 /* Voice Prompt */,
 				E378581B221313200059A179 /* Extensions */,
 				9D93FCE02208A2C700A2EB02 /* TurnByTurn */,
-				E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */,
+				9D1ECD282225DD510029A667 /* WalkTime */,
+				9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */,
 				E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */,
 				E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */,
 				E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */,
 				E36BB69120571B57003640CA /* LocationSharingViewController.swift */,
 				E3C771C92050555D00780D0F /* RoutingViewController.swift */,
 				E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */,
-				9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -264,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */,
 				E3C379A6204D90AA00905731 /* LaunchScreen.storyboard in Resources */,
 				E3C379A3204D90AA00905731 /* Assets.xcassets in Resources */,
 				E378582D222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
@@ -330,17 +353,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DE2FAAA2204CE3800EE5DF5 /* WalkTimeViewController.swift in Sources */,
 				E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */,
 				9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */,
+				9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */,
 				E3785831222073DC0059A179 /* TurnByTurnCollectionView.swift in Sources */,
 				E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */,
 				E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */,
 				E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
 				E378583322247D430059A179 /* PWRouteInstruction+Helper.swift in Sources */,
-				E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */,
 				E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */,
+				9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */,
 				E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */,
 				E378582E222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */,
 				E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */,
@@ -349,6 +372,7 @@
 				E37858212216FB840059A179 /* MKMapPoint+Helper.swift in Sources */,
 				E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */,
 				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
+				9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
