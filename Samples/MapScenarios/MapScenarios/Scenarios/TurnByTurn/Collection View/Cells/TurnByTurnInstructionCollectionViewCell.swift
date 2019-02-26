@@ -47,37 +47,7 @@ class TurnByTurnInstructionCollectionViewCell: UICollectionViewCell {
     }
     
     func updateForRouteInstruction(_ routeInstruction: PWRouteInstruction) {
-        let direction = routeInstruction.isFloorChange() ? routeInstruction.movementDirection : routeInstruction.turnDirection
-        movementImage.image = imageFromDirection(direction)
+        movementImage.image = routeInstruction.imageFromDirection()
         movementLabel.attributedText = routeInstruction.attributedInstructionString(highlightedTextColor: UIColor(displayP3Red: 4.0/255.0, green: 114.0/255.0, blue: 254.0/255.0, alpha: 1.0), regularTextColor: .darkText)
-    }
-    
-    private func imageFromDirection(_ direction: PWRouteInstructionDirection) -> UIImage {
-        switch direction {
-        case .straight:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionStraight")
-        case .left:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionSharpLeft")
-        case .right:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionSharpRight")
-        case .bearLeft:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionBearLeft")
-        case .bearRight:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionBearRight")
-        case .elevatorUp:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionElevatorUp")
-        case .elevatorDown:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionElevatorDown")
-        case .stairsUp:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionStairsUp")
-        case .stairsDown:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionStairsDown")
-        case .escalatorUp:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionEscalatorDown")
-        case .escalatorDown:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionEscalatorUp")
-        case .floorChange:
-            return #imageLiteral(resourceName: "PWRouteInstructionDirectionStraight")
-        }
     }
 }

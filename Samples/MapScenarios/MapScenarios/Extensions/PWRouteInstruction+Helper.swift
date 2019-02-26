@@ -129,4 +129,37 @@ extension PWRouteInstruction {
             return nil
         }
     }
+    
+    func imageFromDirection() -> UIImage {
+        return isFloorChange() ? imageFromDirection(movementDirection) : imageFromDirection(turnDirection)
+    }
+    
+    func imageFromDirection(_ direction: PWRouteInstructionDirection) -> UIImage {
+        switch direction {
+        case .straight:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionStraight")
+        case .left:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionSharpLeft")
+        case .right:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionSharpRight")
+        case .bearLeft:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionBearLeft")
+        case .bearRight:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionBearRight")
+        case .elevatorUp:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionElevatorUp")
+        case .elevatorDown:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionElevatorDown")
+        case .stairsUp:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionStairsUp")
+        case .stairsDown:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionStairsDown")
+        case .escalatorUp:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionEscalatorDown")
+        case .escalatorDown:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionEscalatorUp")
+        case .floorChange:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionStraight")
+        }
+    }
 }
