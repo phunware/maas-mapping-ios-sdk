@@ -22,6 +22,10 @@ class WalkTimeViewController: TurnByTurnViewController {
     // If the blue dot sit on the route path
     var snappedLocation = false
     
+    // Average speed
+    var averageSpeed: CLLocationSpeed?
+    var speedArray = [CLLocationSpeed]()
+    
     // The walk time view
     var walkTimeView: WalkTimeView?
     
@@ -89,7 +93,7 @@ class WalkTimeViewController: TurnByTurnViewController {
         }
         
         // Set initial value
-        walkTimeView.updateWalkTime(distance: distance)
+        walkTimeView.updateWalkTime(distance: distance, averageSpeed: speedArray.average)
     }
     
     func restDistance() -> CLLocationDistance {
@@ -131,6 +135,17 @@ extension WalkTimeViewController: PWMapViewDelegate {
     func mapViewStoppedSnappingLocation(toRoute mapView: PWMapView!) {
         snappedLocation = false
     }
+    
+    func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
+        // Update walk time when blue dot is not acquired
+        if lastUpdateLocation == nil, let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: instruction), let restInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] {
+            var distance: Double = 0
+            for instruction in restInstructions {
+                distance += instruction.distance
+            }
+            self.walkTimeView?.updateWalkTime(distance: distance, averageSpeed: 0)
+        }
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -148,6 +163,15 @@ extension WalkTimeViewController: CLLocationManagerDelegate {
             }
         default:
             print("Not authorized to start PWManagedLocationManager")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            speedArray.append(location.speed)
+            while speedArray.count > 5 {
+                speedArray.remove(at: 0)
+            }
         }
     }
 }

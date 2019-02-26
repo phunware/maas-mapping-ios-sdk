@@ -13,10 +13,29 @@ extension Notification.Name {
     static let ExitWalkTimeButtonTapped = NSNotification.Name("ExitWalkTimeButtonTapped")
 }
 
+extension Collection where Element: Numeric {
+    // Returns the total sum of all elements in the array
+    var total: Element { return reduce(0, +) }
+}
+
+extension Collection where Element: BinaryInteger {
+    // Returns the average of all elements in the array
+    var average: Double {
+        return isEmpty ? 0 : Double(total) / Double(count)
+    }
+}
+
+extension Collection where Element: BinaryFloatingPoint {
+    // Returns the average of all elements in the array
+    var average: Element {
+        return isEmpty ? 0 : total / Element(count)
+    }
+}
+
 class WalkTimeView: UIView {
     
     // Supposed average walk speed 0.7 meter per second
-    let averageWalkSpeed = 0.7
+    var averageWalkSpeed: Double = 0.7
     
     @IBOutlet weak var restTimeLabel: UILabel!
     @IBOutlet weak var arriveTimeLabel: UILabel!
@@ -26,8 +45,16 @@ class WalkTimeView: UIView {
         NotificationCenter.default.post(name: .ExitWalkTimeButtonTapped, object: nil)
     }
     
-    func updateWalkTime(distance: CLLocationDistance) {
+    func updateWalkTime(distance: CLLocationDistance, averageSpeed: CLLocationSpeed) {
+        if distance == 0 {
+            restTimeLabel.text = ""
+            arriveTimeLabel.text = "Arrived"
+        }
+        
         // Set initial value
+        if averageSpeed > 0 {
+            averageWalkSpeed = averageSpeed
+        }
         let duration = estimatedTime(distance: distance)
         let arriveTime = Date().addingTimeInterval(duration)
         
