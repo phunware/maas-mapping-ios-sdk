@@ -28,7 +28,7 @@ class TurnByTurnViewController: UIViewController {
     let locationManager = CLLocationManager()
     var firstLocationAcquired = false
     
-    var instructionsCollectionView: UICollectionView!
+    var turnByTurnCollectionView: TurnByTurnCollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,28 +69,6 @@ class TurnByTurnViewController: UIViewController {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
-    func configureTurnByTurnInstructionsView() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        instructionsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        instructionsCollectionView.showsHorizontalScrollIndicator = true
-        instructionsCollectionView.isPagingEnabled = true
-        instructionsCollectionView.bounces = true
-        instructionsCollectionView.backgroundColor = .white
-        instructionsCollectionView.delegate = self
-        instructionsCollectionView.dataSource = self
-        view.addSubview(instructionsCollectionView)
-        
-        instructionsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        instructionsCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 64.0).isActive = true
-        instructionsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        instructionsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        instructionsCollectionView.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
-        
-        let collectionViewCellIdentifier = String(describing: TurnByTurnInstructionCollectionViewCell.self)
-        instructionsCollectionView.register(UINib(nibName: collectionViewCellIdentifier, bundle: nil), forCellWithReuseIdentifier: collectionViewCellIdentifier)
-    }
-    
     //*************************************
     // Plot route on the map
     //*************************************
@@ -121,54 +99,10 @@ class TurnByTurnViewController: UIViewController {
     }
     
     func initializeTurnByTurn() {
-        configureTurnByTurnInstructionsView()
-        
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
-        instructionsCollectionView.reloadData()
-        instructionsCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-    }
-}
-
-extension TurnByTurnViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentIndex = Int(instructionsCollectionView.contentOffset.x / instructionsCollectionView.frame.size.width)
-        mapView.setRouteManeuver(mapView.currentRoute.routeInstructions?[currentIndex])
-    }
-}
-
-extension TurnByTurnViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let route = mapView.currentRoute, let routeInstructions = route.routeInstructions else {
-            return 0
+        if turnByTurnCollectionView == nil {
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
+            turnByTurnCollectionView?.configureInView(view)
         }
-        return routeInstructions.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
-        if let routeInstructionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TurnByTurnInstructionCollectionViewCell.self), for: indexPath) as? TurnByTurnInstructionCollectionViewCell {
-            if let route = mapView.currentRoute, let routeInstructions = route.routeInstructions, routeInstructions.count > indexPath.row {
-                routeInstructionCollectionViewCell.routeInstruction = routeInstructions[indexPath.row]
-            }
-            cell = routeInstructionCollectionViewCell
-        }
-        return cell
-    }
-}
-
-extension TurnByTurnViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.frame.size
     }
 }

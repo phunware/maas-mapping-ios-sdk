@@ -157,6 +157,7 @@ class LocationSharingViewController: UIViewController {
             return
         }
         
+        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         mapView.delegate = self
         mapView.locationSharingDelegate = self
         mapView.sharedLocationDisplayName = deviceDisplayName
