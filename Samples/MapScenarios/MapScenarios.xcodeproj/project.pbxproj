@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		179CA613BC173C9078F0724C /* Pods_MapScenarios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */; };
-		9D6C1DCD220E0A4200C046DF /* DirectionImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C1DCC220E0A4100C046DF /* DirectionImages.xcassets */; };
 		9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */; };
 		9DE2FAAA2204CE3800EE5DF5 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */; };
-		9DE2FAB72204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */; };
-		9DE2FAB92204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
 		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
 		E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581E22145F4F0059A179 /* PWMapView+Helper.swift */; };
 		E37858212216FB840059A179 /* MKMapPoint+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37858202216FB840059A179 /* MKMapPoint+Helper.swift */; };
 		E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */; };
 		E3785826221706680059A179 /* VoicePromptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785825221706680059A179 /* VoicePromptButton.swift */; };
+		E378582D222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3785829222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib */; };
+		E378582E222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378582A222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift */; };
+		E378582F222073CA0059A179 /* DirectionImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E378582C222073CA0059A179 /* DirectionImages.xcassets */; };
+		E3785831222073DC0059A179 /* TurnByTurnCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */; };
+		E378583322247D430059A179 /* PWRouteInstruction+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378583222247D420059A179 /* PWRouteInstruction+Helper.swift */; };
 		E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799B204D90AA00905731 /* AppDelegate.swift */; };
 		E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */; };
 		E3C379A1204D90AA00905731 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C3799F204D90AA00905731 /* Main.storyboard */; };
@@ -35,11 +37,8 @@
 /* Begin PBXFileReference section */
 		728C41C18DA051CD358ABD7B /* Pods-MapScenarios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.release.xcconfig"; sourceTree = "<group>"; };
 		9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.debug.xcconfig"; sourceTree = "<group>"; };
-		9D6C1DCC220E0A4100C046DF /* DirectionImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = DirectionImages.xcassets; path = MapScenarios/Assets.xcassets/DirectionImages.xcassets; sourceTree = SOURCE_ROOT; };
 		9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnViewController.swift; sourceTree = "<group>"; };
 		9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
-		9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnByTurnInstructionCollectionViewCell.swift; sourceTree = "<group>"; };
-		9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TurnByTurnInstructionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapScenarios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BB69120571B57003640CA /* LocationSharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSharingViewController.swift; sourceTree = "<group>"; };
 		E378581C221313500059A179 /* PWRoute+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWRoute+Helper.swift"; sourceTree = "<group>"; };
@@ -47,6 +46,11 @@
 		E37858202216FB840059A179 /* MKMapPoint+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapPoint+Helper.swift"; sourceTree = "<group>"; };
 		E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoicePromptRouteViewController.swift; sourceTree = "<group>"; };
 		E3785825221706680059A179 /* VoicePromptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePromptButton.swift; sourceTree = "<group>"; };
+		E3785829222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TurnByTurnInstructionCollectionViewCell.xib; sourceTree = "<group>"; };
+		E378582A222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnByTurnInstructionCollectionViewCell.swift; sourceTree = "<group>"; };
+		E378582C222073CA0059A179 /* DirectionImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DirectionImages.xcassets; sourceTree = "<group>"; };
+		E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnCollectionView.swift; sourceTree = "<group>"; };
+		E378583222247D420059A179 /* PWRouteInstruction+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWRouteInstruction+Helper.swift"; sourceTree = "<group>"; };
 		E3C37998204D90AA00905731 /* MapScenarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapScenarios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C3799B204D90AA00905731 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioSelectViewController.swift; sourceTree = "<group>"; };
@@ -91,31 +95,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9D6C1DCB220E09EB00C046DF /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				9D6C1DCC220E0A4100C046DF /* DirectionImages.xcassets */,
-			);
-			path = Icons;
-			sourceTree = "<group>";
-		};
 		9D93FCE02208A2C700A2EB02 /* TurnByTurn */ = {
 			isa = PBXGroup;
 			children = (
-				9D6C1DCB220E09EB00C046DF /* Icons */,
-				9DE2FAB22204F5C500EE5DF5 /* Cells */,
+				E3785827222073CA0059A179 /* Collection View */,
 				9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */,
 			);
 			path = TurnByTurn;
-			sourceTree = "<group>";
-		};
-		9DE2FAB22204F5C500EE5DF5 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */,
-				9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		E378581B221313200059A179 /* Extensions */ = {
@@ -124,6 +110,7 @@
 				E37858202216FB840059A179 /* MKMapPoint+Helper.swift */,
 				E378581E22145F4F0059A179 /* PWMapView+Helper.swift */,
 				E378581C221313500059A179 /* PWRoute+Helper.swift */,
+				E378583222247D420059A179 /* PWRouteInstruction+Helper.swift */,
 			);
 			name = Extensions;
 			path = MapScenarios/Extensions;
@@ -136,6 +123,33 @@
 				E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */,
 			);
 			path = "Voice Prompt";
+			sourceTree = "<group>";
+		};
+		E3785827222073CA0059A179 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				E3785828222073CA0059A179 /* Cells */,
+				E378582B222073CA0059A179 /* Icons */,
+				E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */,
+			);
+			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		E3785828222073CA0059A179 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E3785829222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib */,
+				E378582A222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E378582B222073CA0059A179 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E378582C222073CA0059A179 /* DirectionImages.xcassets */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		E3C3798F204D90AA00905731 = {
@@ -252,9 +266,9 @@
 			files = (
 				E3C379A6204D90AA00905731 /* LaunchScreen.storyboard in Resources */,
 				E3C379A3204D90AA00905731 /* Assets.xcassets in Resources */,
+				E378582D222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
+				E378582F222073CA0059A179 /* DirectionImages.xcassets in Resources */,
 				E3C379A1204D90AA00905731 /* Main.storyboard in Resources */,
-				9D6C1DCD220E0A4200C046DF /* DirectionImages.xcassets in Resources */,
-				9DE2FAB92204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,14 +333,16 @@
 				9DE2FAAA2204CE3800EE5DF5 /* WalkTimeViewController.swift in Sources */,
 				E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */,
 				9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */,
-				9DE2FAB72204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */,
+				E3785831222073DC0059A179 /* TurnByTurnCollectionView.swift in Sources */,
 				E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */,
 				E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */,
 				E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
+				E378583322247D430059A179 /* PWRouteInstruction+Helper.swift in Sources */,
 				E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */,
 				E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */,
 				E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */,
+				E378582E222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */,
 				E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */,
 				E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */,
 				E3785826221706680059A179 /* VoicePromptButton.swift in Sources */,

@@ -30,6 +30,7 @@ class LoadBuildingViewController: UIViewController {
             return
         }
         
+        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         view.addSubview(mapView)
         configureMapViewConstraints()
         

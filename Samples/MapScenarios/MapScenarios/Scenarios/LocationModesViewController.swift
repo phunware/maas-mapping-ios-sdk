@@ -128,6 +128,7 @@ class LocationModesViewController: UIViewController {
             return
         }
         
+        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()
