@@ -3,7 +3,7 @@
 //  MapScenarios
 //
 //  Created on 2/21/19.
-//  Copyright © 2019 Patrick Dunshee. All rights reserved.
+//  Copyright © 2019 Phunware. All rights reserved.
 //
 
 import UIKit
@@ -34,8 +34,10 @@ extension Collection where Element: BinaryFloatingPoint {
 
 class WalkTimeView: UIView {
     
-    // Supposed average walk speed 0.7 meter per second
+    // Supposed average walk speed is 0.7 m/s
     var averageWalkSpeed: Double = 0.7
+    // The reasonable walk speed range
+    var averageWalkSpeedRange: Range = 0.2..<1.5
     
     @IBOutlet weak var restTimeLabel: UILabel!
     @IBOutlet weak var arriveTimeLabel: UILabel!
@@ -45,14 +47,14 @@ class WalkTimeView: UIView {
         NotificationCenter.default.post(name: .ExitWalkTimeButtonTapped, object: nil)
     }
     
-    func updateWalkTime(distance: CLLocationDistance, averageSpeed: CLLocationSpeed) {
+    func updateWalkTime(distance: CLLocationDistance, averageSpeed: CLLocationSpeed = 0.7) {
         if distance == 0 {
             restTimeLabel.text = ""
             arriveTimeLabel.text = "Arrived"
         }
         
         // Set initial value
-        if averageSpeed > 0 {
+        if averageWalkSpeedRange.contains(averageSpeed) {
             averageWalkSpeed = averageSpeed
         }
         let duration = estimatedTime(distance: distance)
@@ -60,7 +62,7 @@ class WalkTimeView: UIView {
         
         isHidden = false
         restTimeLabel.text = format(duration: duration)
-        arriveTimeLabel.text = "Arrive Time \(format(date: arriveTime))"
+        arriveTimeLabel.text = "Arrival Time \(format(date: arriveTime))"
     }
 }
 
@@ -77,7 +79,7 @@ extension WalkTimeView {
     // Format walk time
     func format(duration: TimeInterval) -> String {
         if duration < 60 {
-            return "1min"
+            return "1 min"
         }
         
         let formatter = DateComponentsFormatter()
@@ -88,7 +90,7 @@ extension WalkTimeView {
         return formatter.string(from: duration)!
     }
     
-    // Format arrive time
+    // Format arrival time
     func format(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"

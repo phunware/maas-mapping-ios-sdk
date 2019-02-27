@@ -2,8 +2,8 @@
 //  TimeTraveledViewController.swift
 //  MapScenarios
 //
-//  Created by Xiangwei Wang on 2/1/19.
-//  Copyright © 2019 Patrick Dunshee. All rights reserved.
+//  Created on 2/1/19.
+//  Copyright © 2019 Phunware. All rights reserved.
 //
 
 import Foundation
@@ -19,8 +19,8 @@ class WalkTimeViewController: TurnByTurnViewController {
     // Last update location
     var lastUpdateLocation: PWUserLocation?
     
-    // If the blue dot sit on the route path
-    var snappedLocation = false
+    // If the blue dot is currently snapped to the route path
+    var snappingLocation = false
     
     // Average speed
     var averageSpeed: CLLocationSpeed?
@@ -38,7 +38,7 @@ class WalkTimeViewController: TurnByTurnViewController {
         // Request location authentication
         clLocationManager = CLLocationManager()
         clLocationManager.delegate = self
-        clLocationManager.requestAlwaysAuthorization()
+        clLocationManager.requestWhenInUseAuthorization()
         NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] (_) in
             self?.walkTimeView?.removeFromSuperview()
             self?.walkTimeView = nil
@@ -71,7 +71,7 @@ class WalkTimeViewController: TurnByTurnViewController {
     }
     
     func updateWalkTimeView() {
-        let distance = restDistance()
+        let distance = remainingDistance()
         
         guard let walkTimeView = walkTimeView, distance >= 0 else {
             return
@@ -85,33 +85,29 @@ class WalkTimeViewController: TurnByTurnViewController {
         
         // Update every 5 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-            guard let strongSelf = self else {
-                return
-            }
-            
-            strongSelf.updateWalkTimeView()
+            self?.updateWalkTimeView()
         }
         
         // Set initial value
-        walkTimeView.updateWalkTime(distance: distance, averageSpeed: speedArray.average)
+        walkTimeView.updateWalkTime(distance: distance)
     }
     
-    func restDistance() -> CLLocationDistance {
+    func remainingDistance() -> CLLocationDistance {
         // Recaculate only when the blue dot is snapping on the route path
-        guard let lastUpdateLocation = lastUpdateLocation, snappedLocation == true, let currentInstruction = self.mapView.currentRouteInstruction(), let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: currentInstruction), let restInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] else {
+        guard let lastUpdateLocation = lastUpdateLocation, snappingLocation == true, let currentInstruction = self.mapView.currentRouteInstruction(), let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: currentInstruction), let remainingInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] else {
             return -1
         }
         
         var distance: CLLocationDistance = 0
         
-        // The distance for rest of instructions
-        for instruction in restInstructions {
+        // The distance for the remaining instructions
+        for instruction in remainingInstructions {
             distance += instruction.distance
         }
         
         // The distance from current location to the end of current instruction
         if let instructionEndLocation = currentInstruction.points.last?.coordinate {
-            let userLocation = CLLocation(latitude: lastUpdateLocation.coordinate.latitude, longitude: lastUpdateLocation.coordinate.longitude);
+            let userLocation = CLLocation(latitude: lastUpdateLocation.coordinate.latitude, longitude: lastUpdateLocation.coordinate.longitude)
             let endLocation = CLLocation(latitude: instructionEndLocation.latitude, longitude: instructionEndLocation.longitude)
             distance += userLocation.distance(from: endLocation)
         }
@@ -129,18 +125,18 @@ extension WalkTimeViewController: PWMapViewDelegate {
     }
     
     func mapViewStartedSnappingLocation(toRoute mapView: PWMapView!) {
-        snappedLocation = true
+        snappingLocation = true
     }
     
     func mapViewStoppedSnappingLocation(toRoute mapView: PWMapView!) {
-        snappedLocation = false
+        snappingLocation = false
     }
     
     func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
         // Update walk time when blue dot is not acquired
-        if lastUpdateLocation == nil, let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: instruction), let restInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] {
+        if lastUpdateLocation == nil, let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: instruction), let remainingInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] {
             var distance: Double = 0
-            for instruction in restInstructions {
+            for instruction in remainingInstructions {
                 distance += instruction.distance
             }
             self.walkTimeView?.updateWalkTime(distance: distance, averageSpeed: 0)
@@ -167,7 +163,7 @@ extension WalkTimeViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
+        if let location = locations.last {
             speedArray.append(location.speed)
             while speedArray.count > 5 {
                 speedArray.remove(at: 0)
