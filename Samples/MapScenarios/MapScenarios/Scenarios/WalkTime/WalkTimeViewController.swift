@@ -14,7 +14,15 @@ import PWMapKit
 class WalkTimeViewController: TurnByTurnViewController {
     
     // GPS location manager - used to request location authentication
-    var clLocationManager: CLLocationManager!
+    lazy var clLocationManager: CLLocationManager = {
+        var locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.activityType = .fitness
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        
+        return locationManager
+    }()
     
     // Last update location
     var lastUpdateLocation: PWUserLocation?
@@ -36,9 +44,9 @@ class WalkTimeViewController: TurnByTurnViewController {
         mapView.delegate = self
         
         // Request location authentication
-        clLocationManager = CLLocationManager()
-        clLocationManager.delegate = self
-        clLocationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            clLocationManager.requestWhenInUseAuthorization()
+        }
         NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] (_) in
             self?.walkTimeView?.removeFromSuperview()
             self?.walkTimeView = nil
@@ -151,6 +159,7 @@ extension WalkTimeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
+            clLocationManager.startUpdatingLocation()
             // Re-register location manager
             mapView.unregisterLocationManager()
             let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
