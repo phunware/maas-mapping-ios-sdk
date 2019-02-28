@@ -21,8 +21,8 @@ class TurnByTurnViewController: UIViewController {
     var buildingIdentifier: Int = 0
     
     // Destination POI identifier for routing
-    var startPOIIdentifier: Int = 42539735
-    var destinationPOIIdentifier: Int = 42539700
+    var startPOIIdentifier: Int = 0
+    var destinationPOIIdentifier: Int = 0
     
     let mapView = PWMapView()
     let locationManager = CLLocationManager()
