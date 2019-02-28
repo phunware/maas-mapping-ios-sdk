@@ -186,9 +186,9 @@
 		E3785834222735540059A179 /* Route Instruction List */ = {
 			isa = PBXGroup;
 			children = (
-				E3785835222735A80059A179 /* RouteInstructionListViewController.swift */,
-				E3785837222737F50059A179 /* RouteInstructionListCell.xib */,
 				E3785839222738A40059A179 /* RouteInstructionListCell.swift */,
+				E3785837222737F50059A179 /* RouteInstructionListCell.xib */,
+				E3785835222735A80059A179 /* RouteInstructionListViewController.swift */,
 			);
 			path = "Route Instruction List";
 			sourceTree = "<group>";

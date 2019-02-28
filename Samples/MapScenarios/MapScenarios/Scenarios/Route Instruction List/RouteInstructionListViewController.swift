@@ -49,6 +49,7 @@ class RouteInstructionListViewController: UIViewController {
         navigationItem.leftBarButtonItem = closeButton
         navigationController.navigationBar.barTintColor = .darkerGray
         navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController.navigationBar.isTranslucent = false
         viewController.present(navigationController, animated: true, completion: nil)
     }
     
