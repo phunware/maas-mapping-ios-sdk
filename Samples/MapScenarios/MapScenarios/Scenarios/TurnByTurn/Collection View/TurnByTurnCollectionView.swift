@@ -9,32 +9,40 @@
 import PWMapKit
 import UIKit
 
+protocol TurnByTurnDelegate: class {
+    
+    func didSwipeOnRouteInstruction()
+    func instructionExpandTapped()
+}
+
 class TurnByTurnCollectionView: UICollectionView {
     
     let mapView: PWMapView
     
-    let itemPercentOfScreenWidth: CGFloat = 0.85
-    var interItemPadding: CGFloat {
+    weak var turnByTurnDelegate: TurnByTurnDelegate?
+    
+    fileprivate let itemPercentOfScreenWidth: CGFloat = 0.85
+    fileprivate var interItemPadding: CGFloat {
         return sidePadding / 2.0
     }
-    var sidePadding: CGFloat {
+    fileprivate var sidePadding: CGFloat {
         return calculateSidePaddingFromFrame(frame)
     }
-    var itemSize: CGSize {
+    fileprivate var itemSize: CGSize {
         return calculateItemSizeFromFrame(frame)
     }
-    var itemCount: Int {
+    fileprivate var itemCount: Int {
         guard let route = mapView.currentRoute, let routeInstructions = route.routeInstructions else {
             return 0
         }
         return routeInstructions.count
     }
-    var currentIndex: Int {
+    fileprivate var currentIndex: Int {
         let floatIndex = (contentOffset.x + sidePadding) / (itemSize.width + interItemPadding)
         let calculatedIndex = Int(round(floatIndex))
         return max(0, min(itemCount - 1, calculatedIndex))
     }
-    var indexOfCellBeforeDragging = 0
+    fileprivate var indexOfCellBeforeDragging = 0
     
     init(mapView: PWMapView) {
         self.mapView = mapView
@@ -49,6 +57,7 @@ class TurnByTurnCollectionView: UICollectionView {
         dataSource = self
         backgroundColor = .clear
         clipsToBounds = false
+        decelerationRate = UIScrollView.DecelerationRate.fast
         
         let collectionViewCellIdentifier = String(describing: TurnByTurnInstructionCollectionViewCell.self)
         register(UINib(nibName: collectionViewCellIdentifier, bundle: nil), forCellWithReuseIdentifier: collectionViewCellIdentifier)
@@ -71,18 +80,40 @@ class TurnByTurnCollectionView: UICollectionView {
         }
         
         let sidePadding = calculateSidePaddingFromFrame(view.frame)
-        contentInset = UIEdgeInsets(top: 0, left: sidePadding, bottom: 0, right: sidePadding)
+        contentInset = UIEdgeInsets(top: 0.0, left: sidePadding, bottom: 0.0, right: sidePadding)
         
         reloadData()
         contentOffset = CGPoint(x: -sidePadding, y: 0)
     }
     
-    func calculateSidePaddingFromFrame(_ frame: CGRect) -> CGFloat {
+    fileprivate func calculateSidePaddingFromFrame(_ frame: CGRect) -> CGFloat {
         return (frame.width - (calculateItemSizeFromFrame(frame).width)) / 2.0
     }
     
-    func calculateItemSizeFromFrame(_ frame: CGRect) -> CGSize {
+    fileprivate func calculateItemSizeFromFrame(_ frame: CGRect) -> CGSize {
         return CGSize(width: frame.width * itemPercentOfScreenWidth, height: frame.height)
+    }
+    
+    func scrollToInstruction(_ routeInstruction: PWRouteInstruction) {
+        guard let indexOfInstruction = mapView.currentRoute.routeInstructions.index(of: routeInstruction) else {
+            return
+        }
+        
+        if indexOfInstruction != currentIndex {
+            scrollToIndex(indexOfInstruction)
+        }
+    }
+    
+    fileprivate func scrollToIndex(_ index: Int, currentSwipeVelocity: CGFloat = 0.0, targetContentOffset: UnsafeMutablePointer<CGPoint>? = nil) {
+        let targetOffset = ((itemSize.width + interItemPadding) * CGFloat(index)) - sidePadding
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: currentSwipeVelocity, options: [], animations: { [weak self] in
+            if let targetContentOffset = targetContentOffset {
+                targetContentOffset.pointee = CGPoint(x: targetOffset, y: 0)
+            } else {
+                self?.contentOffset = CGPoint(x: targetOffset, y: 0)
+                self?.superview?.layoutIfNeeded()
+            }
+        }, completion: nil)
     }
 }
 
@@ -99,6 +130,9 @@ extension TurnByTurnCollectionView: UICollectionViewDataSource {
         if let routeInstructionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TurnByTurnInstructionCollectionViewCell.self), for: indexPath) as? TurnByTurnInstructionCollectionViewCell {
             if let route = mapView.currentRoute, let routeInstructions = route.routeInstructions, routeInstructions.count > indexPath.row {
                 routeInstructionCollectionViewCell.updateForRouteInstruction(routeInstructions[indexPath.row])
+            }
+            routeInstructionCollectionViewCell.buttonAction = { [weak self] in
+                self?.turnByTurnDelegate?.instructionExpandTapped()
             }
             cell = routeInstructionCollectionViewCell
         }
@@ -129,31 +163,28 @@ extension TurnByTurnCollectionView: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         targetContentOffset.pointee = scrollView.contentOffset
-        
+
         let swipeVelocityThreshold: CGFloat = 0.5
-        
+
         let currentCellIsTheCellBeforeDragging = currentIndex == indexOfCellBeforeDragging
         let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < itemCount && velocity.x > swipeVelocityThreshold
         let notInFirstCellBeforeDragging = (indexOfCellBeforeDragging - 1) >= 0
         let hasEnoughVelocityToSlideToThePreviousCell = notInFirstCellBeforeDragging && velocity.x < -swipeVelocityThreshold
         let didUseSwipeToSkipCell = currentCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
-        var targetOffset: CGFloat?
         if didUseSwipeToSkipCell {
             let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
-            let toValue = ((itemSize.width + interItemPadding) * CGFloat(snapToIndex)) - sidePadding
-            targetOffset = toValue
+            turnByTurnDelegate?.didSwipeOnRouteInstruction()
+            scrollToIndex(snapToIndex, targetContentOffset: targetContentOffset)
         } else {
-            targetOffset = ((itemSize.width + interItemPadding) * CGFloat(currentIndex)) - sidePadding
-        }
-        if let targetOffset = targetOffset {
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: [], animations: {
-                scrollView.contentOffset = CGPoint(x: targetOffset, y: 0)
-                scrollView.layoutIfNeeded()
-            }, completion: nil)
+            scrollToIndex(currentIndex, targetContentOffset: targetContentOffset)
         }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        mapView.setRouteManeuver(mapView.currentRoute.routeInstructions?[currentIndex])
+        guard let newInstruction = mapView.currentRoute.routeInstructions?[currentIndex] else {
+            return
+        }
+        
+        mapView.setRouteManeuver(newInstruction)
     }
 }

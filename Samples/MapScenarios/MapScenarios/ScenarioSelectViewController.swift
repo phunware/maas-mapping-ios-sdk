@@ -13,16 +13,27 @@ class ScenarioSelectViewController: UITableViewController {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     // These are universal across all view controllers but will be overridden by configured values in the individual controllers
-    let universalApplicationId = ""
-    let universalAccessKey = ""
-    let universalSignatureKey = ""
+    let universalApplicationId = "1460"
+    
+    
+    let universalAccessKey = "46f390d8a01859b5dbfa804db1634dd9603399df"
+    
+    
+    let universalSignatureKey = "9a92d23a51d49114b19d54c3f1c0508a4a98e576"
+    
+    
     // Building identifier to be used in all view controllers, overridden when set in individual controllers
-    let universalBuildingIdentifier = 0
+    
+    
+    let universalBuildingIdentifier = 43760
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        navigationController?.navigationBar.barTintColor = .darkerGray
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

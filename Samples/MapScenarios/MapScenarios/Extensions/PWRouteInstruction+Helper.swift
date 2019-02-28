@@ -14,6 +14,10 @@ extension PWRouteInstruction {
         return .systemFont(ofSize: 15.0, weight: .bold)
     }
     
+    func instructionStringForUser() -> String {
+        return attributedInstructionString(highlightedTextColor: .black, regularTextColor: .black).string
+    }
+    
     func attributedInstructionString(highlightedTextColor: UIColor, regularTextColor: UIColor) -> NSAttributedString {
         let attributedDirectionString = stringForTurnDirection(highlightedTextColor: highlightedTextColor, regularTextColor: regularTextColor)
         if distance > 0 {
@@ -21,11 +25,12 @@ extension PWRouteInstruction {
             attributedDirectionString.append(attributedDistanceString)
         }
         if route.routeInstructions.last == self {
-            let attributedArrivalString = NSAttributedString(string: NSLocalizedString(" to arrive at your destination", comment: ""), attributes: [.foregroundColor: regularTextColor])
+            let attributedArrivalString = NSAttributedString(string: NSLocalizedString(" to arrive at your destination.", comment: ""), attributes: [.foregroundColor: regularTextColor])
             attributedDirectionString.append(attributedArrivalString)
+        } else {
+            let attributedPeriod = isFloorChange() ? NSAttributedString(string: ".", attributes: [.foregroundColor: highlightedTextColor, .font: highlightedFont]) : NSAttributedString(string: ".", attributes: [.foregroundColor: regularTextColor])
+            attributedDirectionString.append(attributedPeriod)
         }
-        let attributedPeriod = isFloorChange() ? NSAttributedString(string: ".", attributes: [.foregroundColor: highlightedTextColor, .font: highlightedFont]) : NSAttributedString(string: ".", attributes: [.foregroundColor: regularTextColor])
-        attributedDirectionString.append(attributedPeriod)
         return attributedDirectionString
     }
     
@@ -110,11 +115,12 @@ extension PWRouteInstruction {
     }
     
     func distanceString() -> String {
-        let roundedDistance = Int(round(distance))
+        let feetDistance = distance * 3.28084 // meters to feet
+        let roundedDistance = Int(round(feetDistance))
         if roundedDistance == 1 {
-            return NSLocalizedString("\(roundedDistance) meter", comment: "")
+            return NSLocalizedString("\(roundedDistance) foot", comment: "")
         }
-        return "\(Int(round(distance))) meters"
+        return "\(Int(round(feetDistance))) feet"
     }
     
     func nextInstruction() -> PWRouteInstruction? {
