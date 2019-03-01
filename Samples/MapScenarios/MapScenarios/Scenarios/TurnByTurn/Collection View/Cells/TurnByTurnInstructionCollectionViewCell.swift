@@ -13,6 +13,9 @@ class TurnByTurnInstructionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var movementImage: UIImageView!
     @IBOutlet weak var movementLabel: UILabel!
+    @IBOutlet weak var expandButton: UIButton!
+    
+    var buttonAction: (() -> Void)?
     
     private var shadowLayer: CAShapeLayer?
     private let cornerRadius: CGFloat = 10
@@ -22,6 +25,12 @@ class TurnByTurnInstructionCollectionViewCell: UICollectionViewCell {
         clipsToBounds = false
         containerView.layer.cornerRadius = cornerRadius
         containerView.clipsToBounds = true
+        
+        let templateExpandImage = expandButton.image(for: .normal)?.withRenderingMode(.alwaysTemplate)
+        expandButton.setImage(templateExpandImage, for: .normal)
+        expandButton.imageView?.tintColor = .gray
+        
+        contentView.isUserInteractionEnabled = false
     }
     
     override func layoutSubviews() {
@@ -46,8 +55,12 @@ class TurnByTurnInstructionCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    @IBAction func expandButtonTapped(_ sender: UIButton) {
+        buttonAction?()
+    }
+    
     func updateForRouteInstruction(_ routeInstruction: PWRouteInstruction) {
         movementImage.image = routeInstruction.imageFromDirection()
-        movementLabel.attributedText = routeInstruction.attributedInstructionString(highlightedTextColor: UIColor(displayP3Red: 4.0/255.0, green: 114.0/255.0, blue: 254.0/255.0, alpha: 1.0), regularTextColor: .darkText)
+        movementLabel.attributedText = routeInstruction.attributedInstructionString(highlightedTextColor: .nasa, regularTextColor: .darkText)
     }
 }

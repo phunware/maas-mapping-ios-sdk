@@ -21,6 +21,7 @@ class VoicePromptRouteViewController: UIViewController {
     var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
     
     let mapView = PWMapView()
+    var turnByTurnCollectionView: TurnByTurnCollectionView?
     let locationManager = CLLocationManager()
     var firstLocationAcquired = false
     let voicePromptButton = VoicePromptButton()
@@ -39,11 +40,12 @@ class VoicePromptRouteViewController: UIViewController {
         }
     }
     let speechSynthesizer = AVSpeechSynthesizer()
+    var instructionChangeCausedBySwipe = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Route to Point of Interest"
+        navigationItem.title = NSLocalizedString("Voice Prompts For Route", comment: "")
         
         if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
             return
@@ -53,7 +55,6 @@ class VoicePromptRouteViewController: UIViewController {
         mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()
-        configureVoiceUI()
         
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
@@ -65,6 +66,16 @@ class VoicePromptRouteViewController: UIViewController {
                 }
             })
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        turnByTurnCollectionView?.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        turnByTurnCollectionView?.isHidden = true
+        super.viewWillDisappear(animated)
     }
     
     func configureMapViewConstraints() {
@@ -83,6 +94,15 @@ class VoicePromptRouteViewController: UIViewController {
             }
         }
     }
+    
+    func initializeTurnByTurn() {
+        mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        if turnByTurnCollectionView == nil {
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
+            turnByTurnCollectionView?.turnByTurnDelegate = self
+            turnByTurnCollectionView?.configureInView(view)
+        }
+    }
 }
 
 // MARK: - Voice Prompt UI
@@ -96,13 +116,16 @@ extension VoicePromptRouteViewController {
     }
     
     func configureVoicePromptsButton() {
+        guard let turnByTurnView = turnByTurnCollectionView else {
+            return
+        }
         let voicePromptButtonHeight: CGFloat = 35.0
         voicePromptButton.backgroundImageColor = .white
         voicePromptButton.cornerRadius = voicePromptButtonHeight / 2.0
         view.addSubview(voicePromptButton)
         voicePromptButton.translatesAutoresizingMaskIntoConstraints = false
-        voicePromptButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10.0).isActive = true
-        voicePromptButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10.0).isActive = true
+        voicePromptButton.topAnchor.constraint(equalTo: turnByTurnView.bottomAnchor, constant: 20.0).isActive = true
+        voicePromptButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15.0).isActive = true
         voicePromptButton.heightAnchor.constraint(equalToConstant: voicePromptButtonHeight).isActive = true
         voicePromptButton.widthAnchor.constraint(equalToConstant: voicePromptButtonHeight).isActive = true
         voicePromptButton.action = { [weak self] in
@@ -157,31 +180,54 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
                 return
             }
             
-            PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { (route, error) in
+            PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
                 guard let route = route else {
                     print("Couldn't find a route from you current location to the destination.")
                     return
                 }
                 
                 mapView.navigate(with: route)
+                self?.initializeTurnByTurn()
+                self?.configureVoiceUI()
             })
         }
     }
     
     func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
-        guard let movement = instruction.movement, speechEnabled, !previouslyReadInstructions.contains(instruction) else {
+        turnByTurnCollectionView?.scrollToInstruction(instruction)
+        guard speechEnabled else {
             return
         }
-        previouslyReadInstructions.insert(instruction)
-        var voicePrompt = "\(movement)"
-        if let turn = instruction.turn {
-            voicePrompt = voicePrompt + ", then \(turn)"
+        if !instructionChangeCausedBySwipe, previouslyReadInstructions.contains(instruction) {
+            return
+        } else if !instructionChangeCausedBySwipe {
+            previouslyReadInstructions.insert(instruction)
         }
+        instructionChangeCausedBySwipe = false // Clear state for next instruction change
+        
+        let voicePrompt = instruction.instructionStringForUser()
         let utterance = AVSpeechUtterance(string: voicePrompt)
         utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
         
-        speechSynthesizer.stopSpeaking(at: .immediate)
-        speechSynthesizer.speak(utterance)
+        DispatchQueue.main.async { [weak self] in
+            self?.speechSynthesizer.stopSpeaking(at: .immediate)
+            self?.speechSynthesizer.speak(utterance)
+        }
+    }
+}
+
+// MARK: - TurnByTurnDelegate
+
+extension VoicePromptRouteViewController: TurnByTurnDelegate {
+    
+    func didSwipeOnRouteInstruction() {
+        instructionChangeCausedBySwipe = true
+    }
+    
+    func instructionExpandTapped() {
+        let routeInstructionViewController = RouteInstructionListViewController()
+        routeInstructionViewController.route = mapView.currentRoute
+        routeInstructionViewController.presentFromViewController(self)
     }
 }
 

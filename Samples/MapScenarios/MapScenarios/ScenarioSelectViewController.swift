@@ -16,6 +16,7 @@ class ScenarioSelectViewController: UITableViewController {
     let universalApplicationId = ""
     let universalAccessKey = ""
     let universalSignatureKey = ""
+    
     // Building identifier to be used in all view controllers, overridden when set in individual controllers
     let universalBuildingIdentifier = 0
 
@@ -23,6 +24,10 @@ class ScenarioSelectViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        navigationController?.navigationBar.barTintColor = .darkerGray
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.isTranslucent = false
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

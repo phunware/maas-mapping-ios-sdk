@@ -61,6 +61,16 @@ class TurnByTurnViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        turnByTurnCollectionView?.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        turnByTurnCollectionView?.isHidden = true
+        super.viewWillDisappear(animated)
+    }
+    
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -102,7 +112,21 @@ class TurnByTurnViewController: UIViewController {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
+            turnByTurnCollectionView?.turnByTurnDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
+    }
+}
+
+// MARK: - TurnByTurnDelegate
+
+extension TurnByTurnViewController: TurnByTurnDelegate {
+    
+    func didSwipeOnRouteInstruction() { }
+    
+    func instructionExpandTapped() {
+        let routeInstructionViewController = RouteInstructionListViewController()
+        routeInstructionViewController.route = mapView.currentRoute
+        routeInstructionViewController.presentFromViewController(self)
     }
 }

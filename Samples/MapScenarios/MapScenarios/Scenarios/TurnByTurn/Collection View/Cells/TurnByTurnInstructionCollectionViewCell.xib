@@ -32,12 +32,26 @@
                                 <constraint firstAttribute="width" constant="30" id="Kjl-13-pPb"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkI-OV-3Gd">
+                            <rect key="frame" x="342" y="59" width="24" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="IlP-SZ-wDA"/>
+                                <constraint firstAttribute="width" constant="24" id="d4q-QJ-yTf"/>
+                            </constraints>
+                            <color key="tintColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                            <state key="normal" image="DownCarot"/>
+                            <connections>
+                                <action selector="expandButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="dxy-zB-HrU"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="TkI-OV-3Gd" secondAttribute="bottom" constant="5" id="5BZ-AU-ICe"/>
                         <constraint firstItem="7o6-Jk-gWw" firstAttribute="leading" secondItem="osn-7F-Vxu" secondAttribute="trailing" constant="12" id="Dlk-E2-gDQ"/>
                         <constraint firstAttribute="trailing" secondItem="7o6-Jk-gWw" secondAttribute="trailing" constant="15" id="SHp-kB-Myh"/>
                         <constraint firstItem="osn-7F-Vxu" firstAttribute="leading" secondItem="COx-PC-Oyg" secondAttribute="leading" constant="15" id="Tqx-b6-EVm"/>
+                        <constraint firstAttribute="trailing" secondItem="TkI-OV-3Gd" secondAttribute="trailing" constant="9" id="Vvy-Ck-OwJ"/>
                         <constraint firstItem="7o6-Jk-gWw" firstAttribute="centerY" secondItem="osn-7F-Vxu" secondAttribute="centerY" id="YIR-QC-vQC"/>
                         <constraint firstItem="osn-7F-Vxu" firstAttribute="centerY" secondItem="COx-PC-Oyg" secondAttribute="centerY" id="lw6-Mo-JhZ"/>
                     </constraints>
@@ -54,10 +68,14 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="containerView" destination="COx-PC-Oyg" id="7OG-Le-dV1"/>
+                <outlet property="expandButton" destination="TkI-OV-3Gd" id="J6P-yF-dq4"/>
                 <outlet property="movementImage" destination="osn-7F-Vxu" id="aOv-zk-qdf"/>
                 <outlet property="movementLabel" destination="7o6-Jk-gWw" id="ODX-tx-xjY"/>
             </connections>
             <point key="canvasLocation" x="18.399999999999999" y="-169.11544227886057"/>
         </view>
     </objects>
+    <resources>
+        <image name="DownCarot" width="12" height="7"/>
+    </resources>
 </document>
