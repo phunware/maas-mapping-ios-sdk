@@ -14,6 +14,11 @@ extension PWRouteInstruction {
         return .systemFont(ofSize: 15.0, weight: .bold)
     }
     
+    // Will use meters if false
+    var useFeet: Bool {
+        return true
+    }
+    
     var feetPerMeter: Double {
         return 3.28084
     }
@@ -119,12 +124,13 @@ extension PWRouteInstruction {
     }
     
     func distanceString() -> String {
-        let feetDistance = distance * feetPerMeter
-        let roundedDistance = Int(round(feetDistance))
+        let distance = useFeet ? self.distance * feetPerMeter : self.distance
+        let roundedDistance = Int(round(distance))
+        var distanceSuffix = useFeet ? " feet" : " meters"
         if roundedDistance == 1 {
-            return NSLocalizedString("\(roundedDistance) foot", comment: "")
+            distanceSuffix = useFeet ? " foot" : " meter"
         }
-        return "\(Int(round(feetDistance))) feet"
+        return "\(roundedDistance)\(distanceSuffix)"
     }
     
     func nextInstruction() -> PWRouteInstruction? {
