@@ -16,7 +16,7 @@ extension PWRouteInstruction {
     
     // Will use meters if false
     var useFeet: Bool {
-        return true
+        return !NSLocale.current.usesMetricSystem
     }
     
     var feetPerMeter: Double {
