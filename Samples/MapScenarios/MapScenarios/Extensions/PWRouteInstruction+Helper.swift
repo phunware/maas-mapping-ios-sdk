@@ -14,6 +14,10 @@ extension PWRouteInstruction {
         return .systemFont(ofSize: 15.0, weight: .bold)
     }
     
+    var feetPerMeter: Double {
+        return 3.28084
+    }
+    
     func instructionStringForUser() -> String {
         return attributedInstructionString(highlightedTextColor: .black, regularTextColor: .black).string
     }
@@ -115,7 +119,7 @@ extension PWRouteInstruction {
     }
     
     func distanceString() -> String {
-        let feetDistance = distance * 3.28084 // meters to feet
+        let feetDistance = distance * feetPerMeter
         let roundedDistance = Int(round(feetDistance))
         if roundedDistance == 1 {
             return NSLocalizedString("\(roundedDistance) foot", comment: "")
