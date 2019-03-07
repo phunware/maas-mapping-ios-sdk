@@ -18,7 +18,7 @@ PWMapKit Samples for iOS
 
 ### Overview
 - Six different use cases in both Swift and Objective C.
-- Each use case functional has its ViewController.
+- Each use case has a ViewController.
 
 ### LoadBuildingViewController
 - Display your building on the map
