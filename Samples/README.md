@@ -17,7 +17,7 @@ PWMapKit Samples for iOS
 ## MapScenarios
 
 ### Overview
-- Six different use cases in both Swift and Objective C.
+- A couple of different use cases in both Swift and Objective C.
 - Each use case has a ViewController.
 
 ### LoadBuildingViewController
@@ -96,6 +96,23 @@ func addCustomPointOfInterest() {
 
 ##### Sample code in [LocationModesViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/LocationModesViewController.swift):
 
+Change tracking mode:
+
+```
+@IBAction func trackingModeButtonTapped(_ sender: Any) {
+    switch mapView.trackingMode {
+    case .none:
+        mapView.trackingMode = .follow
+    case .follow:
+        mapView.trackingMode = .followWithHeading
+    case .followWithHeading:
+        mapView.trackingMode = .none
+    }
+}
+```
+
+Update UI:
+
 ```
 extension LocationModesViewController: PWMapViewDelegate {
     
@@ -149,7 +166,7 @@ PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, access
 ##### Sample code in [SearchPOIViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/SearchPOIViewController.swift):
 
 ```
-let pointOfInterest: PWPointOfInterest!
+var pointOfInterest: PWPointOfInterest!
 
 // ... find the `pointOfInterest ` what you want
 

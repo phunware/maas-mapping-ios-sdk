@@ -6,7 +6,7 @@
 
 ### Usage
 
-- This feature is supposed to be combined with [turn by turn](./TurnByTurn.md), so just need to fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, `startPOIIdentifier` and `destinationPOIIdentifier` in TurnByTurnCollectionView.swift.
+- This feature is supposed to be combined with [turn by turn](./TurnByTurn.md), so just need to fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, `startPOIIdentifier` and `destinationPOIIdentifier` in TurnByTurnCollectionViewController.swift.
 
 ### Sample Code 
 - [WalkTimeViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/WalkTime/WalkTimeViewController.swift)
@@ -26,8 +26,8 @@
 override func initializeTurnByTurn() {
 	super.initializeTurnByTurn()
 
-    // Show walk time view when turn by turn is visable
-    configureWalkTimeView()
+	// Show walk time view when turn by turn is visable
+	configureWalkTimeView()
 }
 ```
 

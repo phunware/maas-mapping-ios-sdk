@@ -11,7 +11,7 @@
 - Required to have at least two unique device identifiers with blue dot in the same building to see usage.
 
 
-### Smaple Code:
+### Sample Code:
 - [LocationSharingViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/LocationSharingViewController.swift)
 
 **Step 1: Create annotion for shared location**

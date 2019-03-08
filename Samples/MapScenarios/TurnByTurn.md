@@ -43,7 +43,7 @@ PWRoute.createRoute(from: startPOI, to: destinationPOI, accessibility: false, ex
 // Preset turn by turn view
 func initializeTurnByTurn() {
 	mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
-   if turnByTurnCollectionView == nil {
+	if turnByTurnCollectionView == nil {
    		turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
 		turnByTurnCollectionView?.turnByTurnDelegate = self
 		turnByTurnCollectionView?.configureInView(view)
