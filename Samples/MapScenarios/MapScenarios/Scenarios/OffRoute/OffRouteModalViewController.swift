@@ -2,8 +2,8 @@
 //  OffRouteModalViewController.swift
 //  MapScenarios
 //
-//  Created by Jason Fullen on 3/8/19.
-//  Copyright © 2019 Patrick Dunshee. All rights reserved.
+//  Created by 3/8/19.
+//  Copyright © 2019 Phunware. All rights reserved.
 //
 
 import UIKit
@@ -25,21 +25,15 @@ class OffRouteModalViewController: UIViewController {
     }
 
     @IBAction func dismissButtonClicked(sender: UIButton) {
-        if (dismissCompletion != nil) {
-            dismissCompletion!()
-        }
+        dismissCompletion?()
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func rerouteButtonClicked(sender: UIButton) {
-        if (rerouteCompletion != nil) {
-            rerouteCompletion!()
-        }
+        rerouteCompletion?()
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func dontShowAgainButtonClicked(sender: UIButton) {
-        if (dontShowAgainCompletion != nil) {
-            dontShowAgainCompletion!()
-        }
+        dontShowAgainCompletion?()
         self.dismiss(animated: true, completion: nil)
     }
 

@@ -2,8 +2,8 @@
 //  OffRouteViewController.swift
 //  MapScenarios
 //
-//  Created by Jason Fullen on 2/25/19.
-//  Copyright © 2019 Patrick Dunshee. All rights reserved.
+//  Created by 2/25/19.
+//  Copyright © 2019 Phunware. All rights reserved.
 //
 
 import UIKit
@@ -122,23 +122,20 @@ class OffRouteViewController: UIViewController {
             offRouteModal.modalPresentationStyle = .overCurrentContext
             offRouteModal.modalTransitionStyle = .crossDissolve
 
-            offRouteModal.dismissCompletion = {
-                print("JFULLEN - dismiss completion handler")
-                self.modalVisible = false
+            offRouteModal.dismissCompletion = { [weak self] in
+                self?.modalVisible = false
             }
 
-            offRouteModal.rerouteCompletion = {
-                print("JFULLEN - reroute completion handler")
-                self.modalVisible = false
-                self.mapView.cancelRouting()
-                self.currentRoute = nil
-                self.buildRoute()
+            offRouteModal.rerouteCompletion = { [weak self] in
+                self?.modalVisible = false
+                self?.mapView.cancelRouting()
+                self?.currentRoute = nil
+                self?.buildRoute()
             }
 
-            offRouteModal.dontShowAgainCompletion = {
-                print("JFULLEN - dont show again completion handler")
-                self.modalVisible = false
-                self.dontShowAgain = true
+            offRouteModal.dontShowAgainCompletion = { [weak self] in
+                self?.modalVisible = false
+                self?.dontShowAgain = true
             }
 
             present(offRouteModal, animated: true, completion: nil)
@@ -160,7 +157,6 @@ extension OffRouteViewController: PWMapViewDelegate {
             if (!modalVisible && !dontShowAgain) {
                 if let closestRouteInstruction = self.currentRoute?.closestInstructionTo(userLocation) {
                     let distanceToRouteInstruction = MKMapPoint(userLocation.coordinate).distanceTo(closestRouteInstruction.polyline)
-                    NSLog("Distance to closest route instruction = %f", distanceToRouteInstruction)
                     if (distanceToRouteInstruction > 0.0) {
                         if (distanceToRouteInstruction >= offRouteDistanceThreshold) {
                             offRouteTimer?.invalidate()

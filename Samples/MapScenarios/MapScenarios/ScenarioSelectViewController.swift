@@ -161,7 +161,6 @@ class ScenarioSelectViewController: UITableViewController {
                     offRouteViewController.signatureKey = universalSignatureKey
                 }
             }
-            break
         default:
             break
         }
