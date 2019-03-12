@@ -6,23 +6,22 @@
 
 ### Usage
 
-- This feature is supposed to be combined with [turn by turn](./TurnByTurn.md), so just need to fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, and `destinationPOIIdentifier` in OffRouteViewController.swift.
+- Need to fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, and `destinationPOIIdentifier` in OffRouteViewController.swift.
 
 ### Sample Code 
 - [OffRouteViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/OffRoute/OffRouteViewController.swift)
 - [OffRouteModalViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/OffRoute/OffRouteModalViewController.swift)
 - [OffRouteModalView.xib](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/OffRoute/OffRouteModalView.xib)
 
-**Step 1: add [turn by turn](./TurnByTurn.md) first**
-
-**Step 2: Copy the following files to your project**
+**Step 1: Copy the following files to your project**
 
 - OffRouteModalViewController.swift 
 - OffRouteModalView.xib 
 
-**Step 3: Add the following methods to your view controller**
+**Step 2: Add the following variables and methods to your view controller**
 
 ```
+//Class variables
 var currentRoute: PWRoute?
 let offRouteDistanceThreshold: CLLocationDistance = 10.0 //distance in meters
 let offRouteTimeThreshold: TimeInterval = 5.0 //time in seconds
@@ -30,6 +29,7 @@ var offRouteTimer: Timer? = nil
 var modalVisible = false
 var dontShowAgain = false
 
+//Methods
 @objc func fireTimer() {
     offRouteTimer?.invalidate()
     offRouteTimer = nil
