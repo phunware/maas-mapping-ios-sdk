@@ -150,6 +150,18 @@ class ScenarioSelectViewController: UITableViewController {
                     walkTimeViewController.signatureKey = universalSignatureKey
                 }
             }
+        case String(describing: OffRouteViewController.self):
+            if let offRouteViewController = segue.destination as? OffRouteViewController {
+                if offRouteViewController.buildingIdentifier == 0 {
+                    offRouteViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+                if offRouteViewController.applicationId.count == 0 || offRouteViewController.accessKey.count == 0 || offRouteViewController.signatureKey.count == 0 {
+                    offRouteViewController.applicationId = universalApplicationId
+                    offRouteViewController.accessKey = universalAccessKey
+                    offRouteViewController.signatureKey = universalSignatureKey
+                }
+            }
+            break
         default:
             break
         }
