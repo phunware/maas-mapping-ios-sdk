@@ -1,5 +1,4 @@
 ## Sample - Turn By Turn 
-====================
 
 ### Overview
 - Display turn-by-turn route instruction card on top of map.
