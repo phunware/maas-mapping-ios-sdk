@@ -1,5 +1,4 @@
 ## Sample - Walk Time
-====================
 
 ### Overview
 - Display walk time at the bottom of map.
