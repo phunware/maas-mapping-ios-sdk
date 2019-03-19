@@ -75,6 +75,7 @@ class SearchPOIViewController: UIViewController {
         
         view.addSubview(mapView)
         configureMapViewConstraints()
+        searchController.searchBar.barStyle = .black
         navigationItem.searchController = searchController
         
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
