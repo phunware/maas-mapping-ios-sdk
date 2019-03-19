@@ -42,6 +42,7 @@
 		E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */; };
 		E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C92050555D00780D0F /* RoutingViewController.swift */; };
 		E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */; };
+		E3ED03EE22415A1B00E394F5 /* CLLocationManager+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ED03ED22415A1B00E394F5 /* CLLocationManager+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPOIViewController.swift; sourceTree = "<group>"; };
 		E3C771C92050555D00780D0F /* RoutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingViewController.swift; sourceTree = "<group>"; };
 		E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPOIViewController.swift; sourceTree = "<group>"; };
+		E3ED03ED22415A1B00E394F5 /* CLLocationManager+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		E378581B221313200059A179 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E3ED03ED22415A1B00E394F5 /* CLLocationManager+Helper.swift */,
 				E37858202216FB840059A179 /* MKMapPoint+Helper.swift */,
 				E378581E22145F4F0059A179 /* PWMapView+Helper.swift */,
 				E378581C221313500059A179 /* PWRoute+Helper.swift */,
@@ -395,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */,
+				E3ED03EE22415A1B00E394F5 /* CLLocationManager+Helper.swift in Sources */,
 				7E87A2F2222478FF004ABFE9 /* OffRouteViewController.swift in Sources */,
 				9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */,
 				9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */,

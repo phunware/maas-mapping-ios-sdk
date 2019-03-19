@@ -149,7 +149,7 @@ extension WalkTimeViewController: PWMapViewDelegate {
         clLocationManager.desiredAccuracy = kCLLocationAccuracyBest
         clLocationManager.activityType = .fitness
         clLocationManager.distanceFilter = kCLDistanceFilterNone
-        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+        if !CLLocationManager.isAuthorized() {
             clLocationManager.requestWhenInUseAuthorization()
         } else {
             startManagedLocationManager()

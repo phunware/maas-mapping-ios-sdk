@@ -168,7 +168,7 @@ class LocationSharingViewController: UIViewController {
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
                 self?.locationManager.delegate = self
-                if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+                if !CLLocationManager.isAuthorized() {
                     self?.locationManager.requestWhenInUseAuthorization()
                 } else {
                     self?.startManagedLocationManager()

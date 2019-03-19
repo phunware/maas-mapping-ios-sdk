@@ -55,7 +55,7 @@ class RoutingViewController: UIViewController {
                     return
                 }
                 self?.locationManager.delegate = self
-                if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+                if !CLLocationManager.isAuthorized() {
                     self?.locationManager.requestWhenInUseAuthorization()
                 } else {
                     self?.startManagedLocationManager()
