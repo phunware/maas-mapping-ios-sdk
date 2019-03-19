@@ -1,5 +1,5 @@
 //
-//  TimeTraveledViewController.swift
+//  WalkTimeViewController.swift
 //  MapScenarios
 //
 //  Created on 2/1/19.
@@ -14,21 +14,14 @@ import PWMapKit
 class WalkTimeViewController: TurnByTurnViewController {
     
     // GPS location manager - used to request location authentication
-    lazy var clLocationManager: CLLocationManager = {
-        var locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.activityType = .fitness
-        locationManager.distanceFilter = kCLDistanceFilterNone
-        
-        return locationManager
-    }()
+    let clLocationManager = CLLocationManager()
     
     // Last update location
     var lastUpdateLocation: PWUserLocation?
     
     // If the blue dot is currently snapped to the route path
     var snappingLocation = false
+    var firstLocationAcquired = false
     
     // Average speed
     var averageSpeed: CLLocationSpeed?
@@ -43,10 +36,6 @@ class WalkTimeViewController: TurnByTurnViewController {
         navigationItem.title = "Turn By Turn + Walk Time Navigation"
         mapView.delegate = self
         
-        // Request location authentication
-        if CLLocationManager.locationServicesEnabled() {
-            clLocationManager.requestWhenInUseAuthorization()
-        }
         NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] (_) in
             self?.walkTimeView?.removeFromSuperview()
             self?.walkTimeView = nil
@@ -56,7 +45,7 @@ class WalkTimeViewController: TurnByTurnViewController {
     override func initializeTurnByTurn() {
         super.initializeTurnByTurn()
 
-        // Show walk time view when turn by turn is visable
+        // Show walk time view when turn by turn is visible
         configureWalkTimeView()
     }
     
@@ -74,7 +63,34 @@ class WalkTimeViewController: TurnByTurnViewController {
             
             self.walkTimeView = walkTimeView
             
-            updateWalkTimeView()
+            updateStaticWalkTimeView(instruction: nil)
+        }
+    }
+    
+    func startManagedLocationManager() {
+        DispatchQueue.main.async { [weak self] in
+            guard let buildingIdentifier = self?.buildingIdentifier else {
+                return
+            }
+            let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
+            self?.mapView.register(managedLocationManager)
+        }
+    }
+    
+    func updateStaticWalkTimeView(instruction: PWRouteInstruction?) {
+        guard let firstInstruction = mapView.currentRoute.routeInstructions.first else {
+            return
+        }
+        var instructionToUse = firstInstruction
+        if let instruction = instruction {
+            instructionToUse = instruction
+        }
+        if lastUpdateLocation == nil, let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: instructionToUse), let remainingInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] {
+            var distance: Double = 0
+            for instruction in remainingInstructions {
+                distance += instruction.distance
+            }
+            self.walkTimeView?.updateWalkTime(distance: distance, averageSpeed: 0)
         }
     }
     
@@ -101,7 +117,7 @@ class WalkTimeViewController: TurnByTurnViewController {
     }
     
     func remainingDistance() -> CLLocationDistance {
-        // Recaculate only when the blue dot is snapping on the route path
+        // Recalculate only when the blue dot is snapping on the route path
         guard let lastUpdateLocation = lastUpdateLocation, snappingLocation == true, let currentInstruction = self.mapView.currentRouteInstruction(), let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: currentInstruction), let remainingInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] else {
             return -1
         }
@@ -128,8 +144,24 @@ class WalkTimeViewController: TurnByTurnViewController {
 
 extension WalkTimeViewController: PWMapViewDelegate {
     
+    func mapView(_ mapView: PWMapView!, didFinishLoading building: PWBuilding!) {
+        clLocationManager.delegate = self
+        clLocationManager.desiredAccuracy = kCLLocationAccuracyBest
+        clLocationManager.activityType = .fitness
+        clLocationManager.distanceFilter = kCLDistanceFilterNone
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            clLocationManager.requestWhenInUseAuthorization()
+        } else {
+            startManagedLocationManager()
+        }
+    }
+    
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         lastUpdateLocation = userLocation
+        if !firstLocationAcquired {
+            firstLocationAcquired = true
+            mapView.trackingMode = .follow
+        }
     }
     
     func mapViewStartedSnappingLocation(toRoute mapView: PWMapView!) {
@@ -141,14 +173,7 @@ extension WalkTimeViewController: PWMapViewDelegate {
     }
     
     func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
-        // Update walk time when blue dot is not acquired
-        if lastUpdateLocation == nil, let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: instruction), let remainingInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] {
-            var distance: Double = 0
-            for instruction in remainingInstructions {
-                distance += instruction.distance
-            }
-            self.walkTimeView?.updateWalkTime(distance: distance, averageSpeed: 0)
-        }
+        updateStaticWalkTimeView(instruction: instruction)
     }
 }
 
@@ -159,15 +184,10 @@ extension WalkTimeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
-            clLocationManager.startUpdatingLocation()
-            // Re-register location manager
-            mapView.unregisterLocationManager()
-            let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
-            DispatchQueue.main.async { [weak self] in
-                self?.mapView.register(managedLocationManager)
-            }
+            startManagedLocationManager()
         default:
-            print("Not authorized to start PWManagedLocationManager")
+            mapView.unregisterLocationManager()
+            print("Not authorized to start PWLocationManager")
         }
     }
     

@@ -78,16 +78,8 @@ extension WalkTimeView {
     
     // Format walk time
     func format(duration: TimeInterval) -> String {
-        if duration < 60 {
-            return "1 min"
-        }
-        
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute]
-        formatter.unitsStyle = .brief
-        formatter.maximumUnitCount = 2
-        
-        return formatter.string(from: duration)!
+        let durationInMinutes = Int(ceil((duration / 60.0)))
+        return "\(durationInMinutes) min"
     }
     
     // Format arrival time

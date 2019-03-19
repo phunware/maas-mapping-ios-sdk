@@ -146,12 +146,30 @@ extension VoicePromptRouteViewController {
     func updateVoiceUI() {
         voicePromptsLabel.text = speechEnabled ? NSLocalizedString("Unmuted", comment: "muted label") : NSLocalizedString("Muted", comment: "muted label")
         voicePromptButton.buttonImage = speechEnabled ? #imageLiteral(resourceName: "Unmuted") : #imageLiteral(resourceName: "Muted")
+        if speechEnabled {
+            if let currentInstruction = mapView.currentRouteInstruction() {
+                readInstructionAloud(currentInstruction)
+            }
+        } else {
+            speechSynthesizer.stopSpeaking(at: .immediate)
+        }
     }
     
     @objc
     func speechButtonTapped() {
         speechEnabled = !speechEnabled
         updateVoiceUI()
+    }
+    
+    func readInstructionAloud(_ instruction: PWRouteInstruction) {
+        let voicePrompt = instruction.instructionStringForUser()
+        let utterance = AVSpeechUtterance(string: voicePrompt)
+        utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.speechSynthesizer.stopSpeaking(at: .immediate)
+            self?.speechSynthesizer.speak(utterance)
+        }
     }
 }
 
@@ -205,14 +223,7 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
         }
         instructionChangeCausedBySwipe = false // Clear state for next instruction change
         
-        let voicePrompt = instruction.instructionStringForUser()
-        let utterance = AVSpeechUtterance(string: voicePrompt)
-        utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.speechSynthesizer.stopSpeaking(at: .immediate)
-            self?.speechSynthesizer.speak(utterance)
-        }
+        readInstructionAloud(instruction)
     }
 }
 

@@ -25,8 +25,6 @@ class TurnByTurnViewController: UIViewController {
     var destinationPOIIdentifier: Int = 0
     
     let mapView = PWMapView()
-    let locationManager = CLLocationManager()
-    var firstLocationAcquired = false
     
     var turnByTurnCollectionView: TurnByTurnCollectionView?
     
