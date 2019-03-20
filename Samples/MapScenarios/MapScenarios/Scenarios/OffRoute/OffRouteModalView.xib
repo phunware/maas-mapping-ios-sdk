@@ -15,6 +15,7 @@
                 <outlet property="offRouteDismissButton" destination="oxR-GU-hCh" id="jUH-9F-wru"/>
                 <outlet property="offRouteDontShowAgainButton" destination="pUQ-c2-qNX" id="Vzs-aU-Efv"/>
                 <outlet property="offRouteRerouteButton" destination="aXX-bm-1Y0" id="4wd-c8-kH8"/>
+                <outlet property="offRouteView" destination="g5j-NW-FNs" id="cMG-HI-kgg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="tBv-Zp-1Lz"/>
             </connections>
         </placeholder>
@@ -24,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5j-NW-FNs">
-                    <rect key="frame" x="47" y="97" width="281" height="478"/>
+                    <rect key="frame" x="47" y="94.5" width="281" height="478"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Are No Longer On Route" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMQ-qz-Rfo">
                             <rect key="frame" x="37" y="24" width="207" height="41"/>
@@ -86,7 +87,7 @@
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUQ-c2-qNX">
                             <rect key="frame" x="8" y="434.5" width="265" height="33"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <state key="normal" title="Don’t Show Again">
                                 <color key="titleColor" red="0.0" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -125,7 +126,6 @@
                         <constraint firstItem="aXX-bm-1Y0" firstAttribute="leading" secondItem="g5j-NW-FNs" secondAttribute="leading" constant="8" id="qGF-bp-Ujx"/>
                         <constraint firstItem="zs3-yi-ydW" firstAttribute="centerX" secondItem="g5j-NW-FNs" secondAttribute="centerX" id="qIs-vh-188"/>
                         <constraint firstItem="vEB-ng-MUV" firstAttribute="leading" secondItem="bQD-rE-15P" secondAttribute="leading" id="rz2-ci-OjW"/>
-                        <constraint firstAttribute="height" constant="478" id="ubZ-f7-Kzm"/>
                         <constraint firstItem="pUQ-c2-qNX" firstAttribute="leading" secondItem="g5j-NW-FNs" secondAttribute="leading" constant="8" id="wra-i1-VUx"/>
                         <constraint firstItem="vEB-ng-MUV" firstAttribute="trailing" secondItem="bQD-rE-15P" secondAttribute="trailing" id="x3O-Hp-l8N"/>
                         <constraint firstItem="vEB-ng-MUV" firstAttribute="top" secondItem="oxR-GU-hCh" secondAttribute="bottom" constant="12" id="xWb-Q5-N5k"/>
@@ -137,8 +137,8 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="g5j-NW-FNs" secondAttribute="trailing" constant="47" id="SOa-if-qAq"/>
                 <constraint firstItem="g5j-NW-FNs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="47" id="eO5-jk-duz"/>
+                <constraint firstItem="g5j-NW-FNs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mQM-4k-z3E"/>
                 <constraint firstItem="g5j-NW-FNs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uyd-3I-KwL"/>
-                <constraint firstItem="g5j-NW-FNs" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="77" id="yYg-IG-iMw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="138.40000000000001" y="154.27286356821591"/>
