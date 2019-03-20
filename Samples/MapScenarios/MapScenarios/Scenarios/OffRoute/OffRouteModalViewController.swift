@@ -10,6 +10,7 @@ import UIKit
 
 class OffRouteModalViewController: UIViewController {
 
+    @IBOutlet weak var offRouteView = UIView()
     @IBOutlet weak var offRouteDismissButton = UIButton()
     @IBOutlet weak var offRouteRerouteButton = UIButton()
     @IBOutlet weak var offRouteDontShowAgainButton = UIButton()
@@ -21,7 +22,13 @@ class OffRouteModalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+
+        self.offRouteView?.layer.cornerRadius = 5
+        self.offRouteView?.layer.shadowColor = UIColor.black.cgColor
+        self.offRouteView?.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        self.offRouteView?.layer.shadowOpacity = 0.2
+        self.offRouteView?.layer.shadowRadius = 1.0
     }
 
     @IBAction func dismissButtonClicked(sender: UIButton) {
