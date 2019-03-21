@@ -53,22 +53,23 @@ class WalkTimeView: UIView {
     }
     
     func updateWalkTime(distance: CLLocationDistance, averageSpeed: CLLocationSpeed = 0.7) {
-        if distance == 0 {
-            restTimeLabel.text = ""
-            arriveTimeLabel.text = "Arrived"
+        DispatchQueue.main.async {
+            if distance == 0 {
+                self.restTimeLabel.text = ""
+                self.arriveTimeLabel.text = "Arrived"
+            }
+            
+            // Set initial value
+            if self.averageWalkSpeedRange.contains(averageSpeed) {
+                self.averageWalkSpeed = averageSpeed
+            }
+            let duration = self.estimatedTime(distance: distance)
+            let arriveTime = Date().addingTimeInterval(duration)
+            
+            self.isHidden = false
+            self.restTimeLabel.text = self.format(duration: duration)
+            self.arriveTimeLabel.text = "Arrival Time \(self.format(date: arriveTime))"
         }
-        
-        // Set initial value
-        if averageWalkSpeedRange.contains(averageSpeed) {
-            averageWalkSpeed = averageSpeed
-        }
-        let duration = estimatedTime(distance: distance)
-        let arriveTime = Date().addingTimeInterval(duration)
-        
-        isHidden = false
-        restTimeLabel.text = format(duration: duration)
-        arriveTimeLabel.text = "Arrival Time \(format(date: arriveTime))"
-        
         self.remainingDistance = distance
         self.averageSpeed = averageSpeed
     }

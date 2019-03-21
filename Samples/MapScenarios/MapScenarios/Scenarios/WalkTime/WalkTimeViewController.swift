@@ -72,6 +72,8 @@ class WalkTimeViewController: TurnByTurnViewController {
             self.walkTimeView = walkTimeView
             
             updateStaticWalkTimeView(instruction: nil)
+            
+            updateWalkTimeView()
         }
     }
     
@@ -86,7 +88,7 @@ class WalkTimeViewController: TurnByTurnViewController {
     }
     
     func updateStaticWalkTimeView(instruction: PWRouteInstruction?) {
-        guard let firstInstruction = mapView.currentRoute.routeInstructions.first else {
+        guard let firstInstruction = mapView.currentRouteInstruction() else {
             return
         }
         var instructionToUse = firstInstruction
@@ -99,7 +101,6 @@ class WalkTimeViewController: TurnByTurnViewController {
                 distance += instruction.distance
             }
             self.walkTimeView?.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
-            updateWalkTimeView()
         }
     }
     
@@ -135,12 +136,9 @@ class WalkTimeViewController: TurnByTurnViewController {
         var distance: CLLocationDistance = 0
         
         // The distance for the remaining instructions
-        let startIndex = currentIndex + 1;
-        if startIndex < instructions.count {
-            let remainingInstructions = instructions[startIndex...]
-            for instruction in remainingInstructions {
-                distance += instruction.distance
-            }
+        let remainingInstructions = instructions[(currentIndex+1)...]
+        for instruction in remainingInstructions {
+            distance += instruction.distance
         }
         
         // The distance from current location to the end of current instruction
