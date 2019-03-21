@@ -124,7 +124,7 @@ extension TurnByTurnViewController: TurnByTurnDelegate {
     
     func instructionExpandTapped() {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.route = mapView.currentRoute
+        routeInstructionViewController.mapView = mapView
         routeInstructionViewController.presentFromViewController(self)
     }
 }

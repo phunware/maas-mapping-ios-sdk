@@ -11,6 +11,7 @@ import CoreLocation
 
 extension Notification.Name {
     static let ExitWalkTimeButtonTapped = NSNotification.Name("ExitWalkTimeButtonTapped")
+    static let WalkTimeChanged = NSNotification.Name("WalkTimeChanged")
 }
 
 extension Collection where Element: Numeric {
@@ -38,6 +39,10 @@ class WalkTimeView: UIView {
     var averageWalkSpeed: Double = 0.7
     // The reasonable walk speed range
     var averageWalkSpeedRange: Range = 0.2..<1.5
+    // Remaining distance
+    var remainingDistance: CLLocationDistance!
+    // Average speed
+    var averageSpeed: CLLocationSpeed!
     
     @IBOutlet weak var restTimeLabel: UILabel!
     @IBOutlet weak var arriveTimeLabel: UILabel!
@@ -63,6 +68,9 @@ class WalkTimeView: UIView {
         isHidden = false
         restTimeLabel.text = format(duration: duration)
         arriveTimeLabel.text = "Arrival Time \(format(date: arriveTime))"
+        
+        self.remainingDistance = distance
+        self.averageSpeed = averageSpeed
     }
 }
 

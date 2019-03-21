@@ -24,7 +24,15 @@ class WalkTimeViewController: TurnByTurnViewController {
     var firstLocationAcquired = false
     
     // Average speed
-    var averageSpeed: CLLocationSpeed?
+    var averageSpeed: CLLocationSpeed {
+        get {
+            if speedArray.count > 0 {
+                return speedArray.reduce(0, +) / Double(speedArray.count)
+            } else {
+                return 0.7
+            }
+        }
+    }
     var speedArray = [CLLocationSpeed]()
     
     // The walk time view
@@ -51,7 +59,7 @@ class WalkTimeViewController: TurnByTurnViewController {
     
     func configureWalkTimeView() {
         if let walkTimeView = Bundle.main.loadNibNamed(String(describing: WalkTimeView.self), owner: nil, options: nil)?.first as? WalkTimeView {
-            view.addSubview(walkTimeView)
+            mapView.addSubview(walkTimeView)
             
             // Layout
             walkTimeView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,13 +98,18 @@ class WalkTimeViewController: TurnByTurnViewController {
             for instruction in remainingInstructions {
                 distance += instruction.distance
             }
-            self.walkTimeView?.updateWalkTime(distance: distance, averageSpeed: 0)
+            self.walkTimeView?.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
+            updateWalkTimeView()
         }
     }
     
     func updateWalkTimeView() {
-        let distance = remainingDistance()
+        // Update every 5 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+            self?.updateWalkTimeView()
+        }
         
+        let distance = remainingDistance()
         guard let walkTimeView = walkTimeView, distance >= 0 else {
             return
         }
@@ -107,26 +120,27 @@ class WalkTimeViewController: TurnByTurnViewController {
             return
         }
         
-        // Update every 5 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-            self?.updateWalkTimeView()
-        }
-        
         // Set initial value
-        walkTimeView.updateWalkTime(distance: distance)
+        walkTimeView.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
+        
+        NotificationCenter.default.post(name: .WalkTimeChanged, object: nil, userInfo: ["distance" : distance, "speed" : averageSpeed])
     }
     
     func remainingDistance() -> CLLocationDistance {
         // Recalculate only when the blue dot is snapping on the route path
-        guard let lastUpdateLocation = lastUpdateLocation, snappingLocation == true, let currentInstruction = self.mapView.currentRouteInstruction(), let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: currentInstruction), let remainingInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] else {
+        guard let lastUpdateLocation = lastUpdateLocation, snappingLocation == true, let currentInstruction = self.mapView.currentRouteInstruction(), let instructions = self.mapView.currentRoute.routeInstructions, let currentIndex = instructions.firstIndex(of: currentInstruction) else {
             return -1
         }
         
         var distance: CLLocationDistance = 0
         
         // The distance for the remaining instructions
-        for instruction in remainingInstructions {
-            distance += instruction.distance
+        let startIndex = currentIndex + 1;
+        if startIndex < instructions.count {
+            let remainingInstructions = instructions[startIndex...]
+            for instruction in remainingInstructions {
+                distance += instruction.distance
+            }
         }
         
         // The distance from current location to the end of current instruction
