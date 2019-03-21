@@ -47,6 +47,8 @@ class WalkTimeViewController: TurnByTurnViewController {
         NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] (_) in
             self?.walkTimeView?.removeFromSuperview()
             self?.walkTimeView = nil
+            self?.turnByTurnCollectionView?.removeFromSuperview()
+            self?.mapView.cancelRouting()
         }
     }
     

@@ -29,6 +29,7 @@ class RouteInstructionListViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] (_) in
             self?.tableView.bottomAnchor.constraint(equalTo: self!.view.bottomAnchor).isActive = true
             self?.walkTimeView?.removeFromSuperview()
+            self?.dismiss(animated: true, completion: nil)
         }
     }
     
