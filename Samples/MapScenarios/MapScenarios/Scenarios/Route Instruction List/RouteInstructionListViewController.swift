@@ -39,7 +39,7 @@ class RouteInstructionListViewController: UIViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: (displayedWalkTimeView != nil ? 80.0 : 0)).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: (displayedWalkTimeView != nil ? WalkTimeView.defaultHeight : 0)).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
@@ -51,12 +51,12 @@ class RouteInstructionListViewController: UIViewController {
             walkTimeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
             walkTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
             walkTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            walkTimeView.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
+            walkTimeView.heightAnchor.constraint(equalToConstant: WalkTimeView.defaultHeight).isActive = true
             walkTimeView.updateWalkTime(distance: displayedWalkTimeView.remainingDistance, averageSpeed: displayedWalkTimeView.averageSpeed)
             self.walkTimeView = walkTimeView
             
             NotificationCenter.default.addObserver(forName: .WalkTimeChanged, object: nil, queue: nil) { [weak self] (notification) in
-                guard let remainingDistance = notification.userInfo?["distance"] as? CLLocationDistance, let averageSpeed = notification.userInfo?["speed"] as? CLLocationSpeed else {
+                guard let remainingDistance = notification.userInfo?[NotificationUserInfoKeys.remainingDistance] as? CLLocationDistance, let averageSpeed = notification.userInfo?[NotificationUserInfoKeys.averageSpeed] as? CLLocationSpeed else {
                     return
                 }
                 

@@ -33,8 +33,14 @@ extension Collection where Element: BinaryFloatingPoint {
     }
 }
 
+struct NotificationUserInfoKeys {
+    static let remainingDistance = "distance"
+    static let averageSpeed = "speed"
+}
+
 class WalkTimeView: UIView {
-    
+    // View height
+    static let defaultHeight: CGFloat = 80.0
     // Supposed average walk speed is 0.7 m/s
     var averageWalkSpeed: Double = 0.7
     // The reasonable walk speed range

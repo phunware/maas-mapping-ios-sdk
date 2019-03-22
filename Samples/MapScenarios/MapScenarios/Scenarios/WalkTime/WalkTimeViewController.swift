@@ -68,7 +68,7 @@ class WalkTimeViewController: TurnByTurnViewController {
             walkTimeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
             walkTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
             walkTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            walkTimeView.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
+            walkTimeView.heightAnchor.constraint(equalToConstant: WalkTimeView.defaultHeight).isActive = true
             walkTimeView.isHidden = true
             
             self.walkTimeView = walkTimeView
@@ -126,7 +126,7 @@ class WalkTimeViewController: TurnByTurnViewController {
         // Set initial value
         walkTimeView.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
         
-        NotificationCenter.default.post(name: .WalkTimeChanged, object: nil, userInfo: ["distance" : distance, "speed" : averageSpeed])
+        NotificationCenter.default.post(name: .WalkTimeChanged, object: nil, userInfo: [NotificationUserInfoKeys.remainingDistance : distance, NotificationUserInfoKeys.averageSpeed : averageSpeed])
     }
     
     func remainingDistance() -> CLLocationDistance {
