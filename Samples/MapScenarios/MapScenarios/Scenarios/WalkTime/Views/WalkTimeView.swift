@@ -11,6 +11,7 @@ import CoreLocation
 
 extension Notification.Name {
     static let ExitWalkTimeButtonTapped = NSNotification.Name("ExitWalkTimeButtonTapped")
+    static let WalkTimeChanged = NSNotification.Name("WalkTimeChanged")
 }
 
 extension Collection where Element: Numeric {
@@ -32,12 +33,22 @@ extension Collection where Element: BinaryFloatingPoint {
     }
 }
 
+struct NotificationUserInfoKeys {
+    static let remainingDistance = "distance"
+    static let averageSpeed = "speed"
+}
+
 class WalkTimeView: UIView {
-    
+    // View height
+    static let defaultHeight: CGFloat = 80.0
     // Supposed average walk speed is 0.7 m/s
     var averageWalkSpeed: Double = 0.7
     // The reasonable walk speed range
     var averageWalkSpeedRange: Range = 0.2..<1.5
+    // Remaining distance
+    var remainingDistance: CLLocationDistance!
+    // Average speed
+    var averageSpeed: CLLocationSpeed!
     
     @IBOutlet weak var restTimeLabel: UILabel!
     @IBOutlet weak var arriveTimeLabel: UILabel!
@@ -48,21 +59,25 @@ class WalkTimeView: UIView {
     }
     
     func updateWalkTime(distance: CLLocationDistance, averageSpeed: CLLocationSpeed = 0.7) {
-        if distance == 0 {
-            restTimeLabel.text = ""
-            arriveTimeLabel.text = "Arrived"
+        DispatchQueue.main.async {
+            if distance == 0 {
+                self.restTimeLabel.text = ""
+                self.arriveTimeLabel.text = "Arrived"
+            }
+            
+            // Set initial value
+            if self.averageWalkSpeedRange.contains(averageSpeed) {
+                self.averageWalkSpeed = averageSpeed
+            }
+            let duration = self.estimatedTime(distance: distance)
+            let arriveTime = Date().addingTimeInterval(duration)
+            
+            self.isHidden = false
+            self.restTimeLabel.text = self.format(duration: duration)
+            self.arriveTimeLabel.text = "Arrival Time \(self.format(date: arriveTime))"
         }
-        
-        // Set initial value
-        if averageWalkSpeedRange.contains(averageSpeed) {
-            averageWalkSpeed = averageSpeed
-        }
-        let duration = estimatedTime(distance: distance)
-        let arriveTime = Date().addingTimeInterval(duration)
-        
-        isHidden = false
-        restTimeLabel.text = format(duration: duration)
-        arriveTimeLabel.text = "Arrival Time \(format(date: arriveTime))"
+        self.remainingDistance = distance
+        self.averageSpeed = averageSpeed
     }
 }
 

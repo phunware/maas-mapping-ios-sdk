@@ -10,7 +10,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
-class TurnByTurnViewController: UIViewController {
+class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -114,17 +114,12 @@ class TurnByTurnViewController: UIViewController {
             turnByTurnCollectionView?.configureInView(view)
         }
     }
-}
-
-// MARK: - TurnByTurnDelegate
-
-extension TurnByTurnViewController: TurnByTurnDelegate {
-    
-    func didSwipeOnRouteInstruction() { }
     
     func instructionExpandTapped() {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.route = mapView.currentRoute
+        routeInstructionViewController.configure(mapView: mapView)
         routeInstructionViewController.presentFromViewController(self)
     }
+    
+    func didSwipeOnRouteInstruction() { }
 }

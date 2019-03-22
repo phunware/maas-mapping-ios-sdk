@@ -10,12 +10,16 @@ import PWMapKit
 
 class RouteInstructionListViewController: UIViewController {
     
-    let tableView = UITableView()
+    private let tableView = UITableView()
+    private var walkTimeView: WalkTimeView?
+    private var mapView: PWMapView?
+    private var displayedWalkTimeView: WalkTimeView?
     
-    var route: PWRoute? {
-        didSet {
-            tableView.reloadData()
-        }
+    func configure(mapView: PWMapView, walkTimeView: WalkTimeView? = nil) {
+        self.mapView = mapView
+        self.displayedWalkTimeView = walkTimeView
+        
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -24,15 +28,42 @@ class RouteInstructionListViewController: UIViewController {
         navigationItem.title = "Route Instructions"
         
         configureTableView()
+        
+        NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] (_) in
+            self?.tableView.bottomAnchor.constraint(equalTo: self!.view.bottomAnchor).isActive = true
+            self?.walkTimeView?.removeFromSuperview()
+            self?.dismiss(animated: true, completion: nil)
+        }
     }
     
     func configureTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: (displayedWalkTimeView != nil ? WalkTimeView.defaultHeight : 0)).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        if let displayedWalkTimeView = displayedWalkTimeView, let walkTimeView = Bundle.main.loadNibNamed(String(describing: WalkTimeView.self), owner: nil, options: nil)?.first as? WalkTimeView {
+            view.addSubview(walkTimeView)
+            
+            // Layout
+            walkTimeView.translatesAutoresizingMaskIntoConstraints = false
+            walkTimeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            walkTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            walkTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            walkTimeView.heightAnchor.constraint(equalToConstant: WalkTimeView.defaultHeight).isActive = true
+            walkTimeView.updateWalkTime(distance: displayedWalkTimeView.remainingDistance, averageSpeed: displayedWalkTimeView.averageSpeed)
+            self.walkTimeView = walkTimeView
+            
+            NotificationCenter.default.addObserver(forName: .WalkTimeChanged, object: nil, queue: nil) { [weak self] (notification) in
+                guard let remainingDistance = notification.userInfo?[NotificationUserInfoKeys.remainingDistance] as? CLLocationDistance, let averageSpeed = notification.userInfo?[NotificationUserInfoKeys.averageSpeed] as? CLLocationSpeed else {
+                    return
+                }
+                
+                self?.walkTimeView?.updateWalkTime(distance: remainingDistance, averageSpeed: averageSpeed)
+            }
+        }
         
         let instructionCellIdentifier = String(describing: RouteInstructionListCell.self)
         tableView.register(UINib(nibName: instructionCellIdentifier, bundle: nil), forCellReuseIdentifier: instructionCellIdentifier)
@@ -66,6 +97,10 @@ extension RouteInstructionListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView(frame: .zero)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -73,12 +108,12 @@ extension RouteInstructionListViewController: UITableViewDelegate {
 extension RouteInstructionListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return route?.routeInstructions.count ?? 0
+        return mapView?.currentRoute?.routeInstructions.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        guard let routeInstruction = route?.routeInstructions[indexPath.row] else {
+        guard let routeInstruction = mapView?.currentRoute?.routeInstructions[indexPath.row] else {
             return cell
         }
         if let instructionCell = tableView.dequeueReusableCell(withIdentifier: String(describing: RouteInstructionListCell.self), for: indexPath) as? RouteInstructionListCell {
