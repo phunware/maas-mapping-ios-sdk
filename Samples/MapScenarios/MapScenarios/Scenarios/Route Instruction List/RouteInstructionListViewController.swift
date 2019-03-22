@@ -10,13 +10,16 @@ import PWMapKit
 
 class RouteInstructionListViewController: UIViewController {
     
-    let tableView = UITableView()
-    var walkTimeView: WalkTimeView?
+    private let tableView = UITableView()
+    private var walkTimeView: WalkTimeView?
+    private var mapView: PWMapView?
+    private var displayedWalkTimeView: WalkTimeView?
     
-    var mapView: PWMapView? {
-        didSet {
-            tableView.reloadData()
-        }
+    func configure(mapView: PWMapView, walkTimeView: WalkTimeView? = nil) {
+        self.mapView = mapView
+        self.displayedWalkTimeView = walkTimeView
+        
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -34,8 +37,6 @@ class RouteInstructionListViewController: UIViewController {
     }
     
     func configureTableView() {
-        let displayedWalkTimeView = mapView?.subviews.first(where: { $0 is WalkTimeView }) as? WalkTimeView
-        
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true

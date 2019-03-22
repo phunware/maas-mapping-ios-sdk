@@ -59,6 +59,12 @@ class WalkTimeViewController: TurnByTurnViewController {
         configureWalkTimeView()
     }
     
+    override func instructionExpandTapped() {
+        let routeInstructionViewController = RouteInstructionListViewController()
+        routeInstructionViewController.configure(mapView: mapView, walkTimeView: walkTimeView)
+        routeInstructionViewController.presentFromViewController(self)
+    }
+    
     func configureWalkTimeView() {
         if let walkTimeView = Bundle.main.loadNibNamed(String(describing: WalkTimeView.self), owner: nil, options: nil)?.first as? WalkTimeView {
             mapView.addSubview(walkTimeView)
