@@ -1,4 +1,10 @@
 # PWMapKit Changelog
+## 3.8.0 (Tuesday, April 2nd, 2019)
+#### Features
+* Update for PWLocation 3.8.0 compatibility
+* Managed Compass -- an alternate heading experience for sites that suffer from inaccurate heading
+* Ability to blend GPS with indoor location providers based on configuration in the MaaS portal
+
 ## 3.7.1 (Wednesday, February 20th, 2019)
 #### Bug fixes / performance enhancements
 * Use new v3.0 Map-API
