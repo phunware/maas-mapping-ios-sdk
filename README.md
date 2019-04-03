@@ -1,14 +1,14 @@
 PWMapKit SDK for iOS
 ====================
 
-> Version 3.7.0
+> Version 3.8.0
 
 **PWMapKit** is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services.  Visit http://maas.phunware.com/ for more details and to sign up.
 
 
 ## Requirements
 
-- PWLocation 3.7.0 and above (Automatically included when pod install PWMapKit)
+- PWLocation 3.8.0 and above (Automatically included when pod install PWMapKit)
 - PWCore 3.8.x (Automatically included when pod install PWMapKit)
 - iOS 10.0 or greater
 - Xcode 8 or greater

@@ -1,4 +1,16 @@
 # PWMapKit Migration Guide
+## Upgrade from 3.7.x to 3.8.x
+
+#### General
+
+This release includes PWLocation 3.8.x which contains GPS blending with indoor location providers and Managed Compass.
+
+#### Upgrade Steps
+
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.8.x'`, then run `pod update` in the Terminal to update the framework.
+
+2. If your site suffers from inaccurate heading with blue dot, try setting `managedCompassEnabled` to `true` on your `PWMapView` instance. See documentation on `managedCompassEnabled` for more details.
+
 ## Upgrade from 3.6.x to 3.7.x
 
 #### General

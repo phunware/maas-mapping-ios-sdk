@@ -697,6 +697,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setManagedCompassEnabled:</TokenIdentifier>
+			<Abstract type="html">Managed compass is an optional capability of PWLocation that improves the user experience while viewing the map by improving the alignment of the compass heading. The managed compass takes operating system readings and processes them prior to returning it to PWMapKit -- so there is no further coding required for developers once using this mode. Set to true to enable this feature (disabled by default). Note - results may vary by location, so please evaluate the performance for a given location prior to enabling this feature.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL managedCompassEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/managedCompassEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/managedCompassEnabled</TokenIdentifier>
+			<Abstract type="html">Managed compass is an optional capability of PWLocation that improves the user experience while viewing the map by improving the alignment of the compass heading. The managed compass takes operating system readings and processes them prior to returning it to PWMapKit -- so there is no further coding required for developers once using this mode. Set to true to enable this feature (disabled by default). Note - results may vary by location, so please evaluate the performance for a given location prior to enabling this feature.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL managedCompassEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/managedCompassEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/managedCompassEnabled</TokenIdentifier>
+			<Abstract type="html">Managed compass is an optional capability of PWLocation that improves the user experience while viewing the map by improving the alignment of the compass heading. The managed compass takes operating system readings and processes them prior to returning it to PWMapKit -- so there is no further coding required for developers once using this mode. Set to true to enable this feature (disabled by default). Note - results may vary by location, so please evaluate the performance for a given location prior to enabling this feature.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL managedCompassEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/managedCompassEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/initWithFrame:</TokenIdentifier>
 			<Abstract type="html">Initializes and returns a newly allocated map view object with the specified frame rectangle.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
