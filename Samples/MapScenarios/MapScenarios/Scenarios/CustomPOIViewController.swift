@@ -27,12 +27,11 @@ class CustomPOIViewController: UIViewController {
         
         navigationItem.title = "Create Custom POI"
         
-        if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 && buildingIdentifier != 0 {
-            PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
-        } else {
-            fatalError("applicationId, accessKey, signatureKey, and buildingIdentifier must be set")
+        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+            return
         }
         
+        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         view.addSubview(mapView)
         configureMapViewConstraints()
         

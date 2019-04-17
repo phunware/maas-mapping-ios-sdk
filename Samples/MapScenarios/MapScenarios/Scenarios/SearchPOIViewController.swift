@@ -64,17 +64,18 @@ class SearchPOIViewController: UIViewController {
         
         navigationItem.title = "Search for Point of Interest"
         
-        if applicationId.count > 0 && accessKey.count > 0 && signatureKey.count > 0 && buildingIdentifier != 0 {
-            PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
-        } else {
-            fatalError("applicationId, accessKey, signatureKey, and buildingIdentifier must be set")
+        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+            return
         }
+        
+        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         view.addSubview(mapView)
         configureMapViewConstraints()
+        searchController.searchBar.barStyle = .black
         navigationItem.searchController = searchController
         
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in

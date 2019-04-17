@@ -16,13 +16,17 @@ class ScenarioSelectViewController: UITableViewController {
     let universalApplicationId = ""
     let universalAccessKey = ""
     let universalSignatureKey = ""
+    
     // Building identifier to be used in all view controllers, overridden when set in individual controllers
     let universalBuildingIdentifier = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        navigationController?.navigationBar.barTintColor = .darkerGray
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.isTranslucent = false
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -112,6 +116,17 @@ class ScenarioSelectViewController: UITableViewController {
                     locationSharingViewController.signatureKey = universalSignatureKey
                 }
             }
+        case String(describing: VoicePromptRouteViewController.self):
+            if let voicePromptRouteViewController = segue.destination as? VoicePromptRouteViewController {
+                if voicePromptRouteViewController.buildingIdentifier == 0 {
+                    voicePromptRouteViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+                if voicePromptRouteViewController.applicationId.count == 0 || voicePromptRouteViewController.accessKey.count == 0 || voicePromptRouteViewController.signatureKey.count == 0 {
+                    voicePromptRouteViewController.applicationId = universalApplicationId
+                    voicePromptRouteViewController.accessKey = universalAccessKey
+                    voicePromptRouteViewController.signatureKey = universalSignatureKey
+                }
+            }
         case String(describing: TurnByTurnViewController.self):
             if let turnByTurnViewController = segue.destination as? TurnByTurnViewController {
                 if turnByTurnViewController.buildingIdentifier == 0 {
@@ -134,6 +149,17 @@ class ScenarioSelectViewController: UITableViewController {
                     walkTimeViewController.signatureKey = universalSignatureKey
                 }
             }
+        case String(describing: OffRouteViewController.self):
+            if let offRouteViewController = segue.destination as? OffRouteViewController {
+                if offRouteViewController.buildingIdentifier == 0 {
+                    offRouteViewController.buildingIdentifier = universalBuildingIdentifier
+                }
+                if offRouteViewController.applicationId.count == 0 || offRouteViewController.accessKey.count == 0 || offRouteViewController.signatureKey.count == 0 {
+                    offRouteViewController.applicationId = universalApplicationId
+                    offRouteViewController.accessKey = universalAccessKey
+                    offRouteViewController.signatureKey = universalSignatureKey
+                }
+            }
         default:
             break
         }
@@ -143,7 +169,7 @@ class ScenarioSelectViewController: UITableViewController {
 extension UIViewController {
     
     func validateBuildingSetting(appId: String, accessKey: String, signatureKey: String, buildingId: Int) -> Bool {
-        if appId.isEmpty || accessKey.isEmpty || signatureKey.isEmpty {
+        if appId.isEmpty || accessKey.isEmpty || signatureKey.isEmpty || buildingId == 0 {
             let alertVC = UIAlertController(title: "Code Update Required", message: "Please put your applicationId/accessKey/signatureKey and buildingId in ScenarioSelectViewController.swift or the related view controllers.", preferredStyle: .alert)
             let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertVC.addAction(confirmAction)

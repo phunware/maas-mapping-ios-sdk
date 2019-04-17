@@ -1,9 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-inhibit_all_warnings!
-
-platform :ios, '10.0'
-use_frameworks!
-
-target 'MapScenariosObjC' do
-  pod 'PWMapKit', '~> 3.8.0'
-end

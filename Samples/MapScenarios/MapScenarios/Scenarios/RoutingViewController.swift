@@ -25,6 +25,7 @@ class RoutingViewController: UIViewController {
     var destinationPOIIdentifier: Int = 0
     
     let mapView = PWMapView()
+    let locationManager = CLLocationManager()
     var firstLocationAcquired = false
     
     override func viewDidLoad() {
@@ -53,14 +54,22 @@ class RoutingViewController: UIViewController {
                     self?.warning(error.localizedDescription)
                     return
                 }
+                self?.locationManager.delegate = self
+                if !CLLocationManager.isAuthorized() {
+                    self?.locationManager.requestWhenInUseAuthorization()
+                } else {
+                    self?.startManagedLocationManager()
+                }
             })
         }
     }
     
     func startManagedLocationManager() {
-        let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
         DispatchQueue.main.async { [weak self] in
-            self?.mapView.register(managedLocationManager)
+            if let buildingIdentifier = self?.buildingIdentifier {
+                let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
+                self?.mapView.register(managedLocationManager)
+            }
         }
     }
     
@@ -130,7 +139,8 @@ extension RoutingViewController: CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             startManagedLocationManager()
         default:
-            print("Not authorized to start PWManagedLocationManager")
+            mapView.unregisterLocationManager()
+            print("Not authorized to start PWLocationManager")
         }
     }
 }

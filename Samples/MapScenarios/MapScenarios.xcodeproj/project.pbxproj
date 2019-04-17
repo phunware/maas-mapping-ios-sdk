@@ -8,35 +8,70 @@
 
 /* Begin PBXBuildFile section */
 		179CA613BC173C9078F0724C /* Pods_MapScenarios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */; };
-		9D6C1DCD220E0A4200C046DF /* DirectionImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C1DCC220E0A4100C046DF /* DirectionImages.xcassets */; };
+		7E87A2F2222478FF004ABFE9 /* OffRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */; };
+		7EFF9C602232FCD3002BDD0A /* OffRouteModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */; };
+		7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */; };
+		9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */; };
+		9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */; };
+		9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */; };
+		9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */; };
+		9D6C1DCD220E0A4200C046DF /* (null) in Resources */ = {isa = PBXBuildFile; };
 		9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */; };
-		9DE2FAAA2204CE3800EE5DF5 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */; };
-		9DE2FAB72204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */; };
-		9DE2FAB92204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
+		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
+		E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581E22145F4F0059A179 /* PWMapView+Helper.swift */; };
+		E37858212216FB840059A179 /* MKMapPoint+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37858202216FB840059A179 /* MKMapPoint+Helper.swift */; };
+		E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */; };
+		E3785826221706680059A179 /* VoicePromptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785825221706680059A179 /* VoicePromptButton.swift */; };
+		E378582D222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3785829222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib */; };
+		E378582E222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378582A222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift */; };
+		E378582F222073CA0059A179 /* DirectionImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E378582C222073CA0059A179 /* DirectionImages.xcassets */; };
+		E3785831222073DC0059A179 /* TurnByTurnCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */; };
+		E378583322247D430059A179 /* PWRouteInstruction+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378583222247D420059A179 /* PWRouteInstruction+Helper.swift */; };
+		E3785836222735A80059A179 /* RouteInstructionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785835222735A80059A179 /* RouteInstructionListViewController.swift */; };
+		E3785838222737F50059A179 /* RouteInstructionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3785837222737F50059A179 /* RouteInstructionListCell.xib */; };
+		E378583A222738A40059A179 /* RouteInstructionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785839222738A40059A179 /* RouteInstructionListCell.swift */; };
+		E378583C222821B10059A179 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378583B222821B10059A179 /* UIColor+Helper.swift */; };
 		E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799B204D90AA00905731 /* AppDelegate.swift */; };
 		E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */; };
 		E3C379A1204D90AA00905731 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C3799F204D90AA00905731 /* Main.storyboard */; };
 		E3C379A3204D90AA00905731 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3C379A2204D90AA00905731 /* Assets.xcassets */; };
 		E3C379A6204D90AA00905731 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C379A4204D90AA00905731 /* LaunchScreen.storyboard */; };
-		E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */; };
 		E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */; };
 		E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */; };
 		E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */; };
 		E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C92050555D00780D0F /* RoutingViewController.swift */; };
 		E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */; };
+		E3ED03EE22415A1B00E394F5 /* CLLocationManager+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ED03ED22415A1B00E394F5 /* CLLocationManager+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		728C41C18DA051CD358ABD7B /* Pods-MapScenarios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.release.xcconfig"; sourceTree = "<group>"; };
+		7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteViewController.swift; sourceTree = "<group>"; };
+		7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteModalViewController.swift; sourceTree = "<group>"; };
+		7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OffRouteModalView.xib; sourceTree = "<group>"; };
 		9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.debug.xcconfig"; sourceTree = "<group>"; };
-		9D6C1DCC220E0A4100C046DF /* DirectionImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = DirectionImages.xcassets; path = MapScenarios/Assets.xcassets/DirectionImages.xcassets; sourceTree = SOURCE_ROOT; };
+		9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluedotLocationViewController.swift; sourceTree = "<group>"; };
+		9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
+		9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkTimeView.xib; sourceTree = "<group>"; };
+		9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkTimeView.swift; sourceTree = "<group>"; };
 		9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnViewController.swift; sourceTree = "<group>"; };
-		9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
-		9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnByTurnInstructionCollectionViewCell.swift; sourceTree = "<group>"; };
-		9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TurnByTurnInstructionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A64B34F873B2034B538F5112 /* Pods_MapScenarios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapScenarios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BB69120571B57003640CA /* LocationSharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSharingViewController.swift; sourceTree = "<group>"; };
+		E378581C221313500059A179 /* PWRoute+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWRoute+Helper.swift"; sourceTree = "<group>"; };
+		E378581E22145F4F0059A179 /* PWMapView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWMapView+Helper.swift"; sourceTree = "<group>"; };
+		E37858202216FB840059A179 /* MKMapPoint+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapPoint+Helper.swift"; sourceTree = "<group>"; };
+		E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoicePromptRouteViewController.swift; sourceTree = "<group>"; };
+		E3785825221706680059A179 /* VoicePromptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePromptButton.swift; sourceTree = "<group>"; };
+		E3785829222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TurnByTurnInstructionCollectionViewCell.xib; sourceTree = "<group>"; };
+		E378582A222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnByTurnInstructionCollectionViewCell.swift; sourceTree = "<group>"; };
+		E378582C222073CA0059A179 /* DirectionImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DirectionImages.xcassets; sourceTree = "<group>"; };
+		E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnCollectionView.swift; sourceTree = "<group>"; };
+		E378583222247D420059A179 /* PWRouteInstruction+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWRouteInstruction+Helper.swift"; sourceTree = "<group>"; };
+		E3785835222735A80059A179 /* RouteInstructionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInstructionListViewController.swift; sourceTree = "<group>"; };
+		E3785837222737F50059A179 /* RouteInstructionListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteInstructionListCell.xib; sourceTree = "<group>"; };
+		E3785839222738A40059A179 /* RouteInstructionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInstructionListCell.swift; sourceTree = "<group>"; };
+		E378583B222821B10059A179 /* UIColor+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		E3C37998204D90AA00905731 /* MapScenarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapScenarios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C3799B204D90AA00905731 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioSelectViewController.swift; sourceTree = "<group>"; };
@@ -44,12 +79,12 @@
 		E3C379A2204D90AA00905731 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3C379A5204D90AA00905731 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3C379A7204D90AA00905731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluedotLocationViewController.swift; sourceTree = "<group>"; };
 		E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBuildingViewController.swift; sourceTree = "<group>"; };
 		E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModesViewController.swift; sourceTree = "<group>"; };
 		E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPOIViewController.swift; sourceTree = "<group>"; };
 		E3C771C92050555D00780D0F /* RoutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingViewController.swift; sourceTree = "<group>"; };
 		E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPOIViewController.swift; sourceTree = "<group>"; };
+		E3ED03ED22415A1B00E394F5 /* CLLocationManager+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,31 +116,101 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9D6C1DCB220E09EB00C046DF /* Icons */ = {
+		7E87A2F0222478DC004ABFE9 /* OffRoute */ = {
 			isa = PBXGroup;
 			children = (
-				9D6C1DCC220E0A4100C046DF /* DirectionImages.xcassets */,
+				7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */,
+				7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */,
+				7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */,
 			);
-			path = Icons;
+			path = OffRoute;
+			sourceTree = "<group>";
+		};
+		9D1ECD282225DD510029A667 /* WalkTime */ = {
+			isa = PBXGroup;
+			children = (
+				9D1ECD2D2225DE310029A667 /* Views */,
+				9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */,
+			);
+			path = WalkTime;
+			sourceTree = "<group>";
+		};
+		9D1ECD2D2225DE310029A667 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */,
+				9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9D93FCE02208A2C700A2EB02 /* TurnByTurn */ = {
 			isa = PBXGroup;
 			children = (
-				9D6C1DCB220E09EB00C046DF /* Icons */,
-				9DE2FAB22204F5C500EE5DF5 /* Cells */,
+				E3785827222073CA0059A179 /* Collection View */,
 				9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */,
 			);
 			path = TurnByTurn;
 			sourceTree = "<group>";
 		};
-		9DE2FAB22204F5C500EE5DF5 /* Cells */ = {
+		E378581B221313200059A179 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9DE2FAB32204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift */,
-				9DE2FAB52204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib */,
+				E3ED03ED22415A1B00E394F5 /* CLLocationManager+Helper.swift */,
+				E37858202216FB840059A179 /* MKMapPoint+Helper.swift */,
+				E378581E22145F4F0059A179 /* PWMapView+Helper.swift */,
+				E378581C221313500059A179 /* PWRoute+Helper.swift */,
+				E378583222247D420059A179 /* PWRouteInstruction+Helper.swift */,
+				E378583B222821B10059A179 /* UIColor+Helper.swift */,
+			);
+			name = Extensions;
+			path = MapScenarios/Extensions;
+			sourceTree = SOURCE_ROOT;
+		};
+		E37858222217062D0059A179 /* Voice Prompt */ = {
+			isa = PBXGroup;
+			children = (
+				E3785825221706680059A179 /* VoicePromptButton.swift */,
+				E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */,
+			);
+			path = "Voice Prompt";
+			sourceTree = "<group>";
+		};
+		E3785827222073CA0059A179 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				E3785828222073CA0059A179 /* Cells */,
+				E378582B222073CA0059A179 /* Icons */,
+				E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */,
+			);
+			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		E3785828222073CA0059A179 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E3785829222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib */,
+				E378582A222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E378582B222073CA0059A179 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E378582C222073CA0059A179 /* DirectionImages.xcassets */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		E3785834222735540059A179 /* Route Instruction List */ = {
+			isa = PBXGroup;
+			children = (
+				E3785839222738A40059A179 /* RouteInstructionListCell.swift */,
+				E3785837222737F50059A179 /* RouteInstructionListCell.xib */,
+				E3785835222735A80059A179 /* RouteInstructionListViewController.swift */,
+			);
+			path = "Route Instruction List";
 			sourceTree = "<group>";
 		};
 		E3C3798F204D90AA00905731 = {
@@ -143,15 +248,19 @@
 		E3C76E4F204D95BB00780D0F /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
+				E378581B221313200059A179 /* Extensions */,
+				7E87A2F0222478DC004ABFE9 /* OffRoute */,
+				E3785834222735540059A179 /* Route Instruction List */,
 				9D93FCE02208A2C700A2EB02 /* TurnByTurn */,
-				E3C76E50204D95BB00780D0F /* BluedotLocationViewController.swift */,
+				E37858222217062D0059A179 /* Voice Prompt */,
+				9D1ECD282225DD510029A667 /* WalkTime */,
+				9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */,
 				E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */,
 				E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */,
 				E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */,
 				E36BB69120571B57003640CA /* LocationSharingViewController.swift */,
 				E3C771C92050555D00780D0F /* RoutingViewController.swift */,
 				E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */,
-				9DE2FAA92204CE3800EE5DF5 /* WalkTimeViewController.swift */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -186,7 +295,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "Patrick Dunshee";
+				ORGANIZATIONNAME = Phunware;
 				TargetAttributes = {
 					E3C37997204D90AA00905731 = {
 						CreatedOnToolsVersion = 9.2;
@@ -218,11 +327,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3785838222737F50059A179 /* RouteInstructionListCell.xib in Resources */,
+				9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */,
 				E3C379A6204D90AA00905731 /* LaunchScreen.storyboard in Resources */,
 				E3C379A3204D90AA00905731 /* Assets.xcassets in Resources */,
+				E378582D222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
+				E378582F222073CA0059A179 /* DirectionImages.xcassets in Resources */,
 				E3C379A1204D90AA00905731 /* Main.storyboard in Resources */,
-				9D6C1DCD220E0A4200C046DF /* DirectionImages.xcassets in Resources */,
-				9DE2FAB92204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
+				9D6C1DCD220E0A4200C046DF /* (null) in Resources */,
+				7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,18 +397,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DE2FAAA2204CE3800EE5DF5 /* WalkTimeViewController.swift in Sources */,
 				E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */,
+				E3ED03EE22415A1B00E394F5 /* CLLocationManager+Helper.swift in Sources */,
+				7E87A2F2222478FF004ABFE9 /* OffRouteViewController.swift in Sources */,
 				9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */,
-				9DE2FAB72204F5C500EE5DF5 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */,
+				9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */,
+				E3785831222073DC0059A179 /* TurnByTurnCollectionView.swift in Sources */,
+				E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */,
+				7EFF9C602232FCD3002BDD0A /* OffRouteModalViewController.swift in Sources */,
+				E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */,
 				E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
-				E3C76E51204D95BB00780D0F /* BluedotLocationViewController.swift in Sources */,
+				E378583A222738A40059A179 /* RouteInstructionListCell.swift in Sources */,
+				E378583322247D430059A179 /* PWRouteInstruction+Helper.swift in Sources */,
 				E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */,
+				9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */,
 				E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */,
+				E378582E222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */,
 				E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */,
 				E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */,
+				E3785836222735A80059A179 /* RouteInstructionListViewController.swift in Sources */,
+				E3785826221706680059A179 /* VoicePromptButton.swift in Sources */,
+				E37858212216FB840059A179 /* MKMapPoint+Helper.swift in Sources */,
+				E378583C222821B10059A179 /* UIColor+Helper.swift in Sources */,
+				E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */,
 				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
+				9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +570,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.MapScenarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -459,7 +586,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.MapScenarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
