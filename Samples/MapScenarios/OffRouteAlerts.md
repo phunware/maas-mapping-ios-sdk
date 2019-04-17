@@ -1,4 +1,4 @@
-## Sample - Walk Time
+## Sample - Off Route
 ====================
 
 ### Overview
@@ -8,23 +8,25 @@
 
 - Need to fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, and `destinationPOIIdentifier` in OffRouteViewController.swift.
 
-### Sample Code 
+### Sample Code
 - [OffRouteViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/OffRoute/OffRouteViewController.swift)
 - [OffRouteModalViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/OffRoute/OffRouteModalViewController.swift)
 - [OffRouteModalView.xib](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/OffRoute/OffRouteModalView.xib)
 
 **Step 1: Copy the following files to your project**
 
-- OffRouteModalViewController.swift 
-- OffRouteModalView.xib 
+- OffRouteModalViewController.swift
+- OffRouteModalView.xib
 
 **Step 2: Add the following variables and methods to your view controller**
 
 ```
 //Class variables
 var currentRoute: PWRoute?
-let offRouteDistanceThreshold: CLLocationDistance = 10.0 //distance in meters
-let offRouteTimeThreshold: TimeInterval = 5.0 //time in seconds
+// offRouteDistanceThreshold is the distance in meters away from the closest point on the route the user has to be to trigger the Off Route alert
+let offRouteDistanceThreshold: CLLocationDistance = 10.0
+// offRouteTimeThreshold is the time in seconds the user has to be off the route line to trigger the Off Route alert
+let offRouteTimeThreshold: TimeInterval = 5.0
 var offRouteTimer: Timer? = nil
 var modalVisible = false
 var dontShowAgain = false

@@ -22,7 +22,6 @@ class ScenarioSelectViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         navigationController?.navigationBar.barTintColor = .darkerGray
         navigationController?.navigationBar.tintColor = .white

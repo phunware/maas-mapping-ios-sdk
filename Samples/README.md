@@ -34,7 +34,7 @@ PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building,
 		// Error handle
 		return
 	}
-	
+
 	self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
 }
 ```
@@ -51,7 +51,7 @@ PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building,
 ```
 self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
 	// Handle error
-	
+
 	self?.locationManager.delegate = self
 	if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
 		self?.locationManager.requestWhenInUseAuthorization()
@@ -75,12 +75,12 @@ self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
 func addCustomPointOfInterest() {
 	let poiLocation = CLLocationCoordinate2DMake(30.359931, -97.742507)
 	let poiTitle = "Custom POI"
-        
+
 	// If the image parameter is nil, it will use the POI icon for any specified `pointOfInterestType`. If no image is set and no `pointOfInterestType` is set, the SDK will use this default icon: https://lbs-prod.s3.amazonaws.com/stock_assets/icons/0_higher.png
 	let customPOI = PWCustomPointOfInterest(coordinate: poiLocation, floor: mapView.currentFloor, title: poiTitle, image: nil)
-        
+
 	customPOI?.isShowTextLabel = true
-        
+
 	if let customPOI = customPOI {
 		mapView.addAnnotation(customPOI)
 	}
@@ -115,7 +115,7 @@ Update UI:
 
 ```
 extension LocationModesViewController: PWMapViewDelegate {
-    
+
     func mapView(_ mapView: PWMapView!, didChangeIndoorUserTrackingMode mode: PWTrackingMode) {
         switch mode {
         case .none:
@@ -147,7 +147,7 @@ PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, access
 		// handle error
 		return
 	}
-            
+
 	let routeOptions = PWRouteUIOptions()
 	self?.mapView.navigate(with: route, options: routeOptions)
 })
@@ -192,24 +192,27 @@ mapView.selectAnnotation(pointOfInterest, animated: true)
 ##### [Sample code](./MapScenarios/LocationSharing.md)
 
 ### TurnByTurnCollectionView
-- Show current location in building
-- Show current location of other users of the app in the same building on the map
+- Show route instructions in carousel UI
 
 ##### Usage:
 - Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
-- Tap "Settings" button to change device name or type
-- Required to have at least two unique device identifiers with blue dot in the same building to see usage
 
 ##### [Sample code](./MapScenarios/TurnByTurn.md)
 
-### WalkTimeViewController
-- Show current location in building
-- Show current location of other users of the app in the same building on the map
+### VoicePromptRouteViewController
+- Read route instructions out loud
+- Can read instructions as you swipe through them or traverse them
 
 ##### Usage:
 - Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
-- Tap "Settings" button to change device name or type
-- Required to have at least two unique device identifiers with blue dot in the same building to see usage
+
+##### [Sample code](./MapScenarios/VoicePrompt.md)
+
+### WalkTimeViewController
+- Show estimated walk time of an indoor route based on route distance and user speed
+
+##### Usage:
+- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
 
 ##### [Sample code](./MapScenarios/WalkTime.md)
 

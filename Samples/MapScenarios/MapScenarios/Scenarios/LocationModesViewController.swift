@@ -173,6 +173,8 @@ class LocationModesViewController: UIViewController {
             mapView.trackingMode = .followWithHeading
         case .followWithHeading:
             mapView.trackingMode = .none
+        @unknown default:
+            break
         }
     }
 }
@@ -189,6 +191,8 @@ extension LocationModesViewController: PWMapViewDelegate {
             trackingModeButton.image = .filledTrackingImage(color: .blue)
         case .followWithHeading:
             trackingModeButton.image = .trackWithHeadingImage(color: .blue)
+        @unknown default:
+            break
         }
     }
 }

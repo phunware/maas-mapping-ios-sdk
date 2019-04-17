@@ -11,11 +11,11 @@ import PWMapKit
 extension PWMapView {
     
     func remainingRouteDistanceFromCurrentLocation() -> CLLocationDistance? {
-        guard let route = currentRoute, let currentInstruction = currentRouteInstruction(), var instructionIndex = route.routeInstructions.index(of: currentInstruction) else {
+        guard let route = currentRoute, let currentInstruction = currentRouteInstruction(), var instructionIndex = route.routeInstructions.firstIndex(of: currentInstruction) else {
             return nil
         }
         // Use user location for current route instruction index if possible
-        if let userLocation = indoorUserLocation, let closestInstruction = route.closestInstructionTo(userLocation), let closestInstructionIndex = route.routeInstructions.index(of: closestInstruction) {
+        if let userLocation = indoorUserLocation, let closestInstruction = route.closestInstructionTo(userLocation), let closestInstructionIndex = route.routeInstructions.firstIndex(of: closestInstruction) {
             instructionIndex = closestInstructionIndex
         }
         

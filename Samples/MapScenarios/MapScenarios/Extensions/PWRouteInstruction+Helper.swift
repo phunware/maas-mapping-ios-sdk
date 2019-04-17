@@ -91,6 +91,8 @@ extension PWRouteInstruction {
             highlightedString = NSLocalizedString("Take the escalator up to", comment: "")
         case .escalatorDown:
             highlightedString = NSLocalizedString("Take the escalator down to", comment: "")
+        @unknown default:
+            break
         }
         
         let highlightedAttributedString = NSAttributedString(string: highlightedString, attributes: [.foregroundColor: highlightedTextColor, .font: highlightedFont])
@@ -106,7 +108,7 @@ extension PWRouteInstruction {
     }
     
     func destinationFloorName() -> String {
-        guard let route = route, let building = route.building, let indexOfInstruction = route.routeInstructions.index(of: self) else {
+        guard let route = route, let building = route.building, let indexOfInstruction = route.routeInstructions.firstIndex(of: self) else {
             return ""
         }
         
@@ -134,7 +136,7 @@ extension PWRouteInstruction {
     }
     
     func nextInstruction() -> PWRouteInstruction? {
-        guard let indexOfInstruction = route.routeInstructions.index(of: self), let route = route else {
+        guard let indexOfInstruction = route.routeInstructions.firstIndex(of: self), let route = route else {
             return nil
         }
         
@@ -175,6 +177,8 @@ extension PWRouteInstruction {
         case .escalatorDown:
             return #imageLiteral(resourceName: "PWRouteInstructionDirectionEscalatorUp")
         case .floorChange:
+            return #imageLiteral(resourceName: "PWRouteInstructionDirectionStraight")
+        @unknown default:
             return #imageLiteral(resourceName: "PWRouteInstructionDirectionStraight")
         }
     }
