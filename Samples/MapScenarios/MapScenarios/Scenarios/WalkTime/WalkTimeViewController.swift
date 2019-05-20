@@ -193,6 +193,7 @@ extension WalkTimeViewController: PWMapViewDelegate {
     }
     
     func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
+        turnByTurnCollectionView?.scrollToInstruction(instruction)
         updateStaticWalkTimeView(instruction: instruction)
     }
 }
