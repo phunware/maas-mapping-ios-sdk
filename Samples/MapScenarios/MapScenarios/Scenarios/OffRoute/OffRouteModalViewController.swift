@@ -10,10 +10,10 @@ import UIKit
 
 class OffRouteModalViewController: UIViewController {
 
-    @IBOutlet weak var offRouteView = UIView()
-    @IBOutlet weak var offRouteDismissButton = UIButton()
-    @IBOutlet weak var offRouteRerouteButton = UIButton()
-    @IBOutlet weak var offRouteDontShowAgainButton = UIButton()
+    @IBOutlet weak var offRouteView: UIView!
+    @IBOutlet weak var offRouteDismissButton: UIButton!
+    @IBOutlet weak var offRouteRerouteButton: UIButton!
+    @IBOutlet weak var offRouteDontShowAgainButton: UIButton!
 
     var dismissCompletion : (() -> Void)?
     var rerouteCompletion : (() -> Void)?
