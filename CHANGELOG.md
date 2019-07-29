@@ -1,4 +1,9 @@
 # PWMapKit Changelog
+## 3.8.1 (Monday, July 29, 2019)
+#### Bug fixes / performance enhancements
+* Fix bug where user is zoomed to coordinate (0,0)
+* Added two options to the PWRouteUIOptions to resolve conflicts between the animation of setVisibleMapRect at beginning of Wayfinding and MapView Region Delegate methods.
+
 ## 3.8.0 (Tuesday, April 2nd, 2019)
 #### Features
 * Update for PWLocation 3.8.0 compatibility

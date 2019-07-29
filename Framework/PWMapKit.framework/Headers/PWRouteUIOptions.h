@@ -52,4 +52,14 @@
  */
 @property (nonatomic) CGLineJoin lineJoin;
 
+/*
+ * Whether or not to animate the initial setting of the map area over the route. Defaults to yes
+ */
+@property (nonatomic) BOOL animateInitialRouteStaging;
+
+/*
+ * Add delay in seconds to code that completes after initial setting of map area over the route. Defaults to 0
+ */
+@property (nonatomic) float delayAfterInitialRouteStaging;
+
 @end
