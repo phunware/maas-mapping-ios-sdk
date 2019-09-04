@@ -11,7 +11,16 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'Copyright', :text => 'Copyright 2015 by Phunware Inc. All rights reserved.' }
 
   s.ios.vendored_frameworks = 'Framework/PWMapKit.framework'
-  s.ios.dependency 'PWLocation', '~> 3.8.0'
+  
+  s.default_subspec = 'all-frameworks'
+
+  s.subspec 'all-frameworks' do |sub|
+    sub.dependency 'PWLocation', '~> 3.8.0'
+  end
+
+  s.subspec 'NoAds' do |sub|
+    sub.dependency 'PWLocation/NoAds', '~> 3.8.0'
+  end
 
   s.ios.frameworks = 'Security', 'CoreGraphics', 'QuartzCore', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreLocation', 'MapKit'
   s.requires_arc = true
