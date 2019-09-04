@@ -1,4 +1,8 @@
 # PWMapKit Changelog
+## 3.8.2 (Tuesday, September 3rd, 2019)
+#### Features
+* Added subspec to import Location/NoAds
+
 ## 3.8.1 (Monday, July 29, 2019)
 #### Bug fixes / performance enhancements
 * Fix bug where user is zoomed to coordinate (0,0)

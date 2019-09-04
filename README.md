@@ -21,6 +21,12 @@ PWMapKit SDK for iOS
 	`pod 'PWMapKit'`
 
 	to your podfile, then the dependencies of `PWCore` and `PWLocation` are automatically added.
+    
+    Alternatively you could specify 
+    
+    `pod PWMapKit/NoAds`
+    
+    in your `Podfile` which would bring in  `PWLocation` and `PWCoreNoAds` automatically.
 
 ## Documentation
 
