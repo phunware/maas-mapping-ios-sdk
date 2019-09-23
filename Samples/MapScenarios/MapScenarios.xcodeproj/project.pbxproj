@@ -46,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		145B2BAD23385D0F00C2E46E /* MapScenarios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MapScenarios.entitlements; sourceTree = "<group>"; };
 		728C41C18DA051CD358ABD7B /* Pods-MapScenarios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.release.xcconfig"; sourceTree = "<group>"; };
 		7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteViewController.swift; sourceTree = "<group>"; };
 		7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteModalViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +235,7 @@
 		E3C3799A204D90AA00905731 /* MapScenarios */ = {
 			isa = PBXGroup;
 			children = (
+				145B2BAD23385D0F00C2E46E /* MapScenarios.entitlements */,
 				E3C3799B204D90AA00905731 /* AppDelegate.swift */,
 				E3C379A2204D90AA00905731 /* Assets.xcassets */,
 				E3C379A7204D90AA00905731 /* Info.plist */,
@@ -564,6 +566,7 @@
 			baseConfigurationReference = 9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MapScenarios/MapScenarios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = MapScenarios/Info.plist;
@@ -580,6 +583,7 @@
 			baseConfigurationReference = 728C41C18DA051CD358ABD7B /* Pods-MapScenarios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MapScenarios/MapScenarios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = MapScenarios/Info.plist;
