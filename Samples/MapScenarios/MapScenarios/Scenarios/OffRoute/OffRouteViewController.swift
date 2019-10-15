@@ -26,7 +26,7 @@ class OffRouteViewController: UIViewController {
     var firstLocationAcquired = false
     var currentRoute: PWRoute?
     let offRouteDistanceThreshold: CLLocationDistance = 10.0 //distance in meters
-    let offRouteTimeThreshold: TimeInterval = 5.0 //time in seconds
+    let offRouteTimeThreshold: TimeInterval = 15.0 //time in seconds
     var offRouteTimer: Timer? = nil
     var modalVisible = false
     var dontShowAgain = false
