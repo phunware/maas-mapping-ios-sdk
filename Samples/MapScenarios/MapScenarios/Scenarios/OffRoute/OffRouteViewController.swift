@@ -95,7 +95,10 @@ class OffRouteViewController: UIViewController {
             return
         }
 
-        PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
+        PWRoute.createRoute(from: mapView.indoorUserLocation,
+                            to: destinationPOI,
+                            options: nil,
+                            completion: { [weak self] (route, error) in
             if (route != nil) {
                 self?.currentRoute = route
             } else {
