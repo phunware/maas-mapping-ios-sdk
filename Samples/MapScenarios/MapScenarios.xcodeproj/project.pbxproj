@@ -13,7 +13,7 @@
 		7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */; };
 		9A15A447235A16E100C9AC06 /* ManeuverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15A446235A16E100C9AC06 /* ManeuverViewModel.swift */; };
 		9A15A449235A173000C9AC06 /* StandardManeuverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15A448235A173000C9AC06 /* StandardManeuverViewModel.swift */; };
-		9A28B1DC235A466600215476 /* ManeuverPresenterTextOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1DB235A466600215476 /* ManeuverPresenterTextOptions.swift */; };
+		9A28B1DC235A466600215476 /* ManeuverTextOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1DB235A466600215476 /* ManeuverTextOptions.swift */; };
 		9A28B1DE235A5F0F00215476 /* UIImage+Maneuver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1DD235A5F0F00215476 /* UIImage+Maneuver.swift */; };
 		9A28B1E5235DFC5900215476 /* CLLocationDistance+Maneuver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1E4235DFC5900215476 /* CLLocationDistance+Maneuver.swift */; };
 		9A28B1ED235E0C2600215476 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1EC235E0C2600215476 /* NSMutableAttributedString+Extension.swift */; };
@@ -61,7 +61,7 @@
 		7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OffRouteModalView.xib; sourceTree = "<group>"; };
 		9A15A446235A16E100C9AC06 /* ManeuverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManeuverViewModel.swift; sourceTree = "<group>"; };
 		9A15A448235A173000C9AC06 /* StandardManeuverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardManeuverViewModel.swift; sourceTree = "<group>"; };
-		9A28B1DB235A466600215476 /* ManeuverPresenterTextOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManeuverPresenterTextOptions.swift; sourceTree = "<group>"; };
+		9A28B1DB235A466600215476 /* ManeuverTextOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManeuverTextOptions.swift; sourceTree = "<group>"; };
 		9A28B1DD235A5F0F00215476 /* UIImage+Maneuver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Maneuver.swift"; sourceTree = "<group>"; };
 		9A28B1E4235DFC5900215476 /* CLLocationDistance+Maneuver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationDistance+Maneuver.swift"; sourceTree = "<group>"; };
 		9A28B1EC235E0C2600215476 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				9A28B1DF235A60ED00215476 /* Extensions */,
 				9AA80495235902AA00B21924 /* Maneuver.swift */,
 				9A15A446235A16E100C9AC06 /* ManeuverViewModel.swift */,
-				9A28B1DB235A466600215476 /* ManeuverPresenterTextOptions.swift */,
+				9A28B1DB235A466600215476 /* ManeuverTextOptions.swift */,
 				9A15A448235A173000C9AC06 /* StandardManeuverViewModel.swift */,
 				9A28B1EE235E0CB400215476 /* LandmarkManeuverViewModel.swift */,
 			);
@@ -474,7 +474,7 @@
 				E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */,
 				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
 				9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */,
-				9A28B1DC235A466600215476 /* ManeuverPresenterTextOptions.swift in Sources */,
+				9A28B1DC235A466600215476 /* ManeuverTextOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

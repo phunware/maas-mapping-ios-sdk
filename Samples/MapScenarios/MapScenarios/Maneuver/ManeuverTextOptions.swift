@@ -1,5 +1,5 @@
 //
-//  ManeuverPresenterTextOptions.swift
+//  ManeuverTextOptions.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/18/19.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct ManeuverPresenterTextOptions {
+struct ManeuverTextOptions {
     let color: UIColor
     let font: UIFont
     
@@ -18,10 +18,10 @@ struct ManeuverPresenterTextOptions {
     }
 }
 
-extension ManeuverPresenterTextOptions {
-    static let defaultStandardOptions = ManeuverPresenterTextOptions(color: .darkText,
+extension ManeuverTextOptions {
+    static let defaultStandardOptions = ManeuverTextOptions(color: .darkText,
                                                                      font: .systemFont(ofSize: 15.0, weight: .regular))
     
-    static let defaultHighlightOptions = ManeuverPresenterTextOptions(color: .nasa,
+    static let defaultHighlightOptions = ManeuverTextOptions(color: .nasa,
                                                                       font: .systemFont(ofSize: 15.0, weight: .bold))
 }

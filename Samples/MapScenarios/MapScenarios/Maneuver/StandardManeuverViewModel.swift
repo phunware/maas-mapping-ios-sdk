@@ -12,12 +12,12 @@ import PWMapKit
 
 struct StandardManeuverViewModel {
     private let maneuver: Maneuver
-    private let standardOptions: ManeuverPresenterTextOptions
-    private let highlightOptions: ManeuverPresenterTextOptions
+    private let standardOptions: ManeuverTextOptions
+    private let highlightOptions: ManeuverTextOptions
     
     init(for instruction: PWRouteInstruction,
-         standardOptions: ManeuverPresenterTextOptions = .defaultStandardOptions,
-         highlightOptions: ManeuverPresenterTextOptions = .defaultHighlightOptions) {
+         standardOptions: ManeuverTextOptions = .defaultStandardOptions,
+         highlightOptions: ManeuverTextOptions = .defaultHighlightOptions) {
         self.maneuver = Maneuver(for: instruction)
         self.standardOptions = standardOptions
         self.highlightOptions = highlightOptions
