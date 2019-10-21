@@ -128,7 +128,7 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
     
     func instructionExpandTapped() {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(mapView: mapView)
+        routeInstructionViewController.configure(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
         routeInstructionViewController.presentFromViewController(self)
     }
     

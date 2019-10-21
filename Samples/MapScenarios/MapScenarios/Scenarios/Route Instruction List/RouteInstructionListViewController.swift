@@ -14,10 +14,12 @@ class RouteInstructionListViewController: UIViewController {
     private var walkTimeView: WalkTimeView?
     private var mapView: PWMapView?
     private var displayedWalkTimeView: WalkTimeView?
+    private var enableLandmarkRouting: Bool = false
     
-    func configure(mapView: PWMapView, walkTimeView: WalkTimeView? = nil) {
+    func configure(mapView: PWMapView, enableLandmarkRouting: Bool = false, walkTimeView: WalkTimeView? = nil) {
         self.mapView = mapView
         self.displayedWalkTimeView = walkTimeView
+        self.enableLandmarkRouting = enableLandmarkRouting
         
         self.tableView.reloadData()
     }
@@ -118,7 +120,13 @@ extension RouteInstructionListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! RouteInstructionListCell
         
         if let routeInstruction = mapView?.currentRoute?.routeInstructions?[indexPath.row] {
-            cell.configure(with: StandardManeuverViewModel(for: routeInstruction))
+            // If landmark routing is enabled, use the LandmarkManeuverViewModel to provide instruction text using landmarks.
+            // Otherwise, use the StandardManeuverViewModel to provide default instruction text.
+            let viewModel: ManeuverViewModel = enableLandmarkRouting
+                ? LandmarkManeuverViewModel(for: routeInstruction)
+                : StandardManeuverViewModel(for: routeInstruction)
+            
+            cell.configure(with: viewModel)
         }
         
         return cell

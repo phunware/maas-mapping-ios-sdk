@@ -132,7 +132,6 @@ extension StandardManeuverViewModel: ManeuverViewModel {
                 floorChangeString = NSLocalizedString("floor change", comment: "")
             }
             
-            
             attributed.replace(substring: "$0", with: floorChangeString, attributes: highlightOptions.attributes)
             
             let directionString: String
