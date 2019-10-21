@@ -91,10 +91,14 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
             return
         }
         
+        let routeOptions = PWRouteOptions(accessibilityEnabled: false,
+                                          landmarksEnabled: enableLandmarkRouting,
+                                          excludedPointIdentifiers: nil)
+        
         // Calculate a route and plot on the map
         PWRoute.createRoute(from: startPOI,
                             to: destinationPOI,
-                            options: nil,
+                            options: routeOptions,
                             completion: { [weak self] (route, error) in
             guard let route = route else {
                 self?.warning("Couldn't find a route between POI(\(self?.startPOIIdentifier ?? 0)) and POI(\(self?.destinationPOIIdentifier ?? 0)).")
@@ -113,7 +117,7 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
     func initializeTurnByTurn() {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
         if turnByTurnCollectionView == nil {
-            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
             turnByTurnCollectionView?.turnByTurnDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }

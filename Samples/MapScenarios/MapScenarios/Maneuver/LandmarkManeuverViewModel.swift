@@ -1,5 +1,5 @@
 //
-//  StandardManeuverViewModel.swift
+//  LandmarkManeuverViewModel.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/18/19.
@@ -7,10 +7,12 @@
 //
 
 import Foundation
+
+import Foundation
 import UIKit
 import PWMapKit
 
-struct StandardManeuverViewModel {
+struct LandmarkManeuverViewModel {
     private let maneuver: Maneuver
     private let standardOptions: ManeuverPresenterTextOptions
     private let highlightOptions: ManeuverPresenterTextOptions
@@ -24,7 +26,7 @@ struct StandardManeuverViewModel {
     }
 }
 
-extension StandardManeuverViewModel: ManeuverViewModel {
+extension LandmarkManeuverViewModel: ManeuverViewModel {
     var image: UIImage {
         return .image(for: maneuver)
     }
@@ -52,41 +54,95 @@ extension StandardManeuverViewModel: ManeuverViewModel {
     private var baseAttributedStringForManeuver: NSMutableAttributedString {
         switch maneuver.maneuverType {
         case .straight:
-            let templateString = NSLocalizedString("$0 for $1", comment: "$0 = direction, $1 = distance")
-            let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
-            
-            let straightString = NSLocalizedString("Go straight", comment: "")
-            attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
-            
-            let distanceString = maneuver.instruction.distance.localizedStringForManeuver
-            attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
-            return attributed
-            
-        case .turn(let direction):
-            let templateString = NSLocalizedString("$0 in $1", comment: "$0 = direction, $1 = distance")
-            let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
-            
-            let turnString: String
-            
-            switch direction {
-            case .left:
-                turnString = NSLocalizedString("Turn left", comment: "")
-            case .right:
-                turnString = NSLocalizedString("Turn right", comment: "")
-            case .bearLeft:
-                turnString = NSLocalizedString("Bear left", comment: "")
-            case .bearRight:
-                turnString = NSLocalizedString("Bear right", comment: "")
-            default:
-                // should never happen
-                turnString = ""
+            if let landmark = maneuver.instruction.landmarks?.last {
+                let templateString = NSLocalizedString("$0 for $1 towards $2", comment: "$0 = direction, $1 = distance, $2 = landmark")
+                let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+                
+                let straightString = NSLocalizedString("Go straight", comment: "")
+                attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
+                
+                let distanceString = maneuver.instruction.distance.localizedStringForManeuver
+                attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+                
+                attributed.replace(substring: "$2", with: landmark.name, attributes: highlightOptions.attributes)
+                
+                return attributed
+            } else {
+                let templateString = NSLocalizedString("$0 for $1", comment: "$0 = direction, $1 = distance")
+                let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+                
+                let straightString = NSLocalizedString("Go straight", comment: "")
+                attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
+                
+                let distanceString = maneuver.instruction.distance.localizedStringForManeuver
+                attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+                
+                return attributed
             }
             
-            attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
-            
-            let distanceString = maneuver.instruction.distance.localizedStringForManeuver
-            attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
-            return attributed
+        case .turn(let direction):
+            if let landmark = maneuver.instruction.landmarks?.last {
+                let templateString = NSLocalizedString("$0 in $1 $2 $3", comment: "$0 = direction, $1 = distance, $2 = at/after, $3 = landmark name")
+                
+                let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+                
+                let turnString: String
+                
+                switch direction {
+                case .left:
+                    turnString = NSLocalizedString("Turn left", comment: "")
+                case .right:
+                    turnString = NSLocalizedString("Turn right", comment: "")
+                case .bearLeft:
+                    turnString = NSLocalizedString("Bear left", comment: "")
+                case .bearRight:
+                    turnString = NSLocalizedString("Bear right", comment: "")
+                default:
+                    // should never happen
+                    turnString = ""
+                }
+                
+                attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
+                
+                let distanceString = maneuver.instruction.distance.localizedStringForManeuver
+                attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+                
+                let positionString = (landmark.position == .at)
+                    ? NSLocalizedString("at", comment: "")
+                    : NSLocalizedString("after", comment: "")
+                
+                attributed.replace(substring: "$2", with: positionString, attributes: standardOptions.attributes)
+                
+                attributed.replace(substring: "$3", with: landmark.name, attributes: highlightOptions.attributes)
+                
+                return attributed
+                
+            } else {
+                let templateString = NSLocalizedString("$0 in $1", comment: "$0 = direction, $1 = distance")
+                let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+                
+                let turnString: String
+                
+                switch direction {
+                case .left:
+                    turnString = NSLocalizedString("Turn left", comment: "")
+                case .right:
+                    turnString = NSLocalizedString("Turn right", comment: "")
+                case .bearLeft:
+                    turnString = NSLocalizedString("Bear left", comment: "")
+                case .bearRight:
+                    turnString = NSLocalizedString("Bear right", comment: "")
+                default:
+                    // should never happen
+                    turnString = ""
+                }
+                
+                attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
+                
+                let distanceString = maneuver.instruction.distance.localizedStringForManeuver
+                attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+                return attributed
+            }
             
         case .upcomingFloorChange(let floorChange):
             let templateString = NSLocalizedString("Continue $0 towards $1 to $2", comment: "$0 = distance, $1 floor change type, $2 = floor name")
