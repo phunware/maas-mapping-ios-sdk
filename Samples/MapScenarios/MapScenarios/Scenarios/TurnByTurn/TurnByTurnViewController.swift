@@ -24,6 +24,9 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
     var startPOIIdentifier: Int = 0
     var destinationPOIIdentifier: Int = 0
     
+    // Set to 'true' to enable landmark routing
+    var enableLandmarkRouting = false
+    
     let mapView = PWMapView()
     
     var turnByTurnCollectionView: TurnByTurnCollectionView?
