@@ -18,6 +18,7 @@ protocol TurnByTurnDelegate: class {
 class TurnByTurnCollectionView: UICollectionView {
     
     let mapView: PWMapView
+    let enableLandmarkRouting: Bool
     
     weak var turnByTurnDelegate: TurnByTurnDelegate?
     
@@ -47,8 +48,9 @@ class TurnByTurnCollectionView: UICollectionView {
     
     private var indexOfCellBeforeDragging = 0
     
-    init(mapView: PWMapView) {
+    init(mapView: PWMapView, enableLandmarkRouting: Bool = false) {
         self.mapView = mapView
+        self.enableLandmarkRouting = enableLandmarkRouting
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -72,6 +74,7 @@ class TurnByTurnCollectionView: UICollectionView {
     
     required init?(coder aDecoder: NSCoder) {
         mapView = PWMapView()
+        enableLandmarkRouting = false
         super.init(coder: aDecoder)
     }
     
@@ -138,7 +141,12 @@ extension TurnByTurnCollectionView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TurnByTurnInstructionCollectionViewCell
         
         if let routeInstruction = mapView.currentRoute?.routeInstructions?[indexPath.row] {
-            let viewModel = StandardManeuverViewModel(for: routeInstruction)
+            // If landmark routing is enabled, use the LandmarkManeuverViewModel to provide instruction text using landmarks.
+            // Otherwise, use the StandardManeuverViewModel to provide default instruction text.
+            let viewModel: ManeuverViewModel = enableLandmarkRouting
+                ? LandmarkManeuverViewModel(for: routeInstruction)
+                : StandardManeuverViewModel(for: routeInstruction)
+            
             cell.configure(with: viewModel)
         }
         
