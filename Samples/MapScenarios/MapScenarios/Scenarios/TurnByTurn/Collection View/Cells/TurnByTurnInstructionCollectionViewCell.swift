@@ -59,8 +59,8 @@ class TurnByTurnInstructionCollectionViewCell: UICollectionViewCell {
         buttonAction?()
     }
     
-    func configure(with viewModel: ManeuverViewModel) {
-        movementImage.image = viewModel.image
-        movementLabel.attributedText = viewModel.attributedText
+    func updateForRouteInstruction(_ routeInstruction: PWRouteInstruction) {
+        movementImage.image = routeInstruction.imageFromDirection()
+        movementLabel.attributedText = routeInstruction.attributedInstructionString(highlightedTextColor: .nasa, regularTextColor: .darkText)
     }
 }

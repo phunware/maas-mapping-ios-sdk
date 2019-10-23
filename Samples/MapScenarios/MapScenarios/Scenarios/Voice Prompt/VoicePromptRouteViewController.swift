@@ -20,8 +20,6 @@ class VoicePromptRouteViewController: UIViewController {
     
     var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
     
-    let destinationPOIIdentifier = 0 /* Replace with the destination POI identifier */
-    
     let mapView = PWMapView()
     var turnByTurnCollectionView: TurnByTurnCollectionView?
     let locationManager = CLLocationManager()
@@ -164,9 +162,7 @@ extension VoicePromptRouteViewController {
     }
     
     func readInstructionAloud(_ instruction: PWRouteInstruction) {
-        let maneuverViewModel = StandardManeuverViewModel(for: instruction)
-        let voicePrompt = maneuverViewModel.text
-        
+        let voicePrompt = instruction.instructionStringForUser()
         let utterance = AVSpeechUtterance(string: voicePrompt)
         utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
         
@@ -180,22 +176,29 @@ extension VoicePromptRouteViewController {
 // MARK: - PWMapViewDelegate
 
 extension VoicePromptRouteViewController: PWMapViewDelegate {
-
+    
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         if !firstLocationAcquired {
             firstLocationAcquired = true
             mapView.trackingMode = .follow
             
-            guard let destinationPOI = getDestinationPOI() else {
+            let destinationPOIIdentifier = 0 /* Replace with the destination POI identifier */
+            
+            var destinationPOI: PWPointOfInterest!
+            if destinationPOIIdentifier != 0 {
+                destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
+            } else {
+                if let firstPOI = mapView.building.pois.first {
+                    destinationPOI = firstPOI
+                }
+            }
+            
+            if destinationPOI == nil {
                 print("No points of interest found, please add at least one to the building in the Maas portal")
                 return
             }
             
-            PWRoute.createRoute(from: mapView.indoorUserLocation,
-                                to: destinationPOI,
-                                accessibility: false,
-                                excludedPoints: nil,
-                                completion: { [weak self] (route, error) in
+            PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
                 guard let route = route else {
                     print("Couldn't find a route from you current location to the destination.")
                     return
@@ -221,14 +224,6 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
         instructionChangeCausedBySwipe = false // Clear state for next instruction change
         
         readInstructionAloud(instruction)
-    }
-    
-    private func getDestinationPOI() -> PWPointOfInterest? {
-        if destinationPOIIdentifier == 0 {
-            return mapView.building.pois.first
-        } else {
-            return mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
-        }
     }
 }
 

@@ -13,8 +13,8 @@ class RouteInstructionListCell: UITableViewCell {
     @IBOutlet weak var instructionImageView: UIImageView!
     @IBOutlet weak var instructionLabel: UILabel!
     
-    func configure(with viewModel: ManeuverViewModel) {
-        instructionImageView.image = viewModel.image
-        instructionLabel.attributedText = viewModel.attributedText
+    func configureWithRouteInstruction(_ routeInstruction: PWRouteInstruction) {
+        instructionImageView.image = routeInstruction.imageFromDirection()
+        instructionLabel.attributedText = routeInstruction.attributedInstructionString(highlightedTextColor: .nasa, regularTextColor: .darkText)
     }
 }

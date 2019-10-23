@@ -95,12 +95,7 @@ class OffRouteViewController: UIViewController {
             return
         }
 
-        // Calculate a route and plot on the map
-        PWRoute.createRoute(from: mapView.indoorUserLocation,
-                            to: destinationPOI,
-                            accessibility: false,
-                            excludedPoints: nil,
-                            completion: { [weak self] (route, error) in
+        PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
             if (route != nil) {
                 self?.currentRoute = route
             } else {

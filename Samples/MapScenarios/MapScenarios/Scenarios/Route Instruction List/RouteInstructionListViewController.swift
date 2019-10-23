@@ -112,15 +112,14 @@ extension RouteInstructionListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = String(describing: RouteInstructionListCell.self)
-        
-        // we are guaranteed a cell is returned from this method as long as the identifier is registered
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! RouteInstructionListCell
-        
-        if let routeInstruction = mapView?.currentRoute?.routeInstructions?[indexPath.row] {
-            cell.configure(with: StandardManeuverViewModel(for: routeInstruction))
+        var cell = UITableViewCell()
+        guard let routeInstruction = mapView?.currentRoute?.routeInstructions[indexPath.row] else {
+            return cell
         }
-        
+        if let instructionCell = tableView.dequeueReusableCell(withIdentifier: String(describing: RouteInstructionListCell.self), for: indexPath) as? RouteInstructionListCell {
+            instructionCell.configureWithRouteInstruction(routeInstruction)
+            cell = instructionCell
+        }
         return cell
     }
 }
