@@ -1,5 +1,5 @@
 //
-//  NSMutableAttributedString+Substitution.swift
+//  NSMutableAttributedString+Extension.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/21/19.
@@ -15,5 +15,16 @@ extension NSMutableAttributedString {
             let replacement = NSAttributedString(string: replacement, attributes: attributes)
             self.replaceCharacters(in: nsRange, with: replacement)
         }
+    }
+    
+    var lastAttributes: [NSAttributedString.Key : Any]? {
+        var last: [NSAttributedString.Key : Any]? = nil
+
+        enumerateAttributes(in: .init(location: 0, length: length), options: .reverse) { (attributes, range, stop) in
+            last = attributes
+            stop.pointee = true
+        }
+        
+        return last
     }
 }
