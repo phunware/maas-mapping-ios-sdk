@@ -20,6 +20,7 @@
 		9A28B1EF235E0CB400215476 /* LandmarkManeuverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1EE235E0CB400215476 /* LandmarkManeuverViewModel.swift */; };
 		9AA804942358BFC700B21924 /* PWFloorChangePOI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA804932358BFC700B21924 /* PWFloorChangePOI+Extension.swift */; };
 		9AA80496235902AA00B21924 /* Maneuver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA80495235902AA00B21924 /* Maneuver.swift */; };
+		9AFAAFCD2362390200ED655C /* ArrivedManeuverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFCC2362390200ED655C /* ArrivedManeuverViewModel.swift */; };
 		9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */; };
 		9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */; };
 		9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */; };
@@ -68,6 +69,7 @@
 		9A28B1EE235E0CB400215476 /* LandmarkManeuverViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkManeuverViewModel.swift; sourceTree = "<group>"; };
 		9AA804932358BFC700B21924 /* PWFloorChangePOI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWFloorChangePOI+Extension.swift"; sourceTree = "<group>"; };
 		9AA80495235902AA00B21924 /* Maneuver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maneuver.swift; sourceTree = "<group>"; };
+		9AFAAFCC2362390200ED655C /* ArrivedManeuverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedManeuverViewModel.swift; sourceTree = "<group>"; };
 		9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluedotLocationViewController.swift; sourceTree = "<group>"; };
 		9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				9A28B1DB235A466600215476 /* ManeuverTextOptions.swift */,
 				9A15A448235A173000C9AC06 /* StandardManeuverViewModel.swift */,
 				9A28B1EE235E0CB400215476 /* LandmarkManeuverViewModel.swift */,
+				9AFAAFCC2362390200ED655C /* ArrivedManeuverViewModel.swift */,
 			);
 			path = Maneuver;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				E3785836222735A80059A179 /* RouteInstructionListViewController.swift in Sources */,
 				E3785826221706680059A179 /* VoicePromptButton.swift in Sources */,
 				E37858212216FB840059A179 /* MKMapPoint+Helper.swift in Sources */,
+				9AFAAFCD2362390200ED655C /* ArrivedManeuverViewModel.swift in Sources */,
 				9A28B1EF235E0CB400215476 /* LandmarkManeuverViewModel.swift in Sources */,
 				E378583C222821B10059A179 /* UIColor+Helper.swift in Sources */,
 				E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */,

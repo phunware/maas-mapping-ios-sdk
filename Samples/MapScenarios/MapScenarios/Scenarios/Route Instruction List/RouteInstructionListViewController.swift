@@ -40,13 +40,20 @@ class RouteInstructionListViewController: UIViewController {
     
     func configureTableView() {
         view.addSubview(tableView)
+        let bottomAnchorConstant = (displayedWalkTimeView != nil)
+            ? -WalkTimeView.defaultHeight
+            : 0
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: (displayedWalkTimeView != nil ? WalkTimeView.defaultHeight : 0)).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottomAnchorConstant).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        if let displayedWalkTimeView = displayedWalkTimeView, let walkTimeView = Bundle.main.loadNibNamed(String(describing: WalkTimeView.self), owner: nil, options: nil)?.first as? WalkTimeView {
+        if let displayedWalkTimeView = displayedWalkTimeView {
+            let bundleName = String(describing: WalkTimeView.self)
+            let walkTimeView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! WalkTimeView
+            
             view.addSubview(walkTimeView)
             
             // Layout
@@ -110,7 +117,10 @@ extension RouteInstructionListViewController: UITableViewDelegate {
 extension RouteInstructionListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mapView?.currentRoute?.routeInstructions.count ?? 0
+        let instructionCount = mapView?.currentRoute?.routeInstructions.count ?? 0
+        
+        // add 1 because we are going to add a "You have arrived" cell at the end
+        return instructionCount + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -119,13 +129,22 @@ extension RouteInstructionListViewController: UITableViewDataSource {
         // we are guaranteed a cell is returned from this method as long as the identifier is registered
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! RouteInstructionListCell
         
-        if let routeInstruction = mapView?.currentRoute?.routeInstructions?[indexPath.row] {
+        // if this is the index of a valid instruction
+        
+        if let routeInstructions = mapView?.currentRoute?.routeInstructions, routeInstructions.indices.contains(indexPath.row) {
+            let routeInstruction = routeInstructions[indexPath.row]
+            
             // If landmark routing is enabled, use the LandmarkManeuverViewModel to provide instruction text using landmarks.
             // Otherwise, use the StandardManeuverViewModel to provide default instruction text.
             let viewModel: ManeuverViewModel = enableLandmarkRouting
                 ? LandmarkManeuverViewModel(for: routeInstruction)
                 : StandardManeuverViewModel(for: routeInstruction)
             
+            cell.configure(with: viewModel)
+        } else {
+            // otherwise this is the "You have arrived" cell
+            let destinationName = mapView?.currentRoute.endPoint.title ?? nil
+            let viewModel = ArrivedManeuverViewModel(destinationName: destinationName)
             cell.configure(with: viewModel)
         }
         
