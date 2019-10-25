@@ -141,11 +141,11 @@ extension TurnByTurnCollectionView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TurnByTurnInstructionCollectionViewCell
         
         if let routeInstruction = mapView.currentRoute?.routeInstructions?[indexPath.row] {
-            // If landmark routing is enabled, use the LandmarkManeuverViewModel to provide instruction text using landmarks.
-            // Otherwise, use the StandardManeuverViewModel to provide default instruction text.
-            let viewModel: ManeuverViewModel = enableLandmarkRouting
-                ? LandmarkManeuverViewModel(for: routeInstruction)
-                : StandardManeuverViewModel(for: routeInstruction)
+            // If landmark routing is enabled, use the LandmarkDirectionsViewModel to provide instruction text using landmarks.
+            // Otherwise, use the StandardDirectionsViewModel to provide default instruction text.
+            let viewModel: DirectionsViewModel = enableLandmarkRouting
+                ? LandmarkDirectionsViewModel(for: routeInstruction)
+                : StandardDirectionsViewModel(for: routeInstruction)
             
             cell.configure(with: viewModel)
         }

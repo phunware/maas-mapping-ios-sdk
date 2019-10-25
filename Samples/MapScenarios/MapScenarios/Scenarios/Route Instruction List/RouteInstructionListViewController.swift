@@ -134,17 +134,17 @@ extension RouteInstructionListViewController: UITableViewDataSource {
         if let routeInstructions = mapView?.currentRoute?.routeInstructions, routeInstructions.indices.contains(indexPath.row) {
             let routeInstruction = routeInstructions[indexPath.row]
             
-            // If landmark routing is enabled, use the LandmarkManeuverViewModel to provide instruction text using landmarks.
-            // Otherwise, use the StandardManeuverViewModel to provide default instruction text.
-            let viewModel: ManeuverViewModel = enableLandmarkRouting
-                ? LandmarkManeuverViewModel(for: routeInstruction)
-                : StandardManeuverViewModel(for: routeInstruction)
+            // If landmark routing is enabled, use the LandmarkDirectionsViewModel to provide instruction text using landmarks.
+            // Otherwise, use the StandardDirectionsViewModel to provide default instruction text.
+            let viewModel: DirectionsViewModel = enableLandmarkRouting
+                ? LandmarkDirectionsViewModel(for: routeInstruction)
+                : StandardDirectionsViewModel(for: routeInstruction)
             
             cell.configure(with: viewModel)
         } else {
             // otherwise this is the "You have arrived" cell
             let destinationName = mapView?.currentRoute.endPoint.title ?? nil
-            let viewModel = ArrivedManeuverViewModel(destinationName: destinationName)
+            let viewModel = ArrivedDirectionsViewModel(destinationName: destinationName)
             cell.configure(with: viewModel)
         }
         

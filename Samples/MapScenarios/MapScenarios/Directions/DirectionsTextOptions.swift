@@ -1,5 +1,5 @@
 //
-//  ManeuverTextOptions.swift
+//  DirectionsTextOptions.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/18/19.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct ManeuverTextOptions {
+struct DirectionsTextOptions {
     let color: UIColor
     let font: UIFont
     
@@ -18,10 +18,10 @@ struct ManeuverTextOptions {
     }
 }
 
-extension ManeuverTextOptions {
-    static let defaultStandardOptions = ManeuverTextOptions(color: .darkText,
+extension DirectionsTextOptions {
+    static let defaultStandardOptions = DirectionsTextOptions(color: .darkText,
                                                                      font: .systemFont(ofSize: 15.0, weight: .regular))
     
-    static let defaultHighlightOptions = ManeuverTextOptions(color: .nasa,
+    static let defaultHighlightOptions = DirectionsTextOptions(color: .nasa,
                                                                       font: .systemFont(ofSize: 15.0, weight: .bold))
 }

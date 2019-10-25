@@ -164,8 +164,8 @@ extension VoicePromptRouteViewController {
     }
     
     func readInstructionAloud(_ instruction: PWRouteInstruction) {
-        let maneuverViewModel = StandardManeuverViewModel(for: instruction)
-        let voicePrompt = maneuverViewModel.text
+        let directionsViewModel = StandardDirectionsViewModel(for: instruction)
+        let voicePrompt = directionsViewModel.text
         
         let utterance = AVSpeechUtterance(string: voicePrompt)
         utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())

@@ -9,22 +9,22 @@
 import Foundation
 import UIKit
 
-struct ArrivedManeuverViewModel {
-    private let standardOptions: ManeuverTextOptions
-    private let highlightOptions: ManeuverTextOptions
+struct ArrivedDirectionsViewModel {
+    private let standardOptions: DirectionsTextOptions
+    private let highlightOptions: DirectionsTextOptions
     
     private let destinationName: String?
     
     init(destinationName: String?,
-        standardOptions: ManeuverTextOptions = .defaultStandardOptions,
-         highlightOptions: ManeuverTextOptions = .defaultHighlightOptions) {
+        standardOptions: DirectionsTextOptions = .defaultStandardOptions,
+         highlightOptions: DirectionsTextOptions = .defaultHighlightOptions) {
         self.destinationName = destinationName
         self.standardOptions = standardOptions
         self.highlightOptions = highlightOptions
     }
 }
 
-extension ArrivedManeuverViewModel: ManeuverViewModel {
+extension ArrivedDirectionsViewModel: DirectionsViewModel {
     var attributedText: NSAttributedString {
         let templateString = NSLocalizedString("$0 at $1", comment: "$0 = 'You have arrived', $1 = destination name")
         let youHaveArrivedString = NSLocalizedString("You have arrived", comment: "")

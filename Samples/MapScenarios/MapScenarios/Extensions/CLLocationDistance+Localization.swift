@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 extension CLLocationDistance {
-    var localizedStringForManeuver: String {
+    var localizedDistanceInSmallUnits: String {
         let feetPerMeter: CLLocationDistance = 3.28084
         let usesMetricSystem = NSLocale.current.usesMetricSystem
         
