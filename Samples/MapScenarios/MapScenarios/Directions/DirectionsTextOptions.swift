@@ -20,8 +20,8 @@ struct DirectionsTextOptions {
 
 extension DirectionsTextOptions {
     static let defaultStandardOptions = DirectionsTextOptions(color: .darkText,
-                                                                     font: .systemFont(ofSize: 15.0, weight: .regular))
+                                                              font: .systemFont(ofSize: 15.0, weight: .regular))
     
     static let defaultHighlightOptions = DirectionsTextOptions(color: .nasa,
-                                                                      font: .systemFont(ofSize: 15.0, weight: .bold))
+                                                               font: .systemFont(ofSize: 15.0, weight: .bold))
 }
