@@ -1,5 +1,5 @@
 //
-//  StandardManeuverViewModel.swift
+//  StandardDirectionsViewModel.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/18/19.
@@ -10,30 +10,33 @@ import Foundation
 import UIKit
 import PWMapKit
 
-struct StandardManeuverViewModel {
-    private let maneuver: Maneuver
-    private let standardOptions: ManeuverTextOptions
-    private let highlightOptions: ManeuverTextOptions
+// MARK: - Notes
+// StandardDirectionsViewModel contains presentation logic for basic route instructions.
+
+struct StandardDirectionsViewModel {
+    private let directions: Directions
+    private let standardOptions: DirectionsTextOptions
+    private let highlightOptions: DirectionsTextOptions
     
     init(for instruction: PWRouteInstruction,
-         standardOptions: ManeuverTextOptions = .defaultStandardOptions,
-         highlightOptions: ManeuverTextOptions = .defaultHighlightOptions) {
-        self.maneuver = Maneuver(for: instruction)
+         standardOptions: DirectionsTextOptions = .defaultStandardOptions,
+         highlightOptions: DirectionsTextOptions = .defaultHighlightOptions) {
+        self.directions = Directions(for: instruction)
         self.standardOptions = standardOptions
         self.highlightOptions = highlightOptions
     }
 }
 
-extension StandardManeuverViewModel: ManeuverViewModel {
+extension StandardDirectionsViewModel: DirectionsViewModel {
     var image: UIImage {
-        return .image(for: maneuver)
+        return .image(for: directions)
     }
     
     var attributedText: NSAttributedString {
-        let attributed = baseAttributedStringForManeuver
+        let attributed = baseAttributedStringForDirections
         
-        // For the last maneuver, append a string indicating arrival.
-        if maneuver.isLastManeuver {
+        // For the last directions, append a string indicating arrival.
+        if directions.isLast {
             let arrivalString = " " + NSLocalizedString("to arrive at your destination", comment: "")
             let attributedArrivalString = NSAttributedString(string: arrivalString, attributes: standardOptions.attributes)
             attributed.append(attributedArrivalString)
@@ -49,8 +52,8 @@ extension StandardManeuverViewModel: ManeuverViewModel {
         return attributed
     }
     
-    private var baseAttributedStringForManeuver: NSMutableAttributedString {
-        switch maneuver.maneuverType {
+    private var baseAttributedStringForDirections: NSMutableAttributedString {
+        switch directions.directionsType {
         case .straight:
             let templateString = NSLocalizedString("$0 for $1", comment: "$0 = direction, $1 = distance")
             let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
@@ -58,7 +61,7 @@ extension StandardManeuverViewModel: ManeuverViewModel {
             let straightString = NSLocalizedString("Go straight", comment: "")
             attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
             
-            let distanceString = maneuver.instruction.distance.localizedStringForManeuver
+            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
             attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
             return attributed
             
@@ -84,7 +87,7 @@ extension StandardManeuverViewModel: ManeuverViewModel {
             
             attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
             
-            let distanceString = maneuver.instruction.distance.localizedStringForManeuver
+            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
             attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
             return attributed
             
@@ -92,23 +95,11 @@ extension StandardManeuverViewModel: ManeuverViewModel {
             let templateString = NSLocalizedString("Continue $0 towards $1 to $2", comment: "$0 = distance, $1 floor change type, $2 = floor name")
             let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
             
-            let distanceString = maneuver.instruction.distance.localizedStringForManeuver
+            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
             attributed.replace(substring: "$0", with: distanceString, attributes: standardOptions.attributes)
             
-            let floorChangeString: String
-            
-            switch floorChange.floorChangeType {
-            case .stairs:
-                floorChangeString = NSLocalizedString("stairs", comment: "")
-            case .escalator:
-                floorChangeString = NSLocalizedString("escalator", comment: "")
-            case .elevator:
-                floorChangeString = NSLocalizedString("elevator", comment: "")
-            case .other:
-                floorChangeString = NSLocalizedString("floor change", comment: "")
-            }
-            
-            attributed.replace(substring: "$1", with: floorChangeString, attributes: highlightOptions.attributes)
+            let floorChangeTypeString = string(for: floorChange.floorChangeType)
+            attributed.replace(substring: "$1", with: floorChangeTypeString, attributes: highlightOptions.attributes)
             attributed.replace(substring: "$2", with: floorChange.floorName, attributes: highlightOptions.attributes)
             return attributed
             
@@ -119,20 +110,8 @@ extension StandardManeuverViewModel: ManeuverViewModel {
             
             let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
             
-            let floorChangeString: String
-            
-            switch floorChange.floorChangeType {
-            case .stairs:
-                floorChangeString = NSLocalizedString("stairs", comment: "")
-            case .escalator:
-                floorChangeString = NSLocalizedString("escalator", comment: "")
-            case .elevator:
-                floorChangeString = NSLocalizedString("elevator", comment: "")
-            case .other:
-                floorChangeString = NSLocalizedString("floor change", comment: "")
-            }
-            
-            attributed.replace(substring: "$0", with: floorChangeString, attributes: highlightOptions.attributes)
+            let floorChangeTypeString = string(for: floorChange.floorChangeType)
+            attributed.replace(substring: "$0", with: floorChangeTypeString, attributes: highlightOptions.attributes)
             
             let directionString: String
             
@@ -148,6 +127,19 @@ extension StandardManeuverViewModel: ManeuverViewModel {
             attributed.replace(substring: "$1", with: directionString, attributes: standardOptions.attributes)
             attributed.replace(substring: "$2", with: floorChange.floorName, attributes: highlightOptions.attributes)
             return attributed
+        }
+    }
+    
+    private func string(for floorChangeType: Directions.FloorChangeType) -> String {
+        switch floorChangeType {
+        case .stairs:
+            return NSLocalizedString("stairs", comment: "")
+        case .escalator:
+            return  NSLocalizedString("escalator", comment: "")
+        case .elevator:
+            return  NSLocalizedString("elevator", comment: "")
+        case .other:
+            return  NSLocalizedString("floor change", comment: "")
         }
     }
 }

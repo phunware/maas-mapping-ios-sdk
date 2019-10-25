@@ -1,5 +1,5 @@
 //
-//  Maneuver.swift
+//  Directions.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/17/19.
@@ -9,35 +9,43 @@
 import Foundation
 import PWMapKit
 
+// MARK: - Notes
+// The Directions type is used to turn the data from a PWRouteInstruction object into something more
+// easily digestable by the application. It doesn't contain any presentation logic, only logic
+// to encapsulate the type of directions we want to provide to the user (and related data for each type).
+// Presentation logic will be provided by a type confomring to DirectionsViewModel
+
 // MARK: - Definition and initialization -
-struct Maneuver {
-    enum ManeuverType {
+struct Directions {
+    enum DirectionsType {
         case straight
         case turn(direction: PWRouteInstructionDirection)
-        case upcomingFloorChange(UpcomingFloorChange)
+        case upcomingFloorChange(FloorChange)
         case floorChange(FloorChange)
     }
     
     let instruction: PWRouteInstruction
-    let maneuverType: ManeuverType
+    let directionsType: DirectionsType
     
     init(for instruction: PWRouteInstruction) {
         self.instruction = instruction
         
         if instruction.direction == .floorChange {
-            maneuverType = type(of: self).floorChangeManeuverType(with: instruction)
+            // Use this instruction's direction (which we now know is .floorChange) to create the directions type
+            directionsType = Self.floorChangeDirectionsType(with: instruction)
         } else {
-            maneuverType = type(of: self).standardManeuverType(with: instruction)
+            // Use the next instruction's direction (i.e. this instruction's 'turnDirection') to create the directions type
+            directionsType = Self.standardDirectionsType(with: instruction)
         }
     }
     
-    var isLastManeuver: Bool {
+    var isLast: Bool {
         return instruction.route?.routeInstructions?.last === instruction
     }
 }
 
 // MARK: - Types -
-extension Maneuver {
+extension Directions {
     enum FloorChangeType {
         case stairs
         case elevator
@@ -70,12 +78,6 @@ extension Maneuver {
         case sameFloor
     }
     
-    struct UpcomingFloorChange {
-        let floorChangeType: FloorChangeType
-        let floorChangeDirection: FloorChangeDirection
-        let floorName: String
-    }
-    
     struct FloorChange {
         let floorChangeType: FloorChangeType
         let floorChangeDirection: FloorChangeDirection
@@ -84,8 +86,8 @@ extension Maneuver {
 }
 
 // MARK: - private implemenation -
-private extension Maneuver {
-    static func standardManeuverType(with instruction: PWRouteInstruction) -> ManeuverType {
+private extension Directions {
+    static func standardDirectionsType(with instruction: PWRouteInstruction) -> DirectionsType {
         switch instruction.turnDirection {
         case .straight:
             return .straight
@@ -110,9 +112,9 @@ private extension Maneuver {
                 }
             }
             
-            let floorChange = UpcomingFloorChange(floorChangeType: floorChangeType,
-                                                  floorChangeDirection: floorChangeDirection,
-                                                  floorName: floorName)
+            let floorChange = FloorChange(floorChangeType: floorChangeType,
+                                          floorChangeDirection: floorChangeDirection,
+                                          floorName: floorName)
             
             return .upcomingFloorChange(floorChange)
             
@@ -121,7 +123,7 @@ private extension Maneuver {
         }
     }
     
-    static func floorChangeManeuverType(with instruction: PWRouteInstruction) -> ManeuverType {
+    static func floorChangeDirectionsType(with instruction: PWRouteInstruction) -> DirectionsType {
         let floorChangeType = FloorChangeType(mapPoint: instruction.end)
         var floorChangeDirection = FloorChangeDirection.sameFloor
         var floorName = NSLocalizedString("Unknown Floor Name", comment: "")
