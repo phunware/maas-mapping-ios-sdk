@@ -18,9 +18,14 @@ class VoicePromptRouteViewController: UIViewController {
     var accessKey = ""
     var signatureKey = ""
     
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+    // Enter your building identifier here, found on the building's Edit page on Maas portal
+    var buildingIdentifier = 0
     
-    let destinationPOIIdentifier = 0 /* Replace with the destination POI identifier */
+    // Replace with the destination POI identifier
+    let destinationPOIIdentifier = 0
+    
+    // Set to 'true' to enable landmark routing
+    var enableLandmarkRouting = false
     
     let mapView = PWMapView()
     var turnByTurnCollectionView: TurnByTurnCollectionView?
@@ -29,18 +34,22 @@ class VoicePromptRouteViewController: UIViewController {
     let voicePromptButton = VoicePromptButton()
     let voicePromptsLabel = UILabel()
     var previouslyReadInstructions = Set<PWRouteInstruction>()
+    
     private let speechEnabledKey = "SpeechEnabled"
+    
     var speechEnabled: Bool {
         get {
             if UserDefaults.standard.value(forKey: speechEnabledKey) == nil {
                 return true
             }
+            
             return UserDefaults.standard.bool(forKey: speechEnabledKey)
         }
         set {
             UserDefaults.standard.set(newValue, forKey: speechEnabledKey)
         }
     }
+    
     let speechSynthesizer = AVSpeechSynthesizer()
     var instructionChangeCausedBySwipe = false
     
@@ -99,8 +108,9 @@ class VoicePromptRouteViewController: UIViewController {
     
     func initializeTurnByTurn() {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        
         if turnByTurnCollectionView == nil {
-            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
             turnByTurnCollectionView?.turnByTurnDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
@@ -146,8 +156,12 @@ extension VoicePromptRouteViewController {
     }
     
     func updateVoiceUI() {
-        voicePromptsLabel.text = speechEnabled ? NSLocalizedString("Unmuted", comment: "muted label") : NSLocalizedString("Muted", comment: "muted label")
+        voicePromptsLabel.text = speechEnabled
+            ? NSLocalizedString("Unmuted", comment: "muted label")
+            : NSLocalizedString("Muted", comment: "muted label")
+        
         voicePromptButton.buttonImage = speechEnabled ? #imageLiteral(resourceName: "Unmuted") : #imageLiteral(resourceName: "Muted")
+        
         if speechEnabled {
             if let currentInstruction = mapView.currentRouteInstruction() {
                 readInstructionAloud(currentInstruction)
@@ -164,8 +178,11 @@ extension VoicePromptRouteViewController {
     }
     
     func readInstructionAloud(_ instruction: PWRouteInstruction) {
-        let directionsViewModel = StandardDirectionsViewModel(for: instruction)
-        let voicePrompt = directionsViewModel.text
+        let directionsViewModel: DirectionsViewModel = enableLandmarkRouting
+            ? LandmarkDirectionsViewModel(for: instruction)
+            : StandardDirectionsViewModel(for: instruction)
+
+        let voicePrompt = directionsViewModel.voicePrompt
         
         let utterance = AVSpeechUtterance(string: voicePrompt)
         utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
@@ -209,14 +226,17 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
         turnByTurnCollectionView?.scrollToInstruction(instruction)
+        
         guard speechEnabled else {
             return
         }
+        
         if !instructionChangeCausedBySwipe, previouslyReadInstructions.contains(instruction) {
             return
         } else if !instructionChangeCausedBySwipe {
             previouslyReadInstructions.insert(instruction)
         }
+        
         instructionChangeCausedBySwipe = false // Clear state for next instruction change
         
         readInstructionAloud(instruction)
@@ -241,7 +261,7 @@ extension VoicePromptRouteViewController: TurnByTurnDelegate {
     
     func instructionExpandTapped() {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(mapView: mapView)
+        routeInstructionViewController.configure(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
         routeInstructionViewController.presentFromViewController(self)
     }
 }

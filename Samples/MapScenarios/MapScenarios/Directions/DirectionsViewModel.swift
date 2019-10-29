@@ -16,13 +16,13 @@ import CoreLocation
 // route instructions, usually in a table view/collection view cell.
 
 protocol DirectionsViewModel {
-    var attributedText: NSAttributedString { get }
     var image: UIImage { get }
+    var attributedText: NSAttributedString { get }
+    var voicePrompt: String { get }
 }
 
 extension DirectionsViewModel {
-    // convenience method to strip the attributed text of it's attributes, providing a plain string
-    var text: String {
+    var voicePrompt: String {
         return attributedText.string
     }
 }

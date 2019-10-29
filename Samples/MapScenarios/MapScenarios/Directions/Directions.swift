@@ -32,11 +32,15 @@ struct Directions {
         
         if instruction.direction == .floorChange {
             // Use this instruction's direction (which we now know is .floorChange) to create the directions type
-            directionsType = Self.floorChangeDirectionsType(with: instruction)
+            directionsType = type(of: self).floorChangeDirectionsType(with: instruction)
         } else {
             // Use the next instruction's direction (i.e. this instruction's 'turnDirection') to create the directions type
-            directionsType = Self.standardDirectionsType(with: instruction)
+            directionsType = type(of: self).standardDirectionsType(with: instruction)
         }
+    }
+    
+    var isFirst: Bool {
+        return instruction.route?.routeInstructions?.first === instruction
     }
     
     var isLast: Bool {

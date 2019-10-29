@@ -52,55 +52,67 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
         return attributed
     }
     
-    private var baseAttributedStringForDirections: NSMutableAttributedString {
+    var voicePrompt: String {
+        var prompt = baseStringForVoicePrompt
+        
+        // For the last directions, append a string indicating arrival.
+        if directions.isLast {
+            let arrivalString = " " + NSLocalizedString("to arrive at your destination", comment: "")
+            prompt = prompt + arrivalString
+        }
+        
+        // Place a period at the end
+        prompt = prompt + "."
+        
+        // we're done!
+        return prompt
+    }
+}
+
+// MARK: - private
+private extension StandardDirectionsViewModel {
+    var baseAttributedStringForDirections: NSMutableAttributedString {
+        let straightString = directions.isFirst
+            ? NSLocalizedString("Go straight", comment: "")
+            : NSLocalizedString("Continue straight", comment: "")
+        
         switch directions.directionsType {
         case .straight:
-            let templateString = NSLocalizedString("$0 for $1", comment: "$0 = direction, $1 = distance")
+            let templateString = NSLocalizedString("$0 for $1", comment: "$0 = Go straight/Continue straight, $1 = distance")
             let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
             
-            let straightString = NSLocalizedString("Go straight", comment: "")
             attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
             
             let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
             attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+            
             return attributed
             
         case .turn(let direction):
             let templateString = NSLocalizedString("$0 in $1", comment: "$0 = direction, $1 = distance")
             let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
             
-            let turnString: String
-            
-            switch direction {
-            case .left:
-                turnString = NSLocalizedString("Turn left", comment: "")
-            case .right:
-                turnString = NSLocalizedString("Turn right", comment: "")
-            case .bearLeft:
-                turnString = NSLocalizedString("Bear left", comment: "")
-            case .bearRight:
-                turnString = NSLocalizedString("Bear right", comment: "")
-            default:
-                // should never happen
-                turnString = ""
-            }
-            
+            let turnString = string(forTurn: direction) ?? ""
             attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
             
             let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
             attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+            
             return attributed
             
         case .upcomingFloorChange(let floorChange):
-            let templateString = NSLocalizedString("Continue $0 towards $1 to $2", comment: "$0 = distance, $1 floor change type, $2 = floor name")
+            let templateString = NSLocalizedString("$0 $1 towards $2 to $3", comment: "$0 = Go straight/Continue straight, $1 = distance, $2 floor change type, $3 = floor name")
             let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
             
+            attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
+            
             let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
-            attributed.replace(substring: "$0", with: distanceString, attributes: standardOptions.attributes)
+            attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
             
             let floorChangeTypeString = string(for: floorChange.floorChangeType)
-            attributed.replace(substring: "$1", with: floorChangeTypeString, attributes: highlightOptions.attributes)
-            attributed.replace(substring: "$2", with: floorChange.floorName, attributes: highlightOptions.attributes)
+            attributed.replace(substring: "$2", with: floorChangeTypeString, attributes: highlightOptions.attributes)
+            attributed.replace(substring: "$3", with: floorChange.floorName, attributes: highlightOptions.attributes)
+            
             return attributed
             
         case .floorChange(let floorChange):
@@ -113,24 +125,79 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
             let floorChangeTypeString = string(for: floorChange.floorChangeType)
             attributed.replace(substring: "$0", with: floorChangeTypeString, attributes: highlightOptions.attributes)
             
-            let directionString: String
-            
-            switch floorChange.floorChangeDirection {
-            case .up:
-                directionString = NSLocalizedString("up", comment: "")
-            case .down:
-                directionString = NSLocalizedString("down", comment: "")
-            case .sameFloor:
-                directionString = ""
-            }
-            
+            let directionString = string(forFloorChangeDirection: floorChange.floorChangeDirection) ?? ""
             attributed.replace(substring: "$1", with: directionString, attributes: standardOptions.attributes)
             attributed.replace(substring: "$2", with: floorChange.floorName, attributes: highlightOptions.attributes)
+            
             return attributed
         }
     }
     
-    private func string(for floorChangeType: Directions.FloorChangeType) -> String {
+    var baseStringForVoicePrompt: String {
+        let straightString = directions.isFirst
+            ? NSLocalizedString("Go straight", comment: "")
+            : NSLocalizedString("Continue straight", comment: "")
+        
+        switch directions.directionsType {
+        case .straight:
+            let templateString = NSLocalizedString("$0 for $1", comment: "$0 = Go straight/Continue straight, $1 = distance")
+            var prompt = templateString
+            
+            prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
+            
+            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
+            
+            return prompt
+            
+        case .turn(let direction):
+            let templateString = NSLocalizedString("$0 for $1, then $2", comment: "$0 = Go straight/Continue straight, $1 = distance, $2 = direction")
+            var prompt = templateString
+            
+            prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
+            
+            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
+            
+            let turnString = string(forTurn: direction)?.lowercased() ?? ""
+            prompt = prompt.replacingOccurrences(of: "$2", with: turnString)
+            
+            return prompt
+            
+        case .upcomingFloorChange(let floorChange):
+            let templateString = NSLocalizedString("$0 $1 towards $2 to $3", comment: "$0 = Go straight/Continue straight, $1 = distance, $2 floor change type, $3 = floor name")
+            var prompt = templateString
+            
+            prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
+            
+            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
+            
+            let floorChangeTypeString = string(for: floorChange.floorChangeType)
+            prompt = prompt.replacingOccurrences(of: "$2", with: floorChangeTypeString)
+            prompt = prompt.replacingOccurrences(of: "$3", with: floorChange.floorName)
+            
+            return prompt
+            
+        case .floorChange(let floorChange):
+            let templateString = (floorChange.floorChangeDirection == .sameFloor)
+                ? NSLocalizedString("Take the $0 to $2", comment: "$0 = floor change type, $2 = floor name")
+                : NSLocalizedString("Take the $0 $1 to $2", comment: "$0 = floor change type, $1 = floor change direction, $2 = floor name")
+            
+            var prompt = templateString
+            
+            let floorChangeTypeString = string(for: floorChange.floorChangeType)
+            prompt = prompt.replacingOccurrences(of: "$0", with: floorChangeTypeString)
+            
+            let directionString = string(forFloorChangeDirection: floorChange.floorChangeDirection) ?? ""
+            prompt = prompt.replacingOccurrences(of: "$1", with: directionString)
+            prompt = prompt.replacingOccurrences(of: "$2", with: floorChange.floorName)
+            
+            return prompt
+        }
+    }
+    
+    func string(for floorChangeType: Directions.FloorChangeType) -> String {
         switch floorChangeType {
         case .stairs:
             return NSLocalizedString("stairs", comment: "")
@@ -140,6 +207,32 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
             return  NSLocalizedString("elevator", comment: "")
         case .other:
             return  NSLocalizedString("floor change", comment: "")
+        }
+    }
+    
+    func string(forTurn direction: PWRouteInstructionDirection) -> String? {
+        switch direction {
+        case .left:
+            return NSLocalizedString("Turn left", comment: "")
+        case .right:
+            return NSLocalizedString("Turn right", comment: "")
+        case .bearLeft:
+            return NSLocalizedString("Bear left", comment: "")
+        case .bearRight:
+            return NSLocalizedString("Bear right", comment: "")
+        default:
+            return nil
+        }
+    }
+    
+    func string(forFloorChangeDirection direction: Directions.FloorChangeDirection) -> String? {
+        switch direction {
+        case .up:
+            return NSLocalizedString("up", comment: "")
+        case .down:
+            return NSLocalizedString("down", comment: "")
+        case .sameFloor:
+            return nil
         }
     }
 }
