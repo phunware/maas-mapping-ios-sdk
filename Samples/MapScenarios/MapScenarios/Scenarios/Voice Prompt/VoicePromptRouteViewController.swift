@@ -47,7 +47,7 @@ class VoicePromptRouteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("Voice Prompts For Route", comment: "")
+        navigationItem.title = NSLocalizedString("Voiced Route Instructions", comment: "")
         
         if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
             return

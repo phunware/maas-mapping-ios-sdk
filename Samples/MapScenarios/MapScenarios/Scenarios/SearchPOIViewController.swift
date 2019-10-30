@@ -62,7 +62,7 @@ class SearchPOIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Search for Point of Interest"
+        navigationItem.title = "Search for Points of Interest"
         
         if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
             return

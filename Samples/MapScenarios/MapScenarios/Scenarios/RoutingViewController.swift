@@ -31,6 +31,8 @@ class RoutingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Route to Point of Interest"
+        
         if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
             return
         }
@@ -40,7 +42,6 @@ class RoutingViewController: UIViewController {
             return
         }
         
-        navigationItem.title = "Route to Point of Interest"
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         
         mapView.delegate = self
