@@ -33,52 +33,11 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
     }
     
     var attributedText: NSAttributedString {
-        let attributed = baseAttributedStringForDirections
-        
-        // For the last directions, append a string indicating arrival.
-        if directions.isLast {
-            let arrivalString = " " + NSLocalizedString("to arrive at your destination", comment: "")
-            let attributedArrivalString = NSAttributedString(string: arrivalString, attributes: standardOptions.attributes)
-            attributed.append(attributedArrivalString)
-        }
-        
-        // Place a period at the end, using the same attributes as the last attributed substring.
-        if let lastAttributes = attributed.lastAttributes {
-            let period = NSAttributedString(string: ".", attributes: lastAttributes)
-            attributed.append(period)
-        }
-        
-        // we're done!
-        return attributed
-    }
-    
-    var voicePrompt: String {
-        var prompt = baseStringForVoicePrompt
-        
-        // For the last directions, append a string indicating arrival.
-        if directions.isLast {
-            let arrivalString = " " + NSLocalizedString("to arrive at your destination", comment: "")
-            prompt = prompt + arrivalString
-        }
-        
-        // Place a period at the end
-        prompt = prompt + "."
-        
-        // we're done!
-        return prompt
-    }
-}
-
-// MARK: - private
-private extension StandardDirectionsViewModel {
-    var baseAttributedStringForDirections: NSMutableAttributedString {
-        let straightString = directions.isFirst
-            ? NSLocalizedString("Go straight", comment: "")
-            : NSLocalizedString("Continue straight", comment: "")
+        let straightString = NSLocalizedString("Continue straight", comment: "")
         
         switch directions.directionsType {
         case .straight:
-            let templateString = NSLocalizedString("$0 for $1", comment: "$0 = Go straight/Continue straight, $1 = distance")
+            let templateString = NSLocalizedString("$0 for $1", comment: "$0 = Continue straight, $1 = distance")
             let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
             
             attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
@@ -101,7 +60,7 @@ private extension StandardDirectionsViewModel {
             return attributed
             
         case .upcomingFloorChange(let floorChange):
-            let templateString = NSLocalizedString("$0 $1 towards $2 to $3", comment: "$0 = Go straight/Continue straight, $1 = distance, $2 floor change type, $3 = floor name")
+            let templateString = NSLocalizedString("$0 $1 towards $2 to $3", comment: "$0 = Continue straight, $1 = distance, $2 floor change type, $3 = floor name")
             let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
             
             attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
@@ -133,14 +92,31 @@ private extension StandardDirectionsViewModel {
         }
     }
     
+    var voicePrompt: String {
+        var prompt = baseStringForVoicePrompt
+        
+        // For the last directions, append a string indicating arrival.
+        if directions.isLast {
+            let arrivalString = " " + NSLocalizedString("to arrive at your destination", comment: "")
+            prompt = prompt + arrivalString
+        }
+        
+        // Place a period at the end
+        prompt = prompt + "."
+        
+        // we're done!
+        return prompt
+    }
+}
+
+// MARK: - private
+private extension StandardDirectionsViewModel {
     var baseStringForVoicePrompt: String {
-        let straightString = directions.isFirst
-            ? NSLocalizedString("Go straight", comment: "")
-            : NSLocalizedString("Continue straight", comment: "")
+        let straightString = NSLocalizedString("Continue straight", comment: "")
         
         switch directions.directionsType {
         case .straight:
-            let templateString = NSLocalizedString("$0 for $1", comment: "$0 = Go straight/Continue straight, $1 = distance")
+            let templateString = NSLocalizedString("$0 for $1", comment: "$0 = Continue straight, $1 = distance")
             var prompt = templateString
             
             prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
@@ -151,7 +127,7 @@ private extension StandardDirectionsViewModel {
             return prompt
             
         case .turn(let direction):
-            let templateString = NSLocalizedString("$0 for $1, then $2", comment: "$0 = Go straight/Continue straight, $1 = distance, $2 = direction")
+            let templateString = NSLocalizedString("$0 for $1, then $2", comment: "$0 = Continue straight, $1 = distance, $2 = direction")
             var prompt = templateString
             
             prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
@@ -165,7 +141,7 @@ private extension StandardDirectionsViewModel {
             return prompt
             
         case .upcomingFloorChange(let floorChange):
-            let templateString = NSLocalizedString("$0 $1 towards $2 to $3", comment: "$0 = Go straight/Continue straight, $1 = distance, $2 floor change type, $3 = floor name")
+            let templateString = NSLocalizedString("$0 $1 towards $2 to $3", comment: "$0 = Continue straight, $1 = distance, $2 floor change type, $3 = floor name")
             var prompt = templateString
             
             prompt = prompt.replacingOccurrences(of: "$0", with: straightString)

@@ -39,10 +39,6 @@ struct Directions {
         }
     }
     
-    var isFirst: Bool {
-        return instruction.route?.routeInstructions?.first === instruction
-    }
-    
     var isLast: Bool {
         return instruction.route?.routeInstructions?.last === instruction
     }
