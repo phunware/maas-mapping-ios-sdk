@@ -13,13 +13,11 @@ import PWMapKit
 class OffRouteViewController: UIViewController {
 
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
-    var applicationId = ""
-    var accessKey = ""
-    var signatureKey = ""
-
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
-
-    let destinationPOIIdentifier = 0 /* Replace with the destination POI identifier */
+    var applicationId = "1383"
+    var accessKey = "aca26bfdc28d44faf6a4f072bd6960e232970ff0"
+    var signatureKey = "fe53376845e917bf9ccc480bbc09f22c6e125ea3"
+    var buildingIdentifier = 98293 // Enter your building identifier here, found on the building’s Edit page on Maas portal
+    let destinationPOIIdentifier = 56331268 
 
     let mapView = PWMapView()
     let locationManager = CLLocationManager()
@@ -28,9 +26,9 @@ class OffRouteViewController: UIViewController {
     let offRouteDistanceThreshold: CLLocationDistance = 10.0 //distance in meters
     let offRouteTimeThreshold: TimeInterval = 5.0 //time in seconds
     var offRouteTimer: Timer? = nil
-    var showModalAgainTimer: Timer? = nil
-    var okToShowModalAgain = true
-    var okToShowModalAgainTimerThreshold = 10.0 //time in seconds
+    var showOffRouteMessageAgainTimer: Timer? = nil
+    var okToShowOffRouteMessageAgainAfterTimerCompletes = true
+    let okToShowOffRouteMessageAgainTimerThreshold = 10.0 //time in seconds
     var modalVisible = false
     var dontShowAgain = false
 
@@ -118,16 +116,16 @@ class OffRouteViewController: UIViewController {
     @objc func fireTimer() {
         offRouteTimer?.invalidate()
         offRouteTimer = nil
-        showModal()
+        showOffRouteMessage()
     }
     
-    @objc func setOkToShowModalToTrue() {
-        showModalAgainTimer?.invalidate()
-        showModalAgainTimer = nil
-        okToShowModalAgain = true
+    @objc func setOkToShowOffRouteMessageAgainAfterTimerCompletesToTrue() {
+        showOffRouteMessageAgainTimer?.invalidate()
+        showOffRouteMessageAgainTimer = nil
+        okToShowOffRouteMessageAgainAfterTimerCompletes = true
     }
 
-    private func showModal() {
+    private func showOffRouteMessage() {
         if (!modalVisible) {
             modalVisible = true
 
@@ -152,8 +150,8 @@ class OffRouteViewController: UIViewController {
             }
 
             present(offRouteModal, animated: true, completion: nil)
-            okToShowModalAgain = false
-            showModalAgainTimer = Timer.scheduledTimer(timeInterval: okToShowModalAgainTimerThreshold, target: self, selector: #selector(setOkToShowModalToTrue), userInfo: nil, repeats: false)
+            okToShowOffRouteMessageAgainAfterTimerCompletes = false
+            showOffRouteMessageAgainTimer = Timer.scheduledTimer(timeInterval: okToShowOffRouteMessageAgainTimerThreshold, target: self, selector: #selector(setOkToShowOffRouteMessageAgainAfterTimerCompletesToTrue), userInfo: nil, repeats: false)
         }
     }
 }
@@ -169,13 +167,13 @@ extension OffRouteViewController: PWMapViewDelegate {
 
             self.buildRoute()
         } else {
-            if (!modalVisible && !dontShowAgain && okToShowModalAgain) {
+            if (!modalVisible && !dontShowAgain && okToShowOffRouteMessageAgainAfterTimerCompletes) {
                 if let closestRouteInstruction = self.currentRoute?.closestInstructionTo(userLocation) {
                     let distanceToRouteInstruction = MKMapPoint(userLocation.coordinate).distanceTo(closestRouteInstruction.polyline)
                     if (distanceToRouteInstruction > 0.0) {
                         if (distanceToRouteInstruction >= offRouteDistanceThreshold) {
                             offRouteTimer?.invalidate()
-                            showModal()
+                            showOffRouteMessage()
                         } else {
                             if (offRouteTimer == nil) {
                                 offRouteTimer = Timer.scheduledTimer(timeInterval: offRouteTimeThreshold, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
