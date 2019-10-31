@@ -26,8 +26,11 @@ class OffRouteViewController: UIViewController {
     var firstLocationAcquired = false
     var currentRoute: PWRoute?
     let offRouteDistanceThreshold: CLLocationDistance = 10.0 //distance in meters
-    let offRouteTimeThreshold: TimeInterval = 15.0 //time in seconds
+    let offRouteTimeThreshold: TimeInterval = 5.0 //time in seconds
     var offRouteTimer: Timer? = nil
+    var showModalAgainTimer: Timer? = nil
+    var okToShowModalAgain = true
+    var okToShowModalAgainTimerThreshold = 10.0 //time in seconds
     var modalVisible = false
     var dontShowAgain = false
 
@@ -117,6 +120,12 @@ class OffRouteViewController: UIViewController {
         offRouteTimer = nil
         showModal()
     }
+    
+    @objc func setOkToShowModalToTrue() {
+        showModalAgainTimer?.invalidate()
+        showModalAgainTimer = nil
+        okToShowModalAgain = true
+    }
 
     private func showModal() {
         if (!modalVisible) {
@@ -143,6 +152,8 @@ class OffRouteViewController: UIViewController {
             }
 
             present(offRouteModal, animated: true, completion: nil)
+            okToShowModalAgain = false
+            showModalAgainTimer = Timer.scheduledTimer(timeInterval: okToShowModalAgainTimerThreshold, target: self, selector: #selector(setOkToShowModalToTrue), userInfo: nil, repeats: false)
         }
     }
 }
@@ -158,7 +169,7 @@ extension OffRouteViewController: PWMapViewDelegate {
 
             self.buildRoute()
         } else {
-            if (!modalVisible && !dontShowAgain) {
+            if (!modalVisible && !dontShowAgain && okToShowModalAgain) {
                 if let closestRouteInstruction = self.currentRoute?.closestInstructionTo(userLocation) {
                     let distanceToRouteInstruction = MKMapPoint(userLocation.coordinate).distanceTo(closestRouteInstruction.polyline)
                     if (distanceToRouteInstruction > 0.0) {
