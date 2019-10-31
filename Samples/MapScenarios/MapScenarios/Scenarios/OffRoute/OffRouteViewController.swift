@@ -21,13 +21,17 @@ class OffRouteViewController: UIViewController {
 
     let destinationPOIIdentifier = 0 /* Replace with the destination POI identifier */
 
+
     let mapView = PWMapView()
     let locationManager = CLLocationManager()
     var firstLocationAcquired = false
     var currentRoute: PWRoute?
     let offRouteDistanceThreshold: CLLocationDistance = 10.0 //distance in meters
-    let offRouteTimeThreshold: TimeInterval = 15.0 //time in seconds
+    let offRouteTimeThreshold: TimeInterval = 5.0 //time in seconds
     var offRouteTimer: Timer? = nil
+    var showOffRouteMessageAgainTimer: Timer? = nil
+    var okToShowOffRouteMessageAgainAfterTimerCompletes = true
+    let okToShowOffRouteMessageAgainTimerThreshold = 10.0 //time in seconds
     var modalVisible = false
     var dontShowAgain = false
 
@@ -115,10 +119,16 @@ class OffRouteViewController: UIViewController {
     @objc func fireTimer() {
         offRouteTimer?.invalidate()
         offRouteTimer = nil
-        showModal()
+        showOffRouteMessage()
+    }
+    
+    @objc func setOkToShowOffRouteMessageAgainAfterTimerCompletesToTrue() {
+        showOffRouteMessageAgainTimer?.invalidate()
+        showOffRouteMessageAgainTimer = nil
+        okToShowOffRouteMessageAgainAfterTimerCompletes = true
     }
 
-    private func showModal() {
+    private func showOffRouteMessage() {
         if (!modalVisible) {
             modalVisible = true
 
@@ -143,6 +153,8 @@ class OffRouteViewController: UIViewController {
             }
 
             present(offRouteModal, animated: true, completion: nil)
+            okToShowOffRouteMessageAgainAfterTimerCompletes = false
+            showOffRouteMessageAgainTimer = Timer.scheduledTimer(timeInterval: okToShowOffRouteMessageAgainTimerThreshold, target: self, selector: #selector(setOkToShowOffRouteMessageAgainAfterTimerCompletesToTrue), userInfo: nil, repeats: false)
         }
     }
 }
@@ -158,13 +170,13 @@ extension OffRouteViewController: PWMapViewDelegate {
 
             self.buildRoute()
         } else {
-            if (!modalVisible && !dontShowAgain) {
+            if !modalVisible, !dontShowAgain, okToShowOffRouteMessageAgainAfterTimerCompletes {
                 if let closestRouteInstruction = self.currentRoute?.closestInstructionTo(userLocation) {
                     let distanceToRouteInstruction = MKMapPoint(userLocation.coordinate).distanceTo(closestRouteInstruction.polyline)
                     if (distanceToRouteInstruction > 0.0) {
                         if (distanceToRouteInstruction >= offRouteDistanceThreshold) {
                             offRouteTimer?.invalidate()
-                            showModal()
+                            showOffRouteMessage()
                         } else {
                             if (offRouteTimer == nil) {
                                 offRouteTimer = Timer.scheduledTimer(timeInterval: offRouteTimeThreshold, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
