@@ -13,11 +13,14 @@ import PWMapKit
 class OffRouteViewController: UIViewController {
 
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
-    var applicationId = "1383"
-    var accessKey = "aca26bfdc28d44faf6a4f072bd6960e232970ff0"
-    var signatureKey = "fe53376845e917bf9ccc480bbc09f22c6e125ea3"
-    var buildingIdentifier = 98293 // Enter your building identifier here, found on the building’s Edit page on Maas portal
-    let destinationPOIIdentifier = 56331268 
+    var applicationId = ""
+    var accessKey = ""
+    var signatureKey = ""
+
+    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+
+    let destinationPOIIdentifier = 0 /* Replace with the destination POI identifier */
+
 
     let mapView = PWMapView()
     let locationManager = CLLocationManager()
@@ -167,7 +170,7 @@ extension OffRouteViewController: PWMapViewDelegate {
 
             self.buildRoute()
         } else {
-            if (!modalVisible && !dontShowAgain && okToShowOffRouteMessageAgainAfterTimerCompletes) {
+            if !modalVisible, !dontShowAgain, okToShowOffRouteMessageAgainAfterTimerCompletes {
                 if let closestRouteInstruction = self.currentRoute?.closestInstructionTo(userLocation) {
                     let distanceToRouteInstruction = MKMapPoint(userLocation.coordinate).distanceTo(closestRouteInstruction.polyline)
                     if (distanceToRouteInstruction > 0.0) {
