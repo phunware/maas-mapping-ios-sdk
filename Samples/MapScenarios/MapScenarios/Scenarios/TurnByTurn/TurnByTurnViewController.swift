@@ -34,6 +34,8 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Route - Turn By Turn"
+        
         if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
             return
         }
@@ -43,7 +45,6 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
             return
         }
         
-        navigationItem.title = "Turn By Turn Navigation"
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         
         view.addSubview(mapView)

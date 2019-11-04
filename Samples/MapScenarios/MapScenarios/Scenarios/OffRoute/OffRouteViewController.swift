@@ -38,7 +38,7 @@ class OffRouteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Off Route Alerts & Rerouting"
+        navigationItem.title = "Off Route Scenario"
 
         if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
             return

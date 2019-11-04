@@ -25,7 +25,7 @@ class CustomPOIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Create Custom POI"
+        navigationItem.title = "Create Custom Point Of Interest"
         
         if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
             return
