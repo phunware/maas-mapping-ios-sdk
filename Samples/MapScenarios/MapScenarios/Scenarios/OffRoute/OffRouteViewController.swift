@@ -10,7 +10,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
-class OffRouteViewController: UIViewController {
+class OffRouteViewController: UIViewController, ScenarioCredentialsProtocol {
 
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -40,7 +40,7 @@ class OffRouteViewController: UIViewController {
 
         navigationItem.title = "Off Route Scenario"
 
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        if !validateScenarioCredentials() {
             return
         }
 

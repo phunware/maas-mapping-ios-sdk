@@ -11,7 +11,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
-class WalkTimeViewController: UIViewController {
+class WalkTimeViewController: UIViewController, ScenarioCredentialsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -73,7 +73,7 @@ class WalkTimeViewController: UIViewController {
         
         mapView.delegate = self
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        if !validateScenarioCredentials() {
             return
         }
         

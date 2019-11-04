@@ -11,7 +11,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
-class RoutingViewController: UIViewController {
+class RoutingViewController: UIViewController, ScenarioCredentialsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -33,7 +33,7 @@ class RoutingViewController: UIViewController {
         
         navigationItem.title = "Route to Point of Interest"
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        if !validateScenarioCredentials() {
             return
         }
         
