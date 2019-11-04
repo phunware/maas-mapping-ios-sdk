@@ -146,6 +146,35 @@
 			path = OffRoute;
 			sourceTree = "<group>";
 		};
+		9AC881AC2370997200FCDEFC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9AC881AD2370998300FCDEFC /* TurnByTurnCollectionView */,
+				E3785834222735540059A179 /* Route Instruction List */,
+				9AC881AE237099E200FCDEFC /* WalkTimeView */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		9AC881AD2370998300FCDEFC /* TurnByTurnCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E3785828222073CA0059A179 /* Cells */,
+				E378582B222073CA0059A179 /* Icons */,
+				E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */,
+			);
+			path = TurnByTurnCollectionView;
+			sourceTree = "<group>";
+		};
+		9AC881AE237099E200FCDEFC /* WalkTimeView */ = {
+			isa = PBXGroup;
+			children = (
+				9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */,
+				9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */,
+			);
+			path = WalkTimeView;
+			sourceTree = "<group>";
+		};
 		9AFAAFD12363450700ED655C /* Directions */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,33 +187,6 @@
 				9AFAAFD62363450700ED655C /* ArrivedDirectionsViewModel.swift */,
 			);
 			path = Directions;
-			sourceTree = "<group>";
-		};
-		9D1ECD282225DD510029A667 /* WalkTime */ = {
-			isa = PBXGroup;
-			children = (
-				9D1ECD2D2225DE310029A667 /* Views */,
-				9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */,
-			);
-			path = WalkTime;
-			sourceTree = "<group>";
-		};
-		9D1ECD2D2225DE310029A667 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */,
-				9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		9D93FCE02208A2C700A2EB02 /* TurnByTurn */ = {
-			isa = PBXGroup;
-			children = (
-				E3785827222073CA0059A179 /* Collection View */,
-				9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */,
-			);
-			path = TurnByTurn;
 			sourceTree = "<group>";
 		};
 		E378581B221313200059A179 /* Extensions */ = {
@@ -210,16 +212,6 @@
 				E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */,
 			);
 			path = "Voice Prompt";
-			sourceTree = "<group>";
-		};
-		E3785827222073CA0059A179 /* Collection View */ = {
-			isa = PBXGroup;
-			children = (
-				E3785828222073CA0059A179 /* Cells */,
-				E378582B222073CA0059A179 /* Icons */,
-				E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */,
-			);
-			path = "Collection View";
 			sourceTree = "<group>";
 		};
 		E3785828222073CA0059A179 /* Cells */ = {
@@ -275,9 +267,12 @@
 				E3C379A7204D90AA00905731 /* Info.plist */,
 				E3C379A4204D90AA00905731 /* LaunchScreen.storyboard */,
 				E3C3799F204D90AA00905731 /* Main.storyboard */,
+				9ACB8952236A2FE3001F6F09 /* ScenarioCredentialsProtocol.swift */,
 				E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */,
 				E3C76E4F204D95BB00780D0F /* Scenarios */,
+				9AC881AC2370997200FCDEFC /* Shared */,
 				9AFAAFD12363450700ED655C /* Directions */,
+				E378581B221313200059A179 /* Extensions */,
 			);
 			path = MapScenarios;
 			sourceTree = "<group>";
@@ -285,13 +280,6 @@
 		E3C76E4F204D95BB00780D0F /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
-				E378581B221313200059A179 /* Extensions */,
-				7E87A2F0222478DC004ABFE9 /* OffRoute */,
-				E3785834222735540059A179 /* Route Instruction List */,
-				9D93FCE02208A2C700A2EB02 /* TurnByTurn */,
-				E37858222217062D0059A179 /* Voice Prompt */,
-				9D1ECD282225DD510029A667 /* WalkTime */,
-				9ACB8952236A2FE3001F6F09 /* ScenarioCredentialsProtocol.swift */,
 				9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */,
 				E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */,
 				E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */,
@@ -299,6 +287,10 @@
 				E36BB69120571B57003640CA /* LocationSharingViewController.swift */,
 				E3C771C92050555D00780D0F /* RoutingViewController.swift */,
 				E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */,
+				9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */,
+				9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */,
+				7E87A2F0222478DC004ABFE9 /* OffRoute */,
+				E37858222217062D0059A179 /* Voice Prompt */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
