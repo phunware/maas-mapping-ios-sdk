@@ -9,16 +9,29 @@
 import PWMapKit
 
 class RouteInstructionListViewController: UIViewController {
+    enum WalkTimeDisplayMode {
+        case none
+        case displayed(distance: CLLocationDistance, averageSpeed: CLLocationSpeed)
+        
+        var isDisplayed: Bool {
+            if case .displayed = self {
+                return true
+            }
+            
+            return false
+        }
+    }
     
     private let tableView = UITableView()
     private var walkTimeView: WalkTimeView?
-    private var mapView: PWMapView?
-    private var displayedWalkTimeView: WalkTimeView?
-    private var enableLandmarkRouting: Bool = false
     
-    func configure(mapView: PWMapView, enableLandmarkRouting: Bool = false, walkTimeView: WalkTimeView? = nil) {
-        self.mapView = mapView
-        self.displayedWalkTimeView = walkTimeView
+    private var route: PWRoute?
+    private var enableLandmarkRouting: Bool = false
+    private var walkTimeDisplayMode: WalkTimeDisplayMode = .none
+    
+    func configure(route: PWRoute?, enableLandmarkRouting: Bool = false, walkTimeDisplayMode: WalkTimeDisplayMode = .none) {
+        self.route = route
+        self.walkTimeDisplayMode = walkTimeDisplayMode
         self.enableLandmarkRouting = enableLandmarkRouting
         
         self.tableView.reloadData()
@@ -30,17 +43,56 @@ class RouteInstructionListViewController: UIViewController {
         navigationItem.title = "Route Instructions"
         
         configureTableView()
+        configureWalkTimeView()
         
-        NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] (_) in
-            self?.tableView.bottomAnchor.constraint(equalTo: self!.view.bottomAnchor).isActive = true
-            self?.walkTimeView?.removeFromSuperview()
-            self?.dismiss(animated: true, completion: nil)
+        // Dismiss when the exit button is pressed.
+        NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            
+            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+            self.walkTimeView?.removeFromSuperview()
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func configureWalkTimeView() {
+        guard case .displayed(let distance, let averageSpeed) = walkTimeDisplayMode else {
+            return
+        }
+        
+        let bundleName = String(describing: WalkTimeView.self)
+        let walkTimeView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! WalkTimeView
+        
+        view.addSubview(walkTimeView)
+        
+        walkTimeView.translatesAutoresizingMaskIntoConstraints = false
+        walkTimeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        walkTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        walkTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        walkTimeView.heightAnchor.constraint(equalToConstant: WalkTimeView.defaultHeight).isActive = true
+        walkTimeView.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
+        self.walkTimeView = walkTimeView
+        
+        NotificationCenter.default.addObserver(forName: .WalkTimeChanged, object: nil, queue: nil) { [weak self] (notification) in
+            guard let walkTimeView = self?.walkTimeView else {
+                return
+            }
+            
+            guard let remainingDistance = notification.userInfo?[NotificationUserInfoKeys.remainingDistance] as? CLLocationDistance,
+                let averageSpeed = notification.userInfo?[NotificationUserInfoKeys.averageSpeed] as? CLLocationSpeed else {
+                return
+            }
+            
+            walkTimeView.updateWalkTime(distance: remainingDistance, averageSpeed: averageSpeed)
         }
     }
     
     func configureTableView() {
         view.addSubview(tableView)
-        let bottomAnchorConstant = (displayedWalkTimeView != nil)
+            
+        let bottomAnchorConstant = walkTimeDisplayMode.isDisplayed
             ? -WalkTimeView.defaultHeight
             : 0
         
@@ -50,35 +102,13 @@ class RouteInstructionListViewController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        if let displayedWalkTimeView = displayedWalkTimeView {
-            let bundleName = String(describing: WalkTimeView.self)
-            let walkTimeView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! WalkTimeView
-            
-            view.addSubview(walkTimeView)
-            
-            // Layout
-            walkTimeView.translatesAutoresizingMaskIntoConstraints = false
-            walkTimeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            walkTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            walkTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            walkTimeView.heightAnchor.constraint(equalToConstant: WalkTimeView.defaultHeight).isActive = true
-            walkTimeView.updateWalkTime(distance: displayedWalkTimeView.remainingDistance, averageSpeed: displayedWalkTimeView.averageSpeed)
-            self.walkTimeView = walkTimeView
-            
-            NotificationCenter.default.addObserver(forName: .WalkTimeChanged, object: nil, queue: nil) { [weak self] (notification) in
-                guard let remainingDistance = notification.userInfo?[NotificationUserInfoKeys.remainingDistance] as? CLLocationDistance, let averageSpeed = notification.userInfo?[NotificationUserInfoKeys.averageSpeed] as? CLLocationSpeed else {
-                    return
-                }
-                
-                self?.walkTimeView?.updateWalkTime(distance: remainingDistance, averageSpeed: averageSpeed)
-            }
-        }
-        
         let instructionCellIdentifier = String(describing: RouteInstructionListCell.self)
         tableView.register(UINib(nibName: instructionCellIdentifier, bundle: nil), forCellReuseIdentifier: instructionCellIdentifier)
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.allowsSelection = false
+        
+        // putting an invisible view as the footer view will hide the empty table view rows after the last valid one
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     func presentFromViewController(_ viewController: UIViewController) {
@@ -99,25 +129,12 @@ class RouteInstructionListViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDelegate
-
-extension RouteInstructionListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.01
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView(frame: .zero)
-    }
-}
-
 // MARK: - UITableViewDataSource
 
 extension RouteInstructionListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let instructionCount = mapView?.currentRoute?.routeInstructions.count ?? 0
+        let instructionCount = route?.routeInstructions.count ?? 0
         
         // add 1 because we are going to add a "You have arrived" cell at the end
         return instructionCount + 1
@@ -131,7 +148,7 @@ extension RouteInstructionListViewController: UITableViewDataSource {
         
         // if this is the index of a valid instruction
         
-        if let routeInstructions = mapView?.currentRoute?.routeInstructions, routeInstructions.indices.contains(indexPath.row) {
+        if let routeInstructions = route?.routeInstructions, routeInstructions.indices.contains(indexPath.row) {
             let routeInstruction = routeInstructions[indexPath.row]
             
             // If landmark routing is enabled, use the LandmarkDirectionsViewModel to provide instruction text using landmarks.
@@ -143,7 +160,7 @@ extension RouteInstructionListViewController: UITableViewDataSource {
             cell.configure(with: viewModel)
         } else {
             // otherwise this is the "You have arrived" cell
-            let destinationName = mapView?.currentRoute.endPoint.title ?? nil
+            let destinationName = route?.endPoint.title ?? nil
             let viewModel = ArrivedDirectionsViewModel(destinationName: destinationName)
             cell.configure(with: viewModel)
         }

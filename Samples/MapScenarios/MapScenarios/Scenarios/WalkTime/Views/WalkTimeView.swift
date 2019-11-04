@@ -14,25 +14,6 @@ extension Notification.Name {
     static let WalkTimeChanged = NSNotification.Name("WalkTimeChanged")
 }
 
-extension Collection where Element: Numeric {
-    // Returns the total sum of all elements in the array
-    var total: Element { return reduce(0, +) }
-}
-
-extension Collection where Element: BinaryInteger {
-    // Returns the average of all elements in the array
-    var average: Double {
-        return isEmpty ? 0 : Double(total) / Double(count)
-    }
-}
-
-extension Collection where Element: BinaryFloatingPoint {
-    // Returns the average of all elements in the array
-    var average: Element {
-        return isEmpty ? 0 : total / Element(count)
-    }
-}
-
 struct NotificationUserInfoKeys {
     static let remainingDistance = "distance"
     static let averageSpeed = "speed"
@@ -46,9 +27,9 @@ class WalkTimeView: UIView {
     // The reasonable walk speed range
     var averageWalkSpeedRange: Range = 0.2..<1.5
     // Remaining distance
-    var remainingDistance: CLLocationDistance!
+    var remainingDistance: CLLocationDistance = 0
     // Average speed
-    var averageSpeed: CLLocationSpeed!
+    var averageSpeed: CLLocationSpeed = 0
     
     @IBOutlet weak var restTimeLabel: UILabel!
     @IBOutlet weak var arriveTimeLabel: UILabel!
@@ -62,7 +43,7 @@ class WalkTimeView: UIView {
         DispatchQueue.main.async {
             if distance == 0 {
                 self.restTimeLabel.text = ""
-                self.arriveTimeLabel.text = "Arrived"
+                self.arriveTimeLabel.text = NSLocalizedString("Arrived", comment: "")
             }
             
             // Set initial value
@@ -74,7 +55,10 @@ class WalkTimeView: UIView {
             
             self.isHidden = false
             self.restTimeLabel.text = self.format(duration: duration)
-            self.arriveTimeLabel.text = "Arrival Time \(self.format(date: arriveTime))"
+            
+            let template = NSLocalizedString("Arrival Time $0", comment: "$0 = time")
+            let arrivalTimeString = template.replacingOccurrences(of: "$0", with: self.format(date: arriveTime))
+            self.arriveTimeLabel.text = arrivalTimeString
         }
         self.remainingDistance = distance
         self.averageSpeed = averageSpeed

@@ -261,7 +261,7 @@ extension VoicePromptRouteViewController: TurnByTurnDelegate {
     
     func instructionExpandTapped() {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
+        routeInstructionViewController.configure(route: mapView.currentRoute, enableLandmarkRouting: enableLandmarkRouting)
         routeInstructionViewController.presentFromViewController(self)
     }
 }

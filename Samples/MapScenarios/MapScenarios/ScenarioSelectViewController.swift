@@ -27,10 +27,9 @@ class ScenarioSelectViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.isTranslucent = false
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.1
+        
+        // putting an invisible view as the footer view will hide the empty table view rows after the last valid one
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
