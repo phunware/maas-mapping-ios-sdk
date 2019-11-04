@@ -23,12 +23,16 @@ class WalkTimeView: UIView {
     
     // View height
     static let defaultHeight: CGFloat = 80.0
+    
     // Supposed average walk speed is 0.7 m/s
     var averageWalkSpeed: Double = 0.7
+    
     // The reasonable walk speed range
     var averageWalkSpeedRange: Range = 0.2..<1.5
+    
     // Remaining distance
     var remainingDistance: CLLocationDistance = 0
+    
     // Average speed
     var averageSpeed: CLLocationSpeed = 0
     

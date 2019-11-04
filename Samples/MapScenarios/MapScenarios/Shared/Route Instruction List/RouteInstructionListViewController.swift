@@ -98,7 +98,6 @@ extension RouteInstructionListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! RouteInstructionListCell
         
         // if this is the index of a valid instruction
-        
         if let routeInstructions = route?.routeInstructions, routeInstructions.indices.contains(indexPath.row) {
             let routeInstruction = routeInstructions[indexPath.row]
             
@@ -117,7 +116,6 @@ extension RouteInstructionListViewController: UITableViewDataSource {
         return cell
     }
 }
-
 
 // MARK: - private
 private extension RouteInstructionListViewController {
