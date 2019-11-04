@@ -41,7 +41,8 @@ class WalkTimeViewController: TurnByTurnViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Turn By Turn + Walk Time Navigation"
+        navigationItem.title = "Walk Time Calculations"
+        
         mapView.delegate = self
         
         NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] (_) in
