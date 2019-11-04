@@ -71,17 +71,24 @@ class TurnByTurnViewController: UIViewController, ScenarioCredentialsProtocol {
     }
 }
 
-// MARK: - TurnByTurnDelegate
-extension TurnByTurnViewController: TurnByTurnDelegate {
+// MARK: - TurnByTurnCollectionViewDelegate
+extension TurnByTurnViewController: TurnByTurnCollectionViewDelegate {
     func instructionExpandTapped() {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(route: mapView.currentRoute, enableLandmarkRouting: true)
+        routeInstructionViewController.directionsDelegate = self
+        routeInstructionViewController.configure(route: mapView.currentRoute)
         routeInstructionViewController.presentFromViewController(self)
     }
     
     func didSwipeOnRouteInstruction() { }
 }
 
+// MARK: - DirectionsDisplayDelegate
+extension TurnByTurnViewController: DirectionsDelegate {
+    func directions(for instruction: PWRouteInstruction) -> DirectionsViewModel {
+        return StandardDirectionsViewModel(for: instruction)
+    }
+}
 
 // MARK: - private
 private extension TurnByTurnViewController {
@@ -131,8 +138,9 @@ private extension TurnByTurnViewController {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
         
         if turnByTurnCollectionView == nil {
-            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView, enableLandmarkRouting: true)
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
             turnByTurnCollectionView?.turnByTurnDelegate = self
+            turnByTurnCollectionView?.directionsDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
     }

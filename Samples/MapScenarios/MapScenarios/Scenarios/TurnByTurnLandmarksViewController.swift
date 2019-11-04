@@ -25,9 +25,6 @@ class TurnByTurnLandmarksViewController: UIViewController, ScenarioCredentialsPr
     var startPOIIdentifier: Int = 0
     var destinationPOIIdentifier: Int = 0
     
-    // Set to 'true' to enable landmark routing
-    private var enableLandmarkRouting = false
-    
     private let mapView = PWMapView()
     
     private var turnByTurnCollectionView: TurnByTurnCollectionView?
@@ -75,17 +72,24 @@ class TurnByTurnLandmarksViewController: UIViewController, ScenarioCredentialsPr
     }
 }
 
-// MARK: - TurnByTurnDelegate
-extension TurnByTurnLandmarksViewController: TurnByTurnDelegate {
+// MARK: - TurnByTurnCollectionViewDelegate
+extension TurnByTurnLandmarksViewController: TurnByTurnCollectionViewDelegate {
     func instructionExpandTapped() {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(route: mapView.currentRoute, enableLandmarkRouting: enableLandmarkRouting)
+        routeInstructionViewController.directionsDelegate = self
+        routeInstructionViewController.configure(route: mapView.currentRoute)
         routeInstructionViewController.presentFromViewController(self)
     }
     
     func didSwipeOnRouteInstruction() { }
 }
 
+// MARK: - DirectionsDisplayDelegate
+extension TurnByTurnLandmarksViewController: DirectionsDelegate {
+    func directions(for instruction: PWRouteInstruction) -> DirectionsViewModel {
+        return LandmarkDirectionsViewModel(for: instruction)
+    }
+}
 
 // MARK: - private
 private extension TurnByTurnLandmarksViewController {
@@ -109,7 +113,7 @@ private extension TurnByTurnLandmarksViewController {
         }
         
         let routeOptions = PWRouteOptions(accessibilityEnabled: false,
-                                          landmarksEnabled: enableLandmarkRouting,
+                                          landmarksEnabled: true,
                                           excludedPointIdentifiers: nil)
         
         // Calculate a route and plot on the map
@@ -135,8 +139,9 @@ private extension TurnByTurnLandmarksViewController {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
         
         if turnByTurnCollectionView == nil {
-            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
             turnByTurnCollectionView?.turnByTurnDelegate = self
+            turnByTurnCollectionView?.directionsDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
     }

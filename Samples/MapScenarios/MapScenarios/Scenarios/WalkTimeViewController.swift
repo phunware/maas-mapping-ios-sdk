@@ -118,8 +118,8 @@ class WalkTimeViewController: UIViewController, ScenarioCredentialsProtocol {
     }
 }
 
-// MARK: - TurnByTurnDelegate
-extension WalkTimeViewController: TurnByTurnDelegate {
+// MARK: - TurnByTurnCollectionViewDelegate
+extension WalkTimeViewController: TurnByTurnCollectionViewDelegate {
     func instructionExpandTapped() {
         let distance = walkTimeView?.remainingDistance ?? 0
         let averageSpeed = walkTimeView?.averageSpeed ?? 0

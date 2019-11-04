@@ -22,17 +22,17 @@ class RouteInstructionListViewController: UIViewController {
         }
     }
     
+    weak var directionsDelegate: DirectionsDelegate?
+    
     private let tableView = UITableView()
     private var walkTimeView: WalkTimeView?
     
     private var route: PWRoute?
-    private var enableLandmarkRouting: Bool = false
     private var walkTimeDisplayMode: WalkTimeDisplayMode = .none
     
-    func configure(route: PWRoute?, enableLandmarkRouting: Bool = false, walkTimeDisplayMode: WalkTimeDisplayMode = .none) {
+    func configure(route: PWRoute?, walkTimeDisplayMode: WalkTimeDisplayMode = .none) {
         self.route = route
         self.walkTimeDisplayMode = walkTimeDisplayMode
-        self.enableLandmarkRouting = enableLandmarkRouting
         
         self.tableView.reloadData()
     }
@@ -151,11 +151,9 @@ extension RouteInstructionListViewController: UITableViewDataSource {
         if let routeInstructions = route?.routeInstructions, routeInstructions.indices.contains(indexPath.row) {
             let routeInstruction = routeInstructions[indexPath.row]
             
-            // If landmark routing is enabled, use the LandmarkDirectionsViewModel to provide instruction text using landmarks.
-            // Otherwise, use the StandardDirectionsViewModel to provide default instruction text.
-            let viewModel: DirectionsViewModel = enableLandmarkRouting
-                ? LandmarkDirectionsViewModel(for: routeInstruction)
-                : StandardDirectionsViewModel(for: routeInstruction)
+            // Get the view model from the delegate. If there is no delegate, use the standard directions.
+            let viewModel = directionsDelegate?.directions(for: routeInstruction)
+                ?? StandardDirectionsViewModel(for: routeInstruction)
             
             cell.configure(with: viewModel)
         } else {
