@@ -102,7 +102,7 @@ extension SharedLocationAnnotationView {
 
 // MARK: - LocationSharingViewController
 
-class LocationSharingViewController: UIViewController, ScenarioCredentialsProtocol {
+class LocationSharingViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -153,7 +153,7 @@ class LocationSharingViewController: UIViewController, ScenarioCredentialsProtoc
         
         navigationItem.title = "Location Sharing"
         
-        if !validateScenarioCredentials() {
+        if !validateScenarioSettings() {
             return
         }
         

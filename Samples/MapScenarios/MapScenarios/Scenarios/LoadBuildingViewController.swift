@@ -10,7 +10,7 @@ import Foundation
 import PWMapKit
 import PWCore
 
-class LoadBuildingViewController: UIViewController, ScenarioCredentialsProtocol {
+class LoadBuildingViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -26,7 +26,7 @@ class LoadBuildingViewController: UIViewController, ScenarioCredentialsProtocol 
         
         navigationItem.title = "Load Building"
         
-        if !validateScenarioCredentials() {
+        if !validateScenarioSettings() {
             return
         }
         

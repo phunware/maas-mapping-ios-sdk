@@ -11,7 +11,7 @@ import UIKit
 import PWMapKit
 import PWCore
 
-class CustomPOIViewController: UIViewController, ScenarioCredentialsProtocol {
+class CustomPOIViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -27,7 +27,7 @@ class CustomPOIViewController: UIViewController, ScenarioCredentialsProtocol {
         
         navigationItem.title = "Create Custom Point Of Interest"
         
-        if !validateScenarioCredentials() {
+        if !validateScenarioSettings() {
             return
         }
         

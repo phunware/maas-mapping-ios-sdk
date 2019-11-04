@@ -11,7 +11,7 @@ import UIKit
 import PWMapKit
 import PWCore
 
-class BluedotLocationViewController: UIViewController, ScenarioCredentialsProtocol {
+class BluedotLocationViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -29,7 +29,7 @@ class BluedotLocationViewController: UIViewController, ScenarioCredentialsProtoc
         
         navigationItem.title = "Bluedot Location"
         
-        if !validateScenarioCredentials() {
+        if !validateScenarioSettings() {
             return
         }
         

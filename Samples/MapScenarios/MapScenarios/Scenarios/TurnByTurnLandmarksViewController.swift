@@ -11,7 +11,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
-class TurnByTurnLandmarksViewController: UIViewController, ScenarioCredentialsProtocol {
+class TurnByTurnLandmarksViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -34,7 +34,7 @@ class TurnByTurnLandmarksViewController: UIViewController, ScenarioCredentialsPr
         
         navigationItem.title = "Route - Turn By Turn"
         
-        if !validateScenarioCredentials() {
+        if !validateScenarioSettings() {
             return
         }
         

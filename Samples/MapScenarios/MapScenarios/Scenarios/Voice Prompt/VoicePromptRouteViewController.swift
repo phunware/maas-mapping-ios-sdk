@@ -11,7 +11,7 @@ import PWCore
 import PWMapKit
 import UIKit
 
-class VoicePromptRouteViewController: UIViewController, ScenarioCredentialsProtocol {
+class VoicePromptRouteViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -55,7 +55,7 @@ class VoicePromptRouteViewController: UIViewController, ScenarioCredentialsProto
         
         navigationItem.title = NSLocalizedString("Voiced Route Instructions", comment: "")
         
-        if !validateScenarioCredentials() {
+        if !validateScenarioSettings() {
             return
         }
         

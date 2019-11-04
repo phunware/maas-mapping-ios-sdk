@@ -104,7 +104,7 @@ extension UIImage {
     }
 }
 
-class LocationModesViewController: UIViewController, ScenarioCredentialsProtocol {
+class LocationModesViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -124,7 +124,7 @@ class LocationModesViewController: UIViewController, ScenarioCredentialsProtocol
         
         navigationItem.title = "Location Modes"
         
-        if !validateScenarioCredentials() {
+        if !validateScenarioSettings() {
             return
         }
         
