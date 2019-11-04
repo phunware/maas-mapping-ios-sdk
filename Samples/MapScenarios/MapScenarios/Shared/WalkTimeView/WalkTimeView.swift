@@ -9,17 +9,18 @@
 import UIKit
 import CoreLocation
 
-extension Notification.Name {
-    static let ExitWalkTimeButtonTapped = NSNotification.Name("ExitWalkTimeButtonTapped")
-    static let WalkTimeChanged = NSNotification.Name("WalkTimeChanged")
-}
-
-struct NotificationUserInfoKeys {
-    static let remainingDistance = "distance"
-    static let averageSpeed = "speed"
+protocol WalkTimeViewDelegate: class {
+    func exitButtonPressed(for walkTimeView: WalkTimeView)
 }
 
 class WalkTimeView: UIView {
+    @IBOutlet weak var restTimeLabel: UILabel!
+    @IBOutlet weak var arriveTimeLabel: UILabel!
+    @IBOutlet weak var cancelRouteButton: UIButton!
+    
+    // Delegate
+    weak var delegate: WalkTimeViewDelegate?
+    
     // View height
     static let defaultHeight: CGFloat = 80.0
     // Supposed average walk speed is 0.7 m/s
@@ -31,35 +32,31 @@ class WalkTimeView: UIView {
     // Average speed
     var averageSpeed: CLLocationSpeed = 0
     
-    @IBOutlet weak var restTimeLabel: UILabel!
-    @IBOutlet weak var arriveTimeLabel: UILabel!
-    @IBOutlet weak var cancelRouteButton: UIButton!
-    
     @IBAction func cancelRouteButtonTapped(_ sender: UIButton) {
-        NotificationCenter.default.post(name: .ExitWalkTimeButtonTapped, object: nil)
+        delegate?.exitButtonPressed(for: self)
+        
     }
     
     func updateWalkTime(distance: CLLocationDistance, averageSpeed: CLLocationSpeed = 0.7) {
-        DispatchQueue.main.async {
-            if distance == 0 {
-                self.restTimeLabel.text = ""
-                self.arriveTimeLabel.text = NSLocalizedString("Arrived", comment: "")
-            }
-            
-            // Set initial value
-            if self.averageWalkSpeedRange.contains(averageSpeed) {
-                self.averageWalkSpeed = averageSpeed
-            }
-            let duration = self.estimatedTime(distance: distance)
-            let arriveTime = Date().addingTimeInterval(duration)
-            
-            self.isHidden = false
-            self.restTimeLabel.text = self.format(duration: duration)
-            
-            let template = NSLocalizedString("Arrival Time $0", comment: "$0 = time")
-            let arrivalTimeString = template.replacingOccurrences(of: "$0", with: self.format(date: arriveTime))
-            self.arriveTimeLabel.text = arrivalTimeString
+        if distance == 0 {
+            self.restTimeLabel.text = ""
+            self.arriveTimeLabel.text = NSLocalizedString("Arrived", comment: "")
         }
+        
+        // Set initial value
+        if self.averageWalkSpeedRange.contains(averageSpeed) {
+            self.averageWalkSpeed = averageSpeed
+        }
+        let duration = self.estimatedTime(distance: distance)
+        let arriveTime = Date().addingTimeInterval(duration)
+        
+        self.isHidden = false
+        self.restTimeLabel.text = self.format(duration: duration)
+        
+        let template = NSLocalizedString("Arrival Time $0", comment: "$0 = time")
+        let arrivalTimeString = template.replacingOccurrences(of: "$0", with: self.format(date: arriveTime))
+        self.arriveTimeLabel.text = arrivalTimeString
+        
         self.remainingDistance = distance
         self.averageSpeed = averageSpeed
     }

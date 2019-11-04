@@ -98,13 +98,6 @@ class WalkTimeViewController: UIViewController, ScenarioCredentialsProtocol {
                 self?.startRoute()
             })
         }
-        
-        NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] (_) in
-            self?.walkTimeView?.removeFromSuperview()
-            self?.walkTimeView = nil
-            self?.turnByTurnCollectionView?.removeFromSuperview()
-            self?.mapView.cancelRouting()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,6 +111,17 @@ class WalkTimeViewController: UIViewController, ScenarioCredentialsProtocol {
     }
 }
 
+// MARK: - WalkTimeViewDelegate
+extension WalkTimeViewController: WalkTimeViewDelegate {
+    func exitButtonPressed(for walkTimeView: WalkTimeView) {
+        cancelWalkTimeUpdateTimer()
+        self.walkTimeView?.removeFromSuperview()
+        self.walkTimeView = nil
+        turnByTurnCollectionView?.removeFromSuperview()
+        mapView.cancelRouting()
+    }
+}
+
 // MARK: - TurnByTurnCollectionViewDelegate
 extension WalkTimeViewController: TurnByTurnCollectionViewDelegate {
     func instructionExpandTapped() {
@@ -125,8 +129,12 @@ extension WalkTimeViewController: TurnByTurnCollectionViewDelegate {
         let averageSpeed = walkTimeView?.averageSpeed ?? 0
         
         let routeInstructionViewController = RouteInstructionListViewController()
+        
+        routeListController = routeInstructionViewController
+        routeInstructionViewController.walkTimeViewDelegate = self
+        
         routeInstructionViewController.configure(route: mapView.currentRoute,
-                                                 walkTimeDisplayMode: .displayed(distance: distance, averageSpeed: averageSpeed))
+                                                 walkTimeDisplayMode: .display(distance: distance, averageSpeed: averageSpeed))
         
         routeInstructionViewController.presentFromViewController(self)
     }
@@ -169,10 +177,6 @@ extension WalkTimeViewController: PWMapViewDelegate {
     }
     
     func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
-        if instruction != mapView.currentRouteInstruction() {
-            print("well this is awkward...")
-        }
-        
         turnByTurnCollectionView?.scrollToInstruction(instruction)
         
         // cancel the timer
@@ -268,12 +272,7 @@ private extension WalkTimeViewController {
         }
         
         walkTimeView?.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
-        
-        // notify listeners of walk time updates
-        NotificationCenter.default.post(name: .WalkTimeChanged,
-                                        object: nil,
-                                        userInfo: [NotificationUserInfoKeys.remainingDistance: distance,
-                                                   NotificationUserInfoKeys.averageSpeed: averageSpeed])
+        routeListController?.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
     }
     
     func calculateStaticDistance(currentInstruction: PWRouteInstruction,
@@ -328,11 +327,12 @@ private extension WalkTimeViewController {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
-    func configureWalkTimeView() {
+    func layoutWalkTimeView() {
         let walkTimeView = Bundle.main.loadNibNamed(String(describing: WalkTimeView.self), owner: nil, options: nil)!.first as! WalkTimeView
+        self.walkTimeView = walkTimeView
+        walkTimeView.delegate = self
         
         mapView.addSubview(walkTimeView)
-        self.walkTimeView = walkTimeView
         
         walkTimeView.translatesAutoresizingMaskIntoConstraints = false
         walkTimeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -401,6 +401,6 @@ private extension WalkTimeViewController {
         }
         
         // Show walk time view when turn by turn is visible
-        configureWalkTimeView()
+        layoutWalkTimeView()
     }
 }

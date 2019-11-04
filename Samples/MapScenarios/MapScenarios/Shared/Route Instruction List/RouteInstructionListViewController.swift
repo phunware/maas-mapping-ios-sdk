@@ -10,29 +10,28 @@ import PWMapKit
 
 class RouteInstructionListViewController: UIViewController {
     enum WalkTimeDisplayMode {
-        case none
-        case displayed(distance: CLLocationDistance, averageSpeed: CLLocationSpeed)
-        
-        var isDisplayed: Bool {
-            if case .displayed = self {
-                return true
-            }
-            
-            return false
-        }
+        case hide
+        case display(distance: CLLocationDistance, averageSpeed: CLLocationSpeed)
     }
     
     weak var directionsDelegate: DirectionsDelegate?
+    weak var walkTimeViewDelegate: WalkTimeViewDelegate?
     
     private let tableView = UITableView()
     private var walkTimeView: WalkTimeView?
     
     private var route: PWRoute?
-    private var walkTimeDisplayMode: WalkTimeDisplayMode = .none
     
-    func configure(route: PWRoute?, walkTimeDisplayMode: WalkTimeDisplayMode = .none) {
+    // use this method to configure without a walk time view
+    func configure(route: PWRoute?, walkTimeDisplayMode: WalkTimeDisplayMode = .hide) {
         self.route = route
-        self.walkTimeDisplayMode = walkTimeDisplayMode
+        
+        switch walkTimeDisplayMode {
+        case .hide:
+            break
+        case .display(let distance, let averageSpeed):
+            createWalkTimeView(distance: distance, averageSpeed: averageSpeed)
+        }
         
         self.tableView.reloadData()
     }
@@ -43,72 +42,7 @@ class RouteInstructionListViewController: UIViewController {
         navigationItem.title = "Route Instructions"
         
         configureTableView()
-        configureWalkTimeView()
-        
-        // Dismiss when the exit button is pressed.
-        NotificationCenter.default.addObserver(forName: .ExitWalkTimeButtonTapped, object: nil, queue: nil) { [weak self] _ in
-            guard let self = self else {
-                return
-            }
-            
-            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-            self.walkTimeView?.removeFromSuperview()
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    func configureWalkTimeView() {
-        guard case .displayed(let distance, let averageSpeed) = walkTimeDisplayMode else {
-            return
-        }
-        
-        let bundleName = String(describing: WalkTimeView.self)
-        let walkTimeView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! WalkTimeView
-        
-        view.addSubview(walkTimeView)
-        
-        walkTimeView.translatesAutoresizingMaskIntoConstraints = false
-        walkTimeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        walkTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        walkTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        walkTimeView.heightAnchor.constraint(equalToConstant: WalkTimeView.defaultHeight).isActive = true
-        walkTimeView.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
-        self.walkTimeView = walkTimeView
-        
-        NotificationCenter.default.addObserver(forName: .WalkTimeChanged, object: nil, queue: nil) { [weak self] (notification) in
-            guard let walkTimeView = self?.walkTimeView else {
-                return
-            }
-            
-            guard let remainingDistance = notification.userInfo?[NotificationUserInfoKeys.remainingDistance] as? CLLocationDistance,
-                let averageSpeed = notification.userInfo?[NotificationUserInfoKeys.averageSpeed] as? CLLocationSpeed else {
-                return
-            }
-            
-            walkTimeView.updateWalkTime(distance: remainingDistance, averageSpeed: averageSpeed)
-        }
-    }
-    
-    func configureTableView() {
-        view.addSubview(tableView)
-            
-        let bottomAnchorConstant = walkTimeDisplayMode.isDisplayed
-            ? -WalkTimeView.defaultHeight
-            : 0
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottomAnchorConstant).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-        let instructionCellIdentifier = String(describing: RouteInstructionListCell.self)
-        tableView.register(UINib(nibName: instructionCellIdentifier, bundle: nil), forCellReuseIdentifier: instructionCellIdentifier)
-        tableView.dataSource = self
-        tableView.allowsSelection = false
-        
-        // putting an invisible view as the footer view will hide the empty table view rows after the last valid one
-        tableView.tableFooterView = UIView(frame: .zero)
+        layoutWalkTimeView()
     }
     
     func presentFromViewController(_ viewController: UIViewController) {
@@ -123,14 +57,31 @@ class RouteInstructionListViewController: UIViewController {
         viewController.present(navigationController, animated: true, completion: nil)
     }
     
+    func updateWalkTime(distance: CLLocationDistance, averageSpeed: CLLocationSpeed) {
+        walkTimeView?.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
+    }
+    
     @objc
     func dismissTapped() {
         dismiss(animated: true, completion: nil)
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - WalkTimeViewDelegate
+extension RouteInstructionListViewController: WalkTimeViewDelegate {
+    func exitButtonPressed(for walkTimeView: WalkTimeView) {
+        tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        self.walkTimeView?.removeFromSuperview()
+        self.walkTimeView = nil
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        self.walkTimeViewDelegate?.exitButtonPressed(for: walkTimeView)
+    }
+}
 
+// MARK: - UITableViewDataSource
 extension RouteInstructionListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -164,5 +115,53 @@ extension RouteInstructionListViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+
+// MARK: - private
+private extension RouteInstructionListViewController {
+    func createWalkTimeView(distance: CLLocationDistance, averageSpeed: CLLocationSpeed) {
+        let bundleName = String(describing: WalkTimeView.self)
+        let walkTimeView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! WalkTimeView
+        self.walkTimeView = walkTimeView
+        walkTimeView.delegate = self
+        walkTimeView.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
+    }
+    
+    func layoutWalkTimeView() {
+        guard let walkTimeView = self.walkTimeView else {
+            return
+        }
+        
+        view.addSubview(walkTimeView)
+        
+        walkTimeView.translatesAutoresizingMaskIntoConstraints = false
+        walkTimeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        walkTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        walkTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        walkTimeView.heightAnchor.constraint(equalToConstant: WalkTimeView.defaultHeight).isActive = true
+    }
+    
+    func configureTableView() {
+        view.addSubview(tableView)
+            
+        let bottomAnchorConstant = (walkTimeView == nil)
+            ? 0
+            : -WalkTimeView.defaultHeight
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottomAnchorConstant).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        let instructionCellIdentifier = String(describing: RouteInstructionListCell.self)
+        tableView.register(UINib(nibName: instructionCellIdentifier, bundle: nil), forCellReuseIdentifier: instructionCellIdentifier)
+        tableView.dataSource = self
+        tableView.allowsSelection = false
+        
+        // putting an invisible view as the footer view will hide the empty table view rows after the last valid one
+        tableView.tableFooterView = UIView(frame: .zero)
     }
 }
