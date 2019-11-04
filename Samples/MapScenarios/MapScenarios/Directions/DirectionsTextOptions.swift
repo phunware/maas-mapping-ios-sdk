@@ -19,9 +19,13 @@ struct DirectionsTextOptions {
 }
 
 extension DirectionsTextOptions {
-    static let defaultStandardOptions = DirectionsTextOptions(color: .darkText,
-                                                              font: .systemFont(ofSize: 15.0, weight: .regular))
+    static let defaultStandardOptions: DirectionsTextOptions = {
+        if #available(iOS 13, *) {
+            return DirectionsTextOptions(color: .label, font: .systemFont(ofSize: 15.0, weight: .regular))
+        } else {
+            return DirectionsTextOptions(color: .darkText, font: .systemFont(ofSize: 15.0, weight: .regular))
+        }
+    }()
     
-    static let defaultHighlightOptions = DirectionsTextOptions(color: .nasa,
-                                                               font: .systemFont(ofSize: 15.0, weight: .bold))
+    static let defaultHighlightOptions = DirectionsTextOptions(color: .systemBlue, font: .systemFont(ofSize: 15.0, weight: .bold))
 }
