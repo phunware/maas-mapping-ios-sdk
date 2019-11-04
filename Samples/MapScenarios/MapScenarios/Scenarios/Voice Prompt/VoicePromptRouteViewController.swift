@@ -11,7 +11,7 @@ import PWCore
 import PWMapKit
 import UIKit
 
-class VoicePromptRouteViewController: UIViewController {
+class VoicePromptRouteViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -23,9 +23,6 @@ class VoicePromptRouteViewController: UIViewController {
     
     // Replace with the destination POI identifier
     let destinationPOIIdentifier = 0
-    
-    // Set to 'true' to enable landmark routing
-    var enableLandmarkRouting = false
     
     let mapView = PWMapView()
     var turnByTurnCollectionView: TurnByTurnCollectionView?
@@ -58,7 +55,7 @@ class VoicePromptRouteViewController: UIViewController {
         
         navigationItem.title = NSLocalizedString("Voiced Route Instructions", comment: "")
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        if !validateScenarioSettings() {
             return
         }
         
@@ -110,7 +107,7 @@ class VoicePromptRouteViewController: UIViewController {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
         
         if turnByTurnCollectionView == nil {
-            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
             turnByTurnCollectionView?.turnByTurnDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
@@ -178,10 +175,7 @@ extension VoicePromptRouteViewController {
     }
     
     func readInstructionAloud(_ instruction: PWRouteInstruction) {
-        let directionsViewModel: DirectionsViewModel = enableLandmarkRouting
-            ? LandmarkDirectionsViewModel(for: instruction)
-            : StandardDirectionsViewModel(for: instruction)
-
+        let directionsViewModel = StandardDirectionsViewModel(for: instruction)
         let voicePrompt = directionsViewModel.voicePrompt
         
         let utterance = AVSpeechUtterance(string: voicePrompt)
@@ -251,9 +245,9 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
     }
 }
 
-// MARK: - TurnByTurnDelegate
+// MARK: - TurnByTurnCollectionViewDelegate
 
-extension VoicePromptRouteViewController: TurnByTurnDelegate {
+extension VoicePromptRouteViewController: TurnByTurnCollectionViewDelegate {
     
     func didSwipeOnRouteInstruction() {
         instructionChangeCausedBySwipe = true
@@ -261,7 +255,7 @@ extension VoicePromptRouteViewController: TurnByTurnDelegate {
     
     func instructionExpandTapped() {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
+        routeInstructionViewController.configure(route: mapView.currentRoute)
         routeInstructionViewController.presentFromViewController(self)
     }
 }

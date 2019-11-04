@@ -9,8 +9,8 @@
 import PWMapKit
 import UIKit
 
-protocol TurnByTurnDelegate: class {
-    
+protocol TurnByTurnCollectionViewDelegate: class {
+
     func didSwipeOnRouteInstruction()
     func instructionExpandTapped()
 }
@@ -18,9 +18,9 @@ protocol TurnByTurnDelegate: class {
 class TurnByTurnCollectionView: UICollectionView {
     
     let mapView: PWMapView
-    let enableLandmarkRouting: Bool
     
-    weak var turnByTurnDelegate: TurnByTurnDelegate?
+    weak var turnByTurnDelegate: TurnByTurnCollectionViewDelegate?
+    weak var directionsDelegate: DirectionsDelegate?
     
     private let itemPercentOfScreenWidth: CGFloat = 0.85
     
@@ -48,9 +48,8 @@ class TurnByTurnCollectionView: UICollectionView {
     
     private var indexOfCellBeforeDragging = 0
     
-    init(mapView: PWMapView, enableLandmarkRouting: Bool = false) {
+    init(mapView: PWMapView) {
         self.mapView = mapView
-        self.enableLandmarkRouting = enableLandmarkRouting
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -74,7 +73,6 @@ class TurnByTurnCollectionView: UICollectionView {
     
     required init?(coder aDecoder: NSCoder) {
         mapView = PWMapView()
-        enableLandmarkRouting = false
         super.init(coder: aDecoder)
     }
     
@@ -141,11 +139,9 @@ extension TurnByTurnCollectionView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TurnByTurnInstructionCollectionViewCell
         
         if let routeInstruction = mapView.currentRoute?.routeInstructions?[indexPath.row] {
-            // If landmark routing is enabled, use the LandmarkDirectionsViewModel to provide instruction text using landmarks.
-            // Otherwise, use the StandardDirectionsViewModel to provide default instruction text.
-            let viewModel: DirectionsViewModel = enableLandmarkRouting
-                ? LandmarkDirectionsViewModel(for: routeInstruction)
-                : StandardDirectionsViewModel(for: routeInstruction)
+            // Get the view model from the delegate. If there is no delegate, use the standard directions.
+            let viewModel = directionsDelegate?.directions(for: routeInstruction)
+                ?? StandardDirectionsViewModel(for: routeInstruction)
             
             cell.configure(with: viewModel)
         }

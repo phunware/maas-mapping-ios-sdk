@@ -10,7 +10,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
-class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
+class TurnByTurnViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -24,19 +24,16 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
     var startPOIIdentifier: Int = 0
     var destinationPOIIdentifier: Int = 0
     
-    // Set to 'true' to enable landmark routing
-    var enableLandmarkRouting = false
+    private let mapView = PWMapView()
     
-    let mapView = PWMapView()
-    
-    var turnByTurnCollectionView: TurnByTurnCollectionView?
+    private var turnByTurnCollectionView: TurnByTurnCollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Route - Turn By Turn"
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        if !validateScenarioSettings() {
             return
         }
         
@@ -72,7 +69,29 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
         turnByTurnCollectionView?.isHidden = true
         super.viewWillDisappear(animated)
     }
+}
+
+// MARK: - TurnByTurnCollectionViewDelegate
+extension TurnByTurnViewController: TurnByTurnCollectionViewDelegate {
+    func instructionExpandTapped() {
+        let routeInstructionViewController = RouteInstructionListViewController()
+        routeInstructionViewController.directionsDelegate = self
+        routeInstructionViewController.configure(route: mapView.currentRoute)
+        routeInstructionViewController.presentFromViewController(self)
+    }
     
+    func didSwipeOnRouteInstruction() { }
+}
+
+// MARK: - DirectionsDisplayDelegate
+extension TurnByTurnViewController: DirectionsDelegate {
+    func directions(for instruction: PWRouteInstruction) -> DirectionsViewModel {
+        return StandardDirectionsViewModel(for: instruction)
+    }
+}
+
+// MARK: - private
+private extension TurnByTurnViewController {
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -81,9 +100,6 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
-    //*************************************
-    // Plot route on the map
-    //*************************************
     func startRoute() {
         // Set tracking mode to follow me
         mapView.trackingMode = .follow
@@ -96,7 +112,7 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
         }
         
         let routeOptions = PWRouteOptions(accessibilityEnabled: false,
-                                          landmarksEnabled: enableLandmarkRouting,
+                                          landmarksEnabled: true,
                                           excludedPointIdentifiers: nil)
         
         // Calculate a route and plot on the map
@@ -120,18 +136,12 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
     
     func initializeTurnByTurn() {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        
         if turnByTurnCollectionView == nil {
-            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
             turnByTurnCollectionView?.turnByTurnDelegate = self
+            turnByTurnCollectionView?.directionsDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
     }
-    
-    func instructionExpandTapped() {
-        let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
-        routeInstructionViewController.presentFromViewController(self)
-    }
-    
-    func didSwipeOnRouteInstruction() { }
 }

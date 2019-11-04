@@ -41,7 +41,7 @@ class POITableViewCell: UITableViewCell {
     }
 }
 
-class SearchPOIViewController: UIViewController {
+class SearchPOIViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -64,7 +64,7 @@ class SearchPOIViewController: UIViewController {
         
         navigationItem.title = "Search for Points of Interest"
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        if !validateScenarioSettings() {
             return
         }
         
