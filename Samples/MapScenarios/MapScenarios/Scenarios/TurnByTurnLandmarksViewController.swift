@@ -1,8 +1,9 @@
 //
-//  TurnByTurnViewController.swift
+//  TurnByTurnLandmarksViewController.swift
 //  MapScenarios
 //
-//  Copyright © 2018 Phunware. All rights reserved.
+//  Created by Aaron Pendley on 11/4/19.
+//  Copyright © 2019 Phunware. All rights reserved.
 //
 
 import Foundation
@@ -10,7 +11,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
-class TurnByTurnViewController: UIViewController, ScenarioCredentialsProtocol {
+class TurnByTurnLandmarksViewController: UIViewController, ScenarioCredentialsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -23,6 +24,9 @@ class TurnByTurnViewController: UIViewController, ScenarioCredentialsProtocol {
     // Destination POI identifier for routing
     var startPOIIdentifier: Int = 0
     var destinationPOIIdentifier: Int = 0
+    
+    // Set to 'true' to enable landmark routing
+    private var enableLandmarkRouting = false
     
     private let mapView = PWMapView()
     
@@ -72,10 +76,10 @@ class TurnByTurnViewController: UIViewController, ScenarioCredentialsProtocol {
 }
 
 // MARK: - TurnByTurnDelegate
-extension TurnByTurnViewController: TurnByTurnDelegate {
+extension TurnByTurnLandmarksViewController: TurnByTurnDelegate {
     func instructionExpandTapped() {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(route: mapView.currentRoute, enableLandmarkRouting: true)
+        routeInstructionViewController.configure(route: mapView.currentRoute, enableLandmarkRouting: enableLandmarkRouting)
         routeInstructionViewController.presentFromViewController(self)
     }
     
@@ -84,7 +88,7 @@ extension TurnByTurnViewController: TurnByTurnDelegate {
 
 
 // MARK: - private
-private extension TurnByTurnViewController {
+private extension TurnByTurnLandmarksViewController {
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -105,7 +109,7 @@ private extension TurnByTurnViewController {
         }
         
         let routeOptions = PWRouteOptions(accessibilityEnabled: false,
-                                          landmarksEnabled: true,
+                                          landmarksEnabled: enableLandmarkRouting,
                                           excludedPointIdentifiers: nil)
         
         // Calculate a route and plot on the map
@@ -131,7 +135,7 @@ private extension TurnByTurnViewController {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
         
         if turnByTurnCollectionView == nil {
-            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView, enableLandmarkRouting: true)
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView, enableLandmarkRouting: enableLandmarkRouting)
             turnByTurnCollectionView?.turnByTurnDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
