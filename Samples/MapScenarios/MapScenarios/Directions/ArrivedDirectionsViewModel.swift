@@ -33,12 +33,6 @@ extension ArrivedDirectionsViewModel: DirectionsViewModel {
         attributed.replace(substring: "$0", with: youHaveArrivedString, attributes: highlightOptions.attributes)
         attributed.replace(substring: "$1", with: destinationDisplayName, attributes: standardOptions.attributes)
         
-        // Place a period at the end, using the same attributes as the last attributed substring.
-        if let lastAttributes = attributed.lastAttributes {
-            let period = NSAttributedString(string: ".", attributes: lastAttributes)
-            attributed.append(period)
-        }
-        
         return attributed
     }
     
