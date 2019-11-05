@@ -101,7 +101,6 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
             prompt = prompt + arrivalString
         }
         
-        // we're done!
         return prompt
     }
 }
