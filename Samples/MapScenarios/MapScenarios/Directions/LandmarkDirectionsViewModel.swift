@@ -184,7 +184,7 @@ private extension LandmarkDirectionsViewModel {
                 let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
                 prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
                 
-                let turnString = string(forTurn: direction) ?? ""
+                let turnString = string(forTurn: direction)?.lowercased() ?? ""
                 prompt = prompt.replacingOccurrences(of: "$2", with: turnString)
                 
                 let positionString = (landmark.position == .at)
