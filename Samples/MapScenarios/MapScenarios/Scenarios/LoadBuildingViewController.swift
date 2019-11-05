@@ -34,8 +34,24 @@ class LoadBuildingViewController: UIViewController, ScenarioSettingsProtocol {
         view.addSubview(mapView)
         configureMapViewConstraints()
         
+        // Set the starting coordinate for the map to be somewhat close to our building, so we don't start out
+        // with a map of the whole US at first before we zoom in to the building location.
+        let initialCenterCoordinate = CLLocationCoordinate2D(latitude: 30.361224, longitude: -97.744081)
+        let spanInMeters: CLLocationDistance = 1000
+        let region = MKCoordinateRegion(center: initialCenterCoordinate, latitudinalMeters: spanInMeters, longitudinalMeters: spanInMeters)
+        mapView.setRegion(region, animated: false)
+        
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
+            guard let self = self else {
+                return
+            }
+            
+            if let error = error {
+                self.warning(error.localizedDescription)
+                return
+            }
+            
+            self.mapView.setBuilding(building, animated: true, onCompletion: nil)
         }
     }
     
