@@ -22,11 +22,11 @@ class LoadBuildingViewController: UIViewController, ScenarioSettingsProtocol {
     
     // The starting center coordinate for the camera view. Set this to be the location of your building
     // (or close to it) so that the camera will already be close to the building location before the building loads.
-    let initialCenterCoordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    let initialCenterCoordinate = CLLocationCoordinate2D(latitude: 37.0902, longitude: -95.7129)
     
     // The how many meters the camera will display of the map from the center point.
-    // Set to a higher value if you would like the camera to start zoomed out more.
-    let initialCameraDistance: CLLocationDistance = 1000
+    // Set to a lower value if you would like the camera to start zoomed in more.
+    let initialCameraDistance: CLLocationDistance = 10000000
     
     let mapView = PWMapView()
     
