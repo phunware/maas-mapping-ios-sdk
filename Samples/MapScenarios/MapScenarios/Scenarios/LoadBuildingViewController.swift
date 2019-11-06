@@ -17,7 +17,16 @@ class LoadBuildingViewController: UIViewController, ScenarioSettingsProtocol {
     var accessKey = ""
     var signatureKey = ""
     
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+    // Enter your building identifier here, found on the building's Edit page on Maas portal
+    var buildingIdentifier = 0
+    
+    // The starting center coordinate for the camera view. Set this to be the location of your building
+    // (or close to it) so that the camera will already be close to the building location before the building loads.
+    let initialCenterCoordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    
+    // The how many meters the camera will display of the map from the center point.
+    // Set to a higher value if you would like the camera to start zoomed out more.
+    let initialCameraDistance: CLLocationDistance = 1000
     
     let mapView = PWMapView()
     
@@ -31,15 +40,13 @@ class LoadBuildingViewController: UIViewController, ScenarioSettingsProtocol {
         }
         
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        
+        // Set initial camera region
+        let region = MKCoordinateRegion(center: initialCenterCoordinate, latitudinalMeters: initialCameraDistance, longitudinalMeters: initialCameraDistance)
+        mapView.setRegion(region, animated: false)
+        
         view.addSubview(mapView)
         configureMapViewConstraints()
-        
-        // Set the starting coordinate for the map to be somewhat close to our building, so we don't start out
-        // with a map of the whole US at first before we zoom in to the building location.
-        let initialCenterCoordinate = CLLocationCoordinate2D(latitude: 30.361224, longitude: -97.744081)
-        let spanInMeters: CLLocationDistance = 1000
-        let region = MKCoordinateRegion(center: initialCenterCoordinate, latitudinalMeters: spanInMeters, longitudinalMeters: spanInMeters)
-        mapView.setRegion(region, animated: false)
         
         PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
             guard let self = self else {
