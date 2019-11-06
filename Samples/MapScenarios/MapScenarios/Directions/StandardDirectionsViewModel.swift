@@ -101,10 +101,6 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
             prompt = prompt + arrivalString
         }
         
-        // Place a period at the end
-        prompt = prompt + "."
-        
-        // we're done!
         return prompt
     }
 }

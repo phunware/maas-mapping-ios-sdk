@@ -14,7 +14,8 @@ import PWMapKit
 // LandmarkDirectionsViewModel contains presentation logic for route instructions generated using the
 // landmark routing feature. Straight/Turn instructions may contain one or more landmarks (though we're usually
 // only interested in the last one). If a landmark is found, we can provide more detailed instructions
-// (such as "Turn right in 10 feet at the Water Cooler").
+// (such as "Turn right in 10 feet at the Water Cooler"). If no landmark is found, we fall back to standard
+// instruction text.
 
 struct LandmarkDirectionsViewModel {
     private let directions: Directions
@@ -183,7 +184,7 @@ private extension LandmarkDirectionsViewModel {
                 let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
                 prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
                 
-                let turnString = string(forTurn: direction) ?? ""
+                let turnString = string(forTurn: direction)?.lowercased() ?? ""
                 prompt = prompt.replacingOccurrences(of: "$2", with: turnString)
                 
                 let positionString = (landmark.position == .at)
