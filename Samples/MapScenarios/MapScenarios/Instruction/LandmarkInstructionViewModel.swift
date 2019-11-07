@@ -244,43 +244,4 @@ private extension LandmarkInstructionViewModel {
             return prompt
         }
     }
-    
-    func string(for floorChangeType: Instruction.FloorChangeType) -> String {
-        switch floorChangeType {
-        case .stairs:
-            return NSLocalizedString("stairs", comment: "")
-        case .escalator:
-            return  NSLocalizedString("escalator", comment: "")
-        case .elevator:
-            return  NSLocalizedString("elevator", comment: "")
-        case .other:
-            return  NSLocalizedString("floor change", comment: "")
-        }
-    }
-    
-    func string(forTurn direction: PWRouteInstructionDirection) -> String? {
-        switch direction {
-        case .left:
-            return NSLocalizedString("Turn left", comment: "")
-        case .right:
-            return NSLocalizedString("Turn right", comment: "")
-        case .bearLeft:
-            return NSLocalizedString("Bear left", comment: "")
-        case .bearRight:
-            return NSLocalizedString("Bear right", comment: "")
-        default:
-            return nil
-        }
-    }
-    
-    func string(forFloorChangeDirection direction: Instruction.FloorChangeDirection) -> String? {
-        switch direction {
-        case .up:
-            return NSLocalizedString("up", comment: "")
-        case .down:
-            return NSLocalizedString("down", comment: "")
-        case .sameFloor:
-            return nil
-        }
-    }
 }
