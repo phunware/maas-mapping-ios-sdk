@@ -151,7 +151,7 @@ extension TurnByTurnCollectionView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TurnByTurnInstructionCollectionViewCell
         
         if let routeInstruction = mapView.currentRoute?.routeInstructions?[indexPath.row] {
-            // Get the view model from the delegate. If there is no delegate, use the standard directions.
+            // Get the view model from the delegate. If there is no delegate, use BasicInstructionViewModel.
             let viewModel = turnByTurnDelegate?.turnByTurnCollectionView(self, viewModelFor: routeInstruction)
                 ?? BasicInstructionViewModel(for: routeInstruction)
             

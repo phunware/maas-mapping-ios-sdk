@@ -109,7 +109,7 @@ extension RouteInstructionListViewController: UITableViewDataSource {
         if let routeInstructions = route?.routeInstructions, routeInstructions.indices.contains(indexPath.row) {
             let routeInstruction = routeInstructions[indexPath.row]
             
-            // Get the view model from the delegate. If there is no delegate, use the standard directions.
+            // Get the view model from the delegate. If there is no delegate, use BasicInstructionViewModel.
             let viewModel = delegate?.routeInstructionListViewController(self, viewModelFor: routeInstruction)
                 ?? BasicInstructionViewModel(for: routeInstruction)
             

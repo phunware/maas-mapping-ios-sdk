@@ -75,7 +75,8 @@ class TurnByTurnLandmarksViewController: UIViewController, ScenarioSettingsProto
 // MARK: - TurnByTurnCollectionViewDelegate
 extension TurnByTurnLandmarksViewController: TurnByTurnCollectionViewDelegate {
     func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
-        // We'll use the LandmarkInstructionViewModel to generate the view model for our collection view cells
+        // We'll use the LandmarkInstructionViewModel to generate the view model for our collection view cells,
+        // which will use the landmarks generated along with the route to augment the instruction text.
         return LandmarkInstructionViewModel(for: routeInstruction)
     }
     
