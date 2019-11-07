@@ -44,8 +44,11 @@ extension ArrivedInstructionViewModel: InstructionViewModel {
     var image: UIImage {
         return #imageLiteral(resourceName: "RouteListInstructionArrived")
     }
-    
-    private var destinationDisplayName: String {
+}
+
+// MARK: private
+private extension ArrivedInstructionViewModel {
+    var destinationDisplayName: String {
         if let destinationName = destinationName {
             return destinationName
         } else {
