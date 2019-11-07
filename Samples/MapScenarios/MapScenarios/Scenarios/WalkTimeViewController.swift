@@ -124,7 +124,7 @@ extension WalkTimeViewController: WalkTimeViewDelegate {
 
 // MARK: - TurnByTurnCollectionViewDelegate
 extension WalkTimeViewController: TurnByTurnCollectionViewDelegate {
-    func instructionExpandTapped() {
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
         let distance = walkTimeView?.remainingDistance ?? 0
         let averageSpeed = walkTimeView?.averageSpeed ?? 0
         
@@ -138,9 +138,6 @@ extension WalkTimeViewController: TurnByTurnCollectionViewDelegate {
         
         routeInstructionViewController.presentFromViewController(self)
     }
-    
-    
-    func didSwipeOnRouteInstruction() { }
 }
 
 // MARK: - PWMapViewDelegate

@@ -1,5 +1,5 @@
 //
-//  LandmarkDirectionsViewModel.swift
+//  LandmarkInstructionViewModel.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/18/19.
@@ -11,43 +11,45 @@ import UIKit
 import PWMapKit
 
 // MARK: - Notes
-// LandmarkDirectionsViewModel contains presentation logic for route instructions generated using the
+// LandmarkInstructionViewModel contains presentation logic for route instructions generated using the
 // landmark routing feature. Straight/Turn instructions may contain one or more landmarks (though we're usually
 // only interested in the last one). If a landmark is found, we can provide more detailed instructions
-// (such as "Turn right in 10 feet at the Water Cooler"). If no landmark is found, we fall back to standard
+// (such as "Turn right in 10 feet at the Water Cooler"). If no landmark is found, we fall back to basic
 // instruction text.
 
-struct LandmarkDirectionsViewModel {
-    private let directions: Directions
-    private let standardOptions: DirectionsTextOptions
-    private let highlightOptions: DirectionsTextOptions
+// MARK: - LandmarkInstructionViewModel
+struct LandmarkInstructionViewModel {
+    private let instruction: Instruction
+    private let standardOptions: InstructionTextOptions
+    private let highlightOptions: InstructionTextOptions
     
-    init(for instruction: PWRouteInstruction,
-         standardOptions: DirectionsTextOptions = .defaultStandardOptions,
-         highlightOptions: DirectionsTextOptions = .defaultHighlightOptions) {
-        self.directions = Directions(for: instruction)
+    init(for routeInstruction: PWRouteInstruction,
+         standardOptions: InstructionTextOptions = .defaultStandardOptions,
+         highlightOptions: InstructionTextOptions = .defaultHighlightOptions) {
+        self.instruction = Instruction(for: routeInstruction)
         self.standardOptions = standardOptions
         self.highlightOptions = highlightOptions
     }
 }
 
-extension LandmarkDirectionsViewModel: DirectionsViewModel {
+// MARK: InstructionViewModel conformance
+extension LandmarkInstructionViewModel: InstructionViewModel {
     var image: UIImage {
-        return .image(for: directions)
+        return .image(for: instruction)
     }
     
     var attributedText: NSAttributedString {
         let straightString = NSLocalizedString("Continue straight", comment: "")
         
-        switch directions.directionsType {
+        switch instruction.instructionType {
         case .straight:
-            if let landmark = directions.instruction.landmarks?.last {
+            if let landmark = instruction.routeInstruction.landmarks?.last {
                 let templateString = NSLocalizedString("$0 for $1 towards $2", comment: "$0 = Continue straight, $1 = distance, $2 = landmark")
                 let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
                 
                 attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
                 
-                let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+                let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
                 attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
                 attributed.replace(substring: "$2", with: landmark.name, attributes: highlightOptions.attributes)
                 
@@ -58,14 +60,14 @@ extension LandmarkDirectionsViewModel: DirectionsViewModel {
                 
                 attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
                 
-                let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+                let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
                 attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
                 
                 return attributed
             }
             
         case .turn(let direction):
-            if let landmark = directions.instruction.landmarks?.last {
+            if let landmark = instruction.routeInstruction.landmarks?.last {
                 let templateString = NSLocalizedString("$0 in $1 $2 $3", comment: "$0 = direction, $1 = distance, $2 = at/after, $3 = landmark name")
                 
                 let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
@@ -73,7 +75,7 @@ extension LandmarkDirectionsViewModel: DirectionsViewModel {
                 let turnString = string(forTurn: direction) ?? ""
                 attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
                 
-                let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+                let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
                 attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
                 
                 let positionString = (landmark.position == .at)
@@ -92,7 +94,7 @@ extension LandmarkDirectionsViewModel: DirectionsViewModel {
                 let turnString = string(forTurn: direction) ?? ""
                 attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
                 
-                let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+                let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
                 attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
                 
                 return attributed
@@ -104,7 +106,7 @@ extension LandmarkDirectionsViewModel: DirectionsViewModel {
             
             attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
             
-            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
             attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
             
             let floorChangeTypeString = string(for: floorChange.floorChangeType)
@@ -135,7 +137,7 @@ extension LandmarkDirectionsViewModel: DirectionsViewModel {
         var prompt = baseStringForVoicePrompt
         
         // For the last directions, append a string indicating arrival.
-        if directions.isLast {
+        if instruction.isLast {
             let arrivalString = " " + NSLocalizedString("to arrive at your destination", comment: "")
             prompt = prompt + arrivalString
         }
@@ -145,19 +147,19 @@ extension LandmarkDirectionsViewModel: DirectionsViewModel {
 }
 
 // MARK: - private
-private extension LandmarkDirectionsViewModel {
+private extension LandmarkInstructionViewModel {
     var baseStringForVoicePrompt: String {
         let straightString = NSLocalizedString("Continue straight", comment: "")
         
-        switch directions.directionsType {
+        switch instruction.instructionType {
         case .straight:
-            if let landmark = directions.instruction.landmarks?.last {
+            if let landmark = instruction.routeInstruction.landmarks?.last {
                 let templateString = NSLocalizedString("$0 for $1 towards $2", comment: "$0 = Continue straight, $1 = distance, $2 = landmark")
                 var prompt = templateString
                 
                 prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
                 
-                let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+                let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
                 prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
                 prompt = prompt.replacingOccurrences(of: "$2", with: landmark.name)
                 
@@ -168,20 +170,20 @@ private extension LandmarkDirectionsViewModel {
                 
                 prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
                 
-                let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+                let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
                 prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
                 
                 return prompt
             }
             
         case .turn(let direction):
-            if let landmark = directions.instruction.landmarks?.last {
+            if let landmark = instruction.routeInstruction.landmarks?.last {
                 let templateString = NSLocalizedString("$0 for $1, then $2 $3 $4", comment: "$0 = Continue straight, $1 = distance, $2 = direction, $3 = at/after, $4 = landmark name")
                 var prompt = templateString
                 
                 prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
                 
-                let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+                let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
                 prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
                 
                 let turnString = string(forTurn: direction)?.lowercased() ?? ""
@@ -201,7 +203,7 @@ private extension LandmarkDirectionsViewModel {
                 
                 prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
                 
-                let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+                let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
                 prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
                 
                 let turnString = string(forTurn: direction)?.lowercased() ?? ""
@@ -216,7 +218,7 @@ private extension LandmarkDirectionsViewModel {
             
             prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
             
-            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
             prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
             
             let floorChangeTypeString = string(for: floorChange.floorChangeType)
@@ -243,7 +245,7 @@ private extension LandmarkDirectionsViewModel {
         }
     }
     
-    func string(for floorChangeType: Directions.FloorChangeType) -> String {
+    func string(for floorChangeType: Instruction.FloorChangeType) -> String {
         switch floorChangeType {
         case .stairs:
             return NSLocalizedString("stairs", comment: "")
@@ -271,7 +273,7 @@ private extension LandmarkDirectionsViewModel {
         }
     }
     
-    func string(forFloorChangeDirection direction: Directions.FloorChangeDirection) -> String? {
+    func string(forFloorChangeDirection direction: Instruction.FloorChangeDirection) -> String? {
         switch direction {
         case .up:
             return NSLocalizedString("up", comment: "")

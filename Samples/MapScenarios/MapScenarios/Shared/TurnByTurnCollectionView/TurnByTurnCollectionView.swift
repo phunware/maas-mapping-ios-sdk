@@ -9,18 +9,31 @@
 import PWMapKit
 import UIKit
 
+// MARK: - TurnByTurnCollectionViewDelegate protocol
 protocol TurnByTurnCollectionViewDelegate: class {
-
-    func didSwipeOnRouteInstruction()
-    func instructionExpandTapped()
+    func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel
+    func turnByTurnCollectionViewDidSwipeOnRouteInstruction(_ collectionView: TurnByTurnCollectionView)
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView)
 }
 
+// MARK: - TurnByTurnCollectionViewDelegate extension: default implemenations
+extension TurnByTurnCollectionViewDelegate {
+    // default implementation returns a BasicInstructionViewModel
+    func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
+        return BasicInstructionViewModel(for: routeInstruction)
+    }
+    
+    // default implementations do nothing by default
+    func turnByTurnCollectionViewDidSwipeOnRouteInstruction(_ collectionView: TurnByTurnCollectionView) { }
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) { }
+}
+
+// MARK: - TurnByTurnCollectionView
 class TurnByTurnCollectionView: UICollectionView {
     
     let mapView: PWMapView
     
     weak var turnByTurnDelegate: TurnByTurnCollectionViewDelegate?
-    weak var directionsDelegate: DirectionsDelegate?
     
     private let itemPercentOfScreenWidth: CGFloat = 0.85
     
@@ -125,8 +138,7 @@ class TurnByTurnCollectionView: UICollectionView {
     }
 }
 
-// MARK - UICollectionViewDataSource
-
+// MARK: - UICollectionViewDataSource
 extension TurnByTurnCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -140,14 +152,18 @@ extension TurnByTurnCollectionView: UICollectionViewDataSource {
         
         if let routeInstruction = mapView.currentRoute?.routeInstructions?[indexPath.row] {
             // Get the view model from the delegate. If there is no delegate, use the standard directions.
-            let viewModel = directionsDelegate?.directions(for: routeInstruction)
-                ?? StandardDirectionsViewModel(for: routeInstruction)
+            let viewModel = turnByTurnDelegate?.turnByTurnCollectionView(self, viewModelFor: routeInstruction)
+                ?? BasicInstructionViewModel(for: routeInstruction)
             
             cell.configure(with: viewModel)
         }
         
         cell.buttonAction = { [weak self] in
-            self?.turnByTurnDelegate?.instructionExpandTapped()
+            guard let self = self else {
+                return
+            }
+            
+            self.turnByTurnDelegate?.turnByTurnCollectionViewInstructionExpandTapped(self)
         }
         
         return cell
@@ -155,7 +171,6 @@ extension TurnByTurnCollectionView: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-
 extension TurnByTurnCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -168,7 +183,6 @@ extension TurnByTurnCollectionView: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: - UIScrollViewDelegate
-
 extension TurnByTurnCollectionView: UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -188,7 +202,7 @@ extension TurnByTurnCollectionView: UIScrollViewDelegate {
         
         if didUseSwipeToSkipCell {
             let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
-            turnByTurnDelegate?.didSwipeOnRouteInstruction()
+            turnByTurnDelegate?.turnByTurnCollectionViewDidSwipeOnRouteInstruction(self)
             scrollToIndex(snapToIndex, targetContentOffset: targetContentOffset)
         } else {
             scrollToIndex(currentIndex, targetContentOffset: targetContentOffset)

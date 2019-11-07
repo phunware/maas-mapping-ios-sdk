@@ -1,5 +1,5 @@
 //
-//  StandardDirectionsViewModel.swift
+//  BasicInstructionViewModelViewModel.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/18/19.
@@ -11,38 +11,40 @@ import UIKit
 import PWMapKit
 
 // MARK: - Notes
-// StandardDirectionsViewModel contains presentation logic for basic route instructions.
+// BasicInstructionViewModel contains presentation logic for basic route instructions.
 
-struct StandardDirectionsViewModel {
-    private let directions: Directions
-    private let standardOptions: DirectionsTextOptions
-    private let highlightOptions: DirectionsTextOptions
+// MARK: - BasicInstructionViewModel
+struct BasicInstructionViewModel {
+    private let instruction: Instruction
+    private let standardOptions: InstructionTextOptions
+    private let highlightOptions: InstructionTextOptions
     
-    init(for instruction: PWRouteInstruction,
-         standardOptions: DirectionsTextOptions = .defaultStandardOptions,
-         highlightOptions: DirectionsTextOptions = .defaultHighlightOptions) {
-        self.directions = Directions(for: instruction)
+    init(for routeInstruction: PWRouteInstruction,
+         standardOptions: InstructionTextOptions = .defaultStandardOptions,
+         highlightOptions: InstructionTextOptions = .defaultHighlightOptions) {
+        self.instruction = Instruction(for: routeInstruction)
         self.standardOptions = standardOptions
         self.highlightOptions = highlightOptions
     }
 }
 
-extension StandardDirectionsViewModel: DirectionsViewModel {
+// MARK: InstructionViewModel conformance
+extension BasicInstructionViewModel: InstructionViewModel {
     var image: UIImage {
-        return .image(for: directions)
+        return .image(for: instruction)
     }
     
     var attributedText: NSAttributedString {
         let straightString = NSLocalizedString("Continue straight", comment: "")
         
-        switch directions.directionsType {
+        switch instruction.instructionType {
         case .straight:
             let templateString = NSLocalizedString("$0 for $1", comment: "$0 = Continue straight, $1 = distance")
             let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
             
             attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
             
-            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
             attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
             
             return attributed
@@ -54,7 +56,7 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
             let turnString = string(forTurn: direction) ?? ""
             attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
             
-            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
             attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
             
             return attributed
@@ -65,7 +67,7 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
             
             attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
             
-            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
             attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
             
             let floorChangeTypeString = string(for: floorChange.floorChangeType)
@@ -96,7 +98,7 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
         var prompt = baseStringForVoicePrompt
         
         // For the last directions, append a string indicating arrival.
-        if directions.isLast {
+        if instruction.isLast {
             let arrivalString = " " + NSLocalizedString("to arrive at your destination", comment: "")
             prompt = prompt + arrivalString
         }
@@ -106,18 +108,18 @@ extension StandardDirectionsViewModel: DirectionsViewModel {
 }
 
 // MARK: - private
-private extension StandardDirectionsViewModel {
+private extension BasicInstructionViewModel {
     var baseStringForVoicePrompt: String {
         let straightString = NSLocalizedString("Continue straight", comment: "")
         
-        switch directions.directionsType {
+        switch instruction.instructionType {
         case .straight:
             let templateString = NSLocalizedString("$0 for $1", comment: "$0 = Continue straight, $1 = distance")
             var prompt = templateString
             
             prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
             
-            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
             prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
             
             return prompt
@@ -128,7 +130,7 @@ private extension StandardDirectionsViewModel {
             
             prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
             
-            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
             prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
             
             let turnString = string(forTurn: direction)?.lowercased() ?? ""
@@ -142,7 +144,7 @@ private extension StandardDirectionsViewModel {
             
             prompt = prompt.replacingOccurrences(of: "$0", with: straightString)
             
-            let distanceString = directions.instruction.distance.localizedDistanceInSmallUnits
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
             prompt = prompt.replacingOccurrences(of: "$1", with: distanceString)
             
             let floorChangeTypeString = string(for: floorChange.floorChangeType)
@@ -169,7 +171,7 @@ private extension StandardDirectionsViewModel {
         }
     }
     
-    func string(for floorChangeType: Directions.FloorChangeType) -> String {
+    func string(for floorChangeType: Instruction.FloorChangeType) -> String {
         switch floorChangeType {
         case .stairs:
             return NSLocalizedString("stairs", comment: "")
@@ -197,7 +199,7 @@ private extension StandardDirectionsViewModel {
         }
     }
     
-    func string(forFloorChangeDirection direction: Directions.FloorChangeDirection) -> String? {
+    func string(forFloorChangeDirection direction: Instruction.FloorChangeDirection) -> String? {
         switch direction {
         case .up:
             return NSLocalizedString("up", comment: "")

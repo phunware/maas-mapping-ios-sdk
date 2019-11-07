@@ -13,7 +13,7 @@ class RouteInstructionListCell: UITableViewCell {
     @IBOutlet weak var instructionImageView: UIImageView!
     @IBOutlet weak var instructionLabel: UILabel!
     
-    func configure(with viewModel: DirectionsViewModel) {
+    func configure(with viewModel: InstructionViewModel) {
         instructionImageView.image = viewModel.image
         instructionLabel.attributedText = viewModel.attributedText
     }

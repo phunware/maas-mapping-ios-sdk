@@ -1,5 +1,5 @@
 //
-//  Directions.swift
+//  Instruction.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/17/19.
@@ -10,42 +10,42 @@ import Foundation
 import PWMapKit
 
 // MARK: - Notes
-// The Directions type is used to turn the data from a PWRouteInstruction object into something more
-// easily digestable by the application. It doesn't contain any presentation logic, only logic
-// to encapsulate the type of directions we want to provide to the user (and related data for each type).
-// Presentation logic will be provided by a type confomring to DirectionsViewModel
+// The Instruction type is used to turn the data from a PWRouteInstruction object into something more easily digestable
+// by the application. It doesn't contain any presentation logic, only logic to encapsulate the type of directions
+// we want to provide to the user (and related data for each type). An object of this type can then be used
+// to easily generate presentation logic by a type conforming to InstructionViewModel.
 
 // MARK: - Definition and initialization -
-struct Directions {
-    enum DirectionsType {
+struct Instruction {
+    enum InstructionType {
         case straight
         case turn(direction: PWRouteInstructionDirection)
         case upcomingFloorChange(FloorChange)
         case floorChange(FloorChange)
     }
     
-    let instruction: PWRouteInstruction
-    let directionsType: DirectionsType
-    
-    init(for instruction: PWRouteInstruction) {
-        self.instruction = instruction
-        
-        if instruction.direction == .floorChange {
-            // Use this instruction's direction (which we now know is .floorChange) to create the directions type
-            directionsType = type(of: self).floorChangeDirectionsType(with: instruction)
-        } else {
-            // Use the next instruction's direction (i.e. this instruction's 'turnDirection') to create the directions type
-            directionsType = type(of: self).standardDirectionsType(with: instruction)
-        }
-    }
+    let routeInstruction: PWRouteInstruction
+    let instructionType: InstructionType
     
     var isLast: Bool {
-        return instruction.route?.routeInstructions?.last === instruction
+        return routeInstruction.route?.routeInstructions?.last === routeInstruction
+    }
+    
+    init(for routeInstruction: PWRouteInstruction) {
+        self.routeInstruction = routeInstruction
+        
+        if routeInstruction.direction == .floorChange {
+            // Use this instruction's direction (which we now know is .floorChange) to create the directions type
+            instructionType = type(of: self).instructionTypeForFloorChange(with: routeInstruction)
+        } else {
+            // Use the next instruction's direction (i.e. this instruction's 'turnDirection') to create the directions type
+            instructionType = type(of: self).instructionType(with: routeInstruction)
+        }
     }
 }
 
 // MARK: - Types -
-extension Directions {
+extension Instruction {
     enum FloorChangeType {
         case stairs
         case elevator
@@ -86,23 +86,23 @@ extension Directions {
 }
 
 // MARK: - private implemenation -
-private extension Directions {
-    static func standardDirectionsType(with instruction: PWRouteInstruction) -> DirectionsType {
-        switch instruction.turnDirection {
+private extension Instruction {
+    static func instructionType(with routeInstruction: PWRouteInstruction) -> InstructionType {
+        switch routeInstruction.turnDirection {
         case .straight:
             return .straight
             
         case .left, .right, .bearLeft, .bearRight:
-            return .turn(direction: instruction.turnDirection)
+            return .turn(direction: routeInstruction.turnDirection)
             
         case .floorChange:
-            let floorChangeType = FloorChangeType(mapPoint: instruction.end)
+            let floorChangeType = FloorChangeType(mapPoint: routeInstruction.end)
             var floorChangeDirection = FloorChangeDirection.sameFloor
             var floorName = NSLocalizedString("Unknown Floor Name", comment: "")
             
-            if let next = instruction.getNextInstruction(),
-                let startFloor = instruction.floor(for: next.start),
-                let endFloor = instruction.floor(for: next.end) {
+            if let next = routeInstruction.nextRouteInstruction,
+                let startFloor = routeInstruction.floor(for: next.start),
+                let endFloor = routeInstruction.floor(for: next.end) {
                 floorName = endFloor.name
                 
                 if endFloor.level > startFloor.level {
@@ -123,13 +123,13 @@ private extension Directions {
         }
     }
     
-    static func floorChangeDirectionsType(with instruction: PWRouteInstruction) -> DirectionsType {
-        let floorChangeType = FloorChangeType(mapPoint: instruction.end)
+    static func instructionTypeForFloorChange(with routeInstruction: PWRouteInstruction) -> InstructionType {
+        let floorChangeType = FloorChangeType(mapPoint: routeInstruction.end)
         var floorChangeDirection = FloorChangeDirection.sameFloor
         var floorName = NSLocalizedString("Unknown Floor Name", comment: "")
         
-        if let startFloor = instruction.floor(for: instruction.start),
-            let endFloor = instruction.floor(for: instruction.end) {
+        if let startFloor = routeInstruction.floor(for: routeInstruction.start),
+            let endFloor = routeInstruction.floor(for: routeInstruction.end) {
             floorName = endFloor.name
             
             if endFloor.level > startFloor.level {
@@ -144,5 +144,33 @@ private extension Directions {
                                       floorName: floorName)
         
         return .floorChange(floorChange)
+    }
+}
+
+// MARK: - PWRouteInstruction private extension
+private extension PWRouteInstruction {
+    func floor(for point: PWMapPoint?) -> PWFloor? {
+        guard let floorIdentifier = point?.floorID,
+            let building = route?.building,
+            let floor = building.floor(byId: floorIdentifier) else {
+                return nil
+        }
+        
+        return floor
+    }
+    
+    var nextRouteInstruction: PWRouteInstruction? {
+        guard let route = route,
+            let indexOfInstruction = route.routeInstructions.firstIndex(of: self) else {
+            return nil
+        }
+        
+        let nextInstructionIndex = indexOfInstruction + 1
+        
+        if nextInstructionIndex < route.routeInstructions.count {
+            return route.routeInstructions[nextInstructionIndex]
+        } else {
+            return nil
+        }
     }
 }

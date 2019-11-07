@@ -13,17 +13,16 @@
 		7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */; };
 		9A28B1E5235DFC5900215476 /* CLLocationDistance+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1E4235DFC5900215476 /* CLLocationDistance+Localization.swift */; };
 		9A28B1ED235E0C2600215476 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1EC235E0C2600215476 /* NSMutableAttributedString+Extension.swift */; };
-		9A953E6723709CEB00D2CC1E /* DirectionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A953E6623709CEB00D2CC1E /* DirectionsDelegate.swift */; };
+		9A5B6A1823748764007B41D4 /* InstructionTextOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B6A1723748764007B41D4 /* InstructionTextOptions.swift */; };
 		9AA804942358BFC700B21924 /* PWFloorChangePOI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA804932358BFC700B21924 /* PWFloorChangePOI+Extension.swift */; };
 		9AC881B023709B0900FCDEFC /* TurnByTurnLandmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC881AF23709B0900FCDEFC /* TurnByTurnLandmarksViewController.swift */; };
 		9ACB8953236A2FE3001F6F09 /* ScenarioSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB8952236A2FE3001F6F09 /* ScenarioSettingsProtocol.swift */; };
-		9AFAAFD92363450800ED655C /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD22363450700ED655C /* Directions.swift */; };
-		9AFAAFDA2363450800ED655C /* StandardDirectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD32363450700ED655C /* StandardDirectionsViewModel.swift */; };
-		9AFAAFDB2363450800ED655C /* DirectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD42363450700ED655C /* DirectionsViewModel.swift */; };
-		9AFAAFDC2363450800ED655C /* LandmarkDirectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD52363450700ED655C /* LandmarkDirectionsViewModel.swift */; };
-		9AFAAFDD2363450800ED655C /* ArrivedDirectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD62363450700ED655C /* ArrivedDirectionsViewModel.swift */; };
-		9AFAAFDE2363450800ED655C /* DirectionsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD72363450700ED655C /* DirectionsExtensions.swift */; };
-		9AFAAFDF2363450800ED655C /* DirectionsTextOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD82363450700ED655C /* DirectionsTextOptions.swift */; };
+		9AFAAFD92363450800ED655C /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD22363450700ED655C /* Instruction.swift */; };
+		9AFAAFDA2363450800ED655C /* BasicInstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD32363450700ED655C /* BasicInstructionViewModel.swift */; };
+		9AFAAFDB2363450800ED655C /* InstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD42363450700ED655C /* InstructionViewModel.swift */; };
+		9AFAAFDC2363450800ED655C /* LandmarkInstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD52363450700ED655C /* LandmarkInstructionViewModel.swift */; };
+		9AFAAFDD2363450800ED655C /* ArrivedInstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD62363450700ED655C /* ArrivedInstructionViewModel.swift */; };
+		9AFAAFDE2363450800ED655C /* UIImage+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD72363450700ED655C /* UIImage+Instruction.swift */; };
 		9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */; };
 		9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */; };
 		9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */; };
@@ -64,17 +63,16 @@
 		7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OffRouteModalView.xib; sourceTree = "<group>"; };
 		9A28B1E4235DFC5900215476 /* CLLocationDistance+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationDistance+Localization.swift"; sourceTree = "<group>"; };
 		9A28B1EC235E0C2600215476 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
-		9A953E6623709CEB00D2CC1E /* DirectionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsDelegate.swift; sourceTree = "<group>"; };
+		9A5B6A1723748764007B41D4 /* InstructionTextOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionTextOptions.swift; sourceTree = "<group>"; };
 		9AA804932358BFC700B21924 /* PWFloorChangePOI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWFloorChangePOI+Extension.swift"; sourceTree = "<group>"; };
 		9AC881AF23709B0900FCDEFC /* TurnByTurnLandmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnLandmarksViewController.swift; sourceTree = "<group>"; };
 		9ACB8952236A2FE3001F6F09 /* ScenarioSettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioSettingsProtocol.swift; sourceTree = "<group>"; };
-		9AFAAFD22363450700ED655C /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
-		9AFAAFD32363450700ED655C /* StandardDirectionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardDirectionsViewModel.swift; sourceTree = "<group>"; };
-		9AFAAFD42363450700ED655C /* DirectionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewModel.swift; sourceTree = "<group>"; };
-		9AFAAFD52363450700ED655C /* LandmarkDirectionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkDirectionsViewModel.swift; sourceTree = "<group>"; };
-		9AFAAFD62363450700ED655C /* ArrivedDirectionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivedDirectionsViewModel.swift; sourceTree = "<group>"; };
-		9AFAAFD72363450700ED655C /* DirectionsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsExtensions.swift; sourceTree = "<group>"; };
-		9AFAAFD82363450700ED655C /* DirectionsTextOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsTextOptions.swift; sourceTree = "<group>"; };
+		9AFAAFD22363450700ED655C /* Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		9AFAAFD32363450700ED655C /* BasicInstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInstructionViewModel.swift; sourceTree = "<group>"; };
+		9AFAAFD42363450700ED655C /* InstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewModel.swift; sourceTree = "<group>"; };
+		9AFAAFD52363450700ED655C /* LandmarkInstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkInstructionViewModel.swift; sourceTree = "<group>"; };
+		9AFAAFD62363450700ED655C /* ArrivedInstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivedInstructionViewModel.swift; sourceTree = "<group>"; };
+		9AFAAFD72363450700ED655C /* UIImage+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Instruction.swift"; sourceTree = "<group>"; };
 		9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluedotLocationViewController.swift; sourceTree = "<group>"; };
 		9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		9AC881AC2370997200FCDEFC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				9A953E6623709CEB00D2CC1E /* DirectionsDelegate.swift */,
 				9AC881AD2370998300FCDEFC /* TurnByTurnCollectionView */,
 				E3785834222735540059A179 /* Route Instruction List */,
 				9AC881AE237099E200FCDEFC /* WalkTimeView */,
@@ -180,18 +177,18 @@
 			path = WalkTimeView;
 			sourceTree = "<group>";
 		};
-		9AFAAFD12363450700ED655C /* Directions */ = {
+		9AFAAFD12363450700ED655C /* Instruction */ = {
 			isa = PBXGroup;
 			children = (
-				9AFAAFD22363450700ED655C /* Directions.swift */,
-				9AFAAFD72363450700ED655C /* DirectionsExtensions.swift */,
-				9AFAAFD82363450700ED655C /* DirectionsTextOptions.swift */,
-				9AFAAFD42363450700ED655C /* DirectionsViewModel.swift */,
-				9AFAAFD32363450700ED655C /* StandardDirectionsViewModel.swift */,
-				9AFAAFD52363450700ED655C /* LandmarkDirectionsViewModel.swift */,
-				9AFAAFD62363450700ED655C /* ArrivedDirectionsViewModel.swift */,
+				9AFAAFD22363450700ED655C /* Instruction.swift */,
+				9AFAAFD72363450700ED655C /* UIImage+Instruction.swift */,
+				9A5B6A1723748764007B41D4 /* InstructionTextOptions.swift */,
+				9AFAAFD42363450700ED655C /* InstructionViewModel.swift */,
+				9AFAAFD32363450700ED655C /* BasicInstructionViewModel.swift */,
+				9AFAAFD52363450700ED655C /* LandmarkInstructionViewModel.swift */,
+				9AFAAFD62363450700ED655C /* ArrivedInstructionViewModel.swift */,
 			);
-			path = Directions;
+			path = Instruction;
 			sourceTree = "<group>";
 		};
 		E378581B221313200059A179 /* Extensions */ = {
@@ -276,7 +273,7 @@
 				E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */,
 				E3C76E4F204D95BB00780D0F /* Scenarios */,
 				9AC881AC2370997200FCDEFC /* Shared */,
-				9AFAAFD12363450700ED655C /* Directions */,
+				9AFAAFD12363450700ED655C /* Instruction */,
 				E378581B221313200059A179 /* Extensions */,
 			);
 			path = MapScenarios;
@@ -438,30 +435,29 @@
 				7E87A2F2222478FF004ABFE9 /* OffRouteViewController.swift in Sources */,
 				9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */,
 				9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */,
-				9A953E6723709CEB00D2CC1E /* DirectionsDelegate.swift in Sources */,
 				E3785831222073DC0059A179 /* TurnByTurnCollectionView.swift in Sources */,
 				E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */,
 				7EFF9C602232FCD3002BDD0A /* OffRouteModalViewController.swift in Sources */,
 				9AA804942358BFC700B21924 /* PWFloorChangePOI+Extension.swift in Sources */,
-				9AFAAFD92363450800ED655C /* Directions.swift in Sources */,
+				9AFAAFD92363450800ED655C /* Instruction.swift in Sources */,
 				9A28B1E5235DFC5900215476 /* CLLocationDistance+Localization.swift in Sources */,
+				9A5B6A1823748764007B41D4 /* InstructionTextOptions.swift in Sources */,
 				E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */,
 				E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
 				E378583A222738A40059A179 /* RouteInstructionListCell.swift in Sources */,
-				9AFAAFDE2363450800ED655C /* DirectionsExtensions.swift in Sources */,
+				9AFAAFDE2363450800ED655C /* UIImage+Instruction.swift in Sources */,
 				E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */,
-				9AFAAFDD2363450800ED655C /* ArrivedDirectionsViewModel.swift in Sources */,
+				9AFAAFDD2363450800ED655C /* ArrivedInstructionViewModel.swift in Sources */,
 				9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */,
 				9AC881B023709B0900FCDEFC /* TurnByTurnLandmarksViewController.swift in Sources */,
 				E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */,
-				9AFAAFDC2363450800ED655C /* LandmarkDirectionsViewModel.swift in Sources */,
+				9AFAAFDC2363450800ED655C /* LandmarkInstructionViewModel.swift in Sources */,
 				9A28B1ED235E0C2600215476 /* NSMutableAttributedString+Extension.swift in Sources */,
 				E378582E222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */,
 				E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */,
-				9AFAAFDF2363450800ED655C /* DirectionsTextOptions.swift in Sources */,
 				E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */,
-				9AFAAFDB2363450800ED655C /* DirectionsViewModel.swift in Sources */,
+				9AFAAFDB2363450800ED655C /* InstructionViewModel.swift in Sources */,
 				E3785836222735A80059A179 /* RouteInstructionListViewController.swift in Sources */,
 				E3785826221706680059A179 /* VoicePromptButton.swift in Sources */,
 				E37858212216FB840059A179 /* MKMapPoint+Helper.swift in Sources */,
@@ -470,7 +466,7 @@
 				E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */,
 				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
 				9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */,
-				9AFAAFDA2363450800ED655C /* StandardDirectionsViewModel.swift in Sources */,
+				9AFAAFDA2363450800ED655C /* BasicInstructionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

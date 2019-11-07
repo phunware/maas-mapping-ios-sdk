@@ -8,13 +8,20 @@
 
 import PWMapKit
 
+// MARK: - RouteInstructionListViewControllerDelegate
+protocol RouteInstructionListViewControllerDelegate: class {
+    func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
+        -> InstructionViewModel
+}
+
+// MARK: - RouteInstructionListViewController
 class RouteInstructionListViewController: UIViewController {
     enum WalkTimeDisplayMode {
         case hide
         case display(distance: CLLocationDistance, averageSpeed: CLLocationSpeed)
     }
     
-    weak var directionsDelegate: DirectionsDelegate?
+    weak var delegate: RouteInstructionListViewControllerDelegate?
     weak var walkTimeViewDelegate: WalkTimeViewDelegate?
     
     private let tableView = UITableView()
@@ -77,6 +84,7 @@ extension RouteInstructionListViewController: WalkTimeViewDelegate {
         
         self.dismiss(animated: true, completion: nil)
         
+        // forward to our own walkTimeViewDelegate
         self.walkTimeViewDelegate?.exitButtonPressed(for: walkTimeView)
     }
 }
@@ -102,14 +110,14 @@ extension RouteInstructionListViewController: UITableViewDataSource {
             let routeInstruction = routeInstructions[indexPath.row]
             
             // Get the view model from the delegate. If there is no delegate, use the standard directions.
-            let viewModel = directionsDelegate?.directions(for: routeInstruction)
-                ?? StandardDirectionsViewModel(for: routeInstruction)
+            let viewModel = delegate?.routeInstructionListViewController(self, viewModelFor: routeInstruction)
+                ?? BasicInstructionViewModel(for: routeInstruction)
             
             cell.configure(with: viewModel)
         } else {
             // otherwise this is the "You have arrived" cell
             let destinationName = route?.endPoint.title ?? nil
-            let viewModel = ArrivedDirectionsViewModel(destinationName: destinationName)
+            let viewModel = ArrivedInstructionViewModel(destinationName: destinationName)
             cell.configure(with: viewModel)
         }
         

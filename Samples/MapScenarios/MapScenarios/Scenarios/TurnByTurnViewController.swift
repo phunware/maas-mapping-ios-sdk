@@ -73,20 +73,23 @@ class TurnByTurnViewController: UIViewController, ScenarioSettingsProtocol {
 
 // MARK: - TurnByTurnCollectionViewDelegate
 extension TurnByTurnViewController: TurnByTurnCollectionViewDelegate {
-    func instructionExpandTapped() {
+    func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
+        return BasicInstructionViewModel(for: routeInstruction)
+    }
+    
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.directionsDelegate = self
+        routeInstructionViewController.delegate = self
         routeInstructionViewController.configure(route: mapView.currentRoute)
         routeInstructionViewController.presentFromViewController(self)
     }
-    
-    func didSwipeOnRouteInstruction() { }
 }
 
-// MARK: - DirectionsDisplayDelegate
-extension TurnByTurnViewController: DirectionsDelegate {
-    func directions(for instruction: PWRouteInstruction) -> DirectionsViewModel {
-        return StandardDirectionsViewModel(for: instruction)
+// MARK: - RouteInstructionListViewControllerDelegate
+extension TurnByTurnViewController: RouteInstructionListViewControllerDelegate {
+    func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
+        -> InstructionViewModel {
+        return BasicInstructionViewModel(for: routeInstruction)
     }
 }
 
@@ -140,7 +143,6 @@ private extension TurnByTurnViewController {
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
             turnByTurnCollectionView?.turnByTurnDelegate = self
-            turnByTurnCollectionView?.directionsDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
     }
