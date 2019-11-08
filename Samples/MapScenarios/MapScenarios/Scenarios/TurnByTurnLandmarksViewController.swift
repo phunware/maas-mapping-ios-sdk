@@ -74,20 +74,25 @@ class TurnByTurnLandmarksViewController: UIViewController, ScenarioSettingsProto
 
 // MARK: - TurnByTurnCollectionViewDelegate
 extension TurnByTurnLandmarksViewController: TurnByTurnCollectionViewDelegate {
-    func instructionExpandTapped() {
+    func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
+        // We'll use the LandmarkInstructionViewModel to generate the view model for our collection view cells,
+        // which will use the landmarks generated along with the route to augment the instruction text.
+        return LandmarkInstructionViewModel(for: routeInstruction)
+    }
+    
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.directionsDelegate = self
+        routeInstructionViewController.delegate = self
         routeInstructionViewController.configure(route: mapView.currentRoute)
         routeInstructionViewController.presentFromViewController(self)
     }
-    
-    func didSwipeOnRouteInstruction() { }
 }
 
-// MARK: - DirectionsDisplayDelegate
-extension TurnByTurnLandmarksViewController: DirectionsDelegate {
-    func directions(for instruction: PWRouteInstruction) -> DirectionsViewModel {
-        return LandmarkDirectionsViewModel(for: instruction)
+// MARK: - RouteInstructionListViewControllerDelegate
+extension TurnByTurnLandmarksViewController: RouteInstructionListViewControllerDelegate {
+    func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
+        -> InstructionViewModel {
+        return LandmarkInstructionViewModel(for: routeInstruction)
     }
 }
 
@@ -112,11 +117,12 @@ private extension TurnByTurnLandmarksViewController {
             return
         }
         
+        // Create a PWRouteOptions object with landmarksEnabled set to true so landmarks will be injected into route info (if available)
         let routeOptions = PWRouteOptions(accessibilityEnabled: false,
                                           landmarksEnabled: true,
                                           excludedPointIdentifiers: nil)
         
-        // Calculate a route and plot on the map
+        // Calculate a route and plot on the map with our specified route options
         PWRoute.createRoute(from: startPOI,
                             to: destinationPOI,
                             options: routeOptions,
@@ -127,8 +133,8 @@ private extension TurnByTurnLandmarksViewController {
             }
             
             // Plot route on the map
-            let routeOptions = PWRouteUIOptions()
-            self?.mapView.navigate(with: route, options: routeOptions)
+            let uiOptions = PWRouteUIOptions()
+            self?.mapView.navigate(with: route, options: uiOptions)
             
             // Initial route instructions
             self?.initializeTurnByTurn()
@@ -141,7 +147,6 @@ private extension TurnByTurnLandmarksViewController {
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
             turnByTurnCollectionView?.turnByTurnDelegate = self
-            turnByTurnCollectionView?.directionsDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
     }

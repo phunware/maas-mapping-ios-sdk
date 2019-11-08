@@ -59,7 +59,7 @@ class TurnByTurnInstructionCollectionViewCell: UICollectionViewCell {
         buttonAction?()
     }
     
-    func configure(with viewModel: DirectionsViewModel) {
+    func configure(with viewModel: InstructionViewModel) {
         movementImage.image = viewModel.image
         movementLabel.attributedText = viewModel.attributedText
     }

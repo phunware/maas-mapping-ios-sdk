@@ -1,5 +1,5 @@
 //
-//  DirectionsExtensions.swift
+//  UIImage+Instruction.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/25/19.
@@ -9,38 +9,9 @@
 import Foundation
 import PWMapKit
 
-// MARK: - PWRouteInstruction extension
-extension PWRouteInstruction {
-    func floor(for point: PWMapPoint?) -> PWFloor? {
-        guard let building = route?.building,
-            let floorIdentifier = point?.floorID,
-            let floor = building.floor(byId: floorIdentifier) else {
-                return nil
-        }
-        
-        return floor
-    }
-    
-    func getNextInstruction() -> PWRouteInstruction? {
-        guard let route = route,
-            let indexOfInstruction = route.routeInstructions.firstIndex(of: self) else {
-            return nil
-        }
-        
-        let nextInstructionIndex = indexOfInstruction + 1
-        
-        if nextInstructionIndex < route.routeInstructions.count {
-            return route.routeInstructions[nextInstructionIndex]
-        } else {
-            return nil
-        }
-    }
-}
-
-// MARK: - UIImage extension
 extension UIImage {
-    static func image(for directions: Directions) -> UIImage {
-        switch directions.directionsType {
+    static func image(for instruction: Instruction) -> UIImage {
+        switch instruction.instructionType {
         case .straight, .upcomingFloorChange:
             return #imageLiteral(resourceName: "PWRouteInstructionDirectionStraight")
             

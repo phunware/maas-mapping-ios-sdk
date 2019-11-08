@@ -1,5 +1,5 @@
 //
-//  ArrivedManeuverViewModel.swift
+//  ArrivedInstructionViewModel.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/24/19.
@@ -9,22 +9,27 @@
 import Foundation
 import UIKit
 
-struct ArrivedDirectionsViewModel {
-    private let standardOptions: DirectionsTextOptions
-    private let highlightOptions: DirectionsTextOptions
+// MARK: - Notes
+// ArrivedInstructionViewModel contains presentation logic for the "You have arrived" step of a route.
+
+// MARK: - ArrivedInstructionViewModel
+struct ArrivedInstructionViewModel {
+    private let standardOptions: InstructionTextOptions
+    private let highlightOptions: InstructionTextOptions
     
     private let destinationName: String?
     
     init(destinationName: String?,
-        standardOptions: DirectionsTextOptions = .defaultStandardOptions,
-         highlightOptions: DirectionsTextOptions = .defaultHighlightOptions) {
+        standardOptions: InstructionTextOptions = .defaultStandardOptions,
+         highlightOptions: InstructionTextOptions = .defaultHighlightOptions) {
         self.destinationName = destinationName
         self.standardOptions = standardOptions
         self.highlightOptions = highlightOptions
     }
 }
 
-extension ArrivedDirectionsViewModel: DirectionsViewModel {
+// MARK: InstructionViewModel conformance
+extension ArrivedInstructionViewModel: InstructionViewModel {
     var attributedText: NSAttributedString {
         let templateString = NSLocalizedString("$0 at $1", comment: "$0 = 'You have arrived', $1 = destination name")
         let youHaveArrivedString = NSLocalizedString("You have arrived", comment: "")
@@ -39,8 +44,11 @@ extension ArrivedDirectionsViewModel: DirectionsViewModel {
     var image: UIImage {
         return #imageLiteral(resourceName: "RouteListInstructionArrived")
     }
-    
-    private var destinationDisplayName: String {
+}
+
+// MARK: private
+private extension ArrivedInstructionViewModel {
+    var destinationDisplayName: String {
         if let destinationName = destinationName {
             return destinationName
         } else {

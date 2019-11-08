@@ -175,7 +175,7 @@ extension VoicePromptRouteViewController {
     }
     
     func readInstructionAloud(_ instruction: PWRouteInstruction) {
-        let directionsViewModel = StandardDirectionsViewModel(for: instruction)
+        let directionsViewModel = BasicInstructionViewModel(for: instruction)
         let voicePrompt = directionsViewModel.voicePrompt
         
         let utterance = AVSpeechUtterance(string: voicePrompt)
@@ -246,14 +246,12 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
 }
 
 // MARK: - TurnByTurnCollectionViewDelegate
-
 extension VoicePromptRouteViewController: TurnByTurnCollectionViewDelegate {
-    
-    func didSwipeOnRouteInstruction() {
+    func turnByTurnCollectionViewDidSwipeOnRouteInstruction(_ collectionView: TurnByTurnCollectionView) {
         instructionChangeCausedBySwipe = true
     }
     
-    func instructionExpandTapped() {
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
         let routeInstructionViewController = RouteInstructionListViewController()
         routeInstructionViewController.configure(route: mapView.currentRoute)
         routeInstructionViewController.presentFromViewController(self)
