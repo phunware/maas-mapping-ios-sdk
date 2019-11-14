@@ -151,6 +151,10 @@ extension OffRouteViewController: PWMapViewDelegate {
             }
         }
     }
+    
+    func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
+        turnByTurnCollectionView?.scrollToInstruction(instruction)
+    }
 }
 
 // MARK: - OffRouteModalViewControllerDelegate
