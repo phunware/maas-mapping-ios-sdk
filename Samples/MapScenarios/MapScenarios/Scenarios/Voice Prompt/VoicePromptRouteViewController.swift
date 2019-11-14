@@ -11,6 +11,7 @@ import PWCore
 import PWMapKit
 import UIKit
 
+// MARK: - VoicePromptRouteViewController
 class VoicePromptRouteViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
@@ -22,19 +23,19 @@ class VoicePromptRouteViewController: UIViewController, ScenarioSettingsProtocol
     var buildingIdentifier = 0
     
     // Replace with the destination POI identifier
-    let destinationPOIIdentifier = 0
+    private let destinationPOIIdentifier = 0
     
-    let mapView = PWMapView()
-    var turnByTurnCollectionView: TurnByTurnCollectionView?
-    let locationManager = CLLocationManager()
-    var firstLocationAcquired = false
-    let voicePromptButton = VoicePromptButton()
-    let voicePromptsLabel = UILabel()
-    var previouslyReadInstructions = Set<PWRouteInstruction>()
+    private let mapView = PWMapView()
+    private var turnByTurnCollectionView: TurnByTurnCollectionView?
+    private let locationManager = CLLocationManager()
+    private var firstLocationAcquired = false
+    private let voicePromptButton = VoicePromptButton()
+    private let voicePromptsLabel = UILabel()
+    private var previouslyReadInstructions = Set<PWRouteInstruction>()
     
     private let speechEnabledKey = "SpeechEnabled"
     
-    var speechEnabled: Bool {
+    private var speechEnabled: Bool {
         get {
             if UserDefaults.standard.value(forKey: speechEnabledKey) == nil {
                 return true
@@ -47,8 +48,8 @@ class VoicePromptRouteViewController: UIViewController, ScenarioSettingsProtocol
         }
     }
     
-    let speechSynthesizer = AVSpeechSynthesizer()
-    var instructionChangeCausedBySwipe = false
+    private let speechSynthesizer = AVSpeechSynthesizer()
+    private var instructionChangeCausedBySwipe = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,7 +116,6 @@ class VoicePromptRouteViewController: UIViewController, ScenarioSettingsProtocol
 }
 
 // MARK: - Voice Prompt UI
-
 extension VoicePromptRouteViewController {
     
     func configureVoiceUI() {
@@ -189,7 +189,6 @@ extension VoicePromptRouteViewController {
 }
 
 // MARK: - PWMapViewDelegate
-
 extension VoicePromptRouteViewController: PWMapViewDelegate {
 
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
@@ -259,7 +258,6 @@ extension VoicePromptRouteViewController: TurnByTurnCollectionViewDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate
-
 extension VoicePromptRouteViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

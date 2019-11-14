@@ -10,6 +10,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
+// MARK: - TurnByTurnViewController
 class TurnByTurnViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
@@ -21,8 +22,8 @@ class TurnByTurnViewController: UIViewController, ScenarioSettingsProtocol {
     var buildingIdentifier: Int = 0
     
     // Destination POI identifier for routing
-    var startPOIIdentifier: Int = 0
-    var destinationPOIIdentifier: Int = 0
+    private var startPOIIdentifier: Int = 0
+    private var destinationPOIIdentifier: Int = 0
     
     private let mapView = PWMapView()
     

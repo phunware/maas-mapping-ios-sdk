@@ -11,6 +11,7 @@ import UIKit
 import PWMapKit
 import PWCore
 
+// MARK: - CustomPOIViewController
 class CustomPOIViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
@@ -18,9 +19,10 @@ class CustomPOIViewController: UIViewController, ScenarioSettingsProtocol {
     var accessKey = ""
     var signatureKey = ""
     
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+    // Enter your building identifier here, found on the building's Edit page on Maas portal
+    var buildingIdentifier = 0
     
-    let mapView = PWMapView()
+    private let mapView = PWMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
