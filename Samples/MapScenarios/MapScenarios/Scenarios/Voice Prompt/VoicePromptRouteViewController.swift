@@ -31,7 +31,6 @@ class VoicePromptRouteViewController: UIViewController, ScenarioSettingsProtocol
     private var firstLocationAcquired = false
     private let voicePromptButton = VoicePromptButton()
     private let voicePromptsLabel = UILabel()
-    private var previouslyReadInstructions = Set<PWRouteInstruction>()
     
     private let speechEnabledKey = "SpeechEnabled"
     
@@ -49,7 +48,6 @@ class VoicePromptRouteViewController: UIViewController, ScenarioSettingsProtocol
     }
     
     private let speechSynthesizer = AVSpeechSynthesizer()
-    private var instructionChangeCausedBySwipe = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -220,19 +218,9 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
     func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
         turnByTurnCollectionView?.scrollToInstruction(instruction)
         
-        guard speechEnabled else {
-            return
+        if speechEnabled {
+            readInstructionAloud(instruction)
         }
-        
-        if !instructionChangeCausedBySwipe, previouslyReadInstructions.contains(instruction) {
-            return
-        } else if !instructionChangeCausedBySwipe {
-            previouslyReadInstructions.insert(instruction)
-        }
-        
-        instructionChangeCausedBySwipe = false // Clear state for next instruction change
-        
-        readInstructionAloud(instruction)
     }
     
     private func getDestinationPOI() -> PWPointOfInterest? {
@@ -246,10 +234,6 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
 
 // MARK: - TurnByTurnCollectionViewDelegate
 extension VoicePromptRouteViewController: TurnByTurnCollectionViewDelegate {
-    func turnByTurnCollectionViewDidSwipeOnRouteInstruction(_ collectionView: TurnByTurnCollectionView) {
-        instructionChangeCausedBySwipe = true
-    }
-    
     func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
         let routeInstructionViewController = RouteInstructionListViewController()
         routeInstructionViewController.configure(route: mapView.currentRoute)
