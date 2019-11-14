@@ -235,35 +235,8 @@
                                             <segue destination="Ara-X3-Rg3" kind="show" identifier="TurnByTurnViewController" id="vww-2O-fHJ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TurnByTurnCell" textLabel="zMX-bF-hs6" detailTextLabel="2gk-N7-U1k" style="IBUITableViewCellStyleSubtitle" id="G5J-ss-9Pt" userLabel="TurnByTurnLandmarksCell">
-                                        <rect key="frame" x="0.0" y="380" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G5J-ss-9Pt" id="i1v-Gl-zBV">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Route - Turn By Turn with Landmarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zMX-bF-hs6">
-                                                    <rect key="frame" x="16" y="5" width="284" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Show turn-by-turn navigation with landmarks, if available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2gk-N7-U1k">
-                                                    <rect key="frame" x="16" y="25.5" width="322.5" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="EeK-CA-Ubh" kind="show" id="UHA-80-xLI"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalkTimeCell" textLabel="jye-p8-lN5" detailTextLabel="tfa-R7-Xlj" style="IBUITableViewCellStyleSubtitle" id="c4u-Ua-BQZ" userLabel="WalkTimeCell">
-                                        <rect key="frame" x="0.0" y="424" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="380" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c4u-Ua-BQZ" id="nVC-kl-z7M">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -290,7 +263,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationSharingCell" textLabel="yA8-81-sfn" detailTextLabel="Pey-Ej-1CD" style="IBUITableViewCellStyleSubtitle" id="SYq-xN-N3x" userLabel="VoicedRouteCell">
-                                        <rect key="frame" x="0.0" y="468" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="424" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SYq-xN-N3x" id="fuH-rc-4ys">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -317,7 +290,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OffRouteCell" textLabel="Gqe-VH-29Q" detailTextLabel="6jp-6k-zm1" style="IBUITableViewCellStyleSubtitle" id="ejc-qn-oNj">
-                                        <rect key="frame" x="0.0" y="512" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="468" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ejc-qn-oNj" id="Cge-z2-YZg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -562,22 +535,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dlq-7a-nUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-223" y="-348"/>
-        </scene>
-        <!--Turn By Turn Landmarks View Controller-->
-        <scene sceneID="zSe-8r-gy1">
-            <objects>
-                <viewController id="EeK-CA-Ubh" customClass="TurnByTurnLandmarksViewController" customModule="MapScenarios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UPv-eK-q9x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="FMW-Sv-XXK"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="qVs-6T-af4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gEu-dd-7ry" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2140" y="3045"/>
         </scene>
     </scenes>
 </document>
