@@ -372,8 +372,8 @@ private extension WalkTimeViewController {
         // Calculate a route and plot on the map
         PWRoute.createRoute(from: startPOI,
                             to: destinationPOI,
-                            options: nil,
-                            completion: { [weak self] (route, error) in
+                            accessibility: false,
+                            excludedPoints: nil) { [weak self] (route, error) in
             guard let route = route else {
                 self?.warning("Couldn't find a route between POI(\(self?.startPOIIdentifier ?? 0)) and POI(\(self?.destinationPOIIdentifier ?? 0)).")
                 return
@@ -385,7 +385,7 @@ private extension WalkTimeViewController {
             
             // Initial route instructions
             self?.initializeTurnByTurn()
-        })
+        }
     }
     
     // called after route has been calculated

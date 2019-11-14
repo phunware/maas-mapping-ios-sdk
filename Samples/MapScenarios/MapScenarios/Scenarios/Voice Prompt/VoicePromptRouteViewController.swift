@@ -199,10 +199,11 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
                 return
             }
             
+            
             PWRoute.createRoute(from: mapView.indoorUserLocation,
                                 to: destinationPOI,
-                                options: nil,
-                                completion: { [weak self] (route, error) in
+                                accessibility: false,
+                                excludedPoints: nil) { [weak self] (route, error) in
                 guard let route = route else {
                     print("Couldn't find a route from you current location to the destination.")
                     return
@@ -211,7 +212,7 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
                 mapView.navigate(with: route)
                 self?.initializeTurnByTurn()
                 self?.configureVoiceUI()
-            })
+            }
         }
     }
     

@@ -1,5 +1,5 @@
 //
-//  PWFloorChangePOI+Extension.swift
+//  FloorChangePOI.swift
 //  MapScenarios
 //
 //  Created by Aaron Pendley on 10/17/19.
@@ -9,22 +9,17 @@
 import Foundation
 import PWMapKit
 
-extension PWFloorChangePOI {
+enum FloorChangePOI: Int {
+    case stairs = 20001
+    case elevator = 20000
+    case escalator = 20003
+
     init?(mapPoint: PWMapPoint) {
         // only PWPointOfInterest objects have a 'pointOfInterestType' property
         guard let poi = mapPoint as? PWPointOfInterest, let poiType = poi.pointOfInterestType else {
             return nil
         }
         
-        switch poiType.identifier {
-        case PWFloorChangePOI.stairs.rawValue:
-            self = .stairs
-        case PWFloorChangePOI.elevator.rawValue:
-            self = .elevator
-        case PWFloorChangePOI.escalator.rawValue:
-            self = .escalator
-        default:
-            return nil
-        }
+        self.init(rawValue: poiType.identifier)
     }
 }
