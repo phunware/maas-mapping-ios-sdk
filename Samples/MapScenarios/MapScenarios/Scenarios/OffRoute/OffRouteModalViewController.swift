@@ -8,16 +8,26 @@
 
 import UIKit
 
+// MARK: - OffRouteModalViewController
+protocol OffRouteModalViewControllerDelegate: class {
+    func offRouteAlert(_ alert: OffRouteModalViewController, dismissedWithResult result: OffRouteModalViewController.Result)
+}
+
+// MARK: - OffRouteModalViewController
 class OffRouteModalViewController: UIViewController {
 
     @IBOutlet weak var offRouteView: UIView!
     @IBOutlet weak var offRouteDismissButton: UIButton!
     @IBOutlet weak var offRouteRerouteButton: UIButton!
     @IBOutlet weak var offRouteDontShowAgainButton: UIButton!
-
-    var dismissCompletion : (() -> Void)?
-    var rerouteCompletion : (() -> Void)?
-    var dontShowAgainCompletion : (() -> Void)?
+    
+    enum Result {
+        case dismiss
+        case reroute
+        case dontShowAgain
+    }
+    
+    weak var delegate: OffRouteModalViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +42,18 @@ class OffRouteModalViewController: UIViewController {
     }
 
     @IBAction func dismissButtonClicked(sender: UIButton) {
-        dismissCompletion?()
-        self.dismiss(animated: true, completion: nil)
+        delegate?.offRouteAlert(self, dismissedWithResult: .dismiss)
+        dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func rerouteButtonClicked(sender: UIButton) {
-        rerouteCompletion?()
-        self.dismiss(animated: true, completion: nil)
+        delegate?.offRouteAlert(self, dismissedWithResult: .reroute)
+        dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func dontShowAgainButtonClicked(sender: UIButton) {
-        dontShowAgainCompletion?()
-        self.dismiss(animated: true, completion: nil)
+        delegate?.offRouteAlert(self, dismissedWithResult: .dontShowAgain)
+        dismiss(animated: true, completion: nil)
     }
 
 }

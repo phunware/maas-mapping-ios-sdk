@@ -67,7 +67,6 @@ class WalkTimeView: UIView {
 }
 
 // MARK: - Helpers
-
 extension WalkTimeView {
     
     // Calculate the walk time

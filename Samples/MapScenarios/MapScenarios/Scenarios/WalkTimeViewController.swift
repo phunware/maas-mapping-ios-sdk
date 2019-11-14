@@ -11,6 +11,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
+// MARK: - WalkTimeViewController
 class WalkTimeViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
@@ -22,8 +23,8 @@ class WalkTimeViewController: UIViewController, ScenarioSettingsProtocol {
     var buildingIdentifier: Int = 0
     
     // Destination POI identifier for routing
-    var startPOIIdentifier: Int = 0
-    var destinationPOIIdentifier: Int = 0
+    private var startPOIIdentifier: Int = 0
+    private var destinationPOIIdentifier: Int = 0
     
     private let mapView = PWMapView()
     
@@ -42,7 +43,7 @@ class WalkTimeViewController: UIViewController, ScenarioSettingsProtocol {
     private var snappingLocation = false
     
     // Average speed
-    var averageSpeed: CLLocationSpeed {
+    private var averageSpeed: CLLocationSpeed {
         get {
             if speedSamples.count > 0 {
                 return speedSamples.reduce(0, +) / Double(speedSamples.count)
@@ -387,7 +388,7 @@ private extension WalkTimeViewController {
         })
     }
     
-    // called by super after route has been calculated
+    // called after route has been calculated
     func initializeTurnByTurn() {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
         

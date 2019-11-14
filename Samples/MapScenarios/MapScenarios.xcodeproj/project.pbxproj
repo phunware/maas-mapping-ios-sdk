@@ -141,8 +141,8 @@
 		7E87A2F0222478DC004ABFE9 /* OffRoute */ = {
 			isa = PBXGroup;
 			children = (
-				7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */,
 				7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */,
+				7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */,
 				7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */,
 			);
 			path = OffRoute;

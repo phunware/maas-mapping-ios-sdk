@@ -12,7 +12,6 @@ import PWMapKit
 import PWCore
 
 // MARK: - CGFloat extension
-
 extension CGFloat {
     
     static func random() -> CGFloat {
@@ -21,7 +20,6 @@ extension CGFloat {
 }
 
 // MARK: - SharedLocationAnnotation
-
 class SharedLocationAnnotation: MKPointAnnotation {
     
     var sharedLocation: PWSharedLocation!
@@ -32,12 +30,12 @@ class SharedLocationAnnotation: MKPointAnnotation {
     }
 }
 
-// MARK: - SharedLocationAnnotationView
-
+// MARK: - Notification
 extension Notification.Name {
     static let didUpdateAnnotation = Notification.Name("didUpdateAnnotation")
 }
 
+// MARK: - SharedLocationAnnotationView
 class SharedLocationAnnotationView: MKAnnotationView {
     
     let floatingTextLabel = UILabel()
@@ -73,7 +71,6 @@ class SharedLocationAnnotationView: MKAnnotationView {
 }
 
 // MARK: Floating Text Label
-
 extension SharedLocationAnnotationView {
     
     func configureFloatingTextLabel() {
@@ -101,7 +98,6 @@ extension SharedLocationAnnotationView {
 }
 
 // MARK: - LocationSharingViewController
-
 class LocationSharingViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
@@ -109,14 +105,15 @@ class LocationSharingViewController: UIViewController, ScenarioSettingsProtocol 
     var accessKey = ""
     var signatureKey = ""
     
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+    // Enter your building identifier here, found on the building's Edit page on Maas portal
+    var buildingIdentifier = 0
     
-    let mapView = PWMapView()
-    let locationManager = CLLocationManager()
-    var firstLocationAcquired = false
+    private let mapView = PWMapView()
+    private let locationManager = CLLocationManager()
+    private var firstLocationAcquired = false
     
-    let deviceDisplayNameKey = "DeviceDisplayNameKey"
-    var deviceDisplayName: String {
+    private let deviceDisplayNameKey = "DeviceDisplayNameKey"
+    private var deviceDisplayName: String {
         get {
             if let displayName = UserDefaults.standard.object(forKey: deviceDisplayNameKey) as? String {
                 return displayName
@@ -129,8 +126,8 @@ class LocationSharingViewController: UIViewController, ScenarioSettingsProtocol 
         }
     }
     
-    let deviceTypeKey = "DeviceTypeKey"
-    var deviceType: String {
+    private let deviceTypeKey = "DeviceTypeKey"
+    private var deviceType: String {
         get {
             if let type = UserDefaults.standard.object(forKey: deviceTypeKey) as? String {
                 return type
@@ -143,10 +140,10 @@ class LocationSharingViewController: UIViewController, ScenarioSettingsProtocol 
         }
     }
     
-    var sharedLocations = Set<PWSharedLocation>()
-    var sharedLocationAnnotations = [String : SharedLocationAnnotation]()
+    private var sharedLocations = Set<PWSharedLocation>()
+    private var sharedLocationAnnotations = [String : SharedLocationAnnotation]()
     
-    var annotationColors = [String : UIColor]()
+    private var annotationColors = [String : UIColor]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -225,7 +222,6 @@ class LocationSharingViewController: UIViewController, ScenarioSettingsProtocol 
 }
 
 // MARK: - PWMapViewDelegate
-
 extension LocationSharingViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
@@ -247,7 +243,6 @@ extension LocationSharingViewController: PWMapViewDelegate {
 }
 
 // MARK: - PWLocationSharingDelegate
-
 extension LocationSharingViewController: PWLocationSharingDelegate {
     
     // Called when the shared locations are updated. Includes complete list of shared locations
@@ -300,7 +295,6 @@ extension LocationSharingViewController: PWLocationSharingDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate
-
 extension LocationSharingViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -315,7 +309,6 @@ extension LocationSharingViewController: CLLocationManagerDelegate {
 }
 
 // MARK: - Settings Button
-
 extension LocationSharingViewController {
     
     @objc func settingsTapped() {

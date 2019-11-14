@@ -11,6 +11,7 @@ import UIKit
 import PWCore
 import PWMapKit
 
+// MARK: - RoutingViewController
 class RoutingViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
@@ -22,11 +23,11 @@ class RoutingViewController: UIViewController, ScenarioSettingsProtocol {
     var buildingIdentifier = 0
     
     // Destination POI identifier for routing
-    var destinationPOIIdentifier: Int = 0
+    private var destinationPOIIdentifier: Int = 0
     
-    let mapView = PWMapView()
-    let locationManager = CLLocationManager()
-    var firstLocationAcquired = false
+    private let mapView = PWMapView()
+    private let locationManager = CLLocationManager()
+    private var firstLocationAcquired = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,9 +91,8 @@ class RoutingViewController: UIViewController, ScenarioSettingsProtocol {
         mapView.trackingMode = .follow
         
         // Find the destination POI
-        let destinationPOI = mapView.building.pois.filter({
-            return $0.identifier == destinationPOIIdentifier
-        }).first
+        let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
+        
         if destinationPOI == nil {
             warning("No points of interest found, please add at least one to the building in the Maas portal")
             return
@@ -123,7 +123,6 @@ class RoutingViewController: UIViewController, ScenarioSettingsProtocol {
 }
 
 // MARK: - PWMapViewDelegate
-
 extension RoutingViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
@@ -135,7 +134,6 @@ extension RoutingViewController: PWMapViewDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate
-
 extension RoutingViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
