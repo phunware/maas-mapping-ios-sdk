@@ -9,7 +9,7 @@
 - Need to fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, and `destinationPOIIdentifier` in VoicePromptRouteViewController.swift.
 
 ### Sample Code
-- [WalkTimeViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/WalkTime/WalkTimeViewController.swift)
+- [VoicePromptRouteViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/Voice Prompt/VoicePromptRouteViewController.swift)
 - [VoicePromptRouteViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/Voice Prompt/VoicePromptRouteViewController.swift)
 - [VoicePromptRouteViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/Voice Prompt/VoicePromptRouteViewController.swift)
 - [VoicePromptButton.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/Voice Prompt/VoicePromptButton.swift)
