@@ -56,6 +56,14 @@ func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpda
 ```
 
 First calculate the distance from the current location to the closest point on the route. If that distance is greater than `offRouteDistanceThreshold`, call `showOffRouteMessage()` to show an alert. Otherwise, if we're only slightly off the route, but not past the `offRouteDistanceThreshold`, start a timer. If the time expires and we have not snapped back to the route, we'll call `showOffRouteMessage()` to display an alert.
+```
+@objc func offRouteTimerExpired() {
+    offRouteTimer?.invalidate()
+    offRouteTimer = nil
+    showOffRouteMessage()
+}
+```
+
 
 To avoid spamming users with the off route alert, we implement a "cooldown" interval after the user dismisses the off route alert. 
 ```
