@@ -12,7 +12,7 @@
 
 
 ### Sample Code:
-- [LocationSharingViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/LocationSharingViewController.swift)
+- [LocationSharingViewController.swift](./MapScenarios/Scenarios/LocationSharingViewController.swift)
 
 **Step 1: Create annotion for shared location**
 
