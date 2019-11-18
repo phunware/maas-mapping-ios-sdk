@@ -9,108 +9,80 @@
 - Need to fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, and `destinationPOIIdentifier` in OffRouteViewController.swift.
 
 ### Sample Code
-- [OffRouteViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/OffRoute/OffRouteViewController.swift)
-- [OffRouteModalViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/OffRoute/OffRouteModalViewController.swift)
-- [OffRouteModalView.xib](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/OffRoute/OffRouteModalView.xib)
+- [OffRouteViewController.swift](./MapScenarios/Scenarios/OffRoute/OffRouteViewController.swift)
+- [OffRouteModalViewController.swift](./MapScenarios/Scenarios/OffRoute/OffRouteModalViewController.swift)
+- [OffRouteModalView.xib](./MapScenarios/Scenarios/OffRoute/OffRouteModalView.xib)
 
 **Step 1: Copy the following files to your project**
 
+- OffRouteViewController.swift
 - OffRouteModalViewController.swift
 - OffRouteModalView.xib
 
-**Step 2: Add the following variables and methods to your view controller**
+**Step 2: In OffRouteViewController, pay attention to the `mapView(_:locationManager:didUpdateIndoorUserLocation:) delgate callback`**
 
 ```
-//Class variables
-var currentRoute: PWRoute?
-// offRouteDistanceThreshold is the distance in meters away from the closest point on the route the user has to be to trigger the Off Route alert
-let offRouteDistanceThreshold: CLLocationDistance = 10.0
-// offRouteTimeThreshold is the time in seconds the user has to be off the route line to trigger the Off Route alert
-let offRouteTimeThreshold: TimeInterval = 5.0
-var offRouteTimer: Timer? = nil
-var modalVisible = false
-var dontShowAgain = false
+func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
+    if !firstLocationAcquired {
+        firstLocationAcquired = true
+        mapView.trackingMode = .follow
 
-//Methods
-@objc func fireTimer() {
-    offRouteTimer?.invalidate()
-    offRouteTimer = nil
-    showModal()
-}
-
-private func showModal() {
-    if (!modalVisible) {
-        modalVisible = true
-
-        let offRouteModal = OffRouteModalViewController()
-        offRouteModal.modalPresentationStyle = .overCurrentContext
-        offRouteModal.modalTransitionStyle = .crossDissolve
-
-        offRouteModal.dismissCompletion = {
-            self.modalVisible = false
-        }
-
-        offRouteModal.rerouteCompletion = {
-            self.modalVisible = false
-            self.mapView.cancelRouting()
-            self.currentRoute = nil
-            //Add code to build new route
-        }
-
-        offRouteModal.dontShowAgainCompletion = {
-            self.modalVisible = false
-            self.dontShowAgain = true
-        }
-
-        present(offRouteModal, animated: true, completion: nil)
-    }
-}
-```
-
-As well as the extension methods
-
-```
-// MARK: - PWMapViewDelegate
-
-extension OffRouteViewController: PWMapViewDelegate {
-
-    func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
-        if (!modalVisible && !dontShowAgain) {
+        self.buildRoute()
+    } else {
+        if !modalVisible, !dontShowAgain, !isOffRouteAlertCooldownActive {
             if let closestRouteInstruction = self.currentRoute?.closestInstructionTo(userLocation) {
                 let distanceToRouteInstruction = MKMapPoint(userLocation.coordinate).distanceTo(closestRouteInstruction.polyline)
-                if (distanceToRouteInstruction > 0.0) {
+                
+                if distanceToRouteInstruction > 0.0 {
                     if (distanceToRouteInstruction >= offRouteDistanceThreshold) {
                         offRouteTimer?.invalidate()
-                        showModal()
-                    } else {
-                        if (offRouteTimer == nil) {
-                            offRouteTimer = Timer.scheduledTimer(timeInterval: offRouteTimeThreshold, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
-                        }
+                        showOffRouteMessage()
+                    } else if offRouteTimer == nil {
+                        offRouteTimer = Timer.scheduledTimer(timeInterval: offRouteTimeThreshold,
+                                                             target: self,
+                                                             selector: #selector(offRouteTimerExpired),
+                                                             userInfo: nil,
+                                                             repeats: false)
+
                     }
                 } else {
-                    if (offRouteTimer != nil) {
-                        offRouteTimer?.invalidate()
-                        offRouteTimer = nil
-                    }
+                    offRouteTimer?.invalidate()
+                    offRouteTimer = nil
                 }
             }
         }
     }
 }
+```
 
-// MARK: - CLLocationManagerDelegate
+First calculate the distance from the current location to the closest point on the route. If that distance is greater than `offRouteDistanceThreshold`, call `showOffRouteMessage()` to show an alert. Otherwise, if we're only slightly off the route, but not past the `offRouteDistanceThreshold`, start a timer. If the time expires and we have not snapped back to the route, we'll call `showOffRouteMessage()` to display an alert.
+```
+@objc func offRouteTimerExpired() {
+    offRouteTimer?.invalidate()
+    offRouteTimer = nil
+    showOffRouteMessage()
+}
+```
 
-extension OffRouteViewController: CLLocationManagerDelegate {
 
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-            case .authorizedAlways, .authorizedWhenInUse:
-                startManagedLocationManager()
-            default:
-                mapView.unregisterLocationManager()
-                print("Not authorized to start PWLocationManager")
-        }
+To avoid spamming users with the off route alert, we implement a "cooldown" interval after the user dismisses the off route alert. 
+```
+func offRouteAlert(_ alert: OffRouteModalViewController, dismissedWithResult result: OffRouteModalViewController.Result) {
+    lastTimeOffRouteMessageWasDismissed = Date()
+    modalVisible = false
+    
+    ... etc
+}
+```
+
+The alert will not be displayed again until this interval expires.
+```
+private var isOffRouteAlertCooldownActive: Bool {
+    guard let lastTime = lastTimeOffRouteMessageWasDismissed else {
+        return false
     }
+    
+    return Date().timeIntervalSince(lastTime) < offRouteMessageCooldownInterval
 }
 ```
 
