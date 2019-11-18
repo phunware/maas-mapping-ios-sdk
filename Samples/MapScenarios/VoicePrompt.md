@@ -10,7 +10,7 @@
 
 ### Sample Code
 - [VoicePromptRouteViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/Voice%20Prompt/VoicePromptRouteViewController.swift)
-- [VoicePromptButton.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/Voice Prompt/VoicePromptButton.swift)
+- [VoicePromptButton.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/Voice%20Prompt/VoicePromptButton.swift)
 
 **Step 1: Copy the following files to your project**
 
