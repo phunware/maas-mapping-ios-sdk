@@ -9,11 +9,11 @@
 - Fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, `startPOIIdentifier` and `destinationPOIIdentifier`.
 
 ### Sample Code 
-- [TurnByTurnViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/dev-samples/Samples/MapScenarios/MapScenarios/Scenarios/TurnByTurnViewController.swift) - View controller
-- [TurnByTurnCollectionView.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Shared/TurnByTurnCollectionView.swift) - Instruction collection view
-- [TurnByTurnInstructionCollectionViewCell.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/TurnByTurn/Collection%20View/Cells/TurnByTurnInstructionCollectionViewCell.swift) - Instruction cell
-- [TurnByTurnInstructionCollectionViewCell.xib](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/TurnByTurn/Collection%20View/Cells/TurnByTurnInstructionCollectionViewCell.xib) - Instruction cell
-- [DirectionImages.xcassets](https://github.com/phunware/maas-mapping-ios-sdk/tree/readme/Samples/MapScenarios/MapScenarios/Scenarios/TurnByTurn/Collection%20View/Icons/DirectionImages.xcassets) - direction images
+- [TurnByTurnViewController.swift](./MapScenarios/Scenarios/TurnByTurnViewController.swift) - View controller
+- [TurnByTurnCollectionView.swift](./MapScenarios/Shared/TurnByTurnCollectionView/TurnByTurnCollectionView.swift) - Instruction collection view
+- [TurnByTurnInstructionCollectionViewCell.swift](./MapScenarios/Shared/TurnByTurnCollectionView/Cells/TurnByTurnInstructionCollectionViewCell.swift) - Instruction cell
+- [TurnByTurnInstructionCollectionViewCell.xib](./MapScenarios/Shared/TurnByTurnCollectionView/Cells/TurnByTurnInstructionCollectionViewCell.xib) - Instruction cell
+- [DirectionImages.xcassets](./MapScenarios/Shared/TurnByTurnCollectionView/Icons/DirectionImages.xcassets) - direction images
 
 **Step 1: Copy the following files to your project**
 
@@ -22,31 +22,47 @@
 - TurnByTurnInstructionCollectionViewCell.xib 
 - DirectionImages.xcassets 
 
-**Step 2: Present turn by turn view on the map whenever the route is ready**
+**Step 2: Present turn by turn view on the map whenever building and route are loaded**
 
 ```
-PWRoute.createRoute(from: startPOI, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
-	guard let route = route else {
-		// Handle error
-		return
-	}
-            
-	// Plot route on the map
-	let routeOptions = PWRouteUIOptions()
-	self?.mapView.navigate(with: route, options: routeOptions)
-            
-	// Initial route instructions
-	self?.initializeTurnByTurn()
-})
+func startRoute() {
+    // Set tracking mode to follow me
+    mapView.trackingMode = .follow
+    
+    // Find the destination POI
+    guard let startPOI = mapView.building.pois.first(where: { $0.identifier == startPOIIdentifier }),
+        let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier }) else {
+        warning("Please put valid data for `startPOIIdentifier` and `destinationPOIIdentifier` in RoutingViewController.swift")
+        return
+    }
+    
+    // Calculate a route and plot on the map
+    PWRoute.createRoute(from: startPOI,
+                        to: destinationPOI,
+                        accessibility: false,
+                        excludedPoints: nil) { [weak self] (route, error) in
+        guard let route = route else {
+            self?.warning("Couldn't find a route between POI(\(self?.startPOIIdentifier ?? 0)) and POI(\(self?.destinationPOIIdentifier ?? 0)).")
+            return
+        }
         
-// Preset turn by turn view
+        // Plot route on the map
+        let routeOptions = PWRouteUIOptions()
+        self?.mapView.navigate(with: route, options: routeOptions)
+        
+        // Initial route instructions
+        self?.initializeTurnByTurn()
+    }
+}
+
 func initializeTurnByTurn() {
-	mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
-	if turnByTurnCollectionView == nil {
-   		turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
-		turnByTurnCollectionView?.turnByTurnDelegate = self
-		turnByTurnCollectionView?.configureInView(view)
-	}
+    mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+    
+    if turnByTurnCollectionView == nil {
+        turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
+        turnByTurnCollectionView?.turnByTurnDelegate = self
+        turnByTurnCollectionView?.configureInView(view)
+    }
 }
 ```
 
