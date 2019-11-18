@@ -10,7 +10,7 @@
 
 ### Sample Code 
 - [TurnByTurnViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/TurnByTurnViewController.swift) - View controller
-- [TurnByTurnCollectionView.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/TurnByTurn/Collection%20View/TurnByTurnCollectionView.swift) - Instruction collection view
+- [TurnByTurnCollectionView.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Shared/TurnByTurnCollectionView.swift) - Instruction collection view
 - [TurnByTurnInstructionCollectionViewCell.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/TurnByTurn/Collection%20View/Cells/TurnByTurnInstructionCollectionViewCell.swift) - Instruction cell
 - [TurnByTurnInstructionCollectionViewCell.xib](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/TurnByTurn/Collection%20View/Cells/TurnByTurnInstructionCollectionViewCell.xib) - Instruction cell
 - [DirectionImages.xcassets](https://github.com/phunware/maas-mapping-ios-sdk/tree/readme/Samples/MapScenarios/MapScenarios/Scenarios/TurnByTurn/Collection%20View/Icons/DirectionImages.xcassets) - direction images
