@@ -11,43 +11,50 @@ import PWCore
 import PWMapKit
 import UIKit
 
-class VoicePromptRouteViewController: UIViewController {
+// MARK: - VoicePromptRouteViewController
+class VoicePromptRouteViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
     var signatureKey = ""
     
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+    // Enter your building identifier here, found on the building's Edit page on Maas portal
+    var buildingIdentifier = 0
     
-    let mapView = PWMapView()
-    var turnByTurnCollectionView: TurnByTurnCollectionView?
-    let locationManager = CLLocationManager()
-    var firstLocationAcquired = false
-    let voicePromptButton = VoicePromptButton()
-    let voicePromptsLabel = UILabel()
-    var previouslyReadInstructions = Set<PWRouteInstruction>()
+    // Replace with the destination POI identifier
+    private let destinationPOIIdentifier = 0
+    
+    private let mapView = PWMapView()
+    private var turnByTurnCollectionView: TurnByTurnCollectionView?
+    private let locationManager = CLLocationManager()
+    private var firstLocationAcquired = false
+    private let voicePromptButton = VoicePromptButton()
+    private let voicePromptsLabel = UILabel()
+    
     private let speechEnabledKey = "SpeechEnabled"
-    var speechEnabled: Bool {
+    
+    private var speechEnabled: Bool {
         get {
             if UserDefaults.standard.value(forKey: speechEnabledKey) == nil {
                 return true
             }
+            
             return UserDefaults.standard.bool(forKey: speechEnabledKey)
         }
         set {
             UserDefaults.standard.set(newValue, forKey: speechEnabledKey)
         }
     }
-    let speechSynthesizer = AVSpeechSynthesizer()
-    var instructionChangeCausedBySwipe = false
+    
+    private let speechSynthesizer = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("Voice Prompts For Route", comment: "")
+        navigationItem.title = NSLocalizedString("Voiced Route Instructions", comment: "")
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        if !validateScenarioSettings() {
             return
         }
         
@@ -97,6 +104,7 @@ class VoicePromptRouteViewController: UIViewController {
     
     func initializeTurnByTurn() {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
             turnByTurnCollectionView?.turnByTurnDelegate = self
@@ -106,7 +114,6 @@ class VoicePromptRouteViewController: UIViewController {
 }
 
 // MARK: - Voice Prompt UI
-
 extension VoicePromptRouteViewController {
     
     func configureVoiceUI() {
@@ -144,8 +151,12 @@ extension VoicePromptRouteViewController {
     }
     
     func updateVoiceUI() {
-        voicePromptsLabel.text = speechEnabled ? NSLocalizedString("Unmuted", comment: "muted label") : NSLocalizedString("Muted", comment: "muted label")
+        voicePromptsLabel.text = speechEnabled
+            ? NSLocalizedString("Unmuted", comment: "muted label")
+            : NSLocalizedString("Muted", comment: "muted label")
+        
         voicePromptButton.buttonImage = speechEnabled ? #imageLiteral(resourceName: "Unmuted") : #imageLiteral(resourceName: "Muted")
+        
         if speechEnabled {
             if let currentInstruction = mapView.currentRouteInstruction() {
                 readInstructionAloud(currentInstruction)
@@ -162,7 +173,9 @@ extension VoicePromptRouteViewController {
     }
     
     func readInstructionAloud(_ instruction: PWRouteInstruction) {
-        let voicePrompt = instruction.instructionStringForUser()
+        let directionsViewModel = BasicInstructionViewModel(for: instruction)
+        let voicePrompt = directionsViewModel.voicePrompt
+        
         let utterance = AVSpeechUtterance(string: voicePrompt)
         utterance.voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
         
@@ -174,31 +187,23 @@ extension VoicePromptRouteViewController {
 }
 
 // MARK: - PWMapViewDelegate
-
 extension VoicePromptRouteViewController: PWMapViewDelegate {
-    
+
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         if !firstLocationAcquired {
             firstLocationAcquired = true
             mapView.trackingMode = .follow
             
-            let destinationPOIIdentifier = 0 /* Replace with the destination POI identifier */
-            
-            var destinationPOI: PWPointOfInterest!
-            if destinationPOIIdentifier != 0 {
-                destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
-            } else {
-                if let firstPOI = mapView.building.pois.first {
-                    destinationPOI = firstPOI
-                }
-            }
-            
-            if destinationPOI == nil {
+            guard let destinationPOI = getDestinationPOI() else {
                 print("No points of interest found, please add at least one to the building in the Maas portal")
                 return
             }
             
-            PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
+            
+            PWRoute.createRoute(from: mapView.indoorUserLocation,
+                                to: destinationPOI,
+                                accessibility: false,
+                                excludedPoints: nil) { [weak self] (route, error) in
                 guard let route = route else {
                     print("Couldn't find a route from you current location to the destination.")
                     return
@@ -207,43 +212,37 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
                 mapView.navigate(with: route)
                 self?.initializeTurnByTurn()
                 self?.configureVoiceUI()
-            })
+            }
         }
     }
     
     func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
         turnByTurnCollectionView?.scrollToInstruction(instruction)
-        guard speechEnabled else {
-            return
-        }
-        if !instructionChangeCausedBySwipe, previouslyReadInstructions.contains(instruction) {
-            return
-        } else if !instructionChangeCausedBySwipe {
-            previouslyReadInstructions.insert(instruction)
-        }
-        instructionChangeCausedBySwipe = false // Clear state for next instruction change
         
-        readInstructionAloud(instruction)
+        if speechEnabled {
+            readInstructionAloud(instruction)
+        }
+    }
+    
+    private func getDestinationPOI() -> PWPointOfInterest? {
+        if destinationPOIIdentifier == 0 {
+            return mapView.building.pois.first
+        } else {
+            return mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
+        }
     }
 }
 
-// MARK: - TurnByTurnDelegate
-
-extension VoicePromptRouteViewController: TurnByTurnDelegate {
-    
-    func didSwipeOnRouteInstruction() {
-        instructionChangeCausedBySwipe = true
-    }
-    
-    func instructionExpandTapped() {
+// MARK: - TurnByTurnCollectionViewDelegate
+extension VoicePromptRouteViewController: TurnByTurnCollectionViewDelegate {
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
         let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(mapView: mapView)
+        routeInstructionViewController.configure(route: mapView.currentRoute)
         routeInstructionViewController.presentFromViewController(self)
     }
 }
 
 // MARK: - CLLocationManagerDelegate
-
 extension VoicePromptRouteViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

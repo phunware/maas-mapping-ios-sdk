@@ -11,7 +11,8 @@ import UIKit
 import PWCore
 import PWMapKit
 
-class RoutingViewController: UIViewController {
+// MARK: - RoutingViewController
+class RoutingViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -22,16 +23,18 @@ class RoutingViewController: UIViewController {
     var buildingIdentifier = 0
     
     // Destination POI identifier for routing
-    var destinationPOIIdentifier: Int = 0
+    private var destinationPOIIdentifier: Int = 0
     
-    let mapView = PWMapView()
-    let locationManager = CLLocationManager()
-    var firstLocationAcquired = false
+    private let mapView = PWMapView()
+    private let locationManager = CLLocationManager()
+    private var firstLocationAcquired = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        navigationItem.title = "Route to Point of Interest"
+        
+        if !validateScenarioSettings() {
             return
         }
         
@@ -40,7 +43,6 @@ class RoutingViewController: UIViewController {
             return
         }
         
-        navigationItem.title = "Route to Point of Interest"
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         
         mapView.delegate = self
@@ -89,16 +91,18 @@ class RoutingViewController: UIViewController {
         mapView.trackingMode = .follow
         
         // Find the destination POI
-        let destinationPOI = mapView.building.pois.filter({
-            return $0.identifier == destinationPOIIdentifier
-        }).first
+        let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
+        
         if destinationPOI == nil {
             warning("No points of interest found, please add at least one to the building in the Maas portal")
             return
         }
         
         // Calculate a route and plot on the map
-        PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
+        PWRoute.createRoute(from: mapView.indoorUserLocation,
+                            to: destinationPOI,
+                            accessibility: false,
+                            excludedPoints: nil) { [weak self] (route, error) in
             guard let route = route else {
                 self?.warning("Couldn't find a route from you current location to the destination.")
                 return
@@ -114,12 +118,11 @@ class RoutingViewController: UIViewController {
             // routeOptions.joinPointColor = <#joinPointColor#>
             // routeOptions.lineJoin = <#.miter, round or bevel#>
             self?.mapView.navigate(with: route, options: routeOptions)
-        })
+        }
     }
 }
 
 // MARK: - PWMapViewDelegate
-
 extension RoutingViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
@@ -131,7 +134,6 @@ extension RoutingViewController: PWMapViewDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate
-
 extension RoutingViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

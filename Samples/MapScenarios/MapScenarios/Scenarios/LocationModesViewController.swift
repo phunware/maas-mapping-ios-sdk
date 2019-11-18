@@ -11,6 +11,115 @@ import UIKit
 import PWMapKit
 import PWCore
 
+// MARK: - LocationModesViewController
+class LocationModesViewController: UIViewController, ScenarioSettingsProtocol {
+    
+    // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
+    var applicationId = ""
+    var accessKey = ""
+    var signatureKey = ""
+    
+    // Enter your building identifier here, found on the building's Edit page on Maas portal
+    var buildingIdentifier = 0
+    
+    private let mapView = PWMapView()
+    private let locationManager = CLLocationManager()
+    
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var trackingModeButton: UIBarButtonItem!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.title = "Location Modes"
+        
+        if !validateScenarioSettings() {
+            return
+        }
+        
+        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        mapView.delegate = self
+        view.addSubview(mapView)
+        configureMapViewConstraints()
+        
+        trackingModeButton.image = .emptyTrackingImage(color: .blue)
+
+        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+                self?.locationManager.delegate = self
+                if !CLLocationManager.isAuthorized() {
+                    self?.locationManager.requestWhenInUseAuthorization()
+                } else {
+                    self?.startManagedLocationManager()
+                }
+            })
+        }
+    }
+    
+    func startManagedLocationManager() {
+        DispatchQueue.main.async { [weak self] in
+            guard let buildingIdentifier = self?.buildingIdentifier else {
+                return
+            }
+            let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
+            self?.mapView.register(managedLocationManager)
+        }
+    }
+    
+    func configureMapViewConstraints() {
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: toolbar.topAnchor).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    @IBAction func trackingModeButtonTapped(_ sender: Any) {
+        switch mapView.trackingMode {
+        case .none:
+            mapView.trackingMode = .follow
+        case .follow:
+            mapView.trackingMode = .followWithHeading
+        case .followWithHeading:
+            mapView.trackingMode = .none
+        @unknown default:
+            break
+        }
+    }
+}
+
+// MARK: - PWMapViewDelegate
+extension LocationModesViewController: PWMapViewDelegate {
+    
+    func mapView(_ mapView: PWMapView!, didChangeIndoorUserTrackingMode mode: PWTrackingMode) {
+        switch mode {
+        case .none:
+            trackingModeButton.image = .emptyTrackingImage(color: .blue)
+        case .follow:
+            trackingModeButton.image = .filledTrackingImage(color: .blue)
+        case .followWithHeading:
+            trackingModeButton.image = .trackWithHeadingImage(color: .blue)
+        @unknown default:
+            break
+        }
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension LocationModesViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            startManagedLocationManager()
+        default:
+            mapView.unregisterLocationManager()
+            print("Not authorized to start PWLocationManager")
+        }
+    }
+}
+
+// MARK: UIImage Extension
 extension UIImage {
     
     class func emptyTrackingImage(color: UIColor) -> UIImage {
@@ -101,113 +210,5 @@ extension UIImage {
             return image
         }
         return UIImage()
-    }
-}
-
-class LocationModesViewController: UIViewController {
-    
-    // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
-    var applicationId = ""
-    var accessKey = ""
-    var signatureKey = ""
-    
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
-    
-    let mapView = PWMapView()
-    let locationManager = CLLocationManager()
-    
-    @IBOutlet weak var toolbar: UIToolbar!
-    @IBOutlet weak var trackingModeButton: UIBarButtonItem!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.title = "Location Modes"
-        
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
-            return
-        }
-        
-        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
-        mapView.delegate = self
-        view.addSubview(mapView)
-        configureMapViewConstraints()
-        
-        trackingModeButton.image = .emptyTrackingImage(color: .blue)
-
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                self?.locationManager.delegate = self
-                if !CLLocationManager.isAuthorized() {
-                    self?.locationManager.requestWhenInUseAuthorization()
-                } else {
-                    self?.startManagedLocationManager()
-                }
-            })
-        }
-    }
-    
-    func startManagedLocationManager() {
-        DispatchQueue.main.async { [weak self] in
-            guard let buildingIdentifier = self?.buildingIdentifier else {
-                return
-            }
-            let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
-            self?.mapView.register(managedLocationManager)
-        }
-    }
-    
-    func configureMapViewConstraints() {
-        mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: toolbar.topAnchor).isActive = true
-        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    }
-    
-    @IBAction func trackingModeButtonTapped(_ sender: Any) {
-        switch mapView.trackingMode {
-        case .none:
-            mapView.trackingMode = .follow
-        case .follow:
-            mapView.trackingMode = .followWithHeading
-        case .followWithHeading:
-            mapView.trackingMode = .none
-        @unknown default:
-            break
-        }
-    }
-}
-
-// MARK: - PWMapViewDelegate
-
-extension LocationModesViewController: PWMapViewDelegate {
-    
-    func mapView(_ mapView: PWMapView!, didChangeIndoorUserTrackingMode mode: PWTrackingMode) {
-        switch mode {
-        case .none:
-            trackingModeButton.image = .emptyTrackingImage(color: .blue)
-        case .follow:
-            trackingModeButton.image = .filledTrackingImage(color: .blue)
-        case .followWithHeading:
-            trackingModeButton.image = .trackWithHeadingImage(color: .blue)
-        @unknown default:
-            break
-        }
-    }
-}
-
-// MARK: - CLLocationManagerDelegate
-
-extension LocationModesViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedAlways, .authorizedWhenInUse:
-            startManagedLocationManager()
-        default:
-            mapView.unregisterLocationManager()
-            print("Not authorized to start PWLocationManager")
-        }
     }
 }

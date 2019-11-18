@@ -9,46 +9,66 @@
 import PWMapKit
 import UIKit
 
-protocol TurnByTurnDelegate: class {
-    
-    func didSwipeOnRouteInstruction()
-    func instructionExpandTapped()
+// MARK: - TurnByTurnCollectionViewDelegate protocol
+protocol TurnByTurnCollectionViewDelegate: class {
+    func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel
+    func turnByTurnCollectionViewDidSwipeOnRouteInstruction(_ collectionView: TurnByTurnCollectionView)
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView)
 }
 
+// MARK: - TurnByTurnCollectionViewDelegate extension: default implemenations
+extension TurnByTurnCollectionViewDelegate {
+    // default implementation returns a BasicInstructionViewModel
+    func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
+        return BasicInstructionViewModel(for: routeInstruction)
+    }
+    
+    // default implementations do nothing by default
+    func turnByTurnCollectionViewDidSwipeOnRouteInstruction(_ collectionView: TurnByTurnCollectionView) { }
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) { }
+}
+
+// MARK: - TurnByTurnCollectionView
 class TurnByTurnCollectionView: UICollectionView {
     
     let mapView: PWMapView
     
-    weak var turnByTurnDelegate: TurnByTurnDelegate?
+    weak var turnByTurnDelegate: TurnByTurnCollectionViewDelegate?
     
-    fileprivate let itemPercentOfScreenWidth: CGFloat = 0.85
-    fileprivate var interItemPadding: CGFloat {
+    private let itemPercentOfScreenWidth: CGFloat = 0.85
+    
+    private var interItemPadding: CGFloat {
         return sidePadding / 2.0
     }
-    fileprivate var sidePadding: CGFloat {
+    
+    private var sidePadding: CGFloat {
         return calculateSidePaddingFromFrame(frame)
     }
-    fileprivate var itemSize: CGSize {
+    
+    private var itemSize: CGSize {
         return calculateItemSizeFromFrame(frame)
     }
-    fileprivate var itemCount: Int {
-        guard let route = mapView.currentRoute, let routeInstructions = route.routeInstructions else {
-            return 0
-        }
-        return routeInstructions.count
+    
+    private var itemCount: Int {
+        return mapView.currentRoute?.routeInstructions?.count ?? 0
     }
-    fileprivate var currentIndex: Int {
+    
+    private var currentIndex: Int {
         let floatIndex = (contentOffset.x + sidePadding) / (itemSize.width + interItemPadding)
         let calculatedIndex = Int(round(floatIndex))
         return max(0, min(itemCount - 1, calculatedIndex))
     }
-    fileprivate var indexOfCellBeforeDragging = 0
+    
+    private var indexOfCellBeforeDragging = 0
     
     init(mapView: PWMapView) {
         self.mapView = mapView
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        
         super.init(frame: .zero, collectionViewLayout: layout)
+        
         showsHorizontalScrollIndicator = false
         isPagingEnabled = false
         bounces = true
@@ -60,7 +80,8 @@ class TurnByTurnCollectionView: UICollectionView {
         decelerationRate = UIScrollView.DecelerationRate.fast
         
         let collectionViewCellIdentifier = String(describing: TurnByTurnInstructionCollectionViewCell.self)
-        register(UINib(nibName: collectionViewCellIdentifier, bundle: nil), forCellWithReuseIdentifier: collectionViewCellIdentifier)
+        let nib = UINib(nibName: collectionViewCellIdentifier, bundle: nil)
+        register(nib, forCellWithReuseIdentifier: collectionViewCellIdentifier)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -86,11 +107,11 @@ class TurnByTurnCollectionView: UICollectionView {
         contentOffset = CGPoint(x: -sidePadding, y: 0)
     }
     
-    fileprivate func calculateSidePaddingFromFrame(_ frame: CGRect) -> CGFloat {
+    private func calculateSidePaddingFromFrame(_ frame: CGRect) -> CGFloat {
         return (frame.width - (calculateItemSizeFromFrame(frame).width)) / 2.0
     }
     
-    fileprivate func calculateItemSizeFromFrame(_ frame: CGRect) -> CGSize {
+    private func calculateItemSizeFromFrame(_ frame: CGRect) -> CGSize {
         return CGSize(width: frame.width * itemPercentOfScreenWidth, height: frame.height)
     }
     
@@ -104,7 +125,7 @@ class TurnByTurnCollectionView: UICollectionView {
         }
     }
     
-    fileprivate func scrollToIndex(_ index: Int, currentSwipeVelocity: CGFloat = 0.0, targetContentOffset: UnsafeMutablePointer<CGPoint>? = nil) {
+    private func scrollToIndex(_ index: Int, currentSwipeVelocity: CGFloat = 0.0, targetContentOffset: UnsafeMutablePointer<CGPoint>? = nil) {
         let targetOffset = ((itemSize.width + interItemPadding) * CGFloat(index)) - sidePadding
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: currentSwipeVelocity, options: [], animations: { [weak self] in
             if let targetContentOffset = targetContentOffset {
@@ -117,8 +138,7 @@ class TurnByTurnCollectionView: UICollectionView {
     }
 }
 
-// MARK - UICollectionViewDataSource
-
+// MARK: - UICollectionViewDataSource
 extension TurnByTurnCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -126,22 +146,31 @@ extension TurnByTurnCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
-        if let routeInstructionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TurnByTurnInstructionCollectionViewCell.self), for: indexPath) as? TurnByTurnInstructionCollectionViewCell {
-            if let route = mapView.currentRoute, let routeInstructions = route.routeInstructions, routeInstructions.count > indexPath.row {
-                routeInstructionCollectionViewCell.updateForRouteInstruction(routeInstructions[indexPath.row])
-            }
-            routeInstructionCollectionViewCell.buttonAction = { [weak self] in
-                self?.turnByTurnDelegate?.instructionExpandTapped()
-            }
-            cell = routeInstructionCollectionViewCell
+        // we are guaranteed a cell is returned from this method as long as the identifier is registered
+        let identifier = String(describing: TurnByTurnInstructionCollectionViewCell.self)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TurnByTurnInstructionCollectionViewCell
+        
+        if let routeInstruction = mapView.currentRoute?.routeInstructions?[indexPath.row] {
+            // Get the view model from the delegate. If there is no delegate, use BasicInstructionViewModel.
+            let viewModel = turnByTurnDelegate?.turnByTurnCollectionView(self, viewModelFor: routeInstruction)
+                ?? BasicInstructionViewModel(for: routeInstruction)
+            
+            cell.configure(with: viewModel)
         }
+        
+        cell.buttonAction = { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            self.turnByTurnDelegate?.turnByTurnCollectionViewInstructionExpandTapped(self)
+        }
+        
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-
 extension TurnByTurnCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -154,7 +183,6 @@ extension TurnByTurnCollectionView: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: - UIScrollViewDelegate
-
 extension TurnByTurnCollectionView: UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -171,9 +199,10 @@ extension TurnByTurnCollectionView: UIScrollViewDelegate {
         let notInFirstCellBeforeDragging = (indexOfCellBeforeDragging - 1) >= 0
         let hasEnoughVelocityToSlideToThePreviousCell = notInFirstCellBeforeDragging && velocity.x < -swipeVelocityThreshold
         let didUseSwipeToSkipCell = currentCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
+        
         if didUseSwipeToSkipCell {
             let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
-            turnByTurnDelegate?.didSwipeOnRouteInstruction()
+            turnByTurnDelegate?.turnByTurnCollectionViewDidSwipeOnRouteInstruction(self)
             scrollToIndex(snapToIndex, targetContentOffset: targetContentOffset)
         } else {
             scrollToIndex(currentIndex, targetContentOffset: targetContentOffset)

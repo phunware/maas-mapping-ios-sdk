@@ -11,25 +11,27 @@ import UIKit
 import PWMapKit
 import PWCore
 
-class BluedotLocationViewController: UIViewController {
+// MARK: - BluedotLocationViewController
+class BluedotLocationViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
     var signatureKey = ""
     
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+    // Enter your building identifier here, found on the building's Edit page on Maas portal
+    var buildingIdentifier = 0
     
-    let mapView = PWMapView()
-    let locationManager = CLLocationManager()
-    var firstLocationAcquired = false
+    private let mapView = PWMapView()
+    private let locationManager = CLLocationManager()
+    private var firstLocationAcquired = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Bluedot Location"
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        if !validateScenarioSettings() {
             return
         }
         
@@ -70,7 +72,6 @@ class BluedotLocationViewController: UIViewController {
 }
 
 // MARK: - PWMapViewDelegate
-
 extension BluedotLocationViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
@@ -82,7 +83,6 @@ extension BluedotLocationViewController: PWMapViewDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate
-
 extension BluedotLocationViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

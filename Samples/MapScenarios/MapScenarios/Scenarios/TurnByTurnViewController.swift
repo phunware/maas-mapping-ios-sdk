@@ -10,7 +10,8 @@ import UIKit
 import PWCore
 import PWMapKit
 
-class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
+// MARK: - TurnByTurnViewController
+class TurnByTurnViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -21,17 +22,19 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
     var buildingIdentifier: Int = 0
     
     // Destination POI identifier for routing
-    var startPOIIdentifier: Int = 0
-    var destinationPOIIdentifier: Int = 0
+    private var startPOIIdentifier: Int = 0
+    private var destinationPOIIdentifier: Int = 0
     
-    let mapView = PWMapView()
+    private let mapView = PWMapView()
     
-    var turnByTurnCollectionView: TurnByTurnCollectionView?
+    private var turnByTurnCollectionView: TurnByTurnCollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        navigationItem.title = "Route - Turn By Turn"
+        
+        if !validateScenarioSettings() {
             return
         }
         
@@ -40,7 +43,6 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
             return
         }
         
-        navigationItem.title = "Turn By Turn Navigation"
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         
         view.addSubview(mapView)
@@ -68,7 +70,32 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
         turnByTurnCollectionView?.isHidden = true
         super.viewWillDisappear(animated)
     }
+}
+
+// MARK: - TurnByTurnCollectionViewDelegate
+extension TurnByTurnViewController: TurnByTurnCollectionViewDelegate {
+    func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
+        return BasicInstructionViewModel(for: routeInstruction)
+    }
     
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
+        let routeInstructionViewController = RouteInstructionListViewController()
+        routeInstructionViewController.delegate = self
+        routeInstructionViewController.configure(route: mapView.currentRoute)
+        routeInstructionViewController.presentFromViewController(self)
+    }
+}
+
+// MARK: - RouteInstructionListViewControllerDelegate
+extension TurnByTurnViewController: RouteInstructionListViewControllerDelegate {
+    func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
+        -> InstructionViewModel {
+        return BasicInstructionViewModel(for: routeInstruction)
+    }
+}
+
+// MARK: - private
+private extension TurnByTurnViewController {
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -77,21 +104,22 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
-    //*************************************
-    // Plot route on the map
-    //*************************************
     func startRoute() {
         // Set tracking mode to follow me
         mapView.trackingMode = .follow
         
         // Find the destination POI
-        guard let startPOI = mapView.building.pois.first(where: { $0.identifier == startPOIIdentifier }), let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier }) else {
+        guard let startPOI = mapView.building.pois.first(where: { $0.identifier == startPOIIdentifier }),
+            let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier }) else {
             warning("Please put valid data for `startPOIIdentifier` and `destinationPOIIdentifier` in RoutingViewController.swift")
             return
         }
         
         // Calculate a route and plot on the map
-        PWRoute.createRoute(from: startPOI, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
+        PWRoute.createRoute(from: startPOI,
+                            to: destinationPOI,
+                            accessibility: false,
+                            excludedPoints: nil) { [weak self] (route, error) in
             guard let route = route else {
                 self?.warning("Couldn't find a route between POI(\(self?.startPOIIdentifier ?? 0)) and POI(\(self?.destinationPOIIdentifier ?? 0)).")
                 return
@@ -103,23 +131,16 @@ class TurnByTurnViewController: UIViewController, TurnByTurnDelegate {
             
             // Initial route instructions
             self?.initializeTurnByTurn()
-        })
+        }
     }
     
     func initializeTurnByTurn() {
         mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
             turnByTurnCollectionView?.turnByTurnDelegate = self
             turnByTurnCollectionView?.configureInView(view)
         }
     }
-    
-    func instructionExpandTapped() {
-        let routeInstructionViewController = RouteInstructionListViewController()
-        routeInstructionViewController.configure(mapView: mapView)
-        routeInstructionViewController.presentFromViewController(self)
-    }
-    
-    func didSwipeOnRouteInstruction() { }
 }

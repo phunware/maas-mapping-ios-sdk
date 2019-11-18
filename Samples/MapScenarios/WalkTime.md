@@ -5,158 +5,94 @@
 
 ### Usage
 
-- This feature is supposed to be combined with [turn by turn](./TurnByTurn.md), so just need to fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, `startPOIIdentifier` and `destinationPOIIdentifier` in TurnByTurnCollectionViewController.swift.
+- Need to fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, `startPOIIdentifier` and `destinationPOIIdentifier` in TurnByTurnCollectionViewController.swift.
 
 ### Sample Code
-- [WalkTimeViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/WalkTime/WalkTimeViewController.swift)
-- [WalkTimeView.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/WalkTime/Views/WalkTimeView.swift)
-- [WalkTimeView.xib](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/WalkTime/Views/WalkTimeView.xib)
+- [WalkTimeViewController.swift](./MapScenarios/Scenarios/WalkTimeViewController.swift)
+- [WalkTimeView.swift](./MapScenarios/Shared/WalkTimeView/WalkTimeView.swift)
+- [WalkTimeView.xib](./MapScenarios/Shared/WalkTimeView/WalkTimeView.xib)
 
-**Step 1: add [turn by turn](./TurnByTurn.md) first**
+**Step 1: Copy the following files to your project**
 
-**Step 2: Copy the following files to your project**
-
+- WalkTimeViewController.swift
 - WalkTimeView.swift
 - WalkTimeView.xib
 
-**Step 3: Override `initializeTurnByTurn()` to ensure `configureWalkTimeView()` is called at the same time**
+**Step 2: Pay attention to the `locationManager(_:didUpdateLocations:) delegate callback:**
+This is called periodically by the location manager. We keep track of the previous speeds so we can average them out for walk time calculations.
 
 ```
-override func initializeTurnByTurn() {
-	super.initializeTurnByTurn()
-
-	// Show walk time view when turn by turn is visible
-	configureWalkTimeView()
-}
-```
-
-**Step 4: Add the following methods to your view controller**
-
-```
-func configureWalkTimeView() {
-    if let walkTimeView = Bundle.main.loadNibNamed(String(describing: WalkTimeView.self), owner: nil, options: nil)?.first as? WalkTimeView {
-        view.addSubview(walkTimeView)
-
-        // Layout
-        walkTimeView.translatesAutoresizingMaskIntoConstraints = false
-        walkTimeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        walkTimeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        walkTimeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        walkTimeView.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
-        walkTimeView.isHidden = true
-
-        self.walkTimeView = walkTimeView
-
-        updateWalkTimeView()
-    }
-}
-
-func updateWalkTimeView() {
-    // Update every 5 seconds
-    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-        self?.updateWalkTimeView()
-    }
-
-    let distance = remainingDistance()
-    guard let walkTimeView = walkTimeView, distance >= 0 else {
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    guard let lastLocation = locations.last else {
         return
     }
-
-    // Remove it when it's approaching the destination
-    if distance < 5, let currentInstruction = mapView.currentRouteInstruction(), let lastInstruction = mapView.currentRoute.routeInstructions.last, currentInstruction == lastInstruction {
-        walkTimeView.removeFromSuperview()
-        return
+    
+    speedSamples.append(lastLocation.speed)
+    
+    let maxSamples = 5
+    let count = speedSamples.count
+    
+    if speedSamples.count > maxSamples {
+        speedSamples.removeFirst(count - maxSamples)
     }
-
-    // Set initial value
-    walkTimeView.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
-
-    NotificationCenter.default.post(name: .WalkTimeChanged, object: nil, userInfo: [NotificationUserInfoKeys.remainingDistance : distance, NotificationUserInfoKeys.averageSpeed : averageSpeed])
-}
-
-func remainingDistance() -> CLLocationDistance {
-    // Recalculate only when the blue dot is snapping on the route path
-    guard let lastUpdateLocation = lastUpdateLocation, snappingLocation == true, let currentInstruction = self.mapView.currentRouteInstruction(), let instructions = self.mapView.currentRoute.routeInstructions, let currentIndex = instructions.firstIndex(of: currentInstruction) else {
-        return -1
-    }
-
-    var distance: CLLocationDistance = 0
-
-    // The distance for the remaining instructions
-    let remainingInstructions = instructions[(currentIndex+1)...]
-    for instruction in remainingInstructions {
-        distance += instruction.distance
-    }
-
-    // The distance from current location to the end of current instruction
-    if let instructionEndLocation = currentInstruction.points.last?.coordinate {
-        let userLocation = CLLocation(latitude: lastUpdateLocation.coordinate.latitude, longitude: lastUpdateLocation.coordinate.longitude)
-        let endLocation = CLLocation(latitude: instructionEndLocation.latitude, longitude: instructionEndLocation.longitude)
-        distance += userLocation.distance(from: endLocation)
-    }
-
-    return distance
 }
 ```
 
-As well as the extension methods
+**Step 3: Update the walk time on each maneuver change by calling `updateWalkTime()`**
 
 ```
-// MARK: - PWMapViewDelegate
+func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
+    turnByTurnCollectionView?.scrollToInstruction(instruction)
+    
+    // cancel the timer
+    cancelWalkTimeUpdateTimer()
+    
+    // update the walk time
+    updateWalkTime()
+    
+    // restart the timer
+    startWalkTimeUpdateTimer()
+}
+```
 
-extension WalkTimeViewController: PWMapViewDelegate {
-
-    func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
-        lastUpdateLocation = userLocation
+**Step 4: `updateWalkTime()` calculates the time and updates the view`**
+If a blue dot has been acquired, we calculate the time from the current blue dot position. Otherwise, we calculate from the beginning of the current maneuver. When we get close enough to our destination, we remove the walk time view.
+```
+func updateWalkTime() {
+    // we need a valid instruction, the list of all instructions,
+    // and the current instruction index before we can calculate anything
+    guard let currentInstruction = mapView.currentRouteInstruction(),
+        let allInstructions = mapView.currentRoute.routeInstructions,
+        let currentInstructionIndex = allInstructions.firstIndex(of: currentInstruction) else {
+            return
     }
-
-    func mapViewStartedSnappingLocation(toRoute mapView: PWMapView!) {
-        snappingLocation = true
-    }
-
-    func mapViewStoppedSnappingLocation(toRoute mapView: PWMapView!) {
-        snappingLocation = false
-    }
-
-    func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
-        // Update walk time when blue dot is not acquired
-        if lastUpdateLocation == nil, let currentIndex = self.mapView.currentRoute.routeInstructions.firstIndex(of: instruction), let remainingInstructions = self.mapView.currentRoute.routeInstructions?[currentIndex...] {
-            var distance: Double = 0
-            for instruction in remainingInstructions {
-                distance += instruction.distance
-            }
-            self.walkTimeView?.updateWalkTime(distance: distance, averageSpeed: 0)
+    
+    // Update blue dot walk time when snapping to route, and we have a valid user location, otherwise use static calculations.
+    let distance: CLLocationDistance
+    
+    if snappingLocation, let lastUpdateLocation = lastUpdateLocation {
+        distance = calculateBlueDotDistance(from: lastUpdateLocation,
+                                            currentInstruction: currentInstruction,
+                                            allInstructions: allInstructions,
+                                            currentInstructionIndex: currentInstructionIndex)
+        
+        // When we're at the destination, we're done. Remove the walk time view
+        if distance < minDistanceToDestination,
+            let lastInstruction = mapView.currentRoute.routeInstructions.last,
+            currentInstruction == lastInstruction {
+            walkTimeView?.removeFromSuperview()
+            return
         }
+    } else {
+        distance = calculateStaticDistance(currentInstruction: currentInstruction,
+                                           allInstructions: allInstructions,
+                                           currentInstructionIndex: currentInstructionIndex)
     }
+    
+    walkTimeView?.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
+    routeListController?.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
 }
 
-// MARK: - CLLocationManagerDelegate
-extension WalkTimeViewController: CLLocationManagerDelegate {
-
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedAlways, .authorizedWhenInUse:
-            clLocationManager.startUpdatingLocation()
-            // Re-register location manager
-            mapView.unregisterLocationManager()
-            let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
-            DispatchQueue.main.async { [weak self] in
-                self?.mapView.register(managedLocationManager)
-            }
-        default:
-            print("Not authorized to start PWManagedLocationManager")
-        }
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            speedArray.append(location.speed)
-            while speedArray.count > 5 {
-                speedArray.remove(at: 0)
-            }
-        }
-    }
-}
 ```
 
 # Privacy

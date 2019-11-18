@@ -11,6 +11,16 @@
 		7E87A2F2222478FF004ABFE9 /* OffRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */; };
 		7EFF9C602232FCD3002BDD0A /* OffRouteModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */; };
 		7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */; };
+		9A28B1E5235DFC5900215476 /* CLLocationDistance+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1E4235DFC5900215476 /* CLLocationDistance+Localization.swift */; };
+		9A28B1ED235E0C2600215476 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1EC235E0C2600215476 /* NSMutableAttributedString+Extension.swift */; };
+		9A5B6A1823748764007B41D4 /* InstructionTextOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B6A1723748764007B41D4 /* InstructionTextOptions.swift */; };
+		9AA804942358BFC700B21924 /* FloorChangePOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA804932358BFC700B21924 /* FloorChangePOI.swift */; };
+		9ACB8953236A2FE3001F6F09 /* ScenarioSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB8952236A2FE3001F6F09 /* ScenarioSettingsProtocol.swift */; };
+		9AFAAFD92363450800ED655C /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD22363450700ED655C /* Instruction.swift */; };
+		9AFAAFDA2363450800ED655C /* BasicInstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD32363450700ED655C /* BasicInstructionViewModel.swift */; };
+		9AFAAFDB2363450800ED655C /* InstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD42363450700ED655C /* InstructionViewModel.swift */; };
+		9AFAAFDD2363450800ED655C /* ArrivedInstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD62363450700ED655C /* ArrivedInstructionViewModel.swift */; };
+		9AFAAFDE2363450800ED655C /* UIImage+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD72363450700ED655C /* UIImage+Instruction.swift */; };
 		9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */; };
 		9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */; };
 		9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */; };
@@ -27,7 +37,6 @@
 		E378582E222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378582A222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift */; };
 		E378582F222073CA0059A179 /* DirectionImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E378582C222073CA0059A179 /* DirectionImages.xcassets */; };
 		E3785831222073DC0059A179 /* TurnByTurnCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */; };
-		E378583322247D430059A179 /* PWRouteInstruction+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378583222247D420059A179 /* PWRouteInstruction+Helper.swift */; };
 		E3785836222735A80059A179 /* RouteInstructionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785835222735A80059A179 /* RouteInstructionListViewController.swift */; };
 		E3785838222737F50059A179 /* RouteInstructionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3785837222737F50059A179 /* RouteInstructionListCell.xib */; };
 		E378583A222738A40059A179 /* RouteInstructionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3785839222738A40059A179 /* RouteInstructionListCell.swift */; };
@@ -50,6 +59,16 @@
 		7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteViewController.swift; sourceTree = "<group>"; };
 		7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteModalViewController.swift; sourceTree = "<group>"; };
 		7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OffRouteModalView.xib; sourceTree = "<group>"; };
+		9A28B1E4235DFC5900215476 /* CLLocationDistance+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationDistance+Localization.swift"; sourceTree = "<group>"; };
+		9A28B1EC235E0C2600215476 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		9A5B6A1723748764007B41D4 /* InstructionTextOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionTextOptions.swift; sourceTree = "<group>"; };
+		9AA804932358BFC700B21924 /* FloorChangePOI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorChangePOI.swift; sourceTree = "<group>"; };
+		9ACB8952236A2FE3001F6F09 /* ScenarioSettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioSettingsProtocol.swift; sourceTree = "<group>"; };
+		9AFAAFD22363450700ED655C /* Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		9AFAAFD32363450700ED655C /* BasicInstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInstructionViewModel.swift; sourceTree = "<group>"; };
+		9AFAAFD42363450700ED655C /* InstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewModel.swift; sourceTree = "<group>"; };
+		9AFAAFD62363450700ED655C /* ArrivedInstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivedInstructionViewModel.swift; sourceTree = "<group>"; };
+		9AFAAFD72363450700ED655C /* UIImage+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Instruction.swift"; sourceTree = "<group>"; };
 		9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluedotLocationViewController.swift; sourceTree = "<group>"; };
 		9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +86,6 @@
 		E378582A222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnByTurnInstructionCollectionViewCell.swift; sourceTree = "<group>"; };
 		E378582C222073CA0059A179 /* DirectionImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DirectionImages.xcassets; sourceTree = "<group>"; };
 		E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnByTurnCollectionView.swift; sourceTree = "<group>"; };
-		E378583222247D420059A179 /* PWRouteInstruction+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PWRouteInstruction+Helper.swift"; sourceTree = "<group>"; };
 		E3785835222735A80059A179 /* RouteInstructionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInstructionListViewController.swift; sourceTree = "<group>"; };
 		E3785837222737F50059A179 /* RouteInstructionListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteInstructionListCell.xib; sourceTree = "<group>"; };
 		E3785839222738A40059A179 /* RouteInstructionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInstructionListCell.swift; sourceTree = "<group>"; };
@@ -119,49 +137,66 @@
 		7E87A2F0222478DC004ABFE9 /* OffRoute */ = {
 			isa = PBXGroup;
 			children = (
-				7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */,
 				7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */,
+				7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */,
 				7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */,
 			);
 			path = OffRoute;
 			sourceTree = "<group>";
 		};
-		9D1ECD282225DD510029A667 /* WalkTime */ = {
+		9AC881AC2370997200FCDEFC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				9D1ECD2D2225DE310029A667 /* Views */,
-				9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */,
+				9AC881AD2370998300FCDEFC /* TurnByTurnCollectionView */,
+				E3785834222735540059A179 /* Route Instruction List */,
+				9AC881AE237099E200FCDEFC /* WalkTimeView */,
 			);
-			path = WalkTime;
+			path = Shared;
 			sourceTree = "<group>";
 		};
-		9D1ECD2D2225DE310029A667 /* Views */ = {
+		9AC881AD2370998300FCDEFC /* TurnByTurnCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E3785828222073CA0059A179 /* Cells */,
+				E378582B222073CA0059A179 /* Icons */,
+				E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */,
+			);
+			path = TurnByTurnCollectionView;
+			sourceTree = "<group>";
+		};
+		9AC881AE237099E200FCDEFC /* WalkTimeView */ = {
 			isa = PBXGroup;
 			children = (
 				9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */,
 				9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */,
 			);
-			path = Views;
+			path = WalkTimeView;
 			sourceTree = "<group>";
 		};
-		9D93FCE02208A2C700A2EB02 /* TurnByTurn */ = {
+		9AFAAFD12363450700ED655C /* Instruction */ = {
 			isa = PBXGroup;
 			children = (
-				E3785827222073CA0059A179 /* Collection View */,
-				9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */,
+				9AFAAFD22363450700ED655C /* Instruction.swift */,
+				9AFAAFD72363450700ED655C /* UIImage+Instruction.swift */,
+				9A5B6A1723748764007B41D4 /* InstructionTextOptions.swift */,
+				9AFAAFD42363450700ED655C /* InstructionViewModel.swift */,
+				9AFAAFD32363450700ED655C /* BasicInstructionViewModel.swift */,
+				9AFAAFD62363450700ED655C /* ArrivedInstructionViewModel.swift */,
+				9AA804932358BFC700B21924 /* FloorChangePOI.swift */,
 			);
-			path = TurnByTurn;
+			path = Instruction;
 			sourceTree = "<group>";
 		};
 		E378581B221313200059A179 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				E3ED03ED22415A1B00E394F5 /* CLLocationManager+Helper.swift */,
+				9A28B1E4235DFC5900215476 /* CLLocationDistance+Localization.swift */,
 				E37858202216FB840059A179 /* MKMapPoint+Helper.swift */,
 				E378581E22145F4F0059A179 /* PWMapView+Helper.swift */,
 				E378581C221313500059A179 /* PWRoute+Helper.swift */,
-				E378583222247D420059A179 /* PWRouteInstruction+Helper.swift */,
 				E378583B222821B10059A179 /* UIColor+Helper.swift */,
+				9A28B1EC235E0C2600215476 /* NSMutableAttributedString+Extension.swift */,
 			);
 			name = Extensions;
 			path = MapScenarios/Extensions;
@@ -174,16 +209,6 @@
 				E37858232217062D0059A179 /* VoicePromptRouteViewController.swift */,
 			);
 			path = "Voice Prompt";
-			sourceTree = "<group>";
-		};
-		E3785827222073CA0059A179 /* Collection View */ = {
-			isa = PBXGroup;
-			children = (
-				E3785828222073CA0059A179 /* Cells */,
-				E378582B222073CA0059A179 /* Icons */,
-				E3785830222073DC0059A179 /* TurnByTurnCollectionView.swift */,
-			);
-			path = "Collection View";
 			sourceTree = "<group>";
 		};
 		E3785828222073CA0059A179 /* Cells */ = {
@@ -239,8 +264,12 @@
 				E3C379A7204D90AA00905731 /* Info.plist */,
 				E3C379A4204D90AA00905731 /* LaunchScreen.storyboard */,
 				E3C3799F204D90AA00905731 /* Main.storyboard */,
-				E3C76E4F204D95BB00780D0F /* Scenarios */,
+				9ACB8952236A2FE3001F6F09 /* ScenarioSettingsProtocol.swift */,
 				E3C3799D204D90AA00905731 /* ScenarioSelectViewController.swift */,
+				E3C76E4F204D95BB00780D0F /* Scenarios */,
+				9AC881AC2370997200FCDEFC /* Shared */,
+				9AFAAFD12363450700ED655C /* Instruction */,
+				E378581B221313200059A179 /* Extensions */,
 			);
 			path = MapScenarios;
 			sourceTree = "<group>";
@@ -248,12 +277,6 @@
 		E3C76E4F204D95BB00780D0F /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
-				E378581B221313200059A179 /* Extensions */,
-				7E87A2F0222478DC004ABFE9 /* OffRoute */,
-				E3785834222735540059A179 /* Route Instruction List */,
-				9D93FCE02208A2C700A2EB02 /* TurnByTurn */,
-				E37858222217062D0059A179 /* Voice Prompt */,
-				9D1ECD282225DD510029A667 /* WalkTime */,
 				9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */,
 				E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */,
 				E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */,
@@ -261,6 +284,10 @@
 				E36BB69120571B57003640CA /* LocationSharingViewController.swift */,
 				E3C771C92050555D00780D0F /* RoutingViewController.swift */,
 				E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */,
+				9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */,
+				9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */,
+				7E87A2F0222478DC004ABFE9 /* OffRoute */,
+				E37858222217062D0059A179 /* Voice Prompt */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -348,7 +375,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MapScenarios/Pods-MapScenarios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${PODS_ROOT}/MistSDK/Framework/MistSDK.framework",
 				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
@@ -369,7 +396,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapScenarios/Pods-MapScenarios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9C0D9C77708739E790BD23D7 /* [CP] Check Pods Manifest.lock */ = {
@@ -405,24 +432,33 @@
 				E3785831222073DC0059A179 /* TurnByTurnCollectionView.swift in Sources */,
 				E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */,
 				7EFF9C602232FCD3002BDD0A /* OffRouteModalViewController.swift in Sources */,
+				9AA804942358BFC700B21924 /* FloorChangePOI.swift in Sources */,
+				9AFAAFD92363450800ED655C /* Instruction.swift in Sources */,
+				9A28B1E5235DFC5900215476 /* CLLocationDistance+Localization.swift in Sources */,
+				9A5B6A1823748764007B41D4 /* InstructionTextOptions.swift in Sources */,
 				E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */,
 				E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
 				E378583A222738A40059A179 /* RouteInstructionListCell.swift in Sources */,
-				E378583322247D430059A179 /* PWRouteInstruction+Helper.swift in Sources */,
+				9AFAAFDE2363450800ED655C /* UIImage+Instruction.swift in Sources */,
 				E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */,
+				9AFAAFDD2363450800ED655C /* ArrivedInstructionViewModel.swift in Sources */,
 				9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */,
 				E3C3799C204D90AA00905731 /* AppDelegate.swift in Sources */,
+				9A28B1ED235E0C2600215476 /* NSMutableAttributedString+Extension.swift in Sources */,
 				E378582E222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.swift in Sources */,
 				E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */,
 				E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */,
+				9AFAAFDB2363450800ED655C /* InstructionViewModel.swift in Sources */,
 				E3785836222735A80059A179 /* RouteInstructionListViewController.swift in Sources */,
 				E3785826221706680059A179 /* VoicePromptButton.swift in Sources */,
 				E37858212216FB840059A179 /* MKMapPoint+Helper.swift in Sources */,
 				E378583C222821B10059A179 /* UIColor+Helper.swift in Sources */,
+				9ACB8953236A2FE3001F6F09 /* ScenarioSettingsProtocol.swift in Sources */,
 				E378581F22145F500059A179 /* PWMapView+Helper.swift in Sources */,
 				E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */,
 				9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */,
+				9AFAAFDA2363450800ED655C /* BasicInstructionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

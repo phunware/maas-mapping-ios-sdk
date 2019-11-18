@@ -11,60 +11,32 @@ import UIKit
 import PWMapKit
 import PWCore
 
-class POITableViewCell: UITableViewCell {
-    
-    var poiImageView: UIImageView!
-    var titleLabel: UILabel!
-    
-    func configureSubviews() {
-        if poiImageView != nil && titleLabel != nil {
-            return
-        }
-        
-        poiImageView = UIImageView()
-        titleLabel = UILabel()
-        
-        poiImageView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(poiImageView)
-        poiImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0).isActive = true
-        poiImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        poiImageView.widthAnchor.constraint(equalToConstant: 32.0).isActive = true
-        poiImageView.heightAnchor.constraint(equalToConstant: 32.0).isActive = true
-        
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.numberOfLines = 0
-        addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: poiImageView.trailingAnchor, constant: 10.0).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5.0).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15.0).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15.0).isActive = true
-    }
-}
-
-class SearchPOIViewController: UIViewController {
+// MARK: - SearchPOIViewController
+class SearchPOIViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
     var signatureKey = ""
     
-    var buildingIdentifier = 0 // Enter your building identifier here, found on the building's Edit page on Maas portal
+    // Enter your building identifier here, found on the building's Edit page on Maas portal
+    var buildingIdentifier = 0
     
-    let mapView = PWMapView()
+    private let mapView = PWMapView()
     
     // Search view
-    let tableView = UITableView()
-    let poiCellReuseIdentifier = "POICell"
-    var sortedPointsOfInterest = [PWPointOfInterest]()
-    var filteredPointsOfInterest = [PWPointOfInterest]()
-    let searchController = UISearchController(searchResultsController: nil)
+    private let tableView = UITableView()
+    private let poiCellReuseIdentifier = "POICell"
+    private var sortedPointsOfInterest = [PWPointOfInterest]()
+    private var filteredPointsOfInterest = [PWPointOfInterest]()
+    private let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Search for Point of Interest"
+        navigationItem.title = "Search for Points of Interest"
         
-        if !validateBuildingSetting(appId: applicationId, accessKey: accessKey, signatureKey: signatureKey, buildingId: buildingIdentifier) {
+        if !validateScenarioSettings() {
             return
         }
         
@@ -132,7 +104,6 @@ class SearchPOIViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-
 extension SearchPOIViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -155,7 +126,6 @@ extension SearchPOIViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-
 extension SearchPOIViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -172,7 +142,6 @@ extension SearchPOIViewController: UITableViewDelegate {
 }
 
 // MARK: - UISearchResultsUpdating
-
 extension SearchPOIViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -190,7 +159,6 @@ extension SearchPOIViewController: UISearchResultsUpdating {
 }
 
 // MARK: - UISearchBarDelegate
-
 extension SearchPOIViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -203,7 +171,6 @@ extension SearchPOIViewController: UISearchBarDelegate {
 }
 
 // MARK: - Adjust for keyboard
-
 extension SearchPOIViewController {
     
     @objc func keyboardWillShow(notification: Notification) {
@@ -216,5 +183,36 @@ extension SearchPOIViewController {
     @objc func keyboardWillHide(notification: Notification) {
         tableView.contentInset = .zero
         tableView.scrollIndicatorInsets = .zero
+    }
+}
+
+// MARK: - POITableViewCell
+class POITableViewCell: UITableViewCell {
+    
+    var poiImageView: UIImageView!
+    var titleLabel: UILabel!
+    
+    func configureSubviews() {
+        if poiImageView != nil && titleLabel != nil {
+            return
+        }
+        
+        poiImageView = UIImageView()
+        titleLabel = UILabel()
+        
+        poiImageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(poiImageView)
+        poiImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0).isActive = true
+        poiImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        poiImageView.widthAnchor.constraint(equalToConstant: 32.0).isActive = true
+        poiImageView.heightAnchor.constraint(equalToConstant: 32.0).isActive = true
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.numberOfLines = 0
+        addSubview(titleLabel)
+        titleLabel.leadingAnchor.constraint(equalTo: poiImageView.trailingAnchor, constant: 10.0).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5.0).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15.0).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15.0).isActive = true
     }
 }
