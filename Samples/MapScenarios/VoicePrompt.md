@@ -20,7 +20,7 @@
 
 Note: For text-to-speech, we use AVFoundation's `AVSpeechSynthesizer` class.
 
-**Step 2: Pay special attention to this method: **
+**Step 2: Pay special attention to this method:**
 
 ```
 func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) {
@@ -32,7 +32,7 @@ func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) 
 }
 ```
 
-**Step 3: Play the voice instructions for each maneuver by calling `readInstructionAloud(instruction)` **
+**Step 3: Play the voice instructions for each maneuver by calling `readInstructionAloud(instruction)`**
 
 `BasicInstructionViewModel` is the object used to generate displayed text and voice prompt text. We can create an instance from the current instruction, and use the `voicePrompt` property to retrieve the text we wish to speak aloud. From that, we create an `AVSpeechUtterance`, attach a `AVSpeechSynthesisVoice` for the current language, and finally call the `speak(utterance)` method to speak the text.
 
