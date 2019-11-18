@@ -9,8 +9,8 @@
 
 ### Sample Code
 - [WalkTimeViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/WalkTime/WalkTimeViewController.swift)
-- [WalkTimeView.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/WalkTime/Views/WalkTimeView.swift)
-- [WalkTimeView.xib](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/WalkTime/Views/WalkTimeView.xib)
+- [WalkTimeView.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Shared/WalkTimeView/WalkTimeView.swift)
+- [WalkTimeView.xib](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Shared/WalkTimeView/WalkTimeView.xib)
 
 **Step 1: add [turn by turn](./TurnByTurn.md) first**
 
