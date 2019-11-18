@@ -83,7 +83,7 @@ func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTur
 }
 ```
 
-The view controller is also a delegate of the `RouteInstructionListCollectionView`, which also needs an `InstructionViewModel` to generate the instruction text, similarly to the `TurnByTurnCollectionView`:
+The view controller is also a delegate of the `RouteInstructionListCollectionView`, which also needs an `InstructionViewModel` to generate the instruction text, similarly to the `TurnByTurnCollectionView`. We'll use `BasicInstructionViewModel` for this as well:
 ```
     func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
         -> InstructionViewModel {
