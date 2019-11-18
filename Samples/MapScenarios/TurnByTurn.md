@@ -66,6 +66,31 @@ func initializeTurnByTurn() {
 }
 ```
 
+Because the view controller is a delegate of the `TurnByTurnCollectionView`, the collection view will ask the view controller for an `InstructionViewModel` to display for each instruction. The instruction view model is responsible for generating the turn by turn text that we display. We use the `BasicInstructionViewModel` to calculate this from the current instruction:
+```
+func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
+    return BasicInstructionViewModel(for: routeInstruction)
+}
+```
+
+When the button to show the entire route list is displayed, show the route instruction list
+```
+func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
+    let routeInstructionViewController = RouteInstructionListViewController()
+    routeInstructionViewController.delegate = self
+    routeInstructionViewController.configure(route: mapView.currentRoute)
+    routeInstructionViewController.presentFromViewController(self)
+}
+```
+
+The view controller is also a delegate of the `RouteInstructionListCollectionView`, which also needs an `InstructionViewModel` to generate the instruction text, similarly to the `TurnByTurnCollectionView`:
+```
+    func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
+        -> InstructionViewModel {
+        return BasicInstructionViewModel(for: routeInstruction)
+    }
+```
+
 # Privacy
 You understand and consent to Phunware’s Privacy Policy located at www.phunware.com/privacy. If your use of Phunware’s software requires a Privacy Policy of your own, you also agree to include the terms of Phunware’s Privacy Policy in your Privacy Policy to your end users.
 
