@@ -33,7 +33,7 @@ class TurnByTurnLandmarksViewController: UIViewController, ScenarioSettingsProto
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Route - Turn By Turn"
+        navigationItem.title = "Route - Turn By Turn with Landmarks"
         
         if !validateScenarioSettings() {
             return
