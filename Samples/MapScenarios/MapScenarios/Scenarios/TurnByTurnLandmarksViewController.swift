@@ -1,8 +1,9 @@
 //
-//  TurnByTurnViewController.swift
+//  TurnByTurnLandmarksViewController.swift
 //  MapScenarios
 //
-//  Copyright © 2018 Phunware. All rights reserved.
+//  Created by Aaron Pendley on 11/4/19.
+//  Copyright © 2019 Phunware. All rights reserved.
 //
 
 import Foundation
@@ -10,8 +11,8 @@ import UIKit
 import PWCore
 import PWMapKit
 
-// MARK: - TurnByTurnViewController
-class TurnByTurnViewController: UIViewController, ScenarioSettingsProtocol {
+// MARK: - TurnByTurnLandmarksViewController
+class TurnByTurnLandmarksViewController: UIViewController, ScenarioSettingsProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -73,9 +74,11 @@ class TurnByTurnViewController: UIViewController, ScenarioSettingsProtocol {
 }
 
 // MARK: - TurnByTurnCollectionViewDelegate
-extension TurnByTurnViewController: TurnByTurnCollectionViewDelegate {
+extension TurnByTurnLandmarksViewController: TurnByTurnCollectionViewDelegate {
     func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
-        return BasicInstructionViewModel(for: routeInstruction)
+        // We'll use the LandmarkInstructionViewModel to generate the view model for our collection view cells,
+        // which will use the landmarks generated along with the route to augment the instruction text.
+        return LandmarkInstructionViewModel(for: routeInstruction)
     }
     
     func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
@@ -87,15 +90,15 @@ extension TurnByTurnViewController: TurnByTurnCollectionViewDelegate {
 }
 
 // MARK: - RouteInstructionListViewControllerDelegate
-extension TurnByTurnViewController: RouteInstructionListViewControllerDelegate {
+extension TurnByTurnLandmarksViewController: RouteInstructionListViewControllerDelegate {
     func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
         -> InstructionViewModel {
-        return BasicInstructionViewModel(for: routeInstruction)
+        return LandmarkInstructionViewModel(for: routeInstruction)
     }
 }
 
 // MARK: - private
-private extension TurnByTurnViewController {
+private extension TurnByTurnLandmarksViewController {
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -115,11 +118,12 @@ private extension TurnByTurnViewController {
             return
         }
         
+        // Create a PWRouteOptions object with landmarksEnabled set to true so landmarks will be injected into route info (if available)
         let routeOptions = PWRouteOptions(accessibilityEnabled: false,
                                           landmarksEnabled: true,
                                           excludedPointIdentifiers: nil)
         
-        // Calculate a route and plot on the map
+        // Calculate a route and plot on the map with our specified route options
         PWRoute.createRoute(from: startPOI,
                             to: destinationPOI,
                             options: routeOptions,
@@ -130,8 +134,8 @@ private extension TurnByTurnViewController {
             }
             
             // Plot route on the map
-            let routeOptions = PWRouteUIOptions()
-            self?.mapView.navigate(with: route, options: routeOptions)
+            let uiOptions = PWRouteUIOptions()
+            self?.mapView.navigate(with: route, options: uiOptions)
             
             // Initial route instructions
             self?.initializeTurnByTurn()
