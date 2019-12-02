@@ -1,4 +1,4 @@
-## Sample - Turn By Turn 
+## Sample - Turn By Turn with Landmarks
 
 This sample is configured almost the same as [TurnByTurnViewController.swift](./MapScenarios/Scenarios/TurnByTurnViewController.swift), except that it will utilize Landmark information in the route instructions, when available.
 
