@@ -1,7 +1,9 @@
 ## Sample - Turn By Turn 
 
+This sample is configured almost the same as [TurnByTurnViewController.swift](./MapScenarios/Scenarios/TurnByTurnViewController.swift), except that it will utilize Landmark information in the route instructions, when available.
+
 ### Overview
-- Display turn-by-turn route instruction card on top of map.
+- Display turn-by-turn route instruction card on top of map, taking advantage of POIs and Waypoints configured as Landmarks.
 - Swipe turn-by-turn card to select a route instruction.
 
 ### Usage
@@ -9,7 +11,7 @@
 - Fill out `applicationId`, `accessKey`, `signatureKey`, `buildingIdentifier`, `startPOIIdentifier` and `destinationPOIIdentifier`.
 
 ### Sample Code 
-- [TurnByTurnViewController.swift](./MapScenarios/Scenarios/TurnByTurnViewController.swift) - View controller
+- [TurnByTurnLandmarksViewController.swift](./MapScenarios/Scenarios/TurnByTurnLandmarksViewController.swift) - View controller
 - [TurnByTurnCollectionView.swift](./MapScenarios/Shared/TurnByTurnCollectionView/TurnByTurnCollectionView.swift) - Instruction collection view
 - [TurnByTurnInstructionCollectionViewCell.swift](./MapScenarios/Shared/TurnByTurnCollectionView/Cells/TurnByTurnInstructionCollectionViewCell.swift) - Instruction cell
 - [TurnByTurnInstructionCollectionViewCell.xib](./MapScenarios/Shared/TurnByTurnCollectionView/Cells/TurnByTurnInstructionCollectionViewCell.xib) - Instruction cell
@@ -22,7 +24,7 @@
 - TurnByTurnInstructionCollectionViewCell.xib 
 - DirectionImages.xcassets 
 
-**Step 2: Present turn by turn view on the map whenever building and route are loaded**
+**Step 2: Present turn by turn view on the map whenever building and route are loaded, configuring the route to enable Landmarks**
 
 ```
 func startRoute() {
@@ -36,23 +38,28 @@ func startRoute() {
         return
     }
     
-    // Calculate a route and plot on the map
+    // Create a PWRouteOptions object with landmarksEnabled set to true so landmarks will be injected into route info (if available)
+    let routeOptions = PWRouteOptions(accessibilityEnabled: false,
+                                      landmarksEnabled: true,
+                                      excludedPointIdentifiers: nil)
+    
+    // Calculate a route and plot on the map with our specified route options
     PWRoute.createRoute(from: startPOI,
                         to: destinationPOI,
-                        accessibility: false,
-                        excludedPoints: nil) { [weak self] (route, error) in
+                        options: routeOptions,
+                        completion: { [weak self] (route, error) in
         guard let route = route else {
             self?.warning("Couldn't find a route between POI(\(self?.startPOIIdentifier ?? 0)) and POI(\(self?.destinationPOIIdentifier ?? 0)).")
             return
         }
         
         // Plot route on the map
-        let routeOptions = PWRouteUIOptions()
-        self?.mapView.navigate(with: route, options: routeOptions)
+        let uiOptions = PWRouteUIOptions()
+        self?.mapView.navigate(with: route, options: uiOptions)
         
         // Initial route instructions
         self?.initializeTurnByTurn()
-    }
+    })
 }
 
 func initializeTurnByTurn() {
@@ -63,13 +70,12 @@ func initializeTurnByTurn() {
         turnByTurnCollectionView?.turnByTurnDelegate = self
         turnByTurnCollectionView?.configureInView(view)
     }
-}
 ```
 
-Because the view controller is a delegate of the `TurnByTurnCollectionView`, the collection view will ask the view controller for an `InstructionViewModel` to display for each instruction. The instruction view model is responsible for generating the turn by turn text that we display. We use the `BasicInstructionViewModel` to calculate this from the current instruction:
+Because the view controller is a delegate of the `TurnByTurnCollectionView`, the collection view will ask the view controller for an `InstructionViewModel` to display for each instruction. The instruction view model is responsible for generating the turn by turn text that we display. Here, we use the `LandmarkInstructionViewModel` to calculate this from the current instruction, which will take any available landmarks into account:
 ```
 func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
-    return BasicInstructionViewModel(for: routeInstruction)
+    return LandmarkInstructionViewModel(for: routeInstruction)
 }
 ```
 
@@ -83,12 +89,12 @@ func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTur
 }
 ```
 
-The view controller is also a delegate of the `RouteInstructionListCollectionView`, which also needs an `InstructionViewModel` to generate the instruction text, similarly to the `TurnByTurnCollectionView`. We'll use `BasicInstructionViewModel` for this as well:
+The view controller is also a delegate of the `RouteInstructionListCollectionView`, which also needs an `InstructionViewModel` to generate the instruction text, similarly to the `TurnByTurnCollectionView`. We'll use `LandmarkInstructionViewModel` for this as well:
 ```
-    func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
-        -> InstructionViewModel {
-        return BasicInstructionViewModel(for: routeInstruction)
-    }
+func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
+    -> InstructionViewModel {
+    return LandmarkInstructionViewModel(for: routeInstruction)
+}
 ```
 
 # Privacy
