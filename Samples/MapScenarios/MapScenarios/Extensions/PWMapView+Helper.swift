@@ -23,7 +23,7 @@ extension PWMapView {
         var numberOfFloorSwitchInstructions = 0.0 // Add distance to account for floor switch time
         for i in instructionIndex..<route.routeInstructions.count {
             let instruction = route.routeInstructions[i]
-            if instruction.movementDirection.isFloorChange {
+            if instruction.direction == .floorChange {
                 numberOfFloorSwitchInstructions += 1.0
             } else {
                 distanceTotal = distanceTotal + instruction.distance

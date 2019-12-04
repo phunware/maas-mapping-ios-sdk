@@ -229,10 +229,7 @@ private extension OffRouteViewController {
         }
 
         // Calculate a route and plot on the map
-        PWRoute.createRoute(from: mapView.indoorUserLocation,
-                            to: destinationPOI,
-                            accessibility: false,
-                            excludedPoints: nil) { [weak self] (route, error) in
+        PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, options: nil, completion: { [weak self] (route, error) in
             guard let self = self else {
                 return
             }
@@ -249,7 +246,7 @@ private extension OffRouteViewController {
             self.mapView.navigate(with: route, options: routeOptions)
             
             self.initializeTurnByTurn()
-        }
+        })
     }
 
     func showOffRouteMessage() {
