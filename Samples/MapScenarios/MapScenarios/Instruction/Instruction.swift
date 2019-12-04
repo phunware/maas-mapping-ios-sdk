@@ -34,7 +34,7 @@ struct Instruction {
     init(for routeInstruction: PWRouteInstruction) {
         self.routeInstruction = routeInstruction
         
-        if routeInstruction.movementDirection.isFloorChange {
+        if routeInstruction.direction == .floorChange {
             // Use this instruction's direction (which we now know is .floorChange) to create the directions type
             instructionType = type(of: self).instructionTypeForFloorChange(with: routeInstruction)
         } else {
@@ -60,11 +60,11 @@ extension Instruction {
             }
             
             switch poiType.identifier {
-            case FloorChangePOI.stairs.rawValue:
+            case PWFloorChangePOI.stairs.rawValue:
                 self = .stairs
-            case FloorChangePOI.elevator.rawValue:
+            case PWFloorChangePOI.elevator.rawValue:
                 self = .elevator
-            case FloorChangePOI.escalator.rawValue:
+            case PWFloorChangePOI.escalator.rawValue:
                 self = .escalator
             default:
                 self = .other
@@ -88,8 +88,14 @@ extension Instruction {
 // MARK: - private implemenation -
 private extension Instruction {
     static func instructionType(with routeInstruction: PWRouteInstruction) -> InstructionType {
-        // next instruction is a floor change
-        if routeInstruction.turnDirection.isFloorChange {
+        switch routeInstruction.turnDirection {
+        case .straight:
+            return .straight
+            
+        case .left, .right, .bearLeft, .bearRight:
+            return .turn(direction: routeInstruction.turnDirection)
+            
+        case .floorChange:
             let floorChangeType = FloorChangeType(mapPoint: routeInstruction.end)
             var floorChangeDirection = FloorChangeDirection.sameFloor
             var floorName = NSLocalizedString("Unknown Floor Name", comment: "")
@@ -111,16 +117,7 @@ private extension Instruction {
                                           floorName: floorName)
             
             return .upcomingFloorChange(floorChange)
-        }
-        
-        // next instruction is not a floor change
-        switch routeInstruction.turnDirection {
-        case .straight:
-            return .straight
             
-        case .left, .right, .bearLeft, .bearRight:
-            return .turn(direction: routeInstruction.turnDirection)
-             
         default:
             return .straight
         }
@@ -128,7 +125,6 @@ private extension Instruction {
     
     static func instructionTypeForFloorChange(with routeInstruction: PWRouteInstruction) -> InstructionType {
         let floorChangeType = FloorChangeType(mapPoint: routeInstruction.end)
-        
         var floorChangeDirection = FloorChangeDirection.sameFloor
         var floorName = NSLocalizedString("Unknown Floor Name", comment: "")
         
@@ -175,33 +171,6 @@ private extension PWRouteInstruction {
             return route.routeInstructions[nextInstructionIndex]
         } else {
             return nil
-        }
-    }
-    
-    var start: PWMapPoint {
-        return points.first!
-    }
-    
-    var end: PWMapPoint {
-        return points.last!
-    }
-}
-
-// MARK: PWRouteInstructionDirection public extension
-extension PWRouteInstructionDirection {
-    var isFloorChange: Bool {
-        switch self {
-        case .floorChange,
-             .elevatorUp,
-             .elevatorDown,
-             .stairsUp,
-             .stairsDown,
-             .escalatorUp,
-             .escalatorDown:
-            return true
-            
-        default:
-            return false
         }
     }
 }

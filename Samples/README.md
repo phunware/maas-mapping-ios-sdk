@@ -17,7 +17,7 @@ PWMapKit Samples for iOS
 ## MapScenarios
 
 ### Overview
-- A couple of different use cases in both Swift and Objective C.
+- A couple of different use cases in Swift.
 - Each use case has a ViewController.
 
 ### LoadBuildingViewController
@@ -191,13 +191,21 @@ mapView.selectAnnotation(pointOfInterest, animated: true)
 
 ##### [Sample code](./MapScenarios/LocationSharing.md)
 
-### TurnByTurnCollectionView
+### TurnByTurnViewController
 - Show route instructions in carousel UI
 
 ##### Usage:
 - Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
 
 ##### [Sample code](./MapScenarios/TurnByTurn.md)
+
+### TurnByTurnLandmarksViewController
+- Show route instructions (using landmarks) in carousel UI
+
+##### Usage:
+- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+
+##### [Sample code](./MapScenarios/LandmarkRouting.md)
 
 ### VoicePromptRouteViewController
 - Read route instructions out loud
