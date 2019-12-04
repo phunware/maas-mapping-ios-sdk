@@ -228,6 +228,42 @@
             <NodeRef refid="14"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/setMetaData:</TokenIdentifier>
+			<Abstract type="html">Metadata associated with this point.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with this point.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWMapPoint/metaData</TokenIdentifier>
+			<Abstract type="html">Metadata associated with this point.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDictionary *metaData</Declaration>
+			
+			
+			<Anchor>//api/name/metaData</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
         
         
 	</File>

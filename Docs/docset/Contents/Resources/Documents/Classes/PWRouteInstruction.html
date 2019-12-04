@@ -58,13 +58,15 @@
 		
 		<option value="//api/name/__deprecated">__deprecated</option>
 		
+		<option value="//api/name/direction">direction</option>
+		
 		<option value="//api/name/distance">distance</option>
 		
+		<option value="//api/name/end">end</option>
+		
+		<option value="//api/name/landmarks">landmarks</option>
+		
 		<option value="//api/name/last">last</option>
-		
-		<option value="//api/name/movement">movement</option>
-		
-		<option value="//api/name/movementDirection">movementDirection</option>
 		
 		<option value="//api/name/movementTrueHeading">movementTrueHeading</option>
 		
@@ -74,7 +76,7 @@
 		
 		<option value="//api/name/route">route</option>
 		
-		<option value="//api/name/turn">turn</option>
+		<option value="//api/name/start">start</option>
 		
 		<option value="//api/name/turnAngle">turnAngle</option>
 		
@@ -118,7 +120,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A <code>PWRouteInstruction</code> class represents one step inside a <a href="#//api/name/route">route</a> with the necessary moves to go from the start point and the end point.</p>
+						<p>A <code>PWRouteInstruction</code> class represents one step inside a <a href="#//api/name/route">route</a> with the necessary moves to go from the <a href="#//api/name/start">start</a> point and the <a href="#//api/name/end">end</a> point.</p>
 					</div>
 					
 					
@@ -257,6 +259,88 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/start" title="start"></a>
+	<h3 class="method-title"><code><a href="#//api/name/start">&nbsp;&nbsp;start</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The first point in this maneuver</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) id&lt;PWMapPoint&gt; start</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRouteInstruction.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/end" title="end"></a>
+	<h3 class="method-title"><code><a href="#//api/name/end">&nbsp;&nbsp;end</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="#//api/name/last">last</a> point in this maneuver</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) id&lt;PWMapPoint&gt; end</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRouteInstruction.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/polyline" title="polyline"></a>
 	<h3 class="method-title"><code><a href="#//api/name/polyline">&nbsp;&nbsp;polyline</a></code>
 </h3>
@@ -274,6 +358,47 @@
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) MKPolyline *polyline</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRouteInstruction.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/landmarks" title="landmarks"></a>
+	<h3 class="method-title"><code><a href="#//api/name/landmarks">&nbsp;&nbsp;landmarks</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Landmarks included in this instruction</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic, nullable) NSArray&lt;PWLandmark*&gt; *landmarks</code></div>
 
 		    
 			
@@ -339,8 +464,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/movement" title="movement"></a>
-	<h3 class="method-title"><code><a href="#//api/name/movement">&nbsp;&nbsp;movement</a></code>
+	<a name="//api/name/direction" title="direction"></a>
+	<h3 class="method-title"><code><a href="#//api/name/direction">&nbsp;&nbsp;direction</a></code>
 </h3>
 
 	<div class="method-info">
@@ -350,53 +475,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The text representing the movement instruction for the current instruction instance.</p>
+				<p>The direction of the movement for the current instruction instance. Possible values are defined on the <a href="../Constants/PWRouteInstructionDirection.html"><code>PWRouteInstructionDirection</code></a> ENUM constant.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSString *movement</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWRouteInstruction.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/movementDirection" title="movementDirection"></a>
-	<h3 class="method-title"><code><a href="#//api/name/movementDirection">&nbsp;&nbsp;movementDirection</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The direction of the <a href="#//api/name/movement">movement</a> for the current instruction instance. Possible values are defined on the <a href="../Constants/PWRouteInstructionDirection.html"><code>PWRouteInstructionDirection</code></a> ENUM constant.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) PWRouteInstructionDirection direction</code></div>
 
 		    
 			
@@ -432,53 +516,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The heading of the <a href="#//api/name/movement">movement</a> relative to true north. Expressed as an angle in degrees between 0 and 360.</p>
+				<p>The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.</p>
 			</div>
 			
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) CLLocationDirection movementTrueHeading</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PWRouteInstruction.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/turn" title="turn"></a>
-	<h3 class="method-title"><code><a href="#//api/name/turn">&nbsp;&nbsp;turn</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>An NSString object representing the turn instruction for the current instruction instance.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSString *turn</code></div>
 
 		    
 			
@@ -514,7 +557,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>An NSUInteger value expressing the direction of the <a href="#//api/name/turn">turn</a> for the current instruction instance. Possible values are defined on the <a href="../Constants/PWRouteInstructionDirection.html"><code>PWRouteInstructionDirection</code></a> ENUM constant.</p>
+				<p>An NSUInteger value expressing the <a href="#//api/name/direction">direction</a> of the turn for the current instruction instance. Possible values are defined on the <a href="../Constants/PWRouteInstructionDirection.html"><code>PWRouteInstructionDirection</code></a> ENUM constant.</p>
 			</div>
 			
 		    
@@ -555,7 +598,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The angle of the <a href="#//api/name/turn">turn</a> expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no <a href="#//api/name/turn">turn</a>.</p>
+				<p>The angle of the turn expressed as an angle in degrees between -180 and 180. Returns 0 if the instruction has no turn.</p>
 			</div>
 			
 		    
@@ -596,12 +639,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A reference to the origin, or start point-of-interest, for the <a href="#//api/name/route">route</a>. It may be nil when it&rsquo;s a way point instead of point-of-interest.</p>
+				<p>The <a href="#//api/name/direction">direction</a> of the movement for the current instruction instance. Possible values are defined on the <a href="../Constants/PWRouteInstructionDirection.html"><code>PWRouteInstructionDirection</code></a> ENUM constant.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) PWPointOfInterest *__deprecated</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection __deprecated</code></div>
 
 		    
 			
@@ -613,7 +656,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Replace with <a href="#//api/name/points">points</a>.firstObject.</p>
+				<p>Use &lsquo;direction&rsquo; property instead</p>
 			</div>
 			
 
@@ -645,7 +688,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Phunware, Inc. All rights reserved. Updated: 2019-09-25</p>
+						<p class="copyright">Copyright &copy; 2019 Phunware, Inc. All rights reserved. Updated: 2019-12-04</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -1,4 +1,14 @@
 # PWMapKit Migration Guide
+## Upgrade from 3.8.x to 3.9.x
+
+#### General
+
+This release includes Landmark Routing features.
+
+#### Upgrade Steps
+
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '~> 3.9.0'`, then run `pod update` in the Terminal to update the framework.
+
 ## Upgrade from 3.7.x to 3.8.x
 
 #### General

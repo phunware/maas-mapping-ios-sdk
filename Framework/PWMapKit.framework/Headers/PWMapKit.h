@@ -14,8 +14,12 @@
 #import <PWMapKit/PWPointOfInterestType.h>
 #import <PWMapKit/PWCustomLocation.h>
 #import <PWMapKit/PWUserLocation.h>
+#import <PWMapKit/PWFloorChangePOI.h>
+#import <PWMapKit/PWLandmark.h>
+#import <PWMapKit/PWLandmarkType.h>
 #import <PWMapKit/PWRoute.h>
 #import <PWMapKit/PWRouteInstruction.h>
+#import <PWMapKit/PWRouteOptions.h>
 #import <PWMapKit/PWRouteUIOptions.h>
 #import <PWMapKit/PWMapPoint.h>
 #import <PWMapKit/PWCustomPointOfInterest.h>
@@ -24,7 +28,7 @@
 #import <PWMapKit/PWSharedLocation.h>
 #import <PWMapKit/PWLocationSharingDelegate.h>
 
-static NSString *const PWMapKitVersion = @"3.8.3";
+static NSString *const PWMapKitVersion = @"3.9.0";
 
 @interface PWMapKit : NSObject
 

@@ -302,7 +302,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/PWRoute/initRouteFrom:to:accessibility:completion:</TokenIdentifier>
-			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; Use createRouteFrom: to: accessibility: excludedPoints: completion: instead, since v3.2.0.&lt;/span&gt;)</Abstract>
+			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; use &apos;createRouteFrom:to:options:completion:&apos; instead&lt;/span&gt;)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>+ (void)initRouteFrom:(PWPointOfInterest *)startPoint to:(PWPointOfInterest *)endPoint accessibility:(BOOL)accessibility completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
@@ -328,7 +328,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/PWRoute/createRouteFrom:to:accessibility:excludedPoints:completion:</TokenIdentifier>
-			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start PWMapPoint and the end PWMapPoint. The completion handler is called when the route is fully calculated.</Abstract>
+			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start PWMapPoint and the end PWMapPoint. The completion handler is called when the route is fully calculated. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; use &apos;createRouteFrom:to:options:completion:&apos; instead&lt;/span&gt;)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
 			<Declaration>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)startPoint to:(id&lt;PWMapPoint&gt;)endPoint accessibility:(BOOL)accessibility excludedPoints:(NSArray *)excludedPoints completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
@@ -352,6 +352,32 @@
 			</Parameters>
 			
 			<Anchor>//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWRoute/createRouteFrom:to:options:completion:</TokenIdentifier>
+			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start PWMapPoint and the end PWMapPoint. The completion handler is called when the route is fully calculated.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)startPoint to:(id&lt;PWMapPoint&gt;)endPoint options:(PWRouteOptions *_Nullable)options completion:(void ( ^ _Nonnull ) ( PWRoute *_Nullable route , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPoint</Name>
+					<Abstract type="html">A PWMapPoint object representing the start point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>endPoint</Name>
+					<Abstract type="html">A PWMapPoint object representing the end point for the route calculation.</Abstract>
+				</Parameter><Parameter>
+					<Name>options</Name>
+					<Abstract type="html">A PWRouteOptions object specifying the options to use for route calculation. if &apos;nil&apos;, default options will be used.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion handler that is called once the route&apos;s calculation is complete.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/createRouteFrom:to:options:completion:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

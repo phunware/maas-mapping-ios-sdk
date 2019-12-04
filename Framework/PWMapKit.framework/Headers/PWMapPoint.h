@@ -45,4 +45,9 @@
  */
 @property (nonatomic, readonly, getter=isExit) BOOL exit;
 
+/**
+ * Metadata associated with this point.
+ */
+@property (nonatomic, readonly, nullable) NSDictionary *metaData;
+
 @end

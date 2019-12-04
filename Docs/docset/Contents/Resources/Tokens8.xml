@@ -53,7 +53,7 @@
 			<Abstract type="html">The PWFloor object that the point-of-interest belongs to.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak, nullable) PWFloor *floor</Declaration>
 			
 			
 			<Anchor>//api/name/floor</Anchor>
@@ -65,7 +65,7 @@
 			<Abstract type="html">The PWFloor object that the point-of-interest belongs to.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak, nullable) PWFloor *floor</Declaration>
 			
 			
 			<Anchor>//api/name/floor</Anchor>
@@ -77,7 +77,7 @@
 			<Abstract type="html">The PWFloor object that the point-of-interest belongs to.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, weak) PWFloor *floor</Declaration>
+			<Declaration>@property (nonatomic, readonly, weak, nullable) PWFloor *floor</Declaration>
 			
 			
 			<Anchor>//api/name/floor</Anchor>

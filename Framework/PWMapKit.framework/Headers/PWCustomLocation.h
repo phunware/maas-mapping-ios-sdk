@@ -16,7 +16,7 @@
  * @discussion Please use `PWUserLocation` instead.
  */
 __attribute__ ((deprecated))
-@interface PWCustomLocation : NSObject<PWMapPoint>
+@interface PWCustomLocation : NSObject <PWMapPoint>
 
 /**
  Center latitude and longitude of this annotation.
