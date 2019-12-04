@@ -55,7 +55,7 @@ func mapView(_ mapView: PWMapView!, didChange instruction: PWRouteInstruction!) 
 }
 ```
 
-**Step 4: `updateWalkTime()` calculates the time and updates the view **
+**Step 4: `updateWalkTime()` calculates the time and updates the view**
 If a blue dot has been acquired, we calculate the time from the current blue dot position. Otherwise, we calculate from the beginning of the current maneuver. When we get close enough to our destination, we remove the walk time view.
 ```
 func updateWalkTime() {
