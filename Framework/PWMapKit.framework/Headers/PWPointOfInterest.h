@@ -23,7 +23,7 @@
 /**
  *  The `PWFloor` object that the point-of-interest belongs to.
  */
-@property (nonatomic, readonly, weak) PWFloor *floor;
+@property (nonatomic, readonly, weak, nullable) PWFloor *floor;
 
 /**
  *  The `PWPointOfInterestType` object that the point-of-interest is a member of.

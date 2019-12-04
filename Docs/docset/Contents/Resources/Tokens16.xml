@@ -84,9 +84,89 @@
         </Token>
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/__deprecated_enum_msg</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>__deprecated_enum_msg</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/(</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>(</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/&quot;please use PWRouteInstructionDirectionFloorChange&quot;</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>&quot;please use PWRouteInstructionDirectionFloorChange&quot;</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/)</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>)</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionElevatorDown</TokenIdentifier>
             <Abstract type="html">Indicates a elevator down</Abstract>
             <Declaration>PWRouteInstructionDirectionElevatorDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/__deprecated_enum_msg</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>__deprecated_enum_msg</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/(</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>(</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/&quot;please use PWRouteInstructionDirectionFloorChange&quot;</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>&quot;please use PWRouteInstructionDirectionFloorChange&quot;</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/)</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>)</Declaration>
             
             <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
@@ -104,9 +184,89 @@
         </Token>
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/__deprecated_enum_msg</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>__deprecated_enum_msg</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/(</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>(</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/&quot;please use PWRouteInstructionDirectionFloorChange&quot;</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>&quot;please use PWRouteInstructionDirectionFloorChange&quot;</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/)</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>)</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionStairsDown</TokenIdentifier>
             <Abstract type="html">Indicates a stairs down</Abstract>
             <Declaration>PWRouteInstructionDirectionStairsDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/__deprecated_enum_msg</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>__deprecated_enum_msg</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/(</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>(</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/&quot;please use PWRouteInstructionDirectionFloorChange&quot;</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>&quot;please use PWRouteInstructionDirectionFloorChange&quot;</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/)</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>)</Declaration>
             
             <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             
@@ -124,9 +284,89 @@
         </Token>
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/__deprecated_enum_msg</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>__deprecated_enum_msg</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/(</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>(</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/&quot;please use PWRouteInstructionDirectionFloorChange&quot;</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>&quot;please use PWRouteInstructionDirectionFloorChange&quot;</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/)</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>)</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/PWRouteInstructionDirectionEscalatorDown</TokenIdentifier>
             <Abstract type="html">Indicates a escalator down</Abstract>
             <Declaration>PWRouteInstructionDirectionEscalatorDown</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/__deprecated_enum_msg</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>__deprecated_enum_msg</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/(</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>(</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/&quot;please use PWRouteInstructionDirectionFloorChange&quot;</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>&quot;please use PWRouteInstructionDirectionFloorChange&quot;</Declaration>
+            
+            <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/)</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>)</Declaration>
             
             <DeclaredIn>PWRouteInstruction.h</DeclaredIn>
             

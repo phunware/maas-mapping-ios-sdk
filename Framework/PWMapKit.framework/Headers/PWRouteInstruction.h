@@ -10,8 +10,11 @@
 
 @class PWRoute;
 @class PWPointOfInterest;
+@class PWLandmark;
 @protocol PWMapPoint;
 
+// APENDLEY: What are these for? They don't seem to be used by the SDK, and they don't seem useful to customers either.
+// TODO: Find out from product team if these are being refrenced by customers, and if not, remove them.
 static NSString *const kPWRouteInstructionDirectionSharpLeft = @"PWRouteInstructionDirectionSharpLeft";
 static NSString *const kPWRouteInstructionDirectionSharpRight = @"PWRouteInstructionDirectionSharpRight";
 static NSString *const kPWRouteInstructionDirectionStraight = @"PWRouteInstructionDirectionStraight";
@@ -40,18 +43,20 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
     PWRouteInstructionDirectionBearRight,
     /** Indicates a floor change route instruction */
     PWRouteInstructionDirectionFloorChange,
+    
+    // APENDLEY (10/15/2019): We are deprecating these because this should be left to the customer to determine, as well as to have parity with the Android SDK.
     /** Indicates a elevator up */
-    PWRouteInstructionDirectionElevatorUp,
+    PWRouteInstructionDirectionElevatorUp __deprecated_enum_msg("please use PWRouteInstructionDirectionFloorChange"),
     /** Indicates a elevator down */
-    PWRouteInstructionDirectionElevatorDown,
+    PWRouteInstructionDirectionElevatorDown __deprecated_enum_msg("please use PWRouteInstructionDirectionFloorChange"),
     /** Indicates a stairs up */
-    PWRouteInstructionDirectionStairsUp,
+    PWRouteInstructionDirectionStairsUp __deprecated_enum_msg("please use PWRouteInstructionDirectionFloorChange"),
     /** Indicates a stairs down */
-    PWRouteInstructionDirectionStairsDown,
+    PWRouteInstructionDirectionStairsDown __deprecated_enum_msg("please use PWRouteInstructionDirectionFloorChange"),
     /** Indicates a escalator up */
-    PWRouteInstructionDirectionEscalatorUp,
+    PWRouteInstructionDirectionEscalatorUp __deprecated_enum_msg("please use PWRouteInstructionDirectionFloorChange"),
     /** Indicates a escalator down */
-    PWRouteInstructionDirectionEscalatorDown
+    PWRouteInstructionDirectionEscalatorDown __deprecated_enum_msg("please use PWRouteInstructionDirectionFloorChange")
 };
 
 /**
@@ -77,9 +82,24 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 @property (readonly, nonatomic) NSArray<id<PWMapPoint>> *points;
 
 /**
+ * The first point in this maneuver
+ */
+@property (nonatomic, readonly, nonnull) id<PWMapPoint> start;
+
+/**
+ * The last point in this maneuver
+ */
+@property (nonatomic, readonly, nonnull) id<PWMapPoint> end;
+
+/**
  Polyline representing the sequence of points to be drawn for this instruction.
  */
 @property (readonly, nonatomic) MKPolyline *polyline;
+
+/**
+ * Landmarks included in this instruction
+ */
+@property (readonly, nonatomic, nullable) NSArray<PWLandmark*> *landmarks;
 
 /**
  A flag indicating if it's the last route instruction in the associated route.
@@ -89,14 +109,9 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 # pragma mark - Current Instruction Properties
 
 /**
- * The text representing the movement instruction for the current instruction instance.
- */
-@property (readonly, nonatomic) NSString *movement;
-
-/**
  * The direction of the movement for the current instruction instance. Possible values are defined on the `PWRouteInstructionDirection` ENUM constant.
  */
-@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection;
+@property (readonly, nonatomic) PWRouteInstructionDirection direction;
 
 /**
  * The heading of the movement relative to true north. Expressed as an angle in degrees between 0 and 360.
@@ -104,11 +119,6 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 @property (readonly, nonatomic) CLLocationDirection movementTrueHeading;
 
 # pragma mark - Turn(to Next) Instruction Properties
-
-/**
- * An NSString object representing the turn instruction for the current instruction instance.
- */
-@property (readonly, nonatomic) NSString *turn;
 
 /**
  * An NSUInteger value expressing the direction of the turn for the current instruction instance. Possible values are defined on the `PWRouteInstructionDirection` ENUM constant.
@@ -121,6 +131,22 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 @property (readonly, nonatomic) CLLocationDirection turnAngle;
 
 # pragma mark - Deprecated Properties
+
+/**
+ * The direction of the movement for the current instruction instance. Possible values are defined on the `PWRouteInstructionDirection` ENUM constant.
+ * @discussion Use 'direction' property instead
+ */
+@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection __deprecated;
+
+/**
+ * The text representing the movement instruction for the current instruction instance.
+ */
+@property (readonly, nonatomic) NSString *movement __deprecated;
+
+/**
+ * An NSString object representing the turn instruction for the current instruction instance.
+ */
+@property (readonly, nonatomic) NSString *turn __deprecated;
 
 /**
  * A reference to the origin, or start point-of-interest, for the route. It may be nil when it's a way point instead of point-of-interest.

@@ -1,7 +1,7 @@
 PWMapKit SDK for iOS
 ====================
 
-> Version 3.8.3
+> Version 3.9.0
 
 **PWMapKit** is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services.  Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -11,7 +11,7 @@ PWMapKit SDK for iOS
 - PWLocation 3.8.0 and above (Automatically included when pod install PWMapKit)
 - PWCore 3.8.x (Automatically included when pod install PWMapKit)
 - iOS 10.0 or greater
-- Xcode 8 or greater
+- Xcode 11 or greater
 
 
 ## Installation
@@ -78,7 +78,11 @@ NOTE: If using a virtual beacon provider such as Mist or Beacon Point, the "Uses
 ### Routing
 
 ```
-[PWRoute initRouteFrom:<#startPoint#> to:<#endPoint#> accessibility:<#accessibility#> excludedPoints:<#excludedPoints#> completion:^(PWRoute *route, NSError *error) {
+PWRouteOptions* options = [[PWRouteOptions alloc] initWithAccessibilityEnabled:false
+                                                              landmarksEnabled:false
+                                                      excludedPointIdentifiers:nil];
+
+[PWRoute createRouteFrom:startPoint to:endPoint options:options completion:^(PWRoute *route, NSError *error) {
 	// Plot the route on the map
 	[mapView navigateWithRoute:route];            
 }];

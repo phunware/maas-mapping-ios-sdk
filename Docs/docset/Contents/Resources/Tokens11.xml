@@ -121,6 +121,78 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setStart:</TokenIdentifier>
+			<Abstract type="html">The first point in this maneuver</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) id&lt;PWMapPoint&gt; start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/start</TokenIdentifier>
+			<Abstract type="html">The first point in this maneuver</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) id&lt;PWMapPoint&gt; start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/start</TokenIdentifier>
+			<Abstract type="html">The first point in this maneuver</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) id&lt;PWMapPoint&gt; start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setEnd:</TokenIdentifier>
+			<Abstract type="html">The last point in this maneuver</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) id&lt;PWMapPoint&gt; end</Declaration>
+			
+			
+			<Anchor>//api/name/end</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/end</TokenIdentifier>
+			<Abstract type="html">The last point in this maneuver</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) id&lt;PWMapPoint&gt; end</Declaration>
+			
+			
+			<Anchor>//api/name/end</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/end</TokenIdentifier>
+			<Abstract type="html">The last point in this maneuver</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) id&lt;PWMapPoint&gt; end</Declaration>
+			
+			
+			<Anchor>//api/name/end</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setPolyline:</TokenIdentifier>
 			<Abstract type="html">Polyline representing the sequence of points to be drawn for this instruction.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
@@ -153,6 +225,42 @@
 			
 			
 			<Anchor>//api/name/polyline</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setLandmarks:</TokenIdentifier>
+			<Abstract type="html">Landmarks included in this instruction</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic, nullable) NSArray&lt;PWLandmark*&gt; *landmarks</Declaration>
+			
+			
+			<Anchor>//api/name/landmarks</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/landmarks</TokenIdentifier>
+			<Abstract type="html">Landmarks included in this instruction</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic, nullable) NSArray&lt;PWLandmark*&gt; *landmarks</Declaration>
+			
+			
+			<Anchor>//api/name/landmarks</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/landmarks</TokenIdentifier>
+			<Abstract type="html">Landmarks included in this instruction</Abstract>
+			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic, nullable) NSArray&lt;PWLandmark*&gt; *landmarks</Declaration>
+			
+			
+			<Anchor>//api/name/landmarks</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
@@ -193,74 +301,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovement:</TokenIdentifier>
-			<Abstract type="html">The text representing the movement instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, nonatomic) NSString *movement</Declaration>
-			
-			
-			<Anchor>//api/name/movement</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movement</TokenIdentifier>
-			<Abstract type="html">The text representing the movement instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, nonatomic) NSString *movement</Declaration>
-			
-			
-			<Anchor>//api/name/movement</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movement</TokenIdentifier>
-			<Abstract type="html">The text representing the movement instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, nonatomic) NSString *movement</Declaration>
-			
-			
-			<Anchor>//api/name/movement</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setMovementDirection:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setDirection:</TokenIdentifier>
 			<Abstract type="html">The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection direction</Declaration>
 			
 			
-			<Anchor>//api/name/movementDirection</Anchor>
+			<Anchor>//api/name/direction</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/movementDirection</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/direction</TokenIdentifier>
 			<Abstract type="html">The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection direction</Declaration>
 			
 			
-			<Anchor>//api/name/movementDirection</Anchor>
+			<Anchor>//api/name/direction</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/movementDirection</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/direction</TokenIdentifier>
 			<Abstract type="html">The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection direction</Declaration>
 			
 			
-			<Anchor>//api/name/movementDirection</Anchor>
+			<Anchor>//api/name/direction</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
@@ -297,42 +369,6 @@
 			
 			
 			<Anchor>//api/name/movementTrueHeading</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/setTurn:</TokenIdentifier>
-			<Abstract type="html">An NSString object representing the turn instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, nonatomic) NSString *turn</Declaration>
-			
-			
-			<Anchor>//api/name/turn</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/turn</TokenIdentifier>
-			<Abstract type="html">An NSString object representing the turn instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, nonatomic) NSString *turn</Declaration>
-			
-			
-			<Anchor>//api/name/turn</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/turn</TokenIdentifier>
-			<Abstract type="html">An NSString object representing the turn instruction for the current instruction instance.</Abstract>
-			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
-			
-			<Declaration>@property (readonly, nonatomic) NSString *turn</Declaration>
-			
-			
-			<Anchor>//api/name/turn</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
@@ -410,10 +446,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/set__deprecated:</TokenIdentifier>
-			<Abstract type="html">A reference to the origin, or start point-of-interest, for the route. It may be nil when it&apos;s a way point instead of point-of-interest.</Abstract>
+			<Abstract type="html">The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, nonatomic) PWPointOfInterest *__deprecated</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection __deprecated</Declaration>
 			
 			
 			<Anchor>//api/name/__deprecated</Anchor>
@@ -422,10 +458,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRouteInstruction/__deprecated</TokenIdentifier>
-			<Abstract type="html">A reference to the origin, or start point-of-interest, for the route. It may be nil when it&apos;s a way point instead of point-of-interest.</Abstract>
+			<Abstract type="html">The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, nonatomic) PWPointOfInterest *__deprecated</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection __deprecated</Declaration>
 			
 			
 			<Anchor>//api/name/__deprecated</Anchor>
@@ -434,10 +470,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWRouteInstruction/__deprecated</TokenIdentifier>
-			<Abstract type="html">A reference to the origin, or start point-of-interest, for the route. It may be nil when it&apos;s a way point instead of point-of-interest.</Abstract>
+			<Abstract type="html">The direction of the movement for the current instruction instance. Possible values are defined on the PWRouteInstructionDirection ENUM constant.</Abstract>
 			<DeclaredIn>PWRouteInstruction.h</DeclaredIn>
 			
-			<Declaration>@property (readonly, nonatomic) PWPointOfInterest *__deprecated</Declaration>
+			<Declaration>@property (readonly, nonatomic) PWRouteInstructionDirection movementDirection __deprecated</Declaration>
 			
 			
 			<Anchor>//api/name/__deprecated</Anchor>
