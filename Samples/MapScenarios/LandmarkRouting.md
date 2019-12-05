@@ -97,6 +97,105 @@ func routeInstructionListViewController(_ viewController: RouteInstructionListVi
 }
 ```
 
+The following is the code from `LandmarkInstructionViewModel` that generates the actual instruction text. Note that we use an internal type `Instruction` to analyze the maneuver object (`PWRouteInstruction`) to make the text generation more straightforward. Also note that we only use the last landmark for a manuever (i.e. the closest landmark to the manuever endpoint) to generate the text:
+```
+var attributedText: NSAttributedString {
+    let straightString = NSLocalizedString("Continue straight", comment: "")
+     
+    switch instruction.instructionType {
+    case .straight:
+        if let landmark = instruction.routeInstruction.landmarks?.last {
+            let templateString = NSLocalizedString("$0 for $1 towards $2", comment: "$0 = Continue straight, $1 = distance, $2 = landmark")
+            let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+             
+            attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
+             
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
+            attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+            attributed.replace(substring: "$2", with: landmark.name, attributes: highlightOptions.attributes)
+             
+            return attributed
+        } else {
+            let templateString = NSLocalizedString("$0 for $1", comment: "$0 = Continue straight, $1 = distance")
+            let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+             
+            attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
+             
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
+            attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+             
+            return attributed
+        }
+         
+    case .turn(let direction):
+        if let landmark = instruction.routeInstruction.landmarks?.last {
+            let templateString = NSLocalizedString("$0 in $1 $2 $3", comment: "$0 = direction, $1 = distance, $2 = at/after, $3 = landmark name")
+             
+            let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+             
+            let turnString = string(forTurn: direction) ?? ""
+            attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
+             
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
+            attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+             
+            let positionString = (landmark.position == .at)
+                ? NSLocalizedString("at", comment: "")
+                : NSLocalizedString("after", comment: "")
+             
+            attributed.replace(substring: "$2", with: positionString, attributes: standardOptions.attributes)
+            attributed.replace(substring: "$3", with: landmark.name, attributes: highlightOptions.attributes)
+             
+            return attributed
+             
+        } else {
+            let templateString = NSLocalizedString("$0 in $1", comment: "$0 = direction, $1 = distance")
+            let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+             
+            let turnString = string(forTurn: direction) ?? ""
+            attributed.replace(substring: "$0", with: turnString, attributes: highlightOptions.attributes)
+             
+            let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
+            attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+             
+            return attributed
+        }
+         
+    case .upcomingFloorChange(let floorChange):
+        let templateString = NSLocalizedString("$0 $1 towards $2 to $3", comment: "$0 = Continue straight, $1 = distance, $2 floor change type, $3 = floor name")
+        let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+         
+        attributed.replace(substring: "$0", with: straightString, attributes: highlightOptions.attributes)
+         
+        let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
+        attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
+         
+        let floorChangeTypeString = string(for: floorChange.floorChangeType)
+        attributed.replace(substring: "$2", with: floorChangeTypeString, attributes: highlightOptions.attributes)
+        attributed.replace(substring: "$3", with: floorChange.floorName, attributes: highlightOptions.attributes)
+         
+        return attributed
+         
+    case .floorChange(let floorChange):
+        let templateString = (floorChange.floorChangeDirection == .sameFloor)
+            ? NSLocalizedString("Take the $0 to $2", comment: "$0 = floor change type, $2 = floor name")
+            : NSLocalizedString("Take the $0 $1 to $2", comment: "$0 = floor change type, $1 = floor change direction, $2 = floor name")
+         
+        let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
+         
+        let floorChangeTypeString = string(for: floorChange.floorChangeType)
+        attributed.replace(substring: "$0", with: floorChangeTypeString, attributes: highlightOptions.attributes)
+         
+        let directionString = string(forFloorChangeDirection: floorChange.floorChangeDirection) ?? ""
+        attributed.replace(substring: "$1", with: directionString, attributes: standardOptions.attributes)
+        attributed.replace(substring: "$2", with: floorChange.floorName, attributes: highlightOptions.attributes)
+         
+        return attributed
+    }
+}
+```
+
+
 # Privacy
 You understand and consent to Phunware’s Privacy Policy located at www.phunware.com/privacy. If your use of Phunware’s software requires a Privacy Policy of your own, you also agree to include the terms of Phunware’s Privacy Policy in your Privacy Policy to your end users.
 
