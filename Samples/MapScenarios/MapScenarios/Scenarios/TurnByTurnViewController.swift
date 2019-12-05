@@ -116,7 +116,7 @@ private extension TurnByTurnViewController {
         }
         
         let routeOptions = PWRouteOptions(accessibilityEnabled: false,
-                                          landmarksEnabled: true,
+                                          landmarksEnabled: false,
                                           excludedPointIdentifiers: nil)
         
         // Calculate a route and plot on the map
