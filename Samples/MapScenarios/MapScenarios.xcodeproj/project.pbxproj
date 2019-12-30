@@ -22,12 +22,11 @@
 		9AFAAFDB2363450800ED655C /* InstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD42363450700ED655C /* InstructionViewModel.swift */; };
 		9AFAAFDC2363450800ED655C /* LandmarkInstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD52363450700ED655C /* LandmarkInstructionViewModel.swift */; };
 		9AFAAFDD2363450800ED655C /* ArrivedInstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD62363450700ED655C /* ArrivedInstructionViewModel.swift */; };
-		9AFAAFDE2363450800ED655C /* UIImage+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAAFD72363450700ED655C /* UIImage+Instruction.swift */; };
 		9D1ECD2A2225DE0C0029A667 /* BluedotLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */; };
 		9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */; };
 		9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */; };
 		9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */; };
-		9D6C1DCD220E0A4200C046DF /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		9D6C1DCD220E0A4200C046DF /* (null) in Resources */ = {isa = PBXBuildFile; };
 		9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
 		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
@@ -72,7 +71,6 @@
 		9AFAAFD42363450700ED655C /* InstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewModel.swift; sourceTree = "<group>"; };
 		9AFAAFD52363450700ED655C /* LandmarkInstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkInstructionViewModel.swift; sourceTree = "<group>"; };
 		9AFAAFD62363450700ED655C /* ArrivedInstructionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivedInstructionViewModel.swift; sourceTree = "<group>"; };
-		9AFAAFD72363450700ED655C /* UIImage+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Instruction.swift"; sourceTree = "<group>"; };
 		9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapScenarios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapScenarios/Pods-MapScenarios.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluedotLocationViewController.swift; sourceTree = "<group>"; };
 		9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkTimeViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				9AFAAFD22363450700ED655C /* Instruction.swift */,
-				9AFAAFD72363450700ED655C /* UIImage+Instruction.swift */,
 				9A5B6A1723748764007B41D4 /* InstructionTextOptions.swift */,
 				9AFAAFD42363450700ED655C /* InstructionViewModel.swift */,
 				9AFAAFD32363450700ED655C /* BasicInstructionViewModel.swift */,
@@ -367,7 +364,7 @@
 				E378582D222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
 				E378582F222073CA0059A179 /* DirectionImages.xcassets in Resources */,
 				E3C379A1204D90AA00905731 /* Main.storyboard in Resources */,
-				9D6C1DCD220E0A4200C046DF /* BuildFile in Resources */,
+				9D6C1DCD220E0A4200C046DF /* (null) in Resources */,
 				7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,7 +443,6 @@
 				E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
 				E378583A222738A40059A179 /* RouteInstructionListCell.swift in Sources */,
-				9AFAAFDE2363450800ED655C /* UIImage+Instruction.swift in Sources */,
 				E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */,
 				9AFAAFDD2363450800ED655C /* ArrivedInstructionViewModel.swift in Sources */,
 				9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */,
