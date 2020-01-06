@@ -78,11 +78,7 @@ extension LandmarkInstructionViewModel: InstructionViewModel {
                 let distanceString = instruction.routeInstruction.distance.localizedDistanceInSmallUnits
                 attributed.replace(substring: "$1", with: distanceString, attributes: standardOptions.attributes)
                 
-                let positionString = (landmark.position == .at)
-                    ? NSLocalizedString("at", comment: "")
-                    : NSLocalizedString("after", comment: "")
-                
-                attributed.replace(substring: "$2", with: positionString, attributes: standardOptions.attributes)
+                attributed.replace(substring: "$2", with: landmark.localizedPositionString, attributes: standardOptions.attributes)
                 attributed.replace(substring: "$3", with: landmark.name, attributes: highlightOptions.attributes)
                 
                 return attributed
@@ -189,11 +185,7 @@ private extension LandmarkInstructionViewModel {
                 let turnString = string(forTurn: direction)?.lowercased() ?? ""
                 prompt = prompt.replacingOccurrences(of: "$2", with: turnString)
                 
-                let positionString = (landmark.position == .at)
-                    ? NSLocalizedString("at", comment: "")
-                    : NSLocalizedString("after", comment: "")
-                
-                prompt = prompt.replacingOccurrences(of: "$3", with: positionString)
+                prompt = prompt.replacingOccurrences(of: "$3", with: landmark.localizedPositionString)
                 prompt = prompt.replacingOccurrences(of: "$4", with: landmark.name)
                 
                 return prompt
@@ -242,6 +234,21 @@ private extension LandmarkInstructionViewModel {
             prompt = prompt.replacingOccurrences(of: "$2", with: floorChange.floorName)
             
             return prompt
+        }
+    }
+}
+
+private extension PWLandmark {
+    var localizedPositionString: String {
+        guard position == .at else {
+            return NSLocalizedString("after", comment: "")
+        }
+        
+        // Use "near" for associated landmarks at the turn
+        if landmarkType == .associatedLandmark {
+            return NSLocalizedString("near", comment: "")
+        } else {
+            return NSLocalizedString("at", comment: "")
         }
     }
 }
