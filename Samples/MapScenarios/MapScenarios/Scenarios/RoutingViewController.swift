@@ -39,7 +39,7 @@ class RoutingViewController: UIViewController, ScenarioSettingsProtocol {
         }
         
         if destinationPOIIdentifier == 0 {
-            warning("Please set a valid value for `destinationPOIIdentifier` in RoutingViewController.swift")
+            warning("Please set a valid value for 'destinationPOIIdentifier'")
             return
         }
         
@@ -104,7 +104,7 @@ class RoutingViewController: UIViewController, ScenarioSettingsProtocol {
                             options: nil,
                             completion: { [weak self] (route, error) in
             guard let route = route else {
-                self?.warning("Couldn't find a route from you current location to the destination.")
+                self?.warning("Couldn't find a route from your current location to the destination.")
                 return
             }
             

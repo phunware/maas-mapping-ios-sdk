@@ -39,7 +39,7 @@ class TurnByTurnViewController: UIViewController, ScenarioSettingsProtocol {
         }
         
         if startPOIIdentifier == destinationPOIIdentifier || destinationPOIIdentifier == 0 {
-            warning("Please put valid data for `startPOIIdentifier` and `destinationPOIIdentifier` in RoutingViewController.swift")
+            warning("Please put valid data for 'startPOIIdentifier' and 'destinationPOIIdentifier'")
             return
         }
         
@@ -111,7 +111,7 @@ private extension TurnByTurnViewController {
         // Find the destination POI
         guard let startPOI = mapView.building.pois.first(where: { $0.identifier == startPOIIdentifier }),
             let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier }) else {
-            warning("Please put valid data for `startPOIIdentifier` and `destinationPOIIdentifier` in RoutingViewController.swift")
+            warning("Please put valid data for `startPOIIdentifier` and `destinationPOIIdentifier` in \(#file)")
             return
         }
         
@@ -124,17 +124,21 @@ private extension TurnByTurnViewController {
                             to: destinationPOI,
                             options: routeOptions,
                             completion: { [weak self] (route, error) in
+            guard let self = self else {
+                return
+            }
+                                
             guard let route = route else {
-                self?.warning("Couldn't find a route between POI(\(self?.startPOIIdentifier ?? 0)) and POI(\(self?.destinationPOIIdentifier ?? 0)).")
+                self.warning("Couldn't find a route between POI(\(self.startPOIIdentifier)) and POI(\(self.destinationPOIIdentifier)).")
                 return
             }
             
             // Plot route on the map
             let routeOptions = PWRouteUIOptions()
-            self?.mapView.navigate(with: route, options: routeOptions)
+            self.mapView.navigate(with: route, options: routeOptions)
             
             // Initial route instructions
-            self?.initializeTurnByTurn()
+            self.initializeTurnByTurn()
         })
     }
     

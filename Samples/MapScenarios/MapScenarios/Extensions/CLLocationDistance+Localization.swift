@@ -10,13 +10,14 @@ import Foundation
 import CoreLocation
 
 extension CLLocationDistance {
+    static let feetPerMeter: CLLocationDistance = 3.28084
+    
     var localizedDistanceInSmallUnits: String {
-        let feetPerMeter: CLLocationDistance = 3.28084
         let usesMetricSystem = NSLocale.current.usesMetricSystem
         
         let convertedDistance = usesMetricSystem
             ? self
-            : self * feetPerMeter
+            : self * CLLocationDistance.feetPerMeter
         
         let roundedDistance = Int(Darwin.round(convertedDistance))
         
