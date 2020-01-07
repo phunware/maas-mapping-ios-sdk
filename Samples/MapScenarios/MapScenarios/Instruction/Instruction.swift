@@ -31,6 +31,14 @@ struct Instruction {
         return routeInstruction.route?.routeInstructions?.last === routeInstruction
     }
     
+    var isStraight: Bool {
+        if case .straight = instructionType {
+            return true
+        }
+        
+        return false
+    }
+    
     init(for routeInstruction: PWRouteInstruction) {
         self.routeInstruction = routeInstruction
         
