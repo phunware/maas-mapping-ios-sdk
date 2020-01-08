@@ -119,7 +119,7 @@ extension POIDetailsViewController: UITableViewDataSource {
             if let detailsCell = tableView.dequeueReusableCell(withIdentifier: String(describing: POIDetailsCell.self), for: indexPath) as? POIDetailsCell {
                 detailsCell.titleLabel.text = NSLocalizedString("Building:", comment: "")
                 
-                if let buildingName = pointOfInterest?.floor.building.name {
+                if let buildingName = pointOfInterest?.floor?.building.name {
                     detailsCell.detailLabel.text = buildingName
                 }
                 
@@ -128,7 +128,7 @@ extension POIDetailsViewController: UITableViewDataSource {
         case .floor:
             if let detailsCell = tableView.dequeueReusableCell(withIdentifier: String(describing: POIDetailsCell.self), for: indexPath) as? POIDetailsCell {
                 detailsCell.titleLabel.text = NSLocalizedString("Floor:", comment: "")
-                if let floorName = pointOfInterest?.floor.name {
+                if let floorName = pointOfInterest?.floor?.name {
                     detailsCell.detailLabel.text = floorName
                 }
                 
