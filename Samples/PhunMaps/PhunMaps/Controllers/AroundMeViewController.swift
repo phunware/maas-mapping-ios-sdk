@@ -109,7 +109,8 @@ class AroundMeViewController: UIViewController, SegmentedViewController, POISear
 		headerView?.followingAreWithinContainerHeightConstraint.constant = 30
 		
 		if let nearestPOI = filteredPOIs.first {
-			headerView?.nearestPOILabel.text = nearestPOI.title! + " " + nearestPOI.floor.name!
+            let poiName = nearestPOI.floor?.name ?? NSLocalizedString("Unknown POI Name", comment: "")
+            headerView?.nearestPOILabel.text = nearestPOI.title! + " " + poiName
         }
 		
 		headerView?.followingAreWithinLabel.text = NSLocalizedString("Following are within \(filterRadius!) feet", comment: "")

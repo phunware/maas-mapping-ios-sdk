@@ -359,7 +359,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PhunMaps/Pods-PhunMaps-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PhunMaps/Pods-PhunMaps-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${PODS_ROOT}/MistSDK/Framework/MistSDK.framework",
 				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
@@ -380,7 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhunMaps/Pods-PhunMaps-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhunMaps/Pods-PhunMaps-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7290B44F836966DF350EF17E /* [CP] Check Pods Manifest.lock */ = {
