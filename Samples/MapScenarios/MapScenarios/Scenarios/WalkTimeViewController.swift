@@ -12,7 +12,7 @@ import PWCore
 import PWMapKit
 
 // MARK: - WalkTimeViewController
-class WalkTimeViewController: UIViewController, ScenarioSettingsProtocol {
+class WalkTimeViewController: UIViewController, ScenarioProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -185,6 +185,18 @@ extension WalkTimeViewController: PWMapViewDelegate {
         
         // restart the timer
         startWalkTimeUpdateTimer()
+    }
+    
+    func mapView(_ mapView: PWMapView!, didFailToLocateIndoorUserWithError error: Error!) {
+        guard let error = error as NSError? else {
+            return
+        }
+        
+        let title = error.domain
+        let description = error.userInfo["message"] as? String ?? "Unknown Error"
+        let message = "\(description) \n Error Code: \(error.code)"
+        
+        showAlertForIndoorLocationFailure(withTitle: title , failureMessage: message)
     }
 }
 
