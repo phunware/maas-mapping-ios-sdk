@@ -33,7 +33,7 @@ class ScenarioSelectViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if var scenarioController = segue.destination as? ScenarioSettingsProtocol {
+        if var scenarioController = segue.destination as? ScenarioProtocol {
             if scenarioController.applicationId.isEmpty {
                 scenarioController.applicationId = universalApplicationId
             }

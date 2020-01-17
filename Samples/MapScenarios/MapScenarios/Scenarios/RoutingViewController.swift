@@ -12,7 +12,7 @@ import PWCore
 import PWMapKit
 
 // MARK: - RoutingViewController
-class RoutingViewController: UIViewController, ScenarioSettingsProtocol {
+class RoutingViewController: UIViewController, ScenarioProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -130,6 +130,18 @@ extension RoutingViewController: PWMapViewDelegate {
             firstLocationAcquired = true
             route()
         }
+    }
+    
+    func mapView(_ mapView: PWMapView!, didFailToLocateIndoorUserWithError error: Error!) {
+        guard let error = error as NSError? else {
+            return
+        }
+        
+        let title = error.domain
+        let description = error.userInfo["message"] as? String ?? "Unknown Error"
+        let message = "\(description) \n Error Code: \(error.code)"
+        
+        showAlertForIndoorLocationFailure(withTitle: title , failureMessage: message)
     }
 }
 
