@@ -34,6 +34,8 @@ extension ScenarioProtocol where Self: UIViewController {
         let alertController = UIAlertController(title: title, message: failureMessage, preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
         alertController.addAction(okayAction)
-        present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
