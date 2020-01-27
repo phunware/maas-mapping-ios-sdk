@@ -11,7 +11,7 @@ import PWMapKit
 import PWCore
 
 // MARK: - LoadBuildingViewController
-class LoadBuildingViewController: UIViewController, ScenarioSettingsProtocol {
+class LoadBuildingViewController: UIViewController, ScenarioProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""

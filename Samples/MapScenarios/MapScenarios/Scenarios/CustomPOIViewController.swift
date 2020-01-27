@@ -12,7 +12,7 @@ import PWMapKit
 import PWCore
 
 // MARK: - CustomPOIViewController
-class CustomPOIViewController: UIViewController, ScenarioSettingsProtocol {
+class CustomPOIViewController: UIViewController, ScenarioProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""

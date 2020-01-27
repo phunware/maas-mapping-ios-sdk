@@ -12,7 +12,7 @@ import PWMapKit
 import PWCore
 
 // MARK: - SearchPOIViewController
-class SearchPOIViewController: UIViewController, ScenarioSettingsProtocol {
+class SearchPOIViewController: UIViewController, ScenarioProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""

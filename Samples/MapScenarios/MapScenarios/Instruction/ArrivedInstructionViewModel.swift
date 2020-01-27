@@ -36,7 +36,7 @@ extension ArrivedInstructionViewModel: InstructionViewModel {
         
         let attributed = NSMutableAttributedString(string: templateString, attributes: standardOptions.attributes)
         attributed.replace(substring: "$0", with: youHaveArrivedString, attributes: highlightOptions.attributes)
-        attributed.replace(substring: "$1", with: destinationDisplayName, attributes: standardOptions.attributes)
+        attributed.replace(substring: "$1", with: destinationDisplayName, attributes: highlightOptions.attributes)
         
         return attributed
     }

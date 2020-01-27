@@ -33,7 +33,7 @@ class ScenarioSelectViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if var scenarioController = segue.destination as? ScenarioSettingsProtocol {
+        if var scenarioController = segue.destination as? ScenarioProtocol {
             if scenarioController.applicationId.isEmpty {
                 scenarioController.applicationId = universalApplicationId
             }
@@ -55,8 +55,9 @@ class ScenarioSelectViewController: UITableViewController {
 
 extension UIViewController {
 
-    func warning(_ message: String) {
-        let alertVC = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+    func warning(_ message: String, file: String = #file) {
+        let fileName = file.split(separator: "/").last ?? "Unknown file"
+        let alertVC = UIAlertController(title: "Warning", message: fileName + ": " + message, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertVC.addAction(confirmAction)
         self.present(alertVC, animated: true, completion: nil)

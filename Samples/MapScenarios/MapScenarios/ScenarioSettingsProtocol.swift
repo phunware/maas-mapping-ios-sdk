@@ -8,15 +8,16 @@
 
 import Foundation
 import UIKit
+import PWMapKit
 
-protocol ScenarioSettingsProtocol {
+protocol ScenarioProtocol {
     var applicationId: String { get set }
     var accessKey: String { get set }
     var signatureKey: String { get set }
     var buildingIdentifier: Int { get set }
 }
 
-extension ScenarioSettingsProtocol where Self: UIViewController {
+extension ScenarioProtocol where Self: UIViewController {
     func validateScenarioSettings() -> Bool {
         if applicationId.isEmpty || accessKey.isEmpty || signatureKey.isEmpty || buildingIdentifier == 0 {
             let alertVC = UIAlertController(title: "Code Update Required", message: "Please put your applicationId/accessKey/signatureKey and buildingId in ScenarioSelectViewController.swift or the related view controllers.", preferredStyle: .alert)
@@ -29,4 +30,12 @@ extension ScenarioSettingsProtocol where Self: UIViewController {
         return true
     }
     
+    func showAlertForIndoorLocationFailure(withTitle title: String, failureMessage: String) {
+        let alertController = UIAlertController(title: title, message: failureMessage, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(okayAction)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 }
