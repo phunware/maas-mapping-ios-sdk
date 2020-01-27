@@ -3,7 +3,6 @@
 #### Bug fixes
 * Landmarks are now added to the last maneuver in a route
 * Fixed bugs related filtering route points, specifically filtering route points that are explicitly excluded by ID
-* Comments/formatting
 
 ## 3.9.0 (Wednesday, December 4th, 2019)
 #### Features
