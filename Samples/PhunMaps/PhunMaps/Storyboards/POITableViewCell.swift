@@ -31,7 +31,7 @@ class POITableViewCell: UITableViewCell {
             self.poiTitleLabel?.text = title
         }
 
-        if let floorName = poi.floor.name {
+        if let floorName = poi.floor?.name {
             self.poiDetailLabel?.text = floorName
         }
 	}

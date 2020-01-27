@@ -84,8 +84,8 @@ extension WalkTimeView {
     // Format arrival time
     func format(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
+        dateFormatter.dateFormat = "h:mm a"
         
-        return dateFormatter.string(from:date)
+        return dateFormatter.string(from: date)
     }
 }

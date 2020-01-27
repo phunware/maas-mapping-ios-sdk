@@ -213,6 +213,12 @@ extension MapViewController: PWMapViewDelegate {
             self?.trackingBarButton.image = newTrackingModeImage
         }
     }
+    
+    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+        if (filteredPOIType != nil) {
+            filterMapPOIByType(poiType: filteredPOIType)
+        }
+    }
 }
 
 // MARK: - RouteInstructionViewControllerDelegate

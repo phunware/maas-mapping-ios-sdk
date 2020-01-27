@@ -31,10 +31,41 @@ struct BasicInstructionViewModel {
 // MARK: InstructionViewModel conformance
 extension BasicInstructionViewModel: InstructionViewModel {
     var image: UIImage {
-        return .image(for: instruction)
+        return image(for: instruction)
     }
     
     var attributedText: NSAttributedString {
+        let attributed = baseAttributedText
+        
+        // For the last directions, append a string indicating arrival.
+        if instruction.isLast {
+            let arrivalTemplate = " " + NSLocalizedString("to arrive at $0", comment: "$0 = destination name")
+            let suffix = NSMutableAttributedString(string: arrivalTemplate, attributes: standardOptions.attributes)
+            
+            suffix.replace(substring: "$0", with: destinationNameForRoute(containing: instruction), attributes: highlightOptions.attributes)
+            attributed.append(suffix)
+        }
+        
+        return attributed
+    }
+    
+    var voicePrompt: String {
+        var prompt = baseStringForVoicePrompt
+        
+        // For the last directions, append a string indicating arrival.
+        if instruction.isLast {
+            var suffix = " " + NSLocalizedString("to arrive at $0", comment: "$0 = destination name")
+            suffix = suffix.replacingOccurrences(of: "$0", with: destinationNameForRoute(containing: instruction))
+            prompt = prompt + suffix
+        }
+        
+        return prompt
+    }
+}
+
+// MARK: - private
+private extension BasicInstructionViewModel {
+    var baseAttributedText: NSMutableAttributedString {
         let straightString = NSLocalizedString("Continue straight", comment: "")
         
         switch instruction.instructionType {
@@ -94,21 +125,6 @@ extension BasicInstructionViewModel: InstructionViewModel {
         }
     }
     
-    var voicePrompt: String {
-        var prompt = baseStringForVoicePrompt
-        
-        // For the last directions, append a string indicating arrival.
-        if instruction.isLast {
-            let arrivalString = " " + NSLocalizedString("to arrive at your destination", comment: "")
-            prompt = prompt + arrivalString
-        }
-        
-        return prompt
-    }
-}
-
-// MARK: - private
-private extension BasicInstructionViewModel {
     var baseStringForVoicePrompt: String {
         let straightString = NSLocalizedString("Continue straight", comment: "")
         
