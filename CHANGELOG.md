@@ -1,4 +1,9 @@
 # PWMapKit Changelog
+## 3.9.1 (Monday, January 27th, 2019)
+#### Bug fixes
+* Landmarks are now added to the last maneuver in a route
+* Fixed bugs related filtering route points, specifically filtering route points that are explicitly excluded by ID
+
 ## 3.9.0 (Wednesday, December 4th, 2019)
 #### Features
 * Added Landmark Routing capability
