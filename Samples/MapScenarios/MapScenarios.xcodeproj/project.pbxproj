@@ -11,6 +11,7 @@
 		7E87A2F2222478FF004ABFE9 /* OffRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */; };
 		7EFF9C602232FCD3002BDD0A /* OffRouteModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */; };
 		7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */; };
+		9A19038324290D32001380CC /* CustomPointOfInterestImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19038224290D32001380CC /* CustomPointOfInterestImagesViewController.swift */; };
 		9A28B1E5235DFC5900215476 /* CLLocationDistance+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1E4235DFC5900215476 /* CLLocationDistance+Localization.swift */; };
 		9A28B1ED235E0C2600215476 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28B1EC235E0C2600215476 /* NSMutableAttributedString+Extension.swift */; };
 		9A5B6A1823748764007B41D4 /* InstructionTextOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B6A1723748764007B41D4 /* InstructionTextOptions.swift */; };
@@ -26,7 +27,7 @@
 		9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */; };
 		9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */; };
 		9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */; };
-		9D6C1DCD220E0A4200C046DF /* (null) in Resources */ = {isa = PBXBuildFile; };
+		9D6C1DCD220E0A4200C046DF /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
 		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
@@ -60,6 +61,7 @@
 		7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteViewController.swift; sourceTree = "<group>"; };
 		7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteModalViewController.swift; sourceTree = "<group>"; };
 		7EFF9C6122330740002BDD0A /* OffRouteModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OffRouteModalView.xib; sourceTree = "<group>"; };
+		9A19038224290D32001380CC /* CustomPointOfInterestImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPointOfInterestImagesViewController.swift; sourceTree = "<group>"; };
 		9A28B1E4235DFC5900215476 /* CLLocationDistance+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationDistance+Localization.swift"; sourceTree = "<group>"; };
 		9A28B1EC235E0C2600215476 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		9A5B6A1723748764007B41D4 /* InstructionTextOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionTextOptions.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				9D1ECD292225DE0C0029A667 /* BluedotLocationViewController.swift */,
 				E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */,
+				9A19038224290D32001380CC /* CustomPointOfInterestImagesViewController.swift */,
 				E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */,
 				E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */,
 				E36BB69120571B57003640CA /* LocationSharingViewController.swift */,
@@ -364,7 +367,7 @@
 				E378582D222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
 				E378582F222073CA0059A179 /* DirectionImages.xcassets in Resources */,
 				E3C379A1204D90AA00905731 /* Main.storyboard in Resources */,
-				9D6C1DCD220E0A4200C046DF /* (null) in Resources */,
+				9D6C1DCD220E0A4200C046DF /* BuildFile in Resources */,
 				7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +443,7 @@
 				9A28B1E5235DFC5900215476 /* CLLocationDistance+Localization.swift in Sources */,
 				9A5B6A1823748764007B41D4 /* InstructionTextOptions.swift in Sources */,
 				E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */,
+				9A19038324290D32001380CC /* CustomPointOfInterestImagesViewController.swift in Sources */,
 				E3C771CA2050555D00780D0F /* RoutingViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
 				E378583A222738A40059A179 /* RouteInstructionListCell.swift in Sources */,
