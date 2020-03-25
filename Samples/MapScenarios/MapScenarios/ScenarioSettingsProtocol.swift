@@ -31,10 +31,10 @@ extension ScenarioProtocol where Self: UIViewController {
     }
     
     func showAlertForIndoorLocationFailure(withTitle title: String, failureMessage: String) {
-        let alertController = UIAlertController(title: title, message: failureMessage, preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-        alertController.addAction(okayAction)
         DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: failureMessage, preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alertController.addAction(okayAction)
             self.present(alertController, animated: true, completion: nil)
         }
     }
