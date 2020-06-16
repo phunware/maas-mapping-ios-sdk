@@ -1,5 +1,5 @@
 # PWMapKit Changelog
-## 3.9.2 (Tuesday, June16th, 2020)
+## 3.9.2 (Tuesday, June 16th, 2020)
 #### Features
 * Added support for custom points of interest images
 * Improved venue loading time
