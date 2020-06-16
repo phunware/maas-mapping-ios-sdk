@@ -11,6 +11,7 @@
 #import <PWMapKit/PWBuilding.h>
 #import <PWMapKit/PWFloor.h>
 #import <PWMapKit/PWPointOfInterest.h>
+#import <PWMapKit/PWPointOfInterestInfo.h>
 #import <PWMapKit/PWPointOfInterestType.h>
 #import <PWMapKit/PWCustomLocation.h>
 #import <PWMapKit/PWUserLocation.h>
