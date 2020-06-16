@@ -1,4 +1,9 @@
 # PWMapKit Changelog
+## 3.9.2 (Tuesday, June16th, 2020)
+#### Features
+* Added support for custom points of interest images
+* Improved venue loading time
+
 ## 3.9.1 (Monday, January 27th, 2019)
 #### Bug fixes
 * Landmarks are now added to the last maneuver in a route

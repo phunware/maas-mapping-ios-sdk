@@ -6,6 +6,7 @@
 //
 
 #import <CoreLocation/CLLocation.h>
+#import "PWBuildingCallbackTypes.h"
 
 @protocol PWMapPoint;
 @class PWFloor;
@@ -53,12 +54,20 @@
 @property (readonly) NSDictionary *userInfo;
 
 /**
+ *  If set, images for PWPointOfInterest objects will be provided by the application using this function when loading a building.
+ *  If NULL, images will be downloaded from the network based on the point of interest type.
+ *  The default value is NULL.
+ */
+@property (class, nonatomic, copy) PWLoadCustomImageForPointOfInterest customImageLoaderForPointsOfInterest;
+
+/**
  Create `PWBuilding` with provided building identifier.
  @param identifier The building identifier to use for initialization.
  @param completion The block to execute when the building data is completely loaded.
  @discussion It checks the network connectivity before starting to download the building: if it's disconnected, use cached one and return immediately, otherwise check if the cached bulding is up to date then decide if it's necessary to re-download.
  */
-+ (void)buildingWithIdentifier:(NSInteger)identifier completion:(void(^)(PWBuilding *building, NSError *error))completion;
++ (void)buildingWithIdentifier:(NSInteger)identifier
+                    completion:(PWLoadBuildingCompletionBlock)completion;
 
 /**
  Create `PWBuilding` with provided building identifier.
@@ -67,7 +76,9 @@
  @param completion The block to execute when the building data is completely loaded.
  @discussion It checks the network connectivity before starting to download the building: if it's disconnected, use cached one and return immediately, otherwise check if the cached building is up to date then decide if it's necessary to re-download if it completes within the fallback timeout. Otherwise will return the cached building.
  */
-+ (void)buildingWithIdentifier:(NSInteger)identifier cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout completion:(void(^)(PWBuilding *building, NSError *error))completion;
++ (void)buildingWithIdentifier:(NSInteger)identifier
+          cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout
+                    completion:(PWLoadBuildingCompletionBlock)completion;
 
 /**
  * Create `PWBuilding` with provided building identifier.
@@ -77,7 +88,9 @@
  *
  * @deprecated Use `buildingWithIdentifier:completion:` instead, since v3.2.0
  */
-+ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL)caching completion:(void(^)(PWBuilding *building, NSError *error))completion __deprecated;
++ (void)buildingWithIdentifier:(NSInteger)identifier
+                    usingCache:(BOOL)caching
+                    completion:(PWLoadBuildingCompletionBlock)completion __deprecated;
 
 /**
  * Returns a `PWFloor` instance that has the given floor identifier.

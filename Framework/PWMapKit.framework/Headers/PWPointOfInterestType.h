@@ -21,11 +21,6 @@
 @property (nonatomic, readonly) NSString *name;
 
 /**
- The point-of-interest icon image, it's deprecated and you should use `iconURL` property to create an image object instead.
- */
-@property (nonatomic, readonly) UIImage *image __deprecated;
-
-/**
  The point-of-interest icon URL.
  */
 @property (nonatomic, readonly) NSURL *iconURL;

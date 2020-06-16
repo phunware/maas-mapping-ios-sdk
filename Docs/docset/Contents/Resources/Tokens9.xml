@@ -85,42 +85,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/set__deprecated:</TokenIdentifier>
-			<Abstract type="html">The point-of-interest icon image, it&apos;s deprecated and you should use iconURL property to create an image object instead.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) UIImage *__deprecated</Declaration>
-			
-			
-			<Anchor>//api/name/__deprecated</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/__deprecated</TokenIdentifier>
-			<Abstract type="html">The point-of-interest icon image, it&apos;s deprecated and you should use iconURL property to create an image object instead.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) UIImage *__deprecated</Declaration>
-			
-			
-			<Anchor>//api/name/__deprecated</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterestType/__deprecated</TokenIdentifier>
-			<Abstract type="html">The point-of-interest icon image, it&apos;s deprecated and you should use iconURL property to create an image object instead.</Abstract>
-			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) UIImage *__deprecated</Declaration>
-			
-			
-			<Anchor>//api/name/__deprecated</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterestType/setIconURL:</TokenIdentifier>
 			<Abstract type="html">The point-of-interest icon URL.</Abstract>
 			<DeclaredIn>PWPointOfInterestType.h</DeclaredIn>

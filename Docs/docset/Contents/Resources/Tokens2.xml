@@ -265,11 +265,53 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setCustomImageLoaderForPointsOfInterest:</TokenIdentifier>
+			<Abstract type="html">If set, images for PWPointOfInterest objects will be provided by the application using this function when loading a building.
+If NULL, images will be downloaded from the network based on the point of interest type.
+The default value is NULL.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy) PWLoadCustomImageForPointOfInterest customImageLoaderForPointsOfInterest</Declaration>
+			
+			
+			<Anchor>//api/name/customImageLoaderForPointsOfInterest</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/customImageLoaderForPointsOfInterest</TokenIdentifier>
+			<Abstract type="html">If set, images for PWPointOfInterest objects will be provided by the application using this function when loading a building.
+If NULL, images will be downloaded from the network based on the point of interest type.
+The default value is NULL.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy) PWLoadCustomImageForPointOfInterest customImageLoaderForPointsOfInterest</Declaration>
+			
+			
+			<Anchor>//api/name/customImageLoaderForPointsOfInterest</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/customImageLoaderForPointsOfInterest</TokenIdentifier>
+			<Abstract type="html">If set, images for PWPointOfInterest objects will be provided by the application using this function when loading a building.
+If NULL, images will be downloaded from the network based on the point of interest type.
+The default value is NULL.</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy) PWLoadCustomImageForPointOfInterest customImageLoaderForPointsOfInterest</Declaration>
+			
+			
+			<Anchor>//api/name/customImageLoaderForPointsOfInterest</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/PWBuilding/buildingWithIdentifier:completion:</TokenIdentifier>
 			<Abstract type="html">Create PWBuilding with provided building identifier.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>+ (void)buildingWithIdentifier:(NSInteger)identifier completion:(void ( ^ ) ( PWBuilding *building , NSError *error ))completion</Declaration>
+			<Declaration>+ (void)buildingWithIdentifier:(NSInteger)identifier completion:(PWLoadBuildingCompletionBlock)completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>identifier</Name>
@@ -289,7 +331,7 @@
 			<Abstract type="html">Create PWBuilding with provided building identifier.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>+ (void)buildingWithIdentifier:(NSInteger)identifier cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout completion:(void ( ^ ) ( PWBuilding *building , NSError *error ))completion</Declaration>
+			<Declaration>+ (void)buildingWithIdentifier:(NSInteger)identifier cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout completion:(PWLoadBuildingCompletionBlock)completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>identifier</Name>
@@ -312,7 +354,7 @@
 			<Abstract type="html">Create PWBuilding with provided building identifier. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; Use buildingWithIdentifier:completion: instead, since v3.2.0&lt;/span&gt;)</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>+ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL)caching completion:(void ( ^ ) ( PWBuilding *building , NSError *error ))completion</Declaration>
+			<Declaration>+ (void)buildingWithIdentifier:(NSInteger)identifier usingCache:(BOOL)caching completion:(PWLoadBuildingCompletionBlock)completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>identifier</Name>
