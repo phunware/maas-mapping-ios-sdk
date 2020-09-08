@@ -1,4 +1,8 @@
 # PWMapKit Changelog
+## 3.10.0 (Thursday, September 3rd, 2020)
+#### Features
+* Migrated to use XCFrameworks
+
 ## 3.9.2 (Tuesday, June 16th, 2020)
 #### Features
 * Added support for custom points of interest images

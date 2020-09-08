@@ -1,37 +1,31 @@
 PWMapKit SDK for iOS
-====================
+================
 
-> Version 3.9.2
+>Version 3.10.0
 
-**PWMapKit** is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services.  Visit http://maas.phunware.com/ for more details and to sign up.
+This is Phunware's iOS SDK for the Mapping module. It is a comprehensive indoor mapping and wayfinding SDK that allows easy integration with Phunware's indoor maps and location-based services. Visit http://maas.phunware.com/ for more details and to sign up.
 
+Requirements
+------------
 
-## Requirements
-
-- PWLocation 3.8.0 and above (Automatically included when pod install PWMapKit)
-- PWCore 3.8.x (Automatically included when pod install PWMapKit)
+- PWLocation 3.9.x
+- PWCore 3.9.x
 - iOS 10.0 or greater
 - Xcode 11 or greater
 
+Installation
+------------
 
-## Installation
+Phunware recommends using [CocoaPods](http://www.cocoapods.org) 1.10 or greater to integrate the framework. Simply add
 
-* Phunware recommends using [CocoaPods](http://www.cocoapods.org) to integrate the framework. Simply add
+`pod 'PWMapKit'`
 
-	`pod 'PWMapKit'`
+to your podfile, which would automatically resolve the required dependencies `PWLocation` and `PWCore`.
 
-	to your podfile, then the dependencies of `PWCore` and `PWLocation` are automatically added.
-    
-    Alternatively you could specify 
-    
-    `pod PWMapKit/NoAds`
-    
-    in your `Podfile` which would bring in  `PWLocation` and `PWCoreNoAds` automatically.
+Documentation
+------------
 
-## Documentation
-
-Framework documentation is included in the the repository's `Documents` folder in both HTML and Docset formats. You can also find the [latest documentation online](http://phunware.github.io/maas-mapping-ios-sdk/).
-
+Documentation is included in the Documents folder in the repository as both HTML and as a .docset. You can also find the latest documentation here: http://phunware.github.io/maas-mapping-ios-sdk/).
 
 ## Usage
 
@@ -63,7 +57,6 @@ map.delegate = self;
 
 [mapView setBuilding:<#building#> animated:<#animated#> onCompletion:(void (^)(NSError *error))completion]
 ```
-
 
 ### Register Location Provider
 
