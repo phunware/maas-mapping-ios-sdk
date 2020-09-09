@@ -35,7 +35,7 @@ class PreRoutingViewController: UIViewController {
     var segmentedControl: UISegmentedControl!
     let segmentsList: [segment] = [.list, .map]
     var route: PWRoute?
-    var showAllInstructions = !UIAccessibilityIsVoiceOverRunning()
+    var showAllInstructions = !UIAccessibility.isVoiceOverRunning
     let mapViewForPreview = PWMapView()
     
     fileprivate var rowMapping = [rowMap]()
@@ -43,9 +43,9 @@ class PreRoutingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
-        tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, startNavigationButton.frame.height+startNavigationButtonBottomConstraint.constant, 0.0)
+        tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: startNavigationButton.frame.height+startNavigationButtonBottomConstraint.constant, right: 0.0)
         
         startNavigationButton.isHidden = route == nil
         startNavigationButton.layer.cornerRadius = 25
@@ -131,7 +131,7 @@ extension PreRoutingViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height = UITableViewAutomaticDimension
+        var height = UITableView.automaticDimension
         if rowMapping[indexPath.row] == .mapPreview {
             height = 400.0
         }
@@ -173,7 +173,7 @@ extension PreRoutingViewController: UITableViewDataSource {
             }
         case .instruction:
             if let instructionCell = tableView.dequeueReusableCell(withIdentifier: String(describing: PreRouteInstructionCell.self), for: indexPath) as? PreRouteInstructionCell {
-                if let indexOffset = rowMapping.index(of: .instruction), let instruction = route?.routeInstructions[indexPath.row - indexOffset] {
+                if let indexOffset = rowMapping.firstIndex(of: .instruction), let instruction = route?.routeInstructions[indexPath.row - indexOffset] {
                     instructionCell.configure(forInstruction: instruction)
                 }
                 cell = instructionCell

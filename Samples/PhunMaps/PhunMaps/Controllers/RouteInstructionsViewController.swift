@@ -81,7 +81,7 @@ class RouteInstructionsViewController: UIViewController {
             return
         }
         
-        if let index = route.routeInstructions.index(of: routeInstruction) {
+        if let index = route.routeInstructions.firstIndex(of: routeInstruction) {
             let indexPath = IndexPath(row: index, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         }

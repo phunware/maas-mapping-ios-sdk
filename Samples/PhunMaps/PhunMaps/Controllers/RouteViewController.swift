@@ -49,14 +49,14 @@ class RouteViewController: UIViewController, POISearchable {
         
         navigationController?.navigationBar.barTintColor = CommonSettings.navigationBarBackgroundColor
         navigationController?.navigationBar.tintColor = CommonSettings.navigationBarForegroundColor
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : CommonSettings.viewForegroundColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : CommonSettings.viewForegroundColor]
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(close(barButtonItem:)))
         
         tableView.register(UINib(nibName: String(describing: POITableViewCell.self), bundle: nil), forCellReuseIdentifier: POICellIdentifier)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         filteredPOIs = [PWPointOfInterest]()
         sectionedPOIs = [String : [PWPointOfInterest]]()
@@ -304,13 +304,13 @@ extension RouteViewController {
 extension RouteViewController {
     
     @objc func keyboardWillShow(notification: Notification) {
-        if let keyboardFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRect = keyboardFrame.cgRectValue
-            tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardRect.size.height, 0)
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardRect.size.height, right: 0)
         }
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }

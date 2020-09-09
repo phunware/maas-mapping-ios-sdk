@@ -31,7 +31,7 @@ extension PWRouteInstruction {
     }
     
     func indexOfInstruction() -> Int {
-        let index = route.routeInstructions.index(where: { (item) -> Bool in
+        let index = route.routeInstructions.firstIndex(where: { (item) -> Bool in
             return item == self
         })
         return index ?? 0

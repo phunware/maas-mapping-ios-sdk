@@ -5,5 +5,5 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'MapScenarios' do
-  pod 'PWMapKit', '~> 3.9.0'
+  pod 'PWMapKit', '~> 3.10.0'
 end

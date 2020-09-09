@@ -72,7 +72,7 @@ class AroundMeViewController: UIViewController, SegmentedViewController, POISear
         
         tableView.tableFooterView = UIView()
         tableView.estimatedSectionHeaderHeight = 60.0
-        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
     }
 	
 	override func viewWillAppear(_ animated: Bool) {

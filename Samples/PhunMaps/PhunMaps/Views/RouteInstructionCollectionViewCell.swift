@@ -20,7 +20,7 @@ class RouteInstructionCollectionViewCell: UICollectionViewCell {
     
     var routeInstruction: PWRouteInstruction? {
         didSet {
-            guard let routeInstruction = routeInstruction, let indexOfRouteInstruction = routeInstruction.route.routeInstructions.index(of: routeInstruction) else {
+            guard let routeInstruction = routeInstruction, let indexOfRouteInstruction = routeInstruction.route.routeInstructions.firstIndex(of: routeInstruction) else {
                 return
             }
             

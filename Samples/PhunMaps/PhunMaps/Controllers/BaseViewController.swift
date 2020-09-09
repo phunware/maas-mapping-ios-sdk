@@ -92,12 +92,12 @@ class BaseViewController: UIViewController {
         segmentedControl.backgroundColor = CommonSettings.navigationBarBackgroundColor
         currentSegments = mainSegments
         
-        segmentedControl.selectedSegmentIndex = currentSegments.index(of: .map) ?? 0
+        segmentedControl.selectedSegmentIndex = currentSegments.firstIndex(of: .map) ?? 0
         switchSegment(segmentedControl: segmentedControl, animated: false)
         
         NotificationCenter.default.addObserver(self, selector: #selector(startRoutingMode(notification:)), name: .startNavigatingRoute, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     deinit {
@@ -118,7 +118,7 @@ class BaseViewController: UIViewController {
     }
     
     func assignViewControllers() {
-        for viewController in childViewControllers {
+        for viewController in children {
             if let viewController = viewController as? MapViewController {
                 mapViewController = viewController
                 mapViewController.toolbar = toolbar
@@ -202,10 +202,10 @@ class BaseViewController: UIViewController {
             
             let currentlySelectedSegment = currentSegments[segmentedControl.selectedSegmentIndex]
             currentSegments = mainSegments
-            if let indexToSelect = currentSegments.index(of: selectedSegmentBeforeRouting), currentlySelectedSegment != .map {
+            if let indexToSelect = currentSegments.firstIndex(of: selectedSegmentBeforeRouting), currentlySelectedSegment != .map {
                 segmentedControl.selectedSegmentIndex = indexToSelect
             } else {
-                segmentedControl.selectedSegmentIndex = currentSegments.index(of: .map) ?? 0
+                segmentedControl.selectedSegmentIndex = currentSegments.firstIndex(of: .map) ?? 0
             }
             switchSegment(segmentedControl: segmentedControl)
             
@@ -241,8 +241,8 @@ class BaseViewController: UIViewController {
         }
         selectedSegmentBeforeRouting = currentSegments[segmentedControl.selectedSegmentIndex]
         currentSegments = routingSegments
-        let segmentToSelect = UIAccessibilityIsVoiceOverRunning() ? segments.list : segments.map
-        segmentedControl.selectedSegmentIndex = currentSegments.index(of: segmentToSelect) ?? 0
+        let segmentToSelect = UIAccessibility.isVoiceOverRunning ? segments.list : segments.map
+        segmentedControl.selectedSegmentIndex = currentSegments.firstIndex(of: segmentToSelect) ?? 0
         switchSegment(segmentedControl: segmentedControl)
         
         searchTextField.isHidden = true
@@ -349,14 +349,14 @@ extension BaseViewController: UITextFieldDelegate {
 extension BaseViewController {
     
     @objc func keyboardWillHide() {
-        directoryViewController.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        aroundMeViewController.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        mapViewController.mapDirectoryViewController.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        directoryViewController.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        aroundMeViewController.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        mapViewController.mapDirectoryViewController.tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     @objc func keyboardWillShow(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            let insets = UIEdgeInsetsMake(0, 0, keyboardSize.size.height - toolbar.frame.height, 0)
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.size.height - toolbar.frame.height, right: 0)
             directoryViewController.tableView.contentInset = insets
             aroundMeViewController.tableView.contentInset = insets
             mapViewController.mapDirectoryViewController.tableView.contentInset = insets

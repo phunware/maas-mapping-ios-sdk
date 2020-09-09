@@ -37,8 +37,8 @@ class RouteListViewController: UIViewController, SegmentedViewController {
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: String(describing: RouteInstructionHeaderView.self))
         tableView.estimatedRowHeight = 40.0
         tableView.estimatedSectionHeaderHeight = 60.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
     }
     
     func segmentedViewWillAppear() { }
@@ -124,7 +124,7 @@ extension RouteListViewController {
             tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
             if let routeInstructionCell = tableView.cellForRow(at: indexPath) as? RouteInstructionCell {
                 routeInstructionCell.accessibilityLabel = accessibilityString
-                UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, routeInstructionCell)
+                UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: routeInstructionCell)
             }
         }
     }
@@ -152,7 +152,7 @@ extension RouteListViewController: RouteAccessibilityManagerDelegate {
         }
         
         if needVoiceOver {
-            UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, orientationLabel)
+            UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: orientationLabel)
         }
         
         if needToStartRoute {

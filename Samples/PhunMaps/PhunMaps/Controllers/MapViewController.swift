@@ -68,14 +68,14 @@ class MapViewController: UIViewController, SegmentedViewController {
         view.addSubview(mapView)
         configureMapViewConstraints()
         
-        view.bringSubview(toFront: routeInstructionsContainerView)
+        view.bringSubviewToFront(routeInstructionsContainerView)
         routeInstructionsContainerView.isHidden = true
         routeInstructionsContainerView.backgroundColor = UIColor.clear
         
-        view.bringSubview(toFront: mapDirectoryContainerView)
+        view.bringSubviewToFront(mapDirectoryContainerView)
         mapDirectoryContainerView.isHidden = true
 
-        for childViewController in childViewControllers {
+        for childViewController in children {
             if let routeInstructionsViewController = childViewController as? RouteInstructionsViewController {
                 self.routeInstructionsViewController = routeInstructionsViewController
                 self.routeInstructionsViewController.delegate = self
@@ -87,7 +87,7 @@ class MapViewController: UIViewController, SegmentedViewController {
         }
         
         loadingView.frame = view.frame
-        loadingView.activityIndicatorViewStyle = .whiteLarge
+        loadingView.style = .whiteLarge
         loadingView.backgroundColor = UIColor.lightGray
         loadingView.alpha = 0.8
         loadingView.startAnimating()
@@ -148,7 +148,7 @@ class MapViewController: UIViewController, SegmentedViewController {
         if identifier == mapPOITypeSelectionSegue {
             if let navController = segue.destination as? UINavigationController, let poiTypeSelectionViewController = navController.topViewController as? POITypeSelectionViewController {
                 poiTypeSelectionViewController.selectedPOIType = filteredPOIType
-                poiTypeSelectionViewController.poiTypes = mapView.building.availablePOITypes()
+                poiTypeSelectionViewController.poiTypes = mapView.building?.availablePOITypes() ?? []
                 poiTypeSelectionViewController.poiSelectedCompletion = { [weak self] selectedPOI in
                     self?.filteredPOIType = selectedPOI
                     self?.filterMapPOIByType(poiType: selectedPOI)

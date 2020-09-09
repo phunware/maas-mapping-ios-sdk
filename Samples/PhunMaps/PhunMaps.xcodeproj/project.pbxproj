@@ -298,13 +298,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = Phunware;
 				TargetAttributes = {
 					E3424ED01EDF0FBF002ADA73 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 84CK77G588;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1160;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -316,7 +316,7 @@
 			};
 			buildConfigurationList = E3424ECC1EDF0FBF002ADA73 /* Build configuration list for PBXProject "PhunMaps" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -361,22 +361,20 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PhunMaps/Pods-PhunMaps-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${PODS_ROOT}/MistSDK/Framework/MistSDK.framework",
-				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
-				"${PODS_ROOT}/PWLocation/Framework/PWLocation.framework",
-				"${PODS_ROOT}/PWMapKit/Framework/PWMapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/TMCache/TMCache.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PWCore/PWCore.framework/PWCore",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PWLocation/PWLocation.framework/PWLocation",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PWMapKit/PWMapKit.framework/PWMapKit",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MistSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWMapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMCache.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -452,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -511,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -574,11 +574,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.PhunMaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "392f85ba-dc65-4d4f-a964-155c0bf2e9cc";
-				PROVISIONING_PROFILE_SPECIFIER = Phunware_Wild2;
+				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild (Debug)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -596,10 +596,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.PhunMaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "392f85ba-dc65-4d4f-a964-155c0bf2e9cc";
-				PROVISIONING_PROFILE_SPECIFIER = Phunware_Wild2;
+				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild (Debug)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

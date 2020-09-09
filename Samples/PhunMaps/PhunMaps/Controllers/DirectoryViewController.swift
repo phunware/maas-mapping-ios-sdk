@@ -54,7 +54,7 @@ class DirectoryViewController: UIViewController, SegmentedViewController, POISea
         sortedSectionedPOIKeys = [String]()
 		
 		tableView.register(UINib(nibName: "POITableViewCell", bundle: nil), forCellReuseIdentifier: POICellIdentifier)
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
     }
 

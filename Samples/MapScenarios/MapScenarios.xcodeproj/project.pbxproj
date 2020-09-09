@@ -27,7 +27,7 @@
 		9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */; };
 		9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */; };
 		9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */; };
-		9D6C1DCD220E0A4200C046DF /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		9D6C1DCD220E0A4200C046DF /* (null) in Resources */ = {isa = PBXBuildFile; };
 		9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
 		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
@@ -333,7 +333,7 @@
 					E3C37997204D90AA00905731 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1010;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -367,7 +367,7 @@
 				E378582D222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
 				E378582F222073CA0059A179 /* DirectionImages.xcassets in Resources */,
 				E3C379A1204D90AA00905731 /* Main.storyboard in Resources */,
-				9D6C1DCD220E0A4200C046DF /* BuildFile in Resources */,
+				9D6C1DCD220E0A4200C046DF /* (null) in Resources */,
 				7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,22 +383,20 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MapScenarios/Pods-MapScenarios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${PODS_ROOT}/MistSDK/Framework/MistSDK.framework",
-				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
-				"${PODS_ROOT}/PWLocation/Framework/PWLocation.framework",
-				"${PODS_ROOT}/PWMapKit/Framework/PWMapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/TMCache/TMCache.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PWCore/PWCore.framework/PWCore",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PWLocation/PWLocation.framework/PWLocation",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PWMapKit/PWMapKit.framework/PWMapKit",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MistSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWMapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMCache.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -608,12 +606,13 @@
 			baseConfigurationReference = 9CB47B3A056D6CD629EBD3CA /* Pods-MapScenarios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = MapScenarios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.MapScenarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild (Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -624,12 +623,13 @@
 			baseConfigurationReference = 728C41C18DA051CD358ABD7B /* Pods-MapScenarios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = MapScenarios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.MapScenarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild (Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

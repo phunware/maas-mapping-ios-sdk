@@ -43,8 +43,8 @@ class CommonSettings {
     
     // MARK: - Distance Helpers
     class func distanceFrom(_ start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D) -> CLLocationDistance {
-        let startLocation = CLLocation.init(latitude: start.latitude, longitude: start.longitude)
-        let endLocation = CLLocation.init(latitude: end.latitude, longitude: end.longitude)
+        let startLocation = CLLocation(latitude: start.latitude, longitude: start.longitude)
+        let endLocation = CLLocation(latitude: end.latitude, longitude: end.longitude)
         return startLocation.distance(from: endLocation)
     }
     
@@ -92,7 +92,7 @@ class CommonSettings {
     }
     
     class func imageFromColor(_ color: UIColor) -> UIImage {
-        let rect = CGRect.init(x: 0, y: 0, width: 1, height: 1)
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         context?.setFillColor(color.cgColor)
@@ -103,7 +103,7 @@ class CommonSettings {
     }
     
     // MARK: - Constraint Helper
-    class func changeConstraintsForAttribute(_ attribute: NSLayoutAttribute, to value: CGFloat, on view: UIView) {
+    class func changeConstraintsForAttribute(_ attribute: NSLayoutConstraint.Attribute, to value: CGFloat, on view: UIView) {
         if let constraints = view.superview?.constraints {
             for constraint: NSLayoutConstraint in constraints {
                 if constraint.firstAttribute == attribute {
@@ -116,12 +116,12 @@ class CommonSettings {
     }
     
     class func buildActionSheetWithItems(_ items: [AnyObject], displayProperty: String?, selectedItem: AnyObject?, title: String, actionNameFormat: String?, topAction: String?, selectAction: ((_ selection: Any?) -> Void)?) -> UIAlertController {
-        let alert = UIAlertController.init(title: title, message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         if var topActionTitle = topAction {
             if selectedItem == nil {
                 topActionTitle = "✔︎ \(topActionTitle)"
             }
-            let action = PWAlertAction(title: topActionTitle, style: UIAlertActionStyle.default, handler: { action in
+            let action = PWAlertAction(title: topActionTitle, style: UIAlertAction.Style.default, handler: { action in
                 selectAction?(nil)
             })
             action.carrier = nil
@@ -139,14 +139,14 @@ class CommonSettings {
             let isMatch = doesActionTitle(actionTitle as AnyObject, match: currentValue! as AnyObject)
             
             if let actionNameFormat = actionNameFormat {
-                actionTitle = String.init(format: actionNameFormat, actionTitle!)
+                actionTitle = String(format: actionNameFormat, actionTitle!)
             }
             
             if isMatch {
                 actionTitle = "✔︎ \(actionTitle!)"
             }
             
-            let action = PWAlertAction(title: actionTitle!, style: UIAlertActionStyle.default, handler: { action in
+            let action = PWAlertAction(title: actionTitle!, style: UIAlertAction.Style.default, handler: { action in
                 selectAction?((action as! PWAlertAction).carrier)
             })
             
