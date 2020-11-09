@@ -1,6 +1,0 @@
-framework module PWMapKit {
-  umbrella header "PWMapKit.h"
-
-  export *
-  module * { export * }
-}

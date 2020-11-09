@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>PWRoute Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,51 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-
+	<option value="overview">Overview</option>
 	
 
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/__deprecated">__deprecated</option>
+		
+		<option value="//api/name/accessible">accessible</option>
+		
+		<option value="//api/name/building">building</option>
+		
+		<option value="//api/name/distance">distance</option>
+		
+		<option value="//api/name/endPoint">endPoint</option>
+		
+		<option value="//api/name/estimatedTime">estimatedTime</option>
+		
+		<option value="//api/name/routeInstructions">routeInstructions</option>
+		
+		<option value="//api/name/startPoint">startPoint</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:">+ createRouteFrom:to:accessibility:excludedPoints:completion:</option>
+		
+		<option value="//api/name/createRouteFrom:to:options:completion:">+ createRouteFrom:to:options:completion:</option>
+		
+		<option value="//api/name/initRouteFrom:to:accessibility:completion:">+ initRouteFrom:to:accessibility:completion:</option>
+		
+	</optgroup>
+	
+
+	
 	
 </select>
 						</label>
@@ -59,22 +101,598 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">PWRoute Class Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>PWRoute.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>PWRoute</code> class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes route information you can display to the user, such as the name of the route, its <a href="#//api/name/distance">distance</a> and the expected travel time.</p>
 
+<p>Do not create instances of this class directly. Instead, use <code>createRouteFrom: to: options: completion:</code>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/building" title="building"></a>
+	<h3 class="method-title"><code><a href="#//api/name/building">&nbsp;&nbsp;building</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A reference to the route&rsquo;s building object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWBuilding *building</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startPoint" title="startPoint"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startPoint">&nbsp;&nbsp;startPoint</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A reference to the origin, or start point, for the route.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) id&lt;PWMapPoint&gt; startPoint</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/endPoint" title="endPoint"></a>
+	<h3 class="method-title"><code><a href="#//api/name/endPoint">&nbsp;&nbsp;endPoint</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A reference to the destination, or end point, for the route.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) id&lt;PWMapPoint&gt; endPoint</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/__deprecated" title="__deprecated"></a>
+	<h3 class="method-title"><code><a href="#//api/name/__deprecated">&nbsp;&nbsp;__deprecated</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A reference to the origin, or start point-of-interest, for the route. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>startPoint</code> instead, since v3.2.0.</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWPointOfInterest *__deprecated</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/routeInstructions" title="routeInstructions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/routeInstructions">&nbsp;&nbsp;routeInstructions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An array of <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> objects containing instructions to follow the route path.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/distance" title="distance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/distance">&nbsp;&nbsp;distance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An integer representing the total distance of the route expressed in meters.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationDistance distance</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/estimatedTime" title="estimatedTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/estimatedTime">&nbsp;&nbsp;estimatedTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An integer representing the estimated time of the route expressed in seconds.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger estimatedTime</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/accessible" title="accessible"></a>
+	<h3 class="method-title"><code><a href="#//api/name/accessible">&nbsp;&nbsp;accessible</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A BOOL value that returns YES if the route was calculated with accessibility.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isAccessible) BOOL accessible</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initRouteFrom:to:accessibility:completion:" title="initRouteFrom:to:accessibility:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initRouteFrom:to:accessibility:completion:">+&nbsp;initRouteFrom:to:accessibility:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated. (<b class="deprecated">Deprecated:</b><span class="deprecated"> use &lsquo;createRouteFrom:to:options:completion:&rsquo; instead</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)initRouteFrom:(PWPointOfInterest *)<em>startPoint</em> to:(PWPointOfInterest *)<em>endPoint</em> accessibility:(BOOL)<em>accessibility</em> completion:(void ( ^ ) ( PWRoute *route , NSError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startPoint</code></th>
+						<td><p><a href="../Classes/PWPointOfInterest.html">PWPointOfInterest</a> object representing the start point for the route calculation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endPoint</code></th>
+						<td><p><a href="../Classes/PWPointOfInterest.html">PWPointOfInterest</a> object representing the end point for the route calculation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>accessibility</code></th>
+						<td><p>BOOL Value to tell the route init if accessibility should be considered to calculate the route.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler that is called once the route&rsquo;s calculation is complete.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:" title="createRouteFrom:to:accessibility:excludedPoints:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createRouteFrom:to:accessibility:excludedPoints:completion:">+&nbsp;createRouteFrom:to:accessibility:excludedPoints:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a> and the end <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a>. The completion handler is called when the route is fully calculated. (<b class="deprecated">Deprecated:</b><span class="deprecated"> use &lsquo;createRouteFrom:to:options:completion:&rsquo; instead</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)<em>startPoint</em> to:(id&lt;PWMapPoint&gt;)<em>endPoint</em> accessibility:(BOOL)<em>accessibility</em> excludedPoints:(NSArray *)<em>excludedPoints</em> completion:(void ( ^ ) ( PWRoute *route , NSError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startPoint</code></th>
+						<td><p>A <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a> object representing the start point for the route calculation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endPoint</code></th>
+						<td><p>A <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a> object representing the end point for the route calculation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>accessibility</code></th>
+						<td><p>A BOOL value to tell the route builder if accessibility should be considered to calculate the route.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>excludedPoints</code></th>
+						<td><p>An array of <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a> objects to be excluded when <a href="#//api/name/building">building</a> the route.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler that is called once the route&rsquo;s calculation is complete.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createRouteFrom:to:options:completion:" title="createRouteFrom:to:options:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createRouteFrom:to:options:completion:">+&nbsp;createRouteFrom:to:options:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a> and the end <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a>. The completion handler is called when the route is fully calculated.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)<em>startPoint</em> to:(id&lt;PWMapPoint&gt;)<em>endPoint</em> options:(PWRouteOptions *_Nullable)<em>options</em> completion:(void ( ^ _Nonnull ) ( PWRoute *_Nullable route , NSError *_Nullable error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startPoint</code></th>
+						<td><p>A <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a> object representing the start point for the route calculation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endPoint</code></th>
+						<td><p>A <a href="../Protocols/PWMapPoint.html"><code>PWMapPoint</code></a> object representing the end point for the route calculation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>A <code>PWRouteOptions</code> object specifying the options to use for route calculation. if &lsquo;nil&rsquo;, default options will be used.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Completion handler that is called once the route&rsquo;s calculation is complete.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWRoute.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Phunware, Inc. All rights reserved. Updated: 2020-09-08</p>
+						<p class="copyright">Copyright &copy; 2020 Phunware, Inc. All rights reserved. Updated: 2020-11-09</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

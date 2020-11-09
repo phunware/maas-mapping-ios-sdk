@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>PWPointOfInterest Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,45 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/floor">floor</option>
+		
+		<option value="//api/name/image">image</option>
+		
+		<option value="//api/name/imageURL">imageURL</option>
+		
+		<option value="//api/name/maxZoomLevel">maxZoomLevel</option>
+		
+		<option value="//api/name/metaData">metaData</option>
+		
+		<option value="//api/name/minZoomLevel">minZoomLevel</option>
+		
+		<option value="//api/name/pointOfInterestType">pointOfInterestType</option>
+		
+		<option value="//api/name/subtitle">subtitle</option>
+		
+		<option value="//api/name/summary">summary</option>
+		
+		<option value="//api/name/title">title</option>
+		
+	</optgroup>
+	
 
 	
 
+	
 	
 </select>
 						</label>
@@ -59,22 +95,494 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">PWPointOfInterest Class Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/PWMapPoint.html">PWMapPoint</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>PWPointOfInterest.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class represents a point-of-interest defined on the MaaS portal and contains data associated with that point-of-interest.</p>
+					</div>
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/summary" title="summary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/summary">&nbsp;&nbsp;summary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A description of the point-of-interest. May be NULL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *summary</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/floor" title="floor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/floor">&nbsp;&nbsp;floor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Classes/PWFloor.html"><code>PWFloor</code></a> object that the point-of-interest belongs to.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, weak, nullable) PWFloor *floor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pointOfInterestType" title="pointOfInterestType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pointOfInterestType">&nbsp;&nbsp;pointOfInterestType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Classes/PWPointOfInterestType.html"><code>PWPointOfInterestType</code></a> object that the point-of-interest is a member of. Should not be NULL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWPointOfInterestType *pointOfInterestType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/image" title="image"></a>
+	<h3 class="method-title"><code><a href="#//api/name/image">&nbsp;&nbsp;image</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The representative UIImage of the point-of-interest. Will be NULL if image has not yet been loaded.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIImage *image</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageURL" title="imageURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageURL">&nbsp;&nbsp;imageURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The URL of the point-of-interest <a href="#//api/name/image">image</a>. May be NULL if using custom POI <a href="#//api/name/image">image</a> loading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSURL *imageURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metaData" title="metaData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metaData">&nbsp;&nbsp;metaData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Metadata associated with the point-of-interest. May be NULL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *metaData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/minZoomLevel" title="minZoomLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minZoomLevel">&nbsp;&nbsp;minZoomLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible.
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&rsquo;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&rsquo;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&rsquo;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&rsquo;s 21.
+5 - the maximum zoom level that current iOS map supports, it&rsquo;s 22.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger minZoomLevel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The point-of-interest is only visble when the map zoom level is between <code>minZoomLevel</code> and <a href="#//api/name/maxZoomLevel"><code>maxZoomLevel</code></a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxZoomLevel" title="maxZoomLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxZoomLevel">&nbsp;&nbsp;maxZoomLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum zoom level that the point-of-interest is visible on, and the below are the possible values:
+-1 - always visible.
+1 - subtract 4 from the maximum zoom level that current iOS map supports, it&rsquo;s 18.
+2 - subtract 3 from the maximum zoom level that current iOS map supports, it&rsquo;s 19.
+3 - subtract 2 from the maximum zoom level that current iOS map supports, it&rsquo;s 20.
+4 - subtract 1 from the maximum zoom level that current iOS map supports, it&rsquo;s 21.
+5 - the maximum zoom level that current iOS map supports, it&rsquo;s 22.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger maxZoomLevel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The point-of-interest is only visble when the map zoom level is between <a href="#//api/name/minZoomLevel"><code>minZoomLevel</code></a> and <code>maxZoomLevel</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/title" title="title"></a>
+	<h3 class="method-title"><code><a href="#//api/name/title">&nbsp;&nbsp;title</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The title of the point-of-interest. May be NULL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readwrite) NSString *title</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/subtitle" title="subtitle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/subtitle">&nbsp;&nbsp;subtitle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The sub<a href="#//api/name/title">title</a> of the point-of-interest. May be NULL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readwrite) NSString *subtitle</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWPointOfInterest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Phunware, Inc. All rights reserved. Updated: 2020-09-08</p>
+						<p class="copyright">Copyright &copy; 2020 Phunware, Inc. All rights reserved. Updated: 2020-11-09</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>
