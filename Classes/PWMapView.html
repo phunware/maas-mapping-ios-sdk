@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>PWMapView Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,119 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/__deprecated">__deprecated</option>
+		
+		<option value="//api/name/blueDotSmoothingEnabled">blueDotSmoothingEnabled</option>
+		
+		<option value="//api/name/building">building</option>
+		
+		<option value="//api/name/currentFloor">currentFloor</option>
+		
+		<option value="//api/name/currentRoute">currentRoute</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/displayDebugLocationDots">displayDebugLocationDots</option>
+		
+		<option value="//api/name/floorTransitionModeEnabled">floorTransitionModeEnabled</option>
+		
+		<option value="//api/name/indoorUserLocation">indoorUserLocation</option>
+		
+		<option value="//api/name/indoorUserLocationVisible">indoorUserLocationVisible</option>
+		
+		<option value="//api/name/locationSharingDelegate">locationSharingDelegate</option>
+		
+		<option value="//api/name/managedCompassEnabled">managedCompassEnabled</option>
+		
+		<option value="//api/name/pointOfInterestCustomizingEnabled">pointOfInterestCustomizingEnabled</option>
+		
+		<option value="//api/name/routeSnappingTolerance">routeSnappingTolerance</option>
+		
+		<option value="//api/name/sharedLocationDisplayName">sharedLocationDisplayName</option>
+		
+		<option value="//api/name/sharedLocationUserType">sharedLocationUserType</option>
+		
+		<option value="//api/name/showsIndoorUserLocation">showsIndoorUserLocation</option>
+		
+		<option value="//api/name/trackingMode">trackingMode</option>
+		
+		<option value="//api/name/trackingModeSwitchInterval">trackingModeSwitchInterval</option>
+		
+		<option value="//api/name/userTrackingBarButtonItem">userTrackingBarButtonItem</option>
+		
+	</optgroup>
+	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/cancelRouting">- cancelRouting</option>
+		
+		<option value="//api/name/currentRouteInstruction">- currentRouteInstruction</option>
+		
+		<option value="//api/name/deselectPointOfInterest:animated:">- deselectPointOfInterest:animated:</option>
+		
+		<option value="//api/name/initWithFrame:">- initWithFrame:</option>
+		
+		<option value="//api/name/navigateToCustomLocation:">- navigateToCustomLocation:</option>
+		
+		<option value="//api/name/navigateToPointOfInterest:">- navigateToPointOfInterest:</option>
+		
+		<option value="//api/name/navigateWithRoute:">- navigateWithRoute:</option>
+		
+		<option value="//api/name/navigateWithRoute:options:">- navigateWithRoute:options:</option>
+		
+		<option value="//api/name/registerLocationManager:">- registerLocationManager:</option>
+		
+		<option value="//api/name/selectPointOfInterest:animated:">- selectPointOfInterest:animated:</option>
+		
+		<option value="//api/name/setBuilding:animated:onCompletion:">- setBuilding:animated:onCompletion:</option>
+		
+		<option value="//api/name/setCenterCoordinate:zoomLevel:animated:">- setCenterCoordinate:zoomLevel:animated:</option>
+		
+		<option value="//api/name/setFloor:">- setFloor:</option>
+		
+		<option value="//api/name/setRouteManeuver:">- setRouteManeuver:</option>
+		
+		<option value="//api/name/setRouteManeuver:animated:">- setRouteManeuver:animated:</option>
+		
+		<option value="//api/name/setTrackingMode:animated:">- setTrackingMode:animated:</option>
+		
+		<option value="//api/name/showPointsOfInterest:">- showPointsOfInterest:</option>
+		
+		<option value="//api/name/startRetrievingSharedLocations">- startRetrievingSharedLocations</option>
+		
+		<option value="//api/name/startSharingUserLocation">- startSharingUserLocation</option>
+		
+		<option value="//api/name/startUpdatingHeading">- startUpdatingHeading</option>
+		
+		<option value="//api/name/stopRetrievingSharedLocations">- stopRetrievingSharedLocations</option>
+		
+		<option value="//api/name/stopSharingUserLocation">- stopSharingUserLocation</option>
+		
+		<option value="//api/name/stopUpdatingHeading">- stopUpdatingHeading</option>
+		
+		<option value="//api/name/unregisterLocationManager">- unregisterLocationManager</option>
+		
+		<option value="//api/name/viewForPointOfInterest:">- viewForPointOfInterest:</option>
+		
+	</optgroup>
+	
 	
 </select>
 						</label>
@@ -59,22 +169,2241 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">PWMapView Class Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>MKMapView</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>PWMapView.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A <code>PWMapView</code> object provides an embeddable map interface. It is similar to the one provided by the maps application but is specifically tailored to indoor maps. <code>PWMapView</code> subclasses <code>MKMapView</code> to provide a convenient interface that downloads, stores and displays indoor maps and associated points of interest (POIs). Usage of this class is optional but recommended for basic indoor map implementations.</p>
+					</div>
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The delegate for the map. The <a href="../Protocols/PWMapViewDelegate.html"><code>PWMapViewDelegate</code></a> inherits from <code>MKMapViewDelegate</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;PWMapViewDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationSharingDelegate" title="locationSharingDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationSharingDelegate">&nbsp;&nbsp;locationSharingDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The location sharing <a href="#//api/name/delegate">delegate</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;PWLocationSharingDelegate&gt; locationSharingDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/building" title="building"></a>
+	<h3 class="method-title"><code><a href="#//api/name/building">&nbsp;&nbsp;building</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Classes/PWBuilding.html"><code>PWBuilding</code></a> object associated with the current map. If no building is associated with the <code>PWMapView</code>, the building will be <code>nil</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) PWBuilding *building</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentFloor" title="currentFloor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentFloor">&nbsp;&nbsp;currentFloor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the currently displayed <a href="../Classes/PWFloor.html"><code>PWFloor</code></a> object. This property may be <code>nil</code> if no floor is displayed. Attempts to change to the same floor are ignored. When the floor change is complete, the <a href="#//api/name/delegate">delegate</a> will receive a <code>mapView:didChangeFloor:</code> callback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) PWFloor *currentFloor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentRoute" title="currentRoute"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentRoute">&nbsp;&nbsp;currentRoute</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The current <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object plotted on the map. This property will be <code>nil</code> if no route is displayed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWRoute *currentRoute</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/indoorUserLocationVisible" title="indoorUserLocationVisible"></a>
+	<h3 class="method-title"><code><a href="#//api/name/indoorUserLocationVisible">&nbsp;&nbsp;indoorUserLocationVisible</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A Boolean value indicating whether the device’s current indoor location is visible in the map view. (read-only)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isIndoorUserLocationVisible) BOOL indoorUserLocationVisible</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This property tells you whether the icon used to represent the user’s current indoor location is visible in the map view. When determining whether the current indoor location is visible, this property factors in the horizontal accuracy of the location data.</p>
+
+<p>Specifically, if the rectangle represented by the user’s current location plus or minus the horizontal accuracy of that location intersects the map’s visible rectangle, this property contains the value <code>YES</code>.</p>
+
+<p>If that location rectangle does not intersect the map’s visible rectangle, this property contains the value <code>NO</code>.</p>
+
+<p>If the user’s indoor location cannot be determined, this property contains the value <code>NO</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showsIndoorUserLocation" title="showsIndoorUserLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showsIndoorUserLocation">&nbsp;&nbsp;showsIndoorUserLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A Boolean value indicating whether the map should try to display the user’s indoor location. In order to display the user&rsquo;s indoor location, a <code>PWLocationManager</code> object must be registered with the map view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL showsIndoorUserLocation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This property only indicates whether the map view should try to display the user&rsquo;s indoor position, not whether the user’s indoor position is actually visible on the map. Setting this property to &lsquo;YES&rsquo; causes the map view to use the specified <code>PWLocationManager</code> object to find the current indoor location and to try displaying it on the map. As long as this property is &lsquo;YES&rsquo;, the map view will continue to track the user’s indoor location and update it periodically. The default value of this property is &lsquo;NO&rsquo;.</p>
+
+<p>Showing the user’s indoor location does not guarantee that the location is visible on the map. The user might have scrolled the map to a different point, causing the current location to be offscreen. To determine whether the user’s location is currently displayed on the map, use the <a href="#//api/name/indoorUserLocationVisible"><code>indoorUserLocationVisible</code></a> property.</p>
+
+<p>When setting this property to <code>NO</code>, <a href="../Constants/PWTrackingMode.html"><code>PWTrackingMode</code></a> will be set to <code>PWTrackingModeNone</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/floorTransitionModeEnabled" title="floorTransitionModeEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/floorTransitionModeEnabled">&nbsp;&nbsp;floorTransitionModeEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A Boolean value indicating whether the map should hide blue dot when atmospheric pressure changes indicate a floor transition. Not recommended for most setups and disabled by default.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL floorTransitionModeEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/indoorUserLocation" title="indoorUserLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/indoorUserLocation">&nbsp;&nbsp;indoorUserLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The object representing the user’s current indoor location. (read-only)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) PWUserLocation *indoorUserLocation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If blue dot smoothing is active, this property will report an interpolated position and will thus be very volatile.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackingMode" title="trackingMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackingMode">&nbsp;&nbsp;trackingMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The mode used to track the user&rsquo;s indoor location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) PWTrackingMode trackingMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Possible values are described in <a href="../Constants/PWTrackingMode.html"><code>PWTrackingMode</code></a>. It&rsquo;s important to note that this property replaces the <code>userTrackingMode</code> property of type <code>MKUserTrackingMode</code> on <code>MKMapView</code>. Setting this value will have no effect if an indoor location manager has not been registered with the map view.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/blueDotSmoothingEnabled" title="blueDotSmoothingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/blueDotSmoothingEnabled">&nbsp;&nbsp;blueDotSmoothingEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines whether or not blue dot smoothing is used to provide a better visual experience when displaying the user&rsquo;s location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL blueDotSmoothingEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>When based on information supplied by location providers, normal blue dot behavior is &ldquo;jumpy&rdquo; because location updates are received several times per second (at most). This feature &ldquo;conditions&rdquo; the user&rsquo;s reported location by first using a rolling average of the reported locations, then interpolating between average locations. This feature is turned on by default.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/routeSnappingTolerance" title="routeSnappingTolerance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/routeSnappingTolerance">&nbsp;&nbsp;routeSnappingTolerance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the route snapping behavior of the user&rsquo;s displayed location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) PWRouteSnapTolerance routeSnappingTolerance</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This value is only used while in routing mode and is used to configure the route snapping feature. The possible values of this property are as follows:</p>
+
+<ul>
+<li>PWRouteSnappingOff: no route snapping will be performed at all</li>
+<li>PWRouteSnapToleranceNormal: the user&rsquo;s location will be &ldquo;snapped&rdquo; to the nearest point on the route if the route is within the horizontal accuracy of the location being used (this is the default value)</li>
+<li>PWRouteSnapToleranceMedium: the user&rsquo;s location will be &ldquo;snapped&rdquo; to the nearest point on the route if the route is within 1.5 times the horizontal accuracy of the location being used</li>
+<li>PWRouteSnapToleranceHigh: the user&rsquo;s location will be &ldquo;snapped&rdquo; to the nearest point on the route if the route is within twice (2.0 times) the horizontal accuracy of the location being used</li>
+</ul>
+
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pointOfInterestCustomizingEnabled" title="pointOfInterestCustomizingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pointOfInterestCustomizingEnabled">&nbsp;&nbsp;pointOfInterestCustomizingEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines whether or not the point-of-interest(<a href="../Classes/PWPointOfInterest.html"><code>PWPointOfInterest</code></a>, <a href="../Classes/PWCustomPointOfInterest.html"><code>PWCustomPointOfInterest</code></a>) is able to be customized.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL pointOfInterestCustomizingEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The SDK shows all the internal annotations without asking for their annotation views by calling <code>- mapView: viewForAnnotation:</code>, those internal annotation types includes: <a href="../Classes/PWPointOfInterest.html"><code>PWPointOfInterest</code></a>, <a href="../Classes/PWCustomPointOfInterest.html"><code>PWCustomPointOfInterest</code></a>.</p>
+
+<p>If <code>pointOfInterestCustomizingEnabled</code> is set to <code>YES</code>, you are responsible to provide annotation views for the point-of-interests by implementing <code>- mapView: viewForAnnotation:</code>, but it will keep using the one provided by SDK if you don&rsquo;t or provide an invalid one. This feature is turned off by default.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/userTrackingBarButtonItem" title="userTrackingBarButtonItem"></a>
+	<h3 class="method-title"><code><a href="#//api/name/userTrackingBarButtonItem">&nbsp;&nbsp;userTrackingBarButtonItem</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A property to access the map view user tracking bar button.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) UIBarButtonItem *userTrackingBarButtonItem</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sharedLocationDisplayName" title="sharedLocationDisplayName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedLocationDisplayName">&nbsp;&nbsp;sharedLocationDisplayName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The display name when sharing location</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *sharedLocationDisplayName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sharedLocationUserType" title="sharedLocationUserType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedLocationUserType">&nbsp;&nbsp;sharedLocationUserType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The user type when sharing location</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *sharedLocationUserType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackingModeSwitchInterval" title="trackingModeSwitchInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackingModeSwitchInterval">&nbsp;&nbsp;trackingModeSwitchInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The time interval the user stays in <code>PWTrackingModeNone</code> mode before the map view will automatically change back to the tracking mode set by user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger trackingModeSwitchInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set to <code>-1</code> if you don&rsquo;t want enable this feature, and <code>10</code> seconds is used by default.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/__deprecated" title="__deprecated"></a>
+	<h3 class="method-title"><code><a href="#//api/name/__deprecated">&nbsp;&nbsp;__deprecated</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines whether or not the waypoints are displaying as dots on route lines. This feature is turned off by default.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL displayWaypointDotsOnRouteLine __deprecated</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Use <code>PWRouteUIOptions.showJoinPoint' instead when displaying a route with</code><a href="#//api/name/navigateWithRoute:">navigateWithRoute:</a> options:`.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/displayDebugLocationDots" title="displayDebugLocationDots"></a>
+	<h3 class="method-title"><code><a href="#//api/name/displayDebugLocationDots">&nbsp;&nbsp;displayDebugLocationDots</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>For internal use only.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL displayDebugLocationDots</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/managedCompassEnabled" title="managedCompassEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/managedCompassEnabled">&nbsp;&nbsp;managedCompassEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Managed compass is an optional capability of PWLocation that improves the user experience while viewing the map by improving the alignment of the compass heading. The managed compass takes operating system readings and processes them prior to returning it to PWMapKit &ndash; so there is no further coding required for developers once using this mode. Set to true to enable this feature (disabled by default). Note - results may vary by location, so please evaluate the performance for a given location prior to enabling this feature.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL managedCompassEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFrame:" title="initWithFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:">&ndash;&nbsp;initWithFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes and returns a newly allocated map view object with the specified frame rectangle.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame rectangle for the view, measured in points. The origin of the frame is relative to the superview in which you plan to add it. This method uses the frame rectangle to set the center and bounds properties accordingly.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new <code>PWMapView</code> object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>After initialization you can set <a href="#//api/name/building"><code>building</code></a> property or call <code></code>setBuilding:<code> animated: onCompletion:</code> to display the <a href="#//api/name/building">building</a> on the map. If you choose to load with <code></code>setBuilding:<code> animated: onCompletion:</code> you will get result from the completion block once it&rsquo;s done. In both cases, the <a href="#//api/name/delegate">delegate</a> will receive a <code>mapView:didFinishLoadingBuilding:error:</code> callback.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setBuilding:animated:onCompletion:" title="setBuilding:animated:onCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setBuilding:animated:onCompletion:">&ndash;&nbsp;setBuilding:animated:onCompletion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to change the <a href="#//api/name/building">building</a> displayed in the map view to the specified <a href="#//api/name/building">building</a> identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setBuilding:(PWBuilding *)<em>building</em> animated:(BOOL)<em>animated</em> onCompletion:(void ( ^ ) ( NSError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>building</code></th>
+						<td><p>The <a href="#//api/name/building">building</a> to load into the <code>PWMapView</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>Animate the camera zoom into the <code>PWMapView</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>A block to indicate if the <a href="#//api/name/building">building</a> is successfully displayed or not.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Proper use of this method will kick off by fetching the <a href="#//api/name/building">building</a> data, points of interest and assets and display the <a href="#//api/name/building">building</a> indoor map. This data will then be cached and displayed in the <code>PWMapView</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setTrackingMode:animated:" title="setTrackingMode:animated:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setTrackingMode:animated:">&ndash;&nbsp;setTrackingMode:animated:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the mode used to track the user&rsquo;s indoor location with optional animation. This method will have no effect if an indoor location manager has not been registered with the map view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setTrackingMode:(PWTrackingMode)<em>trackingMode</em> animated:(BOOL)<em>animated</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>trackingMode</code></th>
+						<td><p>The mode used to track the user&rsquo;s location. Possible values are described in <a href="../Constants/PWTrackingMode.html"><code>PWTrackingMode</code></a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>If <code>YES</code>, the new mode is animated; otherwise, it is not. This parameter affects only tracking mode changes. Changes to the user&rsquo;s indoor location or heading are always animated.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Setting the tracking mode to <code>PWTrackingModeFollow</code> or <code>PWTrackingModeFollowWithHeading</code> causes the map view to center the map on that location. If the map is zoomed out, the map view automatically zooms in on the user’s indoor location, effectively changing the current visible region.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerLocationManager:" title="registerLocationManager:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerLocationManager:">&ndash;&nbsp;registerLocationManager:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Register an indoor location manager provider with the map view. This location provider is started immediately and used when modifying the <code>indoorUserTrackingMode</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerLocationManager:(id&lt;PWLocationManager&gt;)<em>locationManager</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>locationManager</code></th>
+						<td><p>The location manager to register with the map view. The location manager must conform to the <code>PWLocationManager</code> protocol.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unregisterLocationManager" title="unregisterLocationManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unregisterLocationManager">&ndash;&nbsp;unregisterLocationManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unregister any indoor location manager that is registered with the map view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unregisterLocationManager</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the user&rsquo;s location is being displayed, it will not be hidden.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/navigateWithRoute:" title="navigateWithRoute:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/navigateWithRoute:">&ndash;&nbsp;navigateWithRoute:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Load a <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object into the map view. This method will plot a basic route line on the map view. The route object must not be <code>nil</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)navigateWithRoute:(PWRoute *)<em>route</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>route</code></th>
+						<td><p>The <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object to display in the map view.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/navigateWithRoute:options:" title="navigateWithRoute:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/navigateWithRoute:options:">&ndash;&nbsp;navigateWithRoute:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Load a <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object into the map view with specified color for the paths. This method will plot a basic route line on the map view. The route object must not be <code>nil</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)navigateWithRoute:(PWRoute *)<em>route</em> options:(PWRouteUIOptions *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>route</code></th>
+						<td><p>The <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> object to display in the map view.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>The <code>PWRouteUIOptions</code> object to custom the color of route path, the junction type of line, etc.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setRouteManeuver:" title="setRouteManeuver:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setRouteManeuver:">&ndash;&nbsp;setRouteManeuver:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Highlight the specified <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> on the map. If needed, this will change the current floor to the floor of the instruction.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setRouteManeuver:(PWRouteInstruction *)<em>instruction</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>instruction</code></th>
+						<td><p>The <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> to display.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method will not reposition the map to display the instruction</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setRouteManeuver:animated:" title="setRouteManeuver:animated:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setRouteManeuver:animated:">&ndash;&nbsp;setRouteManeuver:animated:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Display the specified <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> on the map and animates to its position. If needed, this will change the current floor to the required floor for the instruction.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setRouteManeuver:(PWRouteInstruction *)<em>instruction</em> animated:(BOOL)<em>animated</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>instruction</code></th>
+						<td><p>The <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> to display.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>Specify <code>YES</code> if you want the map view to animate the transition to the new instruction.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentRouteInstruction" title="currentRouteInstruction"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentRouteInstruction">&ndash;&nbsp;currentRouteInstruction</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a> being highlighted. If no route is displayed, this method will return <code>nil</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (PWRouteInstruction *)currentRouteInstruction</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The current <a href="../Classes/PWRouteInstruction.html"><code>PWRouteInstruction</code></a>. Can be <code>nil</code> if no <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> is loaded or if turn-by-turn routing is not being used.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelRouting" title="cancelRouting"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelRouting">&ndash;&nbsp;cancelRouting</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancel the route displayed in the map view. This method will remove the route from the map view and set the <a href="../Classes/PWRoute.html"><code>PWRoute</code></a> property to <code>nil</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelRouting</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startSharingUserLocation" title="startSharingUserLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startSharingUserLocation">&ndash;&nbsp;startSharingUserLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts sharing the user&rsquo;s current location</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startSharingUserLocation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startRetrievingSharedLocations" title="startRetrievingSharedLocations"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startRetrievingSharedLocations">&ndash;&nbsp;startRetrievingSharedLocations</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts retrieving other user&rsquo;s shared locations</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startRetrievingSharedLocations</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopSharingUserLocation" title="stopSharingUserLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopSharingUserLocation">&ndash;&nbsp;stopSharingUserLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops sharing the user&rsquo;s current location</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopSharingUserLocation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopRetrievingSharedLocations" title="stopRetrievingSharedLocations"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopRetrievingSharedLocations">&ndash;&nbsp;stopRetrievingSharedLocations</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops retrieving other user&rsquo;s shared locations</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopRetrievingSharedLocations</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCenterCoordinate:zoomLevel:animated:" title="setCenterCoordinate:zoomLevel:animated:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCenterCoordinate:zoomLevel:animated:">&ndash;&nbsp;setCenterCoordinate:zoomLevel:animated:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Positions the map to the supplied center coordinate with the given zoom level and optional animation. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>setCamera:animated:</code>, <code>setRegion:animated:</code>, <code>setVisibleMapRect:animated:</code> or <code>setVisibleMapRect:edgePadding:animated:</code> instead, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCenterCoordinate:(CLLocationCoordinate2D)<em>centerCoordinate</em> zoomLevel:(NSUInteger)<em>zoomLevel</em> animated:(BOOL)<em>animated</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>centerCoordinate</code></th>
+						<td><p>A CLLocationCoordinate2D object representing the latitude and longitude the map should zoom to.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>zoomLevel</code></th>
+						<td><p>An <code>NSUInteger</code> value representing the zoom level the map should zoom to.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>A <code>BOOL</code> property to determine whether the change of map&rsquo;s center should be animated or not.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setFloor:" title="setFloor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setFloor:">&ndash;&nbsp;setFloor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A convenient method to set current floor, it&rsquo;s working exactly the same as <a href="#//api/name/currentFloor"><code>setCurrentFloor:</code></a>. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>currentFloor</code> instead, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setFloor:(PWFloor *)<em>floor</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>floor</code></th>
+						<td><p>A <a href="../Classes/PWFloor.html"><code>PWFloor</code></a> object you want to set.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startUpdatingHeading" title="startUpdatingHeading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startUpdatingHeading">&ndash;&nbsp;startUpdatingHeading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts heading updates. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Create your own <code>CLLocationManager</code> for heading service, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startUpdatingHeading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopUpdatingHeading" title="stopUpdatingHeading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopUpdatingHeading">&ndash;&nbsp;stopUpdatingHeading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops heading updates. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Create your own <code>CLLocationManager</code> for heading service, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopUpdatingHeading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/navigateToCustomLocation:" title="navigateToCustomLocation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/navigateToCustomLocation:">&ndash;&nbsp;navigateToCustomLocation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Repositions the map&rsquo;s view to a custom location. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>setCamera:animated:</code> or <code>setCenter:animated:</code> instead, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)navigateToCustomLocation:(PWCustomLocation *)<em>location</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>location</code></th>
+						<td><p>A custom location reference where the map should navigate to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/navigateToPointOfInterest:" title="navigateToPointOfInterest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/navigateToPointOfInterest:">&ndash;&nbsp;navigateToPointOfInterest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Repositions the map&rsquo;s view to an specific point-of-interest. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>setCamera:animated:</code> or <code>setCenter:animated:</code> instead, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)navigateToPointOfInterest:(PWPointOfInterest *)<em>poi</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>poi</code></th>
+						<td><p>A point-of-interest reference where the map should navigate to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/viewForPointOfInterest:" title="viewForPointOfInterest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/viewForPointOfInterest:">&ndash;&nbsp;viewForPointOfInterest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the annotation view of a PointOfInterest. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>viewForAnnotation:</code> or <code>setCenter:animated:</code> instead, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (PWBuildingAnnotationView *)viewForPointOfInterest:(PWPointOfInterest *)<em>poi</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>poi</code></th>
+						<td><p>The point-of-interest. This parameter must not be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showPointsOfInterest:" title="showPointsOfInterest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showPointsOfInterest:">&ndash;&nbsp;showPointsOfInterest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displays the array of Points of Interest, causing the map view to zoom in/out to contain all of the points of interest. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>showAnnotations:animated:</code> instead, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showPointsOfInterest:(NSArray *)<em>pois</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pois</code></th>
+						<td><p>An array of <a href="../Classes/PWPointOfInterest.html"><code>PWPointOfInterest</code></a> objects that should be displayed on the map.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectPointOfInterest:animated:" title="selectPointOfInterest:animated:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectPointOfInterest:animated:">&ndash;&nbsp;selectPointOfInterest:animated:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Selects a <code>PointOfInterest</code> on the map. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>selectAnnotations:animated:</code> instead, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)selectPointOfInterest:(PWPointOfInterest *)<em>poi</em> animated:(BOOL)<em>animated</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>poi</code></th>
+						<td><p>A <code>PointOfInterest</code> to select on the map.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>A <code>BOOL</code> property to determine whether the change of map&rsquo;s region should be animated or not.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deselectPointOfInterest:animated:" title="deselectPointOfInterest:animated:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deselectPointOfInterest:animated:">&ndash;&nbsp;deselectPointOfInterest:animated:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Deselects a <code>PointOfInterest</code> on the map. If the POI is not selected, this method does nothing (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>deselectAnnotations:animated:</code> instead, since v3.2.0</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deselectPointOfInterest:(PWPointOfInterest *)<em>poi</em> animated:(BOOL)<em>animated</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>poi</code></th>
+						<td><p>A <code>PointOfInterest</code> to deselect on the map.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>A <code>BOOL</code> property to determine whether the change of map&rsquo;s region should be animated or not.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Phunware, Inc. All rights reserved. Updated: 2020-09-08</p>
+						<p class="copyright">Copyright &copy; 2020 Phunware, Inc. All rights reserved. Updated: 2020-11-09</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>
