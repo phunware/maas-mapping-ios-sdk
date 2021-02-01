@@ -41,17 +41,6 @@
 				</Node>
 				
                 
-				<Node>
-					<Name>Constants</Name>
-					<Path>index.html</Path>
-					<Subnodes>
-						<NodeRef refid="16"/>
-						<NodeRef refid="17"/>
-						<NodeRef refid="18"/>
-						
-					</Subnodes>
-				</Node>
-				
                 
 			</Subnodes>
         </Node>
@@ -514,22 +503,7 @@
             
         </Node>
 		
-        <Node id="16" type="file" documentType="reference">
-            <Name>PWRouteInstructionDirection</Name>
-            <Path>Constants/PWRouteInstructionDirection.html</Path>
-            
-        </Node>
-		<Node id="17" type="file" documentType="reference">
-            <Name>PWRouteSnapTolerance</Name>
-            <Path>Constants/PWRouteSnapTolerance.html</Path>
-            
-        </Node>
-		<Node id="18" type="file" documentType="reference">
-            <Name>PWTrackingMode</Name>
-            <Path>Constants/PWTrackingMode.html</Path>
-            
-        </Node>
-		
+        
         
 	</Library>
 </DocSetNodes>

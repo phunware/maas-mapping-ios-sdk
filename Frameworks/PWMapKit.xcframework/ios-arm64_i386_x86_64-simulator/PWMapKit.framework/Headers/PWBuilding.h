@@ -31,7 +31,7 @@
 /**
  *  An array of `PWFloor` objects that are contained in the building.
  */
-@property (readonly) NSArray *floors;
+@property (readonly) NSArray<PWFloor *> *floors;
 
 /**
  *  An array of `PWPointOfInterest` objects that are contained in the building.
@@ -52,6 +52,17 @@
  *  Extra information about the `PWBuilding` object and the data it consumes.
  */
 @property (readonly) NSDictionary *userInfo;
+
+/**
+ * A list of routeSegments contained in the building
+ */
+@property (readonly) NSDictionary<NSString *, NSDictionary<NSString *, NSNumber *> *> *routeSegments;
+
+/**
+ * A list of routePoints contained in the building
+ */
+@property (readonly) NSDictionary<NSString *, id<PWMapPoint>> *routePoints;
+
 
 /**
  *  If set, images for PWPointOfInterest objects will be provided by the application using this function when loading a building.

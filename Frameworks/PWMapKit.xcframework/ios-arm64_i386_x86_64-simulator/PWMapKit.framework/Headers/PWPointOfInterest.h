@@ -10,6 +10,8 @@
 @class PWFloor;
 @class PWPointOfInterestType;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  This class represents a point-of-interest defined on the MaaS portal and contains data associated with that point-of-interest.
  */
@@ -18,7 +20,7 @@
 /**
  *  A description of the point-of-interest. May be NULL.
  */
-@property (nonatomic, readonly) NSString *summary;
+@property (nonatomic, readonly, nullable) NSString *summary;
 
 /**
  *  The `PWFloor` object that the point-of-interest belongs to.
@@ -26,24 +28,24 @@
 @property (nonatomic, readonly, weak, nullable) PWFloor *floor;
 
 /**
- *  The `PWPointOfInterestType` object that the point-of-interest is a member of. Should not be NULL.
+ *  The `PWPointOfInterestType` object that the point-of-interest is a member of.
  */
-@property (nonatomic, readonly) PWPointOfInterestType *pointOfInterestType;
+@property (nonatomic, readonly, nullable) PWPointOfInterestType *pointOfInterestType;
 
 /**
  *  The representative UIImage of the point-of-interest. Will be NULL if image has not yet been loaded.
  */
-@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, readonly, nullable) UIImage *image;
 
 /**
  *  The URL of the point-of-interest image. May be NULL if using custom POI image loading.
  */
-@property (nonatomic, readonly) NSURL *imageURL;
+@property (nonatomic, readonly, nullable) NSURL *imageURL;
 
 /**
  * Metadata associated with the point-of-interest. May be NULL.
  */
-@property (nonatomic, readonly) NSDictionary *metaData;
+@property (nonatomic, readonly, nullable) NSDictionary *metaData;
 
 /**
  * The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
@@ -74,11 +76,18 @@
 /**
  * The title of the point-of-interest. May be NULL.
  */
-@property (nonatomic, copy, readwrite) NSString *title;
+@property (nonatomic, copy, readwrite, nullable) NSString *title;
 
 /**
  * The subtitle of the point-of-interest. May be NULL.
  */
-@property (nonatomic, copy, readwrite) NSString *subtitle;
+@property (nonatomic, copy, readwrite, nullable) NSString *subtitle;
+
+/**
+ * The portal identifier of the point-of-interest. May be NULL.
+ */
+@property (readonly, nullable) NSString *portalID;
 
 @end
+
+NS_ASSUME_NONNULL_END
