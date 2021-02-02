@@ -73,7 +73,7 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
     
     func configureTableView() {
         let sortedPoints = mapView.building.pois.sorted(by: {
-            return $0.title < $1.title
+            return $0.title ?? "" < $1.title ?? ""
         })
         sortedPointsOfInterest = sortedPoints
         filteredPointsOfInterest = sortedPointsOfInterest
@@ -151,7 +151,10 @@ extension SearchPOIViewController: UISearchResultsUpdating {
             return
         }
         filteredPointsOfInterest = sortedPointsOfInterest.filter({( pointOfInterest : PWPointOfInterest) -> Bool in
-            return pointOfInterest.title.lowercased().contains(searchText.lowercased())
+            guard let title = pointOfInterest.title else {
+                return false
+            }
+            return title.lowercased().contains(searchText.lowercased())
         })
         
         tableView.reloadData()

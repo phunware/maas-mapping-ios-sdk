@@ -5,5 +5,8 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'MapScenarios' do
-  pod 'PWMapKit', '~> 3.10.0'
+  pod 'PWCore', :git => 'https://github.com/phunware/maas-core-ios-sdk.git', :tag => 'v3.10.0-beta-01'
+  pod 'PWLocation', :git => 'https://github.com/phunware/maas-location-ios-sdk.git', :tag => 'v3.10.0-beta-01'
+  pod 'PWLocation/MistProvider', :git => 'https://github.com/phunware/maas-location-ios-sdk.git', :tag => 'v3.10.0-beta-01'
+  pod 'PWMapKit', :git => 'https://github.com/phunware/maas-mapping-ios-sdk.git', :tag => 'v3.11.0-beta-01'
 end

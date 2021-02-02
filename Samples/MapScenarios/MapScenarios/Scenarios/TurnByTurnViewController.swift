@@ -143,7 +143,10 @@ private extension TurnByTurnViewController {
     }
     
     func initializeTurnByTurn() {
-        mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        if  let currentRoute = mapView.currentRoute,
+            let routeInstructions = currentRoute.routeInstructions {
+            mapView.setRouteManeuver(routeInstructions.first)
+        }
         
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)

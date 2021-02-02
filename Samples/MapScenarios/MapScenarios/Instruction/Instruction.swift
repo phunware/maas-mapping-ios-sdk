@@ -168,15 +168,15 @@ private extension PWRouteInstruction {
     }
     
     var nextRouteInstruction: PWRouteInstruction? {
-        guard let route = route,
-            let indexOfInstruction = route.routeInstructions.firstIndex(of: self) else {
+        guard let routeInstructions = route?.routeInstructions,
+              let indexOfInstruction = routeInstructions.firstIndex(of: self) else {
             return nil
         }
         
         let nextInstructionIndex = indexOfInstruction + 1
         
-        if nextInstructionIndex < route.routeInstructions.count {
-            return route.routeInstructions[nextInstructionIndex]
+        if nextInstructionIndex < routeInstructions.count {
+            return routeInstructions[nextInstructionIndex]
         } else {
             return nil
         }

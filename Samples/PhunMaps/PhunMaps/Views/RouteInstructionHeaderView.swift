@@ -26,13 +26,13 @@ class RouteInstructionHeaderView: UITableViewHeaderFooterView {
     
     func configureWith(route: PWRoute?) {
         orientationLabel.text = NSLocalizedString("Trying to detect your orientation.", comment: "")
-        guard let route = route else {
+        guard let route = route, let building = route.building else {
             destinationPointOfInterestLabel.text = NSLocalizedString("Unknown", comment: "")
             destinationFloorLabel.text = NSLocalizedString("Unknown floor", comment: "")
             return
         }
         destinationPointOfInterestLabel.text = route.endPoint.title ?? NSLocalizedString("Unknown", comment: "")
-        if let destinationFloor = route.building.floor(byId: route.endPoint.floorID) {
+        if let destinationFloor = building.floor(byId: route.endPoint.floorID) {
             destinationFloorLabel.text = destinationFloor.name
         } else {
             destinationFloorLabel.text = NSLocalizedString("Unknown floor", comment: "")

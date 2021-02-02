@@ -91,9 +91,7 @@ class RoutingViewController: UIViewController, ScenarioProtocol {
         mapView.trackingMode = .follow
         
         // Find the destination POI
-        let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
-        
-        if destinationPOI == nil {
+        guard let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier }) else  {
             warning("No points of interest found, please add at least one to the building in the Maas portal")
             return
         }

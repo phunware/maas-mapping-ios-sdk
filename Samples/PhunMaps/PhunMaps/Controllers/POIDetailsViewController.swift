@@ -137,7 +137,7 @@ extension POIDetailsViewController: UITableViewDataSource {
         case .type:
             if let detailsCell = tableView.dequeueReusableCell(withIdentifier: String(describing: POIDetailsCell.self), for: indexPath) as? POIDetailsCell {
                 detailsCell.titleLabel.text = NSLocalizedString("Type:", comment: "")
-                if let poiTypeName = pointOfInterest?.pointOfInterestType.name {
+                if let poiTypeName = pointOfInterest?.pointOfInterestType?.name {
                     detailsCell.detailLabel.text = poiTypeName
                 }
                 

@@ -116,7 +116,11 @@ class TurnByTurnCollectionView: UICollectionView {
     }
     
     func scrollToInstruction(_ routeInstruction: PWRouteInstruction) {
-        guard let indexOfInstruction = mapView.currentRoute.routeInstructions.firstIndex(of: routeInstruction) else {
+        guard let routeInstructions = mapView.currentRoute.routeInstructions else {
+            return
+        }
+        
+        guard let indexOfInstruction = routeInstructions.firstIndex(of: routeInstruction) else {
             return
         }
         

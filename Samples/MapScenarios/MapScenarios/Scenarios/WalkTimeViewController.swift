@@ -254,8 +254,8 @@ private extension WalkTimeViewController {
         // we need a valid instruction, the list of all instructions,
         // and the current instruction index before we can calculate anything
         guard let currentInstruction = mapView.currentRouteInstruction(),
-            let allInstructions = mapView.currentRoute.routeInstructions,
-            let currentInstructionIndex = allInstructions.firstIndex(of: currentInstruction) else {
+              let allInstructions = mapView.currentRoute.routeInstructions,
+              let currentInstructionIndex = allInstructions.firstIndex(of: currentInstruction) else {
                 return
         }
         
@@ -270,7 +270,7 @@ private extension WalkTimeViewController {
             
             // When we're at the destination, we're done. Remove the walk time view
             if distance < minDistanceToDestination,
-                let lastInstruction = mapView.currentRoute.routeInstructions.last,
+                let lastInstruction = allInstructions.last,
                 currentInstruction == lastInstruction {
                 walkTimeView?.removeFromSuperview()
                 return
@@ -406,7 +406,11 @@ private extension WalkTimeViewController {
     
     // called after route has been calculated
     func initializeTurnByTurn() {
-        mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        guard let routeInstructions = mapView.currentRoute.routeInstructions else {
+            return
+        }
+        
+        mapView.setRouteManeuver(routeInstructions.first)
         
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)

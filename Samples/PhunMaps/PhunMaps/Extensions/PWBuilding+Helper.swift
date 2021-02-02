@@ -13,9 +13,7 @@ extension PWBuilding {
     func allPOIs() -> [PWPointOfInterest] {
         var allPOIs = [PWPointOfInterest]()
         for floor in floors {
-            if let floor = floor as? PWFloor {
-                allPOIs.append(contentsOf: floor.pointsOfInterest)
-            }
+            allPOIs.append(contentsOf: floor.pointsOfInterest)
         }
         return allPOIs
     }
@@ -23,7 +21,9 @@ extension PWBuilding {
     func availablePOITypes() -> [PWPointOfInterestType] {
         var allPOITypes = Set<PWPointOfInterestType>()
         for poi in allPOIs() {
-            allPOITypes.insert(poi.pointOfInterestType)
+            if let pointOfInterestType = poi.pointOfInterestType {
+                allPOITypes.insert(pointOfInterestType)
+            }
         }
         
         let sortedPOITypes = allPOITypes.sorted(by: {

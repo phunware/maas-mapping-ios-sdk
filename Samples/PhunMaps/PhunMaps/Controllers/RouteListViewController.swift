@@ -61,17 +61,21 @@ extension RouteListViewController: UITableViewDelegate {
 extension RouteListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if route == nil {
+        guard let routeInstructions = route?.routeInstructions else  {
             return 0
         }
-        return route.routeInstructions.count
+        return routeInstructions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RouteInstructionCell.self), for: indexPath)
         
+        guard let routeInstructions = route?.routeInstructions else  {
+            return cell
+        }
+
         if let routeInstructionCell = cell as? RouteInstructionCell {
-            let routeInstruction = route.routeInstructions[indexPath.row]
+            let routeInstruction = routeInstructions[indexPath.row]
             routeInstructionCell.routeAccessibilityManager = routeAccessibilityManager
             routeInstructionCell.configureFor(routeInstruction: routeInstruction)
         }
@@ -96,7 +100,7 @@ extension RouteListViewController: UITableViewDataSource {
 extension RouteListViewController {
     
     func voiceOverCurrentRouteInstruction() {
-        guard let routeInstruction = route.routeInstructions.first else {
+        guard let routeInstructions = route.routeInstructions, let routeInstruction = routeInstructions.first else {
             return
         }
         if selectedInstruction == nil {

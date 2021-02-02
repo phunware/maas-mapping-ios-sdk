@@ -103,7 +103,10 @@ class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
     }
     
     func initializeTurnByTurn() {
-        mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        guard let routeInstructions = mapView.currentRoute.routeInstructions else {
+            return
+        }
+        mapView.setRouteManeuver(routeInstructions.first)
         
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
