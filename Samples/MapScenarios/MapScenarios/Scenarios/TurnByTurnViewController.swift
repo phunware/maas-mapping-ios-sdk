@@ -18,7 +18,7 @@ class TurnByTurnViewController: UIViewController, ScenarioProtocol {
     var accessKey = ""
     var signatureKey = ""
     
-    // Enter your campus identifier here, found on the building's Edit page on Maas portal
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
     var campusIdentifier = 0
 
     // Enter your building identifier here, found on the building's Edit page on Maas portal
@@ -52,7 +52,7 @@ class TurnByTurnViewController: UIViewController, ScenarioProtocol {
         configureMapViewConstraints()
         
         // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
-        // Otherwise, we will use PWBuilding.building route between floors in a single building.
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
         if campusIdentifier != 0 {
             // Start loading campus
             PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
