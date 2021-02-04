@@ -18,6 +18,9 @@ class TurnByTurnViewController: UIViewController, ScenarioProtocol {
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the building's Edit page on Maas portal
+    var campusIdentifier = 0
+
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier: Int = 0
     
@@ -48,16 +51,33 @@ class TurnByTurnViewController: UIViewController, ScenarioProtocol {
         view.addSubview(mapView)
         configureMapViewConstraints()
         
-        // Start loading building
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building route between floors in a single building.
+        if campusIdentifier != 0 {
+            // Start loading campus
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
                 if let error = error {
                     self?.warning(error.localizedDescription)
                     return
                 }
-                
-                self?.startRoute()
-            })
+
+                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
+                    self?.startRoute()
+                })
+            }
+        }
+        else {
+           // Start loading building
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+
+                self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+                    self?.startRoute()
+                })
+            }
         }
     }
     
@@ -108,9 +128,13 @@ private extension TurnByTurnViewController {
         // Set tracking mode to follow me
         mapView.trackingMode = .follow
         
+        guard let pois = mapView.pois() else {
+            return
+        }
+        
         // Find the destination POI
-        guard let startPOI = mapView.building.pois.first(where: { $0.identifier == startPOIIdentifier }),
-            let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier }) else {
+        guard let startPOI = pois.first(where: { $0.identifier == startPOIIdentifier }),
+            let destinationPOI = pois.first(where: { $0.identifier == destinationPOIIdentifier }) else {
             warning("Please put valid data for `startPOIIdentifier` and `destinationPOIIdentifier` in \(#file)")
             return
         }

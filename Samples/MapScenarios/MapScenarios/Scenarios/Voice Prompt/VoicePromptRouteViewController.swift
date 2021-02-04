@@ -19,6 +19,9 @@ class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the building's Edit page on Maas portal
+    var campusIdentifier = 0
+
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
     
@@ -63,15 +66,41 @@ class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
         view.addSubview(mapView)
         configureMapViewConstraints()
         
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                self?.locationManager.delegate = self
-                if !CLLocationManager.isAuthorized() {
-                    self?.locationManager.requestWhenInUseAuthorization()
-                } else {
-                    self?.startManagedLocationManager()
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
                 }
-            })
+
+                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
+        }
+        else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+
+                self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
         }
     }
     
@@ -94,8 +123,24 @@ class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
     }
     
     func startManagedLocationManager() {
-        DispatchQueue.main.async { [weak self] in
-            if let buildingIdentifier = self?.buildingIdentifier {
+        
+        // In order to route between buildings on a campus, we also need to register the
+        // PWManagedLocationManager using campusIdentifier.  Otherwise, we will register
+        // using buildingIdentifier.
+        if campusIdentifier != 0 {
+            DispatchQueue.main.async { [weak self] in
+                guard let campusIdentifier = self?.campusIdentifier else {
+                    return
+                }
+                let managedLocationManager = PWManagedLocationManager(campusId: campusIdentifier)
+                self?.mapView.register(managedLocationManager)
+            }
+        }
+        else {
+            DispatchQueue.main.async { [weak self] in
+                guard let buildingIdentifier = self?.buildingIdentifier else {
+                    return
+                }
                 let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
                 self?.mapView.register(managedLocationManager)
             }
@@ -227,10 +272,14 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
     }
     
     private func getDestinationPOI() -> PWPointOfInterest? {
+        guard let pois = mapView.pois() else {
+            return nil
+        }
+
         if destinationPOIIdentifier == 0 {
-            return mapView.building.pois.first
+            return pois.first
         } else {
-            return mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
+            return pois.first(where: { $0.identifier == destinationPOIIdentifier })
         }
     }
     

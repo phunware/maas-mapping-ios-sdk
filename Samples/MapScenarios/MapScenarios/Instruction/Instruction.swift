@@ -158,13 +158,18 @@ private extension Instruction {
 // MARK: - PWRouteInstruction private extension
 private extension PWRouteInstruction {
     func floor(for point: PWMapPoint?) -> PWFloor? {
-        guard let floorIdentifier = point?.floorID,
-            let building = route?.building,
-            let floor = building.floor(byId: floorIdentifier) else {
-                return nil
+        guard let floorIdentifier = point?.floorID else {
+            return nil
         }
-        
-        return floor
+        if let campus = route?.campus, let floor = campus.floorById(floorIdentifier) {
+            return floor
+        }
+        else if let building = route?.building, let floor = building.floor(byId: floorIdentifier) {
+            return floor
+        }
+        else {
+            return nil
+        }
     }
     
     var nextRouteInstruction: PWRouteInstruction? {

@@ -17,6 +17,10 @@ class ScenarioSelectViewController: UITableViewController {
     let universalAccessKey = ""
     let universalSignatureKey = ""
     
+    // Campus identifier to be used in all view controllers, overridden when set in individual controllers
+    // universalBuildingIdentifier will be used if universalCampusIdentifier is set to 0
+    let universalCampusIdentifier = 0
+    
     // Building identifier to be used in all view controllers, overridden when set in individual controllers
     let universalBuildingIdentifier = 0
 
@@ -44,6 +48,10 @@ class ScenarioSelectViewController: UITableViewController {
             
             if scenarioController.signatureKey.isEmpty {
                 scenarioController.signatureKey = universalSignatureKey
+            }
+            
+            if scenarioController.campusIdentifier == 0 {
+                scenarioController.campusIdentifier = universalCampusIdentifier
             }
             
             if scenarioController.buildingIdentifier == 0 {

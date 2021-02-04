@@ -34,4 +34,9 @@ extension PWMapView {
         }
         return route.distance + numberOfFloorSwitchInstructions * 15.0
     }
+    
+    func pois() -> [PWPointOfInterest]? {
+        // If MapView is initialized with campus, then use campus, otherwise use building
+        return (self.campus != nil) ? self.campus.pois : self.building.pois
+    }
 }
