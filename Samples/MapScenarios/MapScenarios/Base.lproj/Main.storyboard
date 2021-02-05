@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3ho-Bf-6to">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3ho-Bf-6to">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Load Building" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yS6-RG-gof">
-                                                    <rect key="frame" x="16" y="5" width="103.5" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="103" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -54,7 +55,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Bluedot Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dfw-HA-UPm">
-                                                    <rect key="frame" x="16" y="5" width="129" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="128.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -81,7 +82,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Location Modes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10p-Hh-nOV">
-                                                    <rect key="frame" x="16" y="5" width="122" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="121.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -108,7 +109,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Create Custom Point of Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JmT-aZ-f1a">
-                                                    <rect key="frame" x="16" y="5" width="240.5" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="239.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -135,7 +136,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Custom POI Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eOZ-Kp-Bch">
-                                                    <rect key="frame" x="16" y="5" width="142.5" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="142" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -162,7 +163,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Search for Points of Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t9m-iZ-B8S">
-                                                    <rect key="frame" x="16" y="5" width="213" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="212" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -189,7 +190,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Location Sharing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KnX-mq-y1M">
-                                                    <rect key="frame" x="16" y="5" width="128.5" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="128" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -216,7 +217,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Route to Point of Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lta-OF-bgz">
-                                                    <rect key="frame" x="16" y="5" width="190" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="189" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -243,7 +244,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Route - Turn By Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jvx-8C-Kxw">
-                                                    <rect key="frame" x="16" y="5" width="158.5" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="158" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -270,14 +271,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Route - Turn By Turn with Landmarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zMX-bF-hs6">
-                                                    <rect key="frame" x="16" y="5" width="284" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="282" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Show turn-by-turn navigation with landmarks, if available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2gk-N7-U1k">
-                                                    <rect key="frame" x="16" y="25.5" width="322.5" height="14.5"/>
+                                                    <rect key="frame" x="16" y="25.5" width="322" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -297,7 +298,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Walk Time Calculations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jye-p8-lN5">
-                                                    <rect key="frame" x="16" y="5" width="177.5" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="176.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -324,7 +325,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Voiced Route Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yA8-81-sfn">
-                                                    <rect key="frame" x="16" y="5" width="196" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="195" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -343,7 +344,7 @@
                                             <segue destination="k8d-HL-X4c" kind="show" identifier="VoicePromptRouteViewController" id="9gu-y5-bVc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OffRouteCell" textLabel="Gqe-VH-29Q" detailTextLabel="6jp-6k-zm1" style="IBUITableViewCellStyleSubtitle" id="ejc-qn-oNj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OffRouteCell" textLabel="Gqe-VH-29Q" detailTextLabel="6jp-6k-zm1" style="IBUITableViewCellStyleSubtitle" id="ejc-qn-oNj">
                                         <rect key="frame" x="0.0" y="556" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ejc-qn-oNj" id="Cge-z2-YZg">
@@ -351,7 +352,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Off Route Scenario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gqe-VH-29Q">
-                                                    <rect key="frame" x="16" y="5" width="145" height="20.5"/>
+                                                    <rect key="frame" x="16" y="5" width="144" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -391,9 +392,73 @@
                     <view key="view" contentMode="scaleToFill" id="LAs-TO-C2M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Dv-knV" userLabel="Floor Switch Container View">
+                                <rect key="frame" x="0.0" y="460" width="375" height="207"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgW-Ks-Vpg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3FN-gD-Uev">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="regular"/>
+                                    </visualEffectView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQz-q1-WZ8">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="rZl-0f-HuP"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Building &amp; Floor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPW-rR-4Wn">
+                                        <rect key="frame" x="0.0" y="9" width="375" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PqR-0Z-1Ip">
+                                        <rect key="frame" x="0.0" y="37" width="375" height="170"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" id="WY8-x3-s1z"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="yd7-y4-KGh" id="kzG-EM-hE5"/>
+                                            <outlet property="delegate" destination="yd7-y4-KGh" id="Mgc-8C-1WR"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="TgW-Ks-Vpg" secondAttribute="bottom" id="0wh-kA-f9k"/>
+                                    <constraint firstItem="PPW-rR-4Wn" firstAttribute="top" secondItem="QQz-q1-WZ8" secondAttribute="bottom" constant="8" id="3CB-tM-Kzr"/>
+                                    <constraint firstItem="QQz-q1-WZ8" firstAttribute="top" secondItem="hrj-Dv-knV" secondAttribute="top" id="AmM-1G-AIZ"/>
+                                    <constraint firstItem="TgW-Ks-Vpg" firstAttribute="top" secondItem="hrj-Dv-knV" secondAttribute="top" id="Bpz-W4-1RE"/>
+                                    <constraint firstItem="PqR-0Z-1Ip" firstAttribute="leading" secondItem="hrj-Dv-knV" secondAttribute="leading" id="DYE-ww-zp7"/>
+                                    <constraint firstAttribute="trailing" secondItem="QQz-q1-WZ8" secondAttribute="trailing" id="Fhm-H4-0nU"/>
+                                    <constraint firstItem="PqR-0Z-1Ip" firstAttribute="top" secondItem="PPW-rR-4Wn" secondAttribute="bottom" constant="8" id="Kex-Pd-szn"/>
+                                    <constraint firstAttribute="trailing" secondItem="PqR-0Z-1Ip" secondAttribute="trailing" id="LCj-rs-GH0"/>
+                                    <constraint firstItem="PPW-rR-4Wn" firstAttribute="leading" secondItem="hrj-Dv-knV" secondAttribute="leading" id="QVT-xf-p4a"/>
+                                    <constraint firstAttribute="trailing" secondItem="TgW-Ks-Vpg" secondAttribute="trailing" id="QfV-Sf-lu6"/>
+                                    <constraint firstItem="QQz-q1-WZ8" firstAttribute="leading" secondItem="hrj-Dv-knV" secondAttribute="leading" id="Wek-F6-hiM"/>
+                                    <constraint firstItem="TgW-Ks-Vpg" firstAttribute="leading" secondItem="hrj-Dv-knV" secondAttribute="leading" id="iAx-Re-vRG"/>
+                                    <constraint firstAttribute="trailing" secondItem="PPW-rR-4Wn" secondAttribute="trailing" id="lFM-G8-vY0"/>
+                                    <constraint firstAttribute="bottom" secondItem="PqR-0Z-1Ip" secondAttribute="bottom" id="wEY-ex-gY3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="R2B-c9-qeM"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hrj-Dv-knV" firstAttribute="leading" secondItem="R2B-c9-qeM" secondAttribute="leading" id="F83-yD-ZZD"/>
+                            <constraint firstAttribute="bottom" secondItem="hrj-Dv-knV" secondAttribute="bottom" id="IHQ-pk-8Ja"/>
+                            <constraint firstItem="hrj-Dv-knV" firstAttribute="trailing" secondItem="R2B-c9-qeM" secondAttribute="trailing" id="JJ3-X8-PfM"/>
+                            <constraint firstItem="hrj-Dv-knV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="R2B-c9-qeM" secondAttribute="top" id="xD1-6Z-JGb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="floorSwitchContainerView" destination="hrj-Dv-knV" id="OYk-vZ-u8r"/>
+                        <outlet property="floorSwitchPickerView" destination="PqR-0Z-1Ip" id="hSg-7w-7VB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxH-I0-NXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -406,8 +471,8 @@
                     <view key="view" contentMode="scaleToFill" id="uhS-VD-pCc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qB6-za-9EX"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36e-pu-CBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -434,13 +499,13 @@
                                 </items>
                             </toolbar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="PdB-Xn-vNW"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PdB-Xn-vNW" firstAttribute="bottom" secondItem="Z1Q-9v-Ryk" secondAttribute="bottom" id="KmF-9M-UNX"/>
                             <constraint firstItem="PdB-Xn-vNW" firstAttribute="trailing" secondItem="Z1Q-9v-Ryk" secondAttribute="trailing" id="ea6-Vf-92n"/>
                             <constraint firstItem="Z1Q-9v-Ryk" firstAttribute="leading" secondItem="PdB-Xn-vNW" secondAttribute="leading" id="ywa-FJ-f3t"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PdB-Xn-vNW"/>
                     </view>
                     <connections>
                         <outlet property="toolbar" destination="Z1Q-9v-Ryk" id="mnw-MD-x4V"/>
@@ -458,8 +523,8 @@
                     <view key="view" contentMode="scaleToFill" id="9dr-W8-ZsE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="97S-Xc-6Qi"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mok-MM-fS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -473,8 +538,8 @@
                     <view key="view" contentMode="scaleToFill" id="3qd-0u-991">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hQD-ZU-MAR"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0b-7Q-Qby" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,8 +553,8 @@
                     <view key="view" contentMode="scaleToFill" id="ZC0-99-3nd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iAe-gq-UQU"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rST-Un-fjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -503,8 +568,8 @@
                     <view key="view" contentMode="scaleToFill" id="DBx-1g-RaO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SEA-PS-O2K"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zm-Yx-P18" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -518,8 +583,8 @@
                     <view key="view" contentMode="scaleToFill" id="mWa-MM-VI5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Zed-kC-LSg"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="aLg-HI-goU"/>
                 </viewController>
@@ -534,8 +599,8 @@
                     <view key="view" contentMode="scaleToFill" id="KF4-mh-Dso">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pac-Vf-Qin"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXg-wR-W7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -549,8 +614,8 @@
                     <view key="view" contentMode="scaleToFill" id="Sru-xw-2OB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nM4-Q0-Ang"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvr-rf-m8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -564,8 +629,8 @@
                     <view key="view" contentMode="scaleToFill" id="bPB-sV-pEw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="I11-VG-UUc"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPs-k9-2no" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -597,8 +662,8 @@
                     <view key="view" contentMode="scaleToFill" id="UPv-eK-q9x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FMW-Sv-XXK"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="qVs-6T-af4"/>
                 </viewController>
@@ -613,8 +678,8 @@
                     <view key="view" contentMode="scaleToFill" id="AP3-H9-F2G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="amO-7A-cbz"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="rnI-QZ-2JP"/>
                 </viewController>
@@ -623,4 +688,12 @@
             <point key="canvasLocation" x="2207" y="331"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

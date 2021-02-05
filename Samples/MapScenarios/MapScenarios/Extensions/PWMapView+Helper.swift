@@ -39,4 +39,18 @@ extension PWMapView {
         // If MapView is initialized with campus, then use campus, otherwise use building
         return (self.campus != nil) ? self.campus.pois : self.building.pois
     }
+    
+    func zoomToFitFloor(_ floor: PWFloor) {
+        let topLeft = floor.topLeft
+        let bottomRight = floor.bottomRight
+        
+        var region = MKCoordinateRegion()
+        region.center.latitude = topLeft.latitude - (topLeft.latitude - bottomRight.latitude) * 0.5
+        region.center.longitude = topLeft.longitude + (bottomRight.longitude - topLeft.longitude) * 0.5
+        region.span.latitudeDelta = fabs(topLeft.latitude - bottomRight.latitude)
+        region.span.longitudeDelta = fabs(bottomRight.longitude - topLeft.longitude)
+
+        region = regionThatFits(region)
+        setRegion(region, animated: true)
+    }
 }
