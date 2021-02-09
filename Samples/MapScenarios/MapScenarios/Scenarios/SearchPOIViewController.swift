@@ -48,6 +48,7 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()
         searchController.searchBar.barStyle = .black
@@ -163,6 +164,14 @@ extension SearchPOIViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - PWMapViewDelegate
+extension SearchPOIViewController: PWMapViewDelegate {
+    
+    func mapView(_ mapView: PWMapView!, didChange floor: PWFloor!) {
+        mapView.zoomToFitFloor(floor)
+    }
+}
+
 // MARK: - UITableViewDelegate
 extension SearchPOIViewController: UITableViewDelegate {
     
@@ -172,7 +181,7 @@ extension SearchPOIViewController: UITableViewDelegate {
         self.tableView.isHidden = true
         let pointOfInterest = filteredPointsOfInterest[indexPath.row]
         if mapView.currentFloor.floorID != pointOfInterest.floorID {
-            let newFloor = mapView.building.floor(byId: pointOfInterest.floorID)
+            let newFloor = mapView.getFloorById(pointOfInterest.floorID)
             mapView.currentFloor = newFloor
         }
         mapView.selectAnnotation(pointOfInterest, animated: true)

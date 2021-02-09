@@ -13,7 +13,6 @@ import PWCore
 // MARK: - LoadBuildingViewController
 class LoadBuildingViewController: UIViewController, ScenarioProtocol {
     
-    @IBOutlet private weak var floorSwitchButton: UIBarButtonItem!
     @IBOutlet private weak var floorSwitchContainerView: UIView!
     @IBOutlet private weak var floorSwitchPickerView: UIPickerView!
 

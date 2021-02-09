@@ -1,5 +1,5 @@
 //
-//  RoutingViewController.swift
+//  RouteToPOIViewController.swift
 //  MapScenarios
 //
 //  Created on 3/7/18.
@@ -11,8 +11,8 @@ import UIKit
 import PWCore
 import PWMapKit
 
-// MARK: - RoutingViewController
-class RoutingViewController: UIViewController, ScenarioProtocol {
+// MARK: - RouteToPOIViewController
+class RouteToPOIViewController: UIViewController, ScenarioProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -172,7 +172,7 @@ class RoutingViewController: UIViewController, ScenarioProtocol {
 }
 
 // MARK: - PWMapViewDelegate
-extension RoutingViewController: PWMapViewDelegate {
+extension RouteToPOIViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         if !firstLocationAcquired {
@@ -195,7 +195,7 @@ extension RoutingViewController: PWMapViewDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate
-extension RoutingViewController: CLLocationManagerDelegate {
+extension RouteToPOIViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
