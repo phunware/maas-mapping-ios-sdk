@@ -134,7 +134,6 @@ private extension RouteInstructionListViewController {
         let bundleName = String(describing: WalkTimeView.self)
         let walkTimeView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! WalkTimeView
         self.walkTimeView = walkTimeView
-        walkTimeView.delegate = self
         walkTimeView.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
     }
     

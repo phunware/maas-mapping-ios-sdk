@@ -16,11 +16,7 @@ protocol WalkTimeViewDelegate: class {
 class WalkTimeView: UIView {
     @IBOutlet weak var restTimeLabel: UILabel!
     @IBOutlet weak var arriveTimeLabel: UILabel!
-    @IBOutlet weak var cancelRouteButton: UIButton!
-    
-    // Delegate
-    weak var delegate: WalkTimeViewDelegate?
-    
+        
     // View height
     static let defaultHeight: CGFloat = 80.0
     
@@ -35,12 +31,7 @@ class WalkTimeView: UIView {
     
     // Average speed
     var averageSpeed: CLLocationSpeed = 0
-    
-    @IBAction func cancelRouteButtonTapped(_ sender: UIButton) {
-        delegate?.exitButtonPressed(for: self)
         
-    }
-    
     func updateWalkTime(distance: CLLocationDistance, averageSpeed: CLLocationSpeed = 0.7) {
         if distance == 0 {
             self.restTimeLabel.text = ""

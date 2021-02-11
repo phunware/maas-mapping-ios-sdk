@@ -7,19 +7,19 @@
 //
 
 import Foundation
-import PWMapKit
 import PWCore
+import PWMapKit
 
 // MARK: - LoadBuildingViewController
-class LoadBuildingViewController: UIViewController, ScenarioProtocol {
-    
-    @IBOutlet private weak var floorSwitchContainerView: UIView!
-    @IBOutlet private weak var floorSwitchPickerView: UIPickerView!
 
+class LoadBuildingViewController: UIViewController, ScenarioProtocol {
+    @IBOutlet private var floorSwitchContainerView: UIView!
+    @IBOutlet private var floorSwitchPickerView: UIPickerView!
+    
     private var firstFloorSwitch = false
     private var floorSwitchFloors = [PWFloor]()
     private var floorSwitchBuildings = [PWBuilding]()
-
+    
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
@@ -27,17 +27,9 @@ class LoadBuildingViewController: UIViewController, ScenarioProtocol {
     
     // Enter your campus identifier here, found on the campus's Edit page on Maas portal
     var campusIdentifier = 0
-
+    
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
-    
-    // The starting center coordinate for the camera view. Set this to be the location of your building
-    // (or close to it) so that the camera will already be close to the building location before the building loads.
-    private let initialCenterCoordinate = CLLocationCoordinate2D(latitude: 37.0902, longitude: -95.7129)
-    
-    // The how many meters the camera will display of the map from the center point.
-    // Set to a lower value if you would like the camera to start zoomed in more.
-    private let initialCameraDistance: CLLocationDistance = 10000000
     
     private let mapView = PWMapView()
     
@@ -53,18 +45,18 @@ class LoadBuildingViewController: UIViewController, ScenarioProtocol {
         }
         
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
-                
+        
         view.addSubview(mapView)
         configureMapViewConstraints()
         mapView.delegate = self
         
         configureFloorSwitchButton()
         configureFloorSwitchContainerView()
-
+        
         // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
         // Otherwise, we will use PWBuilding.building to route between floors in a single building.
         if campusIdentifier != 0 {
-            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] campus, error in
                 if let error = error {
                     self?.warning(error.localizedDescription)
                     return
@@ -72,9 +64,8 @@ class LoadBuildingViewController: UIViewController, ScenarioProtocol {
                 
                 self?.mapView.setCampus(campus, animated: true, onCompletion: nil)
             }
-        }
-        else {
-            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+        } else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] building, error in
                 if let error = error {
                     self?.warning(error.localizedDescription)
                     return
@@ -84,7 +75,11 @@ class LoadBuildingViewController: UIViewController, ScenarioProtocol {
             }
         }
     }
-    
+}
+
+// MARK: - User Actions
+
+extension LoadBuildingViewController {
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -94,20 +89,21 @@ class LoadBuildingViewController: UIViewController, ScenarioProtocol {
     }
     
     func configureFloorSwitchContainerView() {
-        self.view.bringSubviewToFront(floorSwitchContainerView)
+        view.bringSubviewToFront(floorSwitchContainerView)
         floorSwitchContainerView.isHidden = true
     }
     
     func configureFloorSwitchButton() {
-        let floorImage = UIImage(named: "Floors")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: floorImage, style: .plain, target: self, action: #selector(floorButtonTapped))
+        let floorImage = UIImage(named: "Floors")        
+        let floorButton = UIButton()
+        floorButton.setImage(floorImage, for: .normal)
+        floorButton.addTarget(self, action: #selector(floorButtonTapped), for: .touchUpInside)
+        floorButton.frame = CGRect(x: view.bounds.maxX - 50, y: 0, width: 50, height: 50)
+        floorButton.autoresizingMask = [.flexibleLeftMargin, .flexibleBottomMargin]
+        self.view.addSubview(floorButton)
     }
-}
-
-// MARK: - User Actions
-extension LoadBuildingViewController {
     
-    @IBAction func floorButtonTapped(_ sender: UIBarButtonItem) {
+    @objc func floorButtonTapped(_ sender: UIBarButtonItem) {
         floorSwitchBuildings.removeAll()
         floorSwitchFloors.removeAll()
         
@@ -141,7 +137,7 @@ extension LoadBuildingViewController {
         }
         
         let buildingIndex = floorSwitchBuildings.firstIndex { (building) -> Bool in
-            return building.identifier == mapView.currentFloor?.building?.identifier
+            building.identifier == mapView.currentFloor?.building?.identifier
         }
         
         guard let currentBuildingIndex = buildingIndex else {
@@ -155,7 +151,7 @@ extension LoadBuildingViewController {
         }
         
         let floorIndex = floorSwitchFloors.firstIndex { (floor) -> Bool in
-            return floor.floorID == mapView.currentFloor?.floorID
+            floor.floorID == mapView.currentFloor?.floorID
         }
         
         self.floorSwitchBuildings.append(contentsOf: floorSwitchBuildings)
@@ -173,16 +169,15 @@ extension LoadBuildingViewController {
     }
 }
 
-
 // MARK: - UIPickerViewDelegate
-extension LoadBuildingViewController: UIPickerViewDelegate {
-    
-    private var buildingComponentWidth: CGFloat {
-        return floorSwitchPickerView.frame.width / 2 //* (1 / 3.0)
-    }
 
+extension LoadBuildingViewController: UIPickerViewDelegate {
+    private var buildingComponentWidth: CGFloat {
+        return floorSwitchPickerView.frame.width / 2 // * (1 / 3.0)
+    }
+    
     private var floorComponentWidth: CGFloat {
-        return floorSwitchPickerView.frame.width / 2 //* (2 / 3.0)
+        return floorSwitchPickerView.frame.width / 2 // * (2 / 3.0)
     }
     
     private var componentHeight: CGFloat {
@@ -209,7 +204,7 @@ extension LoadBuildingViewController: UIPickerViewDelegate {
         } else {
             let frame: CGRect
             let textAlignment: NSTextAlignment
-
+            
             if component == Components.building {
                 frame = .init(origin: .zero, size: .init(width: buildingComponentWidth - rowWidthMargin, height: componentHeight))
                 textAlignment = .right
@@ -249,9 +244,9 @@ extension LoadBuildingViewController: UIPickerViewDelegate {
             }
             
             floorSwitchFloors.append(contentsOf: floors)
-
+            
             pickerView.reloadComponent(Components.floor)
-
+            
             pickerView.selectRow(0, inComponent: Components.floor, animated: false)
             
             mapView.currentFloor = firstFloor
@@ -261,12 +256,10 @@ extension LoadBuildingViewController: UIPickerViewDelegate {
     }
 }
 
-
 // MARK: - UIPickerViewDataSource
+
 extension LoadBuildingViewController: UIPickerViewDataSource {
-    
     private enum Components {
-        
         static let building = 0
         static let floor = 1
     }
@@ -290,17 +283,15 @@ extension LoadBuildingViewController: UIPickerViewDataSource {
     }
 }
 
-
 // MARK: - PWMapViewDelegate
-extension LoadBuildingViewController: PWMapViewDelegate {
-    
-    func mapView(_ mapView: PWMapView!, didChange floor: PWFloor!) {
 
+extension LoadBuildingViewController: PWMapViewDelegate {
+    func mapView(_ mapView: PWMapView!, didChange floor: PWFloor!) {
         guard firstFloorSwitch else {
             firstFloorSwitch = true
             return
         }
-                
+        
         mapView.zoomToFitFloor(floor)
     }
 }

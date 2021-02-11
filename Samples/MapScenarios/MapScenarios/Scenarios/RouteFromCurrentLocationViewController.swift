@@ -1,5 +1,5 @@
 //
-//  RouteToPOIViewController.swift
+//  RouteFromCurrentLocationViewController.swift
 //  MapScenarios
 //
 //  Created on 3/7/18.
@@ -12,7 +12,7 @@ import PWCore
 import PWMapKit
 
 // MARK: - RouteToPOIViewController
-class RouteToPOIViewController: UIViewController, ScenarioProtocol {
+class RouteFromCurrentLocationViewController: UIViewController, ScenarioProtocol {
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
@@ -25,32 +25,28 @@ class RouteToPOIViewController: UIViewController, ScenarioProtocol {
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
     
-    // Destination POI identifier for routing
-    private var destinationPOIIdentifier: Int = 0
     
     private let mapView = PWMapView()
     private let locationManager = CLLocationManager()
     private var firstLocationAcquired = false
-    
+    private var routeButton: UIBarButtonItem?
+    private var turnByTurnCollectionView: TurnByTurnCollectionView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Route to Point of Interest"
+        navigationItem.title = "Route from Current Location"
         
         if !validateScenarioSettings() {
             return
         }
-        
-        if destinationPOIIdentifier == 0 {
-            warning("Please set a valid value for 'destinationPOIIdentifier'")
-            return
-        }
-        
+                
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         
         mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()
+        configureRouteButton()
         
         // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
         // Otherwise, we will use PWBuilding.building to route between floors in a single building.
@@ -122,6 +118,25 @@ class RouteToPOIViewController: UIViewController, ScenarioProtocol {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        if identifier == String(describing: RouteViewController.self) {
+            if let routeViewController = segue.destination as? RouteViewController {
+                routeViewController.delegate = self
+                routeViewController.mapView = mapView
+                routeViewController.landmarkEnabled = false
+                routeViewController.startFromCurrentLocation = true
+            }
+        }
+    }
+}
+    
+// MARK: - private
+extension RouteFromCurrentLocationViewController {
+
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -130,54 +145,55 @@ class RouteToPOIViewController: UIViewController, ScenarioProtocol {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
-    //*************************************
-    // Plot route on the map
-    //*************************************
-    func route() {
+    func configureRouteButton() {
+        let floorImage = UIImage(named: "RoadSign")
+        routeButton = UIBarButtonItem(image: floorImage, style: .plain, target: self, action: #selector(routeButtonTapped))
+        navigationItem.rightBarButtonItem = routeButton
+    }
+    
+    func cancelRouting() {
+        mapView.cancelRouting()
+        routeButton?.image = UIImage(named: "RoadSign")
+        routeButton?.title = nil
+        turnByTurnCollectionView?.removeFromSuperview()
+        turnByTurnCollectionView = nil
+    }
+    
+    func initializeTurnByTurn() {
+        if let currentRoute = mapView.currentRoute,
+            let routeInstructions = currentRoute.routeInstructions {
+            mapView.setRouteManeuver(routeInstructions.first)
+        }
+        
+        if turnByTurnCollectionView == nil {
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
+            turnByTurnCollectionView?.turnByTurnDelegate = self
+            turnByTurnCollectionView?.configureInView(view)
+        }
+    }
+
+    @objc func routeButtonTapped() {
         // Set tracking mode to follow me
         mapView.trackingMode = .follow
-        
-        guard let pois = mapView.pois() else {
-            return
-        }
 
-        // Find the destination POI
-        guard let destinationPOI = pois.first(where: { $0.identifier == destinationPOIIdentifier }) else  {
-            warning("No points of interest found, please add at least one to the building in the Maas portal")
+        guard mapView.floors?.isEmpty == false else {
             return
         }
         
-        // Calculate a route and plot on the map
-        PWRoute.createRoute(from: mapView.indoorUserLocation,
-                            to: destinationPOI,
-                            options: nil,
-                            completion: { [weak self] (route, error) in
-            guard let route = route else {
-                self?.warning("Couldn't find a route from your current location to the destination.")
-                return
-            }
-            
-            let routeOptions = PWRouteUIOptions()
-            // routeOptions.routeStrokeColor = <#routeStrokeColor#>
-            // routeOptions.directionFillColor = <#directionFillColor#>
-            // routeOptions.directionStrokeColor = <#directionStrokeColor#>
-            // routeOptions.instructionFillColor = <#instructionFillColor#>
-            // routeOptions.instructionStrokeColor = <#instructionStrokeColor#>
-            // routeOptions.showJoinPoint = <#true or false#>
-            // routeOptions.joinPointColor = <#joinPointColor#>
-            // routeOptions.lineJoin = <#.miter, round or bevel#>
-            self?.mapView.navigate(with: route, options: routeOptions)
-        })
+        if mapView.currentRoute != nil {
+            cancelRouting()
+        } else {
+            performSegue(withIdentifier: String(describing: RouteViewController.self), sender: nil)
+        }
     }
 }
 
 // MARK: - PWMapViewDelegate
-extension RouteToPOIViewController: PWMapViewDelegate {
+extension RouteFromCurrentLocationViewController: PWMapViewDelegate {
     
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         if !firstLocationAcquired {
             firstLocationAcquired = true
-            route()
         }
     }
     
@@ -192,10 +208,14 @@ extension RouteToPOIViewController: PWMapViewDelegate {
         
         showAlertForIndoorLocationFailure(withTitle: title , failureMessage: message)
     }
+    
+    func mapView(_ mapView: PWMapView!, didChange floor: PWFloor!) {
+        mapView.zoomToFitFloor(floor)
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
-extension RouteToPOIViewController: CLLocationManagerDelegate {
+extension RouteFromCurrentLocationViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -205,5 +225,44 @@ extension RouteToPOIViewController: CLLocationManagerDelegate {
             mapView.unregisterLocationManager()
             print("Not authorized to start PWLocationManager")
         }
+    }
+}
+
+// MARK: - RouteViewDelegate
+
+extension RouteFromCurrentLocationViewController: RouteViewDelegate {
+    func routeSelected(_ route: PWRoute) {
+        let routeUIOptions = PWRouteUIOptions()
+        mapView.navigate(with: route, options: routeUIOptions)
+        
+        routeButton?.image = nil
+        routeButton?.title = "Cancel"
+        
+        // Initial route instructions
+        initializeTurnByTurn()
+    }
+}
+
+// MARK: - TurnByTurnCollectionViewDelegate
+
+extension RouteFromCurrentLocationViewController: TurnByTurnCollectionViewDelegate {
+    func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
+        return BasicInstructionViewModel(for: routeInstruction)
+    }
+    
+    func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
+        let routeInstructionViewController = RouteInstructionListViewController()
+        routeInstructionViewController.delegate = self
+        routeInstructionViewController.configure(route: mapView.currentRoute)
+        routeInstructionViewController.presentFromViewController(self)
+    }
+}
+
+// MARK: - RouteInstructionListViewControllerDelegate
+
+extension RouteFromCurrentLocationViewController: RouteInstructionListViewControllerDelegate {
+    func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
+        -> InstructionViewModel {
+        return BasicInstructionViewModel(for: routeInstruction)
     }
 }

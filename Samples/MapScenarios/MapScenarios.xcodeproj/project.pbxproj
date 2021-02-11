@@ -54,7 +54,7 @@
 		E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */; };
 		E3C76E7E204DF6B600780D0F /* LocationModesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */; };
 		E3C771C520503BDA00780D0F /* CustomPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */; };
-		E3C771CA2050555D00780D0F /* RouteToPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C92050555D00780D0F /* RouteToPOIViewController.swift */; };
+		E3C771CA2050555D00780D0F /* RouteFromCurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771C92050555D00780D0F /* RouteFromCurrentLocationViewController.swift */; };
 		E3C771CF2050846E00780D0F /* SearchPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */; };
 		E3ED03EE22415A1B00E394F5 /* CLLocationManager+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ED03ED22415A1B00E394F5 /* CLLocationManager+Helper.swift */; };
 /* End PBXBuildFile section */
@@ -108,7 +108,7 @@
 		E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBuildingViewController.swift; sourceTree = "<group>"; };
 		E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModesViewController.swift; sourceTree = "<group>"; };
 		E3C771C420503BDA00780D0F /* CustomPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPOIViewController.swift; sourceTree = "<group>"; };
-		E3C771C92050555D00780D0F /* RouteToPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteToPOIViewController.swift; sourceTree = "<group>"; };
+		E3C771C92050555D00780D0F /* RouteFromCurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFromCurrentLocationViewController.swift; sourceTree = "<group>"; };
 		E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPOIViewController.swift; sourceTree = "<group>"; };
 		E3ED03ED22415A1B00E394F5 /* CLLocationManager+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,8 +290,8 @@
 				E3C76E7B204DEE2900780D0F /* LoadBuildingViewController.swift */,
 				E3C76E7D204DF6B600780D0F /* LocationModesViewController.swift */,
 				E36BB69120571B57003640CA /* LocationSharingViewController.swift */,
-				E3C771C92050555D00780D0F /* RouteToPOIViewController.swift */,
 				E3C771CE2050846E00780D0F /* SearchPOIViewController.swift */,
+				E3C771C92050555D00780D0F /* RouteFromCurrentLocationViewController.swift */,
 				9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */,
 				9AC881AF23709B0900FCDEFC /* TurnByTurnLandmarksViewController.swift */,
 				9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */,
@@ -397,7 +397,7 @@
 				9A5B6A1823748764007B41D4 /* InstructionTextOptions.swift in Sources */,
 				E37858242217062D0059A179 /* VoicePromptRouteViewController.swift in Sources */,
 				9A19038324290D32001380CC /* CustomPointOfInterestImagesViewController.swift in Sources */,
-				E3C771CA2050555D00780D0F /* RouteToPOIViewController.swift in Sources */,
+				E3C771CA2050555D00780D0F /* RouteFromCurrentLocationViewController.swift in Sources */,
 				E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */,
 				E378583A222738A40059A179 /* RouteInstructionListCell.swift in Sources */,
 				E3C3799E204D90AA00905731 /* ScenarioSelectViewController.swift in Sources */,

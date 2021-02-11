@@ -24,15 +24,12 @@ class WalkTimeViewController: UIViewController, ScenarioProtocol {
 
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier: Int = 0
-    
-    // Destination POI identifier for routing
-    private var startPOIIdentifier: Int = 0
-    private var destinationPOIIdentifier: Int = 0
-    
+        
     private let mapView = PWMapView()
     
     private var turnByTurnCollectionView: TurnByTurnCollectionView?
-    
+    private var routeButton: UIBarButtonItem?
+
     // Track the list controller so we can notify it of walk time changes, since it also can display the walk time
     private var routeListController: RouteInstructionListViewController?
     
@@ -80,16 +77,12 @@ class WalkTimeViewController: UIViewController, ScenarioProtocol {
         if !validateScenarioSettings() {
             return
         }
-        
-        if startPOIIdentifier == destinationPOIIdentifier || destinationPOIIdentifier == 0 {
-            warning("Please put valid data for 'startPOIIdentifier' and 'destinationPOIIdentifier'")
-            return
-        }
-        
+                
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         
         view.addSubview(mapView)
         configureMapViewConstraints()
+        configureRouteButton()
         
         // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
         // Otherwise, we will use PWBuilding.building to route between floors in a single building.
@@ -100,9 +93,7 @@ class WalkTimeViewController: UIViewController, ScenarioProtocol {
                     return
                 }
 
-                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
-                    self?.startRoute()
-                })
+                self?.mapView.setCampus(campus, animated: true, onCompletion: nil)
             }
         }
         else {
@@ -113,34 +104,34 @@ class WalkTimeViewController: UIViewController, ScenarioProtocol {
                     return
                 }
 
-                self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in                    
-                    self?.startRoute()
-                })
+                self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
             }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        turnByTurnCollectionView?.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        turnByTurnCollectionView?.isHidden = true
         super.viewWillDisappear(animated)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        if identifier == String(describing: RouteViewController.self) {
+            if let routeViewController = segue.destination as? RouteViewController {
+                routeViewController.delegate = self
+                routeViewController.mapView = mapView
+                routeViewController.landmarkEnabled = false
+            }
+        }
     }
 }
 
-// MARK: - WalkTimeViewDelegate
-extension WalkTimeViewController: WalkTimeViewDelegate {
-    func exitButtonPressed(for walkTimeView: WalkTimeView) {
-        cancelWalkTimeUpdateTimer()
-        self.walkTimeView?.removeFromSuperview()
-        self.walkTimeView = nil
-        turnByTurnCollectionView?.removeFromSuperview()
-        mapView.cancelRouting()
-    }
-}
 
 // MARK: - TurnByTurnCollectionViewDelegate
 extension WalkTimeViewController: TurnByTurnCollectionViewDelegate {
@@ -151,7 +142,6 @@ extension WalkTimeViewController: TurnByTurnCollectionViewDelegate {
         let routeInstructionViewController = RouteInstructionListViewController()
         
         routeListController = routeInstructionViewController
-        routeInstructionViewController.walkTimeViewDelegate = self
         
         routeInstructionViewController.configure(route: mapView.currentRoute,
                                                  walkTimeDisplayMode: .display(distance: distance, averageSpeed: averageSpeed))
@@ -359,7 +349,6 @@ private extension WalkTimeViewController {
     func layoutWalkTimeView() {
         let walkTimeView = Bundle.main.loadNibNamed(String(describing: WalkTimeView.self), owner: nil, options: nil)!.first as! WalkTimeView
         self.walkTimeView = walkTimeView
-        walkTimeView.delegate = self
         
         mapView.addSubview(walkTimeView)
         
@@ -401,52 +390,42 @@ private extension WalkTimeViewController {
             }
         }
     }
-    
-    func startRoute() {
-        // Set tracking mode to follow me
-        mapView.trackingMode = .follow
         
-        guard let pois = mapView.pois() else {
-            return
-        }
-
-        // Find the destination POI
-        guard let startPOI = pois.first(where: { $0.identifier == startPOIIdentifier }),
-            let destinationPOI = pois.first(where: { $0.identifier == destinationPOIIdentifier }) else {
-            warning("Please put valid data for 'startPOIIdentifier' and 'destinationPOIIdentifier'")
-            return
-        }
+    func cancelRouting() {
+        mapView.cancelRouting()
+        routeButton?.image = UIImage(named: "RoadSign")
+        routeButton?.title = nil
+        turnByTurnCollectionView?.removeFromSuperview()
+        turnByTurnCollectionView = nil
         
-        // Calculate a route and plot on the map
-        PWRoute.createRoute(from: startPOI,
-                            to: destinationPOI,
-                            options: nil,
-                            completion: { [weak self] (route, error) in
-            guard let self = self else {
-                return
-            }
-                                
-            guard let route = route else {
-                self.warning("Couldn't find a route between POI(\(self.startPOIIdentifier)) and POI(\(self.destinationPOIIdentifier)).")
-                return
-            }
-            
-            // Plot route on the map
-            let routeOptions = PWRouteUIOptions()
-            self.mapView.navigate(with: route, options: routeOptions)
-            
-            // Initial route instructions
-            self.initializeTurnByTurn()
-        })
+        cancelWalkTimeUpdateTimer()
+        self.walkTimeView?.removeFromSuperview()
+        self.walkTimeView = nil
     }
     
-    // called after route has been calculated
-    func initializeTurnByTurn() {
-        guard let routeInstructions = mapView.currentRoute.routeInstructions else {
+    func configureRouteButton() {
+        let floorImage = UIImage(named: "RoadSign")
+        routeButton = UIBarButtonItem(image: floorImage, style: .plain, target: self, action: #selector(routeButtonTapped))
+        navigationItem.rightBarButtonItem = routeButton
+    }
+    
+    @objc func routeButtonTapped() {
+        guard mapView.floors?.isEmpty == false else {
             return
         }
         
-        mapView.setRouteManeuver(routeInstructions.first)
+        if mapView.currentRoute != nil {
+            cancelRouting()
+        } else {
+            performSegue(withIdentifier: String(describing: RouteViewController.self), sender: nil)
+        }
+    }
+    
+    func initializeTurnByTurn() {
+        if let currentRoute = mapView.currentRoute,
+            let routeInstructions = currentRoute.routeInstructions {
+            mapView.setRouteManeuver(routeInstructions.first)
+        }
         
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
@@ -456,5 +435,21 @@ private extension WalkTimeViewController {
         
         // Show walk time view when turn by turn is visible
         layoutWalkTimeView()
+
+    }
+}
+
+// MARK: - RouteViewDelegate
+
+extension WalkTimeViewController: RouteViewDelegate {
+    func routeSelected(_ route: PWRoute) {
+        let routeUIOptions = PWRouteUIOptions()
+        mapView.navigate(with: route, options: routeUIOptions)
+        
+        routeButton?.image = nil
+        routeButton?.title = "Cancel"
+
+        // Initial route instructions
+        initializeTurnByTurn()
     }
 }

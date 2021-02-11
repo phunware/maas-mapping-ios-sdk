@@ -73,6 +73,7 @@ class RouteViewController: UIViewController {
     var sortedSectionedPOIKeys: [String]!
     var customPOIs: [PWPointOfInterest]!
     
+    var startFromCurrentLocation: Bool = false
     var landmarkEnabled: Bool = false
     var mapView: PWMapView!
     var delegate: RouteViewDelegate?
@@ -115,7 +116,13 @@ class RouteViewController: UIViewController {
         
         search(keyword: nil, pointsToExclude: pointsToExclude)
         
-        routeHeaderView.startTextField.becomeFirstResponder()
+        if self.startFromCurrentLocation {
+            setStartingFromCurrentLocation()
+        }
+        else {
+            routeHeaderView.startTextField.becomeFirstResponder()
+        }
+        
     }
     
     deinit {
@@ -145,6 +152,13 @@ class RouteViewController: UIViewController {
         } else {
             routeHeaderView.setRouteButtonActive(false)
         }
+    }
+    
+    func setStartingFromCurrentLocation() {
+        routeHeaderView.startTextField.text = currentLocationText
+        routeHeaderView.endTextField.becomeFirstResponder()
+        
+        preRouteCheck()
     }
 }
 
@@ -289,10 +303,32 @@ extension RouteViewController {
             routeHeaderView.endTextField.resignFirstResponder()
         }
         
-        let startPoint: PWMapPoint? = startPointOfInterest as? PWMapPoint
-        
-        let endPoint: PWMapPoint? = endPointOfInterest as? PWMapPoint
-        
+        var startPoint: PWMapPoint? = startPointOfInterest as? PWMapPoint
+        if startPoint == nil, let startText = routeHeaderView.startTextField.text {
+            if startText == currentLocationText {
+                if mapView.indoorUserLocation == nil {
+                    currentLocationNotFound()
+                    return
+                }
+                else {
+                    startPoint = mapView.indoorUserLocation
+                }
+            }
+        }
+
+        var endPoint: PWMapPoint? = endPointOfInterest as? PWMapPoint
+        if endPoint == nil, let endText = routeHeaderView.endTextField.text {
+            if endText == currentLocationText {
+                if mapView.indoorUserLocation == nil {
+                    currentLocationNotFound()
+                    return
+                }
+                else {
+                    endPoint = mapView.indoorUserLocation
+                }
+            }
+        }
+
         if let startPoint = startPoint, let endPoint = endPoint {
             // Generate the route using the current accessibility and landmark options.
             let routeOptions = PWRouteOptions(accessibilityEnabled: routeHeaderView.accessibilityButton.isSelected,
@@ -323,6 +359,16 @@ extension RouteViewController {
             self.present(routeNotFoundAlert, animated: true, completion: nil)
         }
     }
+    
+    func currentLocationNotFound() {
+        DispatchQueue.main.async {
+            let routeNotFoundAlert = UIAlertController(title: nil, message: NSLocalizedString("Current location is not available", comment: ""), preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: .default, handler: nil)
+            routeNotFoundAlert.addAction(okayAction)
+            self.present(routeNotFoundAlert, animated: true, completion: nil)
+        }
+    }
+
     
     @objc func currentLocationTapped() {
         if routeHeaderView.endTextField.isEditing {
