@@ -10,6 +10,8 @@
 		3866167325D1A7D000E64675 /* RouteHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866167225D1A7D000E64675 /* RouteHeaderView.swift */; };
 		3866167625D1A83400E64675 /* RoutePOITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866167525D1A83400E64675 /* RoutePOITableViewCell.swift */; };
 		3866167A25D1AA3100E64675 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866167925D1AA3100E64675 /* Array+Extension.swift */; };
+		386616C125D631B600E64675 /* FloorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386616C025D631B500E64675 /* FloorPickerView.swift */; };
+		386616C425D6358000E64675 /* FloorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386616C325D6358000E64675 /* FloorPickerView.xib */; };
 		3884B0D225CCDBBC00253254 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3884B0D125CCDBBC00253254 /* RouteViewController.swift */; };
 		7E87A2F2222478FF004ABFE9 /* OffRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */; };
 		7EFF9C602232FCD3002BDD0A /* OffRouteModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */; };
@@ -63,6 +65,8 @@
 		3866167225D1A7D000E64675 /* RouteHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteHeaderView.swift; sourceTree = "<group>"; };
 		3866167525D1A83400E64675 /* RoutePOITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutePOITableViewCell.swift; sourceTree = "<group>"; };
 		3866167925D1AA3100E64675 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		386616C025D631B500E64675 /* FloorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPickerView.swift; sourceTree = "<group>"; };
+		386616C325D6358000E64675 /* FloorPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloorPickerView.xib; sourceTree = "<group>"; };
 		3884B0D125CCDBBC00253254 /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 		7E87A2F1222478FF004ABFE9 /* OffRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteViewController.swift; sourceTree = "<group>"; };
 		7EFF9C5F2232FCD3002BDD0A /* OffRouteModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffRouteModalViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		386616BF25D6319600E64675 /* FloorPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				386616C025D631B500E64675 /* FloorPickerView.swift */,
+				386616C325D6358000E64675 /* FloorPickerView.xib */,
+			);
+			path = FloorPickerView;
+			sourceTree = "<group>";
+		};
 		3884B0D025CCDB8A00253254 /* Route */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +167,7 @@
 		9AC881AC2370997200FCDEFC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				386616BF25D6319600E64675 /* FloorPickerView */,
 				9AC881AD2370998300FCDEFC /* TurnByTurnCollectionView */,
 				E3785834222735540059A179 /* Route Instruction List */,
 				9AC881AE237099E200FCDEFC /* WalkTimeView */,
@@ -363,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3785838222737F50059A179 /* RouteInstructionListCell.xib in Resources */,
+				386616C425D6358000E64675 /* FloorPickerView.xib in Resources */,
 				9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */,
 				E3C379A6204D90AA00905731 /* LaunchScreen.storyboard in Resources */,
 				E3C379A3204D90AA00905731 /* Assets.xcassets in Resources */,
@@ -382,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C76E7C204DEE2900780D0F /* LoadBuildingViewController.swift in Sources */,
+				386616C125D631B600E64675 /* FloorPickerView.swift in Sources */,
 				E3ED03EE22415A1B00E394F5 /* CLLocationManager+Helper.swift in Sources */,
 				7E87A2F2222478FF004ABFE9 /* OffRouteViewController.swift in Sources */,
 				9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */,

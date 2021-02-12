@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -392,73 +391,9 @@
                     <view key="view" contentMode="scaleToFill" id="LAs-TO-C2M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-Dv-knV" userLabel="Floor Switch Container View">
-                                <rect key="frame" x="0.0" y="460" width="375" height="207"/>
-                                <subviews>
-                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgW-Ks-Vpg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3FN-gD-Uev">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </view>
-                                        <blurEffect style="regular"/>
-                                    </visualEffectView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQz-q1-WZ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="rZl-0f-HuP"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Building &amp; Floor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPW-rR-4Wn">
-                                        <rect key="frame" x="0.0" y="9" width="375" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PqR-0Z-1Ip">
-                                        <rect key="frame" x="0.0" y="37" width="375" height="170"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="170" id="WY8-x3-s1z"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="dataSource" destination="yd7-y4-KGh" id="kzG-EM-hE5"/>
-                                            <outlet property="delegate" destination="yd7-y4-KGh" id="Mgc-8C-1WR"/>
-                                        </connections>
-                                    </pickerView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="TgW-Ks-Vpg" secondAttribute="bottom" id="0wh-kA-f9k"/>
-                                    <constraint firstItem="PPW-rR-4Wn" firstAttribute="top" secondItem="QQz-q1-WZ8" secondAttribute="bottom" constant="8" id="3CB-tM-Kzr"/>
-                                    <constraint firstItem="QQz-q1-WZ8" firstAttribute="top" secondItem="hrj-Dv-knV" secondAttribute="top" id="AmM-1G-AIZ"/>
-                                    <constraint firstItem="TgW-Ks-Vpg" firstAttribute="top" secondItem="hrj-Dv-knV" secondAttribute="top" id="Bpz-W4-1RE"/>
-                                    <constraint firstItem="PqR-0Z-1Ip" firstAttribute="leading" secondItem="hrj-Dv-knV" secondAttribute="leading" id="DYE-ww-zp7"/>
-                                    <constraint firstAttribute="trailing" secondItem="QQz-q1-WZ8" secondAttribute="trailing" id="Fhm-H4-0nU"/>
-                                    <constraint firstItem="PqR-0Z-1Ip" firstAttribute="top" secondItem="PPW-rR-4Wn" secondAttribute="bottom" constant="8" id="Kex-Pd-szn"/>
-                                    <constraint firstAttribute="trailing" secondItem="PqR-0Z-1Ip" secondAttribute="trailing" id="LCj-rs-GH0"/>
-                                    <constraint firstItem="PPW-rR-4Wn" firstAttribute="leading" secondItem="hrj-Dv-knV" secondAttribute="leading" id="QVT-xf-p4a"/>
-                                    <constraint firstAttribute="trailing" secondItem="TgW-Ks-Vpg" secondAttribute="trailing" id="QfV-Sf-lu6"/>
-                                    <constraint firstItem="QQz-q1-WZ8" firstAttribute="leading" secondItem="hrj-Dv-knV" secondAttribute="leading" id="Wek-F6-hiM"/>
-                                    <constraint firstItem="TgW-Ks-Vpg" firstAttribute="leading" secondItem="hrj-Dv-knV" secondAttribute="leading" id="iAx-Re-vRG"/>
-                                    <constraint firstAttribute="trailing" secondItem="PPW-rR-4Wn" secondAttribute="trailing" id="lFM-G8-vY0"/>
-                                    <constraint firstAttribute="bottom" secondItem="PqR-0Z-1Ip" secondAttribute="bottom" id="wEY-ex-gY3"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="R2B-c9-qeM"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="hrj-Dv-knV" firstAttribute="leading" secondItem="R2B-c9-qeM" secondAttribute="leading" id="F83-yD-ZZD"/>
-                            <constraint firstAttribute="bottom" secondItem="hrj-Dv-knV" secondAttribute="bottom" id="IHQ-pk-8Ja"/>
-                            <constraint firstItem="hrj-Dv-knV" firstAttribute="trailing" secondItem="R2B-c9-qeM" secondAttribute="trailing" id="JJ3-X8-PfM"/>
-                            <constraint firstItem="hrj-Dv-knV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="R2B-c9-qeM" secondAttribute="top" id="xD1-6Z-JGb"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="floorSwitchContainerView" destination="hrj-Dv-knV" id="OYk-vZ-u8r"/>
-                        <outlet property="floorSwitchPickerView" destination="PqR-0Z-1Ip" id="hSg-7w-7VB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxH-I0-NXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -608,73 +543,9 @@
                     <view key="view" contentMode="scaleToFill" id="KF4-mh-Dso">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="19d-S6-r7l" userLabel="Floor Switch Container View">
-                                <rect key="frame" x="0.0" y="460" width="375" height="207"/>
-                                <subviews>
-                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhZ-Gv-96R">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Gag-c4-ETs">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </view>
-                                        <blurEffect style="regular"/>
-                                    </visualEffectView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IoO-6r-xEp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="NaI-gO-gHh"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Building &amp; Floor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xki-ZQ-BoX">
-                                        <rect key="frame" x="0.0" y="9" width="375" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DY-Lw-dBp">
-                                        <rect key="frame" x="0.0" y="37" width="375" height="170"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="170" id="4yI-EG-T9c"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="dataSource" destination="xbf-D4-JYn" id="In0-he-qku"/>
-                                            <outlet property="delegate" destination="xbf-D4-JYn" id="GLD-1q-fmg"/>
-                                        </connections>
-                                    </pickerView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="IoO-6r-xEp" secondAttribute="trailing" id="2ZS-IF-3r4"/>
-                                    <constraint firstItem="Xki-ZQ-BoX" firstAttribute="leading" secondItem="19d-S6-r7l" secondAttribute="leading" id="2ra-RB-PwN"/>
-                                    <constraint firstAttribute="trailing" secondItem="zhZ-Gv-96R" secondAttribute="trailing" id="383-fK-eKt"/>
-                                    <constraint firstAttribute="trailing" secondItem="Xki-ZQ-BoX" secondAttribute="trailing" id="Hut-39-BVy"/>
-                                    <constraint firstItem="zhZ-Gv-96R" firstAttribute="top" secondItem="19d-S6-r7l" secondAttribute="top" id="LFy-yf-5br"/>
-                                    <constraint firstItem="7DY-Lw-dBp" firstAttribute="top" secondItem="Xki-ZQ-BoX" secondAttribute="bottom" constant="8" id="U88-6H-jwU"/>
-                                    <constraint firstAttribute="trailing" secondItem="7DY-Lw-dBp" secondAttribute="trailing" id="ZvV-v2-Cee"/>
-                                    <constraint firstAttribute="bottom" secondItem="zhZ-Gv-96R" secondAttribute="bottom" id="cZM-Ro-EhI"/>
-                                    <constraint firstItem="zhZ-Gv-96R" firstAttribute="leading" secondItem="19d-S6-r7l" secondAttribute="leading" id="fxB-Pc-1Zr"/>
-                                    <constraint firstItem="IoO-6r-xEp" firstAttribute="leading" secondItem="19d-S6-r7l" secondAttribute="leading" id="h6o-7o-8ID"/>
-                                    <constraint firstItem="Xki-ZQ-BoX" firstAttribute="top" secondItem="IoO-6r-xEp" secondAttribute="bottom" constant="8" id="p4Q-rV-iSu"/>
-                                    <constraint firstAttribute="bottom" secondItem="7DY-Lw-dBp" secondAttribute="bottom" id="tWl-Wh-qSd"/>
-                                    <constraint firstItem="7DY-Lw-dBp" firstAttribute="leading" secondItem="19d-S6-r7l" secondAttribute="leading" id="xUn-Zd-8zu"/>
-                                    <constraint firstItem="IoO-6r-xEp" firstAttribute="top" secondItem="19d-S6-r7l" secondAttribute="top" id="zvD-Mg-qcU"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pac-Vf-Qin"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="19d-S6-r7l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pac-Vf-Qin" secondAttribute="top" id="BZl-sc-9fg"/>
-                            <constraint firstItem="19d-S6-r7l" firstAttribute="leading" secondItem="pac-Vf-Qin" secondAttribute="leading" id="HVm-vM-4ii"/>
-                            <constraint firstItem="19d-S6-r7l" firstAttribute="trailing" secondItem="pac-Vf-Qin" secondAttribute="trailing" id="XPl-iF-BIA"/>
-                            <constraint firstItem="pac-Vf-Qin" firstAttribute="bottom" secondItem="19d-S6-r7l" secondAttribute="bottom" id="vYI-D0-Dej"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="floorSwitchContainerView" destination="19d-S6-r7l" id="27J-m1-b7e"/>
-                        <outlet property="floorSwitchPickerView" destination="7DY-Lw-dBp" id="nXH-eh-Swn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXg-wR-W7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -931,12 +802,6 @@
         <image name="reverse" width="25.5" height="21.5"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -53,7 +53,8 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
         configureMapViewConstraints()
         searchController.searchBar.barStyle = .black
         navigationItem.searchController = searchController
-        
+        addFloorPickerView()
+                
         // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
         // Otherwise, we will use PWBuilding.building to route between floors in a single building.
         if campusIdentifier != 0 {
@@ -84,6 +85,9 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
                 })
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
     }
     
     deinit {
@@ -127,6 +131,12 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Points of Interest"
         searchController.searchBar.delegate = self
+    }
+    
+    func addFloorPickerView() {
+        let bundleName = String(describing: FloorPickerView.self)
+        let floorPickerView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! FloorPickerView
+        floorPickerView.configureInView(view, withMapView: mapView)
     }
 }
 

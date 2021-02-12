@@ -22,8 +22,8 @@
                         <constraint firstAttribute="height" constant="1" id="bWL-UN-dNH"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fH6-Ad-PUc">
-                    <rect key="frame" x="18" y="10" width="221" height="70"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fH6-Ad-PUc">
+                    <rect key="frame" x="18" y="10" width="339" height="70"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5b-1u-OkT">
                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -63,6 +63,7 @@
             <constraints>
                 <constraint firstItem="xL9-Rb-Kmt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="7Xk-Yd-KO8"/>
                 <constraint firstItem="fH6-Ad-PUc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="HBe-XH-GGN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fH6-Ad-PUc" secondAttribute="trailing" constant="18" id="Nmj-Rl-vBj"/>
                 <constraint firstItem="fH6-Ad-PUc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="da2-GQ-LeH"/>
                 <constraint firstItem="xL9-Rb-Kmt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ibH-rf-MvI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fH6-Ad-PUc" secondAttribute="bottom" id="tqs-yL-z5N"/>
