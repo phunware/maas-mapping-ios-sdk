@@ -11,14 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FloorPickerView" customModule="MapScenarios" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB" customClass="FloorPickerView" customModule="MapScenarios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
             <subviews>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tj0-6w-LOg">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UX5-zb-RwU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <blurEffect style="regular"/>
@@ -27,18 +26,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
                     <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="GSz-pZ-i8g"/>
                         <constraint firstAttribute="height" constant="1" id="bAW-Qx-WVE"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Building &amp; Floor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-rc-lmB" userLabel="Choose Build &amp; Floor">
-                    <rect key="frame" x="0.0" y="8" width="414" height="13"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Choose Building &amp; Floor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-rc-lmB" userLabel="Choose Build &amp; Floor">
+                    <rect key="frame" x="0.0" y="9" width="414" height="29"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                     <color key="textColor" systemColor="secondaryLabelColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBY-12-6B4">
-                    <rect key="frame" x="0.0" y="29" width="414" height="170"/>
+                    <rect key="frame" x="0.0" y="46" width="414" height="170"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="170" id="PYX-b9-GhI"/>
                     </constraints>
@@ -49,21 +47,20 @@
                 </pickerView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="MwJ-XK-39B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Big-aA-pKo"/>
                 <constraint firstItem="Tj0-6w-LOg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I3v-7n-L2T"/>
                 <constraint firstItem="MwJ-XK-39B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JJ3-Cm-pUs"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QBY-12-6B4" secondAttribute="trailing" id="KWa-zW-kga"/>
                 <constraint firstItem="Vf5-rc-lmB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UZj-Qf-99F"/>
-                <constraint firstItem="Vf5-rc-lmB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="VEK-tW-YXB"/>
+                <constraint firstItem="Vf5-rc-lmB" firstAttribute="top" secondItem="MwJ-XK-39B" secondAttribute="bottom" constant="8" id="fDu-ua-LwK"/>
                 <constraint firstItem="QBY-12-6B4" firstAttribute="top" secondItem="Vf5-rc-lmB" secondAttribute="bottom" constant="8" id="kqi-oG-pLU"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tj0-6w-LOg" secondAttribute="trailing" id="mzu-Kp-6p0"/>
                 <constraint firstItem="QBY-12-6B4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="nGh-li-cng"/>
                 <constraint firstAttribute="trailing" secondItem="MwJ-XK-39B" secondAttribute="trailing" id="nlo-Iy-OBu"/>
-                <constraint firstAttribute="bottom" secondItem="QBY-12-6B4" secondAttribute="bottom" constant="8" id="ofj-bn-x0K"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QBY-12-6B4" secondAttribute="bottom" constant="8" id="ofj-bn-x0K"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Vf5-rc-lmB" secondAttribute="trailing" id="qXy-ei-yuk"/>
-                <constraint firstItem="Tj0-6w-LOg" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="qeg-OS-Ivh"/>
+                <constraint firstItem="Tj0-6w-LOg" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="qeg-OS-Ivh"/>
                 <constraint firstItem="Tj0-6w-LOg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="spp-TD-XXq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -71,7 +68,7 @@
                 <outlet property="floorSwitchPickerView" destination="QBY-12-6B4" id="zFP-vw-C1c"/>
                 <outlet property="title" destination="Vf5-rc-lmB" id="tw4-T9-Bio"/>
             </connections>
-            <point key="canvasLocation" x="140.57971014492756" y="71.986607142857139"/>
+            <point key="canvasLocation" x="140.57971014492756" y="77.008928571428569"/>
         </view>
     </objects>
     <resources>
@@ -80,9 +77,6 @@
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

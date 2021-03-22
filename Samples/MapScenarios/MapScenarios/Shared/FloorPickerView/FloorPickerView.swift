@@ -115,20 +115,20 @@ private extension FloorPickerView {
         view.addSubview(self)
         
         translatesAutoresizingMaskIntoConstraints = false
-        bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0).isActive = true
+        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0.0).isActive = true
         leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        heightAnchor.constraint(equalToConstant: 207.0).isActive = true    }
+    }
 }
 // MARK: - UIPickerViewDelegate
 
 extension FloorPickerView: UIPickerViewDelegate {
     private var buildingComponentWidth: CGFloat {
-        return floorSwitchPickerView.frame.width / 2 // * (1 / 3.0)
+        return floorSwitchPickerView.frame.width / 2
     }
     
     private var floorComponentWidth: CGFloat {
-        return floorSwitchPickerView.frame.width / 2 // * (2 / 3.0)
+        return floorSwitchPickerView.frame.width / 2
     }
     
     private var componentHeight: CGFloat {
