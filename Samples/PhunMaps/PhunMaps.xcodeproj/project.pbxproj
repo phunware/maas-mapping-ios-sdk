@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6870F78BE2676C29D8125DE7 /* Pods_PhunMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA9BC84CC9E098D0D22209C /* Pods_PhunMaps.framework */; };
 		8B3793771F02B53600A6F3CE /* POITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3793751F02B53600A6F3CE /* POITableViewCell.swift */; };
 		8B3793781F02B53600A6F3CE /* POITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3793761F02B53600A6F3CE /* POITableViewCell.xib */; };
 		8B91F9B21EFC201900356F9D /* POISearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B91F9B11EFC201900356F9D /* POISearchable.swift */; };
@@ -55,14 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0CA9BC84CC9E098D0D22209C /* Pods_PhunMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhunMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2110ABC56DB0367846C3BC73 /* Pods-PhunMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhunMaps.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhunMaps/Pods-PhunMaps.release.xcconfig"; sourceTree = "<group>"; };
-		7738F9A0E730E31D37651734 /* Pods-Mapping-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapping-Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mapping-Sample/Pods-Mapping-Sample.release.xcconfig"; sourceTree = "<group>"; };
-		8415DD9D088EAD95C8D6546C /* Pods-PhunMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhunMaps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhunMaps/Pods-PhunMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		8B3793751F02B53600A6F3CE /* POITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = POITableViewCell.swift; path = ../Storyboards/POITableViewCell.swift; sourceTree = "<group>"; };
 		8B3793761F02B53600A6F3CE /* POITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POITableViewCell.xib; path = ../Storyboards/POITableViewCell.xib; sourceTree = "<group>"; };
 		8B91F9B11EFC201900356F9D /* POISearchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POISearchable.swift; sourceTree = "<group>"; };
-		CBD0965F180D0C84BC5354B9 /* Pods-Mapping-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapping-Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mapping-Sample/Pods-Mapping-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		E32CF07F1F3B66E100564F39 /* RouteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteListViewController.swift; sourceTree = "<group>"; };
 		E32CF0811F3BAFBA00564F39 /* RouteInstructionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteInstructionCell.swift; sourceTree = "<group>"; };
 		E32CF0851F3C9A9400564F39 /* RouteInstructionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteInstructionHeaderView.xib; sourceTree = "<group>"; };
@@ -89,7 +83,6 @@
 		E3D921881EF9A576004F8961 /* RouteLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteLabelCell.swift; sourceTree = "<group>"; };
 		E3D9218A1EF9AC2B004F8961 /* PreRouteInstructionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreRouteInstructionCell.swift; sourceTree = "<group>"; };
 		E3D921901EFC479B004F8961 /* ShowAllInstructionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllInstructionsCell.swift; sourceTree = "<group>"; };
-		EFA8D9D747315DE9FECE438B /* Pods_Mapping_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mapping_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB20A9441EF0721300F1083F /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		FB20A9451EF0721300F1083F /* ConfigurationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 		FB20A94C1EF0721300F1083F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -115,31 +108,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6870F78BE2676C29D8125DE7 /* Pods_PhunMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52417486AC0B489611834212 /* Pods */ = {
+		56210C65D42C3D9774CA5280 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CBD0965F180D0C84BC5354B9 /* Pods-Mapping-Sample.debug.xcconfig */,
-				7738F9A0E730E31D37651734 /* Pods-Mapping-Sample.release.xcconfig */,
-				8415DD9D088EAD95C8D6546C /* Pods-PhunMaps.debug.xcconfig */,
-				2110ABC56DB0367846C3BC73 /* Pods-PhunMaps.release.xcconfig */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C75D57899BF30DDD28C3F746 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EFA8D9D747315DE9FECE438B /* Pods_Mapping_Sample.framework */,
-				0CA9BC84CC9E098D0D22209C /* Pods_PhunMaps.framework */,
-			);
-			name = Frameworks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E3424EC81EDF0FBF002ADA73 = {
@@ -147,8 +126,7 @@
 			children = (
 				E3424ED31EDF0FBF002ADA73 /* PhunMaps */,
 				E3424ED21EDF0FBF002ADA73 /* Products */,
-				52417486AC0B489611834212 /* Pods */,
-				C75D57899BF30DDD28C3F746 /* Frameworks */,
+				56210C65D42C3D9774CA5280 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,11 +254,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3424EE31EDF0FBF002ADA73 /* Build configuration list for PBXNativeTarget "PhunMaps" */;
 			buildPhases = (
-				7290B44F836966DF350EF17E /* [CP] Check Pods Manifest.lock */,
 				E3424ECD1EDF0FBF002ADA73 /* Sources */,
 				E3424ECE1EDF0FBF002ADA73 /* Frameworks */,
 				E3424ECF1EDF0FBF002ADA73 /* Resources */,
-				669259F175427771F68B4A76 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,7 +274,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Phunware;
 				TargetAttributes = {
 					E3424ED01EDF0FBF002ADA73 = {
@@ -351,55 +327,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		669259F175427771F68B4A76 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PhunMaps/Pods-PhunMaps-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
-				"${BUILT_PRODUCTS_DIR}/TMCache/TMCache.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PWCore/PWCore.framework/PWCore",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PWLocation/PWLocation.framework/PWLocation",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PWMapKit/PWMapKit.framework/PWMapKit",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWLocation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWMapKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhunMaps/Pods-PhunMaps-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7290B44F836966DF350EF17E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PhunMaps-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3424ECD1EDF0FBF002ADA73 /* Sources */ = {
@@ -472,6 +399,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -496,13 +424,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -532,6 +460,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -550,18 +479,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		E3424EE41EDF0FBF002ADA73 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8415DD9D088EAD95C8D6546C /* Pods-PhunMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -569,7 +497,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = PhunMaps/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.PhunMaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -579,19 +506,18 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E3424EE51EDF0FBF002ADA73 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2110ABC56DB0367846C3BC73 /* Pods-PhunMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = PhunMaps/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.PhunMaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -600,6 +526,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
