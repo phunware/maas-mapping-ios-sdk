@@ -13,6 +13,8 @@
 @class PWLandmark;
 @protocol PWMapPoint;
 
+NS_ASSUME_NONNULL_BEGIN
+
 // APENDLEY: What are these for? They don't seem to be used by the SDK, and they don't seem useful to customers either.
 // TODO: Find out from product team if these are being refrenced by customers, and if not, remove them.
 static NSString *const kPWRouteInstructionDirectionSharpLeft = @"PWRouteInstructionDirectionSharpLeft";
@@ -30,7 +32,7 @@ static NSString *const kPWRouteInstructionDirectionEscalatorDown = @"PWRouteInst
 /**
  * The `PWRouteInstructionDirection` defines the directions of route.
  */
-typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
+typedef NS_CLOSED_ENUM(NSUInteger, PWRouteInstructionDirection) {
     /** Indicates a straight route instruction */
     PWRouteInstructionDirectionStraight,
     /** Indicates a left-turn route instruction */
@@ -99,7 +101,7 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 /**
  * Landmarks included in this instruction
  */
-@property (readonly, nonatomic, nullable) NSArray<PWLandmark*> *landmarks;
+@property (readonly, nonatomic, nullable) NSArray<PWLandmark *> *landmarks;
 
 /**
  A flag indicating if it's the last route instruction in the associated route.
@@ -146,18 +148,20 @@ typedef NS_ENUM(NSUInteger, PWRouteInstructionDirection) {
 /**
  * An NSString object representing the turn instruction for the current instruction instance.
  */
-@property (readonly, nonatomic) NSString *turn __deprecated;
+@property (readonly, nonatomic, nullable) NSString *turn __deprecated;
 
 /**
  * A reference to the origin, or start point-of-interest, for the route. It may be nil when it's a way point instead of point-of-interest.
  * @discussion Replace with points.firstObject.
  */
-@property (readonly, nonatomic) PWPointOfInterest *startPointOfInterest __deprecated;
+@property (readonly, nonatomic, nullable) PWPointOfInterest *startPointOfInterest __deprecated;
 
 /**
  * A reference to the destination, or end point-of-interest, for the route. It may be nil when it's a way point instead of point-of-interest.
  * @discussion Replace with points.lastObject.
  */
-@property (readonly, nonatomic) PWPointOfInterest *endPointOfInterest __deprecated;
+@property (readonly, nonatomic, nullable) PWPointOfInterest *endPointOfInterest __deprecated;
 
 @end
+
+NS_ASSUME_NONNULL_END

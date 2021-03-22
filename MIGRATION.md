@@ -1,4 +1,22 @@
 # PWMapKit Migration Guide
+## Upgrade from 3.10.x to 3.11.x
+
+#### General
+
+This release adds campus routing features.
+
+#### Change Detail
+
+#### PWMapKit
+
+*ADDED*
+
+*`- (void)setCampus:(PWCampus *)campus animated:(BOOL)animated onCompletion:(void (^)(NSError *error))completion;`
+
+#### Upgrade Steps
+
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.11.x'`, then run `pod update` in the Terminal to update the framework.
+
 ## Upgrade from 3.9.x to 3.10.x
 
 #### General

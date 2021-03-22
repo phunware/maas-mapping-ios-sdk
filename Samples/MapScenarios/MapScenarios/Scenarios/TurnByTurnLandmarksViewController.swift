@@ -7,40 +7,35 @@
 //
 
 import Foundation
-import UIKit
 import PWCore
 import PWMapKit
+import UIKit
 
 // MARK: - TurnByTurnLandmarksViewController
+
 class TurnByTurnLandmarksViewController: UIViewController, ScenarioProtocol {
-    
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
+    var campusIdentifier = 0
+    
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier: Int = 0
-    
-    // Destination POI identifier for routing
-    private var startPOIIdentifier: Int = 0
-    private var destinationPOIIdentifier: Int = 0
     
     private let mapView = PWMapView()
     
     private var turnByTurnCollectionView: TurnByTurnCollectionView?
+    private var routeButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Route - Turn By Turn with Landmarks"
+        navigationItem.title = "Route with Landmarks"
         
         if !validateScenarioSettings() {
-            return
-        }
-        
-        if startPOIIdentifier == destinationPOIIdentifier || destinationPOIIdentifier == 0 {
-            warning("Please put valid data for 'startPOIIdentifier' and 'destinationPOIIdentifier'")
             return
         }
         
@@ -48,32 +43,108 @@ class TurnByTurnLandmarksViewController: UIViewController, ScenarioProtocol {
         
         view.addSubview(mapView)
         configureMapViewConstraints()
+        configureRouteButton()
         
-        // Start loading building
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] campus, error in
                 if let error = error {
                     self?.warning(error.localizedDescription)
                     return
                 }
                 
-                self?.startRoute()
-            })
+                self?.mapView.setCampus(campus, animated: true, onCompletion: nil)
+            }
+        } else {
+            // Start loading building
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] building, error in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+                
+                self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
+            }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         turnByTurnCollectionView?.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        turnByTurnCollectionView?.isHidden = true
         super.viewWillDisappear(animated)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        if identifier == String(describing: RouteViewController.self) {
+            if let routeViewController = segue.destination as? RouteViewController {
+                routeViewController.delegate = self
+                routeViewController.mapView = mapView
+                routeViewController.landmarkEnabled = true
+            }
+        }
+    }
+}
+
+// MARK: - private
+
+private extension TurnByTurnLandmarksViewController {
+    func configureMapViewConstraints() {
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    func cancelRouting() {
+        mapView.cancelRouting()
+        routeButton?.image = UIImage(named: "RoadSign")
+        routeButton?.title = nil
+        turnByTurnCollectionView?.removeFromSuperview()
+        turnByTurnCollectionView = nil
+    }
+    
+    func configureRouteButton() {
+        let floorImage = UIImage(named: "RoadSign")
+        routeButton = UIBarButtonItem(image: floorImage, style: .plain, target: self, action: #selector(routeButtonTapped))
+        navigationItem.rightBarButtonItem = routeButton
+    }
+    
+    @objc func routeButtonTapped() {
+        guard mapView.floors?.isEmpty == false else {
+            return
+        }
+        
+        if mapView.currentRoute != nil {
+            cancelRouting()
+        } else {
+            performSegue(withIdentifier: String(describing: RouteViewController.self), sender: nil)
+        }
+    }
+    
+    func initializeTurnByTurn() {
+        if let currentRoute = mapView.currentRoute,
+            let routeInstructions = currentRoute.routeInstructions {
+            mapView.setRouteManeuver(routeInstructions.first)
+        }
+        
+        if turnByTurnCollectionView == nil {
+            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
+            turnByTurnCollectionView?.turnByTurnDelegate = self
+            turnByTurnCollectionView?.configureInView(view)
+        }
     }
 }
 
 // MARK: - TurnByTurnCollectionViewDelegate
+
 extension TurnByTurnLandmarksViewController: TurnByTurnCollectionViewDelegate {
     func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel {
         // We'll use the LandmarkInstructionViewModel to generate the view model for our collection view cells,
@@ -90,6 +161,7 @@ extension TurnByTurnLandmarksViewController: TurnByTurnCollectionViewDelegate {
 }
 
 // MARK: - RouteInstructionListViewControllerDelegate
+
 extension TurnByTurnLandmarksViewController: RouteInstructionListViewControllerDelegate {
     func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
         -> InstructionViewModel {
@@ -97,62 +169,17 @@ extension TurnByTurnLandmarksViewController: RouteInstructionListViewControllerD
     }
 }
 
-// MARK: - private
-private extension TurnByTurnLandmarksViewController {
-    func configureMapViewConstraints() {
-        mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    }
-    
-    func startRoute() {
-        // Set tracking mode to follow me
-        mapView.trackingMode = .follow
+// MARK: - RouteViewDelegate
+
+extension TurnByTurnLandmarksViewController: RouteViewDelegate {
+    func routeSelected(_ route: PWRoute) {
+        let routeUIOptions = PWRouteUIOptions()
+        mapView.navigate(with: route, options: routeUIOptions)
         
-        // Find the destination POI
-        guard let startPOI = mapView.building.pois.first(where: { $0.identifier == startPOIIdentifier }),
-            let destinationPOI = mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier }) else {
-            warning("Please put valid data for 'startPOIIdentifier' and 'destinationPOIIdentifier'")
-            return
-        }
+        routeButton?.image = nil
+        routeButton?.title = "Cancel"
         
-        // Create a PWRouteOptions object with landmarksEnabled set to true so landmarks will be injected into route info (if available)
-        let routeOptions = PWRouteOptions(accessibilityEnabled: false,
-                                          landmarksEnabled: true,
-                                          excludedPointIdentifiers: nil)
-        
-        // Calculate a route and plot on the map with our specified route options
-        PWRoute.createRoute(from: startPOI,
-                            to: destinationPOI,
-                            options: routeOptions,
-                            completion: { [weak self] (route, error) in
-            guard let self = self else {
-                return
-            }
-                                
-            guard let route = route else {
-                self.warning("Couldn't find a route between POI(\(self.startPOIIdentifier)) and POI(\(self.destinationPOIIdentifier)).")
-                return
-            }
-            
-            // Plot route on the map
-            let uiOptions = PWRouteUIOptions()
-            self.mapView.navigate(with: route, options: uiOptions)
-            
-            // Initial route instructions
-            self.initializeTurnByTurn()
-        })
-    }
-    
-    func initializeTurnByTurn() {
-        mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
-        
-        if turnByTurnCollectionView == nil {
-            turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
-            turnByTurnCollectionView?.turnByTurnDelegate = self
-            turnByTurnCollectionView?.configureInView(view)
-        }
+        // Initial route instructions
+        initializeTurnByTurn()
     }
 }

@@ -19,6 +19,9 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
+    var campusIdentifier = 0
+
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
     
@@ -27,7 +30,7 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
     // Search view
     private let tableView = UITableView()
     private let poiCellReuseIdentifier = "POICell"
-    private var sortedPointsOfInterest = [PWPointOfInterest]()
+    private var pointsOfInterest = [PWPointOfInterest]()
     private var filteredPointsOfInterest = [PWPointOfInterest]()
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -45,18 +48,46 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()
         searchController.searchBar.barStyle = .black
         navigationItem.searchController = searchController
-        
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                DispatchQueue.main.async {
-                    self?.configureTableView()
+        addFloorPickerView()
+                
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
                 }
-            })
+
+                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
+                    DispatchQueue.main.async {
+                        self?.configureTableView()
+                    }
+                })
+            }
         }
+        else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+
+                self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+                    DispatchQueue.main.async {
+                        self?.configureTableView()
+                    }
+                })
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
     }
     
     deinit {
@@ -72,11 +103,11 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
     }
     
     func configureTableView() {
-        let sortedPoints = mapView.building.pois.sorted(by: {
-            return $0.title < $1.title
-        })
-        sortedPointsOfInterest = sortedPoints
-        filteredPointsOfInterest = sortedPointsOfInterest
+        guard let pois = mapView.pois() else {
+            return
+        }
+        pointsOfInterest.append(contentsOf: pois)
+        filteredPointsOfInterest = pointsOfInterest
         configureSearchController()
         tableView.isHidden = true
         tableView.register(POITableViewCell.self, forCellReuseIdentifier: poiCellReuseIdentifier)
@@ -101,6 +132,12 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
         searchController.searchBar.placeholder = "Search Points of Interest"
         searchController.searchBar.delegate = self
     }
+    
+    func addFloorPickerView() {
+        let bundleName = String(describing: FloorPickerView.self)
+        let floorPickerView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! FloorPickerView
+        floorPickerView.configureInView(view, withMapView: mapView)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -120,8 +157,28 @@ extension SearchPOIViewController: UITableViewDataSource {
         
         let pointOfInterest = filteredPointsOfInterest[indexPath.row]
         poiCell.poiImageView.image = pointOfInterest.image
-        poiCell.titleLabel.text = pointOfInterest.title
+        if campusIdentifier != 0 {
+            if let floorName = pointOfInterest.floor?.name,
+               let buildingName = pointOfInterest.floor?.building.name,
+               let poiName = pointOfInterest.title {
+                poiCell.titleLabel.text = "\(buildingName):: \(floorName):: \(poiName)"
+            }
+        }
+        else {
+            if let floorName = pointOfInterest.floor?.name,
+               let poiName = pointOfInterest.title {
+                poiCell.titleLabel.text = "\(floorName):: \(poiName)"
+            }
+        }
         return poiCell
+    }
+}
+
+// MARK: - PWMapViewDelegate
+extension SearchPOIViewController: PWMapViewDelegate {
+    
+    func mapView(_ mapView: PWMapView!, didChange floor: PWFloor!) {
+        mapView.zoomToFitFloor(floor)
     }
 }
 
@@ -134,7 +191,7 @@ extension SearchPOIViewController: UITableViewDelegate {
         self.tableView.isHidden = true
         let pointOfInterest = filteredPointsOfInterest[indexPath.row]
         if mapView.currentFloor.floorID != pointOfInterest.floorID {
-            let newFloor = mapView.building.floor(byId: pointOfInterest.floorID)
+            let newFloor = mapView.getFloorById(pointOfInterest.floorID)
             mapView.currentFloor = newFloor
         }
         mapView.selectAnnotation(pointOfInterest, animated: true)
@@ -146,12 +203,15 @@ extension SearchPOIViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text, searchText.count > 0 else {
-            filteredPointsOfInterest = sortedPointsOfInterest
+            filteredPointsOfInterest = pointsOfInterest
             tableView.reloadData()
             return
         }
-        filteredPointsOfInterest = sortedPointsOfInterest.filter({( pointOfInterest : PWPointOfInterest) -> Bool in
-            return pointOfInterest.title.lowercased().contains(searchText.lowercased())
+        filteredPointsOfInterest = pointsOfInterest.filter({( pointOfInterest : PWPointOfInterest) -> Bool in
+            guard let title = pointOfInterest.title else {
+                return false
+            }
+            return title.lowercased().contains(searchText.lowercased())
         })
         
         tableView.reloadData()

@@ -41,10 +41,14 @@ class MapPreviewCell: UITableViewCell {
 extension MapPreviewCell: PWMapViewDelegate {
     
     func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+        guard let building = route.building else {
+            return
+        }
+        
         if !routeAlreadyStarted {
             routeAlreadyStarted = true
             
-            (mapView as? PWMapView)?.currentFloor = route.building.floor(byId: route.startPoint.floorID)
+            (mapView as? PWMapView)?.currentFloor = building.floor(byId: route.startPoint.floorID)
             (mapView as? PWMapView)?.navigate(with: route)
         }
     }

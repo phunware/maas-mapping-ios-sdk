@@ -7,27 +7,27 @@
 //
 
 import Foundation
-import PWMapKit
 import PWCore
+import PWMapKit
 
 // MARK: - LoadBuildingViewController
+
 class LoadBuildingViewController: UIViewController, ScenarioProtocol {
+    @IBOutlet private var floorSwitchContainerView: UIView!
+    @IBOutlet private var floorSwitchPickerView: UIPickerView!
+    
+    private var firstFloorSwitch = false
     
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
+    var campusIdentifier = 0
+    
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
-    
-    // The starting center coordinate for the camera view. Set this to be the location of your building
-    // (or close to it) so that the camera will already be close to the building location before the building loads.
-    private let initialCenterCoordinate = CLLocationCoordinate2D(latitude: 37.0902, longitude: -95.7129)
-    
-    // The how many meters the camera will display of the map from the center point.
-    // Set to a lower value if you would like the camera to start zoomed in more.
-    private let initialCameraDistance: CLLocationDistance = 10000000
     
     private let mapView = PWMapView()
     
@@ -36,38 +36,70 @@ class LoadBuildingViewController: UIViewController, ScenarioProtocol {
         
         navigationItem.title = "Load Building"
         
+        firstFloorSwitch = false
+        
         if !validateScenarioSettings() {
             return
         }
         
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         
-        // Set initial camera region
-        let region = MKCoordinateRegion(center: initialCenterCoordinate, latitudinalMeters: initialCameraDistance, longitudinalMeters: initialCameraDistance)
-        mapView.setRegion(region, animated: false)
-        
         view.addSubview(mapView)
         configureMapViewConstraints()
-        
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            guard let self = self else {
-                return
+        mapView.delegate = self
+        addFloorPickerView()
+                
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] campus, error in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+                
+                self?.mapView.setCampus(campus, animated: true, onCompletion: nil)
             }
-            
-            if let error = error {
-                self.warning(error.localizedDescription)
-                return
+        } else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] building, error in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+                
+                self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
             }
-            
-            self.mapView.setBuilding(building, animated: true, onCompletion: nil)
         }
     }
-    
+}
+
+// MARK: - User Actions
+
+extension LoadBuildingViewController {
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    func addFloorPickerView() {
+        let bundleName = String(describing: FloorPickerView.self)
+        let floorPickerView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! FloorPickerView
+        floorPickerView.configureInView(view, withMapView: mapView)
+    }
+}
+
+// MARK: - PWMapViewDelegate
+
+extension LoadBuildingViewController: PWMapViewDelegate {
+    func mapView(_ mapView: PWMapView!, didChange floor: PWFloor!) {
+        guard firstFloorSwitch else {
+            firstFloorSwitch = true
+            return
+        }
+        
+        mapView.zoomToFitFloor(floor)
     }
 }

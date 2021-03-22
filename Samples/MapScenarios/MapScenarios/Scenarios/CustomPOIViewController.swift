@@ -19,6 +19,9 @@ class CustomPOIViewController: UIViewController, ScenarioProtocol {
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
+    var campusIdentifier = 0
+
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
     
@@ -36,11 +39,30 @@ class CustomPOIViewController: UIViewController, ScenarioProtocol {
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
         view.addSubview(mapView)
         configureMapViewConstraints()
-        
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { [weak self] (error) in
-                self?.addCustomPointOfInterest()
-            })
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+                
+                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
+                    self?.addCustomPointOfInterest()
+                })
+            }
+        } else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+
+                self?.mapView.setBuilding(building, animated: true, onCompletion: { [weak self] (error) in
+                    self?.addCustomPointOfInterest()
+                })
+            }
         }
     }
     
@@ -53,7 +75,7 @@ class CustomPOIViewController: UIViewController, ScenarioProtocol {
     }
     
     func addCustomPointOfInterest() {
-        let poiLocation = CLLocationCoordinate2DMake(30.359931, -97.742507)
+        let poiLocation = mapView.currentFloor.bottomRight
         let poiTitle = "Custom POI"
         
         // If the image parameter is nil, it will use the POI icon for any specified `pointOfInterestType`. If no image is set and no `pointOfInterestType` is set, the SDK will use this default icon: https://lbs-prod.s3.amazonaws.com/stock_assets/icons/0_higher.png

@@ -67,21 +67,25 @@ class RouteInstructionsViewController: UIViewController {
     }
     
     func updateForInstructionChange(currentIndex: Int) {
-        guard let route = route, route.routeInstructions.count > currentIndex else {
+        guard let route = route,
+              let routeInstructions = route.routeInstructions,
+              routeInstructions.count > currentIndex else {
             return
         }
         
         self.currentIndex = currentIndex
-        let routeInstruction = route.routeInstructions[currentIndex]
+        let routeInstruction = routeInstructions[currentIndex]
         delegate?.didChangeRouteInstruction(route: route, routeInstruction: routeInstruction)
     }
     
     @objc func changeRouteInstruction(notification: Notification) {
-        guard let routeInstruction = notification.object as? PWRouteInstruction, let route = route, route.routeInstructions[self.currentIndex] != routeInstruction else {
+        guard let routeInstruction = notification.object as? PWRouteInstruction,
+              let routeInstructions = route?.routeInstructions,
+              routeInstructions[self.currentIndex] != routeInstruction else {
             return
         }
         
-        if let index = route.routeInstructions.firstIndex(of: routeInstruction) {
+        if let index = routeInstructions.firstIndex(of: routeInstruction) {
             let indexPath = IndexPath(row: index, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         }
@@ -103,7 +107,7 @@ extension RouteInstructionsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let route = route, let routeInstructions = route.routeInstructions else {
+        guard let routeInstructions = route?.routeInstructions else {
             return 0
         }
         return routeInstructions.count
@@ -112,7 +116,7 @@ extension RouteInstructionsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let routeInstructionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: RouteInstructionCollectionViewCell.self), for: indexPath) as? RouteInstructionCollectionViewCell {
-            if let route = route, let routeInstructions = route.routeInstructions, routeInstructions.count > indexPath.row {
+            if let routeInstructions = route?.routeInstructions, routeInstructions.count > indexPath.row {
                 routeInstructionCollectionViewCell.routeInstruction = routeInstructions[indexPath.row]
             }
             cell = routeInstructionCollectionViewCell

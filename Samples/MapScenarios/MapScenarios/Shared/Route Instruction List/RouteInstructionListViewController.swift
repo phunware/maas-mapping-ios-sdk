@@ -93,10 +93,13 @@ extension RouteInstructionListViewController: WalkTimeViewDelegate {
 extension RouteInstructionListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let instructionCount = route?.routeInstructions.count ?? 0
+        guard  let route = route,
+               let routeInstructions = route.routeInstructions else {
+            return 0
+        }
         
         // add 1 because we are going to add a "You have arrived" cell at the end
-        return instructionCount + 1
+        return routeInstructions.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -131,7 +134,6 @@ private extension RouteInstructionListViewController {
         let bundleName = String(describing: WalkTimeView.self)
         let walkTimeView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! WalkTimeView
         self.walkTimeView = walkTimeView
-        walkTimeView.delegate = self
         walkTimeView.updateWalkTime(distance: distance, averageSpeed: averageSpeed)
     }
     

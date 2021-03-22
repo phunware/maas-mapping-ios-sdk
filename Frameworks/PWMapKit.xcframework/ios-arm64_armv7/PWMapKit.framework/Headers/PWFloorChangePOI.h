@@ -6,7 +6,7 @@
 //  Copyright © 2019 Phunware. All rights reserved.
 //
 
-typedef NS_ENUM(NSInteger, PWFloorChangePOI) {
+typedef NS_CLOSED_ENUM(NSInteger, PWFloorChangePOI) {
     PWFloorChangePOIElevator = 20000,
     PWFloorChangePOIStairs = 20001,
     PWFloorChangePOIEscalator = 20003

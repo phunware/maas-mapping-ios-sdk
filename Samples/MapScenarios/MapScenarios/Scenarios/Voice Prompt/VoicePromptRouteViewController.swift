@@ -12,20 +12,21 @@ import PWMapKit
 import UIKit
 
 // MARK: - VoicePromptRouteViewController
+
 class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
-    
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
+    var campusIdentifier = 0
+    
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
     
-    // Replace with the destination POI identifier
-    private let destinationPOIIdentifier = 0
-    
     private let mapView = PWMapView()
+    private var routeButton: UIBarButtonItem?
     private var turnByTurnCollectionView: TurnByTurnCollectionView?
     private let locationManager = CLLocationManager()
     private var firstLocationAcquired = false
@@ -62,29 +63,72 @@ class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
         mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()
+        configureRouteButton()
         
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                self?.locationManager.delegate = self
-                if !CLLocationManager.isAuthorized() {
-                    self?.locationManager.requestWhenInUseAuthorization()
-                } else {
-                    self?.startManagedLocationManager()
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] campus, error in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
                 }
-            })
+                
+                self?.mapView.setCampus(campus, animated: true, onCompletion: { _ in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
+        } else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] building, error in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+                
+                self?.mapView.setBuilding(building, animated: true, onCompletion: { _ in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        turnByTurnCollectionView?.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        turnByTurnCollectionView?.isHidden = true
         super.viewWillDisappear(animated)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        if identifier == String(describing: RouteViewController.self) {
+            if let routeViewController = segue.destination as? RouteViewController {
+                routeViewController.delegate = self
+                routeViewController.mapView = mapView
+                routeViewController.landmarkEnabled = false
+                routeViewController.startFromCurrentLocation = true
+            }
+        }
+    }
+}
+
+// MARK: - private
+
+extension VoicePromptRouteViewController {
     func configureMapViewConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -93,9 +137,52 @@ class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
+    func configureRouteButton() {
+        let floorImage = UIImage(named: "RoadSign")
+        routeButton = UIBarButtonItem(image: floorImage, style: .plain, target: self, action: #selector(routeButtonTapped))
+        navigationItem.rightBarButtonItem = routeButton
+    }
+    
+    func cancelRouting() {
+        mapView.cancelRouting()
+        routeButton?.image = UIImage(named: "RoadSign")
+        routeButton?.title = nil
+        turnByTurnCollectionView?.removeFromSuperview()
+        turnByTurnCollectionView = nil
+    }
+    
+    @objc func routeButtonTapped() {
+        // Set tracking mode to follow me
+        mapView.trackingMode = .follow
+        
+        guard mapView.floors?.isEmpty == false else {
+            return
+        }
+        
+        if mapView.currentRoute != nil {
+            cancelRouting()
+        } else {
+            performSegue(withIdentifier: String(describing: RouteViewController.self), sender: nil)
+        }
+    }
+    
     func startManagedLocationManager() {
-        DispatchQueue.main.async { [weak self] in
-            if let buildingIdentifier = self?.buildingIdentifier {
+        // In order to route between buildings on a campus, we also need to register the
+        // PWManagedLocationManager using campusIdentifier.  Otherwise, we will register
+        // using buildingIdentifier.
+        if campusIdentifier != 0 {
+            DispatchQueue.main.async { [weak self] in
+                guard let campusIdentifier = self?.campusIdentifier else {
+                    return
+                }
+                let managedLocationManager = PWManagedLocationManager(campusId: campusIdentifier)
+                self?.mapView.register(managedLocationManager)
+            }
+        } else {
+            DispatchQueue.main.async { [weak self] in
+                guard let buildingIdentifier = self?.buildingIdentifier else {
+                    return
+                }
                 let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
                 self?.mapView.register(managedLocationManager)
             }
@@ -103,7 +190,10 @@ class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
     }
     
     func initializeTurnByTurn() {
-        mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        guard let routeInstructions = mapView.currentRoute.routeInstructions else {
+            return
+        }
+        mapView.setRouteManeuver(routeInstructions.first)
         
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
@@ -114,8 +204,8 @@ class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
 }
 
 // MARK: - Voice Prompt UI
+
 extension VoicePromptRouteViewController {
-    
     func configureVoiceUI() {
         configureVoicePromptsButton()
         configureVoicePromptsLabel()
@@ -187,31 +277,11 @@ extension VoicePromptRouteViewController {
 }
 
 // MARK: - PWMapViewDelegate
-extension VoicePromptRouteViewController: PWMapViewDelegate {
 
+extension VoicePromptRouteViewController: PWMapViewDelegate {
     func mapView(_ mapView: PWMapView!, locationManager: PWLocationManager!, didUpdateIndoorUserLocation userLocation: PWUserLocation!) {
         if !firstLocationAcquired {
             firstLocationAcquired = true
-            mapView.trackingMode = .follow
-            
-            guard let destinationPOI = getDestinationPOI() else {
-                print("No points of interest found, please add at least one to the building in the Maas portal")
-                return
-            }
-            
-            PWRoute.createRoute(from: mapView.indoorUserLocation,
-                                to: destinationPOI,
-                                options: nil,
-                                completion: { [weak self] (route, error) in
-                guard let route = route else {
-                    print("Couldn't find a route from you current location to the destination.")
-                    return
-                }
-                
-                mapView.navigate(with: route)
-                self?.initializeTurnByTurn()
-                self?.configureVoiceUI()
-            })
         }
     }
     
@@ -220,14 +290,6 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
         
         if speechEnabled {
             readInstructionAloud(instruction)
-        }
-    }
-    
-    private func getDestinationPOI() -> PWPointOfInterest? {
-        if destinationPOIIdentifier == 0 {
-            return mapView.building.pois.first
-        } else {
-            return mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
         }
     }
     
@@ -240,11 +302,12 @@ extension VoicePromptRouteViewController: PWMapViewDelegate {
         let description = error.userInfo["message"] as? String ?? "Unknown Error"
         let message = "\(description) \n Error Code: \(error.code)"
         
-        showAlertForIndoorLocationFailure(withTitle: title , failureMessage: message)
+        showAlertForIndoorLocationFailure(withTitle: title, failureMessage: message)
     }
 }
 
 // MARK: - TurnByTurnCollectionViewDelegate
+
 extension VoicePromptRouteViewController: TurnByTurnCollectionViewDelegate {
     func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView) {
         let routeInstructionViewController = RouteInstructionListViewController()
@@ -254,8 +317,8 @@ extension VoicePromptRouteViewController: TurnByTurnCollectionViewDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate
+
 extension VoicePromptRouteViewController: CLLocationManagerDelegate {
-    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
@@ -267,3 +330,17 @@ extension VoicePromptRouteViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - RouteViewDelegate
+
+extension VoicePromptRouteViewController: RouteViewDelegate {
+    func routeSelected(_ route: PWRoute) {
+        let routeUIOptions = PWRouteUIOptions()
+        mapView.navigate(with: route, options: routeUIOptions)
+        
+        routeButton?.image = nil
+        routeButton?.title = "Cancel"
+        
+        initializeTurnByTurn()
+        configureVoiceUI()
+    }
+}

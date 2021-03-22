@@ -11,6 +11,8 @@
 @class PWPointOfInterest;
 @class PWRouteOptions;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  The `PWRoute` class defines a single route that the user can follow between a requested start and end point. The route object defines the geometry for the route and includes route information you can display to the user, such as the name of the route, its distance and the expected travel time.
  
@@ -20,9 +22,14 @@
 @interface PWRoute : NSObject
 
 /**
+ * A reference to the route's campus object.
+ */
+@property (nonatomic, readonly, nullable) PWCampus *campus;
+
+/**
  * A reference to the route's building object.
  */
-@property (nonatomic,readonly) PWBuilding *building;
+@property (nonatomic, readonly, nullable) PWBuilding *building;
 
 /**
  * A reference to the origin, or start point, for the route.
@@ -38,28 +45,28 @@
  * A reference to the origin, or start point-of-interest, for the route.
  * @deprecated Use `startPoint` instead, since v3.2.0.
  */
-@property (nonatomic,readonly) PWPointOfInterest *startPointOfInterest __deprecated;
+@property (nonatomic, readonly) PWPointOfInterest *startPointOfInterest __deprecated;
 
 /**
  * A reference to the destination, or end point-of-interest, for the route.
  * @deprecated Use `endPoint` instead, since v3.2.0.
  */
-@property (nonatomic,readonly) PWPointOfInterest *endPointOfInterest __deprecated;
+@property (nonatomic, readonly) PWPointOfInterest *endPointOfInterest __deprecated;
 
 /**
  * An array of `PWRouteInstruction` objects containing instructions to follow the route path.
  */
-@property (nonatomic,readonly) NSArray<PWRouteInstruction *> *routeInstructions;
+@property (nonatomic, readonly, nullable) NSArray<PWRouteInstruction *> *routeInstructions;
 
 /**
  * An integer representing the total distance of the route expressed in meters.
  */
-@property (nonatomic,readonly) CLLocationDistance distance;
+@property (nonatomic, readonly) CLLocationDistance distance;
 
 /**
  * An integer representing the estimated time of the route expressed in seconds.
  */
-@property (nonatomic,readonly) NSInteger estimatedTime;
+@property (nonatomic, readonly) NSInteger estimatedTime;
 
 /**
  * A BOOL value that returns YES if the route was calculated with accessibility.
@@ -76,7 +83,7 @@
  *
  *  @deprecated use 'createRouteFrom:to:options:completion:' instead
  */
-+ (void)initRouteFrom:(PWPointOfInterest *)startPoint to:(PWPointOfInterest *)endPoint accessibility:(BOOL)accessibility completion:(void(^)(PWRoute *route, NSError *error))completion __deprecated;
++ (void)initRouteFrom:(PWPointOfInterest *)startPoint to:(PWPointOfInterest *)endPoint accessibility:(BOOL)accessibility completion:(void(^)(PWRoute * _Nullable route, NSError * _Nullable error))completion __deprecated;
 
 /**
  *  Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start `PWMapPoint` and the end `PWMapPoint`. The completion handler is called when the route is fully calculated.
@@ -89,7 +96,7 @@
  *
  *  @deprecated use 'createRouteFrom:to:options:completion:' instead
  */
-+ (void)createRouteFrom:(id<PWMapPoint>)startPoint to:(id<PWMapPoint>)endPoint accessibility:(BOOL)accessibility excludedPoints:(NSArray *)excludedPoints completion:(void(^)(PWRoute *route, NSError *error))completion __deprecated;
++ (void)createRouteFrom:(id<PWMapPoint>)startPoint to:(id<PWMapPoint>)endPoint accessibility:(BOOL)accessibility excludedPoints:(NSArray * _Nullable)excludedPoints completion:(void(^)(PWRoute * _Nullable route, NSError * _Nullable error))completion __deprecated;
 
 /**
  *   Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start `PWMapPoint` and the end `PWMapPoint`. The completion handler is called when the route is fully calculated.
@@ -99,6 +106,8 @@
  *   @param options      A `PWRouteOptions` object specifying the options to use for route calculation. if 'nil', default options will be used.
  *   @param completion    Completion handler that is called once the route's calculation is complete.
  */
-+ (void)createRouteFrom:(id<PWMapPoint>)startPoint to:(id<PWMapPoint>)endPoint options:(PWRouteOptions* _Nullable)options completion:(void(^_Nonnull)(PWRoute * _Nullable route, NSError * _Nullable error))completion;
++ (void)createRouteFrom:(id<PWMapPoint>)startPoint to:(id<PWMapPoint>)endPoint options:(PWRouteOptions* _Nullable)options completion:(void(^)(PWRoute * _Nullable route, NSError * _Nullable error))completion;
 
 @end
+
+NS_ASSUME_NONNULL_END

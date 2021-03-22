@@ -83,8 +83,8 @@ class PreRoutingViewController: UIViewController {
         case .list:
             if showAllInstructions {
                 rowMapping.append(.routeLabel)
-                if let route = route {
-                    for _ in 0..<route.routeInstructions.count {
+                if let routeInstructions = route?.routeInstructions {
+                    for _ in 0..<routeInstructions.count {
                         rowMapping.append(.instruction)
                     }
                 }
@@ -173,7 +173,9 @@ extension PreRoutingViewController: UITableViewDataSource {
             }
         case .instruction:
             if let instructionCell = tableView.dequeueReusableCell(withIdentifier: String(describing: PreRouteInstructionCell.self), for: indexPath) as? PreRouteInstructionCell {
-                if let indexOffset = rowMapping.firstIndex(of: .instruction), let instruction = route?.routeInstructions[indexPath.row - indexOffset] {
+                if let routeInstructions = route?.routeInstructions,
+                   let indexOffset = rowMapping.firstIndex(of: .instruction) {
+                    let instruction = routeInstructions[indexPath.row - indexOffset]
                     instructionCell.configure(forInstruction: instruction)
                 }
                 cell = instructionCell

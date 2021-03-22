@@ -85,6 +85,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCampus:</TokenIdentifier>
+			<Abstract type="html">The PWCampus object associated with the current map. If no campus is associated with the PWMapView, the campus will be nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCampus *campus</Declaration>
+			
+			
+			<Anchor>//api/name/campus</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/campus</TokenIdentifier>
+			<Abstract type="html">The PWCampus object associated with the current map. If no campus is associated with the PWMapView, the campus will be nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCampus *campus</Declaration>
+			
+			
+			<Anchor>//api/name/campus</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/campus</TokenIdentifier>
+			<Abstract type="html">The PWCampus object associated with the current map. If no campus is associated with the PWMapView, the campus will be nil.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWCampus *campus</Declaration>
+			
+			
+			<Anchor>//api/name/campus</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setBuilding:</TokenIdentifier>
 			<Abstract type="html">The PWBuilding object associated with the current map. If no building is associated with the PWMapView, the building will be nil.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
@@ -157,6 +193,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCurrentBuilding:</TokenIdentifier>
+			<Abstract type="html">Returns the currently displayed PWBuilding object. This property may be nil if no floor is displayed. Attempts to change to the same floor are ignored. When the floor change is complete, the delegate will receive a mapView:didChangeFloor: callback.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWBuilding *currentBuilding</Declaration>
+			
+			
+			<Anchor>//api/name/currentBuilding</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/currentBuilding</TokenIdentifier>
+			<Abstract type="html">Returns the currently displayed PWBuilding object. This property may be nil if no floor is displayed. Attempts to change to the same floor are ignored. When the floor change is complete, the delegate will receive a mapView:didChangeFloor: callback.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWBuilding *currentBuilding</Declaration>
+			
+			
+			<Anchor>//api/name/currentBuilding</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/currentBuilding</TokenIdentifier>
+			<Abstract type="html">Returns the currently displayed PWBuilding object. This property may be nil if no floor is displayed. Attempts to change to the same floor are ignored. When the floor change is complete, the delegate will receive a mapView:didChangeFloor: callback.</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) PWBuilding *currentBuilding</Declaration>
+			
+			
+			<Anchor>//api/name/currentBuilding</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCurrentRoute:</TokenIdentifier>
 			<Abstract type="html">The current PWRoute object plotted on the map. This property will be nil if no route is displayed.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
@@ -189,6 +261,42 @@
 			
 			
 			<Anchor>//api/name/currentRoute</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setFloors:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=getFloors) NSArray&lt;PWFloor*&gt; *floors</Declaration>
+			
+			
+			<Anchor>//api/name/floors</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/getFloors</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=getFloors) NSArray&lt;PWFloor*&gt; *floors</Declaration>
+			
+			
+			<Anchor>//api/name/floors</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWMapView/floors</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=getFloors) NSArray&lt;PWFloor*&gt; *floors</Declaration>
+			
+			
+			<Anchor>//api/name/floors</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
@@ -773,6 +881,29 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setCampus:animated:onCompletion:</TokenIdentifier>
+			<Abstract type="html">Allows you to change  the campus displayed in the map view to the specified campus identifier</Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (void)setCampus:(PWCampus *)campus animated:(BOOL)animated onCompletion:(void ( ^ ) ( NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>campus</Name>
+					<Abstract type="html">The campus to load into the &apos;PWMapView&apos;</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Animate the camera zoom into the PWMapView.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">A block to indicate if the building is successfully displayed or not.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCampus:animated:onCompletion:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/setTrackingMode:animated:</TokenIdentifier>
 			<Abstract type="html">Sets the mode used to track the user&apos;s indoor location with optional animation. This method will have no effect if an indoor location manager has not been registered with the map view.</Abstract>
 			<DeclaredIn>PWMapView.h</DeclaredIn>
@@ -1136,6 +1267,18 @@
 			</Parameters>
 			
 			<Anchor>//api/name/deselectPointOfInterest:animated:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWMapView/getFloorById:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PWMapView.h</DeclaredIn>
+			
+			<Declaration>- (PWFloor *)getFloorById:(NSInteger)floorID</Declaration>
+			
+			
+			<Anchor>//api/name/getFloorById:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

@@ -31,6 +31,11 @@
 @optional
 
 /**
+ The identifier of the campus this point belongs to.
+ */
+@property (nonatomic, readonly) NSInteger campusID;
+
+/**
  A flag indicating if it's an accessible point.
  */
 @property (nonatomic, readonly, getter=isAccessible) BOOL accessible;

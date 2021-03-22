@@ -6,7 +6,7 @@
 //  Copyright © 2020 Phunware. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class PWBuilding;
 @class PWPointOfInterestInfo;

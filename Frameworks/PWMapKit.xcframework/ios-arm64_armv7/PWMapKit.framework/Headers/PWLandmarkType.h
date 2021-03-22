@@ -8,12 +8,12 @@
 
 extern const NSInteger PWLandmarkOptionsInvalidAssociatedLandmarkIdentifier;
 
-typedef NS_ENUM(NSUInteger, PWLandmarkType) {
+typedef NS_CLOSED_ENUM(NSUInteger, PWLandmarkType) {
     PWLandmarkTypeLandmark,
     PWLandmarkTypeAssociatedLandmark
 };
 
-typedef NS_ENUM(NSUInteger, PWLandmarkPosition) {
+typedef NS_CLOSED_ENUM(NSUInteger, PWLandmarkPosition) {
     PWLandmarkPositionAt,
     PWLandmarkPositionAfter
 };

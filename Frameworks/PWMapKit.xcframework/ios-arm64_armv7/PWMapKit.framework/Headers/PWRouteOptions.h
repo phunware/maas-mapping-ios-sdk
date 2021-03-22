@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  This class represents the various routing options available when requesting directions.
  */
@@ -16,14 +18,14 @@
 /**
  * Default initializer. All options are initailized to their default values.
  */
--(instancetype _Nonnull)init;
+-(instancetype)init;
 
 /**
  * Designated initializer.
  */
--(instancetype _Nonnull)initWithAccessibilityEnabled:(BOOL)accessibilityEnabled
-                                     landmarksEnabled:(BOOL)landmarksEnabled
-                             excludedPointIdentifiers:(NSArray<NSNumber *> * _Nullable)excludedPointIdentifiers NS_DESIGNATED_INITIALIZER;
+-(instancetype)initWithAccessibilityEnabled:(BOOL)accessibilityEnabled
+                           landmarksEnabled:(BOOL)landmarksEnabled
+                   excludedPointIdentifiers:(NSArray<NSNumber *> * _Nullable)excludedPointIdentifiers NS_DESIGNATED_INITIALIZER;
 
 /**
  Flag indicating whether the requested directions must include only accessible points.
@@ -44,3 +46,5 @@
 @property (nonatomic, retain, nullable) NSArray<NSNumber *> *excludedPointIdentifiers;
 
 @end
+
+NS_ASSUME_NONNULL_END

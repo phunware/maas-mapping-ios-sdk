@@ -18,6 +18,9 @@ class CustomPointOfInterestImagesViewController: UIViewController, ScenarioProto
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
+    var campusIdentifier = 0
+
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
     
@@ -41,11 +44,7 @@ class CustomPointOfInterestImagesViewController: UIViewController, ScenarioProto
         }
         
         PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
-        
-        // Set initial camera region
-        let region = MKCoordinateRegion(center: initialCenterCoordinate, latitudinalMeters: initialCameraDistance, longitudinalMeters: initialCameraDistance)
-        mapView.setRegion(region, animated: false)
-        
+                
         view.addSubview(mapView)
         configureMapViewConstraints()
         
@@ -61,17 +60,25 @@ class CustomPointOfInterestImagesViewController: UIViewController, ScenarioProto
             setImage(image)
         }
         
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            guard let self = self else {
-                return
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+                self?.mapView.setCampus(campus, animated: true, onCompletion: nil)
             }
-            
-            if let error = error {
-                self.warning(error.localizedDescription)
-                return
+        }
+        else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+                self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
             }
-            
-            self.mapView.setBuilding(building, animated: true, onCompletion: nil)
         }
     }
     

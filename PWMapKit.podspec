@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PWMapKit"
-  s.version      = "3.10.1"
+  s.version      = "3.11.0"
   s.summary      = "Phunware's Mapping SDK for use with its Multiscreen-as-a-Service platform"
   s.homepage     = "http://phunware.github.io/maas-mapping-ios-sdk/"
   s.author       = { 'Phunware, Inc.' => 'http://www.phunware.com' }
@@ -15,12 +15,12 @@ Pod::Spec.new do |s|
   s.default_subspec = 'all-frameworks'
 
   s.subspec 'all-frameworks' do |sub|
-    sub.dependency 'PWLocation', '~> 3.9.1'
+    sub.dependency 'PWLocation', '~> 3.10.0'
   end
 
   s.subspec 'LimitedDeviceIdentity' do |sub|
     sub.ios.vendored_frameworks = 'Frameworks/PWMapKit.xcframework'
-    sub.dependency 'PWLocation/LimitedDeviceIdentity', '~> 3.9.1'
+    sub.dependency 'PWLocation/LimitedDeviceIdentity', '~> 3.10.0'
   end
 
   s.ios.frameworks = 'Security', 'CoreGraphics', 'QuartzCore', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreLocation', 'MapKit'

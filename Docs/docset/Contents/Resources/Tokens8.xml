@@ -17,7 +17,7 @@
 			<Abstract type="html">A description of the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *summary</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *summary</Declaration>
 			
 			
 			<Anchor>//api/name/summary</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">A description of the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *summary</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *summary</Declaration>
 			
 			
 			<Anchor>//api/name/summary</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">A description of the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *summary</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *summary</Declaration>
 			
 			
 			<Anchor>//api/name/summary</Anchor>
@@ -86,10 +86,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setPointOfInterestType:</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestType object that the point-of-interest is a member of. Should not be NULL.</Abstract>
+			<Abstract type="html">The PWPointOfInterestType object that the point-of-interest is a member of.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
 			<Anchor>//api/name/pointOfInterestType</Anchor>
@@ -98,10 +98,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/pointOfInterestType</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestType object that the point-of-interest is a member of. Should not be NULL.</Abstract>
+			<Abstract type="html">The PWPointOfInterestType object that the point-of-interest is a member of.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
 			<Anchor>//api/name/pointOfInterestType</Anchor>
@@ -110,10 +110,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/pointOfInterestType</TokenIdentifier>
-			<Abstract type="html">The PWPointOfInterestType object that the point-of-interest is a member of. Should not be NULL.</Abstract>
+			<Abstract type="html">The PWPointOfInterestType object that the point-of-interest is a member of.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWPointOfInterestType *pointOfInterestType</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) PWPointOfInterestType *pointOfInterestType</Declaration>
 			
 			
 			<Anchor>//api/name/pointOfInterestType</Anchor>
@@ -125,7 +125,7 @@
 			<Abstract type="html">The representative UIImage of the point-of-interest. Will be NULL if image has not yet been loaded.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) UIImage *image</Declaration>
 			
 			
 			<Anchor>//api/name/image</Anchor>
@@ -137,7 +137,7 @@
 			<Abstract type="html">The representative UIImage of the point-of-interest. Will be NULL if image has not yet been loaded.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) UIImage *image</Declaration>
 			
 			
 			<Anchor>//api/name/image</Anchor>
@@ -149,7 +149,7 @@
 			<Abstract type="html">The representative UIImage of the point-of-interest. Will be NULL if image has not yet been loaded.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIImage *image</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) UIImage *image</Declaration>
 			
 			
 			<Anchor>//api/name/image</Anchor>
@@ -161,7 +161,7 @@
 			<Abstract type="html">The URL of the point-of-interest image. May be NULL if using custom POI image loading.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSURL *imageURL</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSURL *imageURL</Declaration>
 			
 			
 			<Anchor>//api/name/imageURL</Anchor>
@@ -173,7 +173,7 @@
 			<Abstract type="html">The URL of the point-of-interest image. May be NULL if using custom POI image loading.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSURL *imageURL</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSURL *imageURL</Declaration>
 			
 			
 			<Anchor>//api/name/imageURL</Anchor>
@@ -185,7 +185,7 @@
 			<Abstract type="html">The URL of the point-of-interest image. May be NULL if using custom POI image loading.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSURL *imageURL</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSURL *imageURL</Declaration>
 			
 			
 			<Anchor>//api/name/imageURL</Anchor>
@@ -197,7 +197,7 @@
 			<Abstract type="html">Metadata associated with the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDictionary *metaData</Declaration>
 			
 			
 			<Anchor>//api/name/metaData</Anchor>
@@ -209,7 +209,7 @@
 			<Abstract type="html">Metadata associated with the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDictionary *metaData</Declaration>
 			
 			
 			<Anchor>//api/name/metaData</Anchor>
@@ -221,7 +221,7 @@
 			<Abstract type="html">Metadata associated with the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *metaData</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDictionary *metaData</Declaration>
 			
 			
 			<Anchor>//api/name/metaData</Anchor>
@@ -341,7 +341,7 @@
 			<Abstract type="html">The title of the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readwrite) NSString *title</Declaration>
+			<Declaration>@property (nonatomic, copy, readwrite, nullable) NSString *title</Declaration>
 			
 			
 			<Anchor>//api/name/title</Anchor>
@@ -353,7 +353,7 @@
 			<Abstract type="html">The title of the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readwrite) NSString *title</Declaration>
+			<Declaration>@property (nonatomic, copy, readwrite, nullable) NSString *title</Declaration>
 			
 			
 			<Anchor>//api/name/title</Anchor>
@@ -365,7 +365,7 @@
 			<Abstract type="html">The title of the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readwrite) NSString *title</Declaration>
+			<Declaration>@property (nonatomic, copy, readwrite, nullable) NSString *title</Declaration>
 			
 			
 			<Anchor>//api/name/title</Anchor>
@@ -377,7 +377,7 @@
 			<Abstract type="html">The subtitle of the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readwrite) NSString *subtitle</Declaration>
+			<Declaration>@property (nonatomic, copy, readwrite, nullable) NSString *subtitle</Declaration>
 			
 			
 			<Anchor>//api/name/subtitle</Anchor>
@@ -389,7 +389,7 @@
 			<Abstract type="html">The subtitle of the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readwrite) NSString *subtitle</Declaration>
+			<Declaration>@property (nonatomic, copy, readwrite, nullable) NSString *subtitle</Declaration>
 			
 			
 			<Anchor>//api/name/subtitle</Anchor>
@@ -401,10 +401,46 @@
 			<Abstract type="html">The subtitle of the point-of-interest. May be NULL.</Abstract>
 			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readwrite) NSString *subtitle</Declaration>
+			<Declaration>@property (nonatomic, copy, readwrite, nullable) NSString *subtitle</Declaration>
 			
 			
 			<Anchor>//api/name/subtitle</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/setPortalID:</TokenIdentifier>
+			<Abstract type="html">The portal identifier of the point-of-interest. May be NULL.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nullable) NSString *portalID</Declaration>
+			
+			
+			<Anchor>//api/name/portalID</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWPointOfInterest/portalID</TokenIdentifier>
+			<Abstract type="html">The portal identifier of the point-of-interest. May be NULL.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nullable) NSString *portalID</Declaration>
+			
+			
+			<Anchor>//api/name/portalID</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWPointOfInterest/portalID</TokenIdentifier>
+			<Abstract type="html">The portal identifier of the point-of-interest. May be NULL.</Abstract>
+			<DeclaredIn>PWPointOfInterest.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nullable) NSString *portalID</Declaration>
+			
+			
+			<Anchor>//api/name/portalID</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		

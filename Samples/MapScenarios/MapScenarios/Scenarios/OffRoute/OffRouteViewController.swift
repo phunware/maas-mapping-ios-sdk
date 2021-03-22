@@ -18,15 +18,17 @@ class OffRouteViewController: UIViewController, ScenarioProtocol {
     var accessKey = ""
     var signatureKey = ""
 
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
+    var campusIdentifier = 0
+
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
 
-    // Replace with the destination POI identifier
-    private let destinationPOIIdentifier = 0
-
     private let mapView = PWMapView()
     private var turnByTurnCollectionView: TurnByTurnCollectionView?
-    
+    private var routeButton: UIBarButtonItem?
+    private var destinationPOI: PWMapPoint?
+
     private let locationManager = CLLocationManager()
     private var firstLocationAcquired = false
     private var currentRoute: PWRoute?
@@ -63,16 +65,43 @@ class OffRouteViewController: UIViewController, ScenarioProtocol {
         mapView.routeSnappingTolerance = PWRouteSnapTolerance.toleranceNormal
         view.addSubview(mapView)
         configureMapViewConstraints()
+        configureRouteButton()
 
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                self?.locationManager.delegate = self
-                if !CLLocationManager.isAuthorized() {
-                    self?.locationManager.requestWhenInUseAuthorization()
-                } else {
-                    self?.startManagedLocationManager()
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
                 }
-            })
+
+                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
+        }
+        else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+
+                self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
         }
     }
     
@@ -90,6 +119,21 @@ class OffRouteViewController: UIViewController, ScenarioProtocol {
         offRouteTimer?.invalidate()
         offRouteTimer = nil
         showOffRouteMessage()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        if identifier == String(describing: RouteViewController.self) {
+            if let routeViewController = segue.destination as? RouteViewController {
+                routeViewController.delegate = self
+                routeViewController.mapView = mapView
+                routeViewController.landmarkEnabled = false
+                routeViewController.startFromCurrentLocation = true
+            }
+        }
     }
 }
 
@@ -125,7 +169,6 @@ extension OffRouteViewController: PWMapViewDelegate {
             firstLocationAcquired = true
             mapView.trackingMode = .follow
 
-            self.buildRoute()
         } else {
             if !modalVisible, !dontShowAgain, !isOffRouteAlertCooldownActive {
                 if let closestRouteInstruction = self.currentRoute?.closestInstructionTo(userLocation) {
@@ -182,7 +225,7 @@ extension OffRouteViewController: OffRouteModalViewControllerDelegate {
         case .reroute:
             mapView.cancelRouting()
             currentRoute = nil
-            buildRoute()
+            buildReroute()
             
         case .dontShowAgain:
             dontShowAgain = true
@@ -195,14 +238,26 @@ extension OffRouteViewController: OffRouteModalViewControllerDelegate {
 // MARK: - private
 private extension OffRouteViewController {
     func startManagedLocationManager() {
-        DispatchQueue.main.async { [weak self] in
-            guard let buildingIdentifier = self?.buildingIdentifier else {
-                return
+        // In order to route between buildings on a campus, we also need to register the
+        // PWManagedLocationManager using campusIdentifier.  Otherwise, we will register
+        // using buildingIdentifier.
+        if campusIdentifier != 0 {
+            DispatchQueue.main.async { [weak self] in
+                guard let campusIdentifier = self?.campusIdentifier else {
+                    return
+                }
+                let managedLocationManager = PWManagedLocationManager(campusId: campusIdentifier)
+                self?.mapView.register(managedLocationManager)
             }
-            
-            let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
-            
-            self?.mapView.register(managedLocationManager)
+        }
+        else {
+            DispatchQueue.main.async { [weak self] in
+                guard let buildingIdentifier = self?.buildingIdentifier else {
+                    return
+                }
+                let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
+                self?.mapView.register(managedLocationManager)
+            }
         }
     }
     
@@ -214,8 +269,19 @@ private extension OffRouteViewController {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
+    func configureRouteButton() {
+        let floorImage = UIImage(named: "RoadSign")
+        routeButton = UIBarButtonItem(image: floorImage, style: .plain, target: self, action: #selector(routeButtonTapped))
+        navigationItem.rightBarButtonItem = routeButton
+    }
+
+    
     func initializeTurnByTurn() {
-        mapView.setRouteManeuver(mapView.currentRoute.routeInstructions.first)
+        
+        if  let currentRoute = mapView.currentRoute,
+            let routeInstructions = currentRoute.routeInstructions {
+            mapView.setRouteManeuver(routeInstructions.first)
+        }
         
         if turnByTurnCollectionView == nil {
             turnByTurnCollectionView = TurnByTurnCollectionView(mapView: mapView)
@@ -223,19 +289,50 @@ private extension OffRouteViewController {
             turnByTurnCollectionView?.configureInView(view)
         }
     }
+    
+    func cancelRouting() {
+        mapView.cancelRouting()
+        routeButton?.image = UIImage(named: "RoadSign")
+        routeButton?.title = nil
+        turnByTurnCollectionView?.removeFromSuperview()
+        turnByTurnCollectionView = nil
+    }
+    
 
-    func getDestinationPOI() -> PWPointOfInterest? {
-        if destinationPOIIdentifier != 0 {
-            return mapView.building.pois.first(where: { $0.identifier == destinationPOIIdentifier })
+    @objc func routeButtonTapped() {
+        // Set tracking mode to follow me
+        mapView.trackingMode = .follow
+
+        guard mapView.floors?.isEmpty == false else {
+            return
+        }
+        
+        if mapView.currentRoute != nil {
+            cancelRouting()
         } else {
-            return mapView.building.pois.first
+            performSegue(withIdentifier: String(describing: RouteViewController.self), sender: nil)
         }
     }
     
-    func buildRoute() {
+    func showOffRouteMessage() {
+        guard modalVisible == false else {
+            return
+        }
+
+        modalVisible = true
+
+        let offRouteModal = OffRouteModalViewController()
+        offRouteModal.modalPresentationStyle = .overCurrentContext
+        offRouteModal.modalTransitionStyle = .crossDissolve
+        offRouteModal.delegate = self
+
+        present(offRouteModal, animated: true, completion: nil)
+    }
+    
+    func buildReroute() {
         dontShowAgain = false
 
-        guard let destinationPOI = getDestinationPOI() else {
+        guard let destinationPOI = destinationPOI else {
             print("No points of interest found, please add at least one to the building in the Maas portal")
             return
         }
@@ -261,18 +358,18 @@ private extension OffRouteViewController {
         })
     }
 
-    func showOffRouteMessage() {
-        guard modalVisible == false else {
-            return
-        }
+}
 
-        modalVisible = true
-
-        let offRouteModal = OffRouteModalViewController()
-        offRouteModal.modalPresentationStyle = .overCurrentContext
-        offRouteModal.modalTransitionStyle = .crossDissolve
-        offRouteModal.delegate = self
-
-        present(offRouteModal, animated: true, completion: nil)
+extension OffRouteViewController: RouteViewDelegate {
+    func routeSelected(_ route: PWRoute) {
+        let routeUIOptions = PWRouteUIOptions()
+        mapView.navigate(with: route, options: routeUIOptions)
+        
+        routeButton?.image = nil
+        routeButton?.title = "Cancel"
+        destinationPOI = route.endPoint
+        
+        // Initial route instructions
+        initializeTurnByTurn()
     }
 }

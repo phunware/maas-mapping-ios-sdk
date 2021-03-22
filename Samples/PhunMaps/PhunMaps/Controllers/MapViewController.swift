@@ -87,7 +87,7 @@ class MapViewController: UIViewController, SegmentedViewController {
         }
         
         loadingView.frame = view.frame
-        loadingView.style = .whiteLarge
+        loadingView.style = .large
         loadingView.backgroundColor = UIColor.lightGray
         loadingView.alpha = 0.8
         loadingView.startAnimating()

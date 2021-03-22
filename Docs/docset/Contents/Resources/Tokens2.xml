@@ -89,7 +89,7 @@
 			<Abstract type="html">An array of PWFloor objects that are contained in the building.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *floors</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWFloor*&gt; *floors</Declaration>
 			
 			
 			<Anchor>//api/name/floors</Anchor>
@@ -101,7 +101,7 @@
 			<Abstract type="html">An array of PWFloor objects that are contained in the building.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *floors</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWFloor*&gt; *floors</Declaration>
 			
 			
 			<Anchor>//api/name/floors</Anchor>
@@ -113,7 +113,7 @@
 			<Abstract type="html">An array of PWFloor objects that are contained in the building.</Abstract>
 			<DeclaredIn>PWBuilding.h</DeclaredIn>
 			
-			<Declaration>@property (readonly) NSArray *floors</Declaration>
+			<Declaration>@property (readonly) NSArray&lt;PWFloor*&gt; *floors</Declaration>
 			
 			
 			<Anchor>//api/name/floors</Anchor>
@@ -261,6 +261,78 @@
 			
 			
 			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setRouteSegments:</TokenIdentifier>
+			<Abstract type="html">A list of routeSegments contained in the building</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary&lt;NSString*NSDictionary&lt;NSString*NSNumber*&gt; *&gt; *routeSegments</Declaration>
+			
+			
+			<Anchor>//api/name/routeSegments</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/routeSegments</TokenIdentifier>
+			<Abstract type="html">A list of routeSegments contained in the building</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary&lt;NSString*NSDictionary&lt;NSString*NSNumber*&gt; *&gt; *routeSegments</Declaration>
+			
+			
+			<Anchor>//api/name/routeSegments</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/routeSegments</TokenIdentifier>
+			<Abstract type="html">A list of routeSegments contained in the building</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary&lt;NSString*NSDictionary&lt;NSString*NSNumber*&gt; *&gt; *routeSegments</Declaration>
+			
+			
+			<Anchor>//api/name/routeSegments</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/setRoutePoints:</TokenIdentifier>
+			<Abstract type="html">A list of routePoints contained in the building</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary&lt;NSString*id&lt;PWMapPoint&gt; &gt; *routePoints</Declaration>
+			
+			
+			<Anchor>//api/name/routePoints</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWBuilding/routePoints</TokenIdentifier>
+			<Abstract type="html">A list of routePoints contained in the building</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary&lt;NSString*id&lt;PWMapPoint&gt; &gt; *routePoints</Declaration>
+			
+			
+			<Anchor>//api/name/routePoints</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWBuilding/routePoints</TokenIdentifier>
+			<Abstract type="html">A list of routePoints contained in the building</Abstract>
+			<DeclaredIn>PWBuilding.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDictionary&lt;NSString*id&lt;PWMapPoint&gt; &gt; *routePoints</Declaration>
+			
+			
+			<Anchor>//api/name/routePoints</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

@@ -15,12 +15,13 @@ protocol ScenarioProtocol {
     var accessKey: String { get set }
     var signatureKey: String { get set }
     var buildingIdentifier: Int { get set }
+    var campusIdentifier: Int { get set }
 }
 
 extension ScenarioProtocol where Self: UIViewController {
     func validateScenarioSettings() -> Bool {
-        if applicationId.isEmpty || accessKey.isEmpty || signatureKey.isEmpty || buildingIdentifier == 0 {
-            let alertVC = UIAlertController(title: "Code Update Required", message: "Please put your applicationId/accessKey/signatureKey and buildingId in ScenarioSelectViewController.swift or the related view controllers.", preferredStyle: .alert)
+        if applicationId.isEmpty || accessKey.isEmpty || signatureKey.isEmpty || (buildingIdentifier == 0 && campusIdentifier == 0) {
+            let alertVC = UIAlertController(title: "Code Update Required", message: "Please put your applicationId/accessKey/signatureKey and campusId or buildingId in ScenarioSelectViewController.swift for default config or the related view controllers.", preferredStyle: .alert)
             let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertVC.addAction(confirmAction)
             self.present(alertVC, animated: true, completion: nil)
@@ -39,3 +40,4 @@ extension ScenarioProtocol where Self: UIViewController {
         }
     }
 }
+

@@ -13,11 +13,47 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setCampus:</TokenIdentifier>
+			<Abstract type="html">A reference to the route&apos;s campus object.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) PWCampus *campus</Declaration>
+			
+			
+			<Anchor>//api/name/campus</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/campus</TokenIdentifier>
+			<Abstract type="html">A reference to the route&apos;s campus object.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) PWCampus *campus</Declaration>
+			
+			
+			<Anchor>//api/name/campus</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWRoute/campus</TokenIdentifier>
+			<Abstract type="html">A reference to the route&apos;s campus object.</Abstract>
+			<DeclaredIn>PWRoute.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) PWCampus *campus</Declaration>
+			
+			
+			<Anchor>//api/name/campus</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWRoute/setBuilding:</TokenIdentifier>
 			<Abstract type="html">A reference to the route&apos;s building object.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) PWBuilding *building</Declaration>
 			
 			
 			<Anchor>//api/name/building</Anchor>
@@ -29,7 +65,7 @@
 			<Abstract type="html">A reference to the route&apos;s building object.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) PWBuilding *building</Declaration>
 			
 			
 			<Anchor>//api/name/building</Anchor>
@@ -41,7 +77,7 @@
 			<Abstract type="html">A reference to the route&apos;s building object.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) PWBuilding *building</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) PWBuilding *building</Declaration>
 			
 			
 			<Anchor>//api/name/building</Anchor>
@@ -161,7 +197,7 @@
 			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</Declaration>
 			
 			
 			<Anchor>//api/name/routeInstructions</Anchor>
@@ -173,7 +209,7 @@
 			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</Declaration>
 			
 			
 			<Anchor>//api/name/routeInstructions</Anchor>
@@ -185,7 +221,7 @@
 			<Abstract type="html">An array of PWRouteInstruction objects containing instructions to follow the route path.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;PWRouteInstruction*&gt; *routeInstructions</Declaration>
 			
 			
 			<Anchor>//api/name/routeInstructions</Anchor>
@@ -305,7 +341,7 @@
 			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start POI and the end POI. The completion handler is called when the route is fully calculated. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; use &apos;createRouteFrom:to:options:completion:&apos; instead&lt;/span&gt;)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>+ (void)initRouteFrom:(PWPointOfInterest *)startPoint to:(PWPointOfInterest *)endPoint accessibility:(BOOL)accessibility completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
+			<Declaration>+ (void)initRouteFrom:(PWPointOfInterest *)startPoint to:(PWPointOfInterest *)endPoint accessibility:(BOOL)accessibility completion:(void ( ^ ) ( PWRoute *_Nullable route , NSError *_Nullable error ))completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>startPoint</Name>
@@ -331,7 +367,7 @@
 			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start PWMapPoint and the end PWMapPoint. The completion handler is called when the route is fully calculated. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; use &apos;createRouteFrom:to:options:completion:&apos; instead&lt;/span&gt;)</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)startPoint to:(id&lt;PWMapPoint&gt;)endPoint accessibility:(BOOL)accessibility excludedPoints:(NSArray *)excludedPoints completion:(void ( ^ ) ( PWRoute *route , NSError *error ))completion</Declaration>
+			<Declaration>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)startPoint to:(id&lt;PWMapPoint&gt;)endPoint accessibility:(BOOL)accessibility excludedPoints:(NSArray *_Nullable)excludedPoints completion:(void ( ^ ) ( PWRoute *_Nullable route , NSError *_Nullable error ))completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>startPoint</Name>
@@ -360,7 +396,7 @@
 			<Abstract type="html">Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start PWMapPoint and the end PWMapPoint. The completion handler is called when the route is fully calculated.</Abstract>
 			<DeclaredIn>PWRoute.h</DeclaredIn>
 			
-			<Declaration>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)startPoint to:(id&lt;PWMapPoint&gt;)endPoint options:(PWRouteOptions *_Nullable)options completion:(void ( ^ _Nonnull ) ( PWRoute *_Nullable route , NSError *_Nullable error ))completion</Declaration>
+			<Declaration>+ (void)createRouteFrom:(id&lt;PWMapPoint&gt;)startPoint to:(id&lt;PWMapPoint&gt;)endPoint options:(PWRouteOptions *_Nullable)options completion:(void ( ^ ) ( PWRoute *_Nullable route , NSError *_Nullable error ))completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>startPoint</Name>

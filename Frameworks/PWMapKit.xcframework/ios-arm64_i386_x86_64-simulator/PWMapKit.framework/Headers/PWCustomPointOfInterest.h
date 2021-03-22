@@ -12,6 +12,8 @@
 @class PWPointOfInterestType;
 @class PWFloor;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  A PWCustomPointOfInterest represents a custom point-of-interest.
  */
@@ -146,3 +148,5 @@
                              image:(UIImage * __nullable)image __deprecated;
 
 @end
+
+NS_ASSUME_NONNULL_END

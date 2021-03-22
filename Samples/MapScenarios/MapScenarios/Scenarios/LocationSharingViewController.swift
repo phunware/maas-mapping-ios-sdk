@@ -99,12 +99,19 @@ extension SharedLocationAnnotationView {
 
 // MARK: - LocationSharingViewController
 class LocationSharingViewController: UIViewController, ScenarioProtocol {
+    @IBOutlet private var floorSwitchContainerView: UIView!
+    @IBOutlet private var floorSwitchPickerView: UIPickerView!
     
+    private var firstFloorSwitch = false
+
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
+    var campusIdentifier = 0
+
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
     
@@ -161,31 +168,78 @@ class LocationSharingViewController: UIViewController, ScenarioProtocol {
         mapView.sharedLocationUserType = deviceType
         view.addSubview(mapView)
         configureMapViewConstraints()
-        
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                self?.locationManager.delegate = self
-                if !CLLocationManager.isAuthorized() {
-                    self?.locationManager.requestWhenInUseAuthorization()
-                } else {
-                    self?.startManagedLocationManager()
+        addFloorPickerView()
+
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
                 }
-            })
+
+                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
+        }
+        else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+
+                self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
         }
     }
     
     func startManagedLocationManager() {
-        DispatchQueue.main.async { [weak self] in
-            guard let buildingIdentifier = self?.buildingIdentifier else {
-                return
+        // In order to route between buildings on a campus, we also need to register the
+        // PWManagedLocationManager using campusIdentifier.  Otherwise, we will register
+        // using buildingIdentifier.
+        if campusIdentifier != 0 {
+            DispatchQueue.main.async { [weak self] in
+                guard let campusIdentifier = self?.campusIdentifier else {
+                    return
+                }
+                let managedLocationManager = PWManagedLocationManager(campusId: campusIdentifier)
+                self?.mapView.register(managedLocationManager)
+                self?.mapView.startSharingUserLocation()
+                self?.mapView.startRetrievingSharedLocations()
+                
+                if let strongSelf = self {
+                    strongSelf.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: strongSelf, action: #selector(strongSelf.settingsTapped))
+                }
             }
-            let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
-            self?.mapView.register(managedLocationManager)
-            self?.mapView.startSharingUserLocation()
-            self?.mapView.startRetrievingSharedLocations()
-            
-            if let strongSelf = self {
-                strongSelf.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: strongSelf, action: #selector(strongSelf.settingsTapped))
+        }
+        else {
+            DispatchQueue.main.async { [weak self] in
+                guard let buildingIdentifier = self?.buildingIdentifier else {
+                    return
+                }
+                let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
+                self?.mapView.register(managedLocationManager)
+                self?.mapView.startSharingUserLocation()
+                self?.mapView.startRetrievingSharedLocations()
+                
+                if let strongSelf = self {
+                    strongSelf.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: strongSelf, action: #selector(strongSelf.settingsTapped))
+                }
             }
         }
     }
@@ -219,6 +273,12 @@ class LocationSharingViewController: UIViewController, ScenarioProtocol {
         
         return dotView!
     }
+    
+    func addFloorPickerView() {
+        let bundleName = String(describing: FloorPickerView.self)
+        let floorPickerView = Bundle.main.loadNibNamed(bundleName, owner: nil, options: nil)!.first as! FloorPickerView
+        floorPickerView.configureInView(view, withMapView: mapView)
+    }
 }
 
 // MARK: - PWMapViewDelegate
@@ -251,6 +311,15 @@ extension LocationSharingViewController: PWMapViewDelegate {
         let message = "\(description) \n Error Code: \(error.code)"
         
         showAlertForIndoorLocationFailure(withTitle: title , failureMessage: message)
+    }
+    
+    func mapView(_ mapView: PWMapView!, didChange floor: PWFloor!) {
+        guard firstFloorSwitch else {
+            firstFloorSwitch = true
+            return
+        }
+        
+        mapView.zoomToFitFloor(floor)
     }
 }
 

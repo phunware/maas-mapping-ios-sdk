@@ -44,9 +44,9 @@ extension MapFloorSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let floor = mapView.building.floors[indexPath.row] as? PWFloor {
-            mapView.currentFloor = floor
-        }
+        let floor = mapView.building.floors[indexPath.row]
+        
+        mapView.currentFloor = floor
         
         dismiss(animated: true, completion: nil)
     }
@@ -65,15 +65,14 @@ extension MapFloorSelectionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MapFloorCell", for: indexPath)
+        let floor = mapView.building.floors[indexPath.row]
         
-        if let floor = mapView.building.floors[indexPath.row] as? PWFloor {
-            cell.textLabel?.text = floor.name
-            
-            if floor == mapView.currentFloor {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
-            }
+        cell.textLabel?.text = floor.name
+        
+        if floor == mapView.currentFloor {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
         
         return cell

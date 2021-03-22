@@ -62,6 +62,10 @@
 		
 		<option value="//api/name/building">building</option>
 		
+		<option value="//api/name/campus">campus</option>
+		
+		<option value="//api/name/currentBuilding">currentBuilding</option>
+		
 		<option value="//api/name/currentFloor">currentFloor</option>
 		
 		<option value="//api/name/currentRoute">currentRoute</option>
@@ -71,6 +75,8 @@
 		<option value="//api/name/displayDebugLocationDots">displayDebugLocationDots</option>
 		
 		<option value="//api/name/floorTransitionModeEnabled">floorTransitionModeEnabled</option>
+		
+		<option value="//api/name/floors">floors</option>
 		
 		<option value="//api/name/indoorUserLocation">indoorUserLocation</option>
 		
@@ -110,6 +116,8 @@
 		
 		<option value="//api/name/deselectPointOfInterest:animated:">- deselectPointOfInterest:animated:</option>
 		
+		<option value="//api/name/getFloorById:">- getFloorById:</option>
+		
 		<option value="//api/name/initWithFrame:">- initWithFrame:</option>
 		
 		<option value="//api/name/navigateToCustomLocation:">- navigateToCustomLocation:</option>
@@ -125,6 +133,8 @@
 		<option value="//api/name/selectPointOfInterest:animated:">- selectPointOfInterest:animated:</option>
 		
 		<option value="//api/name/setBuilding:animated:onCompletion:">- setBuilding:animated:onCompletion:</option>
+		
+		<option value="//api/name/setCampus:animated:onCompletion:">- setCampus:animated:onCompletion:</option>
 		
 		<option value="//api/name/setCenterCoordinate:zoomLevel:animated:">- setCenterCoordinate:zoomLevel:animated:</option>
 		
@@ -286,6 +296,47 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/campus" title="campus"></a>
+	<h3 class="method-title"><code><a href="#//api/name/campus">&nbsp;&nbsp;campus</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <code>PWCampus</code> object associated with the current map. If no campus is associated with the <code>PWMapView</code>, the campus will be <code>nil</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) PWCampus *campus</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/building" title="building"></a>
 	<h3 class="method-title"><code><a href="#//api/name/building">&nbsp;&nbsp;building</a></code>
 </h3>
@@ -368,6 +419,47 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/currentBuilding" title="currentBuilding"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentBuilding">&nbsp;&nbsp;currentBuilding</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the currently displayed <a href="../Classes/PWBuilding.html"><code>PWBuilding</code></a> object. This property may be <code>nil</code> if no floor is displayed. Attempts to change to the same floor are ignored. When the floor change is complete, the <a href="#//api/name/delegate">delegate</a> will receive a <code>mapView:didChangeFloor:</code> callback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) PWBuilding *currentBuilding</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/currentRoute" title="currentRoute"></a>
 	<h3 class="method-title"><code><a href="#//api/name/currentRoute">&nbsp;&nbsp;currentRoute</a></code>
 </h3>
@@ -406,6 +498,22 @@
 			</div>
 			
 			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/floors" title="floors"></a>
+	<h3 class="method-title"><code><a href="#//api/name/floors">&nbsp;&nbsp;floors</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=getFloors) NSArray&lt;PWFloor*&gt; *floors</code></div>
+
+		    
 		</div>
 	</div>
 </div><div class="section-method">
@@ -493,7 +601,7 @@
 
 <p>Showing the user’s indoor location does not guarantee that the location is visible on the map. The user might have scrolled the map to a different point, causing the current location to be offscreen. To determine whether the user’s location is currently displayed on the map, use the <a href="#//api/name/indoorUserLocationVisible"><code>indoorUserLocationVisible</code></a> property.</p>
 
-<p>When setting this property to <code>NO</code>, <a href="../Constants/PWTrackingMode.html"><code>PWTrackingMode</code></a> will be set to <code>PWTrackingModeNone</code>.</p>
+<p>When setting this property to <code>NO</code>, <code>PWTrackingMode</code> will be set to <code>PWTrackingModeNone</code>.</p>
 			</div>
 			
 
@@ -626,7 +734,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Possible values are described in <a href="../Constants/PWTrackingMode.html"><code>PWTrackingMode</code></a>. It&rsquo;s important to note that this property replaces the <code>userTrackingMode</code> property of type <code>MKUserTrackingMode</code> on <code>MKMapView</code>. Setting this value will have no effect if an indoor location manager has not been registered with the map view.</p>
+				<p>Possible values are described in <code>PWTrackingMode</code>. It&rsquo;s important to note that this property replaces the <code>userTrackingMode</code> property of type <code>MKUserTrackingMode</code> on <code>MKMapView</code>. Setting this value will have no effect if an indoor location manager has not been registered with the map view.</p>
 			</div>
 			
 
@@ -1220,6 +1328,69 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/setCampus:animated:onCompletion:" title="setCampus:animated:onCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCampus:animated:onCompletion:">&ndash;&nbsp;setCampus:animated:onCompletion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to change  the <a href="#//api/name/campus">campus</a> displayed in the map view to the specified <a href="#//api/name/campus">campus</a> identifier</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCampus:(PWCampus *)<em>campus</em> animated:(BOOL)<em>animated</em> onCompletion:(void ( ^ ) ( NSError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>campus</code></th>
+						<td><p>The <a href="#//api/name/campus">campus</a> to load into the &lsquo;PWMapView&rsquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>Animate the camera zoom into the <code>PWMapView</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>A block to indicate if the <a href="#//api/name/building">building</a> is successfully displayed or not.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PWMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/setTrackingMode:animated:" title="setTrackingMode:animated:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/setTrackingMode:animated:">&ndash;&nbsp;setTrackingMode:animated:</a></code>
 </h3>
@@ -1246,7 +1417,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>trackingMode</code></th>
-						<td><p>The mode used to track the user&rsquo;s location. Possible values are described in <a href="../Constants/PWTrackingMode.html"><code>PWTrackingMode</code></a>.</p></td>
+						<td><p>The mode used to track the user&rsquo;s location. Possible values are described in <code>PWTrackingMode</code>.</p></td>
 					</tr>
 				
 					<tr>
@@ -2385,6 +2556,22 @@
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/getFloorById:" title="getFloorById:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getFloorById:">&ndash;&nbsp;getFloorById:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (PWFloor *)getFloorById:(NSInteger)<em>floorID</em></code></div>
+
+		    
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -2400,7 +2587,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Phunware, Inc. All rights reserved. Updated: 2020-11-09</p>
+						<p class="copyright">Copyright &copy; 2021 Phunware, Inc. All rights reserved. Updated: 2021-02-01</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -23,6 +23,7 @@
 @class PWLocation;
 @class PWUserLocation;
 @class PWCustomLocation;
+@class PWCampus;
 
 #pragma mark - Notification Keys
 
@@ -47,7 +48,7 @@ extern NSString *const PWLocatingStoppedNotificationKey;
 /**
  Supported route snapping tolerance values.
  */
-typedef NS_ENUM(NSUInteger, PWRouteSnapTolerance) {
+typedef NS_CLOSED_ENUM(NSUInteger, PWRouteSnapTolerance) {
     /**
      No route snapping will be performed at all
      */
@@ -69,7 +70,7 @@ typedef NS_ENUM(NSUInteger, PWRouteSnapTolerance) {
 /**
  `PWTrackingMode` is used to indicate how to track the user's indoor location on a map.
  */
-typedef NS_ENUM(NSUInteger, PWTrackingMode) {
+typedef NS_CLOSED_ENUM(NSUInteger, PWTrackingMode) {
     /**
      The map does not follow the user location
      */
@@ -303,6 +304,11 @@ typedef NS_ENUM(NSUInteger, PWTrackingMode) {
 @property (nonatomic, weak) id<PWLocationSharingDelegate> locationSharingDelegate;
 
 /**
+ The `PWCampus` object associated with the current map. If no campus is associated with the `PWMapView`, the campus will be `nil`.
+ */
+@property (nonatomic) PWCampus *campus;
+
+/**
  The `PWBuilding` object associated with the current map. If no building is associated with the `PWMapView`, the building will be `nil`.
  */
 @property (nonatomic) PWBuilding *building;
@@ -313,9 +319,17 @@ typedef NS_ENUM(NSUInteger, PWTrackingMode) {
 @property (nonatomic) PWFloor *currentFloor;
 
 /**
+ Returns the currently displayed `PWBuilding` object. This property may be `nil` if no floor is displayed. Attempts to change to the same floor are ignored. When the floor change is complete, the delegate will receive a `mapView:didChangeFloor:` callback.
+ */
+@property (nonatomic) PWBuilding *currentBuilding;
+
+/**
  The current `PWRoute` object plotted on the map. This property will be `nil` if no route is displayed.
  */
 @property (nonatomic, readonly) PWRoute *currentRoute;
+
+@property (nonatomic, readonly, getter = getFloors) NSArray<PWFloor *> *floors;
+
 
 /**
  A Boolean value indicating whether the device’s current indoor location is visible in the map view. (read-only)
@@ -439,6 +453,14 @@ typedef NS_ENUM(NSUInteger, PWTrackingMode) {
  @param completion A block to indicate if the building is successfully displayed or not.
  */
 - (void)setBuilding:(PWBuilding *)building animated:(BOOL)animated onCompletion:(void (^)(NSError *error))completion;
+
+/**
+ Allows you to change  the campus displayed in the map view to the specified campus identifier
+ @param campus The campus to load into the 'PWMapView'
+ @param animated Animate the camera zoom into the `PWMapView`.
+ @param completion A block to indicate if the building is successfully displayed or not.
+ */
+- (void)setCampus:(PWCampus *)campus animated:(BOOL)animated onCompletion:(void (^)(NSError *error))completion;
 
 #pragma mark - Displaying the Users Indoor Location
 
@@ -621,5 +643,8 @@ typedef NS_ENUM(NSUInteger, PWTrackingMode) {
  * @deprecated Use `deselectAnnotations:animated:` instead, since v3.2.0
  */
 - (void)deselectPointOfInterest:(PWPointOfInterest *)poi animated:(BOOL)animated __deprecated;
+
+
+- (PWFloor *)getFloorById:(NSInteger)floorID;
 
 @end

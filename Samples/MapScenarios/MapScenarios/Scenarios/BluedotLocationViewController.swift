@@ -14,11 +14,15 @@ import PWCore
 // MARK: - BluedotLocationViewController
 class BluedotLocationViewController: UIViewController, ScenarioProtocol {
     
+    // The following configurations override the universal configurations defined in ScenerioSelectViewController.
     // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
     var signatureKey = ""
     
+    // Enter your campus identifier here, found on the campus's Edit page on Maas portal
+    var campusIdentifier = 0
+
     // Enter your building identifier here, found on the building's Edit page on Maas portal
     var buildingIdentifier = 0
     
@@ -40,25 +44,65 @@ class BluedotLocationViewController: UIViewController, ScenarioProtocol {
         view.addSubview(mapView)
         configureMapViewConstraints()
         
-        PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-            self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                self?.locationManager.delegate = self
-                if !CLLocationManager.isAuthorized() {
-                    self?.locationManager.requestWhenInUseAuthorization()
-                } else {
-                    self?.startManagedLocationManager()
+        // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
+        // Otherwise, we will use PWBuilding.building to route between floors in a single building.
+        if campusIdentifier != 0 {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
                 }
-            })
+
+                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
+        }
+        else {
+            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
+                if let error = error {
+                    self?.warning(error.localizedDescription)
+                    return
+                }
+
+                self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+                    self?.locationManager.delegate = self
+                    if !CLLocationManager.isAuthorized() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    } else {
+                        self?.startManagedLocationManager()
+                    }
+                })
+            }
         }
     }
     
     func startManagedLocationManager() {
-        DispatchQueue.main.async { [weak self] in
-            guard let buildingIdentifier = self?.buildingIdentifier else {
-                return
+        // In order to route between buildings on a campus, we also need to register the
+        // PWManagedLocationManager using campusIdentifier.  Otherwise, we will register
+        // using buildingIdentifier.
+        if campusIdentifier != 0 {
+            DispatchQueue.main.async { [weak self] in
+                guard let campusIdentifier = self?.campusIdentifier else {
+                    return
+                }
+                let managedLocationManager = PWManagedLocationManager(campusId: campusIdentifier)
+                self?.mapView.register(managedLocationManager)
             }
-            let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
-            self?.mapView.register(managedLocationManager)
+        }
+        else {
+            DispatchQueue.main.async { [weak self] in
+                guard let buildingIdentifier = self?.buildingIdentifier else {
+                    return
+                }
+                let managedLocationManager = PWManagedLocationManager(buildingId: buildingIdentifier)
+                self?.mapView.register(managedLocationManager)
+            }
         }
     }
     

@@ -121,6 +121,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/setCampusID:</TokenIdentifier>
+			<Abstract type="html">The identifier of the campus this point belongs to.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger campusID</Declaration>
+			
+			
+			<Anchor>//api/name/campusID</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/campusID</TokenIdentifier>
+			<Abstract type="html">The identifier of the campus this point belongs to.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger campusID</Declaration>
+			
+			
+			<Anchor>//api/name/campusID</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PWMapPoint/campusID</TokenIdentifier>
+			<Abstract type="html">The identifier of the campus this point belongs to.</Abstract>
+			<DeclaredIn>PWMapPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger campusID</Declaration>
+			
+			
+			<Anchor>//api/name/campusID</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/PWMapPoint/setAccessible:</TokenIdentifier>
 			<Abstract type="html">A flag indicating if it&apos;s an accessible point.</Abstract>
 			<DeclaredIn>PWMapPoint.h</DeclaredIn>
