@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PWMapKit"
-  s.version      = "3.11.0"
+  s.version      = "3.12.0"
   s.summary      = "Phunware's Mapping SDK for use with its Multiscreen-as-a-Service platform"
   s.homepage     = "http://phunware.github.io/maas-mapping-ios-sdk/"
   s.author       = { 'Phunware, Inc.' => 'http://www.phunware.com' }
