@@ -15,12 +15,12 @@ Pod::Spec.new do |s|
   s.default_subspec = 'all-frameworks'
 
   s.subspec 'all-frameworks' do |sub|
-    sub.dependency 'PWLocation', '~> 3.10.0'
+    sub.dependency 'PWLocation', '~> 3.11.0'
   end
 
   s.subspec 'LimitedDeviceIdentity' do |sub|
     sub.ios.vendored_frameworks = 'Frameworks/PWMapKit.xcframework'
-    sub.dependency 'PWLocation/LimitedDeviceIdentity', '~> 3.10.0'
+    sub.dependency 'PWLocation/LimitedDeviceIdentity', '~> 3.11.0'
   end
 
   s.ios.frameworks = 'Security', 'CoreGraphics', 'QuartzCore', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreLocation', 'MapKit'
