@@ -175,6 +175,20 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWTrackingMode) {
  */
 - (void)mapView:(PWMapView *)mapView locationManager:(id<PWLocationManager>)locationManager didUpdateIndoorUserLocation:(PWUserLocation *)userLocation;
 
+/**
+ Tells the delegate that the user has entered the beacon coverage area.
+ @param mapView The map view tracking the user’s location.
+ @param locationManager The location manager providing location updates.
+ */
+- (void)mapView:(PWMapView *)mapView locationManagerDidEnterBeaconCoverageArea:(id<PWLocationManager>)locationManager;
+
+/**
+ Tells the delegate that the user has exited the beacon coverage area.
+ @param mapView The map view tracking the user’s location.
+ @param locationManager The location manager providing location updates.
+ */
+- (void)mapView:(PWMapView *)mapView locationManagerDidExitBeaconCoverageArea:(id<PWLocationManager>)locationManager;
+
 #pragma mark - Routing
 
 /**

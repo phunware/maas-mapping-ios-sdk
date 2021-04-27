@@ -22,4 +22,6 @@
 
 - (void)startedFloorTransitionMode;
 
+- (void)beaconCoverageAreaEntered;
+- (void)beaconCoverageAreaExited;
 @end

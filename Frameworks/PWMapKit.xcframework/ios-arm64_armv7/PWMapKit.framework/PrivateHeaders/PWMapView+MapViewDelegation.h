@@ -20,7 +20,9 @@ extern CGFloat SMALLEST_SCREEN_DIMENSION_POINTS;
 - (void)announceDidUpdateHeading:(CLHeading*)heading;
 - (void)announceDidStartSnappingToRoute;
 - (void)announceDidStopSnappingToRoute;
-- (void)announcedidChangeRouteInstruction:(PWRouteInstruction*)maneuver;
+- (void)announceDidChangeRouteInstruction:(PWRouteInstruction*)maneuver;
+- (void)announceDidEnterBeaconCoverageArea: (id<PWLocationManager>)locationManager;
+- (void)announceDidExitBeaconCoverageArea: (id<PWLocationManager>)locationManager;
 
 - (void)setSmallestScreenDimensionInPoints;
 - (void)breakTrackingModeIfNeeded;
