@@ -1,4 +1,8 @@
 # PWMapKit Changelog
+## 3.12.0 (TBD)
+#### Features
+* Updated to PWLocation 3.11.0
+
 ## 3.11.0 (Monday, March 15, 2021)
 #### Features
 * Added support for campus routing.

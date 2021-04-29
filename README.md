@@ -8,10 +8,10 @@ This is Phunware's iOS SDK for the Mapping module. It is a comprehensive indoor 
 Requirements
 ------------
 
-- PWLocation 3.10.x
-- PWCore 3.10.x
+- PWLocation 3.11.x
+- PWCore 3.11.x
 - iOS 10.0 or greater
-- Xcode 11 or greater
+- Xcode 12 or greater
 
 Installation
 ------------
