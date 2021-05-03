@@ -2,6 +2,7 @@
 ## 3.12.0 (TBD)
 #### Features
 * Updated to PWLocation 3.11.0
+* iOS deployment target increased from 10.0 to 12.0
 
 ## 3.11.0 (Monday, March 15, 2021)
 #### Features

@@ -10,7 +10,7 @@ Requirements
 
 - PWLocation 3.11.x
 - PWCore 3.11.x
-- iOS 10.0 or greater
+- iOS 12.0 or greater
 - Xcode 12 or greater
 
 Installation
