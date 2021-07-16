@@ -5,6 +5,9 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import "PWBuildingFloorReference.h"
 
 /**

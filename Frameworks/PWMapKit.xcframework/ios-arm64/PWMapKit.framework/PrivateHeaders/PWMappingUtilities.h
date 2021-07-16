@@ -9,6 +9,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "PWMapView.h"
 #import "Vector2D.h"
+#import "PWMapKitDefines.h"
 
 CLLocationDirection ConvertRadiansToDegrees(double radians);
 

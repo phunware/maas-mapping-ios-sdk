@@ -9,6 +9,7 @@
 #ifndef PWMapKit_MapStateFlags_h
 #define PWMapKit_MapStateFlags_h
 
+#import "PWMapKitDefines.h"
 
 typedef NS_OPTIONS(NSUInteger, MapStateFlags) {
     MapRegionChanging = 1 << 0,

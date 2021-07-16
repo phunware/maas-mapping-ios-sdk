@@ -5,6 +5,8 @@
 //  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @protocol PWRouteSnapperDelegateProtocol <NSObject>
 
 @optional

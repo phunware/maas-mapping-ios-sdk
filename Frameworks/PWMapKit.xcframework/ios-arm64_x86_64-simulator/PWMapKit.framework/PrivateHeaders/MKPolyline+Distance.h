@@ -5,6 +5,9 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+
 @class PWIndoorLocation;
 
 @interface MKPolyline (Distance)

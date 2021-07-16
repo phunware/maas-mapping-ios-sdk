@@ -6,7 +6,6 @@
 //
 
 #import <PWLocation/PWLocation.h>
-
 #import "PWMapPoint.h"
 
 /**

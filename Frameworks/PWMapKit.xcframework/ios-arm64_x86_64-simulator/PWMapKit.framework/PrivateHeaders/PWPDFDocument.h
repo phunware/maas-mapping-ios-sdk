@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 /**
  A `PWPDFDocument` object represents a PDF file and defines methods for loading, unloading and viewing PDF data.

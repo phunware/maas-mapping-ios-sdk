@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "PWHeadingManagerDelegateProtocol.h"
 
 @interface PWHeadingManager : NSObject <CLLocationManagerDelegate>

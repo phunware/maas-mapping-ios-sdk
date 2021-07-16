@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/PWBuildingAnnotationView.h</key>
 		<data>
-		XqcqfgUkhQ1SG925Q/aU36zOoXc=
+		uW/FN4g5XkJwfuoidGTTBDdv0Ws=
 		</data>
 		<key>Headers/PWBuildingCallbackTypes.h</key>
 		<data>
@@ -23,10 +23,6 @@
 		<key>Headers/PWBuildingManager.h</key>
 		<data>
 		1qsHPIbHl1fvS85tDm48zmlx2BY=
-		</data>
-		<key>Headers/PWCustomLocation.h</key>
-		<data>
-		iym8d/JVkkHMO6fyfxrE8nuMAhI=
 		</data>
 		<key>Headers/PWCustomPointOfInterest.h</key>
 		<data>
@@ -42,7 +38,7 @@
 		</data>
 		<key>Headers/PWLandmark.h</key>
 		<data>
-		9pVR3D/Udskn5qodoZ5qjUVQGkQ=
+		oVTntboWL+FETyfnYGv8B7OC+sg=
 		</data>
 		<key>Headers/PWLandmarkType.h</key>
 		<data>
@@ -54,19 +50,19 @@
 		</data>
 		<key>Headers/PWMapKit-Swift.h</key>
 		<data>
-		gM2rClsPQD3j+DKd42fFYX4DOnQ=
+		rqdD1x+2dc72YJP8qG4Ma3WpykY=
 		</data>
 		<key>Headers/PWMapKit.h</key>
 		<data>
-		xM5sfA5CJaB7bxGJ6OePVd2qIWw=
+		z/UhDgijP9n0MQr9xTB3pVssvd0=
 		</data>
 		<key>Headers/PWMapPoint.h</key>
 		<data>
-		gF7NKAFiwJb3aN6BpRi12N+Fxes=
+		uaQzwZY74yWlxf7qSIPIEMeKZLw=
 		</data>
 		<key>Headers/PWMapView.h</key>
 		<data>
-		Nxr9c60HTaQPsqz7masuGUiD+vU=
+		vGpE7ecAyAA93q2hROpRsinhEGk=
 		</data>
 		<key>Headers/PWPointOfInterest.h</key>
 		<data>
@@ -78,7 +74,7 @@
 		</data>
 		<key>Headers/PWPointOfInterestType.h</key>
 		<data>
-		yXgfEzrmho+Nex9AZwR/XTtjb90=
+		TFdYbsSbc46GyKbN1gdLrwgolqA=
 		</data>
 		<key>Headers/PWRoute.h</key>
 		<data>
@@ -102,7 +98,7 @@
 		</data>
 		<key>Headers/PWUserLocation.h</key>
 		<data>
-		XDVCryuMNdg6y+oGljsL3nsChOI=
+		4OXOUNP9Qnh+8XHmSB+whh8RHbo=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -122,11 +118,11 @@
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		FX97qI4DiwENLzRPknfhZNUED6U=
+		XcFLa/b7Z0bJYD4ikvk6yJ3YXfk=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		yvl3BvTMpgXPLrfaOE4doSmT8Vg=
+		Pq3xbWzArzeXh8D5zJMsWJm++XY=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -134,11 +130,11 @@
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		FX97qI4DiwENLzRPknfhZNUED6U=
+		XcFLa/b7Z0bJYD4ikvk6yJ3YXfk=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		yvl3BvTMpgXPLrfaOE4doSmT8Vg=
+		Pq3xbWzArzeXh8D5zJMsWJm++XY=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -146,11 +142,11 @@
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		+zCkAxx2kEfUREft9Cgc1OkFeM0=
+		iYU7qKo4gtXcRoKUczVqa2lkJrE=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		BJ8ISB1zKsaknW9x8ANXvqH5BRQ=
+		PIxc/VW9T2tWjGcbFwn4YTN1CJU=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -158,11 +154,11 @@
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		+zCkAxx2kEfUREft9Cgc1OkFeM0=
+		iYU7qKo4gtXcRoKUczVqa2lkJrE=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		BJ8ISB1zKsaknW9x8ANXvqH5BRQ=
+		PIxc/VW9T2tWjGcbFwn4YTN1CJU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -174,11 +170,11 @@
 		</data>
 		<key>PrivateHeaders/MKPolyline+Distance.h</key>
 		<data>
-		AW1WRXK262WOniTYILQFfi0s6sU=
+		ShsNVDgw3GFl8RUxpeeDHYtPrsA=
 		</data>
 		<key>PrivateHeaders/MapStateFlags.h</key>
 		<data>
-		kkFVCwIq5rNOt1zfFIRm4Jh6jC8=
+		h7oBaJF9V3Z1p9XjsJqJhzkXY+w=
 		</data>
 		<key>PrivateHeaders/NSObject+IsEmpty.h</key>
 		<data>
@@ -202,7 +198,7 @@
 		</data>
 		<key>PrivateHeaders/PWBuildingFloorReference+Private.h</key>
 		<data>
-		OSzFj3bi3AayaMVRMqm31ruuTCw=
+		PI79IItXMpen7M8NFEnfUdr3JQk=
 		</data>
 		<key>PrivateHeaders/PWBuildingFloorReference.h</key>
 		<data>
@@ -214,7 +210,7 @@
 		</data>
 		<key>PrivateHeaders/PWBuildingFloorResource.h</key>
 		<data>
-		V94l+OhdhDv8yckfA1vNMFNC7LA=
+		HlDYQK+t/4qTFQptvDJ9NwCbA14=
 		</data>
 		<key>PrivateHeaders/PWBuildingOverlay+Private.h</key>
 		<data>
@@ -222,11 +218,11 @@
 		</data>
 		<key>PrivateHeaders/PWBuildingOverlay.h</key>
 		<data>
-		6s1Hj2qUnGXe3MmO0uv0O49ABb0=
+		Fcn9xzG/GjtVaWQOgJo3G18sj38=
 		</data>
 		<key>PrivateHeaders/PWBuildingOverlayRenderer.h</key>
 		<data>
-		1FeFY5dTp3/0p3wJ2XJcek+pSC4=
+		f4heX6Og5zZaz0QqHsP6cTQSSm8=
 		</data>
 		<key>PrivateHeaders/PWCoordinateInterpolationSegment.h</key>
 		<data>
@@ -238,7 +234,7 @@
 		</data>
 		<key>PrivateHeaders/PWDebugDotManager.h</key>
 		<data>
-		SC3BBqhStPKDDD9BWYcbl26doW4=
+		+oi2zqv27iH+41H2s+lde8yP5pY=
 		</data>
 		<key>PrivateHeaders/PWDijkstraAlgorithm.h</key>
 		<data>
@@ -258,7 +254,7 @@
 		</data>
 		<key>PrivateHeaders/PWHeadingManager.h</key>
 		<data>
-		eujfy22W4D5UQ4mVY819vfoGcas=
+		z3ZtqJRaJ98bR/srqiGQCD0bZ7g=
 		</data>
 		<key>PrivateHeaders/PWHeadingManagerDelegateProtocol.h</key>
 		<data>
@@ -266,7 +262,7 @@
 		</data>
 		<key>PrivateHeaders/PWHideBackgroundOverlay.h</key>
 		<data>
-		WG1/Z9CeE+pQIX99jmfUe55+a/M=
+		jd/xbWFJnGcvDXUpsB7TIkHf67Q=
 		</data>
 		<key>PrivateHeaders/PWLandmark+Private.h</key>
 		<data>
@@ -294,7 +290,7 @@
 		</data>
 		<key>PrivateHeaders/PWLocationSharingManager.h</key>
 		<data>
-		gZSj1mzmEsBKpiNxfiCia/ajlEo=
+		Msm/as1+VPDyeq2+Jqe1j/sc5W8=
 		</data>
 		<key>PrivateHeaders/PWMapDocument+Private.h</key>
 		<data>
@@ -303,10 +299,6 @@
 		<key>PrivateHeaders/PWMapDocument.h</key>
 		<data>
 		DVcOFdRKZYf55OxTj98DcOHZZOs=
-		</data>
-		<key>PrivateHeaders/PWMapKit-Prefix.pch</key>
-		<data>
-		4q/Afqgg+KPCqxGKiRMzYQzIYXA=
 		</data>
 		<key>PrivateHeaders/PWMapKitAnalytics+Private.h</key>
 		<data>
@@ -378,7 +370,7 @@
 		</data>
 		<key>PrivateHeaders/PWMappingUtilities.h</key>
 		<data>
-		gjnEZEaeoahnVHJ5wzhC2ySVj8s=
+		kQ4EFIilWi8CQHxU1TryM6AsDtQ=
 		</data>
 		<key>PrivateHeaders/PWObjectQueue.h</key>
 		<data>
@@ -386,7 +378,7 @@
 		</data>
 		<key>PrivateHeaders/PWOcclusionManager+Private.h</key>
 		<data>
-		hlU8lFMsojIgNucOgtkqhixvw7M=
+		m+iTZdIaO1sscMVfFLJuAKwtlro=
 		</data>
 		<key>PrivateHeaders/PWOcclusionManager.h</key>
 		<data>
@@ -398,7 +390,7 @@
 		</data>
 		<key>PrivateHeaders/PWPDFDocument.h</key>
 		<data>
-		1j8uUgGSTgwPU7ZOcOpPK8xrfi4=
+		d+vpV1RJ/7MXzDu4XnvOPDIlyoA=
 		</data>
 		<key>PrivateHeaders/PWPDFPage+Private.h</key>
 		<data>
@@ -406,7 +398,7 @@
 		</data>
 		<key>PrivateHeaders/PWPDFPage.h</key>
 		<data>
-		9/H/TcQxAuLJ4o2wFDtGyhbCP7o=
+		pI8HJmdvzOGp92FDeU8VCnKVq7s=
 		</data>
 		<key>PrivateHeaders/PWPointOfInterest+Private.h</key>
 		<data>
@@ -426,7 +418,7 @@
 		</data>
 		<key>PrivateHeaders/PWRouteBuilder.h</key>
 		<data>
-		3YA5fz7yJTMSEJvP8HmdadAOBn8=
+		l3kSnljSQfUjOigkh6LGojJSGx0=
 		</data>
 		<key>PrivateHeaders/PWRouteInstruction+Private.h</key>
 		<data>
@@ -470,7 +462,7 @@
 		</data>
 		<key>PrivateHeaders/PWRouteSegment+Private.h</key>
 		<data>
-		BCpB98SAWzqkhH5KznAcG2/CRNE=
+		haO9Xr0FDLps+nBluMNgoijVWYs=
 		</data>
 		<key>PrivateHeaders/PWRouteSegment.h</key>
 		<data>
@@ -482,7 +474,7 @@
 		</data>
 		<key>PrivateHeaders/PWRouteSnapperDelegateProtocol.h</key>
 		<data>
-		azFnr6yHNx+hufOPgXYFHgzxT4Q=
+		7uzx7GvG4uupQpPQMlU1lnGntHU=
 		</data>
 		<key>PrivateHeaders/PWRouteStep+Private.h</key>
 		<data>
@@ -506,7 +498,7 @@
 		</data>
 		<key>PrivateHeaders/PWSerialization.h</key>
 		<data>
-		IQuhyW/RfMBFdG21MdEaqyfypXA=
+		vUfdEJm+kBGwyCDqr3sMb5/0TZc=
 		</data>
 		<key>PrivateHeaders/PWSharedLocation+Private.h</key>
 		<data>
@@ -577,7 +569,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lTUJElDS5iSV+NcEqPlML1fZiUrbg25txTgydtEqZgU=
+			6wUqUpJcpQHPDfdDkk7QNNAwHTYpYYcdn8i+I8z88Ek=
 			</data>
 		</dict>
 		<key>Headers/PWBuildingCallbackTypes.h</key>
@@ -592,13 +584,6 @@
 			<key>hash2</key>
 			<data>
 			X/ijYgAGKY6jHGTVX2dsk23gBtKzG8SRDdoPmvUHZLs=
-			</data>
-		</dict>
-		<key>Headers/PWCustomLocation.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			yeWKlXxD1O5DTFtkgJ+PxuXF3sU3baYqxA8VcNTZvAc=
 			</data>
 		</dict>
 		<key>Headers/PWCustomPointOfInterest.h</key>
@@ -626,7 +611,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			c7rNJRt8RHdnqy7dncQuOWww3WpSmblrqbZaxv5leuA=
+			320PInozVTFCXD8p161+VasJG6bQhnDLnwT45Q38CzY=
 			</data>
 		</dict>
 		<key>Headers/PWLandmarkType.h</key>
@@ -647,28 +632,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QIkyPwpyYffU2q+4hiRr/uwDqNdiZ5+BinVTR1MkXvQ=
+			vsT3YEXl7jUOUtxmd7Z1TifUghQpf4cZn9VfYsjGLT8=
 			</data>
 		</dict>
 		<key>Headers/PWMapKit.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dto/rDa+j5nTgoWTkX1UjAOGvNTnnCk4GDYGas2SEho=
+			DdqvpJ588trgs5Cgn8F0j1cbJzftA7Qpmq43mGcL8xo=
 			</data>
 		</dict>
 		<key>Headers/PWMapPoint.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H4NX57OeqNcuqeGMllKt5rGx52x2Wg619Rq4bDTwQEY=
+			XOdFA1RItFOraqWhA6E98mpKyUAPMR4icHu/HTDb24U=
 			</data>
 		</dict>
 		<key>Headers/PWMapView.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yd9IxibgFyKe2w5uF6qmqtySBgSK5VGBNgHry+qmIXk=
+			MomFk+t5tElbyQ9dHKQxhFjFRxb0hJYw7n6tJAbKT2Y=
 			</data>
 		</dict>
 		<key>Headers/PWPointOfInterest.h</key>
@@ -689,7 +674,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3oQdvRjHOuM0fFAozJBDbh3NUmquhtGqHPC6CBHMbRI=
+			qkKaAOSfX/hKPwg/fiZvM3QslfaBVso513Sy/z1W5qs=
 			</data>
 		</dict>
 		<key>Headers/PWRoute.h</key>
@@ -731,7 +716,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ief/IL6IVk4zAQSGUQltTx1+91HYu/ArtXtgtnsGhqU=
+			Tluq8ONTRHnBY0Sos2eHjsFB8dTnQnI+t+g70vdi2NA=
 			</data>
 		</dict>
 		<key>LICENSE.md</key>
@@ -759,14 +744,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			B4MqIZ2f/Hm6+m3oc/sSpo5yx9ZouStjkGc/UxHp7DE=
+			CirTAfnJKOZbB80qa+9uVGuiboiyl4snZdG4o8MeUG0=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qa2E/lDUNWGM66UfOvqeDjJnyE9d6jjxzgZxCSiyVnk=
+			6OVO7lmnAifmOlk1WTSlNahU5+CZrkfhPWuy+Nmoo+w=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftdoc</key>
@@ -780,14 +765,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			B4MqIZ2f/Hm6+m3oc/sSpo5yx9ZouStjkGc/UxHp7DE=
+			CirTAfnJKOZbB80qa+9uVGuiboiyl4snZdG4o8MeUG0=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qa2E/lDUNWGM66UfOvqeDjJnyE9d6jjxzgZxCSiyVnk=
+			6OVO7lmnAifmOlk1WTSlNahU5+CZrkfhPWuy+Nmoo+w=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -801,14 +786,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			holtKkZZLqa5qW2wpyWCijgMZMXqvjedx1pc7ejlkDA=
+			0kyZeURbNrz5wmrQ54D23y3FWCxLIsVgEOWhtQGhtPc=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mmMRDTQQ3schKHTPRuNFPIBfPgeRz20Ikf2VzEGo1g4=
+			g8lwhS/OgffPCOIWoSJ/Sw++cHFivDTQBqjRza5hDZU=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftdoc</key>
@@ -822,14 +807,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			holtKkZZLqa5qW2wpyWCijgMZMXqvjedx1pc7ejlkDA=
+			0kyZeURbNrz5wmrQ54D23y3FWCxLIsVgEOWhtQGhtPc=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mmMRDTQQ3schKHTPRuNFPIBfPgeRz20Ikf2VzEGo1g4=
+			g8lwhS/OgffPCOIWoSJ/Sw++cHFivDTQBqjRza5hDZU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -850,14 +835,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Szxa94s9d9OItFKvT8nm5Sio0PhMdHW3rX8jQyHJMow=
+			jT5QZ1rCko7hrsXhwUwroC86bjEcf+YOA/NyBb4G6a8=
 			</data>
 		</dict>
 		<key>PrivateHeaders/MapStateFlags.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z2YjvON4xRK9tIrwSqj5tngGINWkOJv1Bq4DJ+YEn+s=
+			JjsToH0x275d5azwDkGE6wkIZRu23vQQhu9w8wBRKCs=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NSObject+IsEmpty.h</key>
@@ -899,7 +884,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+8HCUoGNucK2EmznTOfOebjNdnjaiv69dWqI5eow/Kk=
+			HKRVLj1pf+iAGc/TWnsw/tuVtIBWMyaya2NR/HcmQQQ=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWBuildingFloorReference.h</key>
@@ -920,7 +905,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zDCWJNCXtphwJ21Y4okHg/PMd/cZwsHJtJ7qWibROyA=
+			vTiJQMfH2Kxrn57Qw3vnByE9wHdkn9b1MAnn7Nbw4Ro=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWBuildingOverlay+Private.h</key>
@@ -934,14 +919,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PFHgQXuwRqB2uiShIJd9QDdv2Vwif9dWy9W7GF/s1iI=
+			XcLJBHPIVQ8wxhBX1l6JzS60Gk5QMxdT+BtKHPM2wdE=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWBuildingOverlayRenderer.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GwmqPZNnGBLH+bS803x65lhCXI0UZVdtjXaEIW0G31Q=
+			M4PrpXdLh3OVhZosvUcKU2p5ec2rx5lEZ7ekSoJPMHg=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWCoordinateInterpolationSegment.h</key>
@@ -962,7 +947,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WhXBRigDrYfuI4uAqzIzvvX9sNU8OpOOfPEVk0CTxoM=
+			UBEizXca7/p3P2aIkLKOCRCOruRZ/UfyQtwDlp74y+Y=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWDijkstraAlgorithm.h</key>
@@ -997,7 +982,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Nj5fKiVg60dAoI5GNC3636NdpQ9r1E/qcZSYSYCD7RE=
+			r8UZRd1zrPo8qjpScM+zUxHi5DMHtXRDdBDAxE9rM5Q=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWHeadingManagerDelegateProtocol.h</key>
@@ -1011,7 +996,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ks15nXYcg6VbJBrptGgeeWyjjV0AwggtedCcXS8z/Ls=
+			QB8McqCHIxgEYpnJ9vCMqfs56KhoG3Il9Tnqx1F+eCA=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWLandmark+Private.h</key>
@@ -1060,7 +1045,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CCEJtTWkdTwB/d4+JLxcA7wn+umgV7KGB8UhCk81vrQ=
+			HLu3XJQCRdUXfBPljIdbELnxdpl8IfZFSBjlmjwEKlQ=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWMapDocument+Private.h</key>
@@ -1075,13 +1060,6 @@
 			<key>hash2</key>
 			<data>
 			UQhwNqoUuWN0cer6203mh5BFzAhTiMHZhMJAx8u9p3o=
-			</data>
-		</dict>
-		<key>PrivateHeaders/PWMapKit-Prefix.pch</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			bmLzCu/t8WHu9QJdJopCvRiap97zn1zK6SHuTo8rZIk=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWMapKitAnalytics+Private.h</key>
@@ -1207,7 +1185,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3sxmYWosnQykizgRgyr8d5HyB71HMuiwbMRk+AE7Udw=
+			cA1qYl0RuzTCybGDugw43IsxQMX/nnwe+T2Ga2PbrLA=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWObjectQueue.h</key>
@@ -1221,7 +1199,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UoFkhdL+tH9nellZW4emDC/C9CPTAaqEWomzWPtGfQ4=
+			4PqXn+bAv5hcIForIZpJSIu1sreEvaF3t5+h2JBVviY=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWOcclusionManager.h</key>
@@ -1242,7 +1220,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Iiz4db+QGxAC5I0GGlv8uCuElii0ogtX6Wblnsu5A6k=
+			kMCnrDINtXEh4Pefk0yqc8hNiVh2hxSlEuSnkAzhsUw=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWPDFPage+Private.h</key>
@@ -1256,7 +1234,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nATQJwmvX1BEmLQu20nK2TwNvIqhKMylrrUHRpb6jCc=
+			rPkBFxkV2fDWnq1+PdYd9TgXL01yTLdaZehdRv5BMaU=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWPointOfInterest+Private.h</key>
@@ -1291,7 +1269,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7QRajk1xiZogiNYGvv0Oo3+TYH+CPh1SLt1CHUZtllE=
+			aPW3oiLHPbqQf0DjRfy7+zXdeycCU9FB4yRwDi5JyLQ=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWRouteInstruction+Private.h</key>
@@ -1368,7 +1346,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3OQ/5+AUTSfaSeJEGDaNh8h5CJUGiFE23vZnQ7r+DcE=
+			uGUjhi7csCCBj6Qy+3YjTV0TSUx/yyhrJQUaoNKSWJk=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWRouteSegment.h</key>
@@ -1389,7 +1367,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rfKSZbnQrg3HuM17XmzNPp6cIYuNiZQAfLu3nAVuSQI=
+			VBXwC4mMFdTWs0ljVxzRR3JuxvPL/8ditP7XTWYbSuo=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWRouteStep+Private.h</key>
@@ -1431,7 +1409,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/WzIJdFbdic/ukF6wu0n1lzEwG95k412aQtmEzSbIwk=
+			VhJhWNgBZ64ril3owVElQaddBqiyVNBukpRxODjMO14=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWSharedLocation+Private.h</key>

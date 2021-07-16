@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @class PWRoute;
 @protocol PWMapPoint;
 

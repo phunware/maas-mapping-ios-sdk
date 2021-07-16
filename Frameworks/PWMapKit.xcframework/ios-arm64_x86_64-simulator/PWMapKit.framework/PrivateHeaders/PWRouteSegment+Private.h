@@ -5,6 +5,8 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "PWRouteSegment.h"
 
 @interface PWRouteSegment ()

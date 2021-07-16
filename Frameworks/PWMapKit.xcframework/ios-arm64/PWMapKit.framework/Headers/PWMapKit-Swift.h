@@ -241,6 +241,7 @@ SWIFT_CLASS("_TtC8PWMapKit15PWCampusManager")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 + (void)campusWithIdentifier:(NSInteger)identifier usePreviouslyLoadedCampus:(BOOL)usePreviouslyLoadedCampus success:(void (^ _Nonnull)(PWCampus * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
++ (BOOL)isCampusLoadedWithIdentifier:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

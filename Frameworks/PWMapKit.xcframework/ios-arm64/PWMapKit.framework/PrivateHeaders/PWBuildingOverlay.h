@@ -5,6 +5,9 @@
 //  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+
 @class PWBuilding;
 @class PWFloor;
 @class PWMapDocument;

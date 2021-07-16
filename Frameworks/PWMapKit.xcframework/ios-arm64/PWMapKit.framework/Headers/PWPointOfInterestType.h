@@ -5,6 +5,8 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 /**
  An object encompasses a variety of information associated with point-of-interest type.
  */

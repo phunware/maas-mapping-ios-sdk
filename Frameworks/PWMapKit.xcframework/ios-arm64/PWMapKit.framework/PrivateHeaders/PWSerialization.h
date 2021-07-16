@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+
 CLLocationCoordinate2D CoordinateFromValues(NSDictionary *dictionary);
 
 id NilIfNull(id value);

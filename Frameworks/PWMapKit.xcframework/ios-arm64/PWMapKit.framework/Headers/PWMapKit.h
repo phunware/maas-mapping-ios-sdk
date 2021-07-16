@@ -13,7 +13,6 @@
 #import <PWMapKit/PWPointOfInterest.h>
 #import <PWMapKit/PWPointOfInterestInfo.h>
 #import <PWMapKit/PWPointOfInterestType.h>
-#import <PWMapKit/PWCustomLocation.h>
 #import <PWMapKit/PWUserLocation.h>
 #import <PWMapKit/PWFloorChangePOI.h>
 #import <PWMapKit/PWLandmark.h>

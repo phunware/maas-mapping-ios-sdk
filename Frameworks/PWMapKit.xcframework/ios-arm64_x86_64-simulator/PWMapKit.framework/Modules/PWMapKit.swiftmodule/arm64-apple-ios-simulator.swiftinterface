@@ -15,7 +15,7 @@ import Swift
   @objc final public let routePoints: [Swift.String : PWMapPoint]?
   @objc final public let routeSegments: [Swift.String : [Swift.String : Foundation.NSNumber]]?
   @objc final public let userInfo: [Swift.AnyHashable : Any]?
-  @objc public static var campusIdentifierNotFound: Swift.Int
+  @objc public static let campusIdentifierNotFound: Swift.Int
   @objc public var overviewBuilding: PWBuilding? {
     @objc get
   }
@@ -27,5 +27,6 @@ import Swift
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PWCampusManager : ObjectiveC.NSObject {
   @objc public static func campus(identifier: Swift.Int, usePreviouslyLoadedCampus: Swift.Bool, success: @escaping (PWCampus) -> Swift.Void, failure: @escaping (Swift.Error) -> Swift.Void)
+  @objc public static func isCampusLoaded(identifier: Swift.Int) -> Swift.Bool
   @objc deinit
 }

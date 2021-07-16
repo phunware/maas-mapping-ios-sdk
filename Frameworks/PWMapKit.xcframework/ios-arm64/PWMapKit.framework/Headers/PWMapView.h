@@ -22,7 +22,6 @@
 @class PWRouteUIOptions;
 @class PWLocation;
 @class PWUserLocation;
-@class PWCustomLocation;
 @class PWCampus;
 
 #pragma mark - Notification Keys
@@ -563,13 +562,6 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWTrackingMode) {
 #pragma mark - Deprecated
 
 /**
- * A reference to the dropped pin location.
- *
- * @deprecated No longer supported since v3.2.0
- */
-@property (nonatomic) PWCustomLocation *customLocation __deprecated;
-
-/**
  * The resolution of current map view.
  *
  * @deprecated since v3.2.0
@@ -607,14 +599,6 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWTrackingMode) {
  * @deprecated Create your own `CLLocationManager` for heading service, since v3.2.0
  */
 - (void)stopUpdatingHeading __deprecated;
-
-/**
- * Repositions the map's view to a custom location.
- * @param location A custom location reference where the map should navigate to.
- *
- * @deprecated Use `setCamera:animated:` or `setCenter:animated:` instead, since v3.2.0
- */
-- (void)navigateToCustomLocation:(PWCustomLocation *)location __deprecated;
 
 /**
  * Repositions the map's view to an specific point-of-interest.
