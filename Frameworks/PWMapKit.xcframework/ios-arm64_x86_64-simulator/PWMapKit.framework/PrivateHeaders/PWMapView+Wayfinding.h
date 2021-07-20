@@ -13,10 +13,11 @@
 @interface PWMapView (Wayfinding)
 
 - (void)plotRoute:(PWRoute *)route;
-- (void)setRouteStep:(PWRouteStep *)step;
-- (void)removeRouteOverlays:(BOOL)onlyInstruction;
+- (void)removeRouteOverlays;
+- (void)removeRouteIntructionOverlaysOnly;
 - (PWRouteStep *)currentStep;
 - (void)updateRouteSnappingPolyline;
 - (void)processRouteManeuver:(PWRouteInstruction *)maneuver animated:(BOOL)animated;
+- (void)updateRouteOverlaysForFloorID:(NSInteger)floorID;
 
 @end

@@ -77,7 +77,7 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 // Overlay & Renderer
 @property (nonatomic) PWBuildingOverlay *buildingOverlay;
 @property (nonatomic) PWBuildingOverlayRenderer *buildingRenderer;
-@property (nonatomic) PWRouteOverlay *routeOverlay;
+@property (nonatomic) NSArray<PWRouteOverlay *> *routeOverlays;
 @property (nonatomic) PWHideBackgroundOverlay *hideBackgroundOverlay;
 
 // Routing
