@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
     'DeviceIdentity'
 
   spec.subspec 'Core' do |subspec|
-    subspec.dependency 'PWLocation', '~> 3.11.0'
+    subspec.dependency 'PWLocation/Core', '~> 3.11.0'
     subspec.dependency 'TMCache', '~> 2.1.0'
 
     subspec.vendored_frameworks = 'Frameworks/PWMapKit.xcframework'
