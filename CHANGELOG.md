@@ -1,4 +1,12 @@
 # PWMapKit Changelog
+## 3.12.0 (Wednesday, July 28, 2021)
+#### Features
+* Updated to PWLocation 3.11.0
+* iOS deployment target increased from 10.0 to 13.0
+
+#### Bug fixes
+* Fixed bugs related to campus routing
+
 ## 3.11.0 (Monday, March 15, 2021)
 #### Features
 * Added support for campus routing.

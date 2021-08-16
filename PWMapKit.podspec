@@ -1,28 +1,43 @@
-Pod::Spec.new do |s|
-  s.name         = "PWMapKit"
-  s.version      = "3.12.0"
-  s.summary      = "Phunware's Mapping SDK for use with its Multiscreen-as-a-Service platform"
-  s.homepage     = "http://phunware.github.io/maas-mapping-ios-sdk/"
-  s.author       = { 'Phunware, Inc.' => 'http://www.phunware.com' }
-  s.social_media_url = 'https://twitter.com/Phunware'
-
-  s.platform     = :ios, '10.0'
-  s.source       = { :git => "https://github.com/phunware/maas-mapping-ios-sdk.git", :tag => "v#{s.version}" }
-  s.license      = { :type => 'Copyright', :text => 'Copyright 2009-present Phunware Inc. All rights reserved.' }
-
-  s.ios.vendored_frameworks = 'Frameworks/PWMapKit.xcframework'
+Pod::Spec.new do |spec|
+  spec.name = 'PWMapKit'
+  spec.version = '3.13.0'
+  spec.license = { :type => 'Copyright', :text => 'Copyright 2009-present Phunware Inc. All rights reserved.' }
+  spec.summary = "Phunware's Mapping SDK for use with its Multiscreen-as-a-Service platform"
+  spec.homepage = 'https://github.com/phunware/maas-mapping-ios-sdk/'
+  spec.author = { 'Phunware, Inc.' => 'https://www.phunware.com' }
+  spec.social_media_url = 'https://twitter.com/phunware'
   
-  s.default_subspec = 'all-frameworks'
+  spec.platform = :ios, '13.0'
+  spec.source = { :git => "https://github.com/phunware/maas-mapping-ios-sdk.git", :tag => "v#{spec.version}" }
+  spec.documentation_url = 'https://phunware.github.io/maas-mapping-ios-sdk/'
+  
+  spec.default_subspecs =
+    'Core',
+    'DeviceIdentity'
 
-  s.subspec 'all-frameworks' do |sub|
-    sub.dependency 'PWLocation', '~> 3.11.0'
+  spec.subspec 'Core' do |subspec|
+    subspec.dependency 'PWLocation/Core', '~> 3.12.0'
+    subspec.dependency 'TMCache', '~> 2.1.0'
+
+    subspec.vendored_frameworks = 'Frameworks/PWMapKit.xcframework'
+    
+    subspec.frameworks =
+      'CoreGraphics',
+      'CoreLocation',
+      'CoreServices',
+      'CoreTelephony',
+      'MapKit',
+      'QuartzCore',
+      'Security',
+      'SystemConfiguration'
   end
 
-  s.subspec 'LimitedDeviceIdentity' do |sub|
-    sub.ios.vendored_frameworks = 'Frameworks/PWMapKit.xcframework'
-    sub.dependency 'PWLocation/LimitedDeviceIdentity', '~> 3.11.0'
+  spec.subspec 'DeviceIdentity' do |subspec|
+    subspec.dependency 'PWMapKit/Core'
+    subspec.dependency 'PWLocation/DeviceIdentity', '~> 3.12.0'
   end
 
-  s.ios.frameworks = 'Security', 'CoreGraphics', 'QuartzCore', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreLocation', 'MapKit'
-  s.requires_arc = true
+  spec.subspec 'LimitedDeviceIdentity' do |subspec|
+    subspec.dependency 'PWMapKit/Core'
+  end
 end
