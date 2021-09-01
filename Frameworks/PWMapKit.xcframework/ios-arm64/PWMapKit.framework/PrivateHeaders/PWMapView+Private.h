@@ -75,10 +75,11 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 @property (nonatomic) id<MKAnnotation> focusedAnnotation;
 
 // Overlay & Renderer
-@property (nonatomic) PWBuildingOverlay *buildingOverlay;
-@property (nonatomic) PWBuildingOverlayRenderer *buildingRenderer;
-@property (nonatomic) NSArray<PWRouteOverlay *> *routeOverlays;
+@property (nonatomic) NSMutableArray<PWBuildingOverlay *> *buildingOverlays;
+@property (nonatomic) NSMutableArray<PWBuildingOverlayRenderer *> *buildingRenderers;
+@property (nonatomic) PWRouteOverlay *routeOverlay;
 @property (nonatomic) PWHideBackgroundOverlay *hideBackgroundOverlay;
+@property (nonatomic) PWBuildingOverlay *currentBuildingOverlay;
 
 // Routing
 @property (nonatomic) PWRoute *currentRoute;
@@ -142,5 +143,6 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 - (BOOL)isMapRegionChanging;
 - (void)setZoomLevel:(PWMapZoomLevel)zoomLevel;
 - (void)processUserTrackingMode:(PWTrackingMode)trackingMode animated:(BOOL)animated;
-
+- (NSArray *)floorsToRenderForFloor:(PWFloor *)floor;
+- (BOOL)isBuildingOverlayRenderedForFloor:(PWFloor *)floor;
 @end

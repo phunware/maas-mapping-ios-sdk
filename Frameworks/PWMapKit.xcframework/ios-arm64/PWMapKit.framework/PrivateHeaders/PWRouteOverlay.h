@@ -12,6 +12,4 @@
 
 @interface PWRouteOverlay : MKPolyline<PWRouteOverlayProtocol>
 
-@property (nonatomic) PWRouteStep *currentStep;
-
 @end
