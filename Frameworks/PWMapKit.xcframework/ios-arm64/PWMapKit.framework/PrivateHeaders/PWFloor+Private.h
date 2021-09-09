@@ -37,13 +37,13 @@
 @property (nonatomic) PWMapDocument *mapDocument;
 
 // Campus routing info
-@property (nonatomic) PWFloor *previousFloor;
-@property (nonatomic) PWFloor *nextFloor;
-- (void)resetConnectedFloors;
+@property (nonatomic) NSArray<PWFloor *> *connectedFloors;
 
 // POIs
 @property (nonatomic) NSArray *pointsOfInterest;
 
 - (NSError *)validate;
+- (void)resetConnectedFloors;
+- (NSArray *)floorsToRenderForRouting;
 
 @end
