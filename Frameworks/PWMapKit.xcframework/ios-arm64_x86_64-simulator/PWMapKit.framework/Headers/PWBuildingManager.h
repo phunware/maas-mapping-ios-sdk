@@ -29,6 +29,7 @@
 
 + (void) buildingWithBuildingId:(NSInteger)buildingId
                 bundleDirectory:(NSString *)bundleDirectory
+             clearBuildingCache:(BOOL)clearBuildingCache
                      completion:(PWLoadBuildingCompletionBlock)completion;
 
 @end

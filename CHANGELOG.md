@@ -1,8 +1,4 @@
 # PWMapKit Changelog
-## 3.13.0 (TBD)
-#### Features
-* Added capability to display connected buildings during campus routing.
-
 ## 3.12.0 (Wednesday, July 28, 2021)
 #### Features
 * Updated to PWLocation 3.11.0
