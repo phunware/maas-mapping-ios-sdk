@@ -18,7 +18,7 @@
 
 @optional
 + (instancetype)polylineWithRouteStep:(PWRouteStep *)step;
-+ (instancetype)polylineWithRouteSteps:(NSArray<PWRouteStep *> *)steps;
++ (instancetype)polylinesWithRouteSteps:(NSArray<PWRouteStep *> *)steps;
 
 + (instancetype)polygonWithInstruction:(PWRouteInstruction *)instruction;
 + (NSArray<id<PWMapPoint>> *)preparePoints:(PWRouteInstruction *)instruction;

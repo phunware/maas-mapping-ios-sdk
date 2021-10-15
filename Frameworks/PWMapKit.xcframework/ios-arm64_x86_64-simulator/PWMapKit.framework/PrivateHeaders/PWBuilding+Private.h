@@ -58,7 +58,7 @@ extern NSTimeInterval const PWBuildingCacheFallbackTimeout;
 @property (nonatomic) NSDictionary<NSString *, NSNumber *> *fwPidIdxMapping;
 
 - (id<PWMapPoint>)closestTo:(id<PWMapPoint>)point;
-
 - (NSError *)validate;
+- (BOOL)isOverview;
 
 @end

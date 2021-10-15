@@ -21,13 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
 
 - (void)loadImageWithURL:(NSURL*)url
-      buildingIdentifier:(NSInteger)buildingIdentifier
              forceUpdate:(BOOL)forceUpdate;
 
 - (void)loadImageWithCustomImageLoader:(PWLoadCustomImageForPointOfInterest)customImageLoader
                    pointOfInterestInfo:(PWPointOfInterestInfo*)poiInfo
                         fallbackImageURL:(NSURL*)url
-              fallbackBuildingIdentifier:(NSInteger)buildingIdentifier
                 forceFallbackImageUpdate:(BOOL)forceUpdate;
 
 - (void)notifyWhenLoaded:(PWPointOfInterestImageLoadingCompleted _Nonnull)callback;

@@ -42,6 +42,8 @@
 #import "PWSVPulsingAnnotationView.h"
 #import "PWBuildingAnnotationView+Private.h"
 #import "PWAnnotationLabel.h"
+#import "PWMultiRouteOverlay.h"
+#import "PWMultiRouteOverlayRenderer.h"
 
 #import "PWRouteSnapper.h"
 #import "PWMapKitAnalytics+Private.h"
@@ -77,7 +79,7 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 // Overlay & Renderer
 @property (nonatomic) NSMutableArray<PWBuildingOverlay *> *buildingOverlays;
 @property (nonatomic) NSMutableArray<PWBuildingOverlayRenderer *> *buildingRenderers;
-@property (nonatomic) PWRouteOverlay *routeOverlay;
+@property (nonatomic) PWMultiRouteOverlay *routeOverlay;
 @property (nonatomic) PWHideBackgroundOverlay *hideBackgroundOverlay;
 @property (nonatomic) PWBuildingOverlay *currentBuildingOverlay;
 

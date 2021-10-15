@@ -50,7 +50,7 @@
 @property (nonatomic) NSInteger maxZoomLevel;
 
 // POI - image
-@property (nonatomic, nullable) PWPointOfInterestImageLoader* imageLoader;
+@property (nonatomic, nullable) PWPointOfInterestImageLoader* customIconImageLoader;
 @property (nonatomic, readonly) BOOL isLoadingImage;
 
 - (NSError* _Nullable)validate;
@@ -63,5 +63,7 @@
               forceFallbackImageUpdate:(BOOL)forceFallbackImageUpdate;
 
 - (void)notifyWhenImageLoaded:(PWPointOfInterestImageLoadingCompleted _Nonnull)callback;
+
+@property (nonatomic) BOOL shouldUseCustomIconImage;
 
 @end
