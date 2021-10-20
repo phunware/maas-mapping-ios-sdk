@@ -27,6 +27,7 @@ extern NSString * const PWBuildingFloorLevelKey;
 extern NSString * const PWBuildingFloorResourcesKey;
 extern NSString * const PWBuildingFloorCoordinateSpaceKey;
 extern NSString * const PWBuildingFloorReferencePointsKey;
+extern NSString * const PWBuildingFloorIsDefaultKey;
 
 #pragma mark - Floor Resource
 

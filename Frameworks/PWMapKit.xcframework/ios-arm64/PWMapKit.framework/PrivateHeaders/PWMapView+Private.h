@@ -146,4 +146,7 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 - (void)setZoomLevel:(PWMapZoomLevel)zoomLevel;
 - (void)processUserTrackingMode:(PWTrackingMode)trackingMode animated:(BOOL)animated;
 - (BOOL)isBuildingOverlayRenderedForFloor:(PWFloor *)floor;
+- (PWFloor *)getFloorById:(NSInteger)floorID;
+- (PWFloor *)getInitialFloor;
+
 @end

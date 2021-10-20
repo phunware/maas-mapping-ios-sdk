@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/PWBuilding.h</key>
 		<data>
-		FftOEoifoDJTww5X0omSAyhD2xI=
+		b69e6ho8cMhV1j+GfL2lTLTbexc=
 		</data>
 		<key>Headers/PWBuildingAnnotationView.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/PWFloor.h</key>
 		<data>
-		qcBQqqnF09yrR7FgKkSt+DZFORQ=
+		w693U96GnZkanWidlBeHxqhk/fQ=
 		</data>
 		<key>Headers/PWFloorChangePOI.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Headers/PWMapView.h</key>
 		<data>
-		vGpE7ecAyAA93q2hROpRsinhEGk=
+		yl7WwEcyS9RjnplTUUBPzuZT9gA=
 		</data>
 		<key>Headers/PWPointOfInterest.h</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>PrivateHeaders/PWBuilding+Private.h</key>
 		<data>
-		iTo9J4Su2wHsFhxoHtxt9lsnKk8=
+		Fjzt4EuLZWGXnELdiB2g0Es+aXs=
 		</data>
 		<key>PrivateHeaders/PWBuildingAnnotationView+Private.h</key>
 		<data>
@@ -242,7 +242,7 @@
 		</data>
 		<key>PrivateHeaders/PWFloor+Private.h</key>
 		<data>
-		YPOSkNkVHtpjZVnDqd9PRNgsygU=
+		lTtNs4/cSZb3WdleqABPS6xbaXM=
 		</data>
 		<key>PrivateHeaders/PWFloydWarshallAlgorithm.h</key>
 		<data>
@@ -334,7 +334,7 @@
 		</data>
 		<key>PrivateHeaders/PWMapView+Private.h</key>
 		<data>
-		5lkjPcBOvW3sdWuF5ZomWigNJCM=
+		oi+wQ6CiMNp7pEl7ecloug/gfW8=
 		</data>
 		<key>PrivateHeaders/PWMapView+UserFollowing.h</key>
 		<data>
@@ -362,7 +362,7 @@
 		</data>
 		<key>PrivateHeaders/PWMappingSerializationKeys.h</key>
 		<data>
-		yHNBCkW0Dv8+qjeACUkuh3YFj7Y=
+		MteWg6C+o4Uv/kV01njSkXXISS8=
 		</data>
 		<key>PrivateHeaders/PWMappingTypes.h</key>
 		<data>
@@ -562,7 +562,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ASwsQaiLXkPyDxjDyHAjc9bKJnTMcVn0IdObxQyXdVA=
+			k7cJ//j4wIG8uFcFt/yrQ85dCB6aT4/wVcg38TqVIxI=
 			</data>
 		</dict>
 		<key>Headers/PWBuildingAnnotationView.h</key>
@@ -597,7 +597,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WIr8WZKGJIhjUuOwXToOb4pbvwJ74cEDOVSI0RLG+SQ=
+			4dDJ6RxemXEJDUmKlDyrBNukjFSESdt9ytBrn2ubA0o=
 			</data>
 		</dict>
 		<key>Headers/PWFloorChangePOI.h</key>
@@ -653,7 +653,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MomFk+t5tElbyQ9dHKQxhFjFRxb0hJYw7n6tJAbKT2Y=
+			UQmL4TTsrhUoi+XHhS1Rl9w92kHwkWLeZ/O+GDUss38=
 			</data>
 		</dict>
 		<key>Headers/PWPointOfInterest.h</key>
@@ -856,7 +856,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HfJbo5udVRYG+yEJwtEbrpuxxtRY6DLR1aPzOtQoy1A=
+			hKJ997dxZMGuFYLMIK0rIEXJTNNl8Jglyl19WEYgsRI=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWBuildingAnnotationView+Private.h</key>
@@ -961,7 +961,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4Vm+C8Lcl5zinEIR8Bdx7VDMVfct/CJt9z3xdAFNcIc=
+			IxNyjRsCT1msjL9whPSYDgspEyaNTztvYweZz6GAAlo=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWFloydWarshallAlgorithm.h</key>
@@ -1122,7 +1122,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YomRcQbva7FGHIqfb1KMOoWUrQ+dExEq5qjjHOroDgc=
+			RNmDL4SIUAR0vhmfXBlcXQ4iMDvJoB76/ukKq/Q5bDA=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWMapView+UserFollowing.h</key>
@@ -1171,7 +1171,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tj1228Re9YF9ZtoJXCYIcOGcihzP8arhi10wmPQiIHw=
+			K6IdYzxTKXxWHIaLdH62IfYCNzJj9C9KRzsN7lHBXKk=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWMappingTypes.h</key>

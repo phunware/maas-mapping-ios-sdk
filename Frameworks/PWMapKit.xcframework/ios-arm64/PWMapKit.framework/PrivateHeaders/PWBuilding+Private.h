@@ -30,6 +30,7 @@ extern NSTimeInterval const PWBuildingCacheFallbackTimeout;
 @property (nonatomic) NSArray *pointOfInterestTypes;
 @property (nonatomic, strong) NSString *bundleDirectory;
 @property (nonatomic, readwrite) NSDictionary *userInfo;
+@property (nonatomic) PWFloor *initialFloor;
 
 // Floor info
 @property (nonatomic) NSArray *floors;

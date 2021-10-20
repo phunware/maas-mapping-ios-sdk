@@ -54,6 +54,11 @@
 @property (readonly) NSDictionary *userInfo;
 
 /**
+ *  Default floor for the building.
+ */
+@property (readonly) PWFloor *initialFloor;
+
+/**
  * A list of routeSegments contained in the building
  */
 @property (readonly) NSDictionary<NSString *, NSDictionary<NSString *, NSNumber *> *> *routeSegments;

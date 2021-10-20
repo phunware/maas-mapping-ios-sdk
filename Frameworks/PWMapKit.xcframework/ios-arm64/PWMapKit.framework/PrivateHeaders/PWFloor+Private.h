@@ -35,6 +35,7 @@
 @property (nonatomic) PWBuildingFloorReference *reference;
 @property (nonatomic) PWBuildingFloorResource *resource;
 @property (nonatomic) PWMapDocument *mapDocument;
+@property (nonatomic) BOOL isDefault;
 
 // POIs
 @property (nonatomic) NSArray *pointsOfInterest;
