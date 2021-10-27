@@ -6,12 +6,12 @@ inhibit_all_warnings!
 target 'MapScenarios' do
   use_frameworks!
 
-  pod 'PWMapKit', :git => 'https://github.com/phunware/maas-mapping-ios-sdk.git', :tag => 'v3.13.0-beta-02'
+  pod 'PWMapKit', :git => 'https://github.com/phunware/maas-mapping-ios-sdk.git', :tag => 'v3.13.0-beta-03'
 
   # Explicitly point to all Phunware beta SDKs that PWMapKit depends on
-  pod 'PWCore', :git => 'https://github.com/phunware/maas-core-ios-sdk.git', :tag => 'v3.12.0-beta-02'
-  pod 'PWLocation', :git => 'https://github.com/phunware/maas-location-ios-sdk.git', :tag => 'v3.12.0-beta-02'
-  pod 'PWLocation/MistProvider', :git => 'https://github.com/phunware/maas-location-ios-sdk.git', :tag => 'v3.12.0-beta-02'
+  pod 'PWCore', :git => 'https://github.com/phunware/maas-core-ios-sdk.git', :tag => 'v3.12.0-beta-03'
+  pod 'PWLocation', :git => 'https://github.com/phunware/maas-location-ios-sdk.git', :tag => 'v3.12.0-beta-03'
+  pod 'PWLocation/MistProvider', :git => 'https://github.com/phunware/maas-location-ios-sdk.git', :tag => 'v3.12.0-beta-03'
 end
 
 post_install do |installer|
