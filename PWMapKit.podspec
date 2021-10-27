@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'PWMapKit'
-  spec.version = '3.13.0-beta-02'
+  spec.version = '3.13.0-beta-03'
   spec.license = { :type => 'Copyright', :text => 'Copyright 2009-present Phunware Inc. All rights reserved.' }
   spec.summary = "Phunware's Mapping SDK for use with its Multiscreen-as-a-Service platform"
   spec.homepage = 'https://github.com/phunware/maas-mapping-ios-sdk/'
@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
     'DeviceIdentity'
 
   spec.subspec 'Core' do |subspec|
-    subspec.dependency 'PWLocation/Core', '~> 3.12.0-beta-02'
+    subspec.dependency 'PWLocation/Core', '~> 3.12.0-beta-03'
     subspec.dependency 'TMCache', '~> 2.1.0'
 
     subspec.vendored_frameworks = 'Frameworks/PWMapKit.xcframework'
@@ -34,7 +34,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'DeviceIdentity' do |subspec|
     subspec.dependency 'PWMapKit/Core'
-    subspec.dependency 'PWLocation/DeviceIdentity', '~> 3.12.0-beta-02'
+    subspec.dependency 'PWLocation/DeviceIdentity', '~> 3.12.0-beta-03'
   end
 
   spec.subspec 'LimitedDeviceIdentity' do |subspec|
