@@ -43,7 +43,7 @@ class SearchPOIViewController: UIViewController, ScenarioProtocol {
             return
         }
         
-        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        PWCore.setApplicationID(applicationId, accessKey: accessKey)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -191,7 +191,7 @@ extension SearchPOIViewController: UITableViewDelegate {
         self.tableView.isHidden = true
         let pointOfInterest = filteredPointsOfInterest[indexPath.row]
         if mapView.currentFloor.floorID != pointOfInterest.floorID {
-            let newFloor = mapView.getFloorById(pointOfInterest.floorID)
+            let newFloor = mapView.floorById(pointOfInterest.floorID)
             mapView.currentFloor = newFloor
         }
         mapView.selectAnnotation(pointOfInterest, animated: true)

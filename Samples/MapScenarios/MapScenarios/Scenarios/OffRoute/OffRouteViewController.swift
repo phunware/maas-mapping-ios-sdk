@@ -60,7 +60,7 @@ class OffRouteViewController: UIViewController, ScenarioProtocol {
             return
         }
 
-        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        PWCore.setApplicationID(applicationId, accessKey: accessKey)
         mapView.delegate = self
         mapView.routeSnappingTolerance = PWRouteSnapTolerance.toleranceNormal
         view.addSubview(mapView)
