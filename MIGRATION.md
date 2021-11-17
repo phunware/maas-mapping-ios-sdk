@@ -1,4 +1,14 @@
 # PWMapKit Migration Guide
+## Upgrade from 3.12.x to 3.13.x
+
+#### General
+
+This release adds capability to display connected buildings during campus routing.
+
+#### Upgrade Steps
+
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.13.x'`, then run `pod update` in the Terminal to update the framework.
+
 ## Upgrade from 3.11.x to 3.12.x
 
 #### General

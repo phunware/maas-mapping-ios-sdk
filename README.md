@@ -6,8 +6,8 @@ This is Phunware's Mapping SDK for use with its Multiscreen-as-a-Service platfor
 
 Requirements
 ------------
-- PWLocation 3.11.x
-- PWCore 3.11.x
+- PWLocation 3.12.x
+- PWCore 3.12.x
 - iOS 13.0 or greater
 - Xcode 12 or greater
 
