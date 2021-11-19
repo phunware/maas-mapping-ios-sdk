@@ -12,6 +12,6 @@
 
 - (void)calculateZoomLevel;
 
-- (void)updateZoomLevel:(double)zoomSacle;
+- (void)updateZoomLevel:(double)zoomScale;
 
 @end
