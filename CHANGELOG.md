@@ -1,12 +1,4 @@
 # PWMapKit Changelog
-## 3.13.0 (TBD)
-#### Features
-* Added capability to display connected buildings during campus routing.
-* Optimized initial launch time
-
-#### Bug fixes
-Fixed an issue where minimum zoom level POIs would continue to show on the map after zooming out beyond the minimum zoom level threshold.
-
 ## 3.12.0 (Wednesday, July 28, 2021)
 #### Features
 * Updated to PWLocation 3.11.0
