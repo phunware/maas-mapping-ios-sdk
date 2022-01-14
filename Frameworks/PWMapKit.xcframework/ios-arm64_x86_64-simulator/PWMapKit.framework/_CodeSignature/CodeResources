@@ -90,7 +90,7 @@
 		</data>
 		<key>Headers/PWRouteUIOptions.h</key>
 		<data>
-		sWREwnwjavBjusGBdgRTUTJcVLA=
+		A0dG3wojhIBXb5fI1kYcEvTjDMY=
 		</data>
 		<key>Headers/PWSharedLocation.h</key>
 		<data>
@@ -334,7 +334,7 @@
 		</data>
 		<key>PrivateHeaders/PWMapView+Private.h</key>
 		<data>
-		oi+wQ6CiMNp7pEl7ecloug/gfW8=
+		muXEvksEebnokbyrMPJ1rVGf/H8=
 		</data>
 		<key>PrivateHeaders/PWMapView+UserFollowing.h</key>
 		<data>
@@ -451,10 +451,6 @@
 		<key>PrivateHeaders/PWRouteOverlayProtocol.h</key>
 		<data>
 		umHjaCTbm/eAxw5v64dsFQiozsU=
-		</data>
-		<key>PrivateHeaders/PWRouteOverlayRenderer.h</key>
-		<data>
-		YyQploIYQhLK+cX4SvstR+Uu0/I=
 		</data>
 		<key>PrivateHeaders/PWRoutePolygon.h</key>
 		<data>
@@ -702,7 +698,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			y7EkQptFPP0U9FpNoCRj3zEbPNbeBCJiKwFkWOuAiEc=
+			kgoyEw3obfY4CVli0xrTtRQyqCs97ioOoTrEDJxFy1g=
 			</data>
 		</dict>
 		<key>Headers/PWSharedLocation.h</key>
@@ -1122,7 +1118,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RNmDL4SIUAR0vhmfXBlcXQ4iMDvJoB76/ukKq/Q5bDA=
+			cJeVx/UzzEZ1zIXLy1Nn/EMhCAEgxAGi+yNX0kcb83M=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWMapView+UserFollowing.h</key>
@@ -1326,13 +1322,6 @@
 			<key>hash2</key>
 			<data>
 			OOOhcooCSRsncZ0L8/qb395QokIL5H6RUJ+acA3M4vM=
-			</data>
-		</dict>
-		<key>PrivateHeaders/PWRouteOverlayRenderer.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fn8f+lVx911/3gz9BXAaOmPkstcDEhn04KFuik052lM=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWRoutePolygon.h</key>

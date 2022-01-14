@@ -38,7 +38,6 @@
 #import "PWRouteInstructionDirectionOverlay.h"
 #import "PWHideBackgroundOverlay.h"
 #import "PWBuildingOverlayRenderer.h"
-#import "PWRouteOverlayRenderer.h"
 #import "PWSVPulsingAnnotationView.h"
 #import "PWBuildingAnnotationView+Private.h"
 #import "PWAnnotationLabel.h"
@@ -120,7 +119,6 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 @property (nonatomic) double lastestCameraAltitude;
 @property (nonatomic) double calculatedZoomScale;
 @property (nonatomic) PWMapZoomLevel zoomLevel;
-@property (nonatomic) PWMapZoomLevel phunwareZoomLevel;
 
 // Tracking mode - used to keep the tracking mode which was set by end user.
 @property (nonatomic) PWTrackingMode trueTrackingMode;
