@@ -1,14 +1,4 @@
 # PWMapKit Changelog
-## 3.13.0 (TBD)
-#### Features
-* Added capability to display connected buildings during campus routing.
-* Added support for configuring a route's line thickness via `PWRoutUIOptions`.
-* Optimized initial launch time
-
-#### Bug fixes
-* Fixed an issue where minimum zoom level POIs would continue to show on the map after zooming out beyond the minimum zoom level threshold.
-* Fixed an issue where starting a route could cause the camera to zoom to an unexpected zoom level.
-
 ## 3.12.0 (Wednesday, July 28, 2021)
 #### Features
 * Updated to PWLocation 3.11.0

@@ -1,0 +1,11 @@
+framework module PWMapKit {
+  umbrella header "PWMapKit.h"
+
+  export *
+  module * { export * }
+}
+
+module PWMapKit.Swift {
+    header "PWMapKit-Swift.h"
+    requires objc
+}
