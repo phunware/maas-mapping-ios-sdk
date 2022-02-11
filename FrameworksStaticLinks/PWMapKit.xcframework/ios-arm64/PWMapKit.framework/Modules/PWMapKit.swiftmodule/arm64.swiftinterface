@@ -1,11 +1,10 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PWMapKit
 import Foundation
 import PWCore
 @_exported import PWMapKit
 import Swift
-import _Concurrency
 @objc @_hasMissingDesignatedInitializers @objcMembers public class PWCampus : ObjectiveC.NSObject {
   @objc final public let identifier: Swift.Int
   @objc final public let name: Swift.String?
@@ -20,10 +19,11 @@ import _Concurrency
   @objc public var overviewBuilding: PWBuilding? {
     @objc get
   }
-  @objc public static func campus(identifier: Swift.Int, completion: @escaping (_ campus: PWCampus?, _ error: Swift.Error?) -> Swift.Void)
+  @objc public static func campus(identifier: Swift.Int, completion: @escaping (PWCampus?, Swift.Error?) -> Swift.Void)
   @objc public func floorById(_ identifier: Swift.Int) -> PWFloor?
   @objc public func buildingById(_ identifier: Swift.Int) -> PWBuilding?
   @objc deinit
+  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PWCampusManager : ObjectiveC.NSObject {
   @objc public static func campus(identifier: Swift.Int, usePreviouslyLoadedCampus: Swift.Bool, success: @escaping (PWCampus) -> Swift.Void, failure: @escaping (Swift.Error) -> Swift.Void)

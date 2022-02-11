@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/PWMapKit-Swift.h</key>
 		<data>
-		ALZNjVOOvScLWb8odI84eL0uPbY=
+		rqdD1x+2dc72YJP8qG4Ma3WpykY=
 		</data>
 		<key>Headers/PWMapKit.h</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ibcN2oh7l69AyWvy6r0yQYAeTuY=
+		j0w5CxjjfxvE1y49R8uyaXRH3c4=
 		</data>
 		<key>LICENSE.md</key>
 		<data>
@@ -114,51 +114,51 @@
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		K2Kf9wI2Fpqse001wnN7EU1Ywnc=
+		+HTZDaZKfhWqnBEH3+f24YXJfd0=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		cRSLxq9tk/BDkyAeJK6Aos0EJQ4=
+		unexBFDijsU2wKEowIMs+5OIKE8=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		MjezKnqinjRuX5kf+4ai1r1iSbM=
+		E7KNLteRIBN0lDqak5YtHHC53BU=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		K2Kf9wI2Fpqse001wnN7EU1Ywnc=
+		+HTZDaZKfhWqnBEH3+f24YXJfd0=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		cRSLxq9tk/BDkyAeJK6Aos0EJQ4=
+		unexBFDijsU2wKEowIMs+5OIKE8=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		MjezKnqinjRuX5kf+4ai1r1iSbM=
+		E7KNLteRIBN0lDqak5YtHHC53BU=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		kHDneL/qKEpUrz1grAds+KyhIWE=
+		zGuqEs5TqoKpjRzcz8yZ1Gwsz44=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		f2p0ID3MxesGHEAmDHx+KsnPg7E=
+		M5SznYiAgYCN5+ZSOmbVh3CRAZc=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		diJJGrIefo6iB0/xmXtpYAfC/NA=
+		SOPAyJjbTKec3OqlP+qapNms6bU=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		kHDneL/qKEpUrz1grAds+KyhIWE=
+		zGuqEs5TqoKpjRzcz8yZ1Gwsz44=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		f2p0ID3MxesGHEAmDHx+KsnPg7E=
+		M5SznYiAgYCN5+ZSOmbVh3CRAZc=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		diJJGrIefo6iB0/xmXtpYAfC/NA=
+		SOPAyJjbTKec3OqlP+qapNms6bU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -628,7 +628,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QswDlTLkzhutMXCJ0vxMQm5OXtBIPRbC3NLEEGzc22s=
+			vsT3YEXl7jUOUtxmd7Z1TifUghQpf4cZn9VfYsjGLT8=
 			</data>
 		</dict>
 		<key>Headers/PWMapKit.h</key>
@@ -733,84 +733,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7d5DYo4xL4acfzGkdoxncmLDKW+Znt6A4oc5cnJyZ2Q=
+			n5UcTlI0yuxNrESJq07pF+4AqYtjpnTn6wyL8XgY+kM=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qDo4yeHzqjWSJoZL4EQ+wHZWK8ljkNiHjaDgGEI57yg=
+			8o7hLRhRbhGdyMZsnlD+f3kT9WmRYU3o5BbmmFh6sQw=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5WCgbvRnTaxj6UBVKG86qyRRbfCAMLisQz70Ms7Ya5c=
+			wHLBGdLUjaHLTNF+AeAg5jz9cD1ihKQOpJlDxBVvVb8=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7d5DYo4xL4acfzGkdoxncmLDKW+Znt6A4oc5cnJyZ2Q=
+			n5UcTlI0yuxNrESJq07pF+4AqYtjpnTn6wyL8XgY+kM=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qDo4yeHzqjWSJoZL4EQ+wHZWK8ljkNiHjaDgGEI57yg=
+			8o7hLRhRbhGdyMZsnlD+f3kT9WmRYU3o5BbmmFh6sQw=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5WCgbvRnTaxj6UBVKG86qyRRbfCAMLisQz70Ms7Ya5c=
+			wHLBGdLUjaHLTNF+AeAg5jz9cD1ihKQOpJlDxBVvVb8=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1iY2MwDmKqVD0sxouVi4Gr4QrKyTi33YvoByPiPnQ5s=
+			rHLiVpRLI2vJ/EIvf3k873YZWJYt4heLxg6pdrb/5BQ=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6CMqooYk/X1v5CC4tBCLv8CYZVgF1qy42BfdaV+FM4c=
+			hga3k917Re80WRkrwKogC/JunfZwDqOvExrDFJwHpJE=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wcNWUCmIYQBUkAShvLVfgoOtmZBfjFh66oiDdJABYZI=
+			UEdFGs6yRj+RwQ3kWoDrR50roJkBP7oe9h1bhjPiBD0=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1iY2MwDmKqVD0sxouVi4Gr4QrKyTi33YvoByPiPnQ5s=
+			rHLiVpRLI2vJ/EIvf3k873YZWJYt4heLxg6pdrb/5BQ=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6CMqooYk/X1v5CC4tBCLv8CYZVgF1qy42BfdaV+FM4c=
+			hga3k917Re80WRkrwKogC/JunfZwDqOvExrDFJwHpJE=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wcNWUCmIYQBUkAShvLVfgoOtmZBfjFh66oiDdJABYZI=
+			UEdFGs6yRj+RwQ3kWoDrR50roJkBP7oe9h1bhjPiBD0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
