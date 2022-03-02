@@ -1,4 +1,11 @@
 # PWMapKit Changelog
+## 3.13.0 (TBD)
+#### Features
+* Added capability to display connected buildings during campus routing.
+* Optimized initial launch time.
+#### Bug fixes
+* Prevent crash when user swipes turn by turn cards quickly and then backgrounds the app.
+
 ## 3.12.0 (Wednesday, July 28, 2021)
 #### Features
 * Updated to PWLocation 3.11.0
