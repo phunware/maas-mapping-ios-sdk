@@ -6,7 +6,7 @@ inhibit_all_warnings!
 target 'MapScenarios' do
   use_frameworks!
 
-  pod 'PWMapKit', :git => 'https://github.com/phunware/maas-mapping-ios-sdk.git', :tag => 'v3.13.0-beta-06'
+  pod 'PWMapKit', :git => 'https://github.com/phunware/maas-mapping-ios-sdk.git', :tag => 'v3.13.0-beta-07'
 
   # Explicitly point to all Phunware beta SDKs that PWMapKit depends on
   pod 'PWCore', :git => 'https://github.com/phunware/maas-core-ios-sdk.git', :tag => 'v3.12.0-beta-04'
