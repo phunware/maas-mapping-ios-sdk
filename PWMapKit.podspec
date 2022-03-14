@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
     'DeviceIdentity'
 
   spec.subspec 'Core' do |subspec|
-    subspec.dependency 'PWLocation/Core', '~> 3.12.0-beta-03'
+    subspec.dependency 'PWLocation/Core', '~> 3.12.0-beta-04'
     subspec.dependency 'TMCache', '~> 2.1.0'
 
     subspec.vendored_frameworks = 'Frameworks/PWMapKit.xcframework'
@@ -34,7 +34,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'DeviceIdentity' do |subspec|
     subspec.dependency 'PWMapKit/Core'
-    subspec.dependency 'PWLocation/DeviceIdentity', '~> 3.12.0-beta-03'
+    subspec.dependency 'PWLocation/DeviceIdentity', '~> 3.12.0-beta-04'
   end
 
   spec.subspec 'LimitedDeviceIdentity' do |subspec|
