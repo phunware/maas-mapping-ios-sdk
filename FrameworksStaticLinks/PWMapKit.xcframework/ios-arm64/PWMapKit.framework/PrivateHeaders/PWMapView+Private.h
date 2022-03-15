@@ -138,6 +138,16 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
  */
 @property (nonatomic) BOOL annotationZoomLevelsEnabled;
 
+/**
+ Time stamp for when route maneuver changed last.
+ */
+@property (nonatomic) NSTimeInterval lastManeuverChangedTime;
+
+/**
+ Timer used to control whether to process route maneuver.
+ */
+@property (strong, nonatomic) dispatch_source_t routeManeuverProcessingTimer;
+
 - (void)willAppear;
 - (void)didDisappear;
 - (BOOL)isMapRegionChanging;
