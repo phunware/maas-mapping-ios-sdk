@@ -4,7 +4,11 @@
 import Foundation
 import PWCore
 @_exported import PWMapKit
+import Private
 import Swift
+extension PWRoute {
+  public static func createRoute(from: PWMapPoint, to: PWMapPoint, resultQueue: Dispatch.DispatchQueue = .main, options: PWRouteOptions, completion: @escaping (PWRoute?, Swift.Error?) -> Swift.Void)
+}
 @objc @_hasMissingDesignatedInitializers @objcMembers public class PWCampus : ObjectiveC.NSObject {
   @objc final public let identifier: Swift.Int
   @objc final public let name: Swift.String?
@@ -19,14 +23,18 @@ import Swift
   @objc public var overviewBuilding: PWBuilding? {
     @objc get
   }
-  @objc public static func campus(identifier: Swift.Int, completion: @escaping (PWCampus?, Swift.Error?) -> Swift.Void)
+  @objc public static func campus(identifier: Swift.Int, resultQueue: Dispatch.DispatchQueue = .main, completion: @escaping (PWCampus?, Swift.Error?) -> Swift.Void)
   @objc public func floorById(_ identifier: Swift.Int) -> PWFloor?
   @objc public func buildingById(_ identifier: Swift.Int) -> PWBuilding?
   @objc deinit
   @objc override dynamic public init()
 }
+extension PWBuilding {
+  public static let defaultCacheFallbackTimeout: Swift.Int
+  public static func building(identifier: Swift.Int, cacheFallbackTimeout: Swift.Int = PWBuilding.defaultCacheFallbackTimeout, resultQueue: Dispatch.DispatchQueue = .main, completion: @escaping (PWBuilding?, Swift.Error?) -> Swift.Void)
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PWCampusManager : ObjectiveC.NSObject {
-  @objc public static func campus(identifier: Swift.Int, usePreviouslyLoadedCampus: Swift.Bool, success: @escaping (PWCampus) -> Swift.Void, failure: @escaping (Swift.Error) -> Swift.Void)
+  @objc public static func campus(identifier: Swift.Int, usePreviouslyLoadedCampus: Swift.Bool = false, success: @escaping (PWCampus) -> Swift.Void, failure: @escaping (Swift.Error) -> Swift.Void)
   @objc public static func isCampusLoaded(identifier: Swift.Int) -> Swift.Bool
   @objc deinit
 }

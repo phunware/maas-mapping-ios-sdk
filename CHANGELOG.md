@@ -5,8 +5,7 @@
 * Optimized initial launch time.
 #### Bug fixes
 * Prevent crash when user swipes turn by turn cards quickly and then backgrounds the app.
-* Allowed images for PWPointOfInterest objects to be provided by the application.
- 
+
 ## 3.12.0 (Wednesday, July 28, 2021)
 #### Features
 * Updated to PWLocation 3.11.0
