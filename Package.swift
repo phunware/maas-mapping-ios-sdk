@@ -14,8 +14,8 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(name:"PWCore", url:"https://github.com/phunware/maas-core-ios-sdk.git", .exact("3.12.0")),
-        .package(name:"PWLocation", url:"https://github.com/phunware/maas-location-ios-sdk.git", .exact("3.12.0-beta.4"))
+        .package(name:"PWCore", url:"https://github.com/phunware/maas-core-ios-sdk.git", from: "3.12.0"),
+        .package(name:"PWLocation", url:"https://github.com/phunware/maas-location-ios-sdk.git", .exact("3.12.0-rc.1"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
