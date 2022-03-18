@@ -45,11 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger buildingID;
 
 /**
- The identifier of the campus this point belongs to.
- */
-@property (nonatomic) NSInteger campusID;
-
-/**
  *  The title of the point-of-interest.
  */
 @property (nonatomic, copy, nullable) NSString *title;
