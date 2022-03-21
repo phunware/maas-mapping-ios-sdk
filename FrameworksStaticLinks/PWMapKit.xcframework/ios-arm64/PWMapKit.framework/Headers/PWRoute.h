@@ -98,6 +98,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)createRouteFrom:(id<PWMapPoint>)startPoint to:(id<PWMapPoint>)endPoint accessibility:(BOOL)accessibility excludedPoints:(NSArray * _Nullable)excludedPoints completion:(void(^)(PWRoute * _Nullable route, NSError * _Nullable error))completion __deprecated;
 
+/**
+ *   Instantiates a new PWRoute object using the given parameters. Calculates a route to navigate between the start `PWMapPoint` and the end `PWMapPoint`. The completion handler is called when the route is fully calculated.
+ *
+ *   @param startPoint    A `PWMapPoint` object representing the start point for the route calculation.
+ *   @param endPoint      A `PWMapPoint` object representing the end point for the route calculation.
+ *   @param options      A `PWRouteOptions` object specifying the options to use for route calculation. if 'nil', default options will be used.
+ *   @param completion    Completion handler that is called once the route's calculation is complete.
+ */
++ (void)createRouteFrom:(id<PWMapPoint>)startPoint to:(id<PWMapPoint>)endPoint options:(PWRouteOptions* _Nullable)options completion:(void(^)(PWRoute * _Nullable route, NSError * _Nullable error))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

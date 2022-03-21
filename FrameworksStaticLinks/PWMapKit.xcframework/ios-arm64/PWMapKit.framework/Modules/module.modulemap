@@ -1,21 +1,8 @@
-//
-//  PWMapKit.modulemap
-//  PWMapKit
-//
-//  Created by Kent Tu on 3/9/22.
-//  Copyright © 2022 Phunware. All rights reserved.
-//
-
 framework module PWMapKit {
   umbrella header "PWMapKit.h"
 
   export *
   module * { export * }
-
-  explicit module Private {
-      header "PWBuildingManager.h"
-      header "PWRouteManager.h"
-  }
 }
 
 module PWMapKit.Swift {

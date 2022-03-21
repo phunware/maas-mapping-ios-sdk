@@ -190,7 +190,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import Dispatch;
 @import ObjectiveC;
 #endif
 
@@ -208,7 +207,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="PWMapKit",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
-
 
 @class PWBuilding;
 @class PWFloor;
@@ -231,7 +229,7 @@ SWIFT_CLASS("_TtC8PWMapKit8PWCampus")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger campusIdentifierNotFound;)
 + (NSInteger)campusIdentifierNotFound SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, strong) PWBuilding * _Nullable overviewBuilding;
-+ (void)campusWithIdentifier:(NSInteger)identifier resultQueue:(dispatch_queue_t _Nonnull)resultQueue completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion;
++ (void)campusWithIdentifier:(NSInteger)identifier completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion;
 - (PWFloor * _Nullable)floorById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (PWBuilding * _Nullable)buildingById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -247,7 +245,6 @@ SWIFT_CLASS("_TtC8PWMapKit15PWCampusManager")
 + (void)campusWithIdentifier:(NSInteger)identifier usePreviouslyLoadedCampus:(BOOL)usePreviouslyLoadedCampus success:(void (^ _Nonnull)(PWCampus * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (BOOL)isCampusLoadedWithIdentifier:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 #if __has_attribute(external_source_symbol)
@@ -447,7 +444,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import Dispatch;
 @import ObjectiveC;
 #endif
 
@@ -465,7 +461,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="PWMapKit",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
-
 
 @class PWBuilding;
 @class PWFloor;
@@ -488,7 +483,7 @@ SWIFT_CLASS("_TtC8PWMapKit8PWCampus")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger campusIdentifierNotFound;)
 + (NSInteger)campusIdentifierNotFound SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, strong) PWBuilding * _Nullable overviewBuilding;
-+ (void)campusWithIdentifier:(NSInteger)identifier resultQueue:(dispatch_queue_t _Nonnull)resultQueue completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion;
++ (void)campusWithIdentifier:(NSInteger)identifier completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion;
 - (PWFloor * _Nullable)floorById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (PWBuilding * _Nullable)buildingById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -504,7 +499,6 @@ SWIFT_CLASS("_TtC8PWMapKit15PWCampusManager")
 + (void)campusWithIdentifier:(NSInteger)identifier usePreviouslyLoadedCampus:(BOOL)usePreviouslyLoadedCampus success:(void (^ _Nonnull)(PWCampus * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (BOOL)isCampusLoadedWithIdentifier:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 #if __has_attribute(external_source_symbol)
