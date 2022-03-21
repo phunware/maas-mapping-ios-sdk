@@ -9,7 +9,7 @@
 
 #import "PWBuilding.h"
 #import "PWMapPoint.h"
-#import <PWMapKit/PWBuildingManager.h>
+#import "PWBuildingManager.h"
 #import "PWFloor+Private.h"
 #import "PWPointOfInterest.h"
 #import "PWRoutingWaypoint.h"
