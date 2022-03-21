@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/PWBuilding.h</key>
 		<data>
-		b69e6ho8cMhV1j+GfL2lTLTbexc=
+		AaJ5fnW2npLvj54dSDtzy9k5tVg=
 		</data>
 		<key>Headers/PWBuildingAnnotationView.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/PWCustomPointOfInterest.h</key>
 		<data>
-		vMzRT7zNcKBU9HdE/eX872oQ+Kc=
+		D196asHDRyDioTQrO5R5SPQWhTI=
 		</data>
 		<key>Headers/PWFloor.h</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Headers/PWMapKit.h</key>
 		<data>
-		pThknJHnc2FXSW51gIx8ArREezM=
+		UEKozCcSY6VwPRb/gFs6orjVmEg=
 		</data>
 		<key>Headers/PWMapPoint.h</key>
 		<data>
-		uaQzwZY74yWlxf7qSIPIEMeKZLw=
+		CcHbJAg407tdoj3aK7jSavzHPAs=
 		</data>
 		<key>Headers/PWMapView.h</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Headers/PWRoute.h</key>
 		<data>
-		V222ZRqfeklT/sh2i5lIL0v/n+U=
+		0MTYa7iN7AGWbZ4idEMbMnW+y/s=
 		</data>
 		<key>Headers/PWRouteInstruction.h</key>
 		<data>
@@ -186,7 +186,7 @@
 		</data>
 		<key>PrivateHeaders/PWBuilding+Private.h</key>
 		<data>
-		xjVOHFHX8Vjp6pHg610w2kpFCW0=
+		Fjzt4EuLZWGXnELdiB2g0Es+aXs=
 		</data>
 		<key>PrivateHeaders/PWBuildingAnnotationView+Private.h</key>
 		<data>
@@ -406,7 +406,7 @@
 		</data>
 		<key>PrivateHeaders/PWPointOfInterest+Private.h</key>
 		<data>
-		5mXyJLBCUl8VwOoiXM8C+mjk1DY=
+		pk3bxdxo5AwXan1/gO2Il6rSrio=
 		</data>
 		<key>PrivateHeaders/PWPointOfInterestImageLoader.h</key>
 		<data>
@@ -558,7 +558,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k7cJ//j4wIG8uFcFt/yrQ85dCB6aT4/wVcg38TqVIxI=
+			/NwmLgBd5HVNkD8BUho4EbTO8rdMjQFuZJ1Ph+rLfn4=
 			</data>
 		</dict>
 		<key>Headers/PWBuildingAnnotationView.h</key>
@@ -586,7 +586,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Iyl1vmhZYDq0HCVuwxf00/vxBB3HNnDOzRHlNQmMjqQ=
+			mto3VVsCc0UbWGO+booDnhFsQ9GpOW/vMJT1L4NtauI=
 			</data>
 		</dict>
 		<key>Headers/PWFloor.h</key>
@@ -635,14 +635,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MsexkA5kwS6oNOAAiRp7m+mIFcgRNx6boi04amnNugc=
+			uXB/yqZRj92gI3gfdzlsflmiY6RGSOKVLzdrewnFst8=
 			</data>
 		</dict>
 		<key>Headers/PWMapPoint.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XOdFA1RItFOraqWhA6E98mpKyUAPMR4icHu/HTDb24U=
+			1lh+52M36FdbC61n4sxfnPxRDkdWmraeoeW3qPoL+3I=
 			</data>
 		</dict>
 		<key>Headers/PWMapView.h</key>
@@ -677,7 +677,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6zCRYlzjK/DWdvEBK1hRvf41fiwDrDCP6Z1Qh3RnE0w=
+			iOqEresxbnMe4Zvyi7nBA3cN3mxQ9lYiPembI6rkACY=
 			</data>
 		</dict>
 		<key>Headers/PWRouteInstruction.h</key>
@@ -859,7 +859,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UkDuU5PWvTBUF7eQlgedq85dT3fzSVqpTlnP2HiqpTA=
+			hKJ997dxZMGuFYLMIK0rIEXJTNNl8Jglyl19WEYgsRI=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWBuildingAnnotationView+Private.h</key>
@@ -1244,7 +1244,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Bp2DFtqmf687KRimaFURlkYEVT8HUtGMtpQ05yCxH6Y=
+			frAzW6QwAY+z1bvZjp3cCCaDXx1/PD4DPFLVLIGe81w=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWPointOfInterestImageLoader.h</key>
