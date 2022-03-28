@@ -4,7 +4,7 @@
 import Foundation
 import PWCore
 @_exported import PWMapKit
-import Private
+import PWMapKit.Private
 import Swift
 extension PWRoute {
   public static func createRoute(from: PWMapPoint, to: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: Dispatch.DispatchQueue = .main, completion: @escaping (Swift.Result<PWRoute, Swift.Error>) -> Swift.Void)
