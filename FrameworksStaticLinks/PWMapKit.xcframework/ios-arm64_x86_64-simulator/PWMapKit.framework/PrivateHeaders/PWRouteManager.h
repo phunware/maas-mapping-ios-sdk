@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+#import "PWBuilding+Private.h"
 #import "PWMapPoint.h"
 #import "PWRouteOptions.h"
+#import <PWMapKit/PWMapKit-Swift.h>
 
 @class PWRoute;
 @class PWDirectionsOptions;

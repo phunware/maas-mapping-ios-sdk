@@ -83,7 +83,7 @@
  @discussion It checks the network connectivity before starting to download the building: if it's disconnected, use cached one and return immediately, otherwise check if the cached bulding is up to date then decide if it's necessary to re-download.
  */
 + (void)buildingWithIdentifier:(NSInteger)identifier
-                    completion:(PWLoadBuildingCompletionBlock)completion __deprecated_msg("Use PWBuilding.building(identifier:cacheFallbackTimeout:resultQueue:completion:) instead.");
+                    completion:(PWLoadBuildingCompletionBlock)completion;
 
 /**
  Create `PWBuilding` with provided building identifier.
@@ -94,7 +94,7 @@
  */
 + (void)buildingWithIdentifier:(NSInteger)identifier
           cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout
-                    completion:(PWLoadBuildingCompletionBlock)completion __deprecated_msg("Use PWBuilding.building(identifier:cacheFallbackTimeout:resultQueue:completion:) instead.");
+                    completion:(PWLoadBuildingCompletionBlock)completion;
 
 /**
  * Create `PWBuilding` with provided building identifier.
