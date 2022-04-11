@@ -106,7 +106,7 @@ NS_ASSUME_NONNULL_BEGIN
  *   @param options      A `PWRouteOptions` object specifying the options to use for route calculation. if 'nil', default options will be used.
  *   @param completion    Completion handler that is called once the route's calculation is complete.
  */
-+ (void)createRouteFrom:(id<PWMapPoint>)startPoint to:(id<PWMapPoint>)endPoint options:(PWRouteOptions* _Nullable)options completion:(void(^)(PWRoute * _Nullable route, NSError * _Nullable error))completion __deprecated_msg("Use PWRoute.createRoute(from:to:options:resultQueue:completion:) instead.");
++ (void)createRouteFrom:(id<PWMapPoint>)startPoint to:(id<PWMapPoint>)endPoint options:(PWRouteOptions* _Nullable)options completion:(void(^)(PWRoute * _Nullable route, NSError * _Nullable error))completion;
 
 @end
 

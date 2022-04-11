@@ -208,7 +208,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-
 @class PWBuilding;
 @class PWFloor;
 @class PWPointOfInterest;
@@ -230,13 +229,12 @@ SWIFT_CLASS("_TtC8PWMapKit8PWCampus")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger campusIdentifierNotFound;)
 + (NSInteger)campusIdentifierNotFound SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, strong) PWBuilding * _Nullable overviewBuilding;
-+ (void)campusWithIdentifier:(NSInteger)identifier completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion SWIFT_DEPRECATED_MSG("Use PWCampus.campus(identifier: Int, resultQueue: DispatchQueue, completion: Result<PWCampus, Error>) instead");
++ (void)campusWithIdentifier:(NSInteger)identifier completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion;
 - (PWFloor * _Nullable)floorById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (PWBuilding * _Nullable)buildingById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 
@@ -247,7 +245,6 @@ SWIFT_CLASS("_TtC8PWMapKit15PWCampusManager")
 + (void)campusWithIdentifier:(NSInteger)identifier usePreviouslyLoadedCampus:(BOOL)usePreviouslyLoadedCampus success:(void (^ _Nonnull)(PWCampus * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (BOOL)isCampusLoadedWithIdentifier:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 #if __has_attribute(external_source_symbol)
@@ -465,7 +462,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-
 @class PWBuilding;
 @class PWFloor;
 @class PWPointOfInterest;
@@ -487,13 +483,12 @@ SWIFT_CLASS("_TtC8PWMapKit8PWCampus")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger campusIdentifierNotFound;)
 + (NSInteger)campusIdentifierNotFound SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, strong) PWBuilding * _Nullable overviewBuilding;
-+ (void)campusWithIdentifier:(NSInteger)identifier completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion SWIFT_DEPRECATED_MSG("Use PWCampus.campus(identifier: Int, resultQueue: DispatchQueue, completion: Result<PWCampus, Error>) instead");
++ (void)campusWithIdentifier:(NSInteger)identifier completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion;
 - (PWFloor * _Nullable)floorById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (PWBuilding * _Nullable)buildingById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 
@@ -504,7 +499,6 @@ SWIFT_CLASS("_TtC8PWMapKit15PWCampusManager")
 + (void)campusWithIdentifier:(NSInteger)identifier usePreviouslyLoadedCampus:(BOOL)usePreviouslyLoadedCampus success:(void (^ _Nonnull)(PWCampus * _Nonnull))success failure:(void (^ _Nonnull)(NSError * _Nonnull))failure;
 + (BOOL)isCampusLoadedWithIdentifier:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 #if __has_attribute(external_source_symbol)
