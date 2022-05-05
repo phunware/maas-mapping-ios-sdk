@@ -18,6 +18,7 @@ extern const PWBuildingAnnotationType PWBuildingAnnotationTypeUnknown;
 extern const PWBuildingAnnotationType PWBuildingAnnotationTypeRoutingWaypoint;
 
 typedef NSInteger PWMapZoomLevel;
-extern const PWMapZoomLevel PWMapZoomLevelShowAtAllLevels;
-extern const PWMapZoomLevel PWMapZoomLevelMaximum;
+extern const PWMapZoomLevel PWMapZoomLevelAny;
+extern const PWMapZoomLevel PWMapZoomLevelNone;
 extern const PWMapZoomLevel PWMapZoomLevelMinimum;
+extern const PWMapZoomLevel PWMapZoomLevelMaximum;

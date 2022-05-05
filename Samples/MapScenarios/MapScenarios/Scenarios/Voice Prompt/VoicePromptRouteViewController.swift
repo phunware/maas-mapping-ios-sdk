@@ -59,7 +59,7 @@ class VoicePromptRouteViewController: UIViewController, ScenarioProtocol {
             return
         }
         
-        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        PWCore.setApplicationID(applicationId, accessKey: accessKey)
         mapView.delegate = self
         view.addSubview(mapView)
         configureMapViewConstraints()

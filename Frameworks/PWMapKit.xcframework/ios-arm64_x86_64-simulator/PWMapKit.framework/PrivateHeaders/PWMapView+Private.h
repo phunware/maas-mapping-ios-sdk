@@ -38,10 +38,11 @@
 #import "PWRouteInstructionDirectionOverlay.h"
 #import "PWHideBackgroundOverlay.h"
 #import "PWBuildingOverlayRenderer.h"
-#import "PWRouteOverlayRenderer.h"
 #import "PWSVPulsingAnnotationView.h"
 #import "PWBuildingAnnotationView+Private.h"
 #import "PWAnnotationLabel.h"
+#import "PWMultiRouteOverlay.h"
+#import "PWMultiRouteOverlayRenderer.h"
 
 #import "PWRouteSnapper.h"
 #import "PWMapKitAnalytics+Private.h"
@@ -75,10 +76,11 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 @property (nonatomic) id<MKAnnotation> focusedAnnotation;
 
 // Overlay & Renderer
-@property (nonatomic) PWBuildingOverlay *buildingOverlay;
-@property (nonatomic) PWBuildingOverlayRenderer *buildingRenderer;
-@property (nonatomic) NSArray<PWRouteOverlay *> *routeOverlays;
+@property (nonatomic) NSMutableArray<PWBuildingOverlay *> *buildingOverlays;
+@property (nonatomic) NSMutableArray<PWBuildingOverlayRenderer *> *buildingRenderers;
+@property (nonatomic) PWMultiRouteOverlay *routeOverlay;
 @property (nonatomic) PWHideBackgroundOverlay *hideBackgroundOverlay;
+@property (nonatomic) PWBuildingOverlay *currentBuildingOverlay;
 
 // Routing
 @property (nonatomic) PWRoute *currentRoute;
@@ -117,7 +119,6 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 @property (nonatomic) double lastestCameraAltitude;
 @property (nonatomic) double calculatedZoomScale;
 @property (nonatomic) PWMapZoomLevel zoomLevel;
-@property (nonatomic) PWMapZoomLevel phunwareZoomLevel;
 
 // Tracking mode - used to keep the tracking mode which was set by end user.
 @property (nonatomic) PWTrackingMode trueTrackingMode;
@@ -137,10 +138,23 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
  */
 @property (nonatomic) BOOL annotationZoomLevelsEnabled;
 
+/**
+ Time stamp for when route maneuver changed last.
+ */
+@property (nonatomic) NSTimeInterval lastManeuverChangedTime;
+
+/**
+ Timer used to control whether to process route maneuver.
+ */
+@property (strong, nonatomic) dispatch_source_t routeManeuverProcessingTimer;
+
 - (void)willAppear;
 - (void)didDisappear;
 - (BOOL)isMapRegionChanging;
 - (void)setZoomLevel:(PWMapZoomLevel)zoomLevel;
 - (void)processUserTrackingMode:(PWTrackingMode)trackingMode animated:(BOOL)animated;
+- (BOOL)isBuildingOverlayRenderedForFloor:(PWFloor *)floor;
+- (PWFloor *)getFloorById:(NSInteger)floorID;
+- (PWFloor *)getInitialFloor;
 
 @end

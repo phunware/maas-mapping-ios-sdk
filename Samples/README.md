@@ -1,30 +1,17 @@
 PWMapKit Samples for iOS
 ====================
 
-## PhunMaps
-
-### Overview
-- Display map with building.
-- Search for points of interest in building.
-- Route from current location to a selected point of interest.
-
-### Usage
-- Go to *./PhunMaps* directory in Terminal and run `pod update`.
-- Open the project with Xcode.
-- Fill out `applicationId`, `accessKey`, `signatureKey` and `buildingId` in *DefaultConfiguration.plist*.
-- Build the application and run it on your device.
-
 ## MapScenarios
 
 ### Overview
-- A couple of different use cases in Swift.
+- SDK use cases in Swift.
 - Each use case has a ViewController.
 
 ### LoadBuildingViewController
 - Display your building on the map
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 
 ##### Sample code in [LoadBuildingViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/LoadBuildingViewController.swift):
 
@@ -43,8 +30,8 @@ PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building,
 - Display current location in your building as reported by location provider
 
 ##### Usage:
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 - Configure location provider on building's edit page in Maas portal, then configure for each floor
-- Fill out applicationId, accessKey, signatureKey, and buildingIdentifier in the ViewController
 
 ##### Sample code in [BluedotLocationViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/BluedotLocationViewController.swift):
 
@@ -65,7 +52,7 @@ self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
 - Add a point of interest to the map programmatically
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 - Specify a `poiLocation` that is within the bounds of your building
 - Optionally fill out configuration values in `addCustomPointOfInterest` such as `poiFloorId`, `poiTitle` etc.
 
@@ -91,7 +78,7 @@ func addCustomPointOfInterest() {
 - Button to switch the map's camera mode to follow current location, not follow current location, or follow current location and align the camera to the device compass
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 - Tap the arrow button to visualize the various location modes
 
 ##### Sample code in [LocationModesViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/LocationModesViewController.swift):
@@ -134,7 +121,7 @@ extension LocationModesViewController: PWMapViewDelegate {
 - Route configuration such as the color of path, show join point etc.
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 - Add at least one point of interest to your building in the Maas portal, and connect it with a segment to the nearest waypoint
 - Optionally specify a `destinationPOIIdentifier` to route to, which can be found on the point of interest's `Edit` page. If left as `0`, it will use the first point of interest found.
 - Custom route display by giving a `PWRouteUIOptions` as second parameter of `mapView.navigate(with: route, options: routeUIOptions)`.
@@ -159,7 +146,7 @@ PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, access
 - Select point of interest and view its location in your building
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 - Add at least one point of interest to your building in the Maas portal
 - Tap search bar to view and filter list of selectable points of interest
 
@@ -185,7 +172,7 @@ mapView.selectAnnotation(pointOfInterest, animated: true)
 - Show current location of other users of the app in the same building on the map
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 - Tap "Settings" button to change device name or type
 - Required to have at least two unique device identifiers with blue dot in the same building to see usage
 
@@ -195,7 +182,7 @@ mapView.selectAnnotation(pointOfInterest, animated: true)
 - Show route instructions in carousel UI
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 
 ##### [Sample code](./MapScenarios/TurnByTurn.md)
 
@@ -203,7 +190,7 @@ mapView.selectAnnotation(pointOfInterest, animated: true)
 - Show route instructions (using landmarks) in carousel UI
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 
 ##### [Sample code](./MapScenarios/LandmarkRouting.md)
 
@@ -212,7 +199,7 @@ mapView.selectAnnotation(pointOfInterest, animated: true)
 - Can read instructions as you swipe through them or traverse them
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 
 ##### [Sample code](./MapScenarios/VoicePrompt.md)
 
@@ -220,7 +207,7 @@ mapView.selectAnnotation(pointOfInterest, animated: true)
 - Show estimated walk time of an indoor route based on route distance and user speed
 
 ##### Usage:
-- Fill out `applicationId`, `accessKey`, `signatureKey`, and `buildingIdentifier`
+- Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 
 ##### [Sample code](./MapScenarios/WalkTime.md)
 

@@ -38,6 +38,21 @@
 @property (nonatomic) UIColor *directionStrokeColor;
 
 /**
+ * The width of the route path in points.
+ */
+@property (nonatomic) CGFloat routeStrokeWidth;
+
+/**
+ * The width of the route instruction path in points.
+ */
+@property (nonatomic) CGFloat instructionStrokeWidth;
+
+/**
+ * The width of the route direction path in points.
+ */
+@property (nonatomic) CGFloat directionStrokeWidth;
+
+/**
  * Whether or not to show line join point. Default value is false.
  */
 @property (nonatomic) BOOL showJoinPoint;
@@ -61,5 +76,10 @@
  * Add delay in seconds to code that completes after initial setting of map area over the route. Defaults to 0
  */
 @property (nonatomic) float delayAfterInitialRouteStaging;
+
+/*
+ * Enable initial zoom of map area over entire route. Default to no
+ */
+@property (nonatomic) BOOL enableInitialRouteStaging;
 
 @end

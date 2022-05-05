@@ -15,9 +15,8 @@
 - (void)plotRoute:(PWRoute *)route;
 - (void)removeRouteOverlays;
 - (void)removeRouteIntructionOverlaysOnly;
-- (PWRouteStep *)currentStep;
 - (void)updateRouteSnappingPolyline;
 - (void)processRouteManeuver:(PWRouteInstruction *)maneuver animated:(BOOL)animated;
-- (void)updateRouteOverlaysForFloorID:(NSInteger)floorID;
+- (void)updateRouteOverlaysForRenderedFloors;
 
 @end

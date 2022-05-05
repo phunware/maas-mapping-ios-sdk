@@ -641,8 +641,4 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWTrackingMode) {
  * @deprecated Use `deselectAnnotations:animated:` instead, since v3.2.0
  */
 - (void)deselectPointOfInterest:(PWPointOfInterest *)poi animated:(BOOL)animated __deprecated;
-
-
-- (PWFloor *)getFloorById:(NSInteger)floorID;
-
 @end

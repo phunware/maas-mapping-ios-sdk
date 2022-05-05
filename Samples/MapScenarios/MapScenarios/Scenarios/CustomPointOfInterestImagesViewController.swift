@@ -43,7 +43,7 @@ class CustomPointOfInterestImagesViewController: UIViewController, ScenarioProto
             return
         }
         
-        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        PWCore.setApplicationID(applicationId, accessKey: accessKey)
                 
         view.addSubview(mapView)
         configureMapViewConstraints()

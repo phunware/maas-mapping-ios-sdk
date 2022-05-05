@@ -24,11 +24,11 @@
 + (void)fetchPDFForFloor:(PWFloor*)floor
               withOption:(BOOL)forceUpdate
          bundleDirectory:(NSString *)bundleDirectory
-              buildingId:(NSInteger)buildingId
               completion:(PWFetchFloorCompletionBlock)completion;
 
-+ (void) buildingWithBuildingId:(NSInteger)buildingId
-                bundleDirectory:(NSString *)bundleDirectory
-                     completion:(PWLoadBuildingCompletionBlock)completion;
++ (void)buildingWithBuildingId:(NSInteger)buildingId
+               bundleDirectory:(NSString *)bundleDirectory
+            clearBuildingCache:(BOOL)clearBuildingCache
+                    completion:(PWLoadBuildingCompletionBlock)completion;
 
 @end

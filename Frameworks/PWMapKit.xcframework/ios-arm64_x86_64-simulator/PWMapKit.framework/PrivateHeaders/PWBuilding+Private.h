@@ -30,6 +30,7 @@ extern NSTimeInterval const PWBuildingCacheFallbackTimeout;
 @property (nonatomic) NSArray *pointOfInterestTypes;
 @property (nonatomic, strong) NSString *bundleDirectory;
 @property (nonatomic, readwrite) NSDictionary *userInfo;
+@property (nonatomic) PWFloor *initialFloor;
 
 // Floor info
 @property (nonatomic) NSArray *floors;
@@ -58,7 +59,7 @@ extern NSTimeInterval const PWBuildingCacheFallbackTimeout;
 @property (nonatomic) NSDictionary<NSString *, NSNumber *> *fwPidIdxMapping;
 
 - (id<PWMapPoint>)closestTo:(id<PWMapPoint>)point;
-
 - (NSError *)validate;
+- (BOOL)isOverview;
 
 @end

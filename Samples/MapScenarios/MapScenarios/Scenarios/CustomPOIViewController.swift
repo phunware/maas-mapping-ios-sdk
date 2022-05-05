@@ -36,7 +36,7 @@ class CustomPOIViewController: UIViewController, ScenarioProtocol {
             return
         }
         
-        PWCore.setApplicationID(applicationId, accessKey: accessKey, signatureKey: signatureKey)
+        PWCore.setApplicationID(applicationId, accessKey: accessKey)
         view.addSubview(mapView)
         configureMapViewConstraints()
         // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView

@@ -37,6 +37,11 @@
 @property (readonly) NSInteger level;
 
 /**
+ *  Indicates if floor is the default floor in its building.
+ */
+@property (readonly) BOOL isDefault;
+
+/**
  *  An array of `PWPointOfInterest` objects that belong to the floor.
  */
 @property (readonly) NSArray<PWPointOfInterest *> *pointsOfInterest;

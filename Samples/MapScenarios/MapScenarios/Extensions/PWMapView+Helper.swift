@@ -53,4 +53,12 @@ extension PWMapView {
         region = regionThatFits(region)
         setRegion(region, animated: true)
     }
+    
+    func floorById(_ identifier: Int) -> PWFloor? {
+        let floors = (self.campus != nil) ? self.campus.floors : self.building.floors
+        return floors?.first(where: { (floor) -> Bool in
+            return floor.floorID == identifier
+        })
+    }
+
 }
