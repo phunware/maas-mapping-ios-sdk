@@ -36,6 +36,11 @@ extension PWPointOfInterest: PointOfInterest {
     var poiBuilding: PWBuilding! {
         return floor?.building
     }
+    
+    func isBuildingToBuildingPortal() -> Bool {
+        guard let portalID = self.portalID else { return false }
+        return portalID.contains("BuildingToBuilding")
+    }
 }
 extension PWCustomPointOfInterest: PointOfInterest {
     

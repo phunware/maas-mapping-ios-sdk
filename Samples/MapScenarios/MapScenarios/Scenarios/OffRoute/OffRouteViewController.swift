@@ -281,6 +281,7 @@ private extension OffRouteViewController {
         if  let currentRoute = mapView.currentRoute,
             let routeInstructions = currentRoute.routeInstructions {
             mapView.setRouteManeuver(routeInstructions.first)
+            self.currentRoute = currentRoute
         }
         
         if turnByTurnCollectionView == nil {
@@ -296,6 +297,8 @@ private extension OffRouteViewController {
         routeButton?.title = nil
         turnByTurnCollectionView?.removeFromSuperview()
         turnByTurnCollectionView = nil
+        self.offRouteTimer?.invalidate()
+        self.currentRoute = nil
     }
     
 
