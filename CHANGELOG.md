@@ -1,4 +1,10 @@
 # PWMapKit Changelog
+## 3.14.0 (TBD)
+#### Features
+* Updated Public API signatures with DispatchQueue parameters.
+#### Bug fixes
+* Fixed associated landmark routing to work with multi-building campuses.
+
 ## 3.13.0 (Monday, April 18, 2022)
 #### Features
 * Added capability to display connected buildings during campus routing.
