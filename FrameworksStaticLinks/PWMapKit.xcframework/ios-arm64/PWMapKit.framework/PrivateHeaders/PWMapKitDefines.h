@@ -31,6 +31,9 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWMapKitErrorCode) {
     PWMapKitErrorCodeRouteWithoutManeuver = 1302,
     PWMapKitErrorCodeRouteStepInvalid = 1310,
     PWMapKitErrorCodeRouteManeuverInvalid = 1320,
+    PWMapKitErrorCodeRouteNoRouteData = 1330,
+    PWMapKitErrorCodeRouteInvalidStartPoint = 1340,
+    PWMapKitErrorCodeRouteInvalidEndPoint = 1341,
 };
 
 #pragma mark - API

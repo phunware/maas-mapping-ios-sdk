@@ -12,10 +12,15 @@
 
 @interface PWDijkstraAlgorithm : NSObject
 
-- (void)shortestPathFrom:(id<PWMapPoint>)startPoint
-                      to:(id<PWMapPoint>)endPoint
-     withAvailablePoints:(NSDictionary *)points
-                segments:(NSDictionary *)segments
-              completion:(void(^)(NSArray *calculatedPoints, NSError *error))completion;
+- (NSArray *)shortestPathFrom:(id<PWMapPoint>)startPoint
+                           to:(id<PWMapPoint>)endPoint
+          withAvailablePoints:(NSDictionary *)points
+                     segments:(NSDictionary *)segments
+                        error:(NSError **)error;
+
+- (NSDictionary *)poiDistancesFor:(id<PWMapPoint>)startPoint
+              withAvailablePoints:(NSDictionary *)points
+                         segments:(NSDictionary *)segments
+                            error:(NSError **)error;
 
 @end
