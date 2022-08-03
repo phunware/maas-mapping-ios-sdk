@@ -53,6 +53,10 @@
 @property (nonatomic, nullable) PWPointOfInterestImageLoader* imageLoader;
 @property (nonatomic, readonly) BOOL isLoadingImage;
 
+- (BOOL)isPortal;
+
+- (BOOL)isBuildingToBuildingPortal;
+
 - (NSError* _Nullable)validate;
 
 - (void)loadImageWithURL:(NSURL* _Nonnull)url

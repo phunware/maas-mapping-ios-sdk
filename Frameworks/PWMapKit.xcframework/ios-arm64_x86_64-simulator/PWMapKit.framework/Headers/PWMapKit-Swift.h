@@ -191,6 +191,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import ObjectiveC;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -249,6 +250,12 @@ SWIFT_CLASS("_TtC8PWMapKit15PWCampusManager")
 @end
 
 
+
+
+@interface UIImage (SWIFT_EXTENSION(PWMapKit))
+/// A convenience initializer for loading an image from the framework’s bundle.
+- (nullable instancetype)initWithNamedForFramework:(NSString * _Nonnull)namedForFramework;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -448,6 +455,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import ObjectiveC;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -506,6 +514,12 @@ SWIFT_CLASS("_TtC8PWMapKit15PWCampusManager")
 @end
 
 
+
+
+@interface UIImage (SWIFT_EXTENSION(PWMapKit))
+/// A convenience initializer for loading an image from the framework’s bundle.
+- (nullable instancetype)initWithNamedForFramework:(NSString * _Nonnull)namedForFramework;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

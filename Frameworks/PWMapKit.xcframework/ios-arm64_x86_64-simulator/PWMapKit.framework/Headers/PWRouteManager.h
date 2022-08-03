@@ -23,6 +23,7 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWDirectionsType) {
 };
 
 typedef void(^PWRouteCompletionHandler)(PWRoute *route, NSError *error);
+typedef void(^PWGetDistancesCompletionHandler)(NSDictionary *poiDistances, NSError *error);
 
 @interface PWRouteManager : NSObject
 
@@ -32,5 +33,9 @@ typedef void(^PWRouteCompletionHandler)(PWRoute *route, NSError *error);
                to:(id<PWMapPoint>)endPoint
       withOptions:(PWRouteOptions *)options
        completion:(PWRouteCompletionHandler)completionHandler;
+
+- (void)getPOIDistancesFor:(id<PWMapPoint>)startPoint
+               withOptions:(PWRouteOptions *)options
+                completion:(PWGetDistancesCompletionHandler)completion;
 
 @end
