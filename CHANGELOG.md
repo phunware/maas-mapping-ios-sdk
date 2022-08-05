@@ -2,6 +2,9 @@
 ## 3.14.0 (TBD)
 #### Features
 * Updated Public API signatures with DispatchQueue parameters.
+* Added method to get distances from a start location to all POIs.
+`PWRoute.getShortestDistancesToAllPOIs(from startPoint:options:resultQueue:completion:)`
+* Added default icon to display when a POI icon is not fetched yet.
 #### Bug fixes
 * Fixed associated landmark routing to work with multi-building campuses.
 
@@ -170,8 +173,8 @@
 
 ## 3.1.6.1 (Wednesday, Sep 6th, 2017)
 * Add two new delegate callback for PWMapView:
-	* - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view;
-	* - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view;
+    * - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view;
+    * - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view;
 
 ## v3.1.6 (Wednesday, Aug 30th, 2017)
 * Update to PWLocation 3.1.7
@@ -185,46 +188,46 @@
 * User experience improvement by getting more stable route orientation.
 * Add support for escalator with routing.
 * Bug fixes
-	* Map floor rotates incorrectly while each floor has different rotation angle.
-	* Start/End of route has empty title.
-	* Changing map zoom levels for POI's are not reflected
+    * Map floor rotates incorrectly while each floor has different rotation angle.
+    * Start/End of route has empty title.
+    * Changing map zoom levels for POI's are not reflected
 
 ## 3.1.3 (Wednesday, Apr 19th, 2017)
 * Bug fixes
-	* Can route from user location on first user location update
-	* PWCustomLocation public initialization method
+    * Can route from user location on first user location update
+    * PWCustomLocation public initialization method
 
 ## 3.1.2 (Wednesday, Apr 12th, 2017)
 * New features
-	* Add PWCustomPointOfInterest.
-	* Create route API can now accept points to exclude.
+    * Add PWCustomPointOfInterest.
+    * Create route API can now accept points to exclude.
 
 * Performance improvement
-	* Significantly reduce times of zoom level calculator.
-	* Routing with tracking mode `Follow Me With Heading` improvement.
-	* Map load/render time lowered.
+    * Significantly reduce times of zoom level calculator.
+    * Routing with tracking mode `Follow Me With Heading` improvement.
+    * Map load/render time lowered.
 
 * Bug Fixes
-	* Floor change intermittent failures.
-	* Route not found from current location to POI.
+    * Floor change intermittent failures.
+    * Route not found from current location to POI.
 
 * Other
-	* Deprecated startPointOfInterest and endPointOfInterest properties in PWRouteInstruction, replaced with startPoint and endPoint.
-	* Deprecated `initWithLatitude:` method in PWCustomLocation, replaced with `initWithCoordinate:`.
-	* Create PWMapPoint protocol and make POIs, waypoints, and custom location conform to it.
+    * Deprecated startPointOfInterest and endPointOfInterest properties in PWRouteInstruction, replaced with startPoint and endPoint.
+    * Deprecated `initWithLatitude:` method in PWCustomLocation, replaced with `initWithCoordinate:`.
+    * Create PWMapPoint protocol and make POIs, waypoints, and custom location conform to it.
 
 ## 3.1.1 (Tuesday, Mar 28th, 2017)
 * Enable `zoomLevel` property in PWMapView.
 * Route behavior improvements:
-	* Make `Follow Me` as default tracking mode.
-	* Automatically enable `Follow me` tracking mode when device is close to current route instruction.
-	* User can swipe to view future/past route instructions when `Follow Me` is enabled.
+    * Make `Follow Me` as default tracking mode.
+    * Automatically enable `Follow me` tracking mode when device is close to current route instruction.
+    * User can swipe to view future/past route instructions when `Follow Me` is enabled.
 
 * Bug fixes:
-	* Use the cached bundle instead when network is unavailable.
-	* Wrong route instruction text for elevator.
-	* The callback `mapView:didDeselectBuildingAnnotationView:` never be fired.
-	* The PointOfInterestType image is always nil.
+    * Use the cached bundle instead when network is unavailable.
+    * Wrong route instruction text for elevator.
+    * The callback `mapView:didDeselectBuildingAnnotationView:` never be fired.
+    * The PointOfInterestType image is always nil.
 
 ## 3.1.0 (Friday, Jan 27th, 2017)
 * Performance improvement for loading building data with bundle instead of numbers of API call.

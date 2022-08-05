@@ -34,8 +34,8 @@ typedef void(^PWGetDistancesCompletionHandler)(NSDictionary *poiDistances, NSErr
       withOptions:(PWRouteOptions *)options
        completion:(PWRouteCompletionHandler)completionHandler;
 
-- (void)getPOIDistancesFor:(id<PWMapPoint>)startPoint
-               withOptions:(PWRouteOptions *)options
-                completion:(PWGetDistancesCompletionHandler)completion;
+- (void)getShortestDistancesToAllPOIsFrom:(id<PWMapPoint>)startPoint
+                              withOptions:(PWRouteOptions *)options
+                               completion:(PWGetDistancesCompletionHandler)completion;
 
 @end
