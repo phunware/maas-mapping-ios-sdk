@@ -8,7 +8,7 @@ import PWMapKit.Private
 import Swift
 extension PWRoute {
   public static func createRoute(from: PWMapPoint, to: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: Dispatch.DispatchQueue = .main, completion: @escaping (Swift.Result<PWRoute, Swift.Error>) -> Swift.Void)
-  public static func getDistances(from startPoint: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: Dispatch.DispatchQueue = .main, completion: @escaping (Swift.Result<[Swift.Int : Swift.Double], Swift.Error>) -> Swift.Void)
+  public static func getShortestDistancesToAllPOIs(from startPoint: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: Dispatch.DispatchQueue = .main, completion: @escaping (Swift.Result<[Swift.Int : Swift.Double], Swift.Error>) -> Swift.Void)
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class PWCampus : ObjectiveC.NSObject {
   @objc final public let identifier: Swift.Int
