@@ -1,4 +1,14 @@
 # PWMapKit Migration Guide
+## Upgrade from 3.13.x to 3.14.x
+
+#### General
+
+This release adds new API to query for the distance from a start location to all POIs.
+
+#### Upgrade Steps
+
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.14.x'`, then run `pod update` in the Terminal to update the framework.
+
 ## Upgrade from 3.12.x to 3.13.x
 
 #### General

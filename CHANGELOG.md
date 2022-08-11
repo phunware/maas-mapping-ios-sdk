@@ -2,8 +2,7 @@
 ## 3.14.0 (TBD)
 #### Features
 * Updated Public API signatures with DispatchQueue parameters.
-* Added method to get distances from a start location to all POIs.
-`PWRoute.getShortestDistancesToAllPOIs(from startPoint:options:resultQueue:completion:)`
+* Added method to get distances from a start location to all POIs: `PWRoute.getShortestDistancesToAllPOIs(from startPoint:options:resultQueue:completion:)`.
 * Added default icon to display when a POI icon is not fetched yet.
 #### Bug fixes
 * Fixed associated landmark routing to work with multi-building campuses.

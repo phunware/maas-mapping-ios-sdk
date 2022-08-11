@@ -36,8 +36,16 @@ Location authorization of "When In Use" or "Always" is required for a PWLocation
 ### Adding Map View
 ```swift
 // Load a building
-PWBuilding.building(withIdentifier: <BUILDING_IDENTIFIER>) { (building, error) in
-    // Get the buliding object here
+PWBuilding.building(identifier: <BUILDING_IDENTIFIER>) { result in
+    switch result {
+        case .success(let building):
+            // Do something with the buliding object
+            ...
+            
+        case .failure(let error):
+            // Failed to load the building
+            ...
+        }
 }
 
 ...
@@ -69,9 +77,16 @@ let routeOptions = PWRouteOptions(accessibilityEnabled: false,
 
 PWRoute.createRoute(from: <START_POINT>,
                     to: <END_POINT>,
-                    options: routeOptions) { (route, error) in
-    // Plot the route on the map
-    mapView.navigate(with: route)
+                    options: routeOptions) { result in
+    switch result {
+    case .success(let route):
+        // Plot the route on the map
+        mapView.navigate(with: route)
+    
+    case .failure(let error):
+        // Failed to create a route
+        ...
+    }    
 }
 ```
 
