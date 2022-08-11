@@ -9,7 +9,7 @@
 import PWMapKit
 
 // MARK: - RouteInstructionListViewControllerDelegate
-protocol RouteInstructionListViewControllerDelegate: class {
+protocol RouteInstructionListViewControllerDelegate: AnyObject {
     func routeInstructionListViewController(_ viewController: RouteInstructionListViewController, viewModelFor routeInstruction: PWRouteInstruction)
         -> InstructionViewModel
 }

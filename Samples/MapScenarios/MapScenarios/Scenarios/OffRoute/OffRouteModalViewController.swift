@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - OffRouteModalViewController
-protocol OffRouteModalViewControllerDelegate: class {
+protocol OffRouteModalViewControllerDelegate: AnyObject {
     func offRouteAlert(_ alert: OffRouteModalViewController, dismissedWithResult result: OffRouteModalViewController.Result)
 }
 
