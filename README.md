@@ -38,14 +38,14 @@ Location authorization of "When In Use" or "Always" is required for a PWLocation
 // Load a building
 PWBuilding.building(identifier: <BUILDING_IDENTIFIER>) { result in
     switch result {
-        case .success(let building):
-            // Do something with the buliding object
-            ...
+    case .success(let building):
+        // Do something with the buliding object
+        ...
             
-        case .failure(let error):
-            // Failed to load the building
-            ...
-        }
+    case .failure(let error):
+        // Failed to load the building
+        ...
+    }
 }
 
 ...
