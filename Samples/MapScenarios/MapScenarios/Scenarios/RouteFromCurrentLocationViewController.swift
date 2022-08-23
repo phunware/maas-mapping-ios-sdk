@@ -51,45 +51,47 @@ class RouteFromCurrentLocationViewController: UIViewController, ScenarioProtocol
         // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
         // Otherwise, we will use PWBuilding.building to route between floors in a single building.
         if campusIdentifier != 0 {
-            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
-                if let error = error {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] result in
+                switch result {
+                case .success(let campus):
+                    self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
+                        if let error = error {
+                            self?.warning(error.localizedDescription)
+                            return
+                        }
+                        self?.locationManager.delegate = self
+                        if !CLLocationManager.isAuthorized() {
+                            self?.locationManager.requestWhenInUseAuthorization()
+                        } else {
+                            self?.startManagedLocationManager()
+                        }
+                    })
+                    
+                case .failure(let error):
                     self?.warning(error.localizedDescription)
-                    return
                 }
-
-                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
-                    if let error = error {
-                        self?.warning(error.localizedDescription)
-                        return
-                    }
-                    self?.locationManager.delegate = self
-                    if !CLLocationManager.isAuthorized() {
-                        self?.locationManager.requestWhenInUseAuthorization()
-                    } else {
-                        self?.startManagedLocationManager()
-                    }
-                })
             }
         }
         else {
-            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-                if let error = error {
+            PWBuilding.building(identifier: buildingIdentifier) { [weak self] result in
+                switch result {
+                case .success(let building):
+                    self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+                        if let error = error {
+                            self?.warning(error.localizedDescription)
+                            return
+                        }
+                        self?.locationManager.delegate = self
+                        if !CLLocationManager.isAuthorized() {
+                            self?.locationManager.requestWhenInUseAuthorization()
+                        } else {
+                            self?.startManagedLocationManager()
+                        }
+                    })
+                    
+                case .failure(let error):
                     self?.warning(error.localizedDescription)
-                    return
                 }
-
-                self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                    if let error = error {
-                        self?.warning(error.localizedDescription)
-                        return
-                    }
-                    self?.locationManager.delegate = self
-                    if !CLLocationManager.isAuthorized() {
-                        self?.locationManager.requestWhenInUseAuthorization()
-                    } else {
-                        self?.startManagedLocationManager()
-                    }
-                })
             }
         }
     }

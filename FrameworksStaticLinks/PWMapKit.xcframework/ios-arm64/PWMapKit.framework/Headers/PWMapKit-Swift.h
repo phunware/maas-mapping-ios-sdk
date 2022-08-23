@@ -189,6 +189,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import ObjectiveC;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -205,6 +206,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="PWMapKit",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
 
 @class PWBuilding;
 @class PWFloor;
@@ -227,12 +229,13 @@ SWIFT_CLASS("_TtC8PWMapKit8PWCampus")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger campusIdentifierNotFound;)
 + (NSInteger)campusIdentifierNotFound SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, strong) PWBuilding * _Nullable overviewBuilding;
-+ (void)campusWithIdentifier:(NSInteger)identifier completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion;
++ (void)campusWithIdentifier:(NSInteger)identifier completion:(void (^ _Nonnull)(PWCampus * _Nullable, NSError * _Nullable))completion SWIFT_DEPRECATED_MSG("Use PWCampus.campus(identifier: Int, resultQueue: DispatchQueue, completion: Result<PWCampus, Error>) instead");
 - (PWFloor * _Nullable)floorById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (PWBuilding * _Nullable)buildingById:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -244,6 +247,13 @@ SWIFT_CLASS("_TtC8PWMapKit15PWCampusManager")
 + (BOOL)isCampusLoadedWithIdentifier:(NSInteger)identifier SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+
+
+@interface UIImage (SWIFT_EXTENSION(PWMapKit))
+/// A convenience initializer for loading an image from the framework’s bundle.
+- (nullable instancetype)initWithNamedForFramework:(NSString * _Nonnull)namedForFramework;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

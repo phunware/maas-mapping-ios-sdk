@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-protocol WalkTimeViewDelegate: class {
+protocol WalkTimeViewDelegate: AnyObject {
     func exitButtonPressed(for walkTimeView: WalkTimeView)
 }
 

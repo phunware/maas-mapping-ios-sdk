@@ -87,24 +87,26 @@ class WalkTimeViewController: UIViewController, ScenarioProtocol {
         // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
         // Otherwise, we will use PWBuilding.building to route between floors in a single building.
         if campusIdentifier != 0 {
-            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
-                if let error = error {
-                    self?.warning(error.localizedDescription)
-                    return
-                }
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] result in
+                switch result {
+                case .success(let campus):
+                    self?.mapView.setCampus(campus, animated: true, onCompletion: nil)
 
-                self?.mapView.setCampus(campus, animated: true, onCompletion: nil)
+                case .failure(let error):
+                    self?.warning(error.localizedDescription)
+                }
             }
         }
         else {
              // Start loading building
-            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-                if let error = error {
-                    self?.warning(error.localizedDescription)
-                    return
-                }
+            PWBuilding.building(identifier: buildingIdentifier) { [weak self] result in
+                switch result {
+                case .success(let building):
+                    self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
 
-                self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
+                case .failure(let error):
+                    self?.warning(error.localizedDescription)
+                }
             }
         }
     }

@@ -49,23 +49,25 @@ class TurnByTurnViewController: UIViewController, ScenarioProtocol {
         // Otherwise, we will use PWBuilding.building to route between floors in a single building.
         if campusIdentifier != 0 {
             // Start loading campus
-            PWCampus.campus(identifier: campusIdentifier) { [weak self] campus, error in
-                if let error = error {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] result in
+                switch result {
+                case .success(let campus):
+                    self?.mapView.setCampus(campus, animated: true, onCompletion: nil)
+
+                case .failure(let error):
                     self?.warning(error.localizedDescription)
-                    return
                 }
-                
-                self?.mapView.setCampus(campus, animated: true, onCompletion: nil)
             }
         } else {
             // Start loading building
-            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] building, error in
-                if let error = error {
+            PWBuilding.building(identifier: buildingIdentifier) { [weak self] result in
+                switch result {
+                case .success(let building):
+                    self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
+                    
+                case .failure(let error):
                     self?.warning(error.localizedDescription)
-                    return
                 }
-                
-                self?.mapView.setBuilding(building, animated: true, onCompletion: nil)
             }
         }
     }

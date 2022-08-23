@@ -4,13 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Assets.car</key>
+		<data>
+		mcJ9IV3b9rs1J6Ftpt6cIsMJ6/Y=
+		</data>
 		<key>Headers/PWAnnotationLabel.h</key>
 		<data>
 		bkyKada0UybmMLI60gbk5s1WevY=
 		</data>
 		<key>Headers/PWBuilding.h</key>
 		<data>
-		b69e6ho8cMhV1j+GfL2lTLTbexc=
+		nWwM7STASLmnPe08ge8jIlfnnVI=
 		</data>
 		<key>Headers/PWBuildingAnnotationView.h</key>
 		<data>
@@ -50,11 +54,11 @@
 		</data>
 		<key>Headers/PWMapKit-Swift.h</key>
 		<data>
-		rqdD1x+2dc72YJP8qG4Ma3WpykY=
+		RJkUGFsm5S7ZDqEWfY2HHOMSqpU=
 		</data>
 		<key>Headers/PWMapKit.h</key>
 		<data>
-		mcGg2Ggb+cXKsXBuIMg4ElHZDtc=
+		cVP7azFrk3Sf9jOPIzG4qeKp3rM=
 		</data>
 		<key>Headers/PWMapPoint.h</key>
 		<data>
@@ -78,11 +82,15 @@
 		</data>
 		<key>Headers/PWRoute.h</key>
 		<data>
-		V222ZRqfeklT/sh2i5lIL0v/n+U=
+		IVVm4YhH6LOJ66KqgcsIPXWJ1/I=
 		</data>
 		<key>Headers/PWRouteInstruction.h</key>
 		<data>
 		aJl4VtYze6BgKo1rA6+q9swEH78=
+		</data>
+		<key>Headers/PWRouteManager.h</key>
+		<data>
+		DvCRN/iHb/zUvIONIrBVRgwE4RQ=
 		</data>
 		<key>Headers/PWRouteOptions.h</key>
 		<data>
@@ -102,7 +110,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		j0w5CxjjfxvE1y49R8uyaXRH3c4=
+		4iHMzacMI1GeAZql+Qs41AsBY90=
 		</data>
 		<key>LICENSE.md</key>
 		<data>
@@ -114,55 +122,55 @@
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		+HTZDaZKfhWqnBEH3+f24YXJfd0=
+		YxmedPj3ZJu+MUKgCXYkkjeQ4dE=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		unexBFDijsU2wKEowIMs+5OIKE8=
+		R3s/VLowBvSy1DroCmZEUT55W1A=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		1SCgSXIwz6J1AOb9EuSaKSPduL0=
+		pc9rdakBvcwWsLGbEpROWZQQ6DQ=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		+HTZDaZKfhWqnBEH3+f24YXJfd0=
+		YxmedPj3ZJu+MUKgCXYkkjeQ4dE=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		unexBFDijsU2wKEowIMs+5OIKE8=
+		R3s/VLowBvSy1DroCmZEUT55W1A=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		1SCgSXIwz6J1AOb9EuSaKSPduL0=
+		pc9rdakBvcwWsLGbEpROWZQQ6DQ=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		zGuqEs5TqoKpjRzcz8yZ1Gwsz44=
+		5O25rs14Mp66V5WHkD0Hj8bIKzY=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		M5SznYiAgYCN5+ZSOmbVh3CRAZc=
+		ENDpoF0CCqiuKtZvxJcUEAUnO+g=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		SJbUq3JsYVsPKNYhHkxzue5mubM=
+		Wm7NpWoZRbFaprh0tDhfmWYZxf0=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		zGuqEs5TqoKpjRzcz8yZ1Gwsz44=
+		5O25rs14Mp66V5WHkD0Hj8bIKzY=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		M5SznYiAgYCN5+ZSOmbVh3CRAZc=
+		ENDpoF0CCqiuKtZvxJcUEAUnO+g=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		SJbUq3JsYVsPKNYhHkxzue5mubM=
+		Wm7NpWoZRbFaprh0tDhfmWYZxf0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		CB2rMwalUNw288VuX71GIysd4t0=
+		P+/FpjgujBGkmGlqRRrKLOHXlxI=
 		</data>
 		<key>PrivateHeaders/EXTScope.h</key>
 		<data>
@@ -238,7 +246,7 @@
 		</data>
 		<key>PrivateHeaders/PWDijkstraAlgorithm.h</key>
 		<data>
-		pZ/snSnK/Av4dtijBFW0O4X313M=
+		kxNx3JZMo5aaC0VMoedymyW9jmg=
 		</data>
 		<key>PrivateHeaders/PWFloor+Private.h</key>
 		<data>
@@ -310,7 +318,7 @@
 		</data>
 		<key>PrivateHeaders/PWMapKitDefines.h</key>
 		<data>
-		fKR9Qbhgbg+Z7eZiCxN/ykl7+4g=
+		kXmw3I9tt3MQOZgNlGRv/Fn//PA=
 		</data>
 		<key>PrivateHeaders/PWMapView+AnnotationManagement.h</key>
 		<data>
@@ -402,7 +410,7 @@
 		</data>
 		<key>PrivateHeaders/PWPointOfInterest+Private.h</key>
 		<data>
-		pk3bxdxo5AwXan1/gO2Il6rSrio=
+		bgsbCWQI0jH+nOy0n4dRHIKarNk=
 		</data>
 		<key>PrivateHeaders/PWPointOfInterestImageLoader.h</key>
 		<data>
@@ -435,10 +443,6 @@
 		<key>PrivateHeaders/PWRouteInstructionRenderer.h</key>
 		<data>
 		uzObV7UkVMiJp8b1hkdP1aX5228=
-		</data>
-		<key>PrivateHeaders/PWRouteManager.h</key>
-		<data>
-		z6o9gBxsBMuWYVrDW4pua1zsmYM=
 		</data>
 		<key>PrivateHeaders/PWRouteOptions+Private.h</key>
 		<data>
@@ -547,6 +551,13 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			M+DtjPgzfdlGEPAYaVQeskZkcupvl7/p+cZbxf14omQ=
+			</data>
+		</dict>
 		<key>Headers/PWAnnotationLabel.h</key>
 		<dict>
 			<key>hash2</key>
@@ -558,7 +569,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k7cJ//j4wIG8uFcFt/yrQ85dCB6aT4/wVcg38TqVIxI=
+			KFYF8yMpzNhkQGHH6jpqxqditZPTh1FjMrtv4nhvgsg=
 			</data>
 		</dict>
 		<key>Headers/PWBuildingAnnotationView.h</key>
@@ -628,14 +639,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vsT3YEXl7jUOUtxmd7Z1TifUghQpf4cZn9VfYsjGLT8=
+			cNDQu3WiyScJv3jSXI+Ce/G3KgPJx+k7bSp2Dd7vIEk=
 			</data>
 		</dict>
 		<key>Headers/PWMapKit.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RLXdsvYZFIS8Ccccn70gUny1BDkdbv7EQJAbmZSJ58c=
+			wsa4I2RrrM6V89C93WuE/E4Xmpk39uVa9LJBSYgK+lU=
 			</data>
 		</dict>
 		<key>Headers/PWMapPoint.h</key>
@@ -677,7 +688,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6zCRYlzjK/DWdvEBK1hRvf41fiwDrDCP6Z1Qh3RnE0w=
+			5r3mG4aDvMp9JCZ8/Q8TArxv+BAqJtNQ2CRw4WTvSHw=
 			</data>
 		</dict>
 		<key>Headers/PWRouteInstruction.h</key>
@@ -685,6 +696,13 @@
 			<key>hash2</key>
 			<data>
 			TAakjjxbzVE/d20ci+YtW9SX5XuGRMarPEludqzc+i8=
+			</data>
+		</dict>
+		<key>Headers/PWRouteManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nVOSdMCwRGIqoYQGiyTeyMPEUCtaHL6tRh0ERIQXVio=
 			</data>
 		</dict>
 		<key>Headers/PWRouteOptions.h</key>
@@ -733,91 +751,91 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			n5UcTlI0yuxNrESJq07pF+4AqYtjpnTn6wyL8XgY+kM=
+			085/PaGqtxtBmXTZyNZs60orwgA8iDYmm03xND7ILkw=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8o7hLRhRbhGdyMZsnlD+f3kT9WmRYU3o5BbmmFh6sQw=
+			Rpn16WAi4JnOFAYiMpG1WmtK32QdVg6aTMNO/jcwhC8=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E/kit6q8Q2jJnlq+1gF8+b6cWJoWCzvc9E+ZXlDDgNk=
+			DM8KAEaNFC1zlL14G2uF1jEeYF0qaDzfZkaoKfUnIlk=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			n5UcTlI0yuxNrESJq07pF+4AqYtjpnTn6wyL8XgY+kM=
+			085/PaGqtxtBmXTZyNZs60orwgA8iDYmm03xND7ILkw=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8o7hLRhRbhGdyMZsnlD+f3kT9WmRYU3o5BbmmFh6sQw=
+			Rpn16WAi4JnOFAYiMpG1WmtK32QdVg6aTMNO/jcwhC8=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E/kit6q8Q2jJnlq+1gF8+b6cWJoWCzvc9E+ZXlDDgNk=
+			DM8KAEaNFC1zlL14G2uF1jEeYF0qaDzfZkaoKfUnIlk=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rHLiVpRLI2vJ/EIvf3k873YZWJYt4heLxg6pdrb/5BQ=
+			ueEXedcX52X5VkjO4o3lN3FM7wEqcJhlq0AvyX4QnGQ=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hga3k917Re80WRkrwKogC/JunfZwDqOvExrDFJwHpJE=
+			3gK9Y/uofF7noh9XXE7S3sO/7AbGKKUtUBqFCxqyZnU=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IjI1b6I9d8SI7aKBSvytWxiO+lbjnKoKW0fKx8KXlc4=
+			ti24AZRe0b537I6K+DrTPRrdPpfrxHTrfNW6QVTJoQ8=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rHLiVpRLI2vJ/EIvf3k873YZWJYt4heLxg6pdrb/5BQ=
+			ueEXedcX52X5VkjO4o3lN3FM7wEqcJhlq0AvyX4QnGQ=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hga3k917Re80WRkrwKogC/JunfZwDqOvExrDFJwHpJE=
+			3gK9Y/uofF7noh9XXE7S3sO/7AbGKKUtUBqFCxqyZnU=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IjI1b6I9d8SI7aKBSvytWxiO+lbjnKoKW0fKx8KXlc4=
+			ti24AZRe0b537I6K+DrTPRrdPpfrxHTrfNW6QVTJoQ8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V6jbttEo5ZzYisr6kU7ce/yJ7ZHj9NCiPdP17y1UF84=
+			dn0fpXI9b7kObNmc0/e0N6c2mj58xeuewHlX2NM3f3s=
 			</data>
 		</dict>
 		<key>PrivateHeaders/EXTScope.h</key>
@@ -950,7 +968,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+YuCRU4frm2i4Fp78n0EmZOq7jD8VnIUqCIKDS7R2KI=
+			/WA/sr7+wraxnOb1bl8xait+YKl205Q/E3irzVHLqT0=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWFloor+Private.h</key>
@@ -1076,7 +1094,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			45VkyRkmRVBmgkybqmWDmlJe3l4Q1hmJXKmpoU9n168=
+			W4FNJRKDM7R0oH3aUZ4n/Qu2Mbx0dmlov4LwFzyxHXQ=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWMapView+AnnotationManagement.h</key>
@@ -1237,7 +1255,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			frAzW6QwAY+z1bvZjp3cCCaDXx1/PD4DPFLVLIGe81w=
+			JwBp+DcNcnuww/AjqCuPdjM9FvwlYM4x6U20/LSPrRA=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWPointOfInterestImageLoader.h</key>
@@ -1294,13 +1312,6 @@
 			<key>hash2</key>
 			<data>
 			GWU130yXPqy+snyxxB4XAvkv7v6u4oXheaFcTNBooB4=
-			</data>
-		</dict>
-		<key>PrivateHeaders/PWRouteManager.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			x1DO43URG1tuNdHnN5o9GQF28OCEWKmcVkktFl/r/4U=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWRouteOptions+Private.h</key>

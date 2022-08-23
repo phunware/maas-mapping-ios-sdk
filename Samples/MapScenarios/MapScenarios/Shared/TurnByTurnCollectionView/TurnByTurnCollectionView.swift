@@ -10,7 +10,7 @@ import PWMapKit
 import UIKit
 
 // MARK: - TurnByTurnCollectionViewDelegate protocol
-protocol TurnByTurnCollectionViewDelegate: class {
+protocol TurnByTurnCollectionViewDelegate: AnyObject {
     func turnByTurnCollectionView(_ collectionView: TurnByTurnCollectionView, viewModelFor routeInstruction: PWRouteInstruction) -> InstructionViewModel
     func turnByTurnCollectionViewDidSwipeOnRouteInstruction(_ collectionView: TurnByTurnCollectionView)
     func turnByTurnCollectionViewInstructionExpandTapped(_ collectionView: TurnByTurnCollectionView)

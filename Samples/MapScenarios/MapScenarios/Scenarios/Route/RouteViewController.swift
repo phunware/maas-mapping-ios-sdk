@@ -297,6 +297,13 @@ extension RouteViewController {
     }
     
     @objc func routeTapped() {
+        func routeNotFound() {
+            let routeNotFoundAlert = UIAlertController(title: nil, message: NSLocalizedString("The route couldn't be found", comment: ""), preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: .default, handler: nil)
+            routeNotFoundAlert.addAction(okayAction)
+            present(routeNotFoundAlert, animated: true, completion: nil)
+        }
+        
         if routeHeaderView.startTextField.isEditing {
             routeHeaderView.startTextField.resignFirstResponder()
         } else if routeHeaderView.endTextField.isEditing {
@@ -336,27 +343,19 @@ extension RouteViewController {
                                               excludedPointIdentifiers: nil)
             PWRoute.createRoute(from: startPoint,
                                 to: endPoint,
-                                options: routeOptions) { [weak self] (route, error) in
-                DispatchQueue.main.async {
-                    if let route = route {
-                        self?.navigationController?.popViewController(animated: true)
-                        self?.delegate?.routeSelected(route)
-                    } else {
-                        self?.routeNotFound()
-                    }
+                                options: routeOptions) { [weak self] result in
+                switch result {
+                case .success(let route):
+                    self?.navigationController?.popViewController(animated: true)
+                    self?.delegate?.routeSelected(route)
+                    
+                case .failure(let error):
+                    print("Could not create a route: \(error)")
+                    routeNotFound()
                 }
             }
         } else {
             routeNotFound()
-        }
-    }
-    
-    func routeNotFound() {
-        DispatchQueue.main.async {
-            let routeNotFoundAlert = UIAlertController(title: nil, message: NSLocalizedString("The route couldn't be found", comment: ""), preferredStyle: .alert)
-            let okayAction = UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: .default, handler: nil)
-            routeNotFoundAlert.addAction(okayAction)
-            self.present(routeNotFoundAlert, animated: true, completion: nil)
         }
     }
     

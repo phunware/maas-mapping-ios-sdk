@@ -70,37 +70,39 @@ class OffRouteViewController: UIViewController, ScenarioProtocol {
         // If we want to route between buildings on a campus, then we use PWCampus.campus to configure MapView
         // Otherwise, we will use PWBuilding.building to route between floors in a single building.
         if campusIdentifier != 0 {
-            PWCampus.campus(identifier: campusIdentifier) { [weak self] (campus, error) in
-                if let error = error {
+            PWCampus.campus(identifier: campusIdentifier) { [weak self] result in
+                switch result {
+                case .success(let campus):
+                    self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
+                        self?.locationManager.delegate = self
+                        if !CLLocationManager.isAuthorized() {
+                            self?.locationManager.requestWhenInUseAuthorization()
+                        } else {
+                            self?.startManagedLocationManager()
+                        }
+                    })
+                    
+                case .failure(let error):
                     self?.warning(error.localizedDescription)
-                    return
                 }
-
-                self?.mapView.setCampus(campus, animated: true, onCompletion: { (error) in
-                    self?.locationManager.delegate = self
-                    if !CLLocationManager.isAuthorized() {
-                        self?.locationManager.requestWhenInUseAuthorization()
-                    } else {
-                        self?.startManagedLocationManager()
-                    }
-                })
             }
         }
         else {
-            PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
-                if let error = error {
+            PWBuilding.building(identifier: buildingIdentifier) { [weak self] result in
+                switch result {
+                case .success(let building):
+                    self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
+                        self?.locationManager.delegate = self
+                        if !CLLocationManager.isAuthorized() {
+                            self?.locationManager.requestWhenInUseAuthorization()
+                        } else {
+                            self?.startManagedLocationManager()
+                        }
+                    })
+                    
+                case .failure(let error):
                     self?.warning(error.localizedDescription)
-                    return
                 }
-
-                self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
-                    self?.locationManager.delegate = self
-                    if !CLLocationManager.isAuthorized() {
-                        self?.locationManager.requestWhenInUseAuthorization()
-                    } else {
-                        self?.startManagedLocationManager()
-                    }
-                })
             }
         }
     }
@@ -338,23 +340,23 @@ private extension OffRouteViewController {
         }
 
         // Calculate a route and plot on the map
-        PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, options: nil, completion: { [weak self] (route, error) in
+        PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, options: nil, completion: { [weak self] result in
             guard let self = self else {
                 return
             }
             
-            guard let route = route else {
-                print("Couldn't find a route from you current location to the destination.")
-                return
+            switch result {
+            case .success(let route):
+                self.currentRoute = route
+
+                let routeOptions = PWRouteUIOptions()
+                self.mapView.navigate(with: route, options: routeOptions)
+                
+                self.initializeTurnByTurn()
+                
+            case .failure(let error):
+                print("Couldn't find a route from your current location to the destination: \(error)")
             }
-        
-            self.currentRoute = route
-
-
-            let routeOptions = PWRouteUIOptions()
-            self.mapView.navigate(with: route, options: routeOptions)
-            
-            self.initializeTurnByTurn()
         })
     }
 
