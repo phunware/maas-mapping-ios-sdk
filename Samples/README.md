@@ -116,7 +116,7 @@ extension LocationModesViewController: PWMapViewDelegate {
 }
 ```
 
-### RoutingViewController
+### RouteViewController
 - Route to a point of interest as soon as location is acquired
 - Route configuration such as the color of path, show join point etc.
 
