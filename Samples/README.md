@@ -126,7 +126,7 @@ extension LocationModesViewController: PWMapViewDelegate {
 - Optionally specify a `destinationPOIIdentifier` to route to, which can be found on the point of interest's `Edit` page. If left as `0`, it will use the first point of interest found.
 - Custom route display by giving a `PWRouteUIOptions` as second parameter of `mapView.navigate(with: route, options: routeUIOptions)`.
 
-##### Sample code in [RoutingViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/RoutingViewController.swift):
+##### Sample code in [RouteViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/master/Samples/MapScenarios/MapScenarios/Scenarios/Route/RouteViewController.swift):
 
 ```
 PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, accessibility: false, excludedPoints: nil, completion: { [weak self] (route, error) in
