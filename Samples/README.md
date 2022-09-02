@@ -13,7 +13,7 @@ PWMapKit Samples for iOS
 ##### Usage:
 - Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 
-##### Sample code in [LoadBuildingViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/LoadBuildingViewController.swift):
+##### Sample code in [LoadBuildingViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/master/Samples/MapScenarios/MapScenarios/Scenarios/LoadBuildingViewController.swift):
 
 ```
 PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building, error) in
@@ -33,7 +33,7 @@ PWBuilding.building(withIdentifier: buildingIdentifier) { [weak self] (building,
 - Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 - Configure location provider on building's edit page in Maas portal, then configure for each floor
 
-##### Sample code in [BluedotLocationViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/BluedotLocationViewController.swift):
+##### Sample code in [BluedotLocationViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/master/Samples/MapScenarios/MapScenarios/Scenarios/BluedotLocationViewController.swift):
 
 ```
 self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
@@ -56,7 +56,7 @@ self?.mapView.setBuilding(building, animated: true, onCompletion: { (error) in
 - Specify a `poiLocation` that is within the bounds of your building
 - Optionally fill out configuration values in `addCustomPointOfInterest` such as `poiFloorId`, `poiTitle` etc.
 
-##### Sample code in [CustomPOIViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/CustomPOIViewController.swift):
+##### Sample code in [CustomPOIViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/master/Samples/MapScenarios/MapScenarios/Scenarios/CustomPOIViewController.swift):
 
 ```
 func addCustomPointOfInterest() {
@@ -81,7 +81,7 @@ func addCustomPointOfInterest() {
 - Fill out `applicationId`, `accessKey`, and `buildingIdentifier`
 - Tap the arrow button to visualize the various location modes
 
-##### Sample code in [LocationModesViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/LocationModesViewController.swift):
+##### Sample code in [LocationModesViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/master/Samples/MapScenarios/MapScenarios/Scenarios/LocationModesViewController.swift):
 
 Change tracking mode:
 
@@ -150,7 +150,7 @@ PWRoute.createRoute(from: mapView.indoorUserLocation, to: destinationPOI, access
 - Add at least one point of interest to your building in the Maas portal
 - Tap search bar to view and filter list of selectable points of interest
 
-##### Sample code in [SearchPOIViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/readme/Samples/MapScenarios/MapScenarios/Scenarios/SearchPOIViewController.swift):
+##### Sample code in [SearchPOIViewController.swift](https://github.com/phunware/maas-mapping-ios-sdk/blob/master/Samples/MapScenarios/MapScenarios/Scenarios/SearchPOIViewController.swift):
 
 ```
 var pointOfInterest: PWPointOfInterest!
