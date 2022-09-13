@@ -5,6 +5,7 @@
 * Added method to get distances from a starting location to all POIs.
 `PWRoute.getShortestDistancesToAllPOIs(from startPoint:options:resultQueue:completion:)`
 * Added default icon to display when a POI icon is not fetched yet.
+
 #### Bug fixes
 * Fixed associated landmark routing to work with multi-building campuses.
 * Fixed blue dot going behind POI icons.
@@ -13,6 +14,7 @@
 #### Features
 * Added capability to display connected buildings during campus routing.
 * Optimized initial launch time.
+
 #### Bug fixes
 * Prevent crash when user swipes turn by turn cards quickly and then backgrounds the app.
 * Allowed images for PWPointOfInterest objects to be provided by the application.
