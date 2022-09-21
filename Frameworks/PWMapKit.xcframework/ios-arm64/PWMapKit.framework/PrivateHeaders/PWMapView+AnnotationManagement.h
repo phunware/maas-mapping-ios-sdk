@@ -14,5 +14,6 @@
 - (void)refreshUserLocationAnnotation;
 - (void)addUserLocationAnnotation;
 - (void)removeUserLocationAnnotation;
+- (void)invalidateZoomLevel;
 
 @end

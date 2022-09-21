@@ -8,14 +8,11 @@
 #import <PWMapKit/PWMapKit.h>
 
 #import "PWMapView+Building.h"
-#import "PWMapView+ZoomWorkaround.h"
 #import "PWMapView+AnnotationManagement.h"
 #import "PWMapView+MapViewDelegation.h"
 #import "PWMapView+UserFollowing.h"
 #import "PWMapView+UserLocationGovernance.h"
 #import "PWMapView+Wayfinding.h"
-#import "PWMapView+GestureRecognizer.h"
-#import "PWMapView+ZoomLevel.h"
 #import "PWMapView+Occlusion.h"
 
 #import "PWBuilding+Private.h"
@@ -108,17 +105,7 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 
 // Zoom
 @property (nonatomic) double defaultMaximumZoomLevel;
-/**
-    The last camera altitude which always comes from `mapView.camera.altitude`
- */
-@property (nonatomic) double savedCameraAltitude;
-/**
-   The latest camera altitude which comes from either `mapView.camera.altitude` or manually computing.
-   Why do we need caculate manually? that's because `mapView.camera.altitude` never updates before user's touch event finishes. And to turn on/off zoom workaround has to depend on the current altitude.
- */
-@property (nonatomic) double lastestCameraAltitude;
-@property (nonatomic) double calculatedZoomScale;
-@property (nonatomic) PWMapZoomLevel zoomLevel;
+@property (nonatomic, copy) NSNumber *cachedZoomLevel;
 
 // Tracking mode - used to keep the tracking mode which was set by end user.
 @property (nonatomic) PWTrackingMode trueTrackingMode;
@@ -151,7 +138,6 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 - (void)willAppear;
 - (void)didDisappear;
 - (BOOL)isMapRegionChanging;
-- (void)setZoomLevel:(PWMapZoomLevel)zoomLevel;
 - (void)processUserTrackingMode:(PWTrackingMode)trackingMode animated:(BOOL)animated;
 - (BOOL)isBuildingOverlayRenderedForFloor:(PWFloor *)floor;
 - (PWFloor *)getFloorById:(NSInteger)floorID;

@@ -34,7 +34,7 @@
 @property (nonatomic, nullable) PWPointOfInterestType *pointOfInterestType;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, nullable) NSString *summary;
-@property (nonatomic, nullable) NSDictionary *metaData;
+@property (nonatomic, nullable) NSDictionary<NSString *, id> *metaData;
 @property (nonatomic) PWMapPointSource source;
 @property (nonatomic, getter=isOcclusionEnabled) BOOL occlusionEnabled;
 @property (nonatomic, nullable) NSString *category;
