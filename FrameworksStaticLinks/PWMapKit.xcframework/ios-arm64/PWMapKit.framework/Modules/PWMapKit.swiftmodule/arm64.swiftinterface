@@ -46,3 +46,6 @@ extension PWBuilding {
   @objc public static func isCampusLoaded(identifier: Int) -> Bool
   @objc deinit
 }
+extension PWCampusManager {
+  @objc public static func weightedDistanceForPortalSegment(from startPOI: PWPointOfInterest, to endPOI: PWPointOfInterest) -> Double
+}
