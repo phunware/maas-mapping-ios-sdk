@@ -255,6 +255,7 @@ SWIFT_CLASS("_TtC8PWMapKit15PWCampusManager")
 
 
 
+
 @interface UIImage (SWIFT_EXTENSION(PWMapKit))
 /// A convenience initializer for loading an image from the framework’s bundle.
 - (nullable instancetype)initWithNamedForFramework:(NSString * _Nonnull)namedForFramework;

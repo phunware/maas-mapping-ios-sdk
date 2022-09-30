@@ -9,8 +9,6 @@
 #import <PWMapKit/PWMapKit.h>
 
 #import "PWMapPoint.h"
-#import "PWBuilding+Private.h"
-#import "PWBuilding+Private.h"
 
 @class PWUserLocation;
 
