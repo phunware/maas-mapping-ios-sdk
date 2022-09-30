@@ -5,6 +5,7 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
+#import <CoreLocation/CLLocation.h>
 #import "PWRouteStep.h"
 
 @class PWUserLocation;

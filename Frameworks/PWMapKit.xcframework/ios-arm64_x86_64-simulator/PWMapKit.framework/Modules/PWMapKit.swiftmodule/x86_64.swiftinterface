@@ -10,6 +10,9 @@ extension PWRoute {
   public static func createRoute(from: PWMapPoint, to: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: DispatchQueue = .main, completion: @escaping (Result<PWRoute, Error>) -> Void)
   public static func getShortestDistancesToAllPOIs(from startPoint: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: DispatchQueue = .main, completion: @escaping (Result<[Int : Double], Error>) -> Void)
 }
+extension PWRoute {
+  public func getShortestDistanceToDestination(from startPoint: PWMapPoint, resultQueue: DispatchQueue = .main, completion: @escaping (Result<CLLocationDistance, Error>) -> Void)
+}
 @objc @_hasMissingDesignatedInitializers @objcMembers public class PWCampus : NSObject {
   @objc final public let identifier: Int
   @objc final public let name: String?
