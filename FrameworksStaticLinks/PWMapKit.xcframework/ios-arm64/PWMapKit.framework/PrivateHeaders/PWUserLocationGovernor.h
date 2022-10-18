@@ -48,7 +48,7 @@
 @property PWRouteSnapTolerance routeSnappingTolerance;
 @property (readonly) PWRouteSnapper *routeSnapper;
 
-- (void)setRouteStepPolyline:(MKPolyline*)polyline;
+- (void)setRouteStepMultiPolyline:(MKMultiPolyline *)multiPolyline;
 
 #pragma mark Heading Management
 
