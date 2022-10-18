@@ -13,7 +13,7 @@
 
 @property PWRouteSnapTolerance tolerance;
 @property float toleranceFactor;
-@property MKPolyline *routePolyline;
+@property (nonatomic) MKMultiPolyline *routeMultiPolyline;
 @property (weak) id<PWRouteSnapperDelegateProtocol> delegate;
 @property (getter=isSnapping) BOOL snapping;
 
