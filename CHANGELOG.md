@@ -1,13 +1,4 @@
 # PWMapKit Changelog
-## 3.15.0 (TBD)
-#### Features
-* Added a method that allow efficient lookup of the remaining distance from a starting point to the route destination. `func getShortestDistanceToDestination(from startPoint:resultQueue:completion:)`
-* Allow Maas to override distance associated with floor transitions.
-
-#### Bug fixes
-* Fixed missing routine line when creating a route from their current location.
-* Fixed blue dot not snapping to route after a floor changed.
- 
 ## 3.14.0 (Tuesday, August 23, 2022)
 #### Features
 * Updated Public API signatures with DispatchQueue parameters.

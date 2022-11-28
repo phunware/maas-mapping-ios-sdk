@@ -1,11 +1,14 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PWMapKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import Foundation
 import PWCore
 @_exported import PWMapKit
 import PWMapKit.Private
 import Swift
+import _Concurrency
+import _StringProcessing
 extension PWRoute {
   public static func createRoute(from: PWMapPoint, to: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: DispatchQueue = .main, completion: @escaping (Result<PWRoute, Error>) -> Void)
   public static func getShortestDistancesToAllPOIs(from startPoint: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: DispatchQueue = .main, completion: @escaping (Result<[Int : Double], Error>) -> Void)
@@ -32,7 +35,6 @@ extension PWRoute {
   @objc public func floorById(_ identifier: Int) -> PWFloor?
   @objc public func buildingById(_ identifier: Int) -> PWBuilding?
   @objc deinit
-  @objc override dynamic public init()
 }
 extension PWCampus {
   public static func campus(identifier: Int, resultQueue: DispatchQueue = .main, completion: @escaping (Result<PWCampus, Error>) -> Void)

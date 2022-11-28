@@ -1,0 +1,2343 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "PWMapKit.Private",
+        "printedName": "PWMapKit.Private",
+        "declKind": "Import",
+        "moduleName": "PWMapKit"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PWCampus",
+        "printedName": "PWCampus",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "identifier",
+            "printedName": "identifier",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)identifier",
+            "mangledName": "$s8PWMapKit8PWCampusC10identifierSivp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)identifier",
+                "mangledName": "$s8PWMapKit8PWCampusC10identifierSivg",
+                "moduleName": "PWMapKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)name",
+            "mangledName": "$s8PWMapKit8PWCampusC4nameSSSgvp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)name",
+                "mangledName": "$s8PWMapKit8PWCampusC4nameSSSgvg",
+                "moduleName": "PWMapKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "buildings",
+            "printedName": "buildings",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[PWMapKit.PWBuilding]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[PWMapKit.PWBuilding]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWBuilding",
+                        "printedName": "PWMapKit.PWBuilding",
+                        "usr": "c:objc(cs)PWBuilding"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)buildings",
+            "mangledName": "$s8PWMapKit8PWCampusC9buildingsSaySo10PWBuildingCGSgvp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[PWMapKit.PWBuilding]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[PWMapKit.PWBuilding]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PWBuilding",
+                            "printedName": "PWMapKit.PWBuilding",
+                            "usr": "c:objc(cs)PWBuilding"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)buildings",
+                "mangledName": "$s8PWMapKit8PWCampusC9buildingsSaySo10PWBuildingCGSgvg",
+                "moduleName": "PWMapKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "floors",
+            "printedName": "floors",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[PWMapKit.PWFloor]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[PWMapKit.PWFloor]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWFloor",
+                        "printedName": "PWMapKit.PWFloor",
+                        "usr": "c:objc(cs)PWFloor"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)floors",
+            "mangledName": "$s8PWMapKit8PWCampusC6floorsSaySo7PWFloorCGSgvp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[PWMapKit.PWFloor]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[PWMapKit.PWFloor]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PWFloor",
+                            "printedName": "PWMapKit.PWFloor",
+                            "usr": "c:objc(cs)PWFloor"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)floors",
+                "mangledName": "$s8PWMapKit8PWCampusC6floorsSaySo7PWFloorCGSgvg",
+                "moduleName": "PWMapKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "pois",
+            "printedName": "pois",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[PWMapKit.PWPointOfInterest]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[PWMapKit.PWPointOfInterest]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWPointOfInterest",
+                        "printedName": "PWMapKit.PWPointOfInterest",
+                        "usr": "c:objc(cs)PWPointOfInterest"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)pois",
+            "mangledName": "$s8PWMapKit8PWCampusC4poisSaySo17PWPointOfInterestCGSgvp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[PWMapKit.PWPointOfInterest]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[PWMapKit.PWPointOfInterest]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PWPointOfInterest",
+                            "printedName": "PWMapKit.PWPointOfInterest",
+                            "usr": "c:objc(cs)PWPointOfInterest"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)pois",
+                "mangledName": "$s8PWMapKit8PWCampusC4poisSaySo17PWPointOfInterestCGSgvg",
+                "moduleName": "PWMapKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "pointOfInterestTypes",
+            "printedName": "pointOfInterestTypes",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[PWMapKit.PWPointOfInterestType]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[PWMapKit.PWPointOfInterestType]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWPointOfInterestType",
+                        "printedName": "PWMapKit.PWPointOfInterestType",
+                        "usr": "c:objc(cs)PWPointOfInterestType"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)pointOfInterestTypes",
+            "mangledName": "$s8PWMapKit8PWCampusC20pointOfInterestTypesSaySo07PWPointeF4TypeCGSgvp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[PWMapKit.PWPointOfInterestType]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[PWMapKit.PWPointOfInterestType]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PWPointOfInterestType",
+                            "printedName": "PWMapKit.PWPointOfInterestType",
+                            "usr": "c:objc(cs)PWPointOfInterestType"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)pointOfInterestTypes",
+                "mangledName": "$s8PWMapKit8PWCampusC20pointOfInterestTypesSaySo07PWPointeF4TypeCGSgvg",
+                "moduleName": "PWMapKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "routePoints",
+            "printedName": "routePoints",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : PWMapKit.PWMapPoint]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : PWMapKit.PWMapPoint]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWMapPoint",
+                        "printedName": "PWMapKit.PWMapPoint",
+                        "usr": "c:objc(pl)PWMapPoint"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)routePoints",
+            "mangledName": "$s8PWMapKit8PWCampusC11routePointsSDySSSo0A5Point_pGSgvp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : PWMapKit.PWMapPoint]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : PWMapKit.PWMapPoint]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PWMapPoint",
+                            "printedName": "PWMapKit.PWMapPoint",
+                            "usr": "c:objc(pl)PWMapPoint"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)routePoints",
+                "mangledName": "$s8PWMapKit8PWCampusC11routePointsSDySSSo0A5Point_pGSgvg",
+                "moduleName": "PWMapKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "routeSegments",
+            "printedName": "routeSegments",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : [Swift.String : Foundation.NSNumber]]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : [Swift.String : Foundation.NSNumber]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Foundation.NSNumber]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSNumber",
+                            "printedName": "Foundation.NSNumber",
+                            "usr": "c:objc(cs)NSNumber"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)routeSegments",
+            "mangledName": "$s8PWMapKit8PWCampusC13routeSegmentsSDySSSDySSSo8NSNumberCGGSgvp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : [Swift.String : Foundation.NSNumber]]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : [Swift.String : Foundation.NSNumber]]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Dictionary",
+                            "printedName": "[Swift.String : Foundation.NSNumber]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "NSNumber",
+                                "printedName": "Foundation.NSNumber",
+                                "usr": "c:objc(cs)NSNumber"
+                              }
+                            ],
+                            "usr": "s:SD"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)routeSegments",
+                "mangledName": "$s8PWMapKit8PWCampusC13routeSegmentsSDySSSDySSSo8NSNumberCGGSgvg",
+                "moduleName": "PWMapKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "userInfo",
+            "printedName": "userInfo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.AnyHashable : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.AnyHashable : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyHashable",
+                        "printedName": "Swift.AnyHashable",
+                        "usr": "s:s11AnyHashableV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)userInfo",
+            "mangledName": "$s8PWMapKit8PWCampusC8userInfoSDys11AnyHashableVypGSgvp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.AnyHashable : Any]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.AnyHashable : Any]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AnyHashable",
+                            "printedName": "Swift.AnyHashable",
+                            "usr": "s:s11AnyHashableV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)userInfo",
+                "mangledName": "$s8PWMapKit8PWCampusC8userInfoSDys11AnyHashableVypGSgvg",
+                "moduleName": "PWMapKit",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "campusIdentifierNotFound",
+            "printedName": "campusIdentifierNotFound",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(cpy)campusIdentifierNotFound",
+            "mangledName": "$s8PWMapKit8PWCampusC24campusIdentifierNotFoundSivpZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(cm)campusIdentifierNotFound",
+                "mangledName": "$s8PWMapKit8PWCampusC24campusIdentifierNotFoundSivgZ",
+                "moduleName": "PWMapKit",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "overviewBuilding",
+            "printedName": "overviewBuilding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PWMapKit.PWBuilding?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PWBuilding",
+                    "printedName": "PWMapKit.PWBuilding",
+                    "usr": "c:objc(cs)PWBuilding"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(py)overviewBuilding",
+            "mangledName": "$s8PWMapKit8PWCampusC16overviewBuildingSo10PWBuildingCSgvp",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "PWMapKit.PWBuilding?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWBuilding",
+                        "printedName": "PWMapKit.PWBuilding",
+                        "usr": "c:objc(cs)PWBuilding"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)overviewBuilding",
+                "mangledName": "$s8PWMapKit8PWCampusC16overviewBuildingSo10PWBuildingCSgvg",
+                "moduleName": "PWMapKit",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "campus",
+            "printedName": "campus(identifier:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PWMapKit.PWCampus?, Swift.Error?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(PWMapKit.PWCampus?, Swift.Error?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "PWMapKit.PWCampus?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PWCampus",
+                            "printedName": "PWMapKit.PWCampus",
+                            "usr": "c:@M@PWMapKit@objc(cs)PWCampus"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.Error?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(cm)campusWithIdentifier:completion:",
+            "mangledName": "$s8PWMapKit8PWCampusC6campus10identifier10completionySi_yACSg_s5Error_pSgtctFZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "deprecated": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Available",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "floorById",
+            "printedName": "floorById(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PWMapKit.PWFloor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PWFloor",
+                    "printedName": "PWMapKit.PWFloor",
+                    "usr": "c:objc(cs)PWFloor"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)floorById:",
+            "mangledName": "$s8PWMapKit8PWCampusC9floorByIdySo7PWFloorCSgSiF",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "buildingById",
+            "printedName": "buildingById(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PWMapKit.PWBuilding?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PWBuilding",
+                    "printedName": "PWMapKit.PWBuilding",
+                    "usr": "c:objc(cs)PWBuilding"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)buildingById:",
+            "mangledName": "$s8PWMapKit8PWCampusC12buildingByIdySo10PWBuildingCSgSiF",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PWCampus",
+                "printedName": "PWMapKit.PWCampus",
+                "usr": "c:@M@PWMapKit@objc(cs)PWCampus"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampus(im)init",
+            "mangledName": "$s8PWMapKit8PWCampusCACycfc",
+            "moduleName": "PWMapKit",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "campus",
+            "printedName": "campus(identifier:resultQueue:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DispatchQueue",
+                "printedName": "Dispatch.DispatchQueue",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)OS_dispatch_queue"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<PWMapKit.PWCampus, Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<PWMapKit.PWCampus, Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWCampus",
+                        "printedName": "PWMapKit.PWCampus",
+                        "usr": "c:@M@PWMapKit@objc(cs)PWCampus"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8PWMapKit8PWCampusC6campus10identifier11resultQueue10completionySi_So17OS_dispatch_queueCys6ResultOyACs5Error_pGctFZ",
+            "mangledName": "$s8PWMapKit8PWCampusC6campus10identifier11resultQueue10completionySi_So17OS_dispatch_queueCys6ResultOyACs5Error_pGctFZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@PWMapKit@objc(cs)PWCampus",
+        "mangledName": "$s8PWMapKit8PWCampusC",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "PWMapKit.Private",
+        "printedName": "PWMapKit.Private",
+        "declKind": "Import",
+        "moduleName": "PWMapKit"
+      },
+      {
+        "kind": "Import",
+        "name": "PWCore",
+        "printedName": "PWCore",
+        "declKind": "Import",
+        "moduleName": "PWMapKit"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "PWCore",
+        "printedName": "PWCore",
+        "declKind": "Import",
+        "moduleName": "PWMapKit"
+      },
+      {
+        "kind": "Import",
+        "name": "PWMapKit.Private",
+        "printedName": "PWMapKit.Private",
+        "declKind": "Import",
+        "moduleName": "PWMapKit"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PWCampusManager",
+        "printedName": "PWCampusManager",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "campus",
+            "printedName": "campus(identifier:usePreviouslyLoadedCampus:success:failure:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PWMapKit.PWCampus) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PWCampus",
+                    "printedName": "PWMapKit.PWCampus",
+                    "usr": "c:@M@PWMapKit@objc(cs)PWCampus"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Error) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampusManager(cm)campusWithIdentifier:usePreviouslyLoadedCampus:success:failure:",
+            "mangledName": "$s8PWMapKit15PWCampusManagerC6campus10identifier25usePreviouslyLoadedCampus7success7failureySi_SbyAA0C0Ccys5Error_pctFZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "objc_name": "campusWithIdentifier:usePreviouslyLoadedCampus:success:failure:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isCampusLoaded",
+            "printedName": "isCampusLoaded(identifier:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@PWMapKit@objc(cs)PWCampusManager(cm)isCampusLoadedWithIdentifier:",
+            "mangledName": "$s8PWMapKit15PWCampusManagerC14isCampusLoaded10identifierSbSi_tFZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "objc_name": "isCampusLoadedWithIdentifier:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "weightedDistanceForPortalSegment",
+            "printedName": "weightedDistanceForPortalSegment(from:to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PWPointOfInterest",
+                "printedName": "PWMapKit.PWPointOfInterest",
+                "usr": "c:objc(cs)PWPointOfInterest"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PWPointOfInterest",
+                "printedName": "PWMapKit.PWPointOfInterest",
+                "usr": "c:objc(cs)PWPointOfInterest"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@PWMapKit@objc(cs)PWCampusManager(cm)weightedDistanceForPortalSegmentFrom:to:",
+            "mangledName": "$s8PWMapKit15PWCampusManagerC32weightedDistanceForPortalSegment4from2toSdSo17PWPointOfInterestC_AHtFZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "objc_name": "weightedDistanceForPortalSegmentFrom:to:",
+            "declAttributes": [
+              "Final",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@PWMapKit@objc(cs)PWCampusManager",
+        "mangledName": "$s8PWMapKit15PWCampusManagerC",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PWMapKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "PWMapKit.Private",
+        "printedName": "PWMapKit.Private",
+        "declKind": "Import",
+        "moduleName": "PWMapKit"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PWRoute",
+        "printedName": "PWRoute",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "createRoute",
+            "printedName": "createRoute(from:to:options:resultQueue:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PWMapPoint",
+                "printedName": "PWMapKit.PWMapPoint",
+                "usr": "c:objc(pl)PWMapPoint"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PWMapPoint",
+                "printedName": "PWMapKit.PWMapPoint",
+                "usr": "c:objc(pl)PWMapPoint"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PWMapKit.PWRouteOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PWRouteOptions",
+                    "printedName": "PWMapKit.PWRouteOptions",
+                    "usr": "c:objc(cs)PWRouteOptions"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DispatchQueue",
+                "printedName": "Dispatch.DispatchQueue",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)OS_dispatch_queue"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<PWMapKit.PWRoute, Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<PWMapKit.PWRoute, Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWRoute",
+                        "printedName": "PWMapKit.PWRoute",
+                        "usr": "c:objc(cs)PWRoute"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So7PWRouteC8PWMapKitE11createRoute4from2to7options11resultQueue10completionySo0B5Point_p_SoAJ_pSo0A7OptionsCSgSo17OS_dispatch_queueCys6ResultOyABs5Error_pGctFZ",
+            "mangledName": "$sSo7PWRouteC8PWMapKitE11createRoute4from2to7options11resultQueue10completionySo0B5Point_p_SoAJ_pSo0A7OptionsCSgSo17OS_dispatch_queueCys6ResultOyABs5Error_pGctFZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getShortestDistancesToAllPOIs",
+            "printedName": "getShortestDistancesToAllPOIs(from:options:resultQueue:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PWMapPoint",
+                "printedName": "PWMapKit.PWMapPoint",
+                "usr": "c:objc(pl)PWMapPoint"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PWMapKit.PWRouteOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PWRouteOptions",
+                    "printedName": "PWMapKit.PWRouteOptions",
+                    "usr": "c:objc(cs)PWRouteOptions"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DispatchQueue",
+                "printedName": "Dispatch.DispatchQueue",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)OS_dispatch_queue"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<[Swift.Int : Swift.Double], Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<[Swift.Int : Swift.Double], Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.Int : Swift.Double]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Double",
+                            "printedName": "Swift.Double",
+                            "usr": "s:Sd"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So7PWRouteC8PWMapKitE29getShortestDistancesToAllPOIs4from7options11resultQueue10completionySo0B5Point_p_So0A7OptionsCSgSo17OS_dispatch_queueCys6ResultOySDySiSdGs5Error_pGctFZ",
+            "mangledName": "$sSo7PWRouteC8PWMapKitE29getShortestDistancesToAllPOIs4from7options11resultQueue10completionySo0B5Point_p_So0A7OptionsCSgSo17OS_dispatch_queueCys6ResultOySDySiSdGs5Error_pGctFZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getShortestDistanceToDestination",
+            "printedName": "getShortestDistanceToDestination(from:resultQueue:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PWMapPoint",
+                "printedName": "PWMapKit.PWMapPoint",
+                "usr": "c:objc(pl)PWMapPoint"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DispatchQueue",
+                "printedName": "Dispatch.DispatchQueue",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)OS_dispatch_queue"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<Swift.Double, Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Swift.Double, Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So7PWRouteC8PWMapKitE32getShortestDistanceToDestination4from11resultQueue10completionySo0B5Point_p_So17OS_dispatch_queueCys6ResultOySds5Error_pGctF",
+            "mangledName": "$sSo7PWRouteC8PWMapKitE32getShortestDistanceToDestination4from11resultQueue10completionySo0B5Point_p_So17OS_dispatch_queueCys6ResultOySds5Error_pGctF",
+            "moduleName": "PWMapKit",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:objc(cs)PWRoute",
+        "moduleName": "PWMapKit",
+        "isOpen": true,
+        "objc_name": "PWRoute",
+        "declAttributes": [
+          "ObjC",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UIImage",
+        "printedName": "UIImage",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(namedForFramework:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@CM@PWMapKit@@objc(cs)UIImage(im)initWithNamedForFramework:",
+            "mangledName": "$sSo7UIImageC8PWMapKitE17namedForFrameworkABSgSS_tcfc",
+            "moduleName": "PWMapKit",
+            "objc_name": "initWithNamedForFramework:",
+            "declAttributes": [
+              "Dynamic",
+              "Convenience",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Convenience"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:objc(cs)UIImage",
+        "moduleName": "UIKit",
+        "isOpen": true,
+        "intro_iOS": "2.0",
+        "objc_name": "UIImage",
+        "declAttributes": [
+          "Available",
+          "ObjC",
+          "SynthesizedProtocol",
+          "NonSendable",
+          "Sendable",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByImageLiteral",
+            "printedName": "_ExpressibleByImageLiteral",
+            "usr": "s:s26_ExpressibleByImageLiteralP",
+            "mangledName": "$ss26_ExpressibleByImageLiteralP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PWBuilding",
+        "printedName": "PWBuilding",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "defaultCacheFallbackTimeout",
+            "printedName": "defaultCacheFallbackTimeout",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:So10PWBuildingC8PWMapKitE27defaultCacheFallbackTimeoutSdvpZ",
+            "mangledName": "$sSo10PWBuildingC8PWMapKitE27defaultCacheFallbackTimeoutSdvpZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage"
+            ],
+            "isFromExtension": true,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So10PWBuildingC8PWMapKitE27defaultCacheFallbackTimeoutSdvgZ",
+                "mangledName": "$sSo10PWBuildingC8PWMapKitE27defaultCacheFallbackTimeoutSdvgZ",
+                "moduleName": "PWMapKit",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "building",
+            "printedName": "building(identifier:cacheFallbackTimeout:resultQueue:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DispatchQueue",
+                "printedName": "Dispatch.DispatchQueue",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)OS_dispatch_queue"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<PWMapKit.PWBuilding, Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<PWMapKit.PWBuilding, Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWBuilding",
+                        "printedName": "PWMapKit.PWBuilding",
+                        "usr": "c:objc(cs)PWBuilding"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So10PWBuildingC8PWMapKitE8building10identifier20cacheFallbackTimeout11resultQueue10completionySi_SdSo17OS_dispatch_queueCys6ResultOyABs5Error_pGctFZ",
+            "mangledName": "$sSo10PWBuildingC8PWMapKitE8building10identifier20cacheFallbackTimeout11resultQueue10completionySi_SdSo17OS_dispatch_queueCys6ResultOyABs5Error_pGctFZ",
+            "moduleName": "PWMapKit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:objc(cs)PWBuilding",
+        "moduleName": "PWMapKit",
+        "isOpen": true,
+        "objc_name": "PWBuilding",
+        "declAttributes": [
+          "ObjC",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/PWCampus.swift",
+      "kind": "IntegerLiteral",
+      "offset": 649,
+      "length": 2,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/PWCampus.swift",
+      "kind": "StringLiteral",
+      "offset": 175,
+      "length": 8,
+      "value": "\"PWMapKit.PWCampus\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
+      "kind": "StringLiteral",
+      "offset": 453,
+      "length": 7,
+      "value": "\"items\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
+      "kind": "StringLiteral",
+      "offset": 453,
+      "length": 7,
+      "value": "\"items\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
+      "kind": "StringLiteral",
+      "offset": 910,
+      "length": 10,
+      "value": "\"campusId\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
+      "kind": "StringLiteral",
+      "offset": 947,
+      "length": 12,
+      "value": "\"externalId\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
+      "kind": "StringLiteral",
+      "offset": 1157,
+      "length": 11,
+      "value": "\"venueGuid\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
+      "kind": "StringLiteral",
+      "offset": 910,
+      "length": 10,
+      "value": "\"campusId\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
+      "kind": "StringLiteral",
+      "offset": 947,
+      "length": 12,
+      "value": "\"externalId\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
+      "kind": "StringLiteral",
+      "offset": 1157,
+      "length": 11,
+      "value": "\"venueGuid\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/PWBuilding.swift",
+      "kind": "FloatLiteral",
+      "offset": 263,
+      "length": 4,
+      "value": "10.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager.swift",
+      "kind": "StringLiteral",
+      "offset": 290,
+      "length": 6,
+      "value": "\"v3.0\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager.swift",
+      "kind": "StringLiteral",
+      "offset": 338,
+      "length": 32,
+      "value": "\"https:\/\/map-api%@.phunware.com\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager.swift",
+      "kind": "StringLiteral",
+      "offset": 413,
+      "length": 52,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager.swift",
+      "kind": "StringLiteral",
+      "offset": 432,
+      "length": 1,
+      "value": "\"\/\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager.swift",
+      "kind": "StringLiteral",
+      "offset": 454,
+      "length": 1,
+      "value": "\"\/buildings\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1198,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager+PortalDistance.swift",
+      "kind": "FloatLiteral",
+      "offset": 357,
+      "length": 4,
+      "value": "90.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager+PortalDistance.swift",
+      "kind": "FloatLiteral",
+      "offset": 540,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager+PortalDistance.swift",
+      "kind": "StringLiteral",
+      "offset": 671,
+      "length": 39,
+      "value": "\"routingPortalDistanceInMetersOverride\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Manager\/PWCampusManager+PortalDistance.swift",
+      "kind": "StringLiteral",
+      "offset": 830,
+      "length": 20,
+      "value": "\"BuildingToBuilding\""
+    }
+  ]
+}
