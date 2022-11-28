@@ -23,6 +23,6 @@ framework module PWMapKit {
 }
 
 module PWMapKit.Swift {
-    header "PWMapKit-Swift.h"
-    requires objc
+  header "PWMapKit-Swift.h"
+  requires objc
 }
