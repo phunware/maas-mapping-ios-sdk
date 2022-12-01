@@ -30,7 +30,7 @@ An object encapsulating information about a PointOfInterest
 /**
  * Metadata associated with this point.
  */
-@property (nonatomic, readonly, nullable) NSDictionary *metaData;
+@property (nonatomic, readonly, nullable) NSDictionary<NSString *, id> *metaData;
 
 /**
  * Default initializer not available

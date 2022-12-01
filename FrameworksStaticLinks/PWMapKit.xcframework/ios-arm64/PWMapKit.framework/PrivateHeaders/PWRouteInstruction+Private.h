@@ -1,5 +1,5 @@
 //
-//  PWRouteInstruction.h
+//  PWRouteInstruction+Private.h
 //  PWMapKit
 //
 //  Created by Sam Odom on 4/1/15.
@@ -8,11 +8,11 @@
 
 #import <PWMapKit/PWMapKit.h>
 
-#import "PWMapPoint.h"
-#import "PWBuilding+Private.h"
-#import "PWBuilding+Private.h"
-
+@class PWRoute;
+@class PWLandmark;
+@class PWPointOfInterest;
 @class PWUserLocation;
+@protocol PWMapPoint;
 
 @interface PWRouteInstruction ()
 

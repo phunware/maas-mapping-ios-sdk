@@ -15,10 +15,14 @@ framework module PWMapKit {
   explicit module Private {
       header "PWBuildingManager.h"
       header "PWRouteManager.h"
+      header "PWRouteStep.h"
+      header "PWMappingTypes.h"
+      header "PWRoute+Private.h"
+      header "PWRouteInstruction+Private.h"
   }
 }
 
 module PWMapKit.Swift {
-    header "PWMapKit-Swift.h"
-    requires objc
+  header "PWMapKit-Swift.h"
+  requires objc
 }

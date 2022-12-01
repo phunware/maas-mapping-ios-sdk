@@ -7,6 +7,7 @@
 
 #import "PWMapPoint.h"
 
+@class PWCampus;
 @class PWBuilding;
 @class PWPointOfInterest;
 @class PWRouteOptions;

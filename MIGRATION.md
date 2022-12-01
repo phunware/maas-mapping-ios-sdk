@@ -1,4 +1,14 @@
 # PWMapKit Migration Guide
+## Upgrade from 3.14.x to 3.15.x
+
+#### General
+
+This release adds capability to get remaining distance to a route destination.
+
+#### Upgrade Steps
+
+1. Open the `Podfile` from your project and change PWMapKit to include `pod 'PWMapKit', '3.15.x'`, then run `pod update` in the Terminal to update the framework.
+
 ## Upgrade from 3.13.x to 3.14.x
 
 #### General

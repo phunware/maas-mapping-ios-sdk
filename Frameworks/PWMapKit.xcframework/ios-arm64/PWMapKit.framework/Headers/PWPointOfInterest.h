@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Metadata associated with the point-of-interest. May be NULL.
  */
-@property (nonatomic, readonly, nullable) NSDictionary *metaData;
+@property (nonatomic, readonly, nullable) NSDictionary<NSString*, id> *metaData;
 
 /**
  * The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:

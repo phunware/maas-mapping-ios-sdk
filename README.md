@@ -6,10 +6,10 @@ This is Phunware's Mapping SDK for use with its Multiscreen-as-a-Service platfor
 
 Requirements
 ------------
-- PWLocation 3.12.x
+- PWLocation 3.13.x
 - PWCore 3.12.x
 - iOS 13.0 or greater
-- Xcode 12 or greater
+- Xcode 13 or greater
 
 Installation
 ------------
@@ -53,7 +53,7 @@ map.setBuilding(<BUILDING>, animated: <ANIMATED>) { (error) in
 ```
 
 ### Register Location Provider
-The PWMapView can display a user location on the map if a location provider is registered with the PWMapView. The location providers are in the PWLocation framework, and each different provider requires different steps to set up (see readme here https://github.com/phunware/maas-location-ios-sdk to view setup examples of all different provider options). Once the location provider is initialized, the following call may be used to register the provider with the PWMapView:
+The PWMapView can display a user location on the map if a location provider is registered with the PWMapView. The location providers are in the PWLocation framework (see https://github.com/phunware/maas-location-ios-sdk to view setup examples of all different provider options). Once the location provider is initialized, the following call may be used to register the provider with the PWMapView:
 
 ```swift
 mapView.register(<MANAGER_OBJECT>)

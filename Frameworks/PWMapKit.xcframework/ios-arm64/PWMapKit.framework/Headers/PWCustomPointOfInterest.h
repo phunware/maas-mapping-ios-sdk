@@ -72,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Optional data specified by the developer and associated with the custom point-of-interest.
  */
-@property (nonatomic, nullable) NSDictionary *metaData;
+@property (nonatomic, nullable) NSDictionary<NSString *, id> *metaData;
 
 /** 
  A flag indicating whether the label text should be shown or hidden.

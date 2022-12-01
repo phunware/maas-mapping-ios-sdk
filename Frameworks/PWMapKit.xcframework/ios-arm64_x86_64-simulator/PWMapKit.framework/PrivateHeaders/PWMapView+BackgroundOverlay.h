@@ -1,5 +1,5 @@
 //
-//  PWMapView+ZoomWorkaround.h
+//  PWMapView+BackgroundOverlay.h
 //  PWMapKit
 //
 //  Created by Sam Odom on 11/3/14.
@@ -8,9 +8,8 @@
 
 #import "PWMapView+Private.h"
 
-@interface PWMapView (ZoomWorkaround)
+@interface PWMapView (BackgroundOverlay)
 
-- (BOOL)hasReachedMaxZooming;
-- (void)zoomWorkaround;
+- (void)refreshBackgroundOverlay;
 
 @end

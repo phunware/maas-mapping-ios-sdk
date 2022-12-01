@@ -562,23 +562,6 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWTrackingMode) {
 #pragma mark - Deprecated
 
 /**
- * The resolution of current map view.
- *
- * @deprecated since v3.2.0
- */
-@property(nonatomic, readonly) NSInteger zoomLevel __deprecated;
-
-/**
- * Positions the map to the supplied center coordinate with the given zoom level and optional animation.
- * @param centerCoordinate A CLLocationCoordinate2D object representing the latitude and longitude the map should zoom to.
- * @param zoomLevel An `NSUInteger` value representing the zoom level the map should zoom to.
- * @param animated A `BOOL` property to determine whether the change of map's center should be animated or not.
- *
- * @deprecated Use `setCamera:animated:`, `setRegion:animated:`, `setVisibleMapRect:animated:` or `setVisibleMapRect:edgePadding:animated:` instead, since v3.2.0
- */
-- (void)setCenterCoordinate:(CLLocationCoordinate2D)centerCoordinate zoomLevel:(NSUInteger)zoomLevel animated:(BOOL)animated __deprecated;
-
-/**
  * A convenient method to set current floor, it's working exactly the same as `setCurrentFloor:`.
  * @param floor A `PWFloor` object you want to set.
  *
