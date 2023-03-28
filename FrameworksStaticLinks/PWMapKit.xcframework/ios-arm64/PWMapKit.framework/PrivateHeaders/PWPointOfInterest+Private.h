@@ -68,4 +68,8 @@
 
 - (void)notifyWhenImageLoaded:(PWPointOfInterestImageLoadingCompleted _Nonnull)callback;
 
+- (NSString* _Nullable)oneWayPortalConnectionsID;
+
+- (BOOL)hasCircularConnectionsIn:(NSDictionary* _Nonnull)portalPOIDictionary;
+
 @end
