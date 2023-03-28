@@ -6,7 +6,7 @@ inhibit_all_warnings!
 target 'MapScenarios' do
   use_frameworks!
 
-  pod 'PWMapKit', :git => 'https://github.com/phunware/maas-mapping-ios-sdk.git', :tag => '3.15.0'
+  pod 'PWMapKit', :git => 'https://github.com/phunware/maas-mapping-ios-sdk.git', :tag => '3.15.1'
   
 end
 
