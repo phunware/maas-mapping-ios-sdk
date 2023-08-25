@@ -4,7 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 ## [3.15.1][] - 2023-03-28
+
+### Added
 
 - Added one-way portals support for escalators and stairs that only operate in one direction across floors.
 
@@ -622,6 +625,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
+[3.15.1]: https://github.com/phunware/maas-mapping-ios-sdk/compare/3.15.0...3.15.1
 [3.15.0]: https://github.com/phunware/maas-mapping-ios-sdk/compare/3.14.0...3.15.0
 [3.14.0]: https://github.com/phunware/maas-mapping-ios-sdk/compare/3.13.0...3.14.0
 [3.13.0]: https://github.com/phunware/maas-mapping-ios-sdk/compare/v3.12.0...3.13.0
