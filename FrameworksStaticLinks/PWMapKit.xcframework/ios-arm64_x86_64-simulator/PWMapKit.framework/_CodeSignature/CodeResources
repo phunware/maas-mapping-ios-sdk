@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/PWMapKit.h</key>
 		<data>
-		W4LEajNjA49S/xpeJa5yPyINSJ8=
+		6vDzZZuDQaewOlPUUQ+vxu8QhDY=
 		</data>
 		<key>Headers/PWMapPoint.h</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IEzrsJIMR2gIj63fDVvgzVGqhQk=
+		P0pf8EIPpvtcLl8E47vHjpLCUFg=
 		</data>
 		<key>LICENSE.md</key>
 		<data>
@@ -414,7 +414,7 @@
 		</data>
 		<key>PrivateHeaders/PWRouteInstruction+Private.h</key>
 		<data>
-		MMnHZF8cwblgOlFKbnGp96MtTqo=
+		Kfc7E6kcVKNPFPAcVrVNQVr+5p8=
 		</data>
 		<key>PrivateHeaders/PWRouteInstructionDirectionOverlay.h</key>
 		<data>
@@ -462,7 +462,7 @@
 		</data>
 		<key>PrivateHeaders/PWRouteStep+Private.h</key>
 		<data>
-		G8/G3kjrfLCwws7oqkCW67uOQNk=
+		kOrsp3uOJX4V+4Eb6wVICrClLbs=
 		</data>
 		<key>PrivateHeaders/PWRouteStep.h</key>
 		<data>
@@ -630,7 +630,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cdr0rBNU0mR4pwS4YN1/heyfUaBtZS3JjeDkcppcQOU=
+			qJvNwQDaDg1iVJ234lwhUlXqz8qXiScPpLhGn5ag3rc=
 			</data>
 		</dict>
 		<key>Headers/PWMapPoint.h</key>
@@ -1246,7 +1246,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			t2LRqLjytXJDA8cGXZhtd5R2i49VpscKevAL+KYLQRA=
+			l4pT2NG2lBBsmiHyZr9YJ9XvUtYYphiHGpb2/Ia1MO8=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWRouteInstructionDirectionOverlay.h</key>
@@ -1330,7 +1330,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WHpOHrLrZ0VXk2rrnzpicRIhJ7G+xEP04v1Gdy2G2H8=
+			k87BpV+Ym8hX0HCyOOmhSpwqRxQvu4/+mJOxDUPcwt4=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWRouteStep.h</key>

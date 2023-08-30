@@ -55,6 +55,6 @@
                          direction:(PWRouteInstructionDirection)direction
                           distance:(CLLocationDistance)distance;
 
-- (CLLocationDistance)shortestDistanceFromLocation:(PWUserLocation *)location;
+- (CLLocationDistance)shortestDistanceFromLocation:(id<PWMapPoint>)location;
 
 @end
