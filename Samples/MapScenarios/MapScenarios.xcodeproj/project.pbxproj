@@ -582,9 +582,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 84CK77G588;
-				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MapScenarios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.15.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.MapScenarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild (Debug)";
@@ -599,9 +599,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 84CK77G588;
-				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MapScenarios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.15.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.MapScenarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild (Debug)";
