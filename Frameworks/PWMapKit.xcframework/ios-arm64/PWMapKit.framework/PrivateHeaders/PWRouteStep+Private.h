@@ -18,6 +18,6 @@
 
 - (instancetype)initWithPoints:(NSArray<id<PWMapPoint>> *)points;
 
-- (CLLocationDistance)shortestDistanceFromLocation:(PWUserLocation *)location;
+- (CLLocationDistance)shortestDistanceFromLocation:(id<PWMapPoint>)location;
 
 @end
