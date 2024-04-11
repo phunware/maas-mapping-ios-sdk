@@ -38,6 +38,7 @@
 @property (nonatomic) PWMapPointSource source;
 @property (nonatomic, getter=isOcclusionEnabled) BOOL occlusionEnabled;
 @property (nonatomic, nullable) NSString *category;
+@property (nonatomic, getter=isRoutable) BOOL routable;
 
 // POI - accessible
 @property (nonatomic) BOOL visualImpaired;
