@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/PWMapKit.h</key>
 		<data>
-		6vDzZZuDQaewOlPUUQ+vxu8QhDY=
+		X0cR3r58oUIyD0mHzrSIT0KeADM=
 		</data>
 		<key>Headers/PWMapPoint.h</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Headers/PWPointOfInterest.h</key>
 		<data>
-		iMdg3IYwF1AxrmY5XPkf9oSbO70=
+		uxUpew3ir05sHqHTR0kuK/A5GKM=
 		</data>
 		<key>Headers/PWPointOfInterestInfo.h</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		P0pf8EIPpvtcLl8E47vHjpLCUFg=
+		umnA4F/KCXllmnb7kg2qQMdIIZE=
 		</data>
 		<key>LICENSE.md</key>
 		<data>
@@ -394,7 +394,7 @@
 		</data>
 		<key>PrivateHeaders/PWPointOfInterest+Private.h</key>
 		<data>
-		YhyhbanRX5cY6vsNvZxeHQFD4P0=
+		l/vfHIE4/oJut6i8qZKT1KeAx3w=
 		</data>
 		<key>PrivateHeaders/PWPointOfInterestImageLoader.h</key>
 		<data>
@@ -630,7 +630,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qJvNwQDaDg1iVJ234lwhUlXqz8qXiScPpLhGn5ag3rc=
+			nQtEp+PtL08M6B+En5dkvM82GtQ0mPYJphTkVvKJCUg=
 			</data>
 		</dict>
 		<key>Headers/PWMapPoint.h</key>
@@ -651,7 +651,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QqiDmmlhOKfWK39ql7l9qqRMRt+jx1yK5MwwUdRDHgc=
+			N4Hfg1n1UrwU2pKZgujVKphXBBoHekBzkjfjsdCumJo=
 			</data>
 		</dict>
 		<key>Headers/PWPointOfInterestInfo.h</key>
@@ -1211,7 +1211,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mpc1fEOFdsXGByQOetyLxeH0+fwmsBBzK8lxWFm7LEU=
+			siX57XQvQt4uO2Xx94C1HTXzvT6psjY9JD9ZapjOGqg=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWPointOfInterestImageLoader.h</key>

@@ -88,6 +88,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (readonly, nullable) NSString *portalID;
 
+/**
+ * Determines whether or not the point-of-interest can participate in routes.
+ */
+@property (nonatomic, getter=isRoutable, readonly) BOOL routable;
+
 @end
 
 NS_ASSUME_NONNULL_END
