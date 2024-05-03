@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		KJGfGLsnkf28EE6YK0bT0WarWPs=
+		Bt2rnL8kISh1BGWpOiSeOBvIAJg=
 		</data>
 		<key>Headers/PWAnnotationLabel.h</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		umnA4F/KCXllmnb7kg2qQMdIIZE=
+		SeFIRv+uGWNEnlUf9J+v8hp9F+Q=
 		</data>
 		<key>LICENSE.md</key>
 		<data>
@@ -126,19 +126,19 @@
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		tQ5G1NdyPEdohOGJ62qk8suXpD0=
+		LlLc3ET2OQ49275DkxNjqD/UIxM=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		28/7yKHxilcfClMV5f+pLwSGnSA=
+		PQ31eTehUYFjkEei/WoNS9a4n5A=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		tQ5G1NdyPEdohOGJ62qk8suXpD0=
+		LlLc3ET2OQ49275DkxNjqD/UIxM=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		543yM93g29UUTCE+DUcwJIJkfIs=
+		Y/10zzwllR3FJLSFS3r7t4TiZlM=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -146,19 +146,19 @@
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		NXgNhsP9BUJRKOJREz/vUmrFBz8=
+		3pegfTaXOEeCnFM/TWQeNO8vxfo=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		N7VbiPNXtfQ6WoVeWsQKHzx1hTY=
+		9sIaBEsjfsOWtGAapnu2fJEjjl8=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		NXgNhsP9BUJRKOJREz/vUmrFBz8=
+		3pegfTaXOEeCnFM/TWQeNO8vxfo=
 		</data>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xU2PewOayhroc63kKTp40//Z8UA=
+		A6Ny91JTQCS+YeNxqUkL/gk2BYE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -539,7 +539,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NTBdjJ6Vo1O1iemuCxNQqNxdAWmVsaMuO93o+xwO7pg=
+			QRWQ3hgF1dc7iX1amQ5UujRJpSU9Hd+0QN9BNN9Rqls=
 			</data>
 		</dict>
 		<key>Headers/PWAnnotationLabel.h</key>
@@ -742,28 +742,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/fYhnm5f12KL3YXL6GgoK4utBeX1rfK34YvzcP3MEbM=
+			8sBP8vF+huPe28JqWDVqY+nPp1AvAi4lrfvpuFKNwnk=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4cniheSDK5JwLj0nUWYOEKoVn/Dop8RvjcpGC/nafyE=
+			FgDQwi6uxjxds+1E7dkiwhSGpcV5sRcvgWmx2YHZ3hc=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/fYhnm5f12KL3YXL6GgoK4utBeX1rfK34YvzcP3MEbM=
+			8sBP8vF+huPe28JqWDVqY+nPp1AvAi4lrfvpuFKNwnk=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8OoliLjXfR97LTnENdOAjVT2r93D0pWeyrSYzCxng3A=
+			kIk+sKCrpwQcwqE/yngga1ZAVhfKwM5P3oJig4yBjL0=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -777,28 +777,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pebl5fJU06Sm7C8b8zr/52G5psXf0/5dBZlNpt5WpS0=
+			KIenUFjDQWFE2syTwveEJoJ6jJLKB5CPtW6XVSsQK/8=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IS4WBWPEqQG4MnQIcJvaBUxbQNo5IwS9x28Kwd8d+dA=
+			w8mDJ9iTaql3PhbyeAl8DtITxwp72luG7F6/t4VzAbc=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pebl5fJU06Sm7C8b8zr/52G5psXf0/5dBZlNpt5WpS0=
+			KIenUFjDQWFE2syTwveEJoJ6jJLKB5CPtW6XVSsQK/8=
 			</data>
 		</dict>
 		<key>Modules/PWMapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aLzHyOqU9khtVJY0z39j3t6YxZtwryHbREHcbkUuSGY=
+			weXhRZ9rWkSd5tzSrWfuhp4JOnVN/bsO02FQzgFk8ZA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
