@@ -33,7 +33,7 @@
 		9D1ECD2C2225DE1C0029A667 /* WalkTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2B2225DE1C0029A667 /* WalkTimeViewController.swift */; };
 		9D1ECD302225DE310029A667 /* WalkTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2E2225DE310029A667 /* WalkTimeView.xib */; };
 		9D1ECD312225DE310029A667 /* WalkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD2F2225DE310029A667 /* WalkTimeView.swift */; };
-		9D6C1DCD220E0A4200C046DF /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		9D6C1DCD220E0A4200C046DF /* (null) in Resources */ = {isa = PBXBuildFile; };
 		9D93FCE22208A2F000A2EB02 /* TurnByTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93FCE12208A2F000A2EB02 /* TurnByTurnViewController.swift */; };
 		E36BB69220571B57003640CA /* LocationSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB69120571B57003640CA /* LocationSharingViewController.swift */; };
 		E378581D221313500059A179 /* PWRoute+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378581C221313500059A179 /* PWRoute+Helper.swift */; };
@@ -402,7 +402,7 @@
 				E378582D222073CA0059A179 /* TurnByTurnInstructionCollectionViewCell.xib in Resources */,
 				E378582F222073CA0059A179 /* DirectionImages.xcassets in Resources */,
 				E3C379A1204D90AA00905731 /* Main.storyboard in Resources */,
-				9D6C1DCD220E0A4200C046DF /* BuildFile in Resources */,
+				9D6C1DCD220E0A4200C046DF /* (null) in Resources */,
 				7EFF9C6222330740002BDD0A /* OffRouteModalView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,7 +658,7 @@
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = MapScenarios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.15.2;
+				MARKETING_VERSION = 3.15.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.MapScenarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild (Debug)";
@@ -676,7 +676,7 @@
 				DEVELOPMENT_TEAM = 84CK77G588;
 				INFOPLIST_FILE = MapScenarios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.15.2;
+				MARKETING_VERSION = 3.15.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phunware.MapScenarios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Phunware Product SDK Wild (Debug)";

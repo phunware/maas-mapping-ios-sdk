@@ -5,7 +5,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'MapScenarios' do
-  pod 'PWMapKit', '3.15.3'
+  pod 'PWMapKit', '3.15.4'
 end
 
 post_install do |installer|
