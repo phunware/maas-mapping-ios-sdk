@@ -10,8 +10,6 @@
 
 #import "PWUserLocationGovernor.h"
 
-@class CMAltimeter;
-
 @interface PWUserLocationGovernor ()
 
 @property id<PWLocationManager> lastLocationManager;
@@ -21,8 +19,6 @@
 @property PWLocationInterpolator *locationInterpolator;
 @property PWRouteSnapper *routeSnapper;
 @property PWHeadingManager *headingManager;
-@property CMAltimeter *altimeter;
-@property NSMutableArray *pressureReadings;
 @property BOOL inFloorTransitionMode;
 
 @end

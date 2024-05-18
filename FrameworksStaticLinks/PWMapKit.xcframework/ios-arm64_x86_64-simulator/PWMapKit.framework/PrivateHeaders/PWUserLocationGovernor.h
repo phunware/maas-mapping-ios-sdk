@@ -61,10 +61,6 @@
 @property (readonly) PWIndoorLocation *userLocation;
 @property (readonly) CLHeading *userHeading;
 
-#pragma mark - Pressure
-
-@property (nonatomic, assign) BOOL usePressureReadings;
-
 #pragma mark - 
 
 - (void)clearLocationData;

@@ -370,11 +370,6 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWTrackingMode) {
 @property (nonatomic) BOOL showsIndoorUserLocation;
 
 /**
- A Boolean value indicating whether the map should hide blue dot when atmospheric pressure changes indicate a floor transition. Not recommended for most setups and disabled by default.
- */
-@property (nonatomic) BOOL floorTransitionModeEnabled;
-
-/**
  The object representing the user’s current indoor location. (read-only)
  @discussion If blue dot smoothing is active, this property will report an interpolated position and will thus be very volatile.
  */
