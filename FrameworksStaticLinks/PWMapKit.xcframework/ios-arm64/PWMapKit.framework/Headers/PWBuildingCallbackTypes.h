@@ -11,11 +11,12 @@
 @class PWBuilding;
 @class PWPointOfInterestInfo;
 
-typedef void(^PWFetchFloorCompletionBlock)(NSError* _Nullable error);
+typedef void(^PWFetchFloorCompletionBlock)(NSError * _Nullable error);
 
-typedef void(^PWLoadBuildingCompletionBlock)(PWBuilding* _Nullable building , NSError* _Nullable error);
+typedef void(^PWLoadBuildingCompletionBlock)(PWBuilding * _Nullable building, NSError * _Nullable error);
 
-typedef void(^PWPointOfInterestImageLoadingCompleted)(UIImage* _Nullable image, NSError* _Nullable error);
+typedef void(^PWPointOfInterestImageLoadingCompleted)(UIImage * _Nullable image, NSError * _Nullable error);
 
-typedef void(^PWSetCustomImageForPointOfInterest)(UIImage* _Nullable  image);
-typedef void(^PWLoadCustomImageForPointOfInterest)(PWPointOfInterestInfo* _Nonnull poiInfo, PWSetCustomImageForPointOfInterest _Nonnull setImage);
+typedef void(^PWSetCustomImageForPointOfInterest)(UIImage * _Nullable image);
+
+typedef void(^PWLoadCustomImageForPointOfInterest)(PWPointOfInterestInfo * _Nonnull poiInfo, PWSetCustomImageForPointOfInterest _Nonnull setImage);

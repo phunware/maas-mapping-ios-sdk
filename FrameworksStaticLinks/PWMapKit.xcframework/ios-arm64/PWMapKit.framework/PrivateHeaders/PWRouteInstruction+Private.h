@@ -48,7 +48,6 @@
 @property (nonatomic) PWPointOfInterest *startPointOfInterest;
 @property (nonatomic) PWPointOfInterest *endPointOfInterest;
 @property (nonatomic) CLLocationDirection turnAngle;
-@property (nonatomic) NSString *movement;
 @property (nonatomic) NSInteger floorID;
 
 + (instancetype)maneuverWithPoints:(NSArray<id<PWMapPoint>> *)points

@@ -5,10 +5,8 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import <PWLocation/PWLocation.h>
 #import <PWMapKit/PWMapKit.h>
-
-#import "PWRouteStep.h"
+#import <PWMapKit/PWRouteStep.h>
 
 @interface PWRoute ()
 

@@ -5,7 +5,7 @@
 //  Copyright (c) 2017 Phunware. All rights reserved.
 //
 
-#import "PWMapPoint.h"
+#import <PWMapKit/PWMapPoint.h>
 
 @class PWCampus;
 @class PWBuilding;

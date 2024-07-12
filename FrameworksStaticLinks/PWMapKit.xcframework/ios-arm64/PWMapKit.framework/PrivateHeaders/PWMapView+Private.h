@@ -70,6 +70,7 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 // Building
 //@property PWBuildingIdentifier buildingID;
 @property (nonatomic) NSMutableArray *buildingAnnotations;
+@property (nonatomic) id<MKAnnotation> selectingAnnotation;
 @property (nonatomic) id<MKAnnotation> focusedAnnotation;
 
 // Overlay & Renderer
