@@ -6,10 +6,10 @@
 //
 
 #import <MapKit/MapKit.h>
-#import <PWLocation/PWLocation.h>
 
 @protocol PWMapViewDelegate;
 @protocol PWLocationSharingDelegate;
+@protocol PWLocationManager;
 
 @class PWMapView;
 @class PWBuildingOverlay;
@@ -20,7 +20,6 @@
 @class PWRoute;
 @class PWRouteInstruction;
 @class PWRouteUIOptions;
-@class PWLocation;
 @class PWUserLocation;
 @class PWCampus;
 

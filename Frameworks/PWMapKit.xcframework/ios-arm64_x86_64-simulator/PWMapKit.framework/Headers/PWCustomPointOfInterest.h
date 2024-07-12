@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-#import "PWMapPoint.h"
+#import <PWMapKit/PWMapPoint.h>
 @class PWPointOfInterestType;
 @class PWFloor;
 
@@ -97,11 +97,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * The minimum zoom level that the point-of-interest is visible on, and the below are the possible values:
  * -1 - always visible(the default value).
- * 1 - subtract 4 from the maximum zoom level that current iOS map supports, it's 18.
- * 2 - subtract 3 from the maximum zoom level that current iOS map supports, it's 19.
- * 3 - subtract 2 from the maximum zoom level that current iOS map supports, it's 20.
- * 4 - subtract 1 from the maximum zoom level that current iOS map supports, it's 21.
- * 5 - the maximum zoom level that current iOS map supports, it's 22.
+ * 1 - subtract 8 from the maximum zoom level that current iOS map supports, it's 12.
+ * 2 - subtract 6 from the maximum zoom level that current iOS map supports, it's 14.
+ * 3 - subtract 4 from the maximum zoom level that current iOS map supports, it's 16.
+ * 4 - subtract 2 from the maximum zoom level that current iOS map supports, it's 18.
+ * 5 - the maximum zoom level that current iOS map supports, it's 20.
  *
  * @discussion The point-of-interest is only visble when the map zoom level is between `minZoomLevel` and `maxZoomLevel`, it's `-1` by default.
  */
@@ -110,11 +110,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * The maximum zoom level that the point-of-interest is visible on, and the below are the possible values:
  * -1 - always visible(the default value).
- * 1 - subtract 4 from the maximum zoom level that current iOS map supports, it's 18.
- * 2 - subtract 3 from the maximum zoom level that current iOS map supports, it's 19.
- * 3 - subtract 2 from the maximum zoom level that current iOS map supports, it's 20.
- * 4 - subtract 1 from the maximum zoom level that current iOS map supports, it's 21.
- * 5 - the maximum zoom level that current iOS map supports, it's 22.
+ * 1 - subtract 8 from the maximum zoom level that current iOS map supports, it's 12.
+ * 2 - subtract 6 from the maximum zoom level that current iOS map supports, it's 14.
+ * 3 - subtract 4 from the maximum zoom level that current iOS map supports, it's 16.
+ * 4 - subtract 2 from the maximum zoom level that current iOS map supports, it's 18.
+ * 5 - the maximum zoom level that current iOS map supports, it's 20.
  *
  * @discussion The point-of-interest is only visble when the map zoom level is between `minZoomLevel` and `maxZoomLevel`, it's `-1` by default.
  */

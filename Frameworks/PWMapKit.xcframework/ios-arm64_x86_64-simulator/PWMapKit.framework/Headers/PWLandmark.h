@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "PWLandmarkType.h"
+#import <PWMapKit/PWLandmarkType.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
