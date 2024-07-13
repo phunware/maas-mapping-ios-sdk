@@ -1,17 +1,9 @@
 source 'https://cdn.cocoapods.org/'
 
-platform :ios, '13.0'
+platform :ios, '15.5'
 inhibit_all_warnings!
 use_frameworks!
 
 target 'MapScenarios' do
-  pod 'PWMapKit', '3.15.4'
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
-    end
-  end
+  pod 'PWMapKit', '3.16.0'
 end

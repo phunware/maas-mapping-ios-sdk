@@ -14,10 +14,9 @@ import PWCore
 // MARK: - SearchPOIViewController
 class SearchPOIViewController: UIViewController, ScenarioProtocol {
     
-    // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
+    // Enter your application identifier and access key found on Maas portal under Account > Apps
     var applicationId = ""
     var accessKey = ""
-    var signatureKey = ""
     
     // Enter your campus identifier here, found on the campus's Edit page on Maas portal
     var campusIdentifier = 0

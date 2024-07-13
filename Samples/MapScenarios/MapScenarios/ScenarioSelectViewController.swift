@@ -11,11 +11,10 @@ import PWCore
 
 class ScenarioSelectViewController: UITableViewController {
     
-    // Enter your application identifier, access key, and signature key, found on Maas portal under Account > Apps
+    // Enter your application identifier and access key found on Maas portal under Account > Apps
     // These are universal across all view controllers but will be overridden by configured values in the individual controllers
     let universalApplicationId = ""
     let universalAccessKey = ""
-    let universalSignatureKey = ""
     
     // Campus identifier to be used in all view controllers, overridden when set in individual controllers
     // universalBuildingIdentifier will be used if universalCampusIdentifier is set to 0
@@ -44,10 +43,6 @@ class ScenarioSelectViewController: UITableViewController {
             
             if scenarioController.accessKey.isEmpty {
                 scenarioController.accessKey = universalAccessKey
-            }
-            
-            if scenarioController.signatureKey.isEmpty {
-                scenarioController.signatureKey = universalSignatureKey
             }
             
             if scenarioController.campusIdentifier == 0 {
