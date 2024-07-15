@@ -5,12 +5,11 @@
 //  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
-#import <PWLocation/PWLocation.h>
-#import "PWMapPoint.h"
+#import <PWMapKit/PWMapKit.h>
 
 /**
  * The annotation representing the current location of the user according to the registered location manager.
  */
-@interface PWUserLocation : PWIndoorLocation <PWMapPoint>
+@interface PWUserLocation: NSObject <PWMapPoint>
 
 @end

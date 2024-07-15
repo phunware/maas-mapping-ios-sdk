@@ -1,14 +1,17 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PWMapKit
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios15.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name PWMapKit
+import DeveloperToolsSupport
 import Foundation
 import PWCore
 @_exported import PWMapKit
 import PWMapKit.Private
 import Swift
+import SwiftUI
+import UIKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 extension PWRoute {
   public static func createRoute(from: PWMapPoint, to: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: DispatchQueue = .main, completion: @escaping (Result<PWRoute, Error>) -> Void)
   public static func getShortestDistancesToAllPOIs(from startPoint: PWMapPoint, options: PWRouteOptions? = nil, resultQueue: DispatchQueue = .main, completion: @escaping (Result<[Int : Double], Error>) -> Void)

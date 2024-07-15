@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PWBuilding.h"
+#import <PWMapKit/PWBuilding.h>
 
 @interface PWBuildingManager : NSObject
 
@@ -21,7 +21,7 @@
    usePreviouslyLoadedBuilding:(BOOL)usePreviouslyLoadedBuilding
                     completion:(PWLoadBuildingCompletionBlock)completion;
 
-+ (void)fetchPDFForFloor:(PWFloor*)floor
++ (void)fetchPDFForFloor:(PWFloor *)floor
               withOption:(BOOL)forceUpdate
          bundleDirectory:(NSString *)bundleDirectory
               completion:(PWFetchFloorCompletionBlock)completion;

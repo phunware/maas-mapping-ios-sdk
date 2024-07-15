@@ -6,15 +6,15 @@ This is Phunware's Mapping SDK for use with its Multiscreen-as-a-Service platfor
 
 Requirements
 ------------
-- PWLocation 3.13.x
-- PWCore 3.12.x
-- iOS 13.0 or greater
-- Xcode 13 or greater
+- PWLocation 3.14.x
+- PWCore 3.13.x
+- iOS 15.5 or greater
+- Xcode 15 or greater
 
 Installation
 ------------
 ### CocoaPods
-It is required to use [CocoaPods](http://www.cocoapods.org) 1.10 or greater to integrate the framework. Simply add the following to your Podfile:
+It is required to use [CocoaPods](http://www.cocoapods.org) 1.12 or greater to integrate the framework. Simply add the following to your Podfile:
 
 ````ruby
 pod 'PWMapKit'
@@ -93,11 +93,11 @@ PWMapKit uses the following third-party dependencies:
     </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/tumblr/TMCache">TMCache</a></td>
+    <td><a href="https://github.com/pinterest/PINCache">PINCache</a></td>
     <td>
-     Fast parallel object cache for iOS and OS X.
+     Fast, non-deadlocking parallel object cache for iOS, tvOS and OS X.
     </td>
-    <td style="text-align:center;""><a href="https://github.com/tumblr/TMCache/blob/master/LICENSE.txt">Apache 2.0</a>
+    <td style="text-align:center;""><a href="https://github.com/pinterest/PINCache/blob/master/LICENSE.txt">Apache 2.0</a>
     </td>
   </tr>
 </table>

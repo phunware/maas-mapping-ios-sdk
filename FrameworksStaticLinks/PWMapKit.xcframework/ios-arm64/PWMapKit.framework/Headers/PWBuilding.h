@@ -6,7 +6,7 @@
 //
 
 #import <CoreLocation/CLLocation.h>
-#import "PWBuildingCallbackTypes.h"
+#import <PWMapKit/PWBuildingCallbackTypes.h>
 
 @protocol PWMapPoint;
 @class PWFloor;
@@ -95,27 +95,6 @@
 + (void)buildingWithIdentifier:(NSInteger)identifier
           cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout
                     completion:(PWLoadBuildingCompletionBlock)completion __deprecated_msg("Use PWBuilding.building(identifier:cacheFallbackTimeout:resultQueue:completion:) instead.");
-
-/**
- * Create `PWBuilding` with provided building identifier.
- * @param identifier The building identifier to use for initialization.
- * @param caching YES/NO. Determines if the SDK will use prior cache information to instantiate the building structure. Default YES.
- * @param completion The block to execute when the building data is completely loaded.
- *
- * @deprecated Use `buildingWithIdentifier:completion:` instead, since v3.2.0
- */
-+ (void)buildingWithIdentifier:(NSInteger)identifier
-                    usingCache:(BOOL)caching
-                    completion:(PWLoadBuildingCompletionBlock)completion __deprecated;
-
-/**
- * Returns a `PWFloor` instance that has the given floor identifier.
- * @param identifier The identifier of the floor.
- * @return Returns a `PWFloor` instance that has the given identifier.
- *
- * @deprecated Use `floorById:` instead, since v3.2.0
- */
-- (PWFloor *)getFloorByFloorId:(NSInteger)identifier __deprecated;
 
 /**
  * Returns a `PWFloor` instance that has the given floor identifier.

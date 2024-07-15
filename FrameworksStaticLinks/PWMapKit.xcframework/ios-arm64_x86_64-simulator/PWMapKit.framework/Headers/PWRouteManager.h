@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
-#import "PWMapPoint.h"
-#import "PWRouteOptions.h"
+#import <PWMapKit/PWMapPoint.h>
+#import <PWMapKit/PWRouteOptions.h>
 
 @class PWRoute;
 @class PWDirectionsOptions;

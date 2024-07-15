@@ -7,7 +7,7 @@
 
 #import <CoreLocation/CLLocation.h>
 
-#import "PWMappingTypes.h"
+#import <PWMapKit/PWMappingTypes.h>
 
 @class MKPolyline;
 @protocol PWMapPoint;

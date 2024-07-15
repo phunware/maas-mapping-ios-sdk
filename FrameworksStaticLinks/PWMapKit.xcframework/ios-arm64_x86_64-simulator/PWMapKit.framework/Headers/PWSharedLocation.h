@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <PWLocation/PWLocation.h>
+#import <CoreLocation/CoreLocation.h>
 
 /**
  *  A PWSharedLocation represents a shared location.
