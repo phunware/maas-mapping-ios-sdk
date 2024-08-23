@@ -19,7 +19,7 @@
 /**
  *  A reference to the floor's building object.
  */
-@property (readonly, weak) PWBuilding *building;
+@property (readonly, weak, nullable) PWBuilding *building;
 
 /**
  *  The floor's identifier.
@@ -29,7 +29,7 @@
 /**
  *  The name of the floor as defined in MaaS Portal.
  */
-@property (readonly) NSString *name;
+@property (readonly, nullable) NSString *name;
 
 /**
  *  The floor's level number.
@@ -44,7 +44,7 @@
 /**
  *  An array of `PWPointOfInterest` objects that belong to the floor.
  */
-@property (readonly) NSArray<PWPointOfInterest *> *pointsOfInterest;
+@property (readonly, nullable) NSArray<PWPointOfInterest *> *pointsOfInterest;
 
 /**
  *  The top-left coordinate (latitude and longitude) of the floor.
@@ -68,7 +68,7 @@
  *  @param type A `PWPointOfInterestType`.
  *  @return Returns `NSArray` containing a list of `PWPointOfInterest` objects for the given type.
  */
-- (NSArray<PWPointOfInterest *> *)pointsOfInterestOfType:(PWPointOfInterestType *)type;
+- (nullable NSArray<PWPointOfInterest *> *)pointsOfInterestOfType:(nonnull PWPointOfInterestType *)type;
 
 /**
  *  Returns an array containing the floor's points of interest of the specified point-of-interest type and whose name or description contains the supplied text.
@@ -76,6 +76,6 @@
  *  @param containingText A `NSString` substring of text to search for in the name and description.
  *  @return Returns `NSArray` containing a list of `PWPointOfInterest` objects for the given type and whose name or description contains the supplied text.
  */
-- (NSArray<PWPointOfInterest *> *)pointsOfInterestOfType:(PWPointOfInterestType *)type containing:(NSString *)containingText;
+- (nullable NSArray<PWPointOfInterest *> *)pointsOfInterestOfType:(nonnull PWPointOfInterestType *)type containing:(nullable NSString *)containingText;
 
 @end

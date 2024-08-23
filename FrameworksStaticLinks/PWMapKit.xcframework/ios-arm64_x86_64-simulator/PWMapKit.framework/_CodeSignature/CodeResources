@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/PWBuilding.h</key>
 		<data>
-		ninKlGdp1bCvCDpQ0VhzI73G3bw=
+		VHGLegkWcuJTa3H1Ea/Mw4/amGE=
 		</data>
 		<key>Headers/PWBuildingAnnotationView.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/PWFloor.h</key>
 		<data>
-		w693U96GnZkanWidlBeHxqhk/fQ=
+		xi0CtqR1Pn5o/1/X3bUcskb4ApQ=
 		</data>
 		<key>Headers/PWFloorChangePOI.h</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/PWMapKit.h</key>
 		<data>
-		ZvzgNgX3AkLhr3E01JCRN/9XTME=
+		5zIgz2WHVSC+vd1svaBgT1i8dZw=
 		</data>
 		<key>Headers/PWMapPoint.h</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		0LgauuoYFcbTXppeZKdrAQcL1Q8=
+		3P0MzJ1+B0llhpzzr+YgFAcNYjU=
 		</data>
 		<key>LICENSE.md</key>
 		<data>
@@ -202,7 +202,7 @@
 		</data>
 		<key>PrivateHeaders/PWBuilding+Private.h</key>
 		<data>
-		Fjzt4EuLZWGXnELdiB2g0Es+aXs=
+		fDukyf77ZBW7MXPShGNAmoN1fRg=
 		</data>
 		<key>PrivateHeaders/PWBuildingAnnotationView+Private.h</key>
 		<data>
@@ -262,7 +262,7 @@
 		</data>
 		<key>PrivateHeaders/PWFloor+Private.h</key>
 		<data>
-		lTtNs4/cSZb3WdleqABPS6xbaXM=
+		IwPDbk9BuUvN2WFAP91DucYGXa8=
 		</data>
 		<key>PrivateHeaders/PWFloydWarshallAlgorithm.h</key>
 		<data>
@@ -569,7 +569,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9DTyQEFbrEJhKF6OHQWnTklmhQLOlFbjfOETcpxuvic=
+			dviKF2NxzxQk4LJIJkI+vHAFifFGYvK5nknvsfIkN3I=
 			</data>
 		</dict>
 		<key>Headers/PWBuildingAnnotationView.h</key>
@@ -604,7 +604,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4dDJ6RxemXEJDUmKlDyrBNukjFSESdt9ytBrn2ubA0o=
+			cdYrCuKZx9UDCBRvbUY3q5jqhNik7SAw4Uh38R6BYlc=
 			</data>
 		</dict>
 		<key>Headers/PWFloorChangePOI.h</key>
@@ -646,7 +646,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FTUbeZaslflSEEm6m/kelY6MHnsUnjW+eQqIsgpoGe8=
+			NHbXttstGRzu0y1hzq+pefEXfIDwQDAVMwI2Hm7sfsk=
 			</data>
 		</dict>
 		<key>Headers/PWMapPoint.h</key>
@@ -891,7 +891,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hKJ997dxZMGuFYLMIK0rIEXJTNNl8Jglyl19WEYgsRI=
+			wSrT1Fl4/Y+qiKfVveuw1Y7mrtEq5F2FHUyS1xkjz1k=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWBuildingAnnotationView+Private.h</key>
@@ -996,7 +996,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IxNyjRsCT1msjL9whPSYDgspEyaNTztvYweZz6GAAlo=
+			gfjDP7dzrFBV+uRC0TO1qVNhNvSeTgX8p76S+8aocqQ=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWFloydWarshallAlgorithm.h</key>

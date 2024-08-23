@@ -22,22 +22,22 @@ extern NSTimeInterval const PWBuildingCacheFallbackTimeout;
 
 // Building info
 @property (nonatomic) NSInteger identifier;
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *venueGUID;
+@property (nonatomic, nullable) NSString *name;
+@property (nonatomic, nullable) NSString *venueGUID;
 @property (nonatomic) NSInteger campusID;
-@property (nonatomic) NSString *streetAddress;
+@property (nonatomic, nullable) NSString *streetAddress;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
-@property (nonatomic) NSArray *pointOfInterestTypes;
-@property (nonatomic, strong) NSString *bundleDirectory;
-@property (nonatomic, readwrite) NSDictionary *userInfo;
-@property (nonatomic) PWFloor *initialFloor;
+@property (nonatomic, nullable) NSArray *pointOfInterestTypes;
+@property (nonatomic, strong, nullable) NSString *bundleDirectory;
+@property (nonatomic, readwrite, nullable) NSDictionary *userInfo;
+@property (nonatomic, nullable) PWFloor *initialFloor;
 
 // Floor info
-@property (nonatomic) NSArray *floors;
+@property (nonatomic, nullable) NSArray *floors;
 
 // Point info
-@property (nonatomic) NSArray *pois;
-@property (nonatomic) NSDictionary *routePoints;
+@property (nonatomic, nullable) NSArray *pois;
+@property (nonatomic, nullable) NSDictionary *routePoints;
 /*
  Added since v3.0 
  key - the way point identifer
@@ -51,15 +51,15 @@ extern NSTimeInterval const PWBuildingCacheFallbackTimeout;
     }
  }
  */
-@property (nonatomic) NSDictionary *routeSegments;
+@property (nonatomic, nullable) NSDictionary *routeSegments;
 
 // For Floyd Warshall algo
-@property (nonatomic) NSArray<NSArray<NSNumber *> *> *fwMatrix;
-@property (nonatomic) NSArray<NSArray<NSNumber *> *> *fwAccessibleMatrix;
-@property (nonatomic) NSDictionary<NSString *, NSNumber *> *fwPidIdxMapping;
+@property (nonatomic, nullable) NSArray<NSArray<NSNumber *> *> *fwMatrix;
+@property (nonatomic, nullable) NSArray<NSArray<NSNumber *> *> *fwAccessibleMatrix;
+@property (nonatomic, nullable) NSDictionary<NSString *, NSNumber *> *fwPidIdxMapping;
 
-- (id<PWMapPoint>)closestTo:(id<PWMapPoint>)point;
-- (NSError *)validate;
+- (nullable id<PWMapPoint>)closestTo:(nullable id<PWMapPoint>)point;
+- (nullable NSError *)validate;
 - (BOOL)isOverview;
 
 @end

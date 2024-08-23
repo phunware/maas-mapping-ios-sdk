@@ -26,22 +26,22 @@
 /**
  *  The name of the building as defined in MaaS Portal.
  */
-@property (readonly) NSString *name;
+@property (readonly, nullable) NSString *name;
 
 /**
  *  An array of `PWFloor` objects that are contained in the building.
  */
-@property (readonly) NSArray<PWFloor *> *floors;
+@property (readonly, nullable) NSArray<PWFloor *> *floors;
 
 /**
  *  An array of `PWPointOfInterest` objects that are contained in the building.
  */
-@property (readonly) NSArray<PWPointOfInterest *> *pois;
+@property (readonly, nullable) NSArray<PWPointOfInterest *> *pois;
 
 /**
  *  An array of `PWPointOfInterestType` objects that are used in MaaS Portal.
  */
-@property (readonly) NSArray<PWPointOfInterestType *> *pointOfInterestTypes;
+@property (readonly, nullable) NSArray<PWPointOfInterestType *> *pointOfInterestTypes;
 
 /**
  *  The center coordinate of the building.
@@ -51,22 +51,22 @@
 /**
  *  Extra information about the `PWBuilding` object and the data it consumes.
  */
-@property (readonly) NSDictionary *userInfo;
+@property (readonly, nullable) NSDictionary *userInfo;
 
 /**
  *  Default floor for the building.
  */
-@property (readonly) PWFloor *initialFloor;
+@property (readonly, nullable) PWFloor *initialFloor;
 
 /**
  * A list of routeSegments contained in the building
  */
-@property (readonly) NSDictionary<NSString *, NSDictionary<NSString *, NSNumber *> *> *routeSegments;
+@property (readonly, nullable) NSDictionary<NSString *, NSDictionary<NSString *, NSNumber *> *> *routeSegments;
 
 /**
  * A list of routePoints contained in the building
  */
-@property (readonly) NSDictionary<NSString *, id<PWMapPoint>> *routePoints;
+@property (readonly, nullable) NSDictionary<NSString *, id<PWMapPoint>> *routePoints;
 
 
 /**
@@ -74,7 +74,7 @@
  *  If NULL, images will be downloaded from the network based on the point of interest type.
  *  The default value is NULL.
  */
-@property (class, nonatomic, copy) PWLoadCustomImageForPointOfInterest customImageLoaderForPointsOfInterest;
+@property (class, nonatomic, copy, nullable) PWLoadCustomImageForPointOfInterest customImageLoaderForPointsOfInterest;
 
 /**
  Create `PWBuilding` with provided building identifier.
@@ -83,7 +83,7 @@
  @discussion It checks the network connectivity before starting to download the building: if it's disconnected, use cached one and return immediately, otherwise check if the cached bulding is up to date then decide if it's necessary to re-download.
  */
 + (void)buildingWithIdentifier:(NSInteger)identifier
-                    completion:(PWLoadBuildingCompletionBlock)completion __deprecated_msg("Use PWBuilding.building(identifier:cacheFallbackTimeout:resultQueue:completion:) instead.");
+                    completion:(_Nonnull PWLoadBuildingCompletionBlock)completion __deprecated_msg("Use PWBuilding.building(identifier:cacheFallbackTimeout:resultQueue:completion:) instead.");
 
 /**
  Create `PWBuilding` with provided building identifier.
@@ -94,28 +94,28 @@
  */
 + (void)buildingWithIdentifier:(NSInteger)identifier
           cacheFallbackTimeout:(NSTimeInterval)cacheFallbackTimeout
-                    completion:(PWLoadBuildingCompletionBlock)completion __deprecated_msg("Use PWBuilding.building(identifier:cacheFallbackTimeout:resultQueue:completion:) instead.");
+                    completion:(_Nonnull PWLoadBuildingCompletionBlock)completion __deprecated_msg("Use PWBuilding.building(identifier:cacheFallbackTimeout:resultQueue:completion:) instead.");
 
 /**
  * Returns a `PWFloor` instance that has the given floor identifier.
  * @param identifier The identifier of the floor.
  * @return Returns a `PWFloor` instance that has the given identifier.
  */
-- (PWFloor *)floorById:(NSInteger)identifier;
+- (nullable PWFloor *)floorById:(NSInteger)identifier;
 
 /**
  * Returns a `PWPointOfInterest` instance that has the given identifier.
  * @param identifier The MaaS portal identifier of the point-of-interest.
  * @return Returns a `PWPointOfInterest` instance that has the given identifier.
  */
-- (PWPointOfInterest *)pointOfInterestById:(NSInteger)identifier;
+- (nullable PWPointOfInterest *)pointOfInterestById:(NSInteger)identifier;
 
 /**
  * Finds the closest point-of-interest to the `PWMapPoint` object's location.
  * @param location A `PWMapPoint` reference.
  * @return Returns a `PWPointOfInterest` object.
  */
-- (PWPointOfInterest *)pointOfInterestClosestToLocation:(id<PWMapPoint>)location;
+- (nullable PWPointOfInterest *)pointOfInterestClosestToLocation:(nullable id<PWMapPoint>)location;
 
 /**
  * Determines if the coordinate is contained within the latitude and longitude bounds of the building.

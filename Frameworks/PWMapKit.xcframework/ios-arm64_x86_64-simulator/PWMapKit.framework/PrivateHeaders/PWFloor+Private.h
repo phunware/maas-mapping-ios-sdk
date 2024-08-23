@@ -25,21 +25,21 @@
 @interface PWFloor ()
 
 // Building info
-@property (nonatomic, weak) PWBuilding *building;
+@property (nonatomic, weak, nullable) PWBuilding *building;
 @property (nonatomic) PWBuildingIdentifier buildingID;
-@property (nonatomic) NSString *name;
+@property (nonatomic, nullable) NSString *name;
 
 // Floor info
 @property (nonatomic) NSInteger floorID;
 @property (nonatomic) PWBuildingFloorLevel level;
-@property (nonatomic) PWBuildingFloorReference *reference;
-@property (nonatomic) PWBuildingFloorResource *resource;
-@property (nonatomic) PWMapDocument *mapDocument;
+@property (nonatomic, nullable) PWBuildingFloorReference *reference;
+@property (nonatomic, nullable) PWBuildingFloorResource *resource;
+@property (nonatomic, nullable) PWMapDocument *mapDocument;
 @property (nonatomic) BOOL isDefault;
 
 // POIs
-@property (nonatomic) NSArray *pointsOfInterest;
+@property (nonatomic, nullable) NSArray *pointsOfInterest;
 
-- (NSError *)validate;
+- (nullable NSError *)validate;
 
 @end
