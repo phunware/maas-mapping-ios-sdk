@@ -442,6 +442,11 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWTrackingMode) {
  */
 @property (nonatomic) BOOL managedCompassEnabled;
 
+/**
+ Indicates whether the overlay is displayed above most map labels, including road names.  The overlay is rendered below map labels by default.
+ */
+@property (nonatomic) BOOL showsOverlayAboveLabels;
+
 #pragma mark - Initializing a Map View Object
 
 /**
