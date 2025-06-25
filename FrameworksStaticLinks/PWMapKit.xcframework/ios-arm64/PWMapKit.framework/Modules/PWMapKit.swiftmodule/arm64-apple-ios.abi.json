@@ -1234,6 +1234,13 @@
       },
       {
         "kind": "Import",
+        "name": "PWMapKit.Private",
+        "printedName": "PWMapKit.Private",
+        "declKind": "Import",
+        "moduleName": "PWMapKit"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -2247,56 +2254,56 @@
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
       "kind": "StringLiteral",
-      "offset": 453,
+      "offset": 477,
       "length": 7,
       "value": "\"items\""
     },
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
       "kind": "StringLiteral",
-      "offset": 453,
+      "offset": 477,
       "length": 7,
       "value": "\"items\""
     },
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
       "kind": "StringLiteral",
-      "offset": 910,
+      "offset": 934,
       "length": 10,
       "value": "\"campusId\""
     },
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
       "kind": "StringLiteral",
-      "offset": 947,
+      "offset": 971,
       "length": 12,
       "value": "\"externalId\""
     },
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
       "kind": "StringLiteral",
-      "offset": 1157,
+      "offset": 1181,
       "length": 11,
       "value": "\"venueGuid\""
     },
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
       "kind": "StringLiteral",
-      "offset": 910,
+      "offset": 934,
       "length": 10,
       "value": "\"campusId\""
     },
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
       "kind": "StringLiteral",
-      "offset": 947,
+      "offset": 971,
       "length": 12,
       "value": "\"externalId\""
     },
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
       "kind": "StringLiteral",
-      "offset": 1157,
+      "offset": 1181,
       "length": 11,
       "value": "\"venueGuid\""
     },

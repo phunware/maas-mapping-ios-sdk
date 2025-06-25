@@ -124,4 +124,11 @@
  */
 - (BOOL)containsCoordinate:(CLLocationCoordinate2D)coordinate;
 
+/**
+ * Determines if buildingName matches the designated building name "Overview".
+ * @param buildingName Name of the building.
+ * @return Returns a BOOL value YES/NO.
+ */
++ (BOOL)isOverviewBuilding:(nullable NSString *)buildingName;
+
 @end

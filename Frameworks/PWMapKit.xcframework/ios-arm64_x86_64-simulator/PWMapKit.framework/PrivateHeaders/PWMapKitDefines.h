@@ -60,4 +60,8 @@ extern NSString *const PWMapKitCacheName;
 
 extern NSString *const PWMapKitErrorDomain;
 
+#pragma mark - Building Types
+
+extern NSString *const PWOverviewBuildingName;
+
 
