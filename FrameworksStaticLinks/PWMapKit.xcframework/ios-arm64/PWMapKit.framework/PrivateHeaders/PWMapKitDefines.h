@@ -44,7 +44,13 @@ extern NSString *const PWMapKitS3Host;
 
 #pragma mark - POI
 
-extern CGFloat const PWPOIIconWidthOniPhone;
+extern CGFloat const PWPOIIconWidth;
+extern CGFloat const PWSelectedPOIIconWidth;
+extern CGFloat const PWPOITitleFontSize;
+extern CGFloat const PWSelectedPOITitleFontSize;
+extern CGFloat const PWPOITitleStrokeWidth;
+extern CGFloat const PWSelectedPOITitleStrokeWidth;
+extern NSTimeInterval const PWPOIAnimationDuration;
 
 #pragma mark - POI Types
 

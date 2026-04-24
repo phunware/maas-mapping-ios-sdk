@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "PWMapKit",
+    "printedName": "PWMapKit",
     "children": [
       {
         "kind": "Import",
@@ -1173,6 +1173,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -1479,6 +1493,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -1851,6 +1879,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -1974,6 +2016,20 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -2184,6 +2240,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -2247,44 +2317,16 @@
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/PWCampus.swift",
       "kind": "StringLiteral",
-      "offset": 175,
-      "length": 8,
-      "value": "\"PWMapKit.PWCampus\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
-      "kind": "StringLiteral",
-      "offset": 477,
-      "length": 7,
-      "value": "\"items\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
-      "kind": "StringLiteral",
-      "offset": 477,
-      "length": 7,
-      "value": "\"items\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
-      "kind": "StringLiteral",
-      "offset": 934,
+      "offset": 817,
       "length": 10,
-      "value": "\"campusId\""
+      "value": "\"overview\""
     },
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
       "kind": "StringLiteral",
-      "offset": 971,
-      "length": 12,
-      "value": "\"externalId\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",
-      "kind": "StringLiteral",
-      "offset": 1181,
-      "length": 11,
-      "value": "\"venueGuid\""
+      "offset": 477,
+      "length": 7,
+      "value": "\"items\""
     },
     {
       "filePath": "\/Users\/jenkins\/slave_data\/workspace\/mapping-sdk-ios\/PWMapKit\/Building\/Model\/BuildingsList.swift",

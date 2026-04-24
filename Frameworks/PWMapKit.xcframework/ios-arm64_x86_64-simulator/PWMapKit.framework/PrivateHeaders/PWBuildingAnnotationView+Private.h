@@ -10,6 +10,9 @@
 
 @interface PWBuildingAnnotationView ()
 
+@property (nonatomic, nullable, strong) NSLayoutConstraint *imageWidthConstraint;
+
 - (CGFloat)imageWidth;
+- (CGFloat)annotationWidth;
 
 @end
