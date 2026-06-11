@@ -41,4 +41,15 @@ Pod::Spec.new do |spec|
   spec.subspec 'LimitedDeviceIdentity' do |subspec|
     subspec.dependency 'PWMapKit/Core'
   end
+
+  # Frameworks linked with static libraries
+  spec.subspec 'CoreStaticLinks' do |subspec|
+    subspec.dependency 'PWLocation/CoreStaticLinks', '~> 3.14.0'
+
+    subspec.vendored_frameworks = 'FrameworksStaticLinks/PWMapKit.xcframework'
+  end
+
+  spec.subspec 'LimitedDeviceIdentityStaticLinks' do |subspec|
+    subspec.dependency 'PWMapKit/CoreStaticLinks'
+  end
 end
