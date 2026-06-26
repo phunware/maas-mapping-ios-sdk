@@ -160,7 +160,7 @@ extension SearchPOIViewController: UITableViewDataSource {
         poiCell.poiImageView.image = pointOfInterest.image
         if campusIdentifier != 0 {
             if let floorName = pointOfInterest.floor?.name,
-               let buildingName = pointOfInterest.floor?.building.name,
+               let buildingName = pointOfInterest.floor?.building?.name,
                let poiName = pointOfInterest.title {
                 poiCell.titleLabel.text = "\(buildingName):: \(floorName):: \(poiName)"
             }

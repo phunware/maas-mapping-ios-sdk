@@ -401,10 +401,17 @@ extension RouteViewController {
         }
         
         var pois = [PointOfInterest]()
+
         for floor in floors {
-            if let floorPOIs = floor.pointsOfInterest(of: poiType, containing: keyword) {
-                pois.append(contentsOf: floorPOIs)
+            let floorPOIs: [PointOfInterest]
+
+            if let poiType {
+                floorPOIs = floor.pointsOfInterest(of: poiType, containing: keyword) ?? []
+            } else {
+                floorPOIs = floor.pointsOfInterest ?? []
             }
+
+            pois.append(contentsOf: floorPOIs)
         }
         
         filteredPOIs = pois.sorted(by: {
@@ -436,7 +443,7 @@ extension RouteViewController {
             $0.lowercased() < $1.lowercased()
         })
         
-        if let index = sortedSectionedPOIKeys.firstIndex(of: self.mapView.currentBuilding.name) {
+        if let index = sortedSectionedPOIKeys.firstIndex(of: self.mapView.currentBuilding.name ?? "") {
             sortedSectionedPOIKeys.move(from: index, to: 0)
         }
     }

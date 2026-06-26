@@ -5,5 +5,5 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'MapScenarios' do
-  pod 'PWMapKit', '3.16.0'
+  pod 'PWMapKit', '3.16.3'
 end

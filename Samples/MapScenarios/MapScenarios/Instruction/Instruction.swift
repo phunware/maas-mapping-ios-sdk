@@ -111,7 +111,7 @@ private extension Instruction {
             if let next = routeInstruction.nextRouteInstruction,
                 let startFloor = routeInstruction.floor(for: next.start),
                 let endFloor = routeInstruction.floor(for: next.end) {
-                floorName = endFloor.name
+                floorName = endFloor.name ?? floorName
                 
                 if endFloor.level > startFloor.level {
                     floorChangeDirection = .up
@@ -138,7 +138,7 @@ private extension Instruction {
         
         if let startFloor = routeInstruction.floor(for: routeInstruction.start),
             let endFloor = routeInstruction.floor(for: routeInstruction.end) {
-            floorName = endFloor.name
+            floorName = endFloor.name ?? floorName
             
             if endFloor.level > startFloor.level {
                 floorChangeDirection = .up
