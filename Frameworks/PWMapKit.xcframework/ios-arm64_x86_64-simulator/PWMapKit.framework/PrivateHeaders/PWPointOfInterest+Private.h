@@ -39,6 +39,8 @@
 @property (nonatomic, getter=isOcclusionEnabled) BOOL occlusionEnabled;
 @property (nonatomic, nullable) NSString *category;
 @property (nonatomic, getter=isRoutable) BOOL routable;
+@property (nonatomic, getter=isTemporarilyClosed) BOOL temporarilyClosed;
+@property (nonatomic, nullable) NSString *closureNote;
 
 // POI - accessible
 @property (nonatomic) BOOL visualImpaired;

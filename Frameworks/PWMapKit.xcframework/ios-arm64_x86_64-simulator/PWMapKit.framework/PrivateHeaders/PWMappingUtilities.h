@@ -34,6 +34,10 @@ MKMapPoint MKMapPointFromVector2D(Vector2D vector);
 
 CLLocationDirection BearingBetweenMapPoints(MKMapPoint, MKMapPoint);
 
+/// Compute the shortest angular distance from `from` to `to` in degrees,
+/// returning a value in the range [-180, 180].
+CLLocationDirection ShortestAngleDelta(CLLocationDirection from, CLLocationDirection to);
+
 @interface PWMappingUtilities : NSObject
 
 + (NSError *)error:(PWMapKitErrorCode)code;
