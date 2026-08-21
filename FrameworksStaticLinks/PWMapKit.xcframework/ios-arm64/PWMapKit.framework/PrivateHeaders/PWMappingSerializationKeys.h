@@ -68,6 +68,8 @@ extern NSString * const PWBuildingAnnotationExitFlagKey;
 extern NSString * const PWBuildingAnnotationActiveFlagKey;
 extern NSString * const PWBuildingAnnotationVisualImpairedFlagKey;
 extern NSString * const PWBuildingAnnotationCustomIconImageURLKey;
+extern NSString * const PWBuildingAnnotationTemporarilyClosureFlagKey;
+extern NSString * const PWBuildingAnnotationClosureNoteKey;
 
 #pragma mark - Route Annotation
 

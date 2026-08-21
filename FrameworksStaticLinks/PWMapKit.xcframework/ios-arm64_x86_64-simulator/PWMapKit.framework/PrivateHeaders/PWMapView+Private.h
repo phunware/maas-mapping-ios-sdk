@@ -94,6 +94,11 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 @property (nonatomic) PWDebugDotManager *debugDotManager;
 @property (nonatomic) CLLocationDirection lastTrueHeading;
 
+// Smooth heading interpolation
+@property (nonatomic) CLLocationDirection targetHeading;
+@property (nonatomic) BOOL hasTargetHeading;
+@property (nonatomic) CLLocationDirection cookedToRawOffset;
+
 // For updating user location
 @property (nonatomic) CADisplayLink *displayLink;
 
