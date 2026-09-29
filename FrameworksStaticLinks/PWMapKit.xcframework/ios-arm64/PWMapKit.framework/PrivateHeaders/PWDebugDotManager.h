@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+extern NSString * const kEstimatedEdgesNotificationName;
+
 @class PWMapView;
 
 @interface PWDebugDotManager : NSObject

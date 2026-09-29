@@ -447,6 +447,11 @@ typedef NS_CLOSED_ENUM(NSUInteger, PWTrackingMode) {
  */
 @property (nonatomic) BOOL showsOverlayAboveLabels;
 
+/**
+ Enables segment-snap mode. When enabled, the map keeps the user's current corridor segment aligned "up" — as the location provider reports the edge the user is on, the camera rotates to that segment's bearing and the blue dot's arrow conveys heading relative to that frame. Requires `trackingMode` = `PWTrackingModeFollowWithHeading`. Disabled by default.
+ */
+@property (nonatomic) BOOL segmentSnapModeEnabled;
+
 #pragma mark - Initializing a Map View Object
 
 /**

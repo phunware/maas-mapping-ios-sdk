@@ -93,6 +93,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, getter=isRoutable, readonly) BOOL routable;
 
+/**
+ * Determines whether or not the point-of-interest is temporarily closed.
+ */
+@property (nonatomic, getter=isTemporarilyClosed, readonly) BOOL temporarilyClosed;
+
+/**
+ * The closure note of the point-of-interest. May be NULL.
+ */
+@property (nonatomic, readonly, nullable) NSString *closureNote;
+
 @end
 
 NS_ASSUME_NONNULL_END
