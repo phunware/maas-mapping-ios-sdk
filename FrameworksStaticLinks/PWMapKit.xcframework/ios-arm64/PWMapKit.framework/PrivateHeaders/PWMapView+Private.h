@@ -94,6 +94,16 @@ static const PWTrackingMode PWIndoorRoutingUserTrackingMode = PWTrackingModeFoll
 @property (nonatomic) PWDebugDotManager *debugDotManager;
 @property (nonatomic) CLLocationDirection lastTrueHeading;
 
+// Smooth heading interpolation
+@property (nonatomic) CLLocationDirection targetHeading;
+@property (nonatomic) BOOL hasTargetHeading;
+@property (nonatomic) CLLocationDirection cookedToRawOffset;
+
+// Target rotation (radians) for the blue-dot heading arrow. Set on every
+// compass update in segment-snap mode.
+@property (nonatomic) CGFloat targetHeadingArrowRotation;
+
+
 // For updating user location
 @property (nonatomic) CADisplayLink *displayLink;
 

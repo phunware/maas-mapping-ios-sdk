@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/PWMapKit.h</key>
 		<data>
-		P2lQMREpfrCtGq5y5saqnroPWf8=
+		w5fjrlCDMaoAxKQ1eoFj30+I358=
 		</data>
 		<key>Headers/PWMapPoint.h</key>
 		<data>
@@ -66,11 +66,11 @@
 		</data>
 		<key>Headers/PWMapView.h</key>
 		<data>
-		mUyNfFe3xeGEV8u5Amw52WwThHI=
+		X8QQ+Ik/pBHh9XSC5e+PFsJBZYg=
 		</data>
 		<key>Headers/PWPointOfInterest.h</key>
 		<data>
-		AGQYqBy84sQoBfhmCTQ9Ca9Ecd0=
+		pT0UQexaQuYEBHCaIlnEKwhYOSk=
 		</data>
 		<key>Headers/PWPointOfInterestInfo.h</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ICmuYvKtaSgR4rSjJl3sIZxQexs=
+		pEUohw6UjhduvQa2mL5kNyK1atM=
 		</data>
 		<key>LICENSE.md</key>
 		<data>
@@ -166,7 +166,7 @@
 		</data>
 		<key>PINCache.bundle/Info.plist</key>
 		<data>
-		Z9mM9e4yToOk4Vdgp6GN9GDeB/Q=
+		nkDqj6JYKu/LFg8fgYkUjjkkvGE=
 		</data>
 		<key>PINCache.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -174,7 +174,7 @@
 		</data>
 		<key>PINOperation.bundle/Info.plist</key>
 		<data>
-		dHzs+i9s6jyx/RbmoJbLo4KJszw=
+		3t5CN04NjdDxq3553NUVntyGOCc=
 		</data>
 		<key>PINOperation.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -254,7 +254,7 @@
 		</data>
 		<key>PrivateHeaders/PWDebugDotManager.h</key>
 		<data>
-		+oi2zqv27iH+41H2s+lde8yP5pY=
+		V6Y4b3on4gKl6r7wPtgG86+jaS0=
 		</data>
 		<key>PrivateHeaders/PWDijkstraAlgorithm.h</key>
 		<data>
@@ -354,11 +354,11 @@
 		</data>
 		<key>PrivateHeaders/PWMapView+Private.h</key>
 		<data>
-		cDl11c0eUh2uRWdJvt6Vv4GYgQE=
+		qBHmQX0MK/2PgbWkXF17ffQTHeo=
 		</data>
 		<key>PrivateHeaders/PWMapView+UserFollowing.h</key>
 		<data>
-		U2FMyTn5enSZ4ywE+iAb2CU51mE=
+		beknU+J5zwNz53lmNAYcKiCNxP8=
 		</data>
 		<key>PrivateHeaders/PWMapView+UserLocationGovernance.h</key>
 		<data>
@@ -374,7 +374,7 @@
 		</data>
 		<key>PrivateHeaders/PWMappingSerializationKeys.h</key>
 		<data>
-		MteWg6C+o4Uv/kV01njSkXXISS8=
+		04HDj6wI8zl9jVhlLyJ8TdCHTG0=
 		</data>
 		<key>PrivateHeaders/PWMappingTypes.h</key>
 		<data>
@@ -382,7 +382,7 @@
 		</data>
 		<key>PrivateHeaders/PWMappingUtilities.h</key>
 		<data>
-		kQ4EFIilWi8CQHxU1TryM6AsDtQ=
+		01HvfeWghFYxSfmXxKpD5nS9Omk=
 		</data>
 		<key>PrivateHeaders/PWObjectQueue.h</key>
 		<data>
@@ -414,7 +414,7 @@
 		</data>
 		<key>PrivateHeaders/PWPointOfInterest+Private.h</key>
 		<data>
-		l/vfHIE4/oJut6i8qZKT1KeAx3w=
+		dXQjkICt7cGf1V2EVu7qmbFtRSQ=
 		</data>
 		<key>PrivateHeaders/PWPointOfInterestImageLoader.h</key>
 		<data>
@@ -498,7 +498,7 @@
 		</data>
 		<key>PrivateHeaders/PWSVPulsingAnnotationView.h</key>
 		<data>
-		M+wkA2Mx8d+c97XsZdXuEpjaF8c=
+		d7RCNXusZGuopgXRcHLmM1993KE=
 		</data>
 		<key>PrivateHeaders/PWSerialization.h</key>
 		<data>
@@ -646,7 +646,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9xgUbC9SuYv49I/WI6UIuwCqGDxBJxllTNPv4LNGzLE=
+			FWeD1AzW4+ccyJBVtar58WJZY3tPyWWvLCcFRCrh4/M=
 			</data>
 		</dict>
 		<key>Headers/PWMapPoint.h</key>
@@ -660,14 +660,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LbIrlyaXyqeVEJQxTurORMhWJw6V2q9ZqpzneXXGf74=
+			avMZRBRop7+H7FaJnXa9ujacOZAnGyA5R73gF0jj1XE=
 			</data>
 		</dict>
 		<key>Headers/PWPointOfInterest.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zk/rdqQYbEVQi6bMZpcwtXiP0Rs7BsPAabNXdD7JZ64=
+			wyaXCZksc+g5qQYqRUqojX5GnGDg5riNcK7zmDb3rOY=
 			</data>
 		</dict>
 		<key>Headers/PWPointOfInterestInfo.h</key>
@@ -828,7 +828,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Of3JU0nTtcmyvc/D1Kef0ewYSqr5YkIJMLxxwwJKqOI=
+			Qok87+Td7W2x2XdE0CqCeUhxEPm9QLubFTJPydohB0g=
 			</data>
 		</dict>
 		<key>PINCache.bundle/PrivacyInfo.xcprivacy</key>
@@ -842,7 +842,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			n4K0up6LayNKbctlNcAUTZ1AgYkrFE4gJLM25SHGyZo=
+			VVmWZ5pOHKxOjS3n9fPYPeS63x2S63X6p4u7hFqb588=
 			</data>
 		</dict>
 		<key>PINOperation.bundle/PrivacyInfo.xcprivacy</key>
@@ -982,7 +982,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UBEizXca7/p3P2aIkLKOCRCOruRZ/UfyQtwDlp74y+Y=
+			rR4EaX564L+eORvIJwNFnZHO8MNFXSUUuvnrg9cUhLk=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWDijkstraAlgorithm.h</key>
@@ -1157,14 +1157,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BhYJtOB8F7aP0DUResjKD+1BTzep+7bNGb/3lz1x9is=
+			ZzTneodKR8l33Gd896FYvjvsFuOCAc2Pfo7o0ClUOPM=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWMapView+UserFollowing.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			P4Z+Gsu1s8wT/Jki452o7vhJpyU95xYF9YihN59kiLA=
+			u6fBwAVY/xdAPgVl1w1p1b1Crv/qywc9s662HOuK9ng=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWMapView+UserLocationGovernance.h</key>
@@ -1192,7 +1192,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K6IdYzxTKXxWHIaLdH62IfYCNzJj9C9KRzsN7lHBXKk=
+			j6nq1MpbS9Gy96dSfvmqpP4mJxKrQ2wnUKEsN2/D1lE=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWMappingTypes.h</key>
@@ -1206,7 +1206,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cA1qYl0RuzTCybGDugw43IsxQMX/nnwe+T2Ga2PbrLA=
+			i/2mF2xQDeTXcZKIMoo8OJD8oYUSqWhi9nfvPJ/w15E=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWObjectQueue.h</key>
@@ -1262,7 +1262,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			siX57XQvQt4uO2Xx94C1HTXzvT6psjY9JD9ZapjOGqg=
+			uC1kumBGJjJWHxWK3uDcGtTh0+arywq+vHzjHIdzQJE=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWPointOfInterestImageLoader.h</key>
@@ -1409,7 +1409,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			p83UeWxdJLyfhAcg+7cGtFgKz+NuaEXnipa55qRhRcg=
+			c8uKzILEHydT87eTvEL/o/RJIAqdM3QT7g88FNGBlgM=
 			</data>
 		</dict>
 		<key>PrivateHeaders/PWSerialization.h</key>
