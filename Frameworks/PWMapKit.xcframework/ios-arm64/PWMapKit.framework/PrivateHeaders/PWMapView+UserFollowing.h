@@ -30,4 +30,9 @@
 
 - (BOOL)automaticallyChangeRouteInstructionBasedOnUserLocation;
 
+// Observer for the edge-position notification that drives segment-snap.
+// Registered in PWMapView's init; keeps the camera aligned to the current
+// corridor segment.
+- (void)estimatedEdgesUpdatedForSegmentSnap:(NSNotification *)notification;
+
 @end

@@ -70,4 +70,11 @@
 
 @property (nonatomic, assign) BOOL shouldShowInnerDot;
 
+/**
+ Rotation applied to the heading arrow, in radians. Positive rotates the arrow
+ clockwise on screen.
+ @discussion Default is 0 (arrow points to annotation-view-up).
+ */
+@property (nonatomic) CGFloat headingArrowRotation;
+
 @end

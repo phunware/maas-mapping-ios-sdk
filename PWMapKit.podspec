@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'PWMapKit'
-  spec.version = '3.16.3'
+  spec.version = '3.17.0'
   spec.license = { :type => 'Copyright', :text => 'Copyright 2009-present Phunware Inc. All rights reserved.' }
   spec.summary = "Phunware's Mapping SDK for use with its Multiscreen-as-a-Service platform"
   spec.homepage = 'https://github.com/phunware/maas-mapping-ios-sdk/'
@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
     'DeviceIdentity'
 
   spec.subspec 'Core' do |subspec|
-    subspec.dependency 'PWLocation/Core', '~> 3.14.0'
+    subspec.dependency 'PWLocation/Core', '~> 3.15.0'
     subspec.dependency 'PINCache', '~> 3.0.4'
 
     subspec.vendored_frameworks = 'Frameworks/PWMapKit.xcframework'
@@ -35,10 +35,21 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'DeviceIdentity' do |subspec|
     subspec.dependency 'PWMapKit/Core'
-    subspec.dependency 'PWLocation/DeviceIdentity', '~> 3.14.0'
+    subspec.dependency 'PWLocation/DeviceIdentity', '~> 3.15.0'
   end
 
   spec.subspec 'LimitedDeviceIdentity' do |subspec|
     subspec.dependency 'PWMapKit/Core'
+  end
+
+  # Frameworks linked with static libraries
+  spec.subspec 'CoreStaticLinks' do |subspec|
+    subspec.dependency 'PWLocation/CoreStaticLinks', '~> 3.15.0'
+
+    subspec.vendored_frameworks = 'FrameworksStaticLinks/PWMapKit.xcframework'
+  end
+
+  spec.subspec 'LimitedDeviceIdentityStaticLinks' do |subspec|
+    subspec.dependency 'PWMapKit/CoreStaticLinks'
   end
 end
